@@ -1,18 +1,19 @@
 import React from 'react'
 import './style.css'
-import pokeball from '../../assets/img/pokeball.png';
 import SubHeader from '../SubHeader/SubHeader'
+import logo from "../../assets/img/logo-weg.png"
+
 
 function Header() {
   return (
     <><div class="ui menu header">
       <div class="item logo">
-      <img class="ui fluid image" src={pokeball}/>
+        <img src={logo} class="tiny ui fluid image"></img>
       </div>
-      <div class="item">
+      <div class="item fluid search">
         <div class="ui icon input">
-          <input type="text" placeholder="Search..." />
-          <i class="search icon"></i>
+          <input type="text" placeholder="Search..."/>
+            <i class="search icon"></i>
         </div>
       </div>
     </div><SubHeader /></>

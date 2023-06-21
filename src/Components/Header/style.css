@@ -1,6 +1,15 @@
 .ui.menu.header {
-    background-color: #fff;
+    background-color: #00579D;
     margin: 0%;
-    border-bottom: none;
+    border: none;
     border-radius: 0px;
 }
+
+.item.logo {
+    color: white;
+    border-right: none;
+}
+
+
+
+
