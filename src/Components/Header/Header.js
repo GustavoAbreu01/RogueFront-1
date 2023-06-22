@@ -22,7 +22,9 @@ function Header() {
           <Link to={'/register'}><p className='text header'>Crie sua conta / Login</p></Link>
         </div>
         <div className="two wide column">
-          <i className="shopping cart icon"></i>
+          <Link to={'/cart'} className='text header'>
+            <i class="shopping cart icon"></i>
+          </Link>
         </div>
       </div>
       <SubHeader /></>
