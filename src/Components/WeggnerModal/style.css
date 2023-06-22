@@ -1,10 +1,12 @@
 .wegnerModal{
-    position: absolute;
-    margin-left: 88rem;
-    margin-top: 34rem;
+    position: fixed;
+    float: right;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 .wegner{
+    z-index: 99;
     background-color: var(--blue-primary);
     width: 7rem;
     height: 7rem;
@@ -14,4 +16,13 @@
 
 .wegner:hover{
     background-color: var(--blue-secundary);
+}
+
+.modalContent{
+    z-index: 10;
+    position: fixed;
+    float: right;
+    bottom: 6rem;
+    right: 5rem;
+    border: solid 2rem aqua;
 }

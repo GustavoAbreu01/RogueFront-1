@@ -16,13 +16,17 @@ function WeggnerModal() {
   }
 
   return (
+    <div>
+      {verify() &&<div className='modalContent'>
+            ffff
+        </div>}
     <div className='wegnerModal'>
       {!verify() ?
         <div onClick={() => setOpenModal(openModal + 1)}><img src={wegnerSleeping} alt='' className='wegner'></img></div>
         : 
-            <div onClick={() => setOpenModal(openModal - 1)}><img src={wegnerAwake} alt='' className='wegner'></img></div>
-            
+        <div onClick={() => setOpenModal(openModal - 1)}><img src={wegnerAwake} alt='' className='wegner'></img></div>   
         }
+    </div>
     </div>
   )
 }
