@@ -1,4 +1,5 @@
 import React from 'react'
+import '.././Quiz/style.css'
 
 function Quiz() {
   return (
