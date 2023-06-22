@@ -1,17 +1,24 @@
 body {
-    background-color: #EFEFEF;
+    background-color: var(--grey-secondary);
 }
 
+.ui.vertical.divider{
+    height: 10rem;
+}
 
-
-.ui.three.column.doubling.stackable.grid.container {
+.ui.three.column.stackable.grid.container {
     margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40;
-    background-color: white;
+    width: 50%;
+    background-color:var(--white);;
     border-radius: 2rem;
     padding: 3rem;
+}
+
+.ui.button{
+    background-color: var(--blue-primary);
+    color: var(--white);;
 }
 

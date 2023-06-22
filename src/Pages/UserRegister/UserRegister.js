@@ -100,7 +100,9 @@ function UserRegister() {
   return (
     
     <>
-    <div class="ui three column doubling stackable grid container">
+
+    <div class="ui three column  stackable grid container">
+     
      <div class="column">
       <form class="ui form login">
 
@@ -108,14 +110,14 @@ function UserRegister() {
 
       <div class="field emailLogin">
         <label>Emai:</label>
-        <input style={{ backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="emailLogin" placeholder="seuEmail@email.com" />
+        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailLogin" placeholder="seuEmail@email.com" />
       </div>
 
       <div class="field passwordLogin">
         <label>Senha:</label>
-        <input style={{ backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="passwordLogin" placeholder="suasenha/123455" />
+        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordLogin" placeholder="suasenha/123455" />
       </div>
-      <button class="ui button login" type="submit">Entrar</button>
+      <button class="large ui button login" type="submit">Entrar</button>
       </form>
       </div>
 
@@ -130,30 +132,30 @@ function UserRegister() {
 
         <div class="field">
           <label>Nome</label>
-          <input style={{backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="nameRegister" placeholder="Seu nome" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="nameRegister" placeholder="Seu nome" />
         </div>
 
         <div class="field">
           <label>Email</label>
-          <input style={{backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="emailRegister" placeholder="seuemail@email.com" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailRegister" placeholder="seuemail@email.com" />
         </div>
 
         <div class="field">
           <label>CPF/CNPJ</label>
-          <input style={{backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="cpflRegister" placeholder="12312312334" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="cpflRegister" placeholder="12312312334" />
         </div>
 
         <div class="field passwordRegister">
           <label>Senha:</label>
-          <input style={{backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="passwordRegister" placeholder="suasenha/123455" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordRegister" placeholder="suasenha/123455" />
         </div>
 
         <div class="field passwordConfirm">
           <label>Senha:</label>
-          <input style={{backgroundColor:'#EFEFEF', borderLeftColor: '#00579D',borderLeftWidth: '4px'}} type="text" name="passwordConfirm" placeholder="suasenha/123455" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordConfirm" placeholder="suasenha/123455" />
         </div>
 
-      <button class="ui button" type="submit">Cadastrar</button>
+      <button class=" large ui button" type="submit">Cadastrar</button>
       </form>
       </div>
       </div></>
