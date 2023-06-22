@@ -1,8 +1,12 @@
 import React from 'react'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <div>Home</div>
+      <WeggnerModal/>
+    </div>
   )
 }
 

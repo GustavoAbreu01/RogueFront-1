@@ -1,0 +1,17 @@
+.wegnerModal{
+    position: absolute;
+    margin-left: 88rem;
+    margin-top: 34rem;
+}
+
+.wegner{
+    background-color: var(--blue-primary);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.wegner:hover{
+    background-color: var(--blue-secundary);
+}
