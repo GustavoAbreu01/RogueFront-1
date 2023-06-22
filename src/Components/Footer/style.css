@@ -1,0 +1,163 @@
+.divisorFooter{
+    width: 100%;
+    height: 3px;
+    background-color: #0080C5;
+}
+
+footer{
+    background-color: #023A67;
+    border-top: 2px solid #0080C5;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.informations{
+    font-family: 'Inter Tight', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    line-height: 25px;
+}
+
+.local{
+    max-width: 250px;
+    margin-top: 5%;
+}
+
+.local h4{
+    align-items: center;
+}
+
+.localDivisor{
+    display: flex;
+    justify-content: left;
+    width: 80px;
+    height: 4px;
+    background-color: #2777B7;
+}
+
+.local p{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 85%;
+    display: flex;
+    margin: 5px auto;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.local a{
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 85%;
+    display: flex;
+    margin: 5px auto;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.contacts{
+    margin-top: 5%;
+}
+
+.contacts a {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 85%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    margin: 5px auto;
+    margin-bottom: -4px;
+}
+
+.contacts a:hover{
+    color: #0080C5;
+}
+
+.contacts a:active{
+    color: #ffffff;
+}
+
+.contactsDivisor{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 4px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #2777B7;
+}
+
+.contacts h4{
+    text-align: center;
+    align-items: center;
+}
+
+.social{
+    margin-top: 5%;
+}
+
+.social image{
+    width: 20px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.social a {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 85%;
+    display: flex;
+    justify-content: right;
+    text-decoration: none;
+    color: white;
+}
+
+.social a:hover{
+    color: #0080C5;
+}
+
+.social a:active{
+    color: #ffffff;
+}
+
+.socialDivisor{
+    display: flex;
+    width: 80px;
+    height: 4px;
+    margin: 0 auto;
+    margin-right: 3%;
+    background-color: #2777B7;
+}
+
+footer .imagem{
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+}
+
+.navBar {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2777B7;
+    height: 49px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navBar a{
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    
+}
+
+.divisores{
+    background-color: white;
+    width: 1px;
+    height: 20px;
+}

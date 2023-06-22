@@ -1,9 +1,9 @@
 import React from 'react'
-import MenuModal from '../../Components/MenuModal/MenuModal'
+import Footer from '../../Components/Footer/Footer'
 
 function Home() {
   return (
-    <MenuModal/>
+    <Footer/>
   )
 }
 
