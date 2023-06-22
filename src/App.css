@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --blue-primary: #00579D;
+  --blue-secundary: #2777B7;
+  --text-common: #C7DCEC;
+  --grey-primary: #3E3E3E;
+  --grey-secondary: #EFEFEF;
+  --white: #FFFFFF;
+}

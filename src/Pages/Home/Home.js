@@ -1,8 +1,9 @@
 import React from 'react'
+import MenuModal from '../../Components/MenuModal/MenuModal'
 
 function Home() {
   return (
-    <div>Home</div>
+    <MenuModal/>
   )
 }
 
