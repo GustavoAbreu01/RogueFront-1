@@ -1,0 +1,10 @@
+.ui.mini.steps{
+    margin-top: 1rem;
+    display: flex;
+    
+}
+.clipboard.list.icon{
+    font-size: 40px;
+    color: var(--blue-primary);
+}
+
