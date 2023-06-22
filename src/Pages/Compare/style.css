@@ -1,0 +1,13 @@
+.compare{
+    margin: 3rem;
+}
+
+.products{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.addProduct{
+    cursor: pointer;
+}
