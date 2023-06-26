@@ -3,8 +3,10 @@ import './style.css'
 import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
 import { IoIosArrowBack } from 'react-icons/io'
 import { VscSend } from 'react-icons/vsc'
+import { Link } from 'react-router-dom'
 
 function ChatWegner() {
+    
     return (
         <div className='pagChat'>
             <div className='wegner'>
@@ -13,9 +15,11 @@ function ChatWegner() {
             <div className='chat'>
                 <div className='chatHeader'>
                     <div>
-                        <div className='backArrow'>
-                            <IoIosArrowBack size={'2.5rem'}/>
-                        </div>
+                        <Link to={'/'}>
+                            <div className='backArrow'>
+                                <IoIosArrowBack size={'2.5rem'}/>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className='chatMessages'>
