@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import '.././Quiz/style.css'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
 import logoWeg from "../../assets/img/logoWEG.png"
 import w50 from "../../assets/img/motorW50.png"
 import spanish from "../../assets/img/spanish.png"
@@ -39,8 +41,9 @@ function Quiz() {
   }
   return (
     <>
+    <Header />
       {/* {verificacao ? <AppHeaderLogin /> : <AppHeader />} */}
-      <div class="ui raised very padded text container segment">
+      <div class="ui raised very padded text container segment quiz">
         <div class="ui mini steps">
           <i class="clipboard list icon"></i>
           <div class="step">
@@ -187,6 +190,7 @@ function Quiz() {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 }
