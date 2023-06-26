@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import LanguageModal from '../../Components/LanguageModal/LanguageModal'
 
 function Home() {
+
   return (
-    <div>Home</div>
+    <div><LanguageModal/></div>
   )
 }
 
