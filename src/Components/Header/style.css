@@ -48,8 +48,9 @@ header .account {
 }
 
 header .account:hover{
-    color: #0080C5;
+    color: #EFEFEF;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 header .saves:hover{
@@ -58,8 +59,10 @@ header .saves:hover{
 }
 
 header .login:hover{
-    color: #0080C5;
+    color: #EFEFEF;
     cursor: pointer;
+    transition: 0.3s;
+
 
 }
 

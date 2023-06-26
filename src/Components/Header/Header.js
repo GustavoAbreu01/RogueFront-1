@@ -4,16 +4,19 @@ import { FaShoppingCart } from 'react-icons/fa'
 import logo from "../../assets/img/logo-weg.png"
 import { Link } from 'react-router-dom'
 import SearchBar from '../SearchModal/SearchModal'
+import { Menu } from 'semantic-ui-react'
+import MenuModal from '../MenuModal/MenuModal'
+
 
 
 function Header() {
   return (
     <><header>
       <div class="img">
-        <a routerLink=""><img src={logo} alt="" /></a>
+        <Link routerLink=""><img src={logo} alt="" /></Link>
       </div>
       <div>
-        <SearchBar/>
+        <SearchBar />
       </div>
       <div class="opc">
         <div class="opcDeEntrada">
@@ -23,6 +26,7 @@ function Header() {
       </div>
     </header><div class="navBar">
         <div id="menu">
+          <MenuModal />
         </div>
         <div class="divisores"></div>
         <Link routerLink="/categoria">Motores</Link>
