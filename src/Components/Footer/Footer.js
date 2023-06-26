@@ -4,7 +4,7 @@ import './style.css';
 // import youtube from '../../Assets/img/youtube.png';
 // import issuu from '../../Assets/img/issuu.png';
 // import linkedin from '../../Assets/img/linkedin.png';
-// import img from '../../Assets/img/img.png';
+import img from '../../Assets/img/footer.png';
 const Footer = () => {
   return (
     <footer>
@@ -14,7 +14,8 @@ const Footer = () => {
           <div className="localDivisor"></div>
           <p>
             Av. Pref. Waltermar Grubba,
-            3000 - 89256-900 -
+          </p>
+          <p>
             Jaraguá do Sul - SC / Brasil
           </p>
           <a href="#">Telefone: 55 47 3276-4000</a>
@@ -37,7 +38,7 @@ const Footer = () => {
           <h4>Redes Sociais</h4>
           <div className="socialDivisor"></div>
           <a href="">
-            <i class="twitter icon"></i>
+            <i class="twitter icon"></i> Twitter
           </a>
           <a href="">
             <i class="youtube icon"></i> Youtube
@@ -46,13 +47,13 @@ const Footer = () => {
             <img src={issuu} alt="" /> Issuu
           </a> */}
           <a href="">
-            <i class="linkedin in icon"></i>
+            <i class="linkedin in icon"></i> Linkedin
           </a>
         </div>
       </div>
-      {/* <div className="image">
-        <img src={img} alt="" />
-      </div> */}
+      <div className="image">
+        <img src={img} alt=""/>
+      </div>
     </footer>
   );
 };
