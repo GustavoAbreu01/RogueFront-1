@@ -1,10 +1,8 @@
 import React from 'react'
-import Footer from '../../Components/Footer/Footer'
-import MenuModal from '../../Components/MenuModal/MenuModal'
-import Header from '../../Components/Header/Header'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 function Home() {
   return (
-    <Header />
+    <HeaderLogin />
   )
 }
 

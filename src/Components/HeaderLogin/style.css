@@ -1,0 +1,188 @@
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #EFEFEF;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #00579D;
+}
+
+
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #00579D;
+    height: 100px;
+}
+
+.img{
+    margin-left: 3%;
+}
+
+.img img{
+    width: 100px;
+}
+
+header .opc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-right: 0.2rem;
+}
+
+header .icons{
+    margin: 1.5rem;
+}
+
+header .account {
+    margin-left: -100px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+header .saves{
+    cursor: pointer;
+}
+
+header .account:hover{
+    color: #EFEFEF;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header .saves:hover{
+    color: #0080C5;
+    transition: 0.3s;
+}
+
+header .login:hover{
+    color: #EFEFEF;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header .cart {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+header .profile{
+    cursor: pointer;
+}
+
+header .carrinho {
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+header .carrinho:hover{
+    color: #0080C5;
+    transition: 0.3s;
+}
+
+header .login {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.logo {
+    margin-left: 25%;
+}
+
+.navBar {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2777B7;
+    height: 49px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navBar a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.navBar a:hover{
+    color: #90C1E3;
+    text-decoration: none;
+}
+
+
+
+.divisores{
+    background-color: white;
+    width: 1px;
+    height: 20px;
+}
+
+#logo{
+    position: absolute;
+    margin-top: -3%;
+    margin-left: -3%;
+}
+
+#ModalPerfil{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+#colunaUm{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #00579D;
+}
+
+#colunaUm > h3{
+    margin-left: 25%;
+}
+
+#colunaDois > h4{
+    opacity: 50%;
+}
+
+#colunaDois > h3{
+    color: #00579D;
+    font-weight: bolder;
+}
+
+#colunaTres{
+margin-left: 5%;
+margin-top: -38%;
+color: #00579D;
+font-weight: bolder;
+}
+
+.tracoAzul{
+    position: absolute;
+    width: 5px;
+    height: 30px;
+    background-color: #00579D;
+    margin-top: -8%;
+    margin-left: -2%;
+}
+
+.tracoCinza{
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    background-color: rgb(78, 78, 78);
+    margin-top: -3%;
+    margin-left: -2%;
+}
