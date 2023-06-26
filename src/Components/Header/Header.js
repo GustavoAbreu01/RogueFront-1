@@ -12,16 +12,16 @@ function Header() {
   return (
     <><header>
       <div class="img">
-        <Link routerLink=""><img src={logo} alt="" /></Link>
+        <Link to={"/"}><img src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />
       </div>
       <div class="opc">
         <div class="opcDeEntrada">
-          <a class="account" routerLink="/cadastro">Crie sua conta</a>/<a class="login" routerLink="/cadastro">Login</a>
+          <Link class="account" to="/register">Crie sua conta</Link>/<Link class="login" to="/register">Login</Link>
         </div>
-        <Link class="saves" routerLink="/salvos"><FaShoppingCart class="carrinho" /></Link>
+        <Link class="saves" to="/cart"><FaShoppingCart class="carrinho" /></Link>
       </div>
     </header><div class="navBar">
         <div id="menu">
