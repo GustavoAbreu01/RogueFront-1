@@ -101,7 +101,7 @@ function UserRegister() {
     
     <>
 
-    <div class="ui three column  stackable grid container">
+    <div class="ui three column stackable grid container">
      
      <div class="column">
       <form class="ui form login">
@@ -117,7 +117,9 @@ function UserRegister() {
         <label>Senha:</label>
         <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordLogin" placeholder="suasenha/123455" />
       </div>
-      <button class="large ui button login" type="submit">Entrar</button>
+      <div className='box'>
+        <button class="ui big fluid button">Entrar</button>
+        </div>
       </form>
       </div>
 
@@ -154,8 +156,9 @@ function UserRegister() {
           <label>Senha:</label>
           <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordConfirm" placeholder="suasenha/123455" />
         </div>
-
-      <button class=" large ui button" type="submit">Cadastrar</button>
+        <div className='box'>
+        <button class="ui big fluid button">Cadastrar</button>
+        </div>
       </form>
       </div>
       </div></>

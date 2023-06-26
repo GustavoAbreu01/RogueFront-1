@@ -1,0 +1,41 @@
+.ui.mini.steps{
+    margin-top: 1rem;
+    display: flex;
+    
+}
+
+.ui.raised.very.padded.text.container.segment{
+    margin-top: 5rem;
+}
+
+.clipboard.list.icon{
+    margin-top: 1.2rem;
+    font-size: 40px;
+    color: var(--blue-primary);
+}
+.ui.checkbox{
+    margin-top: 1.2rem;
+}
+.ui.big.button.back{
+    margin-top: 0.5rem;
+    background-color: var(--grey-secondary);
+    color: var(--grey-primary);
+}
+
+.ui.big.button.next{
+    margin-top: 0.5rem;
+}
+
+.ui.huge.fluid.button.details{
+    margin-top: 0.5rem;
+
+}
+
+.ui.checkbox{
+    font-size: 1.3rem;
+}
+.ui.fluid.image.w50{
+    width: 40%;
+}
+
+
