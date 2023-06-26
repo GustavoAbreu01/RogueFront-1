@@ -1,33 +1,41 @@
 import React from 'react'
 import './style.css'
-import SubHeader from '../SubHeader/SubHeader'
+import { FaShoppingCart } from 'react-icons/fa'
 import logo from "../../assets/img/logo-weg.png"
 import { Link } from 'react-router-dom'
+import SearchBar from '../SearchModal/SearchModal'
 
 
 function Header() {
   return (
-    <>
-      <div className="ui grid header">
-        <div className="three wide column">
-          <img src={logo} className='logo image' />
-        </div>
-        <div className="eight wide column">
-          <div class="ui icon input">
-            <input type="text" placeholder="Search..." className='search input' />
-            <i class="search icon"></i>
-          </div>
-        </div>
-        <div className="three wide column">
-          <Link to={'/register'}><p className='text header'>Crie sua conta / Login</p></Link>
-        </div>
-        <div className="two wide column">
-          <Link to={'/cart'} className='text header'>
-            <i class="shopping cart icon"></i>
-          </Link>
-        </div>
+    <><header>
+      <div class="img">
+        <a routerLink=""><img src={logo} alt="" /></a>
       </div>
-      <SubHeader /></>
+      <div>
+        <SearchBar/>
+      </div>
+      <div class="opc">
+        <div class="opcDeEntrada">
+          <a class="account" routerLink="/cadastro">Crie sua conta</a>/<a class="login" routerLink="/cadastro">Login</a>
+        </div>
+        <Link class="saves" routerLink="/salvos"><FaShoppingCart class="carrinho" /></Link>
+      </div>
+    </header><div class="navBar">
+        <div id="menu">
+        </div>
+        <div class="divisores"></div>
+        <Link routerLink="/categoria">Motores</Link>
+        <div class="divisores"></div>
+        <Link routerLink="/carrinho">Tintas e Vernizes</Link>
+        <div class="divisores"></div>
+        <Link href="">Automação</Link>
+        <div class="divisores"></div>
+        <Link href="">Paineis Eletricos</Link>
+        <div class="divisores"></div>
+        <Link href="">Segurança</Link>
+        <div class="divisores"></div>
+      </div></>
   )
 }
 
