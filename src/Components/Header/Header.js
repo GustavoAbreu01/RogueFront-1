@@ -4,7 +4,6 @@ import { FaShoppingCart } from 'react-icons/fa'
 import logo from "../../assets/img/logo-weg.png"
 import { Link } from 'react-router-dom'
 import SearchBar from '../SearchModal/SearchModal'
-import { Menu } from 'semantic-ui-react'
 import MenuModal from '../MenuModal/MenuModal'
 
 

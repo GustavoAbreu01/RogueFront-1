@@ -1,12 +1,14 @@
-.modal {
+.modalMenu {
     display: flex;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(114, 112, 112, 0.671);
     position: absolute;
-    left: 18rem;
-    top: 11.5rem;
     font-size: 20px;
     z-index: 990;
+    left: 1%;
+    top: 4rem;
+    font-size: 20px;
+    z-index: 12;
     overflow: scroll;
 }
 
