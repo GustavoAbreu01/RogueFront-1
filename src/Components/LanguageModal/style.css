@@ -1,5 +1,28 @@
 .languageModal{
+    margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.modalContent{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 10.5rem;
+    position: absolute;
+    background-color: aqua;
+    width: 3.5rem;
+    margin-left: 0.01rem;
+}
+
+.modalContent > div {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.languageButton{
+    cursor: pointer;
 }
