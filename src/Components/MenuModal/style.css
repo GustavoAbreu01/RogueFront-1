@@ -1,3 +1,33 @@
+.modal {
+    display: flex;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(114, 112, 112, 0.671);
+    position: absolute;
+    left: 18rem;
+    top: 11.5rem;
+    font-size: 20px;
+    z-index: 990;
+    overflow: scroll;
+}
+
+.background {
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 11;
+}
+
+::-webkit-scrollbar{
+    border-radius: 10px;
+    display: none;
+}
+
+.menu{
+  cursor: pointer;
+}
 
 .MenuIcon {
     color: #fff;
