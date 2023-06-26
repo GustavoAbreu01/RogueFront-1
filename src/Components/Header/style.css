@@ -30,14 +30,12 @@ header {
 header .opcDeEntrada{
     display: grid;
     grid-template-columns: repeat(3, 25px);
-    margin-top: 50%;
 }
 
 header .opc{
     display: grid;
     color: white;
     grid-template-columns: repeat(2, 10px);
-    margin-right: 15%;
 }
 
 header .account {
@@ -75,7 +73,8 @@ header .saves {
 header .carrinho {
     color: white;
     text-decoration: none;
-    margin-left: 10rem;
+    margin-left: 6rem;
+    margin-right: 2rem;
     font-size: 35px;
 }
 

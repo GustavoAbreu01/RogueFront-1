@@ -2,72 +2,43 @@ import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import '.././UserRegister/style.css'
 import { useState } from "react";
-import german from "../../assets/img/german.png"
-import english from "../../assets/img/english.png"
-import spanish from "../../assets/img/spanish.png"
-
 
 
 function UserRegister() {
   const navigate = useNavigate();
 
   const [emailLogin, setEmailLogin] = useState('');
-  const [passLogin, setPassLogin] = useState('');
+  const [passwordLogin, setPasswordLogin] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
-  const [confPass, setConfPass] = useState('');
+  const [password, setPassword] = useState('');
+  const [confPassword, setConfPassword] = useState('');
   const [cpf, setCpf] = useState('');
-  // const [idiomas, setIdiomas] = useState([]);
-  const languages = ["german", "english", "spanish", "french"];
 
-  // emailLogin: string;
-  // passLogin: String;
-  // nome: string;
-  // email: string;
-  // pass: string;
-  // confPass: string;
-  // cpf: string;
-  // idiomas: string[] = [this.alemao, this.ingles, this.espanhol, this.frances];
+  const user = JSON.parse(localStorage.getItem('user')) || [];
 
-  // craftingTable(){
-  // const brothers: Object[] = JSON.parse(localStorage.getItem('brothers')) || []
-  // brothers.push({
-  //   nome: this.nome,
-  //   email: this.email,
-  //   pass: this.pass,
-  //   cpf: this.cpf
-  // })
-
-  // const [user, setUser] = useState({
-  //   "name": "",
-  //   "email": "",
-  //   "pass": "",
-  //   "cpf": "",
-  // });
-
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-
-  const handleCrafting = () => {
-    users.push({
-      name: name,
-      email: email,
-      pass: pass,
-      cpf: cpf
-    });
-    localStorage.setItem('users', JSON.stringify(users));
-    localStorage.setItem("verificar", 'sim');
-    navigate("/");
+  const handleRegister = () => {
+    if(password === confPassword){
+      user.push({
+        name: name,
+        email: email,
+        password: password,
+        cpf: cpf
+      });
+      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem("verifyLogin", 'yes');
+      navigate("/");
+    }else{
+      alert('Senhas diferem')
+    }
   };
 
   const handleLogin = () => {
-    localStorage.setItem("flags", 'assets/img/portuguese.png');
-    localStorage.setItem("flags", JSON.stringify(languages));
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const users = JSON.parse(localStorage.getItem('user')) || [];
     users.forEach((register) => {
-      if (emailLogin === register.name) {
-        if (passLogin === register.pass) {
-          localStorage.setItem('verificar2', 'sim');
+      if (emailLogin === register.email) {
+        if (passwordLogin === register.password) {
+          localStorage.setItem('verifyLogin', 'yes');
           navigate("/");
         } else {
           alert("Senha ou email incorretos!!");
@@ -76,88 +47,67 @@ function UserRegister() {
     });
   };
 
-
-  // localStorage.setItem('brothers', JSON.stringify(brothers))
-  // localStorage.setItem("verificar", 'sim')
-  // this.router.navigate(['']);
-  // }
-
-  // logar(){
-  //   localStorage.setItem("bandeira", 'assets/img/portugues.png')
-  //   localStorage.setItem("bandeiras", JSON.stringify(this.idiomas))
-  //   const brothers: Object[] = JSON.parse(localStorage.getItem('brothers')) || []
-  //   brothers.forEach(cadastro => {
-  //     if(this.emailLogin == cadastro["nome"]){
-  //       if(this.passLogin == cadastro["pass"]){
-  //         localStorage.setItem('verificar2', 'sim')
-  //         this.router.navigate(['']);
-  //       }else{
-  //         alert("Senha ou email incorretos!!")
-  //       }
-  //     }
-  //   });
-
   return (
     
     <>
 
-    <div class="ui three column stackable grid container">
+    <div className="ui three column stackable grid container">
      
-     <div class="column">
-      <form class="ui form login">
+     <div className="column">
+      <form className="ui form login">
 
-      <h2 class="ui header titleRegister">Login</h2>
+      <h2 className="ui header titleRegister">Login</h2>
 
-      <div class="field emailLogin">
-        <label>Emai:</label>
-        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailLogin" placeholder="seuEmail@email.com" />
+      <div className="field emailLogin">
+        <label>Email:</label>
+        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailLogin" placeholder="seuEmail@email.com"  value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)}/>
       </div>
 
-      <div class="field passwordLogin">
+      <div className="field passwordLogin">
         <label>Senha:</label>
-        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordLogin" placeholder="suasenha/123455" />
+        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordLogin" placeholder="suasenha/123455"  value={passwordLogin} onChange={(e) => setPasswordLogin(e.target.value)}/>
       </div>
       <div className='box'>
-        <button class="ui big fluid button">Entrar</button>
+        <button className="ui big fluid button" onClick={() => handleLogin()}>Entrar</button>
         </div>
       </form>
       </div>
 
-      <div class="column">
-      <div class="ui vertical divider"> Ou </div>
+      <div className="column">
+      <div className="ui vertical divider"> Ou </div>
       </div>
       
-      <div class="column">
-      <form class="ui form register">
+      <div className="column">
+      <form className="ui form register">
 
-      <h2 class="ui header titleRegister">Cadastro</h2>
+      <h2 className="ui header titleRegister">Cadastro</h2>
 
-        <div class="field">
+        <div className="field">
           <label>Nome</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="nameRegister" placeholder="Seu nome" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="nameRegister" placeholder="Seu nome" value={name} onChange={(e) => setName(e.target.value)}/>
         </div>
 
-        <div class="field">
+        <div className="field">
           <label>Email</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailRegister" placeholder="seuemail@email.com" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailRegister" placeholder="seuemail@email.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
         </div>
 
-        <div class="field">
+        <div className="field">
           <label>CPF/CNPJ</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="cpflRegister" placeholder="12312312334" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="cpflRegister" placeholder="12312312334" value={cpf} onChange={(e) => setCpf(e.target.value)}/>
         </div>
 
-        <div class="field passwordRegister">
+        <div className="field passwordRegister">
           <label>Senha:</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordRegister" placeholder="suasenha/123455" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordRegister" placeholder="suasenha/123455" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </div>
 
-        <div class="field passwordConfirm">
+        <div className="field passwordConfirm">
           <label>Senha:</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordConfirm" placeholder="suasenha/123455" />
+          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordConfirm" placeholder="suasenha/123455" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}/>
         </div>
         <div className='box'>
-        <button class="ui big fluid button">Cadastrar</button>
+        <button className="ui big fluid button" onClick={() => handleRegister()}>Cadastrar</button>
         </div>
       </form>
       </div>
@@ -165,43 +115,3 @@ function UserRegister() {
 )
 }
 export default UserRegister
-
-    //  <h2 className="titleLogin">Login</h2>
-
-    //   <h2 className="titleRegister">Cadastro</h2>
-
-    //   <h3 className="emailLogin">Email:</h3>
-      
-    //   <input type="text" className="emailLoginInput" id="emailLoginInput" placeholder="bgimv@email.com"/>
-    //   {/* <input type="text" className="EmailLoginInput" id="emailLoginInput"  placeholder="bgimv@email.com" required [(ngModel)]="emailLogin">
-    //   //<input type="text" id="name" name="name" onChange={updateCard} value={card.name} placeholder="Nome do personagem" className="nameCharacter" /> 
-           
-  
-    //   <h3 className="password">Senha:</h3>
-    //   <input type="text" id="passwordLoginInput" className="passwordLoginInput" placeholder="bgimv/123455"/>
-    //    <input type="text" id="passwordLoginInput" className="passwordLoginInput" placeholder="bgimv/123455" [(ngModel)]="passLogin">
-
-    //   <div className="divider"></div>
-
-
-
-    //   <h3 className="name">Nome:</h3>
-    //   <input type="text" className="nameInput" id="nameInput" placeholder="bgimv/123455"/>
-    //   {/* <input type="text" className="nameInput" id="nameInput" placeholder="bgimv/123455" required [(ngModel)]="nome">
-    //    <input type="text" id="name" name="name" onChange={updateCard} value={card.name} placeholder="Nome do personagem" className="nameCharacter" /
-      
-
-    //   <h3 class="emailregister">Email:</h3>
-    //   <input type="text" class="emailCadInput" id="emailCadInput" placeholder="bgimv@email.com" required [(ngModel)]="email">
-      
-    //   <h3 class="cpfcnpj">CPF/CNPJ:</h3>
-    //   <input type="text" class="cpfInput" id="cpfInput" placeholder="12345678801929238383" required [(ngModel)]="cpf">
-      
-    //   <h3 class="SenhaCadastro">Senha:</h3>
-    //   <input type="text" id="senhaInput" class="senhaInput" placeholder="bgimv/123455" [(ngModel)]="pass">
-
-    //   <h3 class="confSenhaCadastro">Confirma a senha:</h3>
-    //   <input type="text" class="confSenhaInput" id="confSenhaInput" placeholder="bgimv/123455" required [(ngModel)]="confPass">
-    //   <button class="cadastrar" onClick={handleCrafting}>Cadastrar</button>
-    //   <button class="logar" onClick={handleLogin}>Logar</button>  
-    

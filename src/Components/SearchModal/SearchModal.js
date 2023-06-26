@@ -13,7 +13,7 @@ function SearchBar() {
 
   return (
     <div className="SearchBar" onClick={abrir}>
-      <input  type="text" name="SearchBar" placeholder="   Pesquisar..." class="Bar"/>
+      <input  type="text" name="SearchBar" placeholder="   Pesquisar..." className="Bar"/>
       <img className="imagem" src={lupa} width="30" height="30" alt="Lupa" />
       {abrirModal && (
         <div className="abrirModal">

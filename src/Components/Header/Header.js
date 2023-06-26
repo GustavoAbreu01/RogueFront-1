@@ -11,33 +11,33 @@ import MenuModal from '../MenuModal/MenuModal'
 function Header() {
   return (
     <><header>
-      <div class="img">
+      <div className="img">
         <Link to={"/"}><img src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />
       </div>
-      <div class="opc">
-        <div class="opcDeEntrada">
-          <Link class="account" to="/register">Crie sua conta</Link>/<Link class="login" to="/register">Login</Link>
+      <div className="opc">
+        <div className="opcDeEntrada">
+          <Link className="account" to="/register">Crie sua conta</Link>/<Link className="login" to="/register">Login</Link>
         </div>
-        <Link class="saves" to="/cart"><FaShoppingCart class="carrinho" /></Link>
+        <Link className="saves" to="/cart"><FaShoppingCart className="carrinho" /></Link>
       </div>
-    </header><div class="navBar">
+    </header><div className="navBar">
         <div id="menu">
           <MenuModal />
         </div>
-        <div class="divisores"></div>
-        <Link routerLink="/categoria">Motores</Link>
-        <div class="divisores"></div>
-        <Link routerLink="/carrinho">Tintas e Vernizes</Link>
-        <div class="divisores"></div>
-        <Link href="">Automação</Link>
-        <div class="divisores"></div>
-        <Link href="">Paineis Eletricos</Link>
-        <div class="divisores"></div>
-        <Link href="">Segurança</Link>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
+        <Link to="/categoria">Motores</Link>
+        <div className="divisores"></div>
+        <Link to="/carrinho">Tintas e Vernizes</Link>
+        <div className="divisores"></div>
+        <Link href="#">Automação</Link>
+        <div className="divisores"></div>
+        <Link href="#">Paineis Eletricos</Link>
+        <div className="divisores"></div>
+        <Link href="#">Segurança</Link>
+        <div className="divisores"></div>
       </div></>
   )
 }

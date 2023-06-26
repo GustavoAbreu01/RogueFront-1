@@ -34,16 +34,16 @@ const Footer = () => {
           <h4>Redes Sociais</h4>
           <div className="socialDivisor"></div>
           <a href="">
-            <i class="twitter icon"></i> Twitter
+            <i className="twitter icon"></i> Twitter
           </a>
           <a href="">
-            <i class="youtube icon"></i> Youtube
+            <i className="youtube icon"></i> Youtube
           </a>
           {/* <a href="">
             <img src={issuu} alt="" /> Issuu
           </a> */}
           <a href="">
-            <i class="linkedin in icon"></i> Linkedin
+            <i className="linkedin in icon"></i> Linkedin
           </a>
         </div>
       </div>
