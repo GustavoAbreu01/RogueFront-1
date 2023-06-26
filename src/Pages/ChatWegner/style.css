@@ -1,3 +1,7 @@
+body{
+    background-color: #d8d8d8be;
+}
+
 .pagChat{
     margin-top: 2rem;
     margin-left: 5rem;
@@ -33,5 +37,25 @@
 }
 
 .wegner{
+    margin-top: 12rem;
     float: right;
+    margin-left: 2rem;
+}
+
+.inputMessages{
+    background-color: var(--text-common);
+    border-radius: 20px;
+    border: solid var(--text-common);
+    width: 50rem;
+}
+
+.options{
+    margin: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sendButton{
+    color: var(--text-common);
 }
