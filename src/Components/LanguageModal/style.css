@@ -10,12 +10,18 @@
     grid-template-columns: 1fr;
     margin-top: 10.5rem;
     position: absolute;
-    background-color: aqua;
+    background-color: aliceblue;
     width: 3.5rem;
     margin-left: 0.01rem;
+    border: solid 0.01rem rgba(0, 0, 0, 0.116);
+    -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    box-shadow: 9px 7px 5px rgba(43, 43, 43, 0.77);
+    border-radius: 3px;
 }
 
 .modalContent > div {
+    cursor: pointer;
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
     display: flex;

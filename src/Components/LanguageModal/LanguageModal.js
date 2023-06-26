@@ -20,31 +20,43 @@ function LanguageModal() {
     }
   }
 
-  useEffect(() => {
+  function changeCurrentFlag(currentFlagIndex, currentFlag){
+    let oldFlags = flags
+    oldFlags.splice(currentFlagIndex, 1)
+    let newFlags = []
+    newFlags.push(currentFlag)
+    console.log(newFlags)
+    oldFlags.forEach(flag => {
+      newFlags.push(flag)
+    });
+    setFlags(newFlags)
+    setOpenModal(openModal - 1)
+  }
 
-  }, [])
+  useEffect(() => {
+  }, [flags])
 
   return (
     <div className='languageModal'>
       {verify() && <div className='modalContent'>
-        <div>
-          <img src={english} width={40} height={25} alt='' />
+        <div onClick={() => changeCurrentFlag(1, flags[1])}>
+          <img src={flags[1]} width={40} height={25} alt='' />
         </div>
-        <div>
-          <img src={french} width={40} height={25} alt='' />
+        <div onClick={() => changeCurrentFlag(2, flags[2])}>
+          <img src={flags[2]} width={40} height={25} alt='' />
         </div>
-        <div>
-          <img src={spanish} width={40} height={25} alt='' />
+        <div onClick={() => changeCurrentFlag(3, flags[3])}>
+          <img src={flags[3]} width={40} height={25} alt='' />
         </div>
-        <div>
-          <img src={german} width={40} height={25} alt='' />
+        <div onClick={() => changeCurrentFlag(4, flags[4])}>
+          <img src={flags[4]} width={40} height={25} alt='' />
         </div>
       </div>}
       <div>
         {!verify() ?
-          <div onClick={() => setOpenModal(openModal + 1)} className='languageButton'><img src={portuguese} width={40} height={25} alt='' /></div>
+          <div onClick={() => setOpenModal(openModal + 1)} className='languageButton'><img src={flags[0]} width={40} height={25} alt='' /></div>
           :
-          <div onClick={() => setOpenModal(openModal - 1)} className='languageButton'><img src={portuguese} width={40} height={25} alt='' /></div>
+          <div onClick={() => setOpenModal(openModal - 1)} className='languageButton'><img src={flags[0]} width={40} height={25} alt='' /></div>
         }
       </div>
     </div>
