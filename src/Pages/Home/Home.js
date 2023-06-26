@@ -4,7 +4,10 @@ import MenuModal from '../../Components/MenuModal/MenuModal'
 import Header from '../../Components/Header/Header'
 function Home() {
   return (
-    <Header />
+    <><Header />
+    
+    
+    <Footer /></>
   )
 }
 
