@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BiMenu } from 'react-icons/bi';
 import './style.css';
 
 function MenuModal() {
@@ -14,29 +13,8 @@ function MenuModal() {
   };
 
   return (
-    <>
-      <BiMenu className="MenuIcon" onClick={open}>abrate</BiMenu>
-        {openModal && (
-          <div className="openModal">
-            <div className="modal">{<div class="ui vertical pointing menu">
-              <a class="item active">
-                Motor
-              </a>
-              <a class="item">
-                Tintas
-              </a>
-              <a class="item">
-                Tomada
-              </a>
-              <a class="item">
-                Silvane
-              </a>
-            </div>}</div>
-            <div className="background" onClick={openAndClose}></div>
-          </div>
-        )}
-    </>
-  );
+    <div>MenuModal</div>
+  )
 }
 
 export default MenuModal;
