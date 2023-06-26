@@ -3,6 +3,7 @@
     float: right;
     bottom: 1rem;
     right: 1rem;
+    z-index: 99;
 }
 
 .wegner{
@@ -22,7 +23,10 @@
     z-index: 10;
     position: fixed;
     float: right;
-    bottom: 6rem;
+    bottom: 4rem;
     right: 5rem;
-    border: solid 2rem aqua;
+    width: 15rem;
+    height: 25rem;
+    background-color: aliceblue;
+    border-radius: 20px;
 }
