@@ -1,10 +1,6 @@
 import React from 'react';
 import './style.css';
-// import twitter from '../../Assets/img/twitter.png';
-// import youtube from '../../Assets/img/youtube.png';
-// import issuu from '../../Assets/img/issuu.png';
-// import linkedin from '../../Assets/img/linkedin.png';
-import img from '../../Assets/img/footer.png';
+import img from '../../assets/img/footer.png';
 const Footer = () => {
   return (
     <footer>
@@ -58,4 +54,4 @@ const Footer = () => {
   );
 };
 
-export default Header
+export default Footer
