@@ -4,6 +4,7 @@
     bottom: 1rem;
     right: 1rem;
     z-index: 99;
+    
 }
 
 .wegner{
@@ -13,6 +14,9 @@
     height: 7rem;
     border-radius: 5rem;
     cursor: pointer;
+    -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    box-shadow: 9px 7px 5px rgba(43, 43, 43, 0.77);
 }
 
 .wegner:hover{
@@ -20,6 +24,9 @@
 }
 
 .modalContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
     position: fixed;
     float: right;
@@ -28,5 +35,9 @@
     width: 15rem;
     height: 25rem;
     background-color: aliceblue;
+    border: solid 0.01rem rgba(0, 0, 0, 0.151);
     border-radius: 20px;
+    -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    box-shadow: 9px 7px 5px rgba(43, 43, 43, 0.77);
 }

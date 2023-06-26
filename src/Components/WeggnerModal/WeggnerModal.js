@@ -18,7 +18,7 @@ function WeggnerModal() {
   return (
     <div>
       {verify() &&<div className='modalContent'>
-            ffff
+            Wegner
         </div>}
     <div className='wegnerModal'>
       {!verify() ?
