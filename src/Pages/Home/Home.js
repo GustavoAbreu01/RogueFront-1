@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from '../../Components/Header/Header'
-
+import Footer from '../../Components/Footer/Footer'
+import MenuModal from '../../Components/MenuModal/MenuModal'
 function Home() {
   return (
-    <><Header />
-      
-    </>
+    <div>Home</div>
   )
 }
 
