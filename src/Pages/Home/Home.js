@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import Header from '../../Components/Header/Header'
 function Home() {
   return (
     <Header />
