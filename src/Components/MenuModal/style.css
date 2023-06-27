@@ -6,9 +6,9 @@
     font-size: 20px;
     z-index: 990;
     left: 1%;
-    top: 4rem;
+    top: 0rem;
     font-size: 20px;
-    z-index: 12;
+    z-index: 999;
     overflow: scroll;
 }
 
@@ -19,7 +19,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 11;
 }
 
 ::-webkit-scrollbar{
@@ -36,6 +35,5 @@
     font-size: 3rem;
     margin-left: 1.5rem;
     margin-top: 0.2rem;
-    z-index: 13;
     cursor: pointer;
 }
