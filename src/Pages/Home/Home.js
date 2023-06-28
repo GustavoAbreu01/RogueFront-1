@@ -4,7 +4,6 @@ import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Header from '../../Components/Header/Header'
 import Carousell from '../../Components/carousel/Carousel'
 import './style.css'
 
