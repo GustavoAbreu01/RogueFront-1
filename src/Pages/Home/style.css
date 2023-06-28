@@ -54,3 +54,8 @@
     font-weight: bold;
     color: var(--blue-primary);
 }
+
+.sliderProductAccessed{
+    padding-top: 5%;
+    padding-bottom: 6%;
+}
