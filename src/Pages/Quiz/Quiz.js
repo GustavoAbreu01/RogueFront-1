@@ -5,6 +5,8 @@ import '.././Quiz/style.css'
 import logoWeg from "../../assets/img/logoWEG.png"
 import w50 from "../../assets/img/motorW50.png"
 import spanish from "../../assets/img/spanish.png"
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 function Quiz() {
   const [progresso, setProgresso] = useState(0);
@@ -39,6 +41,7 @@ function Quiz() {
   }
   return (
     <>
+    <Header/>
       {/* {verificacao ? <AppHeaderLogin /> : <AppHeader />} */}
       <div class="ui raised very padded text container segment">
         <div class="ui mini steps">
@@ -187,6 +190,7 @@ function Quiz() {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 }
