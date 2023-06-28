@@ -7,9 +7,9 @@ import Header from '../../Components/Header/Header'
 import Carousell from '../../Components/carousel/Carousel'
 import Carousel from "react-multi-carousel";
 import { BiLineChart } from 'react-icons/bi'
-
 import './style.css'
 import { Link } from 'react-router-dom'
+import Product from '../../Components/Product/Product'
 
 function Home() {
 
@@ -105,6 +105,8 @@ function Home() {
           </Carousel>
         </div>
       </div>
+
+      <Product />
       <Footer /></>
   )
 }

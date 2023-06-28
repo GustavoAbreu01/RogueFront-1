@@ -1,0 +1,31 @@
+.produtos {
+    align-items: center;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ImageMotor {
+    width: 10rem;
+    height: 10rem;
+}
+
+.boxProduct {
+    align-items: center;
+    width: 20rem;
+    height: 25rem;
+    border-radius: 1rem;
+    background-color: var(--white);
+}
+
+.imageProduct {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contentProduct {
+    
+}
