@@ -62,6 +62,9 @@ function Home() {
           <BiLineChart color='var(--blue-primary)' size={30} />
           <h3 className='titleAccessed' >Produtos mais acessados</h3>
         </div>
+        <div>
+
+        </div>
       </div>
       <Footer /></>
   )
