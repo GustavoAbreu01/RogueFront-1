@@ -33,3 +33,24 @@
 .boxCarrossel {
     z-index: 0;
 }
+
+.descOpc {
+    color: var(--grey-quaternary);
+}
+
+.titleOpc {
+    color: var(--grey-primary);
+}
+
+.boxTitleAccessed {
+    display: flex;
+    padding-left: 6%;
+    padding-top: 6%;
+    align-items: center;
+    gap: 2rem;
+}
+
+.titleAccessed {
+    font-weight: bold;
+    color: var(--blue-primary);
+}
