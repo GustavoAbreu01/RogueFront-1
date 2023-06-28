@@ -4,7 +4,7 @@ import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
-import Carousell from '../../Components/carousel/Carousel'
+import Carousell from '../../Components/carousel/carousel'
 import Carousel from "react-multi-carousel";
 import { BiLineChart } from 'react-icons/bi'
 import './style.css'
@@ -106,7 +106,6 @@ function Home() {
         </div>
       </div>
 
-      <Product />
       <Footer /></>
   )
 }
