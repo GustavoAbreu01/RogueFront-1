@@ -35,72 +35,79 @@ function Home() {
   const login = localStorage.getItem("verifyLogin")
 
   const verifyLogin = () => {
-    if(login == 'yes'){
+    if (login == 'yes') {
       return true
-    }else{
+    } else {
       return false
     }
   }
 
   return (
     <><Header />
-    <div className='boxCarrossel'>
-      <Carousell></Carousell>
+      <div className='boxCarrossel'>
+        <Carousell></Carousell>
       </div>
       <div className="dividerCarrossel"></div>
       <div className="optionPages">
-        <div className="optionQuest">
-          <div className="questIcon">
-            <img src={questIcon} alt="" width={75} />
-            <div>
-              <h4>Descubra qual é<br />
-                o produto para você!</h4>
-              <p>Faça o nosso questionário</p>
+        <Link>
+          <div className="optionQuest">
+            <div className="questIcon">
+              <img src={questIcon} alt="" width={75} />
+              <div>
+                <h4>Descubra qual é<br />
+                  o produto para você!</h4>
+                <p>Faça o nosso questionário</p>
+              </div>
             </div>
           </div>
         </Link>
         <div className='divider'></div>
-        <div className="optionQuest">
-          <div className="questIcon">
-            <img src={compare} alt="" width={150} />
-            <div>
-              <h3>Compare</h3>
-              <p>Veja qual se encaixa melhor<br />
-                com a sua necessidade</p>
-            </div>
-          </div>
-        </div>
-        <div className='divider'></div>
-        <div className="optionQuest">
-          <div className="questIcon">
-            <img src={weggner} alt="" width={125} />
-            <div>
-              <h3>Conheça o nosso<br/>
-                Assistente Virtual!</h3>
-              <p>Navegar ficou ainda mais fácil</p>
+        <Link>
+          <div className="optionQuest">
+            <div className="questIcon">
+              <img src={compare} alt="" width={150} />
+              <div>
+                <h3>Compare</h3>
+                <p>Veja qual se encaixa melhor<br />
+                  com a sua necessidade</p>
+              </div>
             </div>
           </div>
         </Link>
-      </div>
-      <div className='boxAccessed'>
-        <div className='boxTitleAccessed'>
-          <BiLineChart color='var(--blue-primary)' size={30} />
-          <h3 className='titleAccessed' >Produtos mais acessados</h3>
+        <div className='divider'></div>
+        <Link>
+          <div className="optionQuest">
+            <div className="questIcon">
+              <img src={weggner} alt="" width={125} />
+              <div>
+                <h3>Conheça o nosso<br />
+                  Assistente Virtual!</h3>
+                <p>Navegar ficou ainda mais fácil</p>
+              </div>
+            </div>
+          </div>
+        </Link>
         </div>
-        <div className='sliderProductAccessed'>
-          <Carousel
-            swipeable={false}
-            draggable={false}
-            responsive={responsive}>
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
-          </Carousel>
+        <div className='boxAccessed'>
+          <div className='boxTitleAccessed'>
+            <BiLineChart color='var(--blue-primary)' size={30} />
+            <h3 className='titleAccessed' >Produtos mais acessados</h3>
+          </div>
+          <div className='sliderProductAccessed'>
+            <Carousel
+              swipeable={false}
+              draggable={false}
+              responsive={responsive}>
+              <div>Item 1</div>
+              <div>Item 2</div>
+              <div>Item 3</div>
+              <div>Item 4</div>
+            </Carousel>
+          </div>
         </div>
-      </div>
-      <Footer /></>
-  )
+        <Footer />
+        </>
+      )
 }
 
-export default Home
+      export default Home
