@@ -1,3 +1,7 @@
+body {
+  background-color: #2777B7;
+} 
+
 .App {
   text-align: center;
 }
@@ -43,6 +47,7 @@
   --text-common: #C7DCEC;
   --grey-primary: #3E3E3E;
   --grey-secondary: #EFEFEF;
+  --grey-tertiary: #929292;
   --white: #FFFFFF;
 }
 

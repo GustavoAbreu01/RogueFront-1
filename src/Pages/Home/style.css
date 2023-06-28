@@ -17,6 +17,7 @@
 
 .questIcon{
     padding: 2rem;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -24,7 +25,11 @@
 
 .divider {
     width: 0.3rem;
+    border-radius: 10rem;
     height: 80%;
-    background-color: var(--blue-primary);
+    background-color: var(--grey-tertiary);
 }
 
+.boxCarrossel {
+    z-index: 0;
+}
