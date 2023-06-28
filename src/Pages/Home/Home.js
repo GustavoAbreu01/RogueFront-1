@@ -10,8 +10,9 @@ import './style.css'
 function Home() {
   return (
     <><Header />
-    <div className='boxCarrossel'></div>
+    <div className='boxCarrossel'>
       <Carousell></Carousell>
+      </div>
       <div className="dividerCarrossel"></div>
       <div className="optionPages">
         <div className="optionQuest">
