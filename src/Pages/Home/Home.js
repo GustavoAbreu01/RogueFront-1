@@ -1,7 +1,11 @@
 import React from 'react'
+import questIcon from "../../assets/img/questionario.png"
+import compare from '../../assets/img/compare.png'
+import weggner from '../../assets/img/WagnerDormindo.png'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import MenuModal from '../../Components/MenuModal/MenuModal'
+import Header from '../../Components/Header/Header'
 function Home() {
 
   const login = localStorage.getItem("verifyLogin")
@@ -15,10 +19,10 @@ function Home() {
   }
 
   return (
-    <>
-      {verifyLogin()?<HeaderLogin/> : <Header/>}
-      <Footer/>
-    </>
+    <><Header />
+    
+    
+    <Footer /></>
   )
 }
 

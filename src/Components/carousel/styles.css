@@ -1,0 +1,24 @@
+.box-carrossel {
+    width: 100%;
+    height: 100%; 
+    margin-top: 18%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 500;
+}
+
+Carousel.Item {
+    height: 50% !important;
+    width: 100% !important;
+    margin-top: 18%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 500;
+}
+
+
+.carrossel:hover {
+    height: 100%; 
+}
