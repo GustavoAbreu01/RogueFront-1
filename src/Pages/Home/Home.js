@@ -75,7 +75,7 @@ function Home() {
           </div>
         </Link>
         <div className='divider'></div>
-        <Link>
+        <Link to='*' style={{ textDecoration: 'none' }}>
           <div className="optionQuest">
             <div className="questIcon">
               <img src={weggner} alt="" width={125} />
