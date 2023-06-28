@@ -61,7 +61,7 @@ function Home() {
             </div>
           </div>
         </Link>
-        <div className='divider'></div>
+        <div className='dividerIcons'></div>
         <Link to='/compare' style={{ textDecoration: 'none' }}>
           <div className="optionQuest">
             <div className="questIcon">
@@ -74,7 +74,7 @@ function Home() {
             </div>
           </div>
         </Link>
-        <div className='divider'></div>
+        <div className='dividerIcons'></div>
         <Link to='*' style={{ textDecoration: 'none' }}>
           <div className="optionWeggner">
             <div className="questIcon">
