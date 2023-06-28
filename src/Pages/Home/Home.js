@@ -5,7 +5,6 @@ import weggner from '../../assets/img/WagnerDormindo.png'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import MenuModal from '../../Components/MenuModal/MenuModal'
-import Header from '../../Components/Header/Header'
 function Home() {
 
   const login = localStorage.getItem("verifyLogin")
