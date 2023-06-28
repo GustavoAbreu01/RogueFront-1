@@ -1,16 +1,131 @@
-.four.wide.column.filter{
+.second-filter {
     background-color: var(--white);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     margin: 2rem;
-    height: 40rem;
+    height: 36rem;
+    width: 20rem;
+    align-items: center;
+    padding: 2rem;
 }
-.ui.segment.itens{
+
+.row{
+    align-items: center;
+    
+}
+.column.filter{
+    margin-left: 3rem;
+}
+.column.itens{
+    margin: 2rem;
+}
+
+.ui.segment.itens {
+    
     background-color: var(--white);
     width: 63rem;
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
 }
-.ui.vertically.divided.grid{
+
+a:link {
+    color: black; /* Defina a cor desejada para o link */
+    text-decoration: none; /* Remova a decoração de link (sublinhado) se necessário */
+  }
+
+.itemContent {
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+#imgItens {
+    margin-right: 2rem;
+    /* Espaçamento entre a imagem e as outras informações */
+}
+
+.itemInfo {
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    justify-content: space-between;
+    /* Alinha o conteúdo nos extremos da div */
+}
+
+
+/* Mídia Query para telas menores */
+@media screen and (max-width: 768px) {
+    
+    .iconMotor {
+        display: none;
+      }
+      
+      .ui.header.motor {
+        text-align:start;
+      }
+
+
+    .second-filter {
+        background-color: var(--white);
+        box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+        margin: 2rem;
+        height: 10rem;
+        width: 100%;
+        align-items: center;
+        padding: 2rem;
+        display:flex;
+    }
+
+
+    .ui.segment.itens {
+        flex-direction: column;
+        /* Altera para layout em coluna */
+        width: 50%;
+        /* Ajusta a largura automaticamente */
+        padding: 10px;
+        /* Adiciona espaçamento interno */
+    }
+
+
+    .itemContent {
+        flex-direction: column;
+        /* Altera para layout em coluna */
+        align-items: flex-start;
+        /* Alinha à esquerda */
+    }
+
+    #imgItens {
+        margin-right: 0;
+        /* Remove o espaçamento entre a imagem e as outras informações */
+        margin-bottom: 2rem;
+        /* Adiciona espaçamento inferior */
+    }
+
+    .itemInfo {
+        text-align: left;
+        /* Alinha o conteúdo à esquerda */
+    }
+}
+
+.save {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.ui.vertically.divided.grid {
     margin: 3rem;
 }
-.image{
+
+
+
+.iconMotor {
+    display: block;
+    margin: 0 auto;
     width: 50%;
-}
+  }
+  
+  .ui.header.motor {
+    text-align: center;
+  }
