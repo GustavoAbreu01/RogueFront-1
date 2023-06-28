@@ -7,6 +7,7 @@ import logo from "../../assets/img/logo-weg.png"
 import { Link } from 'react-router-dom'
 import SearchBar from '../SearchModal/SearchModal'
 import MenuModal from '../MenuModal/MenuModal'
+import PerfilModal from '../ProfileModal/ProfileModal'
 
 
 
@@ -26,9 +27,7 @@ function HeaderLogin() {
         <div className='icons'>
           <Link className="cart" routerLink="/salvos"><FaShoppingCart className="carrinho" /></Link>
         </div>
-        <div className='icons'>
-          <CgProfile size={'3.5rem'} className='profile' />
-        </div>
+        <PerfilModal />
       </div>
     </header><div className="navBar">
         <div id="menu">
