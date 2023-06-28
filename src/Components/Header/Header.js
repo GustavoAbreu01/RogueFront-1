@@ -24,7 +24,7 @@ function Header() {
         <Link className="saves" to="/cart"><FaShoppingCart className="carrinho" /></Link>
       </div>
     </header><div className="navBar">
-        <div id="menu">
+        <div id="menu" >
           <MenuModal />
         </div>
         <div className="divisores"></div>
