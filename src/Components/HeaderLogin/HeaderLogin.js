@@ -8,23 +8,21 @@ import { Link } from 'react-router-dom'
 import SearchBar from '../SearchModal/SearchModal'
 import MenuModal from '../MenuModal/MenuModal'
 
-
-
 function HeaderLogin() {
   return (
     <><header>
       <div className="img">
-        <Link routerLink="#"><img src={logo} alt="" /></Link>
+        <Link routerLink="/"><img src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />
       </div>
       <div className="opc">
         <div className='icons'>
-          <BsFillBookmarkFill size={'2rem'} routerLink="/salvos" className='saves'/>
+          <Link to="/saves"><BsFillBookmarkFill size={'2rem'} className='saves'/></Link>
         </div>
         <div className='icons'>
-          <Link className="cart" routerLink="/salvos"><FaShoppingCart className="carrinho" /></Link>
+          <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
         </div>
         <div className='icons'>
           <CgProfile size={'3.5rem'} className='profile' />

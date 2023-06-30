@@ -11,19 +11,19 @@ import MenuModal from '../MenuModal/MenuModal'
 function Header() {
   return (
     <><header>
-      <div class="img">
-        <Link to={"/"}><img src={logo} alt="" /></Link>
+      <div class="imgHeader">
+        <Link to={"/"}><img className='imgHeader' src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />
       </div>
-      <div class="opc">
-        <div class="opcDeEntrada">
-          <Link class="account" to="/register">Crie sua conta</Link>/<Link class="login" to="/register">Login</Link>
+      <div class="opcHeader">
+        <div class="opcDeEntradaHeader">
+          <Link class="accountHeader" to="/register">Crie sua conta</Link>/<Link class="loginHeader" to="/register">Login</Link>
         </div>
-        <Link class="saves" to="/cart"><FaShoppingCart class="carrinho" /></Link>
+        <Link class="savesHeader" to="/cart"><FaShoppingCart class="carrinhoHeader" /></Link>
       </div>
-    </header><div class="navBar">
+    </header><div class="navBarHeader">
         <div id="menu">
           <MenuModal />
         </div>

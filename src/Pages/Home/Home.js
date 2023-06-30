@@ -5,6 +5,7 @@ import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import Carousell from '../../Components/carousel/carousel'
 import logo from "../../assets/img/logo-weg.png"
 import salvo from "../../assets/img/salvo.png"
@@ -37,10 +38,18 @@ function Home() {
 
 localStorage.setItem("productsCompared", JSON.stringify(products))
 
+ const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+ }
 
   return (
     <div>
-      <><Header /><WeggnerModal />
+      <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
         <div className='boxCarrossel'>
           <Carousell></Carousell>
         </div>
