@@ -1,4 +1,5 @@
 import React from 'react'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import questIcon from "../../assets/img/questionario.png"
 import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
@@ -43,11 +44,14 @@ function Home() {
   };
 
   return (
-    <><Header />
+    <div>
+      <><Header />
       <div className='boxCarrossel'>
         <Carousell></Carousell>
       </div>
       <div className="dividerCarrossel"></div>
+      <WeggnerModal/>
+    </div>
       <div className="optionPages">
         <Link to='/quiz' style={{ textDecoration: 'none' }}>
           <div className="optionQuest">
