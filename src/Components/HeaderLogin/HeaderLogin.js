@@ -32,15 +32,15 @@ function HeaderLogin() {
           <MenuModal />
         </div>
         <div className="divisores"></div>
-        <Link routerLink="/categoria">Motores</Link>
+        <Link to="/category">Motores</Link>
         <div className="divisores"></div>
-        <Link routerLink="/carrinho">Tintas e Vernizes</Link>
+        <Link to="/category">Tintas e Vernizes</Link>
         <div className="divisores"></div>
-        <Link href="#">Automação</Link>
+        <Link to="/category">Automação</Link>
         <div className="divisores"></div>
-        <Link href="#">Paineis Eletricos</Link>
+        <Link to="/category">Paineis Eletricos</Link>
         <div className="divisores"></div>
-        <Link href="#">Segurança</Link>
+        <Link to="/category">Segurança</Link>
         <div className="divisores"></div>
       </div></>
   )
