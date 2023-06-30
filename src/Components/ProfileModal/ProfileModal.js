@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './style.css'
 import { CgProfile } from 'react-icons/cg'
 import logoWeg from "../../assets/img/logoWEG.png"
-import LinguageModal from './LinguageModal'
+import LinguageModal from '../LanguageModal/LanguageModal'
 
 export default function ProfileModal() {
     const [openModal, setopenModal] = useState(false);

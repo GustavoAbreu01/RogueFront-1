@@ -5,7 +5,10 @@ import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 function Home() {
   return (
+    <>
     <div>Home</div>
+    <HeaderLogin/>
+    </>
   )
 }
 
