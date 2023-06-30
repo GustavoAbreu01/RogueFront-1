@@ -112,6 +112,7 @@ header .login {
     height: 49px;
     width: 100%;
     margin: 0 auto;
+    z-index: 9;
 }
 
 .navBar a{
