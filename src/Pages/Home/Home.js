@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import LanguageModal from '../../Components/LanguageModal/LanguageModal'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import questIcon from "../../assets/img/questionario.png"
 import compare from '../../assets/img/compare.png'
