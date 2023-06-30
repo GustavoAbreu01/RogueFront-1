@@ -10,6 +10,7 @@ import { Search } from 'semantic-ui-react';
 import UserRegister from './Pages/UserRegister/UserRegister';
 import Home from './Pages/Home/Home';
 import Cart from './Pages/Cart/Cart';
+import ChatWegner from './Pages/ChatWegner/ChatWegner';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/register" element={<UserRegister />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/weggner" element={<ChatWegner />} />
         </Routes>
     </Router>
   );

@@ -82,7 +82,7 @@ localStorage.setItem("productsCompared", JSON.stringify(products))
             </div>
           </Link>
           <div className='dividerIcons'></div>
-          <Link to='*' style={{ textDecoration: 'none' }}>
+          <Link to='/weggner' style={{ textDecoration: 'none' }}>
             <div className="optionWeggner">
               <div className="questIcon">
                 <img src={weggner} alt="" width={125} />
