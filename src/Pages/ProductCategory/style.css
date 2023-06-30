@@ -8,21 +8,18 @@
     padding: 2rem;
 }
 
-.row{
-    align-items: center;
-    
-}
+
 .column.filter{
-    margin-left: 3rem;
 }
 .column.itens{
     margin: 2rem;
 }
 
+
 .ui.segment.itens {
     
     background-color: var(--white);
-    width: 63rem;
+    width: 50em;
     display: flex;
     align-items: center;
     /* Centraliza verticalmente */
