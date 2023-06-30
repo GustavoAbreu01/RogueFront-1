@@ -3,10 +3,12 @@ import './style.css'
 import motor from "../../assets/img/motor.png"
 import CompareCard from '../../Components/CompareCard/CompareCard'
 import { IoMdAddCircle } from 'react-icons/io'
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
 
 function Compare() {
   const [productsCompared, setItems] = useState([]);
-  
+
   useEffect(() => {
     const productComparedList = JSON.parse(localStorage.getItem('productsCompared'));
     if (productComparedList) {
@@ -14,10 +16,10 @@ function Compare() {
     }
   }, []);
 
-  function verify(){
-    if(productsCompared.length === 3){
+  function verify() {
+    if (productsCompared.length === 3) {
       return true
-    }else{
+    } else {
       return false
     }
   }
@@ -39,17 +41,18 @@ function Compare() {
   }
 
   return (
-    <div className='compare'>
+    <><Header /><div className='compare'>
       <div className='products'>
         <CompareCard />
         {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
           <IoMdAddCircle size={'5rem'} />
-        </div>
-        }
+        </div>}
 
       </div>
 
     </div>
+      <Footer />
+    </>
   )
 }
 

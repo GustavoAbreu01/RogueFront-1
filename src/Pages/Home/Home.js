@@ -6,6 +6,8 @@ import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import Carousell from '../../Components/carousel/carousel'
+import logo from "../../assets/img/logo-weg.png"
+import salvo from "../../assets/img/salvo.png"
 import Carousel from "react-multi-carousel";
 import { BiLineChart } from 'react-icons/bi'
 import './style.css'
@@ -13,6 +15,27 @@ import { Link } from 'react-router-dom'
 import Product from '../../Components/Product/Product'
 
 function Home() {
+
+  const products = [
+    {
+        name: 'Logo',
+        imageUrl: logo,
+        description1: 'logo1',
+        description2: 'logo2',
+        description3: 'logo3',
+        description4: 'logo4'
+    },
+    {
+        name: 'Salvo',
+        imageUrl: salvo,
+        description1: 'salvo1',
+        description2: 'salvo2',
+        description3: 'salvo3',
+        description4: 'salvo4'
+    }
+];
+
+localStorage.setItem("productsCompared", JSON.stringify(products))
 
 
   return (
