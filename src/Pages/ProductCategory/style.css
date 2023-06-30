@@ -1,0 +1,80 @@
+.second-filter {
+    background-color: var(--white);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    margin: 2rem;
+    height: 36rem;
+    width: 20rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.row{
+    align-items: center;
+    
+}
+.column.filter{
+    margin-left: 3rem;
+}
+.column.itens{
+    margin: 2rem;
+}
+
+.ui.segment.itens {
+    
+    background-color: var(--white);
+    width: 63rem;
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+a:link {
+    color: black; /* Defina a cor desejada para o link */
+    text-decoration: none; /* Remova a decoração de link (sublinhado) se necessário */
+  }
+
+.itemContent {
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+#imgItens {
+    margin-right: 2rem;
+    /* Espaçamento entre a imagem e as outras informações */
+}
+
+.itemInfo {
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    justify-content: space-between;
+    /* Alinha o conteúdo nos extremos da div */
+}
+
+
+
+
+
+.save {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.ui.vertically.divided.grid {
+    margin: 3rem;
+}
+
+
+
+.iconMotor {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+  
+  .ui.header.motor {
+    text-align: center;
+  }
