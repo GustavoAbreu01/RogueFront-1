@@ -19,7 +19,7 @@ function HeaderLogin() {
       </div>
       <div className="opc">
         <div className='icons'>
-          <Link to="/saves"><BsFillBookmarkFill size={'2rem'} className='saves'/></Link>
+          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves'/></Link>
         </div>
         <div className='icons'>
           <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>

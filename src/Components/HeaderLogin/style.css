@@ -51,6 +51,7 @@ header .account {
 
 header .saves{
     cursor: pointer;
+    color: #EFEFEF;
 }
 
 header .account:hover{
