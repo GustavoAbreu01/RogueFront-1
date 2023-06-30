@@ -1,0 +1,36 @@
+.productComparedCard{
+    border: solid 0.1rem black;
+    border-radius: 2rem;
+}
+
+.productsCompared{
+    display: grid;
+    grid-template-columns: repeat(3, 20rem);
+    grid-gap: 5rem;
+}
+
+.productCompared{
+    margin: 2rem;
+}
+
+
+.productImage{
+    height: 13rem;
+    width: 15rem;
+}
+
+.compareArrow{
+    position: absolute;
+    margin-top: 15rem;
+    margin-left: 21rem;
+}
+
+.compareArrow2{
+    position: absolute;
+    margin-top: 15rem;
+    margin-left: 46rem;
+}
+
+.deleteButton{
+    cursor: pointer;
+}
