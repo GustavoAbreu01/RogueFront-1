@@ -52,7 +52,7 @@ function ProductCategory() {
       <Header />
       <div class="ui grid">
         <div class="two column row page">
-          <div class="row">
+          <div class="row filter">
             <div class="column filter">
               <div className='second-filter '> 
                 <img className="iconMotor" src={iconMotor} />
@@ -93,7 +93,7 @@ function ProductCategory() {
           </div>
         </div>
 
-        <div class="row">
+        <div class="row itens">
 
           <div class="column itens">
           <Link to="/product"> </Link>
