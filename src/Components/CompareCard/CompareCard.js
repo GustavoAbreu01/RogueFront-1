@@ -24,35 +24,37 @@ function CompareCard() {
     };
 
     return (
-        <><Header /><div className='productsCompared'>
-            {productsCompared.map((productCompared, index) => (
-                <div className='productComparedCard'>
-                    <div className="productCompared" key={index}>
-                        <div className='deleteButton'>
-                            {verify() && <MdDelete size={'2rem'} onClick={() => deleteProduct(index)} />}
-                        </div>
-                        <div>
-                            <img src={productCompared.imageUrl} alt="" className='productImage' />
-                        </div>
-                        <div>
-                            <h1>{productCompared.name}</h1>
-                        </div>
-                        <div>
-                            <h2>{productCompared.description1}</h2>
-                            <h2>{productCompared.description2}</h2>
-                            <h2>{productCompared.description3}</h2>
-                            <h2>{productCompared.description4}</h2>
+        <>
+            <div className='productsCompared'>
+                {productsCompared.map((productCompared, index) => (
+                    <div className='productComparedCard'>
+                        <div className="productCompared" key={index}>
+                            <div className='deleteButton'>
+                                {verify() && <MdDelete size={'2rem'} onClick={() => deleteProduct(index)} />}
+                            </div>
+                            <div>
+                                <img src={productCompared.imageUrl} alt="" className='productImage' />
+                            </div>
+                            <div>
+                                <h1>{productCompared.name}</h1>
+                            </div>
+                            <div>
+                                <h2>{productCompared.description1}</h2>
+                                <h2>{productCompared.description2}</h2>
+                                <h2>{productCompared.description3}</h2>
+                                <h2>{productCompared.description4}</h2>
+                            </div>
                         </div>
                     </div>
+                ))}
+                <div className='compareArrow'>
+                    <MdCompareArrows size={'3rem'} />
                 </div>
-            ))}
-            <div className='compareArrow'>
-                <MdCompareArrows size={'3rem'} />
+                {verify() && <div className='compareArrow2'>
+                    <MdCompareArrows size={'3rem'} />
+                </div>}
             </div>
-            {verify() && <div className='compareArrow2'>
-                <MdCompareArrows size={'3rem'} />
-            </div>}
-        </div><Footer /></>
+            </>
 
     )
 }

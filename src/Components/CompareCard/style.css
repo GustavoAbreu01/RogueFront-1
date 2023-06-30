@@ -3,6 +3,7 @@
     border-radius: 2rem;
 }
 
+
 .productsCompared{
     display: grid;
     grid-template-columns: repeat(3, 20rem);
