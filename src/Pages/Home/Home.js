@@ -11,6 +11,7 @@ import logo from "../../assets/img/logo-weg.png"
 import salvo from "../../assets/img/salvo.png"
 import Carousel from "react-multi-carousel";
 import { BiLineChart } from 'react-icons/bi'
+import MenuModal from '../../Components/MenuModal/MenuModal'
 import './style.css'
 import { Link } from 'react-router-dom'
 import Product from '../../Components/Product/Product'
