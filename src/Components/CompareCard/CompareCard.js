@@ -1,16 +1,18 @@
 import React from 'react'
 import "./style.css"
 import { MdCompareArrows, MdDelete } from 'react-icons/md'
+import Footer from '../Footer/Footer'
+import { Header } from 'semantic-ui-react'
 
 function CompareCard() {
 
     let productsCompared = JSON.parse(localStorage.getItem("productsCompared"))
 
-    function verify(){
-        if(productsCompared.length === 3){
-          return true
-        }else{
-          return false
+    function verify() {
+        if (productsCompared.length === 3) {
+            return true
+        } else {
+            return false
         }
     }
 
@@ -19,15 +21,15 @@ function CompareCard() {
         localStorage.setItem('productsCompared', JSON.stringify(updatedProductsCompared));
         productsCompared = updatedProductsCompared;
         window.location.reload()
-      };
+    };
 
     return (
-        <div className='productsCompared'>
+        <><Header /><div className='productsCompared'>
             {productsCompared.map((productCompared, index) => (
                 <div className='productComparedCard'>
                     <div className="productCompared" key={index}>
                         <div className='deleteButton'>
-                            {verify() &&<MdDelete size={'2rem'}  onClick={() => deleteProduct(index)}/>}   
+                            {verify() && <MdDelete size={'2rem'} onClick={() => deleteProduct(index)} />}
                         </div>
                         <div>
                             <img src={productCompared.imageUrl} alt="" className='productImage' />
@@ -47,11 +49,11 @@ function CompareCard() {
             <div className='compareArrow'>
                 <MdCompareArrows size={'3rem'} />
             </div>
-            {verify() &&<div className='compareArrow2'>
+            {verify() && <div className='compareArrow2'>
                 <MdCompareArrows size={'3rem'} />
             </div>}
-        </div>
-        
+        </div><Footer /></>
+
     )
 }
 
