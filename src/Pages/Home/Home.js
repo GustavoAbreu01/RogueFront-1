@@ -98,9 +98,9 @@ function Home() {
           <div className='sliderProductAccessed'>
           </div>
         </div>
-      <Footer /></>
-      </div>
-      
+        <Footer /></>
+    </div>
+
   )
 }
 
