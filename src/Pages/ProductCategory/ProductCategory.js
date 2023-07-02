@@ -50,7 +50,7 @@ function ProductCategory() {
   return (
     <>
       <Header />
-      <div class="ui grid">
+      <div class="ui gridProduct">
         <div class="two column row page">
           <div class="row filter">
             <div class="column filter">

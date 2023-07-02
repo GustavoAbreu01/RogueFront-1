@@ -11,7 +11,7 @@ import MenuModal from '../MenuModal/MenuModal'
 function Header() {
   return (
     <><header>
-      <div class="imgHeader">
+      <div class="img">
         <Link to={"/"}><img className='imgHeader' src={logo} alt="" /></Link>
       </div>
       <div>

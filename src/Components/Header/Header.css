@@ -85,10 +85,6 @@ header .loginHeader {
     font-size: 15px;
 }
 
-.logo {
-    margin-left: 25%;
-}
-
 .navBarHeader {
     position: sticky;
     display: flex;

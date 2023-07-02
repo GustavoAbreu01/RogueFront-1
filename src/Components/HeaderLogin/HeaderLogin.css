@@ -32,7 +32,8 @@ header .opc{
     justify-content: space-between;
     align-items: center;
     color: white;
-    margin-right: 0.6rem;
+    gap: 1rem;
+    margin-right: 3rem;
 }
 
 header .icons{
@@ -99,9 +100,6 @@ header .login {
     font-size: 15px;
 }
 
-.logo {
-    margin-left: 25%;
-}
 
 .navBar {
     position: sticky;

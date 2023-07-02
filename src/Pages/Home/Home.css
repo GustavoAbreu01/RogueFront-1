@@ -56,6 +56,31 @@
 }
 
 .sliderProductAccessed{
-    padding-top: 5%;
     padding-bottom: 6%;
+}
+
+.boxHighlights {
+    padding-bottom: 15rem;
+}	
+
+.boxHighlightsProducts {
+    align-items: center;
+    background-color: var(--blue-primary);
+}
+
+.titleHighlights {
+    color: var(--white);
+    font-weight: bold;
+}
+
+.boxTitleHighlights {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 30%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
 }

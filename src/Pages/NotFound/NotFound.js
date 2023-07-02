@@ -1,9 +1,10 @@
 import React from 'react'
 import './NotFound.css'
+import Product from '../../Components/Product/Product'
 
 function NotFound() {
   return (
-    <div>NotFound</div>
+    <Product/>
   )
 }
 
