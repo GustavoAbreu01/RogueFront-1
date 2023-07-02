@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './style.css'
+import './Compare.css'
 import motor from "../../assets/img/motor.png"
 import CompareCard from '../../Components/CompareCard/CompareCard'
 import { IoMdAddCircle } from 'react-icons/io'

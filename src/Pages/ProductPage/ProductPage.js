@@ -1,7 +1,7 @@
 import React from 'react'
 import motor from '../../assets/img/motor.png'
 import save from '../../assets/img/salvo.png'
-import './style.css'
+import './ProductPage.css'
 
 
 function ProductPage() {

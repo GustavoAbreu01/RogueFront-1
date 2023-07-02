@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import '.././UserRegister/style.css'
+import "./UserRegister.css"
 import { useState } from "react";
 
 

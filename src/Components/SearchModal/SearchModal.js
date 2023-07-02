@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import lupa from '../../assets/img/lupa.png';
-import  './style.css';
+import  './SearchModal.css';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');

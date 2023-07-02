@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './Save.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 // import motor from '../../assets/img/motor.png'

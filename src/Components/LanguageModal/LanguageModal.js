@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './style.css'
+import './LanguageModal.css'
 import german from "../../assets/img/german.png"
 import english from "../../assets/img/english.png"
 import spanish from "../../assets/img/spanish.png"

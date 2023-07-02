@@ -1,5 +1,5 @@
 import React from 'react'
-import "./style.css"
+import "./CompareCard.css"
 import { MdCompareArrows, MdDelete } from 'react-icons/md'
 import Footer from '../Footer/Footer'
 import { Header } from 'semantic-ui-react'
@@ -8,7 +8,7 @@ function CompareCard() {
 
     let productsCompared = JSON.parse(localStorage.getItem("productsCompared"))
 
-    function verify() {
+    function verify() { 
         if (productsCompared.length === 3) {
             return true
         } else {

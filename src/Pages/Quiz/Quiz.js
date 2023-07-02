@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import '.././Quiz/style.css'
+import './Quiz.css'
 import Footer from '../../Components/Footer/Footer'
 import logoWeg from "../../assets/img/logoWEG.png"
 import w50 from "../../assets/img/motorW50.png"

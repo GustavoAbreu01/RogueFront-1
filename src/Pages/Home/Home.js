@@ -7,13 +7,13 @@ import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/carousel/carousel'
+import Carousell from '../../Components/carousel/Carousel'
 import logo from "../../assets/img/logo-weg.png"
 import salvo from "../../assets/img/salvo.png"
 import Carousel from "react-multi-carousel";
 import { BiLineChart } from 'react-icons/bi'
 import MenuModal from '../../Components/MenuModal/MenuModal'
-import './style.css'
+import './Home.css'
 import { Link } from 'react-router-dom'
 import Product from '../../Components/Product/Product'
 

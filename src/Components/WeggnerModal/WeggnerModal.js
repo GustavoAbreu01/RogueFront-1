@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './style.css'
+import './WeggnerModal.css'
 import wegnerSleeping from "../../assets/img/weggnerDormindo.png"
 import wegnerAwake from "../../assets/img/weggnerAcordado.PNG"
 

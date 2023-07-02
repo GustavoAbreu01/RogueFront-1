@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './ChatWegner.css'
 import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
 import { IoIosArrowBack } from 'react-icons/io'
 import { VscSend } from 'react-icons/vsc'

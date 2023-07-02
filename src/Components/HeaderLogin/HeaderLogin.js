@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './HeaderLogin.css'
 import { FaShoppingCart } from 'react-icons/fa'
 import { CgProfile } from 'react-icons/cg'
 import { BsFillBookmarkFill } from 'react-icons/bs'

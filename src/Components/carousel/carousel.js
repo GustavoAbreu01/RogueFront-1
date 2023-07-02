@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
 import Banner1 from '../../assets/img/Banner1.jpg';
 import Banner3 from '../../assets/img/Banner2.jpg';
-import './styles.css';
+import './Carousel.css';
 
 function Carousell() {
   return (

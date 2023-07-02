@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiMenu } from 'react-icons/bi';
-import './style.css';
+import './MenuModal.css';
 
 function MenuModal() {
   

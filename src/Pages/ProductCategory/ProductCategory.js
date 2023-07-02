@@ -1,9 +1,9 @@
 import React from 'react'
+import './ProductCategory.css'
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import '.././ProductCategory/style.css'
 import { Dropdown } from 'semantic-ui-react';
 import iconMotor from "../../assets/img/iconeMotor.png"
 import motors from "../../assets/img/motores.png"
