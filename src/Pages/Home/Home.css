@@ -152,7 +152,7 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.boxSearched{
+.boxSearched {
     padding-bottom: 10rem;
 }
 
@@ -164,7 +164,7 @@
 .titleSearched {
     color: var(--white);
     font-weight: bold;
-    
+
 }
 
 .boxTitleSearched {
@@ -185,4 +185,100 @@
     align-items: center;
     justify-content: end;
     width: 100%;
+}
+
+
+.titleInfo {
+    color: var(--blue-primary);
+}
+
+.descriptionInfo {
+    color: var(--grey-primary);
+}
+
+.iconInfo {
+    height: 15rem;
+    width: 15rem;
+}
+
+.infoDescriptionBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    width: 100%;
+    height: 100%;
+}
+
+.iconInfoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.boxBenefiitsTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    gap: 1rem;
+}
+
+.benefiitsTitle {
+    color: var(--blue-primary);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.containerBenefits {
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+    padding-bottom: 10rem;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.infoBox {
+    height: 30rem;
+    width: 20rem;
+    background-color: var(--white);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--blue-quaternary);
+    border-radius: 10px;
+}
+
+.infoBox:hover {
+    transition: 0.3s;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.boxAnnouncements {
+    padding-bottom: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.announBanner {
+    width: 40%;
+    height: 20rem;
+    border-radius: 10px;
+}
+
+.announBanner:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }

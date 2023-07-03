@@ -10,21 +10,87 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import Carousell from '../../Components/carousel/Carousel'
 import logo from "../../assets/img/logo-weg.png"
 import iconMotor from "../../assets/img/iconeMotor.png"
+import Qualidade from "../../assets/img/MOTORES-03.png"
+import Compatibilidade from "../../assets/img/COMPATIBILIDADE-03.png"
+import Sustentabilidade from "../../assets/img/ENERGIA_SOLAR-03.png"
+import Inovação from "../../assets/img/ESTACOES_DE_RECARGA-03.png"
+import Crescimento from "../../assets/img/GRAFICO_PRINCIPAL-03.png"
+import Assistência from "../../assets/img/CALL_CENTER-03.png"
+import IoT from "../../assets/img/PLATAFORMA_IOT_WEGNOLOGY-03.png"
 import salvo from "../../assets/img/salvo.png"
+import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
+import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
 import { BiLineChart } from 'react-icons/bi'
 import { MdOutlineSecurity } from 'react-icons/md'
 import { BsPaintBucket } from 'react-icons/bs'
 import { CgSearchFound } from 'react-icons/cg'
 import { CgSmartphoneChip } from 'react-icons/cg'
+import { LiaCertificateSolid } from 'react-icons/lia' 
+import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
 import './Home.css'
 import { Link } from 'react-router-dom'
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel'
-import ProductHighlight from '../../Components/ProductHighlight/ProductHighlight'
 import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
+import Aos from 'aos'
+import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
+import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
 
 function Home() {
+
+  Aos.init({
+    duration: 200
+  });
+
+
+  const iconsInfoOne = [
+    {
+      id: 1,
+      name: 'Assistência',
+      icon: Assistência,
+      description: 'A qualidade impecável de nossos produtos é a base do nosso compromisso com a satisfação do cliente.'
+    },
+    {
+      id: 2,
+      name: 'Compatibilidade',
+      icon: Compatibilidade,
+      description: 'Nossos produtos são compatíveis com diversos sistemas e equipamentos, facilitando sua integração.'
+    },
+    {
+      id: 3,
+      name: 'Sustentabilidade',
+      icon: Sustentabilidade,
+      description: 'Nossos produtos são compatíveis com diversos sistemas e equipamentos, facilitando sua integração.'
+    },
+    {
+      id: 4,
+      name: 'Inovação',
+      icon: Inovação,
+      description: 'Nossos produtos são inovadores, com tecnologias avançadas que atendem às demandas em constante mudança dos nossos clientes.'
+    },
+  ]
+
+  const iconsInfoTwo = [
+    {
+      id: 5,
+      name: 'Crescimento',
+      icon: Crescimento,
+      description: 'Nossos produtos impulsionam o crescimento das empresas ao oferecer soluções confiáveis e inovadoras.'
+    },
+    {
+      id: 6,
+      name: 'Qualidade',
+      icon: Qualidade,
+      description: 'A qualidade impecável de nossos produtos é a base do nosso compromisso com a satisfação do cliente.'
+    },
+    {
+      id: 7,
+      name: 'IoT',
+      icon: IoT,
+      description: 'Nossos produtos possuem tecnologia IoT, oferecendo conexão inteligente para uma experiência mais conveniente aos usuários.'
+    },
+  ]
 
   const products = [
     {
@@ -167,20 +233,57 @@ function Home() {
             </div>
           </div>
           <div className='boxSearchedProducts'>
-            <ProductHighlightCarousel />
+            <ProductSearchedCarousel />
           </div>
         </div>
 
-        benefits
+        <div className='boxBenefits'>
+          <div className='boxBenefiitsTitle'>
+            <LiaCertificateSolid color='var(--blue-primary)' size={50} />
+            <h1 className='benefiitsTitle'>Benefícios de compra</h1>
+          </div>
+          <div className="containerBenefits">
+            {iconsInfoOne.map((icon) => (
+              <div className="infoBox" data-aos="fade-up" >
+                <div className="iconInfoBox">
+                  <img src={icon.icon} className="iconInfo" />
+                </div>
+                <div className='infoDescriptionBox'>
+                  <h1 className="titleInfo">{icon.name}</h1>
+                  <p className="descriptionInfo">{icon.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="containerBenefits">
+            {iconsInfoTwo.map((icon) => (
+              <div className="infoBox" data-aos="fade-up" >
+                <div className="iconInfoBox">
+                  <img src={icon.icon} className="iconInfo" />
+                </div>
+                <div className='infoDescriptionBox'>
+                  <h1 className="titleInfo">{icon.name}</h1>
+                  <p className="descriptionInfo">{icon.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className='boxHighlights' >
           <div className='boxTitleHighlights'>
-            <FaStar color='var(--white)' size={40} />
-            <h1 className='titleHighlights' >Destaques da semana</h1>
+            <MdOutlineNewReleases color='var(--white)' size={40} />
+            <h1 className='titleHighlights' >Novidades</h1>
           </div>
           <div className='boxHighlightsProducts'>
-            <ProductHighlightCarousel />
+            <ProductNewCarousel />
           </div>
+        </div>
+
+        <div className='boxAnnouncements' >
+              <img className='announBanner' src={BannerAnnouncementOne} />
+              <img className='announBanner' src={BannerAnnouncementTwo}/>
         </div>
 
         <Footer /></>
