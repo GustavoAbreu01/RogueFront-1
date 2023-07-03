@@ -5,6 +5,7 @@ import './ProductPage.css'
 
 
 function ProductPage() {
+    
     return (
         <>
             <div class="body-product">

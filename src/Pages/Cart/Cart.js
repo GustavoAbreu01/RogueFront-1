@@ -1,96 +1,88 @@
 import React, { useState } from 'react';
-import HeaderLogin from './components/HeaderLogin';
+import './Cart.css';
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
 function Cart() {
-  const [verificacao, setVerificacao] = useState(true);
-  const [quantidade, setQuantidade] = useState  (1);
-  const motores = "caminho/da/imagem";
-  const precoTotal = 10.0; // substitua pelo valor correto
-  const estoque = 100; // substitua pelo valor correto
-  const cor = "blue"; // substitua pela cor desejada
-  const passos = [1, 2, 3]; // substitua pelos passos corretos
 
-  const trocarIcon = () => {
-    // lógica para trocar o ícone
-  };
+  var valor = 0;
+  var frete = 0;
+  var total = 0;
 
-  const menos = () => {
-    setQuantidade((prevQuantidade) => prevQuantidade - 1);
-  };
-
-  const mais = () => {
-    setQuantidade((prevQuantidade) => prevQuantidade + 1);
-  };
-
-  const verificaEstoque = () => {
-    // lógica para verificar o estoque
-  };
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
 
   return (
-    <>
-      {verificacao ? (
-        <HeaderLogin />
-      ) : (
-        <Header />
-      )}
-      <div className="tudo">
-        <div className="box-resumo">
-          <h2 className="resumoDaCompra">RESUMO</h2>
-          <div className="lineDetailResumo"></div>
-          <p>Total à prazo</p>
-          <button className="finalButton">Finalizar pedido</button>
-          <button className="contButton">Continuar pedido</button>
-        </div>
-        <div className="box-recomendado">
-          <h2 className="recomedadoDaCompra">Recomendados para você!</h2>
-          <div className="lineDetailRecomendado"></div>
-        </div>
-        <div className="corpo">
-          <div className="progressBar">
-            <div className="line">
-              {passos.map((i) => (
-                <div className="passPoint" key={i}></div>
-              ))}
+    <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='boxContainerProgress  '>
+        <div class="ui tiny steps">
+          <div class="step">
+            <i class="shop icon"></i>
+            <div class="content">
+              <div class="title">Carrinho</div>
             </div>
           </div>
-          <br />
-          <div className="body-product">
-            <h2 className="carrinhoCompra">Carrinho de Compras</h2>
-            <div className="lineDetailCarrinho"></div>
-            <img className="imgProd" src={motores} alt="" />
-            <p className="titleProd">Motor de Chapa Aberta - IP21</p>
-            <p className="descProd">Tensão - 127/220 ou 220/440 V</p>
-            <p className="subDescProd">Preto fosco (Munsell N1)</p>
-            <p className="qtdEstoque">
-              Em estoque: <span style={{ color: cor, fontWeight: 'bold' }}>{estoque} unidades</span>
-            </p>
-            <p className="precoTotal">R$ {(precoTotal * quantidade).toFixed(2)}</p>
-            <p className="parcelas">
-              até 12x de{' '}
-              <span style={{ color: cor, fontWeight: 'bold' }}>
-                R$ {(precoTotal * quantidade / 12).toFixed(2)}
-              </span>
-            </p>
-            <div className="modificadorQuantidade">
-              <button className="removeButton">
-                <img
-                  className="removeIcon"
-                  onMouseEnter={trocarIcon}
-                  onMouseLeave={trocarIcon}
-                  src={Icon}
-                  alt=""
-                />
-              </button>
-              <button className="btnMenos" onClick={menos}>-</button>
-              <input className="inputQuantidade" type="text" value={quantidade} onChange={verificaEstoque} />
-              <button className="btnMais" onClick={mais}>+</button>
+          <div class="disabled step">
+            <i class="user icon"></i>
+            <div class="content">
+              <div class="title">Confirmar Informações</div>
             </div>
-            <div className="lineDetailCarrinho"></div>
+          </div>
+          <div class="disabled step">
+            <i class="payment icon"></i>
+            <div class="content">
+              <div class="title">Pagamento</div>
+            </div>
+          </div>
+          <div class="disabled step">
+            <i class="info icon"></i>
+            <div class="content">
+              <div class="title">Confirmar Pedido</div>
+            </div>
+          </div>
+          <div class="disabled step">
+            <i class="truck icon"></i>
+            <div class="content">
+              <div class="title">Transporte</div>
+            </div>
           </div>
         </div>
       </div>
+      <div className='containerCart'>
+        <div className='boxCartProduct'>
+
+        </div>
+        <div className='boxInfoTotalCart'>
+          <div className='boxInfoTotalBuy'>
+            <div className='boxInfoTotalBuyTitle'>
+              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+            </div>
+            <div className='boxInfoTotalBuySubTitle'>
+              <h5 className='subTextBuyProduct'>Subtotal R${valor}</h5>
+            </div>
+            <div className='boxInfoTotalBuySubTitle'>
+              <h5 className='subTextBuyProduct'>Frete R${frete}</h5>
+            </div>
+            <div className='boxInfoTotalBuySubTitle'>
+              <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
+            </div>
+            <button class="fluid ui button final">Finalizar Compra</button>
+            <button class="fluid ui blue button basic cont">Continuar Compando</button>
+          </div>
+          <div className='boxInfoRecommend'>
+
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </>
   );
