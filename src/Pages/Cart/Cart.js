@@ -5,7 +5,7 @@ import Footer from '../../Components/Footer/Footer'
 
 function Cart() {
   const [verificacao, setVerificacao] = useState(true);
-  const [quantidade, setQuantidade] = useState(1);
+  const [quantidade, setQuantidade] = useState  (1);
   const motores = "caminho/da/imagem";
   const precoTotal = 10.0; // substitua pelo valor correto
   const estoque = 100; // substitua pelo valor correto
