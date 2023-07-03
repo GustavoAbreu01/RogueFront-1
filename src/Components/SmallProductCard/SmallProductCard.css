@@ -1,0 +1,84 @@
+.smallBoxProduct {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey-secondary);
+    border-radius: 10px;
+    width: 15rem;
+    height: 23rem;
+}
+.smallBoxProduct:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .smallIconProductAction {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+}
+
+.smallBoxProductPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding-left: 1rem;
+}
+
+.smallPriceProduct {
+    font-weight: bold;
+    font-size: large;
+}
+
+.smallBoxProductTitle {
+    display: flex;
+    color: var(--grey-primary);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    height: 100%;
+}
+
+.smallTagIconProduct {
+    position: absolute;
+    padding: 1rem;
+}
+
+.smallIconProductAction {
+    display: flex;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    gap: 0.5rem;
+    justify-content: end;
+    align-items: end;
+    opacity: 0;
+}
+
+.smallBoxProductImage {
+    position: relative;
+    top:0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallBoxProductButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    border: none;
+    
+}
+
+.ui.icon.button.smallCard{
+    background-color: var(  --blue-secundary);
+}
+
+.ui.fluid.button.smallCard{
+    background-color: var(  --blue-secundary);
+}
