@@ -26,6 +26,7 @@ function UserRegister() {
       });
       localStorage.setItem("verifyLogin", 'yes');
       UserService.create(userProv)
+      localStorage.setItem("userCpf", userProv.register)
       navigate("/");
     }else{
       alert('Senhas diferem')

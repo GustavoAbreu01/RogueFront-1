@@ -10,7 +10,7 @@ import Footer from '../../Components/Footer/Footer'
 function ChatWegner() {
     
     return (
-        <><Header /><div className='pagChat'>
+        <><div className='pagChat'>
             <div className='wegner'>
                 <img src={wegnerAcordado} alt='' width={200} />
             </div>
@@ -43,7 +43,7 @@ function ChatWegner() {
                 </div>
             </div>
         </div>
-        <Footer/></>
+       </>
     )
 }
 

@@ -3,9 +3,12 @@ import './ProfileModal.css'
 import { CgProfile } from 'react-icons/cg'
 import logoWeg from "../../assets/img/logoWEG.png"
 import LanguageModal from '../LanguageModal/LanguageModal'
+import { useEffect } from 'react'
+import { UserService } from '../../Service'
 
 export default function ProfileModal() {
     const [openModal, setopenModal] = useState(false);
+    const [user, setUser] = useState({});
 
     const open = () => {
       setopenModal(true);
@@ -14,6 +17,23 @@ export default function ProfileModal() {
     const openAndClose = () => {
       setopenModal(false);
     };
+
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          let users = await UserService.getAll();
+          users.forEach((user) => {
+            if (user.register === JSON.parse(localStorage.getItem('userCpf'))) {
+              setUser(user)
+            }
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    
+      fetchData();
+    }, []);
   
     return (
       <>
@@ -31,15 +51,15 @@ export default function ProfileModal() {
                 <div className='clientInfo'>
                 <div className='name'>
                     <h1>Nome</h1>
-                    <input type="text" placeholder='Nome do safado'/>
+                    <p>{user.name}</p>
                 </div>
                 <div className='email'>
                     <h1>Email</h1>
-                    <input type="text" placeholder='Email do safado'/>
+                    <p>{user.email}</p>
                 </div>
                 <div className='cpf'>
                     <h1>CPF</h1>
-                    <input type="text" placeholder='Cpf do safado'/>
+                    <p>{user.register}</p>
                 </div>
                 </div>
                 <div >
