@@ -4,7 +4,9 @@ import Product from '../../Components/Product/Product'
 
 function NotFound() {
   return (
-    <Product/>
+    <div>
+      Not Found
+    </div>
   )
 }
 
