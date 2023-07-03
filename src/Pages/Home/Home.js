@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import LanguageModal from '../../Components/LanguageModal/LanguageModal'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import questIcon from "../../assets/img/questionario.png"
 import compare from '../../assets/img/compare.png'
@@ -36,6 +35,7 @@ import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/
 import Aos from 'aos'
 import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
 import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
+
 
 function Home() {
 
@@ -159,7 +159,7 @@ function Home() {
           <Link to='/weggner' style={{ textDecoration: 'none' }}>
             <div className="optionWeggner">
               <div className="questIcon">
-                <img src={weggner} alt="" width={125} />
+                <img src={weggner} alt="" width={125}/>
                 <div>
                   <h4 className='titleOpc'>Conheça o nosso<br />
                     Assistente Virtual!</h4>
@@ -218,7 +218,7 @@ function Home() {
             </div>
             <div className='categoryTitle'>
               <button className='categoryButton'>
-                <img src={iconMotor} width={75} height={50}></img>
+                <img src={iconMotor} width={75} height={50} alt=''></img>
               </button>
               <h2>Motores</h2>
             </div>
@@ -246,7 +246,7 @@ function Home() {
             {iconsInfoOne.map((icon) => (
               <div className="infoBox" data-aos="fade-up" >
                 <div className="iconInfoBox">
-                  <img src={icon.icon} className="iconInfo" />
+                  <img src={icon.icon} className="iconInfo" alt=''/>
                 </div>
                 <div className='infoDescriptionBox'>
                   <h1 className="titleInfo">{icon.name}</h1>
@@ -260,7 +260,7 @@ function Home() {
             {iconsInfoTwo.map((icon) => (
               <div className="infoBox" data-aos="fade-up" >
                 <div className="iconInfoBox">
-                  <img src={icon.icon} className="iconInfo" />
+                  <img src={icon.icon} className="iconInfo" alt=''/>
                 </div>
                 <div className='infoDescriptionBox'>
                   <h1 className="titleInfo">{icon.name}</h1>
@@ -282,8 +282,8 @@ function Home() {
         </div>
 
         <div className='boxAnnouncements' >
-              <img className='announBanner' src={BannerAnnouncementOne} />
-              <img className='announBanner' src={BannerAnnouncementTwo}/>
+              <img className='announBanner' src={BannerAnnouncementOne}  alt=''/>
+              <img className='announBanner' src={BannerAnnouncementTwo} alt=''/>
         </div>
 
         <Footer /></>

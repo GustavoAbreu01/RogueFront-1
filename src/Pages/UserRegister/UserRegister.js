@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import "./UserRegister.css"
 import { useState } from "react";
+import {UserService} from '../../Service';
 
 
 function UserRegister() {
@@ -15,18 +16,16 @@ function UserRegister() {
   const [confPassword, setConfPassword] = useState('');
   const [cpf, setCpf] = useState('');
 
-  const user = JSON.parse(localStorage.getItem('user')) || [];
-
   const handleRegister = () => {
     if(password === confPassword){
-      user.push({
+      let userProv = ({
         name: name,
         email: email,
         password: password,
-        cpf: cpf
+        register: cpf
       });
-      localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem("verifyLogin", 'yes');
+      UserService.create(userProv)
       navigate("/");
     }else{
       alert('Senhas diferem')
