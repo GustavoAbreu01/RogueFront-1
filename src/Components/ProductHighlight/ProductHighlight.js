@@ -1,15 +1,17 @@
 import React from 'react'
 import motor from '../../assets/img/motor.png'
-import './Product.css'
 
-function Product() {
+
+import './ProductHighlight.css'
+
+function ProductHighlight() {
 
 
   return (
     <div className='boxProduct'>
       <div className='tagIconProduct'>
       <button class="circular ui icon button">
-          <i class="chart line icon"></i>
+          <i class="star icon"></i>
         </button>
       </div>
       <div className='iconProductAction'>
@@ -41,4 +43,4 @@ function Product() {
   )
 }
 
-export default Product
+export default ProductHighlight

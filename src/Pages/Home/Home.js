@@ -9,12 +9,20 @@ import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import Carousell from '../../Components/carousel/Carousel'
 import logo from "../../assets/img/logo-weg.png"
+import iconMotor from "../../assets/img/iconeMotor.png"
 import salvo from "../../assets/img/salvo.png"
 import { BiLineChart } from 'react-icons/bi'
+import { MdOutlineSecurity } from 'react-icons/md'
+import { BsPaintBucket } from 'react-icons/bs'
+import { CgSearchFound } from 'react-icons/cg'
+import { CgSmartphoneChip } from 'react-icons/cg'
+import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
 import './Home.css'
 import { Link } from 'react-router-dom'
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel'
+import ProductHighlight from '../../Components/ProductHighlight/ProductHighlight'
+import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
 
 function Home() {
 
@@ -107,17 +115,74 @@ function Home() {
 
         <div className='boxHighlights' >
           <div className='boxTitleHighlights'>
-          <FaStar color='var(--white)' size={40} />
+            <FaStar color='var(--white)' size={40} />
             <h1 className='titleHighlights' >Destaques da semana</h1>
           </div>
           <div className='boxHighlightsProducts'>
-            <ProductCarousel />
+            <ProductHighlightCarousel />
           </div>
         </div>
 
         <div className='boxCategoryButtons' >
-          <img className='' />
+          <h1 className='categoryTitleBox'>Departamentos</h1>
+          <div className='categoryButtonsOpt'>
+            <div className='categoryTitle'>
+              <button className='categoryButton'>
+                <MdOutlineSecurity color='var(--blue-primary)' className='categoryButtonImg' ></MdOutlineSecurity>
+              </button>
+              <h2>Segurança</h2>
+            </div>
+            <div className='categoryTitle'>
+              <button className='categoryButton'>
+                <BsPaintBucket color='var(--blue-primary)' className='categoryButtonImg' ></BsPaintBucket>
+              </button>
+              <h2>Tintas</h2>
+            </div>
+            <div className='categoryTitle'>
+              <button className='categoryButton'>
+                <CgSmartphoneChip color='var(--blue-primary)' className='categoryButtonImg' ></CgSmartphoneChip>
+              </button>
+              <h2>Automação</h2>
+            </div>
+            <div className='categoryTitle'>
+              <button className='categoryButton'>
+                <TfiPanel color='var(--blue-primary)' className='categoryButtonImg'></TfiPanel>
+              </button>
+              <h2>Painéis</h2>
+            </div>
+            <div className='categoryTitle'>
+              <button className='categoryButton'>
+                <img src={iconMotor} width={75} height={50}></img>
+              </button>
+              <h2>Motores</h2>
+            </div>
+          </div>
         </div>
+
+        <div className='boxSearched' >
+          <div className='containerTitleSearched'>
+            <div className='boxTitleSearched'>
+              <h1 className='titleSearched' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={50} />
+            </div>
+          </div>
+          <div className='boxSearchedProducts'>
+            <ProductHighlightCarousel />
+          </div>
+        </div>
+
+        benefits
+
+        <div className='boxHighlights' >
+          <div className='boxTitleHighlights'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='titleHighlights' >Destaques da semana</h1>
+          </div>
+          <div className='boxHighlightsProducts'>
+            <ProductHighlightCarousel />
+          </div>
+        </div>
+
         <Footer /></>
     </div>
 

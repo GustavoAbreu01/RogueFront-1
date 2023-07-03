@@ -15,7 +15,7 @@
     background-color: var(--white);
 }
 
-.questIcon{
+.questIcon {
     padding: 2rem;
     gap: 2rem;
     justify-content: space-between;
@@ -55,13 +55,13 @@
     color: var(--blue-primary);
 }
 
-.sliderProductAccessed{
+.sliderProductAccessed {
     padding-bottom: 6%;
 }
 
 .boxHighlights {
-    padding-bottom: 15rem;
-}	
+    padding-bottom: 10rem;
+}
 
 .boxHighlightsProducts {
     align-items: center;
@@ -83,4 +83,106 @@
     padding: 3rem;
     color: var(--white);
     border-top-right-radius: 50px;
+}
+
+.boxCategoryButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10rem;
+    width: 100%;
+    height: 30rem;
+}
+
+.categoryButtonImg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.categoryButtonsOpt {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    background-color: var(--white);
+    width: 90%;
+    border-radius: 50px;
+    height: 30rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.categoryButton {
+    top: 10px;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0px 10px 5px var(--blue-primary);
+    background-color: var(--blue-quaternary);
+}
+
+.categoryButton:hover {
+    background-color: var(--white);
+    transition: 0.3s;
+    border: solid 1px var(--blue-primary);
+}
+
+.categoryTitle {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--blue-primary);
+    font-weight: bold;
+}
+
+.categoryTitleBox {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    background-color: var(--white);
+    color: var(--blue-primary);
+    font-weight: bold;
+    border-radius: 5rem;
+    width: 30rem;
+    height: 7rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.boxSearched{
+    padding-bottom: 10rem;
+}
+
+.boxSearchedProducts {
+    align-items: center;
+    background-color: var(--blue-secundary);
+}
+
+.titleSearched {
+    color: var(--white);
+    font-weight: bold;
+    
+}
+
+.boxTitleSearched {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue-secundary);
+    width: 30%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-left-radius: 50px;
+}
+
+.containerTitleSearched {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
 }
