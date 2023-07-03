@@ -38,7 +38,7 @@ function LanguageModal() {
 
   return (
     <div className='languageModal'>
-      {verify() && <div className='modalContent'>
+      {verify() && <div className='modalLanguageContent'>
         <div onClick={() => changeCurrentFlag(1, flags[1])}>
           <img src={flags[1]} width={40} height={25} alt='' />
         </div>

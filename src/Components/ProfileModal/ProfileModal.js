@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ProfileModal.css'
 import { CgProfile } from 'react-icons/cg'
 import logoWeg from "../../assets/img/logoWEG.png"
-import LinguageModal from '../LanguageModal/LanguageModal'
+import LanguageModal from '../LanguageModal/LanguageModal'
 
 export default function ProfileModal() {
     const [openModal, setopenModal] = useState(false);
@@ -20,7 +20,7 @@ export default function ProfileModal() {
         <CgProfile className="MenuIcon" onClick={open}>aa</CgProfile>
           {openModal && (
             <div className="openModal">
-                <div className="modal">
+                <div className="modalProfile">
                 <div className='logoWeg'>
                     <img src={logoWeg} alt="" />
                 </div>
@@ -42,9 +42,9 @@ export default function ProfileModal() {
                     <input type="text" placeholder='Cpf do safado'/>
                 </div>
                 </div>
-                <div className='linguage'>
+                <div >
                     <h1>Idioma</h1>
-                    <LinguageModal/>
+                    <LanguageModal/>
                 </div>
                 </div>
               <div className="background" onClick={openAndClose}></div>
