@@ -1,0 +1,95 @@
+.horizontalSmallBoxProduct {
+    justify-content: space-between;
+    display:flex;
+    background-color: var(--grey-secondary);
+    border-radius: 10px;
+    width: 19rem;
+    height: 7rem;
+}
+.horizontalSmallBoxProduct:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .horizontalSmallIconProductAction {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+}
+
+.horizontalSmallBoxProductPrice {
+    display: flex;
+  
+    justify-content: space-between;
+    align-items: start;
+    padding-left: 1rem;
+}
+
+.horizontalSmallPriceProduct {
+    font-weight: bold;
+  
+}
+.horizontalSmallBoxProductInfo{
+    display: flex;
+    width: 50%;
+    align-items: start;
+    flex-direction: column;
+}
+
+.horizontalSmallBoxProductText{
+    width: 50%;
+    align-items: center;
+}
+
+.horizontalSmallBoxProductTitle {
+    display: flex;
+    color: var(--grey-primary);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    height: 100%;
+}
+
+.horizontalSmallTagIconProduct {
+    position: absolute;
+    padding: 1rem;
+}
+
+.horizontalSmallIconProductAction {
+    display: flex;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    gap: 0.5rem;
+    justify-content: end;
+    align-items: end;
+    opacity: 0;
+}
+
+.horizontalSmallBoxProductImage {
+  
+    top:0.1rem;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+}
+
+.horizontalSmallBoxProductButton {
+   
+  align-items: center;
+  display: flex;
+}
+
+.ui.icon.button.horizontalSmall{
+    background-color: var(  --blue-secundary);
+}
+
+.ui.fluid.button.horizontalSmall{
+    rotate: 90deg;
+    display: flex;
+    align-items: center;
+    width: 300%;
+
+    background-color: var(  --blue-secundary);
+}
