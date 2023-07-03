@@ -25,7 +25,9 @@ function HeaderLogin() {
         <div className='icons'>
           <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
         </div>
-        <PerfilModal />
+        <div>
+          <PerfilModal />
+        </div>
       </div>
     </header><div className="navBar">
         <div id="menu">
