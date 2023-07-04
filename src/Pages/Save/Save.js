@@ -3,6 +3,7 @@ import './Save.css';
 import HaveProducts from './haveProducts';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import { ProductService } from '../../Service';
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -11,7 +12,8 @@ function Product() {
     const produto = {
       name: 'Motô',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec',
-      price: 'R$ 00,00',
+      stockSize: 25,
+      price: 10.0,
     };
     return produto;
   }
@@ -21,6 +23,8 @@ function Product() {
     listaProdutos.push(produtoStatico());
     localStorage.setItem('products', JSON.stringify(listaProdutos));
     setProducts(listaProdutos); // Atualiza o estado com a nova lista de produtos
+    // let prod = produtoStatico()
+    // ProductService.create(prod);
     console.log('produto adicionado');
   };
 
@@ -34,7 +38,7 @@ function Product() {
   if (lista.length === 0) {
     return (
       <>
-        <button onClick={adicionarProdutoAoLocalHost}>aaaaa</button>
+        <button onClick={() => adicionarProdutoAoLocalHost()}>aaaaa</button>
         <div className="noHaveProduct">
           <img alt="noHaveProduct" />
           <h1>Está tudo muito quieto por aqui...</h1>

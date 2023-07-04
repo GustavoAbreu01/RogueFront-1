@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const url = 'http://localhost:8081/user'
+const url = 'http://localhost:8081/product'
 
-export const UserService = {
+export const ProductService = {
 
     create: function(user) {
         console.log(user)
@@ -24,9 +24,21 @@ export const UserService = {
       },
 
     getOne: function(id){
-        axios.post(url + '/getOne/', id).then((response) => {
+        axios.post(url + '/getOne/'+ id).then((response) => {
             return response.data;
           });
+    },
+    
+    delete: function(id){
+        axios.post(url + '/delete/'+ id).then((response) => {
+            return response.data;
+          });
+    },
+
+    edit: function(id, prod){
+        axios.put(url + '/edit/'+ id, prod).then((response) => {
+            return response.data
+        })
     }
 
 }
