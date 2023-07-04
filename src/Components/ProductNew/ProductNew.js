@@ -8,17 +8,17 @@ function ProductNew() {
   return (
     <div className='boxProduct'>
       <div className='tagIconProduct'>
-        <button class="circular ui icon button">
-          <i class="exclamation circle
+        <button className="circular ui icon button">
+          <i className="exclamation circle
  icon"></i>
         </button>
       </div>
       <div className='iconProductAction'>
-        <button class="ui icon button">
-          <i class="bookmark icon"></i>
+        <button className="ui icon button">
+          <i className="bookmark icon"></i>
         </button>
-        <button class="ui icon button">
-          <i class="cart plus icon"></i>
+        <button className="ui icon button">
+          <i className="cart plus icon"></i>
         </button>
       </div>
       <div className='boxProductImage'>
@@ -35,7 +35,7 @@ function ProductNew() {
         <p>Á vista no pix</p>
       </div>
       <div className='boxProductButton'>
-        <button class="fluid ui button">Comprar</button>
+        <button className="fluid ui button">Comprar</button>
 
       </div>
     </div>

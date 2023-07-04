@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import questIcon from "../../assets/img/questionario.png"
 import compare from '../../assets/img/compare.png'
@@ -244,12 +244,12 @@ function Home() {
           </div>
           <div className="containerBenefits">
             {iconsInfoOne.map((icon) => (
-              <div className="infoBox" data-aos="fade-up" >
+              <div className="infoBox" data-aos="fade-up" key={icon.id}>
                 <div className="iconInfoBox">
                   <img src={icon.icon} className="iconInfo" alt=''/>
                 </div>
                 <div className='infoDescriptionBox'>
-                  <h1 className="titleInfo">{icon.name}</h1>
+                  <h1 className="titleInfo" >{icon.name}</h1>
                   <p className="descriptionInfo">{icon.description}</p>
                 </div>
               </div>
@@ -258,13 +258,13 @@ function Home() {
 
           <div className="containerBenefits">
             {iconsInfoTwo.map((icon) => (
-              <div className="infoBox" data-aos="fade-up" >
+              <div className="infoBox" data-aos="fade-up" key={icon.id}>
                 <div className="iconInfoBox">
                   <img src={icon.icon} className="iconInfo" alt=''/>
                 </div>
                 <div className='infoDescriptionBox'>
-                  <h1 className="titleInfo">{icon.name}</h1>
-                  <p className="descriptionInfo">{icon.description}</p>
+                  <h1 className="titleInfo" >{icon.name}</h1>
+                  <p className="descriptionInfo" >{icon.description}</p>
                 </div>
               </div>
             ))}

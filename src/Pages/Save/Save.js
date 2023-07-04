@@ -3,7 +3,7 @@ import './Save.css';
 import HaveProducts from './haveProducts';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import { ProductService } from '../../Service';
+// import { ProductService } from '../../Service';
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -53,7 +53,7 @@ function Product() {
         </div>
         <div className="products">
           {products.map((item) => {
-            return <HaveProducts item={item} />;
+            return <div key={item}><HaveProducts item={item} /></div>;
           })}
         </div>
       </>

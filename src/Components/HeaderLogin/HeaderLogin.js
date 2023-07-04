@@ -1,7 +1,6 @@
 import React from 'react'
 import './HeaderLogin.css'
 import { FaShoppingCart } from 'react-icons/fa'
-import { CgProfile } from 'react-icons/cg'
 import { BsFillBookmarkFill } from 'react-icons/bs'
 import logo from "../../assets/img/logo-weg.png"
 import { Link } from 'react-router-dom'
@@ -13,7 +12,7 @@ function HeaderLogin() {
   return (
     <><header>
       <div className="img">
-        <Link routerLink="/"><img src={logo} alt="" /></Link>
+        <Link to="/"><img src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />
