@@ -1,0 +1,55 @@
+.search-filter {
+    background-color: var(--white);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    margin: 2rem;
+    margin-right: 1rem;
+    height: 30rem;
+    width: 20rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.ui.row.search {
+    width: 28rem;
+}
+.ui.row.searchItens {
+    width: 66rem;
+}
+
+.column.filter {
+    margin-left: 3rem;
+}
+
+.column.itens {
+    margin: 2rem;
+}
+
+.ui.segment.itens.search {
+    background-color: var(--white);
+    width: 63rem;
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+
+.ui.vertically.divided.grid {
+    margin: 3rem;
+}
+
+.ui.header.filter {
+    text-align: center;
+}
+
+.ui.grid.SearchItens#produtos {
+    width: 100%;
+  }
+  
+  .ui.grid.SearchItens#produtos .column {
+    width: calc(25% - 1rem); /* Ajuste a largura conforme necessário */
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+  }
+
+  
+
