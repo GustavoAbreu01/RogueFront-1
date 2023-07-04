@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './Quiz.css'
 import Footer from '../../Components/Footer/Footer'
+import ProductCarouselSmall from '../../Components/ProductCarouselSmall/ProductCarouselSmall'
 import logoWeg from "../../assets/img/logoWEG.png"
 import w50 from "../../assets/img/motorW50.png"
 import spanish from "../../assets/img/spanish.png"
@@ -190,6 +191,7 @@ function Quiz() {
           </div>
         )}
       </div>
+      <ProductCarouselSmall/>
       <Footer />
     </>
   );

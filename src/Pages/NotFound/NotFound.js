@@ -1,11 +1,12 @@
 import React from 'react'
 import './NotFound.css'
-import Product from '../../Components/Product/Product'
+import SmallProductHorizontal from "../../Components/SmallProductHorizontal/SmallProductHorizontal"
+
 
 function NotFound() {
   return (
     <div>
-      Not Found
+      <SmallProductHorizontal />
     </div>
   )
 }
