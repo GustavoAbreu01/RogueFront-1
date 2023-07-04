@@ -14,7 +14,7 @@
     padding-left: 1rem;
 }
 
-.ui.small.buttons{
+.ui.small.buttons.Horizontal{
     position: relative;
     right: 3%;
 
@@ -24,18 +24,18 @@
     padding-left: 1rem;
 }
 
-.buttons{
+.buttons.Horizontal{
     display: flex;
     flex-direction: column;
 }
 
-.ui.icon.button{
+.ui.icon.button.Horizontal{
     margin-bottom: 1.5rem;
     background-color: transparent;
     padding-left: 8rem;
 }
 
-.trash.alternate.icon{
+.trash.alternate.icon.Horizontal{
     color: var(--blue-primary);
     font-size: 1.7rem;
 }
@@ -46,7 +46,7 @@
     padding-right: 1rem;
 }
 
-.subtext{
+.subtext.Horizontal{
     font-size: 1rem;
     color: var(--grey-primary);
 }
