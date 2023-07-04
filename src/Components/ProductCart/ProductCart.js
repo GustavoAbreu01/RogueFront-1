@@ -54,14 +54,14 @@ function ProductCart() {
                 <p className="itemComplement Horizontal">Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
               </Link>
             </div>
-            <div className='buttons'>
-              <button class="ui icon button">
-                <i className="trash alternate icon"></i>
+            <div className='buttons Horizontal'>
+              <button class="ui icon button Horizontal">
+                <i className="trash alternate icon Horizontal"></i>
               </button>
-              <div className="ui small buttons">
-                <button className="ui button active">-</button>
+              <div className="ui small buttons Horizontal">
+                <button className="ui button active Horizontal">-</button>
                 <div className='or' data-text="10"></div>
-                <button className="ui button">+</button>
+                <button className="ui button Horizontal">+</button>
               </div>
             </div>
           </div>
