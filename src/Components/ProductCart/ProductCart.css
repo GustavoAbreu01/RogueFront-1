@@ -1,0 +1,54 @@
+.itemContent.Horizontal{
+    background-color: var(--white);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    left: 4%;
+    position: relative;
+    padding-bottom: 1.5rem;
+    border-bottom: solid 2px var(--grey-secondary);
+}
+
+.itemPreco.Horizontal{
+    color: var(--blue-primary);
+    padding-left: 1rem;
+}
+
+.ui.small.buttons{
+    position: relative;
+    right: 3%;
+
+}
+
+.itemNome.Horizontal{
+    padding-left: 1rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.ui.icon.button{
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    padding-left: 8rem;
+}
+
+.trash.alternate.icon{
+    color: var(--blue-primary);
+    font-size: 1.7rem;
+}
+
+.itemComplement.Horizontal{
+    color: var(--grey-primary);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.subtext{
+    font-size: 1rem;
+    color: var(--grey-primary);
+}
+
+

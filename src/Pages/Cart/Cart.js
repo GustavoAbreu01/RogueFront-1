@@ -4,6 +4,7 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import ProductCart from '../../Components/ProductCart/ProductCart';
 import { Link } from 'react-router-dom';
 
 function Cart() {
@@ -63,6 +64,10 @@ function Cart() {
             <div className='boxCartProductTitle'>
               <h5 className='TitleTextCartProduct'>Produtos e Frete</h5>
             </div>
+            <ProductCart/>
+            <ProductCart/>
+            <ProductCart/>
+            <ProductCart/>
           </div>
         </div>
         <div className='boxInfoTotalCart'>
