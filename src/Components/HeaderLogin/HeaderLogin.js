@@ -13,7 +13,7 @@ function HeaderLogin() {
   return (
     <><header>
       <div className="img">
-        <Link routerLink="/"><img src={logo} alt="" /></Link>
+        <Link to="/"><img src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />

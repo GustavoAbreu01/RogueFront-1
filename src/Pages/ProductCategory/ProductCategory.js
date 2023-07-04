@@ -8,6 +8,8 @@ import { Dropdown } from 'semantic-ui-react';
 import iconMotor from "../../assets/img/iconeMotor.png"
 import motors from "../../assets/img/motores.png"
 import save from "../../assets/img/salvo.png"
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
 function ProductCategory() {
   const [verificacao, setVerificacao] = useState(false);
@@ -27,34 +29,29 @@ function ProductCategory() {
     { key: 'aneis', value: 'aneis', text: 'Anéis' },
   ];
 
-
   const teste = () => {
     console.log('aaaaa')
   };
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  // useEffect(() => {
-  //   verify();
-  // }, []);
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
 
-  // const verify = () => {
-  //   console.log(localStorage.getItem("verificar"));
-  //   if (
-  //     localStorage.getItem("verificar") === "sim" ||
-  //     localStorage.getItem("verificar2") === "sim"
-  //   ) {
-  //     setVerificacao(true);
-  //   }
-  // };
   return (
     <>
-      <Header />
+      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div class="ui gridProduct">
         <div class="two column row page">
           <div class="row filter">
             <div class="column filter">
-              <div className='second-filter '> 
+              <div className='second-filter '>
                 <img className="iconMotor" src={iconMotor} />
                 <h1 className="ui header motor">MOTORES</h1>
                 <br />
@@ -88,43 +85,43 @@ function ProductCategory() {
                 </div>
                 <br />
                 <br />
-             
+
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="row itens">
+          <div class="row itens">
 
-          <div class="column itens">
-          <Link to="/product"> </Link>
-            <div id="produtos">
+            <div class="column itens">
+              <Link to="/product"> </Link>
+              <div id="produtos">
 
-              {numero.map((i) => (
-                
-                <div class="ui segment itens" id="item" key={i}>
-                  <Link to="/product">
-                  <div class="itemContent" style={{color:'black'}}>
-                    <div id="imgItens">
-                      <img src={motors} width="125" height="" />
-                    </div>
-                    <div class="itemInfo">
-                    <h2 id="itemNome">W12 Monofásico</h2>
-                      <h4 id="descricao">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                      <h2 id="itemPreco">R$ 495<sup> 99</sup></h2>
-                    </div>
+                {numero.map((i) => (
+
+                  <div class="ui segment itens" id="item" key={i}>
+                    <Link to="/product">
+                      <div class="itemContent" style={{ color: 'black' }}>
+                        <div id="imgItens">
+                          <img src={motors} width="125" height="" />
+                        </div>
+                        <div class="itemInfo">
+                          <h2 id="itemNome">W12 Monofásico</h2>
+                          <h4 id="descricao">Desenvolvido para oferecer versatilidade e eficiência.</h4>
+                          <h2 id="itemPreco">R$ 495<sup> 99</sup></h2>
+                        </div>
+                      </div>
+                    </Link>
+                    <button className="save" href="">
+                      <img onClick={teste} src={save} className="salvos" width="40" height="40" id="salvos" />
+                    </button>
                   </div>
-                  </Link>
-                  <button className="save" href="">
-                        <img onClick={teste} src={save} className="salvos" width="40" height="40" id="salvos" />
-                  </button> 
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div >
-    <Footer />
+      </div >
+      <Footer />
     </>
   );
 };

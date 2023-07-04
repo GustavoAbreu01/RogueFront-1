@@ -2,8 +2,6 @@ import React from 'react'
 import './Save.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-// import motor from '../../assets/img/motor.png'
-// import lixeira from '../../assets/img/lixeira.png'
 
 const deleteItens = (item) => {
     const products = JSON.parse(localStorage.getItem('products'))

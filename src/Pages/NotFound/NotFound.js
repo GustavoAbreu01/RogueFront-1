@@ -6,7 +6,7 @@ import SmallProductHorizontal from "../../Components/SmallProductHorizontal/Smal
 function NotFound() {
   return (
     <div>
-      <SmallProductHorizontal />
+      Achouu... que ia encontrar algo aqui?
     </div>
   )
 }

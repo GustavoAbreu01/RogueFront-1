@@ -2,12 +2,25 @@ import React from 'react'
 import motor from '../../assets/img/motor.png'
 import save from '../../assets/img/salvo.png'
 import './ProductPage.css'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 
+const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+        return true
+    } else {
+        return false
+    }
+}
 
 function ProductPage() {
-    
+
     return (
         <>
+            {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
             <div class="body-product">
                 <div class="save">
                     <img src={save} alt="" />
@@ -136,6 +149,7 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

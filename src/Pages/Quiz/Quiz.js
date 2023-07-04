@@ -4,10 +4,10 @@ import { useState } from "react";
 import './Quiz.css'
 import Footer from '../../Components/Footer/Footer'
 import ProductCarouselSmall from '../../Components/ProductCarouselSmall/ProductCarouselSmall'
-import logoWeg from "../../assets/img/logoWEG.png"
 import w50 from "../../assets/img/motorW50.png"
-import spanish from "../../assets/img/spanish.png"
 import Header from '../../Components/Header/Header';
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 
 function Quiz() {
   const [progresso, setProgresso] = useState(0);
@@ -40,10 +40,19 @@ function Quiz() {
       setVerificacao(true);
     }
   }
+
+  const verifyHeader = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <>
-    <Header/>
-      {/* {verificacao ? <AppHeaderLogin /> : <AppHeader />} */}
+      {!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div class="ui raised very padded text container segment quiz">
         <div class="ui mini steps">
           <i class="clipboard list icon"></i>
@@ -170,8 +179,8 @@ function Quiz() {
             </div>
             <br />
             <div class="ui checkbox">
-            <input className="check" type="checkbox" id="220/380/440V" name="220/380/440V" value="220/380/440V" />
-            <label className="desc" htmlFor="220/380/440V">220/380/440V</label>
+              <input className="check" type="checkbox" id="220/380/440V" name="220/380/440V" value="220/380/440V" />
+              <label className="desc" htmlFor="220/380/440V">220/380/440V</label>
             </div>
             <br />
           </div>
@@ -191,7 +200,7 @@ function Quiz() {
           </div>
         )}
       </div>
-      <ProductCarouselSmall/>
+      <ProductCarouselSmall />
       <Footer />
     </>
   );

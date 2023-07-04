@@ -3,6 +3,8 @@ import './Save.css';
 import HaveProducts from './haveProducts';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -36,7 +38,7 @@ function Product() {
       <>
         <button onClick={adicionarProdutoAoLocalHost}>aaaaa</button>
         <div className="noHaveProduct">
-          <img alt="noHaveProduct" />
+          <img src='' alt="noHaveProduct" />
           <h1>Está tudo muito quieto por aqui...</h1>
         </div>
       </>
@@ -58,9 +60,19 @@ function Product() {
 }
 
 function Salvos() {
+
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <>
-      <Header />
+      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div>{Product()}</div>
       <Footer />
     </>

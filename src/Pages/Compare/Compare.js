@@ -5,6 +5,8 @@ import CompareCard from '../../Components/CompareCard/CompareCard'
 import { IoMdAddCircle } from 'react-icons/io'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 
 function Compare() {
   const [productsCompared, setItems] = useState([]);
@@ -18,6 +20,15 @@ function Compare() {
 
   function verify() {
     if (productsCompared.length === 3) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const verifyHeader = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
       return true
     } else {
       return false
@@ -41,16 +52,17 @@ function Compare() {
   }
 
   return (
-    <><Header /><div className='compare'>
-      <div className='products'>
-        <CompareCard />
-        {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
-          <IoMdAddCircle size={'5rem'} />
-        </div>}
+    <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='compare'>
+        <div className='products'>
+          <CompareCard />
+          {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
+            <IoMdAddCircle size={'5rem'} />
+          </div>}
+
+        </div>
 
       </div>
-
-    </div>
       <Footer />
     </>
   )

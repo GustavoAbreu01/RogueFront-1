@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Cart.css';
+import './CartConfirm.css';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import { Link } from 'react-router-dom';
 
-function Cart() {
+function CartConfirm() {
 
   var valor = 1100.00;
   var frete = 100;
@@ -21,29 +21,30 @@ function Cart() {
     }
   }
 
+
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='boxContainerProgress  '>
         <div className="ui tiny steps">
-          <div className="step">
+          <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">
               <div className="title">Carrinho</div>
             </div>
           </div>
-          <div className="disabled step">
+          <div className="completed step">
             <i className="user icon"></i>
             <div className="content">
               <div className="title">Confirmar Informações</div>
             </div>
           </div>
-          <div className="disabled step">
+          <div className="completed step">
             <i className="payment icon"></i>
             <div className="content">
               <div className="title">Pagamento</div>
             </div>
           </div>
-          <div className="disabled step">
+          <div className="step">
             <i className="info icon"></i>
             <div className="content">
               <div className="title">Confirmação do Pedido</div>
@@ -61,7 +62,7 @@ function Cart() {
         <div className='boxCartProductDetail'>
           <div className='boxCartProduct'>
             <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Produtos e Frete</h5>
+              <h5 className='TitleTextCartProduct'>Confirmar Pedido</h5>
             </div>
           </div>
         </div>
@@ -80,7 +81,7 @@ function Cart() {
               <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
             </div>
             <div className='boxButtonTotalCart'>
-              <Link to='/cart/information'>
+              <Link to='/cart/transport'>
                 <button className="fluid ui button final">Finalizar Compra</button>
               </Link>
               <Link to='/'>
@@ -89,12 +90,14 @@ function Cart() {
             </div>
           </div>
           <div className='boxInfoRecommend'>
+
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
 }
 
-export default Cart;
+export default CartConfirm;
