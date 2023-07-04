@@ -7,9 +7,9 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
 function Cart() {
 
-  var valor = 0;
-  var frete = 0;
-  var total = 0;
+  var valor = 1100.00;
+  var frete = 100;
+  var total = 1200;
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -23,42 +23,46 @@ function Cart() {
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='boxContainerProgress  '>
-        <div class="ui tiny steps">
-          <div class="step">
-            <i class="shop icon"></i>
-            <div class="content">
-              <div class="title">Carrinho</div>
+        <div className="ui tiny steps">
+          <div className="step">
+            <i className="shop icon"></i>
+            <div className="content">
+              <div className="title">Carrinho</div>
             </div>
           </div>
-          <div class="disabled step">
-            <i class="user icon"></i>
-            <div class="content">
-              <div class="title">Confirmar Informações</div>
+          <div className="disabled step">
+            <i className="user icon"></i>
+            <div className="content">
+              <div className="title">Confirmar Informações</div>
             </div>
           </div>
-          <div class="disabled step">
-            <i class="payment icon"></i>
-            <div class="content">
-              <div class="title">Pagamento</div>
+          <div className="disabled step">
+            <i className="payment icon"></i>
+            <div className="content">
+              <div className="title">Pagamento</div>
             </div>
           </div>
-          <div class="disabled step">
-            <i class="info icon"></i>
-            <div class="content">
-              <div class="title">Confirmar Pedido</div>
+          <div className="disabled step">
+            <i className="info icon"></i>
+            <div className="content">
+              <div className="title">Confirmar Pedido</div>
             </div>
           </div>
-          <div class="disabled step">
-            <i class="truck icon"></i>
-            <div class="content">
-              <div class="title">Transporte</div>
+          <div className="disabled step">
+            <i className="truck icon"></i>
+            <div className="content">
+              <div className="title">Transporte</div>
             </div>
           </div>
         </div>
       </div>
       <div className='containerCart'>
-        <div className='boxCartProduct'>
-
+        <div className='boxCartProductDetail'>
+          <div className='boxCartProduct'>
+            <div className='boxCartProductTitle'>
+              <h5 className='TitleTextCartProduct'>Produtos e Frete</h5>
+            </div>
+          </div>
         </div>
         <div className='boxInfoTotalCart'>
           <div className='boxInfoTotalBuy'>
@@ -74,8 +78,8 @@ function Cart() {
             <div className='boxInfoTotalBuySubTitle'>
               <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
             </div>
-            <button class="fluid ui button final">Finalizar Compra</button>
-            <button class="fluid ui blue button basic cont">Continuar Compando</button>
+            <button className="fluid ui button final">Finalizar Compra</button>
+            <button className="fluid ui blue button basic cont">Continuar Compando</button>
           </div>
           <div className='boxInfoRecommend'>
 

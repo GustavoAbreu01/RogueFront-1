@@ -8,7 +8,7 @@ import MenuModal from '../MenuModal/MenuModal'
 
 
 
-function Header() {
+function Header() { 
   return (
     <><header>
       <div class="img">

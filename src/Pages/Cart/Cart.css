@@ -15,6 +15,16 @@
     background-color: var(--white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
+    border-top-left-radius:  20%;
+    border-bottom-right-radius:  20%;
+    height: 80rem;
+    width: 100%;
+}
+
+.boxCartProductDetail {
+    background-color: var(--blue-primary);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
     height: 80rem;
     width: 70%;
 }
@@ -71,8 +81,7 @@
 .TotalTextBuyProduct {
     font-size: 1.5rem;
     font-weight: bold;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
     color: var(--blue-primary);
 }
 
@@ -80,4 +89,35 @@
     font-size: 1.1rem;
     font-weight: bold;
     color: var(--grey-terciary);
+}
+
+.boxCartProductTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.TitleTextCartProduct {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--blue-primary);
+}
+
+.disabled.step {
+    .icon {
+        color: var(--grey-terciary);
+    }
+}
+
+.completed.step {
+    .icon {
+        color: var(--blue-quaternary);
+    }
+}
+
+.step {
+    .icon {
+        color: var(--blue-primary);
+    }
 }
