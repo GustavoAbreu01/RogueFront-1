@@ -1,95 +1,72 @@
 .horizontalSmallBoxProduct {
-    justify-content: space-between;
-    display:flex;
-    background-color: var(--grey-secondary);
-    border-radius: 10px;
-    width: 19rem;
-    height: 7rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--grey-secondary);
+  border-radius: 10px;
+  width: 19rem;
+  height: 7rem;
 }
+
 .horizontalSmallBoxProduct:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
-
-    .horizontalSmallIconProductAction {
-        opacity: 1;
-        transition: 0.3s;
-    }
-
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .horizontalSmallBoxProductPrice {
-    display: flex;
-  
-    justify-content: space-between;
-    align-items: start;
-    padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
 }
 
 .horizontalSmallPriceProduct {
-    font-weight: bold;
-  
-}
-.horizontalSmallBoxProductInfo{
-    display: flex;
-    width: 50%;
-    align-items: start;
-    flex-direction: column;
+  font-weight: bold;
 }
 
-.horizontalSmallBoxProductText{
-    width: 50%;
-    align-items: center;
+.horizontalSmallBoxProductInfo {
+  display: flex;
+  padding-left: 0.4rem;
+  padding-right: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
 }
 
 .horizontalSmallBoxProductTitle {
-    display: flex;
-    color: var(--grey-primary);
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    height: 100%;
-}
-
-.horizontalSmallTagIconProduct {
-    position: absolute;
-    padding: 1rem;
-}
-
-.horizontalSmallIconProductAction {
-    display: flex;
-    padding: 0.5rem;
-    padding-bottom: 0;
-    gap: 0.5rem;
-    justify-content: end;
-    align-items: end;
-    opacity: 0;
+  display: flex;
+  color: var(--grey-primary);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  height: 100%;
 }
 
 .horizontalSmallBoxProductImage {
-  
-    top:0.1rem;
-    display: flex;
-    justify-content:left;
-    align-items: center;
+  display: flex;
+  padding-left: 0.6rem;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .horizontalSmallBoxProductButton {
-   
-  align-items: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100%;
+  width: 30px;
 }
 
-.ui.icon.button.horizontalSmall{
-    background-color: var(  --blue-secundary);
-}
 
-.ui.fluid.button.horizontalSmall{
-    rotate: 90deg;
-    display: flex;
-    align-items: center;
-    width: 300%;
-
-    background-color: var(  --blue-secundary);
+.ui.fluid.button.horizontalSmall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  writing-mode: vertical-lr;
+  border-radius: 10px;
+  height: 100%;
+  background-color: var(  --blue-secundary);
 }
