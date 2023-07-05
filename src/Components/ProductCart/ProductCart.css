@@ -14,17 +14,18 @@
     padding-left: 1rem;
 }
 
-.ui.small.buttons.CardCart{
+.buttons.CardCart{
     position: relative;
     right: 3%;
-
 }
 
 .itemNome.CardCart{
     padding-left: 1rem;
 }
 
-.buttons.CardCart.plus{
+.ui.button.CardCart{
+    align-items: center;
+    width: 5rem;
     display: flex;
     flex-direction: column;
 }
@@ -32,7 +33,7 @@
 .ui.icon.button.CardCart{
     margin-bottom: 1.5rem;
     background-color: transparent;
-    padding-left: 8rem;
+    padding-left: 9rem;
 }
 
 .trash.alternate.icon.CardCart{
@@ -43,7 +44,7 @@
 .itemComplement.CardCart{
     color: var(--grey-primary);
     padding-left: 1rem;
-    padding-right: 1rem;
+    padding-right: 5rem;
 }
 
 .subtext.CardCart{
