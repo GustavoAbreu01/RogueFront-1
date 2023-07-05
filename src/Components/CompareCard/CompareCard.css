@@ -1,4 +1,5 @@
 .productComparedCard{
+    width: 108%;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     background-color:var(--white);
     border-radius: 2rem;
@@ -23,13 +24,13 @@
 .compareArrow{
     position: absolute;
     margin-top: 15rem;
-    margin-left: 21rem;
+    margin-left: 21.8rem;
 }
 
 .compareArrow2{
     position: absolute;
     margin-top: 15rem;
-    margin-left: 46rem;
+    margin-left: 46.8rem;
 }
 
 .deleteButton{
