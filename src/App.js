@@ -6,7 +6,7 @@ import ProductCategory from './Pages/ProductCategory/ProductCategory';
 import ProductPage from './Pages/ProductPage/ProductPage';
 import Quiz from './Pages/Quiz/Quiz';
 import Save from './Pages/Save/Save';
-import { Search } from 'semantic-ui-react';
+import Search from './Pages/Search/Search';
 import UserRegister from './Pages/UserRegister/UserRegister';
 import Home from './Pages/Home/Home';
 import Cart from './Pages/Cart/Cart';

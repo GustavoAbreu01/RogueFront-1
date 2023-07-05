@@ -33,9 +33,8 @@
 }
 
 a:link {
-    color: black; /* Defina a cor desejada para o link */
     text-decoration: none; /* Remova a decoração de link (sublinhado) se necessário */
-  }
+}
 
 .itemContent {
     display: flex;

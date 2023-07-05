@@ -1,6 +1,6 @@
 import React from 'react'
 import './NotFound.css'
-import SmallProductHorizontal from "../../Components/SmallProductHorizontal/SmallProductHorizontal"
+import SmallProduct from "../../Components/SmallProductCard/SmallProductCard"
 
 
 function NotFound() {

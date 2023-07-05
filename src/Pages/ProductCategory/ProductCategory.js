@@ -105,7 +105,7 @@ function ProductCategory() {
                           <img src={motors} width="125" height="" />
                         </div>
                         <div class="itemInfo">
-                          <h2 id="itemNome">W12 Monofásico</h2>
+                          <h2  id="itemNome">W12 Monofásico</h2>
                           <h4 id="descricao">Desenvolvido para oferecer versatilidade e eficiência.</h4>
                           <h2 id="itemPreco">R$ 495<sup> 99</sup></h2>
                         </div>
