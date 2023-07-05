@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import { Link } from 'react-router-dom';
 import Quiz from '../Quiz/Quiz';
+import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 function CartInformation() {
 
@@ -60,10 +61,10 @@ function CartInformation() {
         </div>
       </div>
       <div className='containerCart'>
-        <div className='boxCartProductDetail'>
-          <div className='boxCartProduct'>
-            <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Informações da Conta</h5>
+        <div className='boxCartProductDetailInfo'>
+          <div className='boxCartProductInfo'>
+            <div className='boxCartProductTitleInfo'>
+              <h5 className='TitleTextCartProductInfo'>Informações da Conta</h5>
             </div>
           </div>
         </div>
@@ -91,7 +92,11 @@ function CartInformation() {
             </div>
           </div>
           <div className='boxInfoRecommend'>
-
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
           </div>
         </div>
       </div>

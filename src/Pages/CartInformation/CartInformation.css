@@ -11,21 +11,21 @@
 
 }
 
-.boxCartProduct {
+.boxCartProductInfo {
     background-color: var(--white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     border-top-left-radius:  20%;
     border-bottom-right-radius:  20%;
-    height: 80rem;
+    height: 50rem;
     width: 100%;
 }
 
-.boxCartProductDetail {
+.boxCartProductDetailInfo {
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    height: 80rem;
+    height: 50rem;
     width: 70%;
 }
 
@@ -91,14 +91,14 @@
     color: var(--grey-terciary);
 }
 
-.boxCartProductTitle {
+.boxCartProductTitleInfo {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 2rem;
 }
 
-.TitleTextCartProduct {
+.TitleTextCartProductInfo {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--blue-primary);

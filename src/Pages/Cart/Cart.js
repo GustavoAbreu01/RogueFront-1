@@ -99,6 +99,7 @@ function Cart() {
           <SmallProductHorizontal />
           <SmallProductHorizontal />
           <SmallProductHorizontal />
+          <SmallProductHorizontal />
           </div>
         </div>
       </div>
