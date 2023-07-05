@@ -7,6 +7,7 @@
     width: 20rem;
     height: 35rem;
 }
+
 .boxProduct:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
@@ -29,6 +30,11 @@
 
 .priceProduct {
     font-weight: bold;
+    color: var(--blue-primary);
+}
+
+.priceProductOptional {
+    color: var(--blue-primary);
 }
 
 .boxProductTitle {
@@ -66,5 +72,13 @@
     align-items: center;
     padding: 1rem;
     border: none;
-    
+
+}
+
+.icon {
+    color: var(--white);
+}
+
+h3 {
+    color: var(--grey-primary);
 }

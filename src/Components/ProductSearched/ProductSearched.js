@@ -1,24 +1,26 @@
 import React from 'react'
 import motor from '../../assets/img/motor.png'
 import './ProductSearched.css'
+import { Link } from 'react-router-dom'
 
 function ProductSearched() {
 
 
   return (
     <div className='boxProduct'>
+      <Link to='/product'>
       <div className='tagIconProduct'>
-      <button class="circular ui icon button">
+        <button class="circular ui icon button">
           <i class="searchengin icon"></i>
         </button>
       </div>
       <div className='iconProductAction'>
-        <button class="ui icon button">
+        <Link to='/save'><button class="ui icon button">
           <i class="bookmark icon"></i>
-        </button>
-        <button class="ui icon button">
-        <i class="cart plus icon"></i>
-        </button>
+        </button></Link>
+        <Link to='/cart'><button class="ui icon button">
+          <i class="cart plus icon"></i>
+        </button></Link>
       </div>
       <div className='boxProductImage'>
         <img src={motor} alt='' className='productCardImage' height={150} width={150}></img>
@@ -31,12 +33,12 @@ function ProductSearched() {
       </div>
       <div className='boxProductPrice'>
         <h3 className='priceProduct'>R$ 1.259,00</h3>
-        <p>Á vista no pix</p>
+        <p className='priceProductOptional'>Á vista no pix</p>
       </div>
-      <div className='boxProductButton'>
-      <button class="fluid ui button">Comprar</button>
-
-      </div>
+      <Link to='/cart'><div className='boxProductButton'>
+        <button class="fluid ui button">Comprar</button>
+      </div></Link>
+      </Link>
     </div>
   )
 }
