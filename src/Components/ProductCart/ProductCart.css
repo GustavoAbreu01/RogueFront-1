@@ -1,4 +1,4 @@
-.itemContent.Horizontal{
+.itemContent.CardCart{
     background-color: var(--white);
     width: 90%;
     display: flex;
@@ -9,44 +9,45 @@
     border-bottom: solid 2px var(--grey-secondary);
 }
 
-.itemPreco.Horizontal{
+.itemPreco.CardCart{
     color: var(--blue-primary);
     padding-left: 1rem;
 }
 
-.ui.small.buttons.Horizontal{
+.buttons.CardCart{
     position: relative;
     right: 3%;
-
 }
 
-.itemNome.Horizontal{
+.itemNome.CardCart{
     padding-left: 1rem;
 }
 
-.buttons.Horizontal{
+.ui.button.CardCart{
+    align-items: center;
+    width: 5rem;
     display: flex;
     flex-direction: column;
 }
 
-.ui.icon.button.Horizontal{
+.ui.icon.button.CardCart{
     margin-bottom: 1.5rem;
     background-color: transparent;
-    padding-left: 8rem;
+    padding-left: 9rem;
 }
 
-.trash.alternate.icon.Horizontal{
+.trash.alternate.icon.CardCart{
     color: var(--blue-primary);
     font-size: 1.7rem;
 }
 
-.itemComplement.Horizontal{
+.itemComplement.CardCart{
     color: var(--grey-primary);
     padding-left: 1rem;
-    padding-right: 1rem;
+    padding-right: 5rem;
 }
 
-.subtext.Horizontal{
+.subtext.CardCart{
     font-size: 1rem;
     color: var(--grey-primary);
 }
