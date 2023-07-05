@@ -1,14 +1,12 @@
 import React from 'react'
 import "./CompareCard.css"
 import { MdCompareArrows, MdDelete } from 'react-icons/md'
-import Footer from '../Footer/Footer'
-import { Header } from 'semantic-ui-react'
 
 function CompareCard() {
 
     let productsCompared = JSON.parse(localStorage.getItem("productsCompared"))
 
-    function verify() { 
+    function verify() {
         if (productsCompared.length === 3) {
             return true
         } else {
@@ -35,14 +33,27 @@ function CompareCard() {
                             <div>
                                 <img src={productCompared.imageUrl} alt="" className='productImage' />
                             </div>
+                            <div class="ui divider"></div>
                             <div>
-                                <h1>{productCompared.name}</h1>
+                                <h1 className='productNameCompare'>{productCompared.name}</h1>
                             </div>
                             <div>
-                                <h2>{productCompared.description1}</h2>
-                                <h2>{productCompared.description2}</h2>
-                                <h2>{productCompared.description3}</h2>
-                                <h2>{productCompared.description4}</h2>
+                                <h4 class="ui horizontal divider header">
+                                    <i class="chart line icon Compare"></i>
+                                </h4>
+                                <h2 className='compareDescription'>{productCompared.description1}</h2>
+                                <h4 class="ui horizontal divider header">
+                                    <i class="exclamation triangle icon Compare"></i>
+                                </h4>
+                                <h2 className='compareDescription'>{productCompared.description2}</h2>
+                                <h4 class="ui horizontal divider header">
+                                    <i class="angle double up icon Compare"></i>
+                                </h4>
+                                <h2 className='compareDescription'>{productCompared.description3}</h2>
+                                <h4 class="ui horizontal divider header">
+                                    <i class="chevron up icon Compare"></i>
+                                </h4>
+                                <h2 className='compareDescription'>{productCompared.description4}</h2>
                             </div>
                         </div>
                     </div>
@@ -54,7 +65,7 @@ function CompareCard() {
                     <MdCompareArrows size={'3rem'} />
                 </div>}
             </div>
-            </>
+        </>
 
     )
 }
