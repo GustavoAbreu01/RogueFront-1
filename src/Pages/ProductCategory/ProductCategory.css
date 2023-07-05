@@ -2,63 +2,50 @@
     background-color: var(--white);
     box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     margin: 2rem;
+    margin-right: 1rem;
     height: 36rem;
     width: 20rem;
     align-items: center;
     padding: 2rem;
 }
 
-.row.filter{
-    align-items: center;
+.ui.row.category{
+    width: 28rem;
 }
-
-.row.itens {
-    align-items: center;
-}
-
 .column.filter{
     margin-left: 3rem;
 }
 .column.itens{
     margin: 2rem;
 }
-
-.ui.segment.itens {
-    
+.ui.segment.itens.categoryItens {
+   
     background-color: var(--white);
     width: 63rem;
     display: flex;
     align-items: center;
     /* Centraliza verticalmente */
 }
-
 a:link {
-    text-decoration: none; /* Remova a decoração de link (sublinhado) se necessário */
-}
-
-.itemContent {
+      text-decoration: none; /* Remova a decoração de link (sublinhado) se necessário */
+ }
+.itemContentCategory {
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
-#imgItens {
+#imgItensCategory {
     margin-right: 2rem;
     /* Espaçamento entre a imagem e as outras informações */
 }
 
-.itemInfo {
+.itemInfoCategory {
     flex: 1;
     /* Ocupa o espaço disponível */
     justify-content: space-between;
     /* Alinha o conteúdo nos extremos da div */
 }
-
-
-
-
-
-.save {
+.saveCategory {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -69,15 +56,14 @@ a:link {
 .ui.vertically.divided.grid {
     margin: 3rem;
 }
-
-
-
 .iconMotor {
     display: block;
     margin: 0 auto;
     width: 50%;
   }
-  
+ 
   .ui.header.motor {
     text-align: center;
   }
+
+
