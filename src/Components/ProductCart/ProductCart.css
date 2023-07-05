@@ -52,4 +52,6 @@
     color: var(--grey-primary);
 }
 
-
+.itemNome.CardCart {
+    color: var(--blue-primary);
+}
