@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './HeaderLogin.css'
 import { FaShoppingCart } from 'react-icons/fa'
 import { BsFillBookmarkFill } from 'react-icons/bs'
@@ -7,8 +7,29 @@ import { Link } from 'react-router-dom'
 import SearchBar from '../SearchModal/SearchModal'
 import MenuModal from '../MenuModal/MenuModal'
 import PerfilModal from '../ProfileModal/ProfileModal'
+import { UserService } from '../../Service'
 
 function HeaderLogin() {
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        let users = await UserService.getAll();
+        users.forEach((user1) => {
+          if (user1.register === JSON.parse(localStorage.getItem('userCpf'))) {
+            setUser(user1)
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
+    fetchData();
+  }, []);
+
   return (
     <><header>
       <div className="img">
@@ -25,7 +46,7 @@ function HeaderLogin() {
           <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
         </div>
         <div>
-          <PerfilModal />
+          <PerfilModal user={user}/>
         </div>
       </div>
     </header><div className="navBar">

@@ -96,7 +96,7 @@
 
 .informacoes .title{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
     margin: none;
     padding: none;
@@ -347,7 +347,7 @@ table {
 
     .informacoes .title{
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         flex-direction: column;
         margin: none;
         padding: none;

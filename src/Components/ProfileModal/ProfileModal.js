@@ -3,12 +3,10 @@ import './ProfileModal.css'
 import { CgProfile } from 'react-icons/cg'
 import logoWeg from "../../assets/img/logoWEG.png"
 import LanguageModal from '../LanguageModal/LanguageModal'
-import { useEffect } from 'react'
-import { UserService } from '../../Service'
 
-export default function ProfileModal() {
+export default function ProfileModal({user}) {
     const [openModal, setopenModal] = useState(false);
-    const [user, setUser] = useState({});
+    
 
     const open = () => {
       setopenModal(true);
@@ -17,23 +15,6 @@ export default function ProfileModal() {
     const openAndClose = () => {
       setopenModal(false);
     };
-
-    useEffect(() => {
-      async function fetchData() {
-        try {
-          let users = await UserService.getAll();
-          users.forEach((user) => {
-            if (user.register === JSON.parse(localStorage.getItem('userCpf'))) {
-              setUser(user)
-            }
-          });
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    
-      fetchData();
-    }, []);
   
     return (
       <>
