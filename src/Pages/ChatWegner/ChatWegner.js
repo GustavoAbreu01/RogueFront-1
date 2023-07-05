@@ -4,8 +4,6 @@ import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
 import { IoIosArrowBack } from 'react-icons/io'
 import { VscSend } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
 
 function ChatWegner() {
     
