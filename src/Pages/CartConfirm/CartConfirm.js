@@ -5,6 +5,7 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import { Link } from 'react-router-dom';
+import SmallProductCard from '../../Components/SmallProductCard/SmallProductCard';
 
 function CartConfirm() {
 
@@ -90,7 +91,7 @@ function CartConfirm() {
             </div>
           </div>
           <div className='boxInfoRecommend'>
-
+            <SmallProductCard />
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCart from '../../Components/ProductCart/ProductCart';
 import { Link } from 'react-router-dom';
+import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 function Cart() {
 
@@ -94,6 +95,10 @@ function Cart() {
             </div>
           </div>
           <div className='boxInfoRecommend'>
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
+          <SmallProductHorizontal />
           </div>
         </div>
       </div>
