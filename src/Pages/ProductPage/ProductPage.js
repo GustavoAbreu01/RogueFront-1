@@ -100,10 +100,10 @@ function ProductPage() {
                 </div>
             </div>
             <div className='boxTitleHighlights'>
-            <FaStar color='var(--white)' size={40} />
-            <h1 className='titleHighlights' >Destaques da semana</h1>
-          </div>
-            <Carousel/>
+                <FaStar color='var(--white)' size={40} />
+                <h1 className='titleHighlights' >Destaques da semana</h1>
+            </div>
+            <Carousel />
             <Footer />
         </>
     )
