@@ -1,5 +1,7 @@
 .productComparedCard{
-    border: solid 0.1rem black;
+    width: 108%;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-color:var(--white);
     border-radius: 2rem;
 }
 
@@ -14,7 +16,6 @@
     margin: 2rem;
 }
 
-
 .productImage{
     height: 13rem;
     width: 15rem;
@@ -23,15 +24,51 @@
 .compareArrow{
     position: absolute;
     margin-top: 15rem;
-    margin-left: 21rem;
+    margin-left: 21.8rem;
 }
 
 .compareArrow2{
     position: absolute;
     margin-top: 15rem;
-    margin-left: 46rem;
+    margin-left: 46.8rem;
 }
 
 .deleteButton{
     cursor: pointer;
+}
+
+.close.icon.Compare{
+    align-items: center;
+    color: var(--blue-primary);
+}
+
+.productNameCompare{
+    padding-left: 3.9rem;
+    padding-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.compareDescription{
+    font-size: 1.5rem;
+}
+
+.chart.line.icon.Compare{
+    color: var(--blue-primary);
+}
+
+.exclamation.triangle.icon.Compare{
+    color: var(--blue-primary);
+}
+
+.angle.double.up.icon.Compare{
+    color: var(--blue-primary);
+}
+
+.external.alternate.icon.Compare{
+    color: var(--blue-primary);
+}
+
+.chevron.up.icon.Compare{
+    color: var(--blue-primary);
 }
