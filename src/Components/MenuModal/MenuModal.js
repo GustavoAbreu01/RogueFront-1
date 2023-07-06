@@ -19,8 +19,8 @@ function MenuModal() {
         <BiMenu className="MenuIcon"  onClick={() => setOpenModal(openModal + 1)}></BiMenu>
       </div>
        {verify() && 
-        <div className="modal-menu-content-detail">
-          <div className="modal-menu-content">
+        <div className="modal-menu-content-detail" >
+          <div className="modal-menu-content" data-aos="fade-right">
 
           </div>
         </div>

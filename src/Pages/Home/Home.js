@@ -281,8 +281,8 @@ function Home() {
           </div>
         </div>
 
-        <div className='boxAnnouncements' >
-              <img className='announBanner' src={BannerAnnouncementOne} />
+        <div className='boxAnnouncements' data-aos="fade-up" >
+              <img className='announBanner'  src={BannerAnnouncementOne} />
               <img className='announBanner' src={BannerAnnouncementTwo}/>
         </div>
 

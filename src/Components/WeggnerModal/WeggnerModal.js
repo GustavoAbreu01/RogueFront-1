@@ -17,7 +17,7 @@ function WeggnerModal() {
 
   return (
     <div>
-      {verify() &&<div className='modalContent'>
+      {verify() &&<div data-aos="fade-up" className='modalContent'>
             Wegner
         </div>}
     <div className='wegnerModal'>
