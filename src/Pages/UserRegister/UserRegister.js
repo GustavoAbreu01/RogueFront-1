@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./UserRegister.css"
 import { useState } from "react";
 import FooterSimple from '../../Components/FooterSimple/FooterSimple';
-import {UserService} from '../../Service';
+import { UserService } from '../../Service';
 
 
 function UserRegister() {
+  const navigate = useNavigate();
 
   const [emailLogin, setEmailLogin] = useState('');
   const [passwordLogin, setPasswordLogin] = useState('');
@@ -17,7 +18,7 @@ function UserRegister() {
   const [cpf, setCpf] = useState('');
 
   const handleRegister = () => {
-    if(password === confPassword){
+    if (password === confPassword) {
       let userProv = ({
         name: name,
         email: email,
@@ -28,7 +29,7 @@ function UserRegister() {
       UserService.create(userProv)
       localStorage.setItem("userCpf", userProv.register)
       navigate("/");
-    }else{
+    } else {
       alert('Senhas diferem')
     }
   };
@@ -112,7 +113,7 @@ function UserRegister() {
           </form>
         </div>
       </div>
-      <FooterSimple/></>
+      <FooterSimple /></>
   )
 }
 export default UserRegister
