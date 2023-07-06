@@ -36,22 +36,7 @@
     position: fixed;
     overflow: scroll;
     background-color: #fff;
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
-}
-
-.modal-menu-content-detail {
-    z-index: 9999;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -1.2rem;
-    height: 50%;
-    width: 20%;
-    position: fixed;
-    overflow: scroll;
-    background-color: var(--blue-primary);
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
