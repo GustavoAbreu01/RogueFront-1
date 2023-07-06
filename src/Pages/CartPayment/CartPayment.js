@@ -5,7 +5,8 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import { Link } from 'react-router-dom';
-import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+import { FaStar } from 'react-icons/fa';
 
 function CartPayment() {
 
@@ -53,72 +54,74 @@ function CartPayment() {
           </div>
         </div>
       </div>
-      <div className='containerCart'>
-        <div className='boxCartProductDetail'>
-          <div className='boxCartProduct'>
+      <div className='containerCartPayment'>
+        <div className='boxCartProductDetailPayment'>
+          <div className='boxCartProductPayment'>
             <div className='boxCartProductTitle'>
               <h5 className='TitleTextCartProduct'>Forma de Pagamento</h5>
             </div>
-            <form class="ui form">
-              <div class="field">
-                <label>Card Type</label>
-                <div class="ui selection dropdown">
-                  <input type="hidden" name="card[type]" />
-                  <div class="default text">Type</div>
-                  <i class="dropdown icon"></i>
-                  <div class="menu">
-                    <div class="item" data-value="visa">
-                      <i class="visa icon"></i>
-                      Visa
-                    </div>
-                    <div class="item" data-value="amex">
-                      <i class="amex icon"></i>
-                      American Express
-                    </div>
-                    <div class="item" data-value="discover">
-                      <i class="discover icon"></i>
-                      Discover
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fields">
-                <div class="seven wide field">
-                  <label>Card Number</label>
-                  <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
-                </div>
-                <div class="three wide field">
-                  <label>CVC</label>
-                  <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
-                </div>
-                <div class="six wide field">
-                  <label>Expiration</label>
-                  <div class="two fields">
-                    <div class="field">
-                      <select class="ui fluid search dropdown" name="card[expire-month]">
-                        <option value="">Month</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                      </select>
-                    </div>
-                    <div class="field">
-                      <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year" />
+            <div className='formsPayment'>
+              <form class="ui form">
+                <div class="field">
+                  <label>Card Type</label>
+                  <div class="ui selection dropdown">
+                    <input type="hidden" name="card[type]" />
+                    <div class="default text">Type</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      <div class="item" data-value="visa">
+                        <i class="visa icon"></i>
+                        Visa
+                      </div>
+                      <div class="item" data-value="amex">
+                        <i class="amex icon"></i>
+                        American Express
+                      </div>
+                      <div class="item" data-value="discover">
+                        <i class="discover icon"></i>
+                        Discover
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="ui button" tabindex="0">Submit Order</div>
-            </form>
+                <div class="fields">
+                  <div class="seven wide field">
+                    <label>Card Number</label>
+                    <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
+                  </div>
+                  <div class="three wide field">
+                    <label>CVC</label>
+                    <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
+                  </div>
+                  <div class="six wide field">
+                    <label>Expiration</label>
+                    <div class="two fields">
+                      <div class="field">
+                        <select class="ui fluid search dropdown" name="card[expire-month]">
+                          <option value="">Month</option>
+                          <option value="1">January</option>
+                          <option value="2">February</option>
+                          <option value="3">March</option>
+                          <option value="4">April</option>
+                          <option value="5">May</option>
+                          <option value="6">June</option>
+                          <option value="7">July</option>
+                          <option value="8">August</option>
+                          <option value="9">September</option>
+                          <option value="10">October</option>
+                          <option value="11">November</option>
+                          <option value="12">December</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui button" tabindex="0">Submit Order</div>
+              </form>
+            </div>
           </div>
         </div>
         <div className='boxInfoTotalCart'>
@@ -144,16 +147,14 @@ function CartPayment() {
               </Link>
             </div>
           </div>
-          <div className='boxInfoRecommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-          </div>
+
         </div>
       </div>
-
+      <div className='boxTitleSimilar'>
+        <FaStar color='var(--white)' size={40} />
+        <h1 className='titleSimilar' >Produtos Semelhantes</h1>
+      </div>
+      <ProductCarouselSmallSimilar />
       <Footer />
     </>
   );

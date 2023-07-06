@@ -4,8 +4,9 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import { FaStar } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
 function CartTransport() {
 
@@ -53,85 +54,85 @@ function CartTransport() {
           </div>
         </div>
       </div>
-      <div className='containerCart'>
-        <div className='boxCartProductDetail'>
-          <div className='boxCartProduct'>
+      <div className='containerCartTransport'>
+        <div className='boxCartProductDetailTransport'>
+          <div className='boxCartProductTransport'>
             <div className='boxCartProductTitle'>
               <h5 className='TitleTextCartProduct'>Verificar Transporte do Pedido</h5>
             </div>
             <div className='formsTransport'>
-            <form class="ui form">
-              <div class="field">
-                <label>Name</label>
+              <form class="ui form">
+                <div class="field">
+                  <label>Name</label>
+                  <div class="two fields">
+                    <div class="field">
+                      <input type="text" name="shipping[first-name]" placeholder="First Name" />
+                    </div>
+                    <div class="field">
+                      <input type="text" name="shipping[last-name]" placeholder="Last Name" />
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label>Billing Address</label>
+                  <div class="fields">
+                    <div class="twelve wide field">
+                      <input type="text" name="shipping[address]" placeholder="Street Address" />
+                    </div>
+                    <div class="four wide field">
+                      <input type="text" name="shipping[address-2]" placeholder="Apt #" />
+                    </div>
+                  </div>
+                </div>
                 <div class="two fields">
                   <div class="field">
-                    <input type="text" name="shipping[first-name]" placeholder="First Name" />
+                    <label>Estado</label>
+                    <select class="ui fluid dropdown">
+                      <option value="">Estado</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                    </select>
                   </div>
                   <div class="field">
-                    <input type="text" name="shipping[last-name]" placeholder="Last Name" />
+                    <label>País</label>
+                    <select class="ui fluid dropdown">
+                      <option value="">País</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                    </select>
                   </div>
                 </div>
-              </div>
-              <div class="field">
-                <label>Billing Address</label>
-                <div class="fields">
-                  <div class="twelve wide field">
-                    <input type="text" name="shipping[address]" placeholder="Street Address" />
-                  </div>
-                  <div class="four wide field">
-                    <input type="text" name="shipping[address-2]" placeholder="Apt #" />
-                  </div>
-                </div>
-              </div>
-              <div class="two fields">
-                <div class="field">
-                  <label>Estado</label>
-                  <select class="ui fluid dropdown">
-                    <option value="">Estado</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label>País</label>
-                  <select class="ui fluid dropdown">
-                    <option value="">País</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                  </select>
-                </div>
-              </div>
-            </form>
+              </form>
             </div>
           </div>
         </div>
@@ -160,7 +161,11 @@ function CartTransport() {
           </div>
         </div>
       </div>
-
+      <div className='boxTitleSimilar'>
+        <FaStar color='var(--white)' size={40} />
+        <h1 className='titleSimilar' >Produtos Semelhantes</h1>
+      </div>
+      <ProductCarouselSmallSimilar />
       <Footer />
     </>
   );
