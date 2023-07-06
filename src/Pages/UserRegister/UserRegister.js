@@ -7,7 +7,6 @@ import {UserService} from '../../Service';
 
 
 function UserRegister() {
-  const navigate = useNavigate();
 
   const [emailLogin, setEmailLogin] = useState('');
   const [passwordLogin, setPasswordLogin] = useState('');
@@ -19,7 +18,7 @@ function UserRegister() {
 
   const handleRegister = () => {
     if(password === confPassword){
-      user.push({
+      let userProv = ({
         name: name,
         email: email,
         password: password,
@@ -29,7 +28,7 @@ function UserRegister() {
       UserService.create(userProv)
       localStorage.setItem("userCpf", userProv.register)
       navigate("/");
-    } else {
+    }else{
       alert('Senhas diferem')
     }
   };
