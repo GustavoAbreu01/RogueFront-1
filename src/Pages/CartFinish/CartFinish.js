@@ -35,27 +35,21 @@ function CartFinish() {
             </div>
           </div>
           <div className="completed step">
-            <i className="user icon"></i>
-            <div className="content">
-              <div className="title">Confirmar Informações</div>
-            </div>
-          </div>
-          <div className="completed step">
             <i className="payment icon"></i>
             <div className="content">
               <div className="title">Pagamento</div>
             </div>
           </div>
           <div className="completed step">
-            <i className="info icon"></i>
-            <div className="content">
-              <div className="title">Confirmação do Pedido</div>
-            </div>
-          </div>
-          <div className="completed  step">
             <i className="truck icon"></i>
             <div className="content">
               <div className="title">Transporte</div>
+            </div>
+          </div>
+          <div className="completed step">
+            <i className="info icon"></i>
+            <div className="content">
+              <div className="title">Confirmação do Pedido</div>
             </div>
           </div>
         </div>

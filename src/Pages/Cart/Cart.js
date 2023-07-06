@@ -34,27 +34,21 @@ function Cart() {
             </div>
           </div>
           <div className="disabled step">
-            <i className="user icon"></i>
-            <div className="content">
-              <div className="title">Confirmar Informações</div>
-            </div>
-          </div>
-          <div className="disabled step">
             <i className="payment icon"></i>
             <div className="content">
               <div className="title">Pagamento</div>
             </div>
           </div>
           <div className="disabled step">
-            <i className="info icon"></i>
-            <div className="content">
-              <div className="title">Confirmação do Pedido</div>
-            </div>
-          </div>
-          <div className="disabled step">
             <i className="truck icon"></i>
             <div className="content">
               <div className="title">Transporte</div>
+            </div>
+          </div>
+          <div className="disabled step">
+            <i className="info icon"></i>
+            <div className="content">
+              <div className="title">Confirmação do Pedido</div>
             </div>
           </div>
         </div>
@@ -65,10 +59,10 @@ function Cart() {
             <div className='boxCartProductTitle'>
               <h5 className='TitleTextCartProduct'>Produtos e Frete</h5>
             </div>
-            <ProductCart/>
-            <ProductCart/>
-            <ProductCart/>
-            <ProductCart/>
+            <ProductCart />
+            <ProductCart />
+            <ProductCart />
+            <ProductCart />
           </div>
         </div>
         <div className='boxInfoTotalCart'>
@@ -86,20 +80,26 @@ function Cart() {
               <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
             </div>
             <div className='boxButtonTotalCart'>
-              <Link to='/cart/information'>
-                <button className="fluid ui button final">Finalizar Compra</button>
-              </Link>
+              {!verify() ?
+                <Link to='/register'>
+                  <button className="fluid ui button final">Finalizar Logi  n</button>
+                </Link>
+                :
+                <Link to='/cart/payment'>
+                  <button className="fluid ui button final">Finalizar Compra</button>
+                </Link>
+              }
               <Link to='/'>
                 <button className="fluid ui button blue basic cont">Continuar Compando</button>
               </Link>
             </div>
           </div>
           <div className='boxInfoRecommend'>
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
           </div>
         </div>
       </div>

@@ -35,27 +35,21 @@ function CartConfirm() {
             </div>
           </div>
           <div className="completed step">
-            <i className="user icon"></i>
-            <div className="content">
-              <div className="title">Confirmar Informações</div>
-            </div>
-          </div>
-          <div className="completed step">
             <i className="payment icon"></i>
             <div className="content">
               <div className="title">Pagamento</div>
+            </div>
+          </div>
+          <div className="completed step">
+            <i className="truck icon"></i>
+            <div className="content">
+              <div className="title">Transporte</div>
             </div>
           </div>
           <div className="step">
             <i className="info icon"></i>
             <div className="content">
               <div className="title">Confirmação do Pedido</div>
-            </div>
-          </div>
-          <div className="disabled step">
-            <i className="truck icon"></i>
-            <div className="content">
-              <div className="title">Transporte</div>
             </div>
           </div>
         </div>
@@ -83,7 +77,7 @@ function CartConfirm() {
               <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
             </div>
             <div className='boxButtonTotalCart'>
-              <Link to='/cart/transport'>
+              <Link to='/cart/finish'>
                 <button className="fluid ui button final">Finalizar Compra</button>
               </Link>
               <Link to='/'>
@@ -92,11 +86,11 @@ function CartConfirm() {
             </div>
           </div>
           <div className='boxInfoRecommend'>
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
-          <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
           </div>
         </div>
       </div>

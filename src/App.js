@@ -11,7 +11,6 @@ import UserRegister from './Pages/UserRegister/UserRegister';
 import Home from './Pages/Home/Home';
 import Cart from './Pages/Cart/Cart';
 import ChatWegner from './Pages/ChatWegner/ChatWegner';
-import CartInformation from './Pages/CartInformation/CartInformation';
 import CartPayment from './Pages/CartPayment/CartPayment';
 import CartConfirm from './Pages/CartConfirm/CartConfirm';
 import CartTransport from './Pages/CartTransport/CartTransport';
@@ -32,7 +31,6 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/register" element={<UserRegister />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/cart/information" element={<CartInformation />} />
           <Route path="/cart/payment" element={<CartPayment />} />
           <Route path="/cart/confirm" element={<CartConfirm />} />
           <Route path="/cart/transport" element={<CartTransport />} />
