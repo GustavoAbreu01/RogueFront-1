@@ -1,32 +1,36 @@
-.text-center.text-black{
-    margin-top: 10%;
+.text-center.text-black {
+    padding-top: 5rem;
+} 
+
+.text-center.text-black.FooterS {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(179, 179, 179, 1) 100%);
 }
 
-.btn.btn-outline-light.btn-floating.m-1{
-
+.btn.btn-outline-light.btn-floating.m-1 {
     border: none;
 }
 
-.btn.btn-floating.m-1.FooterS{
+.btn.btn-floating.m-1.FooterS {
     align-items: center;
 }
 
-.youtube.icon.FooterS{
+.youtube.icon.FooterS {
     color: black;
 }
 
-.instagram.icon.FooterS{
+.instagram.icon.FooterS {
     color: black;
 }
 
-.linkedin.icon.FooterS{
+.linkedin.icon.FooterS {
     color: black;
 }
 
-.envelope.icon{
+.envelope.icon {
     color: black;
 }
 
-.spotify.icon{
+.spotify.icon {
     color: black;
 }

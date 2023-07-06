@@ -3,7 +3,7 @@ import './Footer.css';
 import img from '../../assets/img/footer.png';
 const Footer = () => {
   return (
-    <footer>
+    <footer className='footer'>
       <div className="informations">
         <div className="local">
           <h4 style={{ alignItems: 'center' }}>WEG S.A. - HEADQUARTERS</h4>

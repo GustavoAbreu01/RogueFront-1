@@ -8,6 +8,7 @@ import w50 from "../../assets/img/motorW50.png"
 import Header from '../../Components/Header/Header';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import { FaStar } from 'react-icons/fa';
 
 function Quiz() {
   const [progresso, setProgresso] = useState(0);
@@ -192,7 +193,7 @@ function Quiz() {
             <img class="ui centered fluid image w50" src={w50} />
             <p className="descricao">Os motores W50 são projetados para aplicações industriais e garantem excelente performance e confiabilidade nas mais severas aplicações.</p>
             <Link to='/product'>
-            <button class="ui huge fluid button details">Mais detalhes</button>
+              <button class="ui huge fluid button details">Mais detalhes</button>
             </Link>
           </div>
         ) : (
@@ -201,6 +202,10 @@ function Quiz() {
             <button class="ui big button next" onClick={proximo}>Próximo</button>
           </div>
         )}
+      </div>
+      <div className='boxTitleSimilar'>
+        <FaStar color='var(--white)' size={40} />
+        <h1 className='titleSimilar' >Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmall />
       <Footer />
