@@ -1,0 +1,17 @@
+.ContainerNotFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.imgNotFound {
+    height: 40%;
+    width: 40%;
+}
+
+.textTitleNotFound {
+    color: var(--blue-primary);
+    font-weight: bold;
+}

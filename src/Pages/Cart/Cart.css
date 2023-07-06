@@ -54,7 +54,11 @@
 
 .boxInfoRecommend {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: var(--white);
+    gap: 0.2rem;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     height: 40rem;
