@@ -20,7 +20,7 @@ function MenuModal() {
       </div>
        {verify() && 
         <div className="modal-menu-content">
-          teste
+          <div></div>
         </div>
         }
 

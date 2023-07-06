@@ -32,14 +32,11 @@
     justify-content: center;
     align-items: center;
     margin-top: -1.2rem;
-    margin-left: 2.6rem;
-    height: 20rem;
-    width: 20rem;
-    position: absolute;
+    height: 50%;
+    width: 20%;
+    position: fixed;
     overflow: scroll;
     background-color: #fff;
-    border-radius: 1.5rem;
-    -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
-    -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
-    box-shadow: 9px 7px 5px rgba(43, 43, 43, 0.77);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
