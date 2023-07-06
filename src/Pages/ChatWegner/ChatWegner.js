@@ -6,8 +6,18 @@ import { VscSend } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 
 function ChatWegner() {
+
+    const verify = () => {
+        const Registered = localStorage.getItem('verifyLogin');
+        if (Registered === "yes") {
+          return true
+        } else {
+          return false
+        }
+      }
 
     return (
         <>{!verify() ? <Header /> : <HeaderLogin />}

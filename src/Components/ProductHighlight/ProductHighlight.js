@@ -41,6 +41,7 @@ function ProductHighlight() {
       <button class="fluid ui button">Comprar</button>
 
       </div>
+      </Link>
     </div>
   )
 }

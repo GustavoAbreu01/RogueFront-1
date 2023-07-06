@@ -39,6 +39,7 @@ function Product() {
       <button class="fluid ui button">Comprar</button>
 
       </div>
+      </Link>
     </div>
   )
 }
