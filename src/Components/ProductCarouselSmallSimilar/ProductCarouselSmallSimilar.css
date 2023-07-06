@@ -1,0 +1,30 @@
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+.carouselProduct{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    color: var(--blue-primary);
+}
+
+.slick-arrow.slick-prev {
+    align-items: center;
+    background-color: var(--blue-primary);
+    border-radius: 50px;
+}
+
+.slick-arrow.slick-next {
+    align-items: center;
+    background-color: var(--blue-primary);
+    border-radius: 50px;
+}
+
+.box {
+    padding: 1rem;
+}

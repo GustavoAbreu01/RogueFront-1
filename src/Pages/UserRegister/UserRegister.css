@@ -7,11 +7,12 @@ body {
 }
 
 .ui.three.column.stackable.grid.container {
-    margin-top: 7rem;
+    margin-top: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color:var(--white);;
     border-radius: 2rem;
     padding: 3rem;

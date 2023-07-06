@@ -52,3 +52,20 @@ background-color: brown;
     background-color: var(--blue-secundary);
 }
 
+.boxTitleSimilar{
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.titleSimilar {
+    color: var(--white);
+    font-weight: bold;
+}

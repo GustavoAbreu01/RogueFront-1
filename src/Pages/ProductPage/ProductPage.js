@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa'
 import motor from '../../assets/img/motor.png'
 import save from '../../assets/img/salvo.png'
 import { Rating } from 'semantic-ui-react';
-import Carousel from '../../Components/ProductCarouselSmall/ProductCarouselSmall';
+import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
@@ -99,11 +99,11 @@ function ProductPage() {
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
                 </div>
             </div>
-            <div className='boxTitleHighlights'>
-                <FaStar color='var(--white)' size={40} />
-                <h1 className='titleHighlights' >Destaques da semana</h1>
-            </div>
-            <Carousel />
+            <div className='boxTitleSimilar'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='titleSimilar' >Produtos Semelhantes</h1>
+          </div>
+            <Carousel/>
             <Footer />
         </>
     )
