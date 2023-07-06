@@ -8,6 +8,11 @@
     
 }
 
+.textWeggnerModal{
+    text-align:center;
+    color: var(--blue-primary);
+}
+
 .wegner{
     z-index: 99;
     background-color: var(--blue-primary);
@@ -25,17 +30,20 @@
 }
 
 .modalContent{
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
     z-index: 10;
     position: fixed;
     float: right;
     bottom: 4rem;
     right: 5rem;
     width: 15rem;
-    height: 25rem;
-    background-color: aliceblue;
+    height: 15rem;
+    background-color: var(--white);
     border: solid 0.01rem rgba(0, 0, 0, 0.151);
     border-radius: 20px;
     -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);

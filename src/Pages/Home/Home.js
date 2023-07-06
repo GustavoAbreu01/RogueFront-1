@@ -24,7 +24,7 @@ import { MdOutlineSecurity } from 'react-icons/md'
 import { BsPaintBucket } from 'react-icons/bs'
 import { CgSearchFound } from 'react-icons/cg'
 import { CgSmartphoneChip } from 'react-icons/cg'
-import { LiaCertificateSolid } from 'react-icons/lia' 
+import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
@@ -159,7 +159,7 @@ function Home() {
           <Link to='/weggner' style={{ textDecoration: 'none' }}>
             <div className="optionWeggner">
               <div className="questIcon">
-                <img src={weggner} alt="" width={125}/>
+                <img src={weggner} alt="" width={125} />
                 <div>
                   <h4 className='titleOpc'>Conheça o nosso<br />
                     Assistente Virtual!</h4>
@@ -192,36 +192,46 @@ function Home() {
         <div className='boxCategoryButtons' >
           <h1 className='categoryTitleBox'>Departamentos</h1>
           <div className='categoryButtonsOpt'>
-            <div className='categoryTitle'>
-              <button className='categoryButton'>
-                <MdOutlineSecurity color='var(--blue-primary)' className='categoryButtonImg' ></MdOutlineSecurity>
-              </button>
-              <h2>Segurança</h2>
-            </div>
+            <Link to='/category'>
+              <div className='categoryTitle'>
+                <button className='categoryButton'>
+                  <MdOutlineSecurity color='var(--blue-primary)' className='categoryButtonImg' ></MdOutlineSecurity>
+                </button>
+                <h2>Segurança</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
             <div className='categoryTitle'>
               <button className='categoryButton'>
                 <BsPaintBucket color='var(--blue-primary)' className='categoryButtonImg' ></BsPaintBucket>
               </button>
               <h2>Tintas</h2>
             </div>
+            </Link>
+            <Link to='/category'>
             <div className='categoryTitle'>
               <button className='categoryButton'>
                 <CgSmartphoneChip color='var(--blue-primary)' className='categoryButtonImg' ></CgSmartphoneChip>
               </button>
               <h2>Automação</h2>
             </div>
+            </Link>
+            <Link to='/category'>
             <div className='categoryTitle'>
               <button className='categoryButton'>
                 <TfiPanel color='var(--blue-primary)' className='categoryButtonImg'></TfiPanel>
               </button>
               <h2>Painéis</h2>
             </div>
+            </Link>
+            <Link to='/category'>
             <div className='categoryTitle'>
               <button className='categoryButton'>
                 <img src={iconMotor} width={75} height={50} alt=''></img>
               </button>
               <h2>Motores</h2>
             </div>
+            </Link>
           </div>
         </div>
 
@@ -246,7 +256,7 @@ function Home() {
             {iconsInfoOne.map((icon) => (
               <div className="infoBox" data-aos="fade-up" key={icon.id}>
                 <div className="iconInfoBox">
-                  <img src={icon.icon} className="iconInfo" alt=''/>
+                  <img src={icon.icon} className="iconInfo" alt='' />
                 </div>
                 <div className='infoDescriptionBox'>
                   <h1 className="titleInfo" >{icon.name}</h1>
@@ -260,7 +270,7 @@ function Home() {
             {iconsInfoTwo.map((icon) => (
               <div className="infoBox" data-aos="fade-up" key={icon.id}>
                 <div className="iconInfoBox">
-                  <img src={icon.icon} className="iconInfo" alt=''/>
+                  <img src={icon.icon} className="iconInfo" alt='' />
                 </div>
                 <div className='infoDescriptionBox'>
                   <h1 className="titleInfo" >{icon.name}</h1>
@@ -282,8 +292,8 @@ function Home() {
         </div>
 
         <div className='boxAnnouncements' data-aos="fade-up" >
-              <img className='announBanner'  src={BannerAnnouncementOne} />
-              <img className='announBanner' src={BannerAnnouncementTwo}/>
+          <img className='announBanner' src={BannerAnnouncementOne} />
+          <img className='announBanner' src={BannerAnnouncementTwo} />
         </div>
 
         <Footer /></>

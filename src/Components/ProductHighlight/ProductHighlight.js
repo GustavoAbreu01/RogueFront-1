@@ -10,20 +10,25 @@ function ProductHighlight() {
 
   return (
     <div className='boxProduct'>
-      <Link to='/product'>
+     
       <div className='tagIconProduct'>
       <button className="circular ui icon button">
           <i className="star icon"></i>
         </button>
       </div>
       <div className='iconProductAction'>
+        <Link to='save'>
         <button class="ui icon button">
           <i class="bookmark icon"></i>
         </button>
+        </Link>
+        <Link to='cart'>
         <button class="ui icon button">
         <i class="cart plus icon"></i>
         </button>
+        </Link>
       </div>
+      <Link to='/product'>
       <div className='boxProductImage'>
         <img src={motor} alt='' className='productCardImage' height={150} width={150}></img>
       </div>

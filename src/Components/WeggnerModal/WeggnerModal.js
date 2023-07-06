@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './WeggnerModal.css'
+import { Link } from 'react-router-dom'
 import wegnerSleeping from "../../assets/img/weggnerDormindo.png"
 import wegnerAwake from "../../assets/img/weggnerAcordado.PNG"
 
@@ -16,10 +17,16 @@ function WeggnerModal() {
   }
 
   return (
+
+   
     <div>
+       <Link to='/weggner'>
       {verify() &&<div data-aos="fade-up" className='modalContent'>
-            Wegner
+        <div className='textWeggnerModal'>
+           <h5>Clique aqui para acessar o chat com Weggner</h5>
+           </div>
         </div>}
+        </Link>
     <div className='wegnerModal'>
       {!verify() ?
         <div onClick={() => setOpenModal(openModal + 1)}><img src={wegnerSleeping} alt='' className='wegner'></img></div>
@@ -28,6 +35,7 @@ function WeggnerModal() {
         }
     </div>
     </div>
+   
   )
 }
 

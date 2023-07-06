@@ -15,12 +15,16 @@ function Product() {
         </button>
       </div>
       <div className='iconProductAction'>
+      <Link to="/save">
         <button class="ui icon button">
           <i class="bookmark icon"></i>
         </button>
+        </Link>
+        <Link to="/cart">
         <button class="ui icon button">
         <i class="cart plus icon"></i>
         </button>
+        </Link>
       </div>
       <div className='boxProductImage'>
         <img src={motor} alt='' className='productCardImage' height={150} width={150}></img>
