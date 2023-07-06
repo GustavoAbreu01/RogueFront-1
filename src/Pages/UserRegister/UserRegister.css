@@ -7,7 +7,7 @@ body {
 }
 
 .ui.three.column.stackable.grid.container {
-    margin-top: 7rem;
+    margin-top: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;

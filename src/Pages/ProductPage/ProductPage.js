@@ -99,9 +99,9 @@ function ProductPage() {
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
                 </div>
             </div>
-            <div className='boxTitleHighlights'>
+            <div className='boxTitleSimilar'>
             <FaStar color='var(--white)' size={40} />
-            <h1 className='titleHighlights' >Produtos Semelhantes</h1>
+            <h1 className='titleSimilar' >Produtos Semelhantes</h1>
           </div>
             <Carousel/>
             <Footer />

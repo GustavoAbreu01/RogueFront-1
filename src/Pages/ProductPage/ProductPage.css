@@ -52,7 +52,7 @@ background-color: brown;
     background-color: var(--blue-secundary);
 }
 
-.boxTitleHighlights {
+.boxTitleSimilar{
     display: flex;
     align-items: center;
     background-color: var(--blue-primary);
@@ -65,7 +65,7 @@ background-color: brown;
     border-bottom-right-radius: 50px;
 }
 
-.titleHighlights {
+.titleSimilar {
     color: var(--white);
     font-weight: bold;
 }
