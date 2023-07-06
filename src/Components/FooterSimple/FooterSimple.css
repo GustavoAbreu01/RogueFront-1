@@ -1,0 +1,32 @@
+.text-center.text-black{
+    margin-top: 10%;
+}
+
+.btn.btn-outline-light.btn-floating.m-1{
+
+    border: none;
+}
+
+.btn.btn-floating.m-1.FooterS{
+    align-items: center;
+}
+
+.youtube.icon.FooterS{
+    color: black;
+}
+
+.instagram.icon.FooterS{
+    color: black;
+}
+
+.linkedin.icon.FooterS{
+    color: black;
+}
+
+.envelope.icon{
+    color: black;
+}
+
+.spotify.icon{
+    color: black;
+}
