@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import './ProfileModal.css'
 import { CgProfile } from 'react-icons/cg'
 import logoWeg from "../../assets/img/logoWEG.png"
-import LinguageModal from '../LanguageModal/LanguageModal'
+import LanguageModal from '../LanguageModal/LanguageModal'
 
-export default function ProfileModal() {
+export default function ProfileModal({user}) {
     const [openModal, setopenModal] = useState(false);
+    
 
     const open = () => {
       setopenModal(true);
@@ -20,7 +21,7 @@ export default function ProfileModal() {
         <CgProfile className="MenuIcon" onClick={open}>aa</CgProfile>
           {openModal && (
             <div className="openModal">
-                <div className="modal">
+                <div className="modalProfile">
                 <div className='logoWeg'>
                     <img src={logoWeg} alt="" />
                 </div>
@@ -31,20 +32,20 @@ export default function ProfileModal() {
                 <div className='clientInfo'>
                 <div className='name'>
                     <h1>Nome</h1>
-                    <input type="text" placeholder='Nome do safado'/>
+                    <p>{user.name}</p>
                 </div>
                 <div className='email'>
                     <h1>Email</h1>
-                    <input type="text" placeholder='Email do safado'/>
+                    <p>{user.email}</p>
                 </div>
                 <div className='cpf'>
                     <h1>CPF</h1>
-                    <input type="text" placeholder='Cpf do safado'/>
+                    <p>{user.register}</p>
                 </div>
                 </div>
-                <div className='linguage'>
+                <div >
                     <h1>Idioma</h1>
-                    <LinguageModal/>
+                    <LanguageModal/>
                 </div>
                 </div>
               <div className="background" onClick={openAndClose}></div>

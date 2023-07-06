@@ -10,8 +10,8 @@ function ProductNew() {
     <div className='boxProduct'>
       <Link to='/product'>
       <div className='tagIconProduct'>
-        <button class="circular ui icon button">
-          <i class="exclamation circle
+        <button className="circular ui icon button">
+          <i className="exclamation circle
  icon"></i>
         </button>
       </div>
@@ -36,10 +36,10 @@ function ProductNew() {
         <h3 className='priceProduct'>R$ 1.259,00</h3>
         <p className='priceProductOptional'>Á vista no pix</p>
       </div>
-      <Link to='/cart'><div className='boxProductButton'>
+      <div className='boxProductButton'>
         <button class="fluid ui button">Comprar</button>
-      </div></Link>
-      </Link>
+
+      </div>
     </div>
   )
 }

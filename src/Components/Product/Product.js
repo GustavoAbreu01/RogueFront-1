@@ -10,17 +10,17 @@ function Product() {
     <div className='boxProduct'>
       <Link to='/product'>
       <div className='tagIconProduct'>
-        <button class="circular ui icon button">
-          <i class="chart line icon"></i>
+      <button className="circular ui icon button">
+          <i className="chart line icon"></i>
         </button>
       </div>
       <div className='iconProductAction'>
-        <Link to='/save'><button class="ui icon button">
+        <button class="ui icon button">
           <i class="bookmark icon"></i>
-        </button></Link>
-        <Link to='/cart'><button class="ui icon button">
-          <i class="cart plus icon"></i>
-        </button></Link>
+        </button>
+        <button class="ui icon button">
+        <i class="cart plus icon"></i>
+        </button>
       </div>
       <div className='boxProductImage'>
         <img src={motor} alt='' className='productCardImage' height={150} width={150}></img>
@@ -35,10 +35,10 @@ function Product() {
         <h3 className='priceProduct'>R$ 1.259,00</h3>
         <p className='priceProductOptional'>Á vista no pix</p>
       </div>
-      <Link to='/cart'><div className='boxProductButton'>
-        <button class="fluid ui button">Comprar</button>
-      </div></Link>
-      </Link>
+      <div className='boxProductButton'>
+      <button class="fluid ui button">Comprar</button>
+
+      </div>
     </div>
   )
 }

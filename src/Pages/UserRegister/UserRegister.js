@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./UserRegister.css"
 import { useState } from "react";
 import FooterSimple from '../../Components/FooterSimple/FooterSimple';
+import {UserService} from '../../Service';
 
 
 function UserRegister() {
@@ -16,18 +17,17 @@ function UserRegister() {
   const [confPassword, setConfPassword] = useState('');
   const [cpf, setCpf] = useState('');
 
-  const user = JSON.parse(localStorage.getItem('user')) || [];
-
   const handleRegister = () => {
-    if (password === confPassword) {
+    if(password === confPassword){
       user.push({
         name: name,
         email: email,
         password: password,
-        cpf: cpf
+        register: cpf
       });
-      localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem("verifyLogin", 'yes');
+      UserService.create(userProv)
+      localStorage.setItem("userCpf", userProv.register)
       navigate("/");
     } else {
       alert('Senhas diferem')

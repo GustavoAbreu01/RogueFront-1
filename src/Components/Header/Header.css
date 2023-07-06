@@ -28,6 +28,7 @@ header {
 }
 
 header .opcDeEntradaHeader {
+    color: white;
     display: grid;
     grid-template-columns: repeat(3, 25px);
     margin-top: 50%;
@@ -96,9 +97,10 @@ header .loginHeader {
     width: 100%;
     margin: 0 auto;
     z-index: 1;
+    color: white;
 }
 
-.navBarHeader a{
+.navBarHeader > a{
     color: white;
     text-decoration: none;
     

@@ -11,33 +11,33 @@ import MenuModal from '../MenuModal/MenuModal'
 function Header() { 
   return (
     <><header>
-      <div class="img">
+      <div className="img">
         <Link to={"/"}><img className='imgHeader' src={logo} alt="" /></Link>
       </div>
       <div>
         <SearchBar />
       </div>
-      <div class="opcHeader">
-        <div class="opcDeEntradaHeader">
-          <Link class="accountHeader" to="/register">Crie sua conta</Link>/<Link class="loginHeader" to="/register">Login</Link>
+      <div className="opcHeader">
+        <div className="opcDeEntradaHeader">
+          <Link className="accountHeader" to="/register">Crie sua conta</Link>/<Link className="loginHeader" to="/register">Login</Link>
         </div>
-        <Link class="savesHeader" to="/cart"><FaShoppingCart class="carrinhoHeader" /></Link>
+        <Link className="savesHeader" to="/cart"><FaShoppingCart className="carrinhoHeader" /></Link>
       </div>
-    </header><div class="navBarHeader">
+    </header><div className="navBarHeader">
         <div id="menu">
           <MenuModal />
         </div>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
         <Link to="/category" >Motores</Link>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
         <Link to="/category" >Tintas e Vernizes</Link>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
         <Link to="/category">Automação</Link>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
         <Link to="/category">Paineis Eletricos</Link>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
         <Link to="/category">Segurança</Link>
-        <div class="divisores"></div>
+        <div className="divisores"></div>
       </div></>
   )
 }
