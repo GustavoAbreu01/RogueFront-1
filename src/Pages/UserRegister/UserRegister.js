@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import "./UserRegister.css"
 import { useState } from "react";
+import FooterSimple from '../../Components/FooterSimple/FooterSimple';
 
 
 function UserRegister() {
@@ -18,7 +19,7 @@ function UserRegister() {
   const user = JSON.parse(localStorage.getItem('user')) || [];
 
   const handleRegister = () => {
-    if(password === confPassword){
+    if (password === confPassword) {
       user.push({
         name: name,
         email: email,
@@ -28,7 +29,7 @@ function UserRegister() {
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem("verifyLogin", 'yes');
       navigate("/");
-    }else{
+    } else {
       alert('Senhas diferem')
     }
   };
@@ -48,70 +49,71 @@ function UserRegister() {
   };
 
   return (
-    
+
     <>
 
-    <div className="ui three column stackable grid container">
-     
-     <div className="column">
-      <form className="ui form login">
+      <div className="ui three column stackable grid container">
 
-      <h2 className="ui header titleRegister">Login</h2>
+        <div className="column">
+          <form className="ui form login">
 
-      <div className="field emailLogin">
-        <label>Email:</label>
-        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailLogin" placeholder="seuEmail@email.com"  value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)}/>
+            <h2 className="ui header titleRegister">Login</h2>
+
+            <div className="field emailLogin">
+              <label>Email:</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="emailLogin" placeholder="seuEmail@email.com" value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)} />
+            </div>
+
+            <div className="field passwordLogin">
+              <label>Senha:</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="passwordLogin" placeholder="suasenha/123455" value={passwordLogin} onChange={(e) => setPasswordLogin(e.target.value)} />
+            </div>
+            <div className='box'>
+              <button className="ui big fluid button" onClick={() => handleLogin()}>Entrar</button>
+            </div>
+          </form>
+        </div>
+
+        <div className="column">
+          <div className="ui vertical divider"> Ou </div>
+        </div>
+
+        <div className="column">
+          <form className="ui form register">
+
+            <h2 className="ui header titleRegister">Cadastro</h2>
+
+            <div className="field">
+              <label>Nome</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="nameRegister" placeholder="Seu nome" value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+
+            <div className="field">
+              <label>Email</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="emailRegister" placeholder="seuemail@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
+
+            <div className="field">
+              <label>CPF/CNPJ</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="cpflRegister" placeholder="12312312334" value={cpf} onChange={(e) => setCpf(e.target.value)} />
+            </div>
+
+            <div className="field passwordRegister">
+              <label>Senha:</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="passwordRegister" placeholder="suasenha/123455" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+
+            <div className="field passwordConfirm">
+              <label>Senha:</label>
+              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="passwordConfirm" placeholder="suasenha/123455" value={confPassword} onChange={(e) => setConfPassword(e.target.value)} />
+            </div>
+            <div className='box'>
+              <button className="ui big fluid button" onClick={() => handleRegister()}>Cadastrar</button>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div className="field passwordLogin">
-        <label>Senha:</label>
-        <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordLogin" placeholder="suasenha/123455"  value={passwordLogin} onChange={(e) => setPasswordLogin(e.target.value)}/>
-      </div>
-      <div className='box'>
-        <button className="ui big fluid button" onClick={() => handleLogin()}>Entrar</button>
-        </div>
-      </form>
-      </div>
-
-      <div className="column">
-      <div className="ui vertical divider"> Ou </div>
-      </div>
-      
-      <div className="column">
-      <form className="ui form register">
-
-      <h2 className="ui header titleRegister">Cadastro</h2>
-
-        <div className="field">
-          <label>Nome</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="nameRegister" placeholder="Seu nome" value={name} onChange={(e) => setName(e.target.value)}/>
-        </div>
-
-        <div className="field">
-          <label>Email</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="emailRegister" placeholder="seuemail@email.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
-        </div>
-
-        <div className="field">
-          <label>CPF/CNPJ</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="cpflRegister" placeholder="12312312334" value={cpf} onChange={(e) => setCpf(e.target.value)}/>
-        </div>
-
-        <div className="field passwordRegister">
-          <label>Senha:</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordRegister" placeholder="suasenha/123455" value={password} onChange={(e) => setPassword(e.target.value)}/>
-        </div>
-
-        <div className="field passwordConfirm">
-          <label>Senha:</label>
-          <input style={{ backgroundColor:'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)',borderLeftWidth: '4px'}} type="text" name="passwordConfirm" placeholder="suasenha/123455" value={confPassword} onChange={(e) => setConfPassword(e.target.value)}/>
-        </div>
-        <div className='box'>
-        <button className="ui big fluid button" onClick={() => handleRegister()}>Cadastrar</button>
-        </div>
-      </form>
-      </div>
-      </div></>
-)
+      <FooterSimple/></>
+  )
 }
 export default UserRegister

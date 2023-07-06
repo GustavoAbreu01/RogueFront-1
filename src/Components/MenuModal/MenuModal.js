@@ -25,6 +25,9 @@ function MenuModal() {
               <li>primeiro item</li>
               <li>segundo item</li>
               <li>terceiro item</li>
+              <li>primeiro item</li>
+              <li>segundo item</li>
+              <li>terceiro item</li>
             </ul>
           </div>
         </div>
