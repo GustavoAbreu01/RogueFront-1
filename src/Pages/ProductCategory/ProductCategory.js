@@ -114,52 +114,54 @@ function ProductCategory() {
                 </div>
                 <br />
                 <br />
-             
+
+              </div>
             </div>
           </div>
-        </div>
 
 
 
 
-        <div class="ui row category">
+          <div class="ui row category">
 
 
 
 
-          <div class="column itens">
- 
-            <div id="produtos">
+            <div class="column itens">
+
+              <div id="produtos">
 
 
 
 
-              {numero.map((i) => (
-               
-                <div class="ui segment itens categoryItens" id="itemCategory" key={i}>
-                  <Link to="/product">
-                  <div class="itemContentCategory" style={{color:'black'}}>
-                    <div id="imgItensCategory">
-                      <img src={motors} width="125" height="" />
-                    </div>
-                    <div class="itemInfoCategory">
-                    <h2 id="itemNameCategory">W12 Monofásico</h2>
-                      <h4 id="descricaoCategory">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                      <h2 id="itemPrecoCategory">R$ 495<sup> 99</sup></h2>
-                    </div>
-                  </div>
-                  </Link>
-                  <button className="saveCategory" href="">
+                {numero.map((i) => (
+
+                  <div class="ui segment itens categoryItens" id="itemCategory" key={i}>
+                    <Link to="/product">
+                      <div class="itemContentCategory" style={{ color: 'black' }}>
+                        <div id="imgItensCategory">
+                          <img src={motors} width="125" height="" />
+                        </div>
+                        <div class="itemInfoCategory">
+                          <h2 id="itemNameCategory">W12 Monofásico</h2>
+                          <h4 id="descricaoCategory">Desenvolvido para oferecer versatilidade e eficiência.</h4>
+                          <h2 id="itemPrecoCategory">R$ 495<sup> 99</sup></h2>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link to='/save'>
+                      <button className="saveCategory" href="">
                         <img onClick={teste} src={save} className="salvosCategory" width="40" height="40" id="salvos" />
-                  </button>
-                </div>
-              ))}
+                      </button>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div >
-    <Footer />
+      </div >
+      <Footer />
     </>
   );
 };

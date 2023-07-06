@@ -40,3 +40,12 @@
     border-bottom-right-radius: 10%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+.categoryName{
+    color: var(--blue-primary);
+}
+
+.listCategory{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

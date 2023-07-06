@@ -82,13 +82,7 @@
     flex-direction: column;
 }
 
-.boxCartProductTextFinal {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+
 
 .boxCartProductSubTextFinal {
     align-items: center;

@@ -33,16 +33,16 @@ const Footer = () => {
         <div className="social">
           <h4>Redes Sociais</h4>
           <div className="socialDivisor"></div>
-          <a href="">
-            <i className="twitter icon"></i> Twitter
+          <a href="https://www.instagram.com/weg.group/">
+            <i className="instagram icon"></i> Instagram
           </a>
-          <a href="">
+          <a href="https://www.youtube.com/wegvideos">
             <i className="youtube icon"></i> Youtube
           </a>
           {/* <a href="">
             <img src={issuu} alt="" /> Issuu
           </a> */}
-          <a href="">
+          <a href="https://www.linkedin.com/company/weg">
             <i className="linkedin in icon"></i> Linkedin
           </a>
         </div>

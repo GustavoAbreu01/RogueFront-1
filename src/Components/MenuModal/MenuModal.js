@@ -1,41 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BiMenu } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import './MenuModal.css';
 
+
 function MenuModal() {
+  const [openModal, setOpenModal] = useState(false);
 
-  const [openModal, setOpenModal] = useState(0)
-
-  function verify() {
-    if (openModal !== 0) {
-      return true
-    } else {
-      return false
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.classList.contains('background')) {
+        setOpenModal(false);
+      }
     }
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
+  function toggleModal() {
+    setOpenModal(!openModal);
   }
+
   return (
     <>
       <div>
-        <BiMenu className="MenuIcon" onClick={() => setOpenModal(openModal + 1)}></BiMenu>
+        <BiMenu className="MenuIcon" onClick={toggleModal}></BiMenu>
       </div>
-      {verify() &&
-        <div className="modal-menu-content-detail" >
+      {openModal && (
+        <div className="modal-menu-content-detail">
           <div className="modal-menu-content" data-aos="fade-right">
-            <ul>
-              <li>primeiro item</li>
-              <li>segundo item</li>
-              <li>terceiro item</li>
-              <li>primeiro item</li>
-              <li>segundo item</li>
-              <li>terceiro item</li>
+            <ul className="listCategory">
+              <li className="categoryName">
+                <a href="/category">Redutores de velocidade</a>
+              </li>
+              <li className="categoryName">
+                <a href="/category">Soluções Digitais</a>
+              </li>
+              <li className="categoryName">
+                <a href="/category">Armazenamento de Energia em Baterias</a>
+              </li>
+              <li className="categoryName">
+                <a href="/category">Partes e Peças</a>
+              </li>
+              <li className="categoryName">
+                <a href="/category">Serviços
+</a>
+              </li>
+              <li className="categoryName">
+                <a href="/category">Geração, Transmissão e Distribuição</a>
+                </li>
             </ul>
           </div>
         </div>
-      }
+      )}
 
-      {verify() &&
-        <div className="background" onClick={() => setOpenModal(openModal - 1)}></div>
-      }
+      {openModal && <div className="background" onClick={toggleModal}></div>}
     </>
   );
 }
