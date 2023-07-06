@@ -119,7 +119,6 @@ function CartPayment() {
                     </div>
                   </div>
                 </div>
-                <div class="ui button" tabindex="0">Submit Order</div>
               </form>
             </div>
           </div>
