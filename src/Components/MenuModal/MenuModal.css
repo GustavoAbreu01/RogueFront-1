@@ -41,6 +41,30 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+.modal-menu-content-detail {
+    z-index: 250;
+    font-size: 20px;
+    align-items: center;
+    justify-content: end;
+    display: flex;
+    height: 100%;
+    width: 22%;
+    top : 0;
+    left: 0;
+    position: fixed;
+    overflow: scroll;
+    background-color: var(--blue-secundary);
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.backIcon {
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .categoryName{
     color: var(--blue-primary);
 }
@@ -94,4 +118,10 @@
     font-size: 20px;
     color: var(--black);
     font-weight: 600;
+}
+
+.subCategory:hover {
+    color: var(--blue-primary);
+    cursor: pointer;
+    transition: 0.3s;
 }

@@ -1,56 +1,66 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProfileModal.css'
 import { CgProfile } from 'react-icons/cg'
 import logoWeg from "../../assets/img/logoWEG.png"
 import LanguageModal from '../LanguageModal/LanguageModal'
+import { Link } from 'react-router-dom'
+import { AiOutlineClose } from 'react-icons/ai'
+import { BsArrowBarRight } from 'react-icons/bs'
 
-export default function ProfileModal({user}) {
-    const [openModal, setopenModal] = useState(false);
-    
+export default function ProfileModal({ user }) {
+  const [openModal, setOpenModal] = useState(false);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
-    const open = () => {
-      setopenModal(true);
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.classList.contains('background')) {
+        setOpenModal(false);
+      }
+    }
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
     };
-  
-    const openAndClose = () => {
-      setopenModal(false);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
     };
-  
-    return (
-      <>
-        <CgProfile className="MenuIcon" onClick={open}>aa</CgProfile>
-          {openModal && (
-            <div className="openModal">
-                <div className="modalProfile">
-                <div className='logoWeg'>
-                    <img src={logoWeg} alt="" />
-                </div>
-                <div className='photo'>
-                    <CgProfile size={'5rem'} />
-                    <button className='btnPhoto'>Editar</button>
-                </div>
-                <div className='clientInfo'>
-                <div className='name'>
-                    <h1>Nome</h1>
-                    <p>{user.name}</p>
-                </div>
-                <div className='email'>
-                    <h1>Email</h1>
-                    <p>{user.email}</p>
-                </div>
-                <div className='cpf'>
-                    <h1>CPF</h1>
-                    <p>{user.register}</p>
-                </div>
-                </div>
-                <div >
-                    <h1>Idioma</h1>
-                    <LanguageModal/>
-                </div>
-                </div>
-              <div className="background" onClick={openAndClose}></div>
-            </div>
-          )}
-      </>
-    );
+  }, []);
+
+  function toggleModal() {
+    setOpenModal(!openModal);
+  }
+
+  const verifyScreen = () => {
+    if (screenSize.width > 900) {
+      return false
+    } else {
+      return true
+    }
+  }
+
+  return (
+    <>
+      <div>
+        <CgProfile className='profileIcon' onClick={toggleModal}></CgProfile>
+      </div>
+      {openModal && (
+        <div className="modal-profile-content-detail">
+          <BsArrowBarRight className="backIcon" onClick={toggleModal}></BsArrowBarRight>
+          <div className="modal-profile-content" data-aos="fade-left">
+          </div>
+        </div>
+      )}
+
+      {openModal && <div className="background" onClick={toggleModal}></div>}
+    </>
+  );
 }

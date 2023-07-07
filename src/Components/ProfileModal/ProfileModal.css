@@ -1,109 +1,45 @@
-.modalProfile{
-    position: absolute;
-    width: 40rem;
-    height: 25rem;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    z-index: 100;
-    top: 3.5rem;
-    right: 3.5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: left;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    transition: all 0.5s ease-in;
-}
-
-.modalProfile .photo{
+.modal-profile-content{
+    z-index: 250;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 40%;
+    height: 100%;
+    width: 20%;
+    top : 0;
+    right: 0;
+    position: fixed;
+    overflow: scroll;
+    background-color: #fff;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.modalProfile .photo button{
-    width: 7rem;
-    height: 2rem;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--blue-primary);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
+.modal-profile-content-detail {
+    z-index: 250;
+    font-size: 20px;
+    align-items: center;
+    justify-content: start;
+    display: flex;
+    height: 100%;
+    width: 22%;
+    top : 0;
+    right: 0;
+    position: fixed;
+    overflow: scroll;
+    background-color: var(--blue-secundary);
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.backIcon {
+    color: var(--white);
+    font-size: 2rem;
     cursor: pointer;
-    transition: all 0.5s ease-in;
 }
 
-.modalProfile .photo button:hover{
-    transition: all 0.2s ease-in;
-    background-color: var(--blue-secondary);
-    color: var(--grey-primary);
-    border: 1px solid var(--grey-primary);
-}
-
-.modalProfile .photo button:active{
-    transition: none;
-    background-color: var(--blue-primary);
-    color: white;
-}
-
-.modalProfile .clientInfo{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    row-gap: 3rem;
-}
-
-.modalProfile .clientInfo h1{
-    display: flex;
-    flex-direction: row;
-    border-left: 3px solid var(--blue-primary);
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding-left: 10px;
-    color: #333;
-}
-
-.modalProfile .clientInfo p{
-    width: 100%;
-    height: 2rem;
-    border-bottom: 1px solid #333;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding: 5px;
-}
-
-.modalProfile .clientInfo input::placeholder{
-    color: var(--grey-primary);
-}
-
-.modalProfile .clientInfo input:focus{
-    outline: none;
-}
-
-.modalProfile .logoWeg{
-    position: absolute;
-    top: 5px;
-    left: 5px;
-}
-
-.modalProfile .logoWeg img{
-    width: 4rem;
-}
-
-
-.background{
-    top: 0;
-    left: 0;
-    z-index: 99;
+.profileIcon {
+    font-size: 35px;
+    margin-left: 1rem;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BiMenu } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
-import { AiOutlineClose } from 'react-icons/ai';
+import { Link } from 'react-router-dom'; 
+import { BsArrowBarLeft } from 'react-icons/bs';
 import iconMotor from "../../assets/img/iconeMotor.png"
 import iconTecSolutions from "../../assets/img/DIFERENTESTECNOLOGIAS.png"
 import iconEnergy from "../../assets/img/ENERGIA FOTOVOLTAICA_SOLAR.png"
@@ -57,6 +57,7 @@ function MenuModal() {
       </div>
       {openModal && (
         <div className="modal-menu-content-detail">
+          <BsArrowBarLeft className="backIcon" onClick={toggleModal}></BsArrowBarLeft>
           <div className="modal-menu-content" data-aos="fade-right">
             <div className="modal-menu-content-header">
               <h1 className="modal-menu-title">Categorias</h1>
@@ -114,33 +115,9 @@ function MenuModal() {
         </div>
       )}
 
-      {openModal && <div className="background" onClick={toggleModal}>
-        <AiOutlineClose className="closeIcon" onClick={toggleModal}></AiOutlineClose></div>}
+      {openModal && <div className="background" onClick={toggleModal}></div>}
     </>
   );
 }
 
 export default MenuModal;
-
-{/* <ul className="listCategory">
-              <li className="categoryName">
-                <a href="/category">Redutores de velocidade</a>
-              </li>
-              <div class="ui inverted divider"></div>
-              <li className="categoryName">
-                <a href="/category">Soluções Digitais</a>
-              </li>
-              <li className="categoryName">
-                <a href="/category">Armazenamento de Energia em Baterias</a>
-              </li>
-              <li className="categoryName">
-                <a href="/category">Partes e Peças</a>
-              </li>
-              <li className="categoryName">
-                <a href="/category">Serviços
-                </a>
-              </li>
-              <li className="categoryName">
-                <a href="/category">Geração, Transmissão e Distribuição</a>
-              </li>
-            </ul> */}
