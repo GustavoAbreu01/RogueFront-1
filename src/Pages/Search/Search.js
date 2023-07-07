@@ -7,13 +7,24 @@ import SmallProductCard from '../../Components/SmallProductCard/SmallProductCard
 import iconMotor from "../../assets/img/iconeMotor.png"
 import motors from "../../assets/img/motores.png"
 import save from "../../assets/img/salvo.png"
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 
 function Search() {
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <div>
-      <Header />
+      {!verify() ? <Header /> : <HeaderLogin />}
       <div className="ui grid search">
         <div className="two column row search">
           <div className="ui row search">
@@ -49,7 +60,7 @@ function Search() {
                   <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
                   <label className="desc" htmlFor="Aneis">Anéis</label>
                 </div>
-    
+
               </div>
             </div>
           </div>
@@ -57,8 +68,8 @@ function Search() {
             <div class="column itens">
               <div id="produtos" className="ui grid searchItens">
                 {numero.map((i) => (
-                  <div className="four wide column"  key={i} >
-                    <SmallProductCard/>
+                  <div className="four wide column" key={i} >
+                    <SmallProductCard />
                   </div>
                 ))}
               </div>

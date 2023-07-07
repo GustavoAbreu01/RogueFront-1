@@ -36,6 +36,15 @@ function Product() {
 
   const lista = getLista();
 
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
+
   if (lista.length === 0) {
     return (
       <>
@@ -49,6 +58,7 @@ function Product() {
   } else {
     return (
       <>
+        {!verify() ? <Header /> : <HeaderLogin />}
         <div className="salvos">
           <h1>Salvos</h1>
         </div>
