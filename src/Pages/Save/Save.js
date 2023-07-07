@@ -58,7 +58,6 @@ function Product() {
   } else {
     return (
       <>
-        {!verify() ? <Header /> : <HeaderLogin />}
         <div className="salvos">
           <h1>Salvos</h1>
         </div>
