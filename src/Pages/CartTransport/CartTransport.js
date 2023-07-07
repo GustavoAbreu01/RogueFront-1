@@ -63,21 +63,21 @@ function CartTransport() {
             <div className='formsTransport'>
               <form class="ui form">
                 <div class="field">
-                  <label>Name</label>
+                  <label>Nome</label>
                   <div class="two fields">
                     <div class="field">
-                      <input type="text" name="shipping[first-name]" placeholder="First Name" />
+                      <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
                     </div>
                     <div class="field">
-                      <input type="text" name="shipping[last-name]" placeholder="Last Name" />
+                      <input type="text" name="shipping[last-name]" placeholder="Sobrenome" />
                     </div>
                   </div>
                 </div>
                 <div class="field">
-                  <label>Billing Address</label>
+                  <label>Endereço de Entrega</label>
                   <div class="fields">
                     <div class="twelve wide field">
-                      <input type="text" name="shipping[address]" placeholder="Street Address" />
+                      <input type="text" name="shipping[address]" placeholder="Rua" />
                     </div>
                     <div class="four wide field">
                       <input type="text" name="shipping[address-2]" placeholder="Apt #" />
@@ -89,46 +89,64 @@ function CartTransport() {
                     <label>Estado</label>
                     <select class="ui fluid dropdown">
                       <option value="">Estado</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
+                      <option value="AC">Acre</option>
+                      <option value="AL">Alagoas</option>
+                      <option value="AP">Amapá</option>
+                      <option value="AM">Amazonas</option>
+                      <option value="BA">Bahia</option>
+                      <option value="CE">Ceará</option>
+                      <option value="DF">Distrito Federal</option>
+                      <option value="ES">Espírito Santo</option>
+                      <option value="GO">Goiás</option>
+                      <option value="MA">Maranhão</option>
+                      <option value="MT">Mato Grosso</option>
+                      <option value="MS">Mato Grosso do Sul</option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="PA">Pará</option>
+                      <option value="PB">Paraíba</option>
+                      <option value="PR">Paraná</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="PI">Piauí</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="RN">Rio Grande do Norte</option>
+                      <option value="RS">Rio Grande do Sul</option>
+                      <option value="RO">Rondônia</option>
+                      <option value="RR">Roraima</option>
+                      <option value="SC">Santa Catarina</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="SE">Sergipe</option>
+                      <option value="TO">Tocantins</option>
                     </select>
                   </div>
                   <div class="field">
                     <label>País</label>
                     <select class="ui fluid dropdown">
-                      <option value="">País</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
+                      <option value="ZA">África do Sul</option>
+                      <option value="DE">Alemanha</option>
+                      <option value="AE">Emirados Árabes Unidos</option>
+                      <option value="AR">Argentina</option>
+                      <option value="DZ">Argélia</option>
+                      <option value="AU">Austrália</option>
+                      <option value="BR">Brasil</option>
+                      <option value="BE">Bélgica</option>
+                      <option value="CA">Canadá</option>
+                      <option value="KZ">Cazaquistão</option>
+                      <option value="CL">Chile</option>
+                      <option value="CN">China</option>
+                      <option value="CO">Colômbia</option>
+                      <option value="KR">Coreia do Sul</option>
+                      <option value="AE">Emirados Árabes Unidos</option>
+                      <option value="ES">Espanha</option>
+                      <option value="US">Estados Unidos</option>
+                      <option value="FR">França</option>
+                      <option value="IN">Índia</option>
+                      <option value="IT">Itália</option>
+                      <option value="MX">México</option>
+                      <option value="PT">Portugal</option>
+                      <option value="GB">Reino Unido</option>
+                      <option value="TR">Turquia</option>
+
+                      , Equador, Espanha, Estados Unidos, França, Gana, Itália, Japão, Malásia, Países Baixos, Peru, Polônia, Reino Unido, Rússia,[a] Singapura, Suécia, Tailândia, Turquia e Índia, além de 57 filiais[24] e distribuição em mais de 135 países.
                     </select>
                   </div>
                 </div>

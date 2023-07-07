@@ -66,7 +66,7 @@ function CartPayment() {
                   <label>Card Type</label>
                   <div class="ui selection dropdown">
                     <input type="hidden" name="card[type]" />
-                    <div class="default text">Type</div>
+                    <div class="default text">Tipo</div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
                       <div class="item" data-value="visa">
@@ -86,35 +86,35 @@ function CartPayment() {
                 </div>
                 <div class="fields">
                   <div class="seven wide field">
-                    <label>Card Number</label>
-                    <input type="text" name="card[number]" maxlength="16" placeholder="Card #" />
+                    <label>Número do cartão</label>
+                    <input type="text" name="card[number]" maxlength="16" placeholder="cartão #" />
                   </div>
                   <div class="three wide field">
-                    <label>CVC</label>
+                    <label>CVV</label>
                     <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC" />
                   </div>
                   <div class="six wide field">
-                    <label>Expiration</label>
+                    <label>Validade</label>
                     <div class="two fields">
                       <div class="field">
                         <select class="ui fluid search dropdown" name="card[expire-month]">
-                          <option value="">Month</option>
-                          <option value="1">January</option>
-                          <option value="2">February</option>
-                          <option value="3">March</option>
-                          <option value="4">April</option>
-                          <option value="5">May</option>
-                          <option value="6">June</option>
-                          <option value="7">July</option>
-                          <option value="8">August</option>
-                          <option value="9">September</option>
-                          <option value="10">October</option>
-                          <option value="11">November</option>
-                          <option value="12">December</option>
+                          <option value="">Mês</option>
+                          <option value="1">Janeiro</option>
+                          <option value="2">Fevereiro</option>
+                          <option value="3">Março</option>
+                          <option value="4">Abril</option>
+                          <option value="5">Maio</option>
+                          <option value="6">Junho</option>
+                          <option value="7">Julho</option>
+                          <option value="8">Agosto</option>
+                          <option value="9">Setembro</option>
+                          <option value="10">Outubro</option>
+                          <option value="11">Novembro</option>
+                          <option value="12">Dezembro</option>
                         </select>
                       </div>
                       <div class="field">
-                        <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year" />
+                        <input type="text" name="card[expire-year]" maxlength="4" placeholder="Ano" />
                       </div>
                     </div>
                   </div>
