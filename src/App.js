@@ -15,6 +15,7 @@ import CartPayment from './Pages/CartPayment/CartPayment';
 import CartConfirm from './Pages/CartConfirm/CartConfirm';
 import CartTransport from './Pages/CartTransport/CartTransport';
 import CartFinish from './Pages/CartFinish/CartFinish';
+import ProfilePage from './Pages/ProfilePage/ProfilePage';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/cart/transport" element={<CartTransport />} />
           <Route path="/weggner" element={<ChatWegner />} />
           <Route path="/cart/finish" element={<CartFinish />} />
+          <Route path="/orders" element={<ProfilePage />} />
         </Routes>
     </Router>
   );

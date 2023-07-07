@@ -1,0 +1,70 @@
+.itemContent.order{
+    background-color: var(--white);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 2rem auto 0;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.itemPreco.order{
+    font-size: 1.7rem;
+    color: var(--blue-primary);
+    padding-left: 1rem;
+}
+
+.buttons.order{
+    position: relative;
+    right: 3%;
+}
+
+.itemNome.order{
+    padding-left: 1rem;
+}
+
+.ui.button.order{
+    align-items: center;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ui.icon.button.order{
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    padding-left: 9rem;
+}
+
+.trash.alternate.icon.order{
+    padding-top: 2rem;
+    color: var(--blue-primary);
+    font-size: 1.7rem;
+}
+
+.itemComplement.order{
+    color: var(--grey-primary);
+    padding-left: 1rem;
+    padding-right: 5rem;
+}
+
+.subtext.order{
+    font-size: 1rem;
+    color: var(--grey-primary);
+}
+
+.itemNome.order {
+    color: var(--blue-primary);
+}
+
+.moreContentOrder{
+    width: 78%;
+    height: 10rem;
+    background-color: var(--grey-secondary);
+    margin: auto;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
