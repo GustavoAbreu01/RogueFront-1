@@ -7,6 +7,8 @@ import Footer from '../../Components/Footer/Footer'
 import iconMotor from "../../assets/img/iconeMotor.png"
 import motors from "../../assets/img/motores.png"
 import save from "../../assets/img/salvo.png"
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
 
 
@@ -14,13 +16,17 @@ import save from "../../assets/img/salvo.png"
 function ProductCategory() {
   const [verificacao, setVerificacao] = useState(false);
 
-
-
-
   const [isOpen, setIsOpen] = useState(false);
 
 
-
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
 
   const handleDropdownChange = (event, { value }) => {
     console.log('Selected value:', value);
@@ -61,21 +67,9 @@ function ProductCategory() {
   //   verify();
   // }, []);
 
-
-
-
-  // const verify = () => {
-  //   console.log(localStorage.getItem("verificar"));
-  //   if (
-  //     localStorage.getItem("verificar") === "sim" ||
-  //     localStorage.getItem("verificar2") === "sim"
-  //   ) {
-  //     setVerificacao(true);
-  //   }
-  // };
   return (
     <>
-      <Header />
+      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div class="ui grid category">
         <div class="two column row category">
           <div class="ui row category">
@@ -123,19 +117,9 @@ function ProductCategory() {
 
 
           <div class="ui row category">
-
-
-
-
             <div class="column itens">
-
               <div id="produtos">
-
-
-
-
                 {numero.map((i) => (
-
                   <div class="ui segment itens categoryItens" id="itemCategory" key={i}>
                     <Link to="/product">
                       <div class="itemContentCategory" style={{ color: 'black' }}>
