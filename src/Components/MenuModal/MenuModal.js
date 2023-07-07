@@ -7,6 +7,7 @@ import './MenuModal.css';
 
 function MenuModal() {
   const [openModal, setOpenModal] = useState(false);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     function handleOutsideClick(event) {
@@ -21,8 +22,27 @@ function MenuModal() {
     };
   }, []);
 
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   function toggleModal() {
     setOpenModal(!openModal);
+  }
+
+  const verifyScreen = () => {
+    if (screenSize.width > 900) {
+      return false
+    } else {
+      return true
+    }
   }
 
   return (
