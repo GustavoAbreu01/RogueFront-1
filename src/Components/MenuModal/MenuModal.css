@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 980;
+    z-index: 249;
 }
 
 ::-webkit-scrollbar{
@@ -29,10 +29,11 @@
     z-index: 250;
     font-size: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 48%;
+    flex-direction: column;
+    height: 100%;
     width: 20%;
+    top : 0;
+    left: 0;
     position: fixed;
     overflow: scroll;
     background-color: #fff;
@@ -48,4 +49,25 @@
 .listCategory{
     padding-top: 3rem;
     padding-bottom: 3rem;
+}
+
+.modal-menu-content-header {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeIcon {
+    color: var(--black);
+    position: fixed;
+    top: 1rem;
+    left: 20%;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.categoryName {
+    color: var(--black);
 }

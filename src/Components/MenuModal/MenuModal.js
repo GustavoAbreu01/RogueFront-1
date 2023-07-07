@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BiMenu } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { AiOutlineClose } from 'react-icons/ai';
 import './MenuModal.css';
 
 
@@ -32,10 +33,31 @@ function MenuModal() {
       {openModal && (
         <div className="modal-menu-content-detail">
           <div className="modal-menu-content" data-aos="fade-right">
-            <ul className="listCategory">
+            <div className="modal-menu-content-header">
+              <h1 className="modal-menu-title">Categorias</h1>
+            </div>
+            <div className="modal-menu-content-body">
+              <div className="categorySelected">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {openModal && <div className="background" onClick={toggleModal}>
+        <AiOutlineClose className="closeIcon" onClick={toggleModal}></AiOutlineClose></div>}
+    </>
+  );
+}
+
+export default MenuModal;
+
+{/* <ul className="listCategory">
               <li className="categoryName">
                 <a href="/category">Redutores de velocidade</a>
               </li>
+              <div class="ui inverted divider"></div>
               <li className="categoryName">
                 <a href="/category">Soluções Digitais</a>
               </li>
@@ -47,19 +69,9 @@ function MenuModal() {
               </li>
               <li className="categoryName">
                 <a href="/category">Serviços
-</a>
+                </a>
               </li>
               <li className="categoryName">
                 <a href="/category">Geração, Transmissão e Distribuição</a>
-                </li>
-            </ul>
-          </div>
-        </div>
-      )}
-
-      {openModal && <div className="background" onClick={toggleModal}></div>}
-    </>
-  );
-}
-
-export default MenuModal;
+              </li>
+            </ul> */}
