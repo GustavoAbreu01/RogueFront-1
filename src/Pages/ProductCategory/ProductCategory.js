@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import iconMotor from "../../assets/img/iconeMotor.png"
-import motors from "../../assets/img/motores.png"
-import save from "../../assets/img/salvo.png"
+
+import NewCard from '../../Components/NewCard/NewCard';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
@@ -120,25 +120,7 @@ function ProductCategory() {
             <div class="column itens">
               <div id="produtos">
                 {numero.map((i) => (
-                  <div class="ui segment itens categoryItens" id="itemCategory" key={i}>
-                    <Link to="/product">
-                      <div class="itemContentCategory" style={{ color: 'black' }}>
-                        <div id="imgItensCategory">
-                          <img src={motors} width="125" height="" />
-                        </div>
-                        <div class="itemInfoCategory">
-                          <h2 id="itemNameCategory">W12 Monofásico</h2>
-                          <h4 id="descricaoCategory">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                          <h2 id="itemPrecoCategory">R$ 495<sup> 99</sup></h2>
-                        </div>
-                      </div>
-                    </Link>
-                    <Link to='/save'>
-                      <button className="saveCategory" href="">
-                        <img onClick={teste} src={save} className="salvosCategory" width="40" height="40" id="salvos" />
-                      </button>
-                    </Link>
-                  </div>
+                  <NewCard/>
                 ))}
               </div>
             </div>
