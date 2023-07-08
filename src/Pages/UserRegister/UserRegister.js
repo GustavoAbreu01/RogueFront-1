@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import "./UserRegister.css"
 import { useState } from "react";
-import FooterSimple from '../../Components/FooterSimple/FooterSimple';
 import { UserService } from '../../Service';
 
 
@@ -112,8 +111,7 @@ function UserRegister() {
             </div>
           </form>
         </div>
-      </div>
-      <FooterSimple /></>
+      </div></>
   )
 }
 export default UserRegister

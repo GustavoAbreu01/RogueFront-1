@@ -43,3 +43,179 @@
     font-size: 35px;
     margin-left: 1rem;
 }
+
+.profileIcon:hover {
+    color: var(--blue-secundary);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.profile-modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-image {
+    width: 35%;
+    height: 35%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--blue-secundary);
+}
+
+.circular.ui.icon.button.edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 5%;
+    margin-right: 5%;
+    background-color: var(--blue-secundary);
+    color: var(--blue-secundary);
+    font-size: 70%;
+    cursor: pointer;
+}
+
+.circular.ui.icon.button.edit:hover {
+    background-color: var(--blue-primary);
+    color: var(--blue-secundary);
+    transition: 0.3s;
+}
+
+.profile-modal-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.usernameProfile {
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+.profileItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.profileOpt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    padding-top: 4rem;
+    padding-left: 2rem;
+}
+
+.textProfileOpt {
+    color: var(--black);
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.textProfileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    padding-left: 2rem;
+}
+
+.profileFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 10%;
+}
+
+.profileLogo {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--blue-secundary);
+}
+
+.logoWeg {
+    width: 90%;
+    color: var(--blue-secundary);
+}
+
+.textProfileFooter {
+    color: var(--blue-secundary);
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.baseFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.ui.icon.button.question {
+    background-color: var(--blue-secundary);
+}
+
+.ui.icon.button.basket {
+    background-color: var(--blue-secundary);
+}
+
+.ui.icon.button.shopping {
+    background-color: var(--blue-secundary);
+}
+
+.ui.icon.button.vision {
+    background-color: var(--blue-secundary);
+}
+
+.ui.icon.button.question:hover {
+    background-color: var(--blue-primary);
+}
+
+.ui.icon.button.basket:hover {
+    background-color: var(--blue-primary);
+}
+
+.ui.icon.button.shopping:hover {
+    background-color: var(--blue-primary);
+}
+
+.ui.icon.button.vision:hover {
+    background-color: var(--blue-primary);
+}
+
+.youtube.circle.icon {
+    color: var(--blue-primary);
+}
+
+.spotify.circle.icon {
+    color: var(--blue-primary);
+}
+
+.linkedin.circle.icon {
+    color: var(--blue-primary);
+}
+
+.skype.circle.icon {
+    color: var(--blue-primary);
+}
+
+.envelope.circle.icon {
+    color: var(--blue-primary);
+}
+
+.cpfProfile {
+    color: var(--grey-tertiary);
+    font-size: 1.1rem;
+}
