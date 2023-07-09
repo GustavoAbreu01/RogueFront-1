@@ -76,27 +76,33 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profileItem'>
-                  <button class="ui icon button shopping">
-                    <i class="bookmark icon"></i>
-                  </button>
+                  <Link to='/save'>
+                    <button class="ui icon button shopping">
+                      <i class="bookmark icon"></i>
+                    </button>
+                  </Link>
                   <div className='textProfileContainer'>
-                    <p className='textProfileOpt'>Produtos Salvos</p>
+                    <Link to='/save'><p className='textProfileOpt'>Produtos Salvos</p></Link>
                   </div>
                 </div>
                 <div className='profileItem'>
-                  <button class="ui icon button basket">
-                    <i class="shopping basket icon"></i>
-                  </button>
+                  <Link to='/orders'>
+                    <button class="ui icon button basket">
+                      <i class="shopping basket icon"></i>
+                    </button>
+                  </Link>
                   <div className='textProfileContainer'>
-                    <p className='textProfileOpt'>Pedidos Realizados</p>
+                    <Link to='/orders'><p className='textProfileOpt'>Pedidos Realizados</p></Link>
                   </div>
                 </div>
                 <div className='profileItem'>
-                  <button class="ui icon button question">
-                    <i class="question circle icon"></i>
-                  </button>
+                  <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'>
+                    <button class="ui icon button question">
+                      <i class="question circle icon"></i>
+                    </button>
+                  </Link>
                   <div className='textProfileContainer'>
-                    <p className='textProfileOpt'>Ajuda</p>
+                    <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'><p className='textProfileOpt'>Ajuda</p></Link>
                   </div>
                 </div>
               </div>

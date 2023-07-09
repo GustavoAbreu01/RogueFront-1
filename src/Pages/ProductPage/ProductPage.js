@@ -26,6 +26,7 @@ function ProductPage() {
             {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
 
             <div class="ui items producPage" >
+            <p class="ui blue ribbon label">Destaque</p>
                 <div class="ui item producPage">
                     <div class="imgProductPage">
                         <img class="imageProduct" src={motor} />

@@ -98,7 +98,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .profileOpt {
@@ -107,7 +107,7 @@
     justify-content: center;
     align-items: start;
     gap: 1rem;
-    padding-top: 4rem;
+    padding-top: 6rem;
     padding-left: 2rem;
 }
 
@@ -151,7 +151,7 @@
 .textProfileFooter {
     color: var(--blue-secundary);
     font-size: 1rem;
-    margin-top: 1rem;
+    margin-top: -rem;
 }
 
 .baseFooter {
@@ -161,6 +161,12 @@
     align-items: center;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.textProfileOpt:hover {
+    color: var(--blue-primary);
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .ui.icon.button.question {

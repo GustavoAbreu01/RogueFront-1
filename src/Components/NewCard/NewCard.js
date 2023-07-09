@@ -9,6 +9,7 @@ function NewCard() {
         <div className="ui segment itens categoryItens" id="itemCategory">
 
             <Link to="/product">
+            <p class="ui blue ribbon label">Verificados</p>
                 <div className="itemContentCategory" style={{ color: 'black' }}>
                     <div className="imgItensCategory">
                         <img src={motors} width="125" height="" />
