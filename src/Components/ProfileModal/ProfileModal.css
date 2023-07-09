@@ -225,3 +225,97 @@
     color: var(--grey-tertiary);
     font-size: 1.1rem;
 }
+
+.modal-profile-acessibility-container {
+    position: fixed;
+    top: 25%;
+    right: 0;
+    width: 40%;
+    height: 20%;
+    background-color: var(--blue-secundary);
+    border-radius: 10px;
+
+}
+
+.inputAcessiblity {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    left: 0;
+    width: 40%;
+    padding-left: 1rem;
+}
+
+.profile-acessibility-container {
+    position: fixed;
+    left: 0;
+}
+
+.modal-profile-acessibility-container {
+    position: fixed;
+    top: 25%;
+    right: 0;
+    width: 35%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue-secundary);
+    border-radius: 10px;
+}
+
+.ui.left.compact.segment {
+    background-color: var(--blue-secundary);
+    border: none;
+    box-shadow: none;
+}
+
+.ui.fitted.slider.checkbox {
+    color: var(--black);
+    border: none;
+    box-shadow: none;
+}
+
+.ui.field.left.compact.segment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.titleAcessibility {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5%;
+    font-size: 2rem;
+    left: 10%;
+    position: fixed;
+}
+
+.buttonAcessibility {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 5%;
+    top: 85%;
+}
+
+.ui.right.labeled.icon.button {
+    background-color: var(--blue-primary);
+    height: 10%;
+    width: 100%;
+    color: var(--blue-white);
+}
+
+.ui.right.labeled.icon.button:hover {
+    background-color: var(--blue-secundary);
+    border: solid 1px #fff;
+    color: var(--blue-white);
+    transition: 0.3s;
+}

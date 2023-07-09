@@ -10,7 +10,22 @@ import { BsArrowBarRight } from 'react-icons/bs'
 
 export default function ProfileModal({ user }) {
   const [openModal, setOpenModal] = useState(false);
+  const [openModalAcessibility, setOpenModalAcessibility] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (event.target.classList.contains('background')) {
+        setOpenModalAcessibility(false);
+      }
+    }
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
 
   useEffect(() => {
     function handleOutsideClick(event) {
@@ -40,13 +55,27 @@ export default function ProfileModal({ user }) {
     setOpenModal(!openModal);
   }
 
-  const verifyScreen = () => {
-    if (screenSize.width > 900) {
-      return false
-    } else {
-      return true
-    }
+  function toggleModalAcessibility() {
+    setOpenModalAcessibility(!openModalAcessibility);
   }
+
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeChange = (event) => {
+    setSelectedSize(event.target.value);
+    applyFontSize();
+  };
+
+  const applyFontSize = () => {
+    if (selectedSize === 'small')
+      document.body.style.fontSize = "12px";
+    else if (selectedSize === 'medium')
+      document.body.style.fontSize = "16px";
+    else if (selectedSize === 'large')
+      document.body.style.fontSize = "18px";
+    else if (selectedSize === 'veryLarge')
+      document.body.style.fontSize = "20px";
+  };
 
   return (
     <>
@@ -55,6 +84,61 @@ export default function ProfileModal({ user }) {
       </div>
       {openModal && (
         <div className="modal-profile-content-detail">
+          {openModalAcessibility && (
+            <div data-aos="fade-left" className='modal-profile-acessibility-container'>
+              <div className='profile-acessibility-container'>
+                <div className='titleAcessibility'>
+                  <p>Tamanhos</p>
+                </div>
+                <div class="grouped fields">
+                  <div class="ui field left compact segment">
+                    <p>Pequena</p>
+                    <div class="ui fitted slider checkbox">
+                      <input type="radio" name="throughput" value="small"
+                        checked={selectedSize === 'small'}
+                        onChange={handleSizeChange} />
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="ui field left compact segment">
+                    <p>Média</p>
+                    <div class="ui fitted slider checkbox">
+                      <input type="radio" name="throughput" value="medium"
+                        checked={selectedSize === 'medium'}
+                        onChange={handleSizeChange} />
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="ui field left compact segment">
+                    <p>Grande</p>
+                    <div class="ui fitted slider checkbox">
+                      <input type="radio" name="throughput" value="large"
+                        checked={selectedSize === 'large'}
+                        onChange={handleSizeChange} />
+                      <label></label>
+                    </div>
+                  </div>
+                  <div class="ui field left compact segment">
+                    <p>Muito Grande</p>
+                    <div class="ui fitted slider checkbox">
+                      <input type="radio" name="throughput" value="veryLarge"
+                        checked={selectedSize === 'veryLarge'}
+                        onChange={handleSizeChange} />
+                      <label></label>
+                    </div>
+                  </div>
+
+                </div>
+                <div className='buttonAcessibility'>
+                  <button onClick={applyFontSize} class="ui right labeled icon button">
+                    <i class="low vision icon"></i>
+                    Aplicar Mudaças
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          )}
           <BsArrowBarRight className="backIcon" onClick={toggleModal}></BsArrowBarRight>
           <div className="modal-profile-content" data-aos="fade-left">
             <div className=''>
@@ -68,13 +152,14 @@ export default function ProfileModal({ user }) {
               </div>
               <div className='profileOpt'>
                 <div className='profileItem'>
-                  <button class="ui icon button vision">
-                    <i class="low vision icon"></i>
+                  <button onClick={toggleModalAcessibility} class="ui icon button vision">
+                    <i onClick={toggleModalAcessibility} class="low vision icon"></i>
                   </button>
                   <div className='textProfileContainer'>
-                    <p className='textProfileOpt'>Alterar fonte</p>
+                    <p onClick={toggleModalAcessibility} className='textProfileOpt'>Alterar fonte</p>
                   </div>
                 </div>
+
                 <div className='profileItem'>
                   <Link to='/save'>
                     <button class="ui icon button shopping">

@@ -36,8 +36,8 @@ a:link {
 
 .iconProductAction.category {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     background-color: transparent;
     border: none;
 }
@@ -80,4 +80,20 @@ a:link {
 .subtext.Category{
     font-size: 1rem;
     top: 0px;
+}
+
+.buyCategoryButton {
+    position: absolute;
+    height: 3rem;
+    width: 15rem;
+    bottom: 0;
+    right: 0;
+}
+
+.ui.fluid.blue.button.Category {
+    border-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 70%;
+    font-size: 1.2rem;
+    font-weight: bold;
 }

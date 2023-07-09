@@ -7,9 +7,8 @@ import './NewCard.css'
 function NewCard() {
     return (
         <div className="ui segment itens categoryItens" id="itemCategory">
-
             <Link to="/product">
-            <p class="ui blue ribbon label">Verificados</p>
+                <p class="ui blue ribbon label">Verificados</p>
                 <div className="itemContentCategory" style={{ color: 'black' }}>
                     <div className="imgItensCategory">
                         <img src={motors} width="125" height="" />
@@ -21,14 +20,17 @@ function NewCard() {
                     </div>
                 </div>
             </Link>
-                <div className='iconProductAction category'>
-                    <button className="ui icon button Category">
-                        <i className="bookmark icon Category"></i>
-                    </button>
-                    <button class="ui icon button Category">
-                        <i className="cart plus icon Category"></i>
-                    </button>
-                </div>
+            <div className='iconProductAction category'>
+                <button className="ui blue icon button Category">
+                    <i className="bookmark icon Category"></i>
+                </button>
+                <button class="ui blue icon button Category">
+                    <i className="cart plus icon Category"></i>
+                </button>
+            </div>
+            <div className='buyCategoryButton'>
+                <button className="ui fluid blue button Category">Comprar</button>
+            </div>
         </div>
     )
 }
