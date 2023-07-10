@@ -1,0 +1,99 @@
+.column.itens.Save {
+    margin: 2rem;
+}
+
+.ui.segment.itens.Save {
+    border-radius: 1rem;
+    background-color: var(--white);
+    width: 64rem;
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+a:link.Save {
+    text-decoration: none;
+    /* Remova a decoração de link (sublinhado) se necessário */
+}
+
+.itemContent.Save {
+    display: flex;
+    align-items: center;
+}
+
+#imgItens.Save {
+
+    margin-right: 2rem;
+    /* Espaçamento entre a imagem e as outras informações */
+}
+
+.itemInfo.Save {
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    justify-content: space-between;
+    /* Alinha o conteúdo nos extremos da div */
+}
+
+.iconProductAction.Save {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.ui.vertically.divided.grid.Save {
+    margin: 3rem;
+}
+
+.ui.header.motor.Save {
+    text-align: center;
+}
+
+.itemPreco.Save {
+    padding-left: 2rem;
+    color: var(--blue-primary);
+}
+
+.descricao.Save {
+    font-size: 1.1rem;
+    padding-left: 2rem;
+    color: var(--grey-primary);
+}
+
+.itemName.Save {
+    color: var(--black);
+    padding-left: 2rem;
+}
+
+.ui.segment.itens.Save:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .iconProductAction.Save {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+.subtext.Save{
+    font-size: 1rem;
+    top: 0px;
+}
+
+.buyButton.Save {
+    position: absolute;
+    height: 3rem;
+    width: 15rem;
+    bottom: 0;
+    right: 0;
+}
+
+.ui.fluid.blue.button.Save {
+    border-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 70%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
