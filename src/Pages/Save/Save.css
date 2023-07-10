@@ -35,17 +35,11 @@ body{
     margin-top: 4rem;
 }
 
-.product{
-    display: flex;
-    align-items: center;
-    width: 110vh;
-    height: 15rem;
-    padding: 0.5rem;
+.products.Save{
+    padding-bottom: 5rem;
+    display: grid;
     margin: 0 auto;
-    border-radius: 1rem;
-    border: 2px solid var(--blue-secundary);
-    background-color: var(--white);
-    margin-top: 5%;
+    align-items: center;
 }
 
 .product .product-Image img{
@@ -107,4 +101,8 @@ body{
     object-fit: cover;
     object-position: center;
     margin-left: 1rem;
+}
+
+.saveCard{
+    margin: auto;
 }

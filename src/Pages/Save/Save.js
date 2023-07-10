@@ -5,6 +5,7 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import SaveCard from '../../Components/SaveCard/SaveCard';
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -61,7 +62,13 @@ function Product() {
         <div className="salvos">
           <h1>Salvos</h1>
         </div>
-        <div className="products">
+        <div className='saveCard'>
+
+        </div>
+        <div className="products Save">
+          <SaveCard/>
+          <SaveCard/>
+          <SaveCard/>
           {products.map((item) => {
             return <div key={item}><HaveProducts item={item} /></div>;
           })}
