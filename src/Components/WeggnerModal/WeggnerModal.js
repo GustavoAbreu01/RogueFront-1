@@ -33,8 +33,7 @@ function WeggnerModal() {
           </div>
           <div className='inputWeggnerModal'>
             <div class="ui fluid action input">
-              <input type="text" placeholder="Enviar..."/>
-                <div class="ui button">Enviar</div>
+              <input type="text" placeholder="Enviar Mensagem..."/>
             </div>
           </div>
         </div>
