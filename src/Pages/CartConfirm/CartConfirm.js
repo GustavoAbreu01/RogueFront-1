@@ -71,7 +71,7 @@ function CartConfirm() {
                 <div class="field">
                   <div class="three fields">
                     <div class="field">
-                    <label>Nome do Responsável</label>
+                      <label>Nome do Responsável</label>
                       <p>Gustavo Guilherme de Abreu</p>
                     </div>
                     <div class="field">
@@ -94,9 +94,9 @@ function CartConfirm() {
                     <p>Brasil</p>
                   </div>
                   <div class="field">
-                      <label>CEP</label>
-                      <p>89256-690</p>
-                    </div>
+                    <label>CEP</label>
+                    <p>89256-690</p>
+                  </div>
                 </div>
               </form>
             </div>

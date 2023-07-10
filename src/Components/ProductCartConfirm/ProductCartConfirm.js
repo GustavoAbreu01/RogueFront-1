@@ -20,6 +20,9 @@ function ProductCartConfirm() {
 
     const Random = () => {
     const random = Math.floor(Math.random() * 10);
+    if (random === 0) {
+      return 1;
+    }
     return random;
   };
 
