@@ -21,14 +21,24 @@ function WeggnerModal() {
 
 
     <div>
-        {verify() && <div data-aos="fade-up" className='modalContent'>
-          <div className='textWeggnerModal'>
-            <div class="typewriter">
-              <h7 id="text">O que eu posso fazer por você? </h7>
+      {verify() && <div data-aos="fade-up" className='modalContent'>
+        <div className='textWeggnerModal'>
+          <div class="chat">
+            <div class="yours messages">
+              <div id='text' class="message last">
+                <p>Olá, eu sou o Wegner, seu assistente virtual. Como posso te ajudar?</p>
+              </div>
               <TypeWriter />
             </div>
           </div>
-        </div>}
+          <div className='inputWeggnerModal'>
+            <div class="ui fluid action input">
+              <input type="text" placeholder="Enviar..."/>
+                <div class="ui button">Enviar</div>
+            </div>
+          </div>
+        </div>
+      </div>}
       <div className='wegnerModal'>
         {!verify() ?
           <div onClick={() => setOpenModal(openModal + 1)}><img src={wegnerSleeping} alt='' className='wegner'></img></div>

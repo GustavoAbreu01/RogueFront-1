@@ -1,19 +1,19 @@
-.wegnerModal{
+.wegnerModal {
     position: fixed;
     float: right;
     bottom: 1rem;
     right: 1rem;
     width: 1rem;
     z-index: 99;
-    
+
 }
 
-.textWeggnerModal{
-    text-align:center;
+.textWeggnerModal {
+    text-align: center;
     color: var(--blue-primary);
 }
 
-.wegner{
+.wegner {
     z-index: 99;
     background-color: var(--blue-primary);
     width: 7rem;
@@ -25,13 +25,11 @@
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
-.wegner:hover{
+.wegner:hover {
     background-color: var(--blue-secundary);
 }
 
-.modalContent{
-    align-items: center;
-    justify-content: center;
+.modalContent {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -51,27 +49,119 @@
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
-h7 {
-    overflow: hidden;
-    margin: 0 auto;
-    display: inline-block;
-        font-weight: normal;
+/* The typewriter cursor effect */
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
 
-  }
-  h7:after{
-   content: '';
-    display: inline-block;
-    background-color: white;
-    margin-left: 2px;
-    height: 25px;
-    width: 4px;
-    animation: cursor 0.4s infinite;
-  }
+    49% {
+        opacity: 1;
+    }
 
-  /* The typewriter cursor effect */
-  @keyframes cursor {
-    0% { opacity: 1; }
-      49% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 0; }
-  }
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.chat {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.message {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.yours {
+    align-items: flex-start;
+}
+
+.yours .message {
+    margin-right: 25%;
+    background-color: #eee;
+    position: relative;
+}
+
+.yours .message.last:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -7px;
+    height: 20px;
+    width: 20px;
+    background: #eee;
+    border-bottom-right-radius: 15px;
+}
+
+.yours .message.last:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    background: white;
+    border-bottom-right-radius: 10px;
+}
+
+.mine {
+    align-items: flex-end;
+}
+
+.mine .message {
+    color: white;
+    margin-left: 25%;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+.mine .message.last:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: -8px;
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    border-bottom-left-radius: 15px;
+}
+
+.mine .message.last:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: -10px;
+    width: 10px;
+    height: 20px;
+    background: white;
+    border-bottom-left-radius: 10px;
+}
+
+.inputWeggnerModal {
+    position: absolute;
+    bottom: 3%;
+    width: 80%;
+}

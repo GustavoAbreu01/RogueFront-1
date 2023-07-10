@@ -21,7 +21,7 @@ class TypeWriter extends React.Component {
 
   typeWriter() {
     const { i, txt } = this.state;
-    const speed = 20;
+    const speed = 10;
 
     if (i <= txt.length) {
       document.getElementById("text").innerHTML = txt.slice(0, i + 1);
