@@ -6,7 +6,7 @@ import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/carousel/Carousel'
+import Carousell from '../../Components/carousel/carousel'
 import logo from "../../assets/img/logo-weg.png"
 import iconMotor from "../../assets/img/iconeMotor.png"
 import Qualidade from "../../assets/img/MOTORES-03.png"
