@@ -3,6 +3,8 @@ import './Orders.css'
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import motors from "../../assets/img/motores.png"
+import CartProduct from "../ProductCart/ProductCart";
+
 
 
 function Orders() {
@@ -17,16 +19,13 @@ function Orders() {
 
   return (
     <>
-     
-     <div className="productCard">
-      <div className={`itemContent order ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>
-        <div id="imgItens order">
-        
+      <div className="productCardOrder">
+      
+        <div className={`itemContent order ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>
+          <div id="imgItens order">
             <img src={motors} width="125" height="" />
-       
-        </div>
-        <div className="itemInfo order">
-          
+          </div>
+          <div className="itemInfo order">
             <h2 className="itemNome order">Pedido 26/07/2023</h2>
             <h2 id="itemPreco order" className="itemPreco order">
               Total: R$ 495<sup>99</sup>
@@ -35,28 +34,106 @@ function Orders() {
             <p className="itemComplement order">
               Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...
             </p>
-    
-        </div>
-        <div className="buttons order">
-          <button class="ui icon button order">
-            <i className="trash alternate icon order"></i>
-          </button>
-          <div className="ui small buttons order">
-            <button className="ui button active order">-</button>
-            <div className="or order" data-text="10"></div>
-            <button className="ui button order">+</button>
+          </div>
+          <div className="buttons order">
+            <button class="ui icon button order">
+              <i className="angle down icon order"></i>
+            </button>
           </div>
         </div>
-      </div>
-      {isOpen && (
-        <div className="dropdownContent">
-          {/* Conteúdo adicional do dropdown */}
-          <div className='moreContentOrder'>aaaaaaaaaaa</div>
-        </div>
-      )}
-    </div>
-    
- 
+        {isOpen && (
+          <div className="dropdownContentOrders">
+            <div className='moreContentOrder'>
+              <div className='confirmTransportOrders'>
+                <form class="ui form confirm Orders">
+                  <div class="field Orders">
+                    <div class="three fields Orders">
+                      <div class="field Orders">
+                        <label>Produtos</label>
+                        <p>Motor W33</p>
+                        <p>Motor W12</p>
+
+                      </div>
+                      <div class="field Orders">
+                        <br />
+                        <p>x3</p>
+                        <p>x1</p>
+                      </div>
+                      <div class="field Orders">
+                        <br />
+                        <p>R$ 2.333,33</p>
+                        <p>R$ 1.333,33</p>
+                      </div>
+                    </div>
+                    <div class="three fields Orders">
+
+                      <div class="field Orders">
+                        <label>Nome do Responsável</label>
+                        <p>Gustavo Guilherme de Abreu</p>
+                      </div>
+                      <div class="field Orders">
+                        <label>Endereço:</label>
+                        <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
+                      </div>
+                      <div class="field Orders">
+                        <label>Complemento:</label>
+                        <p>Torre 1, Apto 706</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="three fields Orders">
+                    <div class="field Orders">
+                      <label>Estado:</label>
+                      <p>Santa Catarina</p>
+                    </div>
+                    <div class="field Orders">
+                      <label>País:</label>
+                      <p>Brasil</p>
+                    </div>
+                    <div class="field Orders">
+                      <label>CEP</label>
+                      <p>89256-690</p>
+                    </div>
+                  </div>
+                </form>
+
+
+              </div>
+              <div className='boxStepsOrders'>
+                <div className="ui tiny steps Orders">
+                  <div className="step Orders">
+                    <i className="boxes icon"></i>
+                    <div className="content">
+                      <div className="title">Pedido finalizado</div>
+                    </div>
+                  </div>
+                  <div className="disabled step Orders">
+                    <i className="dolly flatbed icon"></i>
+                    <div className="content">
+                      <div className="title">Entregue a transportadora</div>
+                    </div>
+                  </div>
+                  <div className="disabled step  Orders">
+                    <i className="shipping fast icon"></i>
+                    <div className="content">
+                      <div className="title">Saiu para entrega</div>
+                    </div>
+                  </div>
+                  <div className="disabled step">
+                    <i className="clipboard check icon"></i>
+                    <div className="content">
+                      <div className="title">Entregue</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div >
+        )
+        }
+      </div >
+
+
     </>
   );
 };

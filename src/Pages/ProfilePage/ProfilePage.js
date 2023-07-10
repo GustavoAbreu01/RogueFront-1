@@ -1,6 +1,6 @@
 import React from 'react'
 import './ProfilePage.css'
-
+import { BsFillBookmarkFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Header from '../../Components/Header/Header'
 import Orders from '../../Components/Orders/Orders'
@@ -20,8 +20,14 @@ function ProfilePage() {
 
     return (
         <>{!verify() ? <Header /> : <HeaderLogin />}
-           <Orders/>
-
+            <div className='boxTitleSimilarOrder'>
+                <BsFillBookmarkFill color='var(--white)' size={40} />
+                <h1 className='titleSimilar'>Seus Pedidos</h1>
+            </div>
+            <Orders />
+            <Orders />
+            <Orders />
+            <Footer />
 
         </>
     )
