@@ -66,8 +66,9 @@ function Product() {
 
         </div>
         <div className="products Save">
-          <SaveCard />
-          <SaveCard />
+          <SaveCard/>
+          <SaveCard/>
+          <SaveCard/>
           {products.map((item) => {
             return <div key={item}><HaveProducts item={item} /></div>;
           })}
