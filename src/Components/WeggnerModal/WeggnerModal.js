@@ -3,7 +3,7 @@ import './WeggnerModal.css'
 import { Link } from 'react-router-dom'
 import wegnerSleeping from "../../assets/img/weggnerDormindo.png"
 import wegnerAwake from "../../assets/img/weggnerAcordado.PNG"
-import TypeWriter from '../Transition/TypeWriter';
+import TypeWriter from '../../animations/Transition/TypeWriter';
 import { render } from '@testing-library/react'
 
 function WeggnerModal() {
