@@ -5,8 +5,9 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import { Link } from 'react-router-dom';
-import SmallProductCard from '../../Components/SmallProductCard/SmallProductCard';
 import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
+import ProductCart from '../../Components/ProductCart/ProductCart';
+import ProductCartConfirm from '../../Components/ProductCartConfirm/ProductCartConfirm';
 
 function CartConfirm() {
 
@@ -59,6 +60,45 @@ function CartConfirm() {
           <div className='boxCartProduct'>
             <div className='boxCartProductTitle'>
               <h5 className='TitleTextCartProduct'>Confirmar Pedido</h5>
+            </div>
+            <ProductCartConfirm />
+            <ProductCartConfirm />
+            <div className='boxCartProductTitle'>
+              <h5 className='TitleTextCartProduct'>Endereço de Entrega</h5>
+            </div>
+            <div className='confirmTransport'>
+              <form class="ui form confirm">
+                <div class="field">
+                  <div class="three fields">
+                    <div class="field">
+                    <label>Nome do Responsável</label>
+                      <p>Gustavo Guilherme de Abreu</p>
+                    </div>
+                    <div class="field">
+                      <label>Endereço:</label>
+                      <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
+                    </div>
+                    <div class="field">
+                      <label>Complemento:</label>
+                      <p>Torre 1, Apto 706</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="three fields">
+                  <div class="field">
+                    <label>Estado:</label>
+                    <p>Santa Catarina</p>
+                  </div>
+                  <div class="field">
+                    <label>País:</label>
+                    <p>Brasil</p>
+                  </div>
+                  <div class="field">
+                      <label>CEP</label>
+                      <p>89256-690</p>
+                    </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

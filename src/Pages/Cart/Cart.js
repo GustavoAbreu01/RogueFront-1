@@ -14,6 +14,8 @@ function Cart() {
   var frete = 100;
   var total = 1200;
 
+  
+
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {

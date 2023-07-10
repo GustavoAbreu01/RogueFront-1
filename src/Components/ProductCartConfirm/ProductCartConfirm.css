@@ -1,0 +1,67 @@
+.itemContent.CardCart{
+    background-color: var(--white);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    left: 4%;
+    position: relative;
+    padding-bottom: 1.5rem;
+    border-bottom: solid 2px var(--grey-secondary);
+}
+
+.itemPreco.CardCart{
+    color: var(--blue-primary);
+    padding-left: 1rem;
+}
+
+.CardCartQuantidade{
+    align-items: end;
+    justify-content: end;
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.itemNome.CardCart{
+    padding-left: 1rem;
+}
+
+.ui.button.CardCart{
+    align-items: center;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ui.icon.button.CardCart{
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    padding-left: 9rem;
+}
+
+.trash.alternate.icon.CardCart{
+    color: var(--blue-primary);
+    font-size: 1.7rem;
+}
+
+.itemComplement.CardCart{
+    color: var(--grey-primary);
+    padding-left: 1rem;
+    padding-right: 5rem;
+}
+
+.subtext.CardCart{
+    font-size: 1rem;
+    color: var(--grey-primary);
+}
+
+.itemNome.CardCart {
+    color: var(--blue-primary);
+}
+
+.CardCart.Confirm {
+    color: var(--black);
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

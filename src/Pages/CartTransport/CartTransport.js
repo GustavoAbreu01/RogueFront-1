@@ -69,7 +69,7 @@ function CartTransport() {
                       <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
                     </div>
                     <div class="field">
-                      <input type="text" name="shipping[last-name]" placeholder="Sobrenome" />
+                      <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" />
                     </div>
                   </div>
                 </div>
@@ -77,10 +77,10 @@ function CartTransport() {
                   <label>Endereço de Entrega</label>
                   <div class="fields">
                     <div class="twelve wide field">
-                      <input type="text" name="shipping[address]" placeholder="Rua" />
+                      <input type="text" name="shipping[address]" placeholder="Complemento" />
                     </div>
                     <div class="four wide field">
-                      <input type="text" name="shipping[address-2]" placeholder="Apt #" />
+                      <input type="text" name="shipping[address-2]" placeholder="CEP " />
                     </div>
                   </div>
                 </div>

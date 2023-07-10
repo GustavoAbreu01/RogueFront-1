@@ -17,7 +17,7 @@
     border-radius: 30px;
     border-top-left-radius:  20%;
     border-bottom-right-radius:  20%;
-    height: 80rem;
+    height: 60rem;
     width: 100%;
 }
 
@@ -25,7 +25,7 @@
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    height: 80rem;
+    height: 60rem;
     width: 70%;
 }
 
@@ -135,4 +135,13 @@
     .icon {
         color: var(--blue-primary);
     }
+}
+
+.confirmTransport {
+    padding-top: 5%;
+    padding-left: 15%;
+}
+
+.ui.form.confirm {
+    font-size: 1.2rem;
 }
