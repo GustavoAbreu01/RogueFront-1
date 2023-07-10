@@ -63,7 +63,6 @@ export default function ProfileModal({ user }) {
 
   const handleSizeChange = (event) => {
     setSelectedSize(event.target.value);
-    applyFontSize();
   };
 
   const applyFontSize = () => {

@@ -132,7 +132,7 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 10%;
+    bottom: 0;
 }
 
 .profileLogo {
@@ -254,10 +254,10 @@
 
 .modal-profile-acessibility-container {
     position: fixed;
-    top: 25%;
+    top: 15%;
     right: 0;
-    width: 35%;
-    height: 50%;
+    width: 40%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -283,6 +283,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    left: 10%;
     gap: 1rem;
 }
 
@@ -303,6 +304,7 @@
     justify-content: center;
     position: fixed;
     left: 5%;
+    width: 35%;
     top: 85%;
 }
 
