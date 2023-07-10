@@ -41,8 +41,8 @@
     float: right;
     bottom: 4rem;
     right: 5rem;
-    width: 15rem;
-    height: 15rem;
+    width: 20%;
+    height: 40%;
     background-color: var(--white);
     border: solid 0.01rem rgba(0, 0, 0, 0.151);
     border-radius: 20px;
@@ -50,3 +50,28 @@
     -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
 }
+
+h7 {
+    overflow: hidden;
+    margin: 0 auto;
+    display: inline-block;
+        font-weight: normal;
+
+  }
+  h7:after{
+   content: '';
+    display: inline-block;
+    background-color: white;
+    margin-left: 2px;
+    height: 25px;
+    width: 4px;
+    animation: cursor 0.4s infinite;
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes cursor {
+    0% { opacity: 1; }
+      49% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 0; }
+  }
