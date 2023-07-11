@@ -1,4 +1,4 @@
-.containerCart {
+.containerCartAll {
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -11,21 +11,21 @@
 
 }
 
-.boxCartProduct {
+.boxCartProductAll {
     background-color: var(--white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     border-top-left-radius:  20%;
     border-bottom-right-radius:  20%;
-    height: 80rem;
+    height: 70rem;
     width: 100%;
 }
 
-.boxCartProductDetail {
+.boxCartProductDetailAll {
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    height: 80rem;
+    height: 70rem;
     width: 70%;
 }
 

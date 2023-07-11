@@ -55,9 +55,9 @@ function Cart() {
           </div>
         </div>
       </div>
-      <div className='containerCart'>
-        <div className='boxCartProductDetail'>
-          <div className='boxCartProduct'>
+      <div className='containerCartAll'>
+        <div className='boxCartProductDetailAll'>
+          <div className='boxCartProductAll'>
             <div className='boxCartProductTitle'>
               <h5 className='TitleTextCartProduct'>Produtos e Frete</h5>
             </div>
