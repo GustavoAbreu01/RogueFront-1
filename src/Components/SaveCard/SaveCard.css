@@ -3,6 +3,7 @@
 }
 
 .ui.segment.itens.Save {
+    margin: 2rem auto 0;
     border-radius: 1rem;
     background-color: var(--white);
     width: 64rem;
@@ -35,6 +36,7 @@ a:link.Save {
 }
 
 .iconProductAction.Save {
+
     position: absolute;
     top: 0px;
     right: 0px;
