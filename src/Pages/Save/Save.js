@@ -51,6 +51,10 @@ function Product() {
   if (lista.length === 0) {
     return (
       <>
+        <div className='boxTitleSimilarOrder'>
+          <BsFillBookmarkFill color='var(--white)' size={40} />
+          <h1 className='titleSimilar'>Salvos</h1>
+        </div>
         <button onClick={() => adicionarProdutoAoLocalHost()}>Adicionar</button>
         <div className="noHaveProduct">
           <h1>Aqui ficarão seus itens salvos</h1>
