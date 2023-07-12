@@ -95,20 +95,28 @@ function Home() {
 
   const products = [
     {
-      name: 'Logo',
+      name: 'Engine',
       imageUrl: motor,
-      description1: 'logo1',
-      description2: 'logo2',
-      description3: 'logo3',
-      description4: 'logo4'
+      description1: 'Motor1',
+      description2: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description3: 'Motor3',
+      description4: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description5: 'Motor1',
+      description6: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description7: 'Motor3',
+      description8: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,'
     },
     {
-      name: 'Salvo',
+      name: 'Engine',
       imageUrl: motor,
-      description1: 'salvo1',
-      description2: 'salvo2',
-      description3: 'salvo3',
-      description4: 'salvo4'
+      description1: 'Motor1',
+      description2: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description3: 'Motor3',
+      description4: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description5: 'Motor1',
+      description6: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description7: 'Motor3',
+      description8: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,'
     }
   ];
 

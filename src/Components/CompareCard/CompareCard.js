@@ -37,24 +37,27 @@ function CompareCard() {
                             <div>
                                 <h1 className='productNameCompare'>{productCompared.name}</h1>
                             </div>
-                            <div>
+                            <div className=''>
                                 <h4 class="ui horizontal divider header">
                                     <i class="chart line icon Compare"></i>
                                 </h4>
                                 <h2 className='compareDescription'>{productCompared.description1}</h2>
-                                <h5 className=''>{productCompared.description1}</h5>
+                                <p className=''>{productCompared.description2}</p>
                                 <h4 class="ui horizontal divider header">
                                     <i class="exclamation triangle icon Compare"></i>
                                 </h4>
-                                <h2 className='compareDescription'>{productCompared.description2}</h2>
+                                <h2 className='compareDescription'>{productCompared.description3}</h2>
+                                <p className=''>{productCompared.description4}</p>
                                 <h4 class="ui horizontal divider header">
                                     <i class="angle double up icon Compare"></i>
                                 </h4>
-                                <h2 className='compareDescription'>{productCompared.description3}</h2>
+                                <h2 className='compareDescription'>{productCompared.description5}</h2>
+                                <p className=''>{productCompared.description6}</p>
                                 <h4 class="ui horizontal divider header">
                                     <i class="chevron up icon Compare"></i>
                                 </h4>
-                                <h2 className='compareDescription'>{productCompared.description4}</h2>
+                                <h2 className='compareDescription'>{productCompared.description7}</h2>
+                                <p className=''>{productCompared.description8}</p>
                             </div>
                         </div>
                     </div>

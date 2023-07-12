@@ -44,9 +44,13 @@ function Compare() {
       name: 'Engine',
       imageUrl: motor,
       description1: 'Motor1',
-      description2: 'Motor2',
+      description2: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
       description3: 'Motor3',
-      description4: 'Motor4'
+      description4: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description5: 'Motor1',
+      description6: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description7: 'Motor3',
+      description8: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,'
     }
     const newProductsCompared = [...productsCompared, product];
     setItems(newProductsCompared);
