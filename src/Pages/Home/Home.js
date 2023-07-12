@@ -111,8 +111,6 @@ function Home() {
     }
   ];
 
-  localStorage.setItem("productsCompared", JSON.stringify(products))
-
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -124,7 +122,8 @@ function Home() {
 
   return (
     <div>
-      <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <>{!verify() ? <Header /> : <HeaderLogin />}
+      <WeggnerModal />
         <div className='boxCarrossel'>
           <Carousell></Carousell>
         </div>
@@ -156,7 +155,6 @@ function Home() {
             </div>
           </Link>
           <div className='dividerIcons'></div>
-          <Link to='/weggner' style={{ textDecoration: 'none' }}>
             <div className="optionWeggner">
               <div className="questIcon">
                 <img src={weggner} alt="" width={125} />
@@ -167,7 +165,6 @@ function Home() {
                 </div>
               </div>
             </div>
-          </Link>
         </div>
         <div className='boxAccessed'>
           <div className='boxTitleAccessed'>

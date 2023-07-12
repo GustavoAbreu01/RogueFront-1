@@ -17,6 +17,7 @@ header {
     align-items: center;
     background-color: #00579D;
     height: 100px;
+    transition: 0.5s;
 }
 
 .img{
@@ -31,7 +32,6 @@ header .opc{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
     gap: 1rem;
     margin-right: 3rem;
 }
@@ -79,8 +79,9 @@ header .cart {
     cursor: pointer;
 }
 
-header .profile{
+header .profileIcon{
     cursor: pointer;
+    color: var(--white);
 }
 
 header .carrinho {
@@ -188,4 +189,42 @@ font-weight: bolder;
     background-color: rgb(78, 78, 78);
     margin-top: -3%;
     margin-left: -2%;
+}
+
+header.scrolled {
+    background-color: #0000007c;
+    transition: 0.5s;
+    height: 50px;
+    width: 100%;
+    z-index: 150;
+    position: fixed;
+
+    .saves {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .carrinho {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .account {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .profileIcon {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .img img {
+        width: 60px;
+    }
+
+    .searchInput {
+        opacity: 0;
+    }
+    
 }

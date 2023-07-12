@@ -13,17 +13,17 @@ body::-webkit-scrollbar-thumb {
 
 header {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     background-color: #00579D;
     height: 100px;
 }
 
-.img{
+.img {
     margin-left: 3%;
 }
 
-.imgHeader img{
+.imgHeader img {
     width: 100px;
 }
 
@@ -41,30 +41,28 @@ header .opcHeader {
     margin-right: 15%;
 }
 
-header .accountHeader  {
+header .accountHeader {
     margin-left: -100px;
     color: white;
     text-decoration: none;
     font-size: 15px;
 }
 
-header .account:hover{
+header .account:hover {
     color: #EFEFEF;
     cursor: pointer;
     transition: 0.3s;
 }
 
-header .saves:hover{
+header .saves:hover {
     color: #0080C5;
 
 }
 
-header .login:hover{
+header .login:hover {
     color: #EFEFEF;
     cursor: pointer;
     transition: 0.3s;
-
-
 }
 
 header .savesHeader {
@@ -73,7 +71,7 @@ header .savesHeader {
     font-size: 15px;
 }
 
-header .carrinhoHeader {
+.carrinhoHeaderDetail {
     color: white;
     text-decoration: none;
     margin-left: 10rem;
@@ -100,65 +98,62 @@ header .loginHeader {
     color: white;
 }
 
-.navBarHeader > a{
+.navBarHeader>a {
     color: white;
     text-decoration: none;
-    
 }
 
-.navBarHeader a:hover{
+.navBarHeader a:hover {
     color: #90C1E3;
     text-decoration: none;
 }
 
-
-
-.divisores{
+.divisores {
     background-color: white;
     width: 1px;
     height: 20px;
 }
 
-#logo{
+#logo {
     position: absolute;
     margin-top: -3%;
     margin-left: -3%;
 }
 
-#ModalPerfil{
+#ModalPerfil {
     display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
 }
 
-#colunaUm{
+#colunaUm {
     display: grid;
     justify-content: center;
     align-items: center;
     color: #00579D;
 }
 
-#colunaUm > h3{
+#colunaUm>h3 {
     margin-left: 25%;
 }
 
-#colunaDois > h4{
+#colunaDois>h4 {
     opacity: 50%;
 }
 
-#colunaDois > h3{
+#colunaDois>h3 {
     color: #00579D;
     font-weight: bolder;
 }
- 
-#colunaTres{
-margin-left: 5%;
-margin-top: -38%;
-color: #00579D;
-font-weight: bolder;
+
+#colunaTres {
+    margin-left: 5%;
+    margin-top: -38%;
+    color: #00579D;
+    font-weight: bolder;
 }
 
-.tracoAzul{
+.tracoAzul {
     position: absolute;
     width: 5px;
     height: 30px;
@@ -167,11 +162,48 @@ font-weight: bolder;
     margin-left: -2%;
 }
 
-.tracoCinza{
+.tracoCinza {
     position: absolute;
     width: 200px;
     height: 1px;
     background-color: rgb(78, 78, 78);
     margin-top: -3%;
     margin-left: -2%;
+}
+
+header .scrolled {
+    background-color: #0000007c;
+    transition: 0.5s;
+    height: 50px;
+    width: 100%;
+    z-index: 150;
+    position: fixed;
+
+    .saves {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    FaShoppingCart .carrinhoHeaderDetail {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .account {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .profileIcon {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .img img {
+        width: 60px;
+    }
+
+    .searchInput {
+        opacity: 0;
+    }
 }

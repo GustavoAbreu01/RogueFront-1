@@ -87,43 +87,70 @@ function CartPayment() {
             <div className='formsPayment'>
               <form class="ui form">
                 <div class="fields">
-                  <div class="eight wide field">
-                    <label>Bandera do Cartão</label>
-                    <Dropdown
-                      placeholder="Selecione uma opção"
-                      className='dropDownCard'
-                      fluid
-                      selection
-                      options={options}
-                    />
-                  </div>
-                  <div class="eight wide field">
-                    <label>Nome do Titular</label>
-                    <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
-                      onFocus={() => handleInputFocus('1')}
-                      onBlur={handleInputBlur}
-                    />
+                  {focusedInput === '1' && (
+                    <img src={CardName} className='cardInstrution' />
+                  )}
+                  {focusedInput === '2' && (
+                    <img src={CardNumber} className='cardInstrution' />
+                  )}
+                  {focusedInput === '3' && (
+                    <img data-aos="flip-left" src={CardCVV} className='cardInstrution' />
+                  )}
+                  {focusedInput === '4' && (
+                    <img src={CardDate} className='cardInstrution' />
+                  )}
+                  {focusedInput === '5' && (
+                    <img src={CardDate} className='cardInstrution' />
+                  )}
+                  {focusedInput === null && (
+                    <img src={CardAll} className='cardInstrution' />
+                  )}
+                  <div className='fieldComp'>
+                    <div class="sixteen wide field">
+                      <label>Bandera do Cartão</label>
+                      <Dropdown
+                        placeholder="Selecione uma opção"
+                        className='dropDownCard'
+                        fluid
+                        selection
+                        options={options}
+                      />
+                    </div>
+                    <div class="sixteen wide field">
+                      <label>Nome do Titular</label>
+                      <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
+                        onFocus={() => handleInputFocus('1')}
+                        onBlur={handleInputBlur}
+                      />
+                    </div>
+                    <div class="sixteen wide field">
+                      <label>Número do cartão</label>
+                      <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
+                        onFocus={() => handleInputFocus('2')}
+                        onBlur={handleInputBlur}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div class="fields">
-                  <div class="seven wide field">
-                    <label>Número do cartão</label>
-                    <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
-                      onFocus={() => handleInputFocus('2')}
-                      onBlur={handleInputBlur}
-                    />
-                  </div>
-                  <div class="three wide field">
+                  <div class="four wide field">
                     <label>CVV</label>
                     <input id='CvvCard' type="text" name="card[cvc]" maxlength="3" placeholder="CVC"
                       onFocus={() => handleInputFocus('3')}
                       onBlur={handleInputBlur}
                     />
                   </div>
+                  <div class="ten wide field">
+                    <label>CPF do titular</label>
+                    <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
+                      onFocus={() => handleInputFocus('2')}
+                      onBlur={handleInputBlur}
+                    />
+                  </div>
                   <div class="six wide field">
                     <label>Validade</label>
-                    <div class="two fields">
-                      <div class="field">
+                    <div class="fields">
+                      <div class="ten wide field">
                         <select id='DateCard' class="ui fluid search dropdown" name="card[expire-month]"
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
@@ -154,26 +181,6 @@ function CartPayment() {
                 </div>
               </form>
             </div>
-            {focusedInput === '1' && (
-              <img src={CardName} className='cardInstrution' />
-            )}
-            {focusedInput === '2' && (
-              <img src={CardNumber} className='cardInstrution' />
-            )}
-            {focusedInput === '3' && (
-              <div>
-                <img data-aos="flip-left" src={CardCVV} className='cardInstrution' />
-              </div>
-            )}
-            {focusedInput === '4' && (
-              <img src={CardDate} className='cardInstrution' />
-            )}
-            {focusedInput === '5' && (
-              <img src={CardDate} className='cardInstrution' />
-            )}
-            {focusedInput === null && (
-              <img src={CardAll} className='cardInstrution' />
-            )}
           </div>
         </div>
         <div className='boxInfoTotalCart'>

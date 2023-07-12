@@ -12,6 +12,7 @@ import { UserService } from '../../Service'
 function HeaderLogin() {
 
   const [user, setUser] = useState({});
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,27 +27,40 @@ function HeaderLogin() {
         console.log(error);
       }
     }
-  
+
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <><header>
+    <><header className={scrolled ? 'scrolled' : ''}>
       <div className="img">
         <Link to="/"><img src={logo} alt="" /></Link>
       </div>
-      <div>
+      <div className="searchInput">
         <SearchBar />
       </div>
       <div className="opc">
         <div className='icons'>
-          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves'/></Link>
+          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves' /></Link>
         </div>
         <div className='icons'>
           <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
         </div>
         <div>
-          <PerfilModal user={user}/>
+          <PerfilModal user={user} />
         </div>
       </div>
     </header><div className="navBar">
