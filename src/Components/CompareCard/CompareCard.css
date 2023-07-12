@@ -9,7 +9,7 @@
 .productsCompared{
     display: grid;
     grid-template-columns: repeat(3, 20rem);
-    grid-gap: 5rem;
+    grid-gap: 10rem;
 }
 
 .productCompared{
@@ -24,13 +24,13 @@
 .compareArrow{
     position: absolute;
     margin-top: 15rem;
-    margin-left: 21.8rem;
+    margin-left: 24rem;
 }
 
 .compareArrow2{
     position: absolute;
     margin-top: 15rem;
-    margin-left: 46.8rem;
+    margin-left: 54rem;
 }
 
 .deleteButton{

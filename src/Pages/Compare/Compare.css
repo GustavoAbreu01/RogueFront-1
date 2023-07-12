@@ -1,5 +1,6 @@
 .compare{
     margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .products{
@@ -10,4 +11,27 @@
 
 .addProduct{
     cursor: pointer;
+    position: absolute;
+    right: 20%;
+}
+
+.titleCompare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 50px;
+    height: 8rem;
+    margin: 5%;
+}
+
+.boxTitleCompare {
+    display: flex;
+    background-color: var(--blue-primary);
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 80%;
+    width: 40%;
 }

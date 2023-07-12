@@ -29,6 +29,7 @@ import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
 import './Home.css'
+import motor from "../../assets/img/motor.png"
 import { Link } from 'react-router-dom'
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel'
 import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
@@ -95,7 +96,7 @@ function Home() {
   const products = [
     {
       name: 'Logo',
-      imageUrl: logo,
+      imageUrl: motor,
       description1: 'logo1',
       description2: 'logo2',
       description3: 'logo3',
@@ -103,13 +104,15 @@ function Home() {
     },
     {
       name: 'Salvo',
-      imageUrl: salvo,
+      imageUrl: motor,
       description1: 'salvo1',
       description2: 'salvo2',
       description3: 'salvo3',
       description4: 'salvo4'
     }
   ];
+
+  localStorage.setItem('productsCompared', JSON.stringify(products));
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -123,7 +126,7 @@ function Home() {
   return (
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
-      <WeggnerModal />
+        <WeggnerModal />
         <div className='boxCarrossel'>
           <Carousell></Carousell>
         </div>
@@ -155,16 +158,16 @@ function Home() {
             </div>
           </Link>
           <div className='dividerIcons'></div>
-            <div className="optionWeggner">
-              <div className="questIcon">
-                <img src={weggner} alt="" width={125} />
-                <div>
-                  <h4 className='titleOpc'>Conheça o nosso<br />
-                    Assistente Virtual!</h4>
-                  <p className='descOpc'>Navegar ficou ainda mais fácil</p>
-                </div>
+          <div className="optionWeggner">
+            <div className="questIcon">
+              <img src={weggner} alt="" width={125} />
+              <div>
+                <h4 className='titleOpc'>Conheça o nosso<br />
+                  Assistente Virtual!</h4>
+                <p className='descOpc'>Navegar ficou ainda mais fácil</p>
               </div>
             </div>
+          </div>
         </div>
         <div className='boxAccessed'>
           <div className='boxTitleAccessed'>
@@ -198,36 +201,36 @@ function Home() {
               </div>
             </Link>
             <Link to='/category'>
-            <div className='categoryTitle'>
-              <button className='categoryButton'>
-                <BsPaintBucket color='var(--blue-primary)' className='categoryButtonImg' ></BsPaintBucket>
-              </button>
-              <h2>Tintas</h2>
-            </div>
+              <div className='categoryTitle'>
+                <button className='categoryButton'>
+                  <BsPaintBucket color='var(--blue-primary)' className='categoryButtonImg' ></BsPaintBucket>
+                </button>
+                <h2>Tintas</h2>
+              </div>
             </Link>
             <Link to='/category'>
-            <div className='categoryTitle'>
-              <button className='categoryButton'>
-                <CgSmartphoneChip color='var(--blue-primary)' className='categoryButtonImg' ></CgSmartphoneChip>
-              </button>
-              <h2>Automação</h2>
-            </div>
+              <div className='categoryTitle'>
+                <button className='categoryButton'>
+                  <CgSmartphoneChip color='var(--blue-primary)' className='categoryButtonImg' ></CgSmartphoneChip>
+                </button>
+                <h2>Automação</h2>
+              </div>
             </Link>
             <Link to='/category'>
-            <div className='categoryTitle'>
-              <button className='categoryButton'>
-                <TfiPanel color='var(--blue-primary)' className='categoryButtonImg'></TfiPanel>
-              </button>
-              <h2>Painéis</h2>
-            </div>
+              <div className='categoryTitle'>
+                <button className='categoryButton'>
+                  <TfiPanel color='var(--blue-primary)' className='categoryButtonImg'></TfiPanel>
+                </button>
+                <h2>Painéis</h2>
+              </div>
             </Link>
             <Link to='/category'>
-            <div className='categoryTitle'>
-              <button className='categoryButton'>
-                <img src={iconMotor} width={75} height={50} alt=''></img>
-              </button>
-              <h2>Motores</h2>
-            </div>
+              <div className='categoryTitle'>
+                <button className='categoryButton'>
+                  <img src={iconMotor} width={75} height={50} alt=''></img>
+                </button>
+                <h2>Motores</h2>
+              </div>
             </Link>
           </div>
         </div>
