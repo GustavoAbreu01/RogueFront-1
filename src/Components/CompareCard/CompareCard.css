@@ -23,12 +23,14 @@
 
 .compareArrow{
     position: absolute;
+    color: var(--blue-primary);
     margin-top: 15rem;
     margin-left: 24rem;
 }
 
 .compareArrow2{
     position: absolute;
+    color: var(--blue-primary);
     margin-top: 15rem;
     margin-left: 54rem;
 }

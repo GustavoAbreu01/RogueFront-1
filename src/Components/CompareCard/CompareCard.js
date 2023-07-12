@@ -27,7 +27,7 @@ function CompareCard() {
                 {productsCompared.map((productCompared, index) => (
                     <div className='productComparedCard'>
                         <div className="productCompared" key={index}>
-                            <div className='deleteButton'>
+                            <div className='deleteButton'>  
                                 {verify() && <MdDelete size={'2rem'} onClick={() => deleteProduct(index)} />}
                             </div>
                             <div>
@@ -42,6 +42,7 @@ function CompareCard() {
                                     <i class="chart line icon Compare"></i>
                                 </h4>
                                 <h2 className='compareDescription'>{productCompared.description1}</h2>
+                                <h5 className=''>{productCompared.description1}</h5>
                                 <h4 class="ui horizontal divider header">
                                     <i class="exclamation triangle icon Compare"></i>
                                 </h4>
