@@ -6,7 +6,7 @@
     margin: 2rem auto 0;
     border-radius: 1rem;
     background-color: var(--white);
-    width: 64rem;
+    width: 40rem;
     display: flex;
     align-items: center;
     /* Centraliza verticalmente */
@@ -58,7 +58,7 @@ a:link.Save {
 }
 
 .descricao.Save {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-left: 2rem;
     color: var(--grey-primary);
 }
@@ -86,8 +86,8 @@ a:link.Save {
 
 .buyButton.Save {
     position: absolute;
-    height: 3rem;
-    width: 15rem;
+    height: 2rem;
+    width: 10rem;
     bottom: 0;
     right: 0;
 }
@@ -96,6 +96,24 @@ a:link.Save {
     border-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 70%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
+    width: 10rem;
+    height: 2rem;
+    left: 0%;
+}
+
+.ui.blue.icon.button.Save {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+}
+
+.trash.alternate.icon.Save {
+    align-items: center;
+    color: var(--red);
+    font-size: 0.9rem;
+    transition: 0.3s;
 }

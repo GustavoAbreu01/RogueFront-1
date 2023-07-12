@@ -36,7 +36,7 @@ function SaveCard() {
                 </Link>
                 <div className='iconProductAction Save'>
                     <button className="ui blue icon button Save" onClick={deleteItens} >
-                        <i className="trash alternate icon Save"></i>
+                        <i className="trash alternate icon Save" ></i>
                     </button>
                     <button class="ui blue icon button  Save">
                         <i className="cart plus icon Save"></i>
