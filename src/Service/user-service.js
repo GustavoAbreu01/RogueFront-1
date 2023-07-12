@@ -27,6 +27,12 @@ export const UserService = {
         axios.post(url + '/getOne/', id).then((response) => {
             return response.data;
           });
-    }
+    },
 
+    
+    edit: function(id, user){
+      axios.put(url + '/edit/'+ id, user).then((response) => {
+          return response.data
+      })
+  }
 }
