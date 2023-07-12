@@ -54,6 +54,9 @@ function Compare() {
   return (
     <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='compare'>
+        <div className='titleCompare'>
+          
+        </div>
         <div className='products'>
           <CompareCard />
           {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
