@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './EditProfile.css'
+import { Link } from "react-router-dom";
 import motor from "../../assets/img/motor.png"
 import { CgProfile } from 'react-icons/cg'
 import { FaRegEdit } from 'react-icons/'
@@ -45,15 +46,15 @@ function EditProfile() {
                                         <p>000.000.000-00</p>
                                     </div>
                                     <div class="ui vertical menu edit">
-                                        <a class="item">
+                                        <Link to="/edit-profile" class="item">
                                             <p className='titleSectionEdit'>Perfil</p>
-                                        </a>
-                                        <a class="item">
+                                        </Link>
+                                        <Link to="/messages" class="item">
                                             <p className='titleSectionEdit'>Mensagens</p>
-                                        </a>
-                                        <a class="item">
+                                        </Link>
+                                        <Link to="/edit-address" class="item">
                                             <p className='titleSectionEdit'>Endereço</p>
-                                        </a>
+                                        </Link>
                                         <a class="item">
                                             <p className='titleSectionEdit'>Avaliações</p>
                                         </a>
@@ -63,10 +64,10 @@ function EditProfile() {
                         </div>
                     </div >
                 </div >
-                <div class="ui row editSection">
+                <div class="ui row editSectionProfile">
                     <div class="column sections">
-                        <div className='edit-section'>
-                            <h2 className='edit-section-title'>Informações Pessoais</h2>
+                        <div className='edit-section-profile'>
+                            <h2 className='edit-section-title-profile'>Informações Pessoais</h2>
                         </div>
                     </div>
                 </div>
