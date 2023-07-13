@@ -77,7 +77,13 @@ function Compare() {
           </div>}
 
         </div>
-
+        <div className='boxInfoRecommend'>
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+          </div>
       </div>
       <Footer />
     </>
