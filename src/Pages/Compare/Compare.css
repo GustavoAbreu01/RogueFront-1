@@ -26,15 +26,20 @@
     margin: 5%;
 }
 
-.boxTitleCompare {
+
+
+.boxTitleSimilarCompare {
     display: flex;
-    background-color: var(--blue-primary);
-    color: var(--white);
-    justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    height: 80%;
+    background-color: var(--blue-primary);
     width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    margin-top: 5rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .boxTitleSimilar {

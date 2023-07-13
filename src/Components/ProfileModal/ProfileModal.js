@@ -142,9 +142,11 @@ export default function ProfileModal({ user }) {
           <div className="modal-profile-content" data-aos="fade-left">
             <div className=''>
               <div className='profile-modal-header'>
+                <Link to='/edit-profile'>
                 <button class="circular ui icon button edit">
                   <i class="edit outline icon"></i>
                 </button>
+                </Link>
                 <CgProfile className='perfil-image'></CgProfile>
                 <p className='usernameProfile'>Nome Sobrenome</p>
                 <p className='cpfProfile'>076.137.949.54</p>

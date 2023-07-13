@@ -11,6 +11,8 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
 import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
 import { FaArrowRightArrowLeft } from 'react-icons/fa6'
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
+import { FaStar } from 'react-icons/fa'
 
 function Compare() {
   const [productsCompared, setItems] = useState([]);
@@ -77,13 +79,11 @@ function Compare() {
           </div>}
 
         </div>
-        <div className='boxInfoRecommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-          </div>
+        <div className='boxTitleSimilarCompare'>
+          <FaStar color='var(--white)' size={40} />
+          <h1 className='titleSimilar' >Produtos Recomendados</h1>
+        </div>
+        <ProductCarouselSmallSimilar />
       </div>
       <Footer />
     </>
