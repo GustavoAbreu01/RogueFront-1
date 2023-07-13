@@ -8,7 +8,7 @@ import motors from "../../assets/img/motores.png"
 function SaveCard() {
 
     const [isOpen, setIsOpen] = useState(false);
-
+    
 
     const deleteItens = (item) => {
         const products = JSON.parse(localStorage.getItem('products'))
@@ -16,6 +16,7 @@ function SaveCard() {
         products.splice(index, 1)
         localStorage.setItem('products', JSON.stringify(products))
         console.log(products)
+        window.location.reload()
     }
 
     return (
@@ -34,8 +35,8 @@ function SaveCard() {
                     </div>
                 </Link>
                 <div className='iconProductAction Save'>
-                    <button className="ui blue icon button Save" onClick={deleteItens}>
-                        <i className="trash alternate icon Save"></i>
+                    <button className="ui blue icon button Save" onClick={deleteItens} >
+                        <i className="trash alternate icon Save" ></i>
                     </button>
                     <button class="ui blue icon button  Save">
                         <i className="cart plus icon Save"></i>

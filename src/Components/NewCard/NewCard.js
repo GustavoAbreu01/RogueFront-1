@@ -21,7 +21,7 @@ function NewCard() {
                 </div>
             </Link>
             <div className='iconProductAction category'>
-                <button className="ui blue icon button Category">
+                <button className="ui blue icon button Category" >
                     <i className="bookmark icon Category"></i>
                 </button>
                 <button class="ui blue icon button Category">

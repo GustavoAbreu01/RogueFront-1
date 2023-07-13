@@ -1,8 +1,8 @@
-.column.itens.Save {
+.column.itens.Recommended {
     margin: 2rem;
 }
 
-.ui.segment.itens.Save {
+.ui.segment.itens.Recommended {
     margin: 2rem auto 0;
     border-radius: 1rem;
     background-color: var(--white);
@@ -12,30 +12,30 @@
     /* Centraliza verticalmente */
 }
 
-a:link.Save {
+a:link.Recommended {
     text-decoration: none;
     /* Remova a decoração de link (sublinhado) se necessário */
 }
 
-.itemContent.Save {
+.itemContent.Recommended {
     display: flex;
     align-items: center;
 }
 
-#imgItens.Save {
+#imgItens.Recommended {
 
     margin-right: 2rem;
     /* Espaçamento entre a imagem e as outras informações */
 }
 
-.itemInfo.Save {
+.itemInfo.Recommended {
     flex: 1;
     /* Ocupa o espaço disponível */
     justify-content: space-between;
     /* Alinha o conteúdo nos extremos da div */
 }
 
-.iconProductAction.Save {
+.iconProductAction.Recommended {
 
     position: absolute;
     top: 0px;
@@ -44,47 +44,47 @@ a:link.Save {
     border: none;
 }
 
-.ui.vertically.divided.grid.Save {
+.ui.vertically.divided.grid.Recommended {
     margin: 3rem;
 }
 
-.ui.header.motor.Save {
+.ui.header.motor.Recommended {
     text-align: center;
 }
 
-.itemPreco.Save {
+.itemPreco.Recommended {
     padding-left: 2rem;
     color: var(--blue-primary);
 }
 
-.descricao.Save {
+.descricao.Recommended {
     font-size: 1rem;
     padding-left: 2rem;
     color: var(--grey-primary);
 }
 
-.itemName.Save {
+.itemName.Recommended {
     color: var(--black);
     padding-left: 2rem;
 }
 
-.ui.segment.itens.Save:hover {
+.ui.segment.itens.Recommended:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
     cursor: pointer;
 
-    .iconProductAction.Save {
+    .iconProductAction.Recommended {
         opacity: 1;
         transition: 0.3s;
     }
 }
 
-.subtext.Save{
+.subtext.Recommended{
     font-size: 1rem;
     top: 0px;
 }
 
-.buyButton.Save {
+.buyButton.Recommended {
     position: absolute;
     height: 2rem;
     width: 10rem;
@@ -92,18 +92,16 @@ a:link.Save {
     right: 0;
 }
 
-.ui.fluid.blue.button.Save {
+.ui.fluid.blue.button.Recommended {
     border-radius: 0px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 70%;
     font-size: 1rem;
     font-weight: bold;
-    width: 10rem;
-    height: 2rem;
+    width: 0.2rem;
+    height: 15rem;
     left: 0%;
 }
 
-.ui.blue.icon.button.Save {
+.ui.blue.icon.button.Recommended {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -111,7 +109,7 @@ a:link.Save {
     height: 2rem;
 }
 
-.trash.alternate.icon.Save {
+.trash.alternate.icon.Recommended {
     align-items: center;
     color: var(--red);
     font-size: 0.9rem;
