@@ -31,6 +31,8 @@ function EditProfile() {
         }
     }
 
+
+
     return (
         <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
             <div className='containerEdit'>
@@ -65,13 +67,33 @@ function EditProfile() {
                     </div >
                 </div >
                 <div class="ui row editSectionProfile">
-                    <div class="column sections">
-                        <div className='edit-section-profile'>
-                            <h2 className='edit-section-title-profile'>Informações Pessoais</h2>
+                    {changeSection() == 1 ?
+                        <div class="column sections">
+                            <div className='edit-section-profile'>
+                                <h2 className='edit-section-title-profile'>Informações Pessoais</h2>
+                            </div>
                         </div>
-                    </div>
+                        : changeSection() == 2 ?
+                            <div class="column sections">
+                                <div className='edit-section-profile'>
+                                    <h2 className='edit-section-title-profile'>Informações Pessoais</h2>
+                                </div>
+                            </div>
+                            : changeSection() == 3 ?
+                            <div class="column sections">
+                                <div className='edit-section-profile'>
+                                    <h2 className='edit-section-title-profile'>Informações Pessoais</h2>
+                                </div>
+                            </div>
+                            : changeSection() == 4 ?
+                            <div class="column sections">
+                                <div className='edit-section-profile'>
+                                    <h2 className='edit-section-title-profile'>Informações Pessoais</h2>
+                                </div>
+                            </div>
+    } : null}
                 </div>
-            </div>
+            </div >
             <Footer />
         </>
     )
