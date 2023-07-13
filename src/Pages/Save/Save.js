@@ -68,10 +68,13 @@ function Product() {
           <BsFillBookmarkFill color='var(--white)' size={40} />
           <h1 className='titleSimilar'>Salvos</h1>
         </div>
-        <div className="products Save">
-          {products.map((item) => {
-            return <div key={item}><SaveCard item={item} /></div>;
-          })}
+        <div className='IAProducts Save'>
+          <div className="products Save">
+            {products.map((item) => {
+              return <div key={item}><SaveCard item={item} /></div>;
+            })}
+          </div>
+          <div className='produtingos'><SaveCard/></div>
         </div>
       </>
     );

@@ -109,3 +109,12 @@ body{
 .saveCard{
     margin: auto;
 }
+
+.IAProducts.Save{
+    display: flex;
+    flex-direction: row;
+}
+
+.produtingos{
+    margin-right: 6rem;
+}
