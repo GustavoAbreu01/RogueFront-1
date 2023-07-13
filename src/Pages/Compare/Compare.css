@@ -35,3 +35,11 @@
     height: 80%;
     width: 40%;
 }
+
+.boxTitleSimilarCompare {
+    background-color: var(--blue-secondary);
+    color: var(--white);
+    border-radius: 10px;
+    height: 80%;
+    width: 40%;
+}

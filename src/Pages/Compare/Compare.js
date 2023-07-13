@@ -10,6 +10,7 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import { BsFillBookmarkFill } from 'react-icons/bs'
 import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
 import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
+import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 
 function Compare() {
   const [productsCompared, setItems] = useState([]);
@@ -61,11 +62,10 @@ function Compare() {
   return (
     <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='compare'>
-        <div className='titleCompare'>
-          <div className='boxTitleCompare'>
-            <h1 className='titleSimilar'>Comparar Produtos</h1>
+          <div className='boxTitleSimilarCompare'>
+            <FaArrowRightArrowLeft color='var(--white)' size={40} />
+            <h1 className='titleSimilar' >Comparação</h1>
           </div>
-        </div>
         <div className='products'>
           <CompareCard />
           {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>

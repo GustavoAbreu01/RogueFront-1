@@ -55,6 +55,7 @@ function Quiz() {
     <>
       {!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div class="ui raised very padded text container segment quiz">
+      <p class="ui blue ribbon label quiz">Quiz</p>
         <div class="ui mini steps">
           <i class="clipboard list icon"></i>
           <div class="step">

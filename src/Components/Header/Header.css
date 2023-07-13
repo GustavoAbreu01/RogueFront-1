@@ -173,7 +173,6 @@ header .loginHeader {
 
 header .scrolled {
     background-color: #0000007c;
-    transition: 0.5s;
     height: 50px;
     width: 100%;
     z-index: 150;

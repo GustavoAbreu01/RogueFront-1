@@ -17,7 +17,7 @@ header {
     align-items: center;
     background-color: #00579D;
     height: 100px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .img{
@@ -193,7 +193,6 @@ font-weight: bolder;
 
 header.scrolled {
     background-color: #0000007c;
-    transition: 0.5s;
     height: 50px;
     width: 100%;
     z-index: 150;
