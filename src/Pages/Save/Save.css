@@ -118,3 +118,23 @@ body{
 .produtingos{
     margin-right: 6rem;
 }
+
+.boxTitleSimilarSave{
+    gap: 10rem;
+    right: 1rem;
+    margin-top: 2rem;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 30%;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+.titles{
+    gap: 39rem;
+    display: flex;
+    flex-direction: row;
+}

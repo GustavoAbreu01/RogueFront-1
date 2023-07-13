@@ -7,6 +7,8 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
 import { BsFillBookmarkFill } from 'react-icons/bs'
+import { AiFillStar } from 'react-icons/ai'
+import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 
 
 function Product() {
@@ -63,10 +65,15 @@ function Product() {
     );
   } else {
     return (
-      <>
+      <><div className='titles'>
         <div className='boxTitleSimilarOrder'>
           <BsFillBookmarkFill color='var(--white)' size={40} />
           <h1 className='titleSimilar'>Salvos</h1>
+        </div>
+        <div className='boxTitleSimilarSave'>
+          <AiFillStar color='var(--white)' size={40} />
+          <h1 className='titleSimilar'>Recomendados</h1>
+        </div>
         </div>
         <div className='IAProducts Save'>
           <div className="products Save">
@@ -74,7 +81,7 @@ function Product() {
               return <div key={item}><SaveCard item={item} /></div>;
             })}
           </div>
-          <div className='produtingos'><SaveCard/></div>
+          <div className='produtingos'><RecommendedSave/></div>
         </div>
       </>
     );
