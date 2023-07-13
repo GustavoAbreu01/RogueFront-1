@@ -16,6 +16,7 @@ import CartConfirm from './Pages/CartConfirm/CartConfirm';
 import CartTransport from './Pages/CartTransport/CartTransport';
 import CartFinish from './Pages/CartFinish/CartFinish';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
+import EditProfile from './Pages/EditProfile/EditProfile';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/weggner" element={<ChatWegner />} />
           <Route path="/cart/finish" element={<CartFinish />} />
           <Route path="/orders" element={<ProfilePage />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
     </Router>
   );
