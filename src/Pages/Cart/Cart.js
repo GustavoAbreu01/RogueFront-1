@@ -84,7 +84,7 @@ function Cart() {
             <div className='boxButtonTotalCart'>
               {!verify() ?
                 <Link to='/register'>
-                  <button className="fluid ui button final">Finalizar Logi  n</button>
+                  <button className="fluid ui button final">Realizar Login</button>
                 </Link>
                 :
                 <Link to='/cart/payment'>
@@ -92,7 +92,7 @@ function Cart() {
                 </Link>
               }
               <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Compando</button>
+                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
               </Link>
             </div>
           </div>

@@ -202,7 +202,7 @@ function CartPayment() {
                 <button className="fluid ui button final">Finalizar Compra</button>
               </Link>
               <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Compando</button>
+                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
               </Link>
             </div>
           </div>
