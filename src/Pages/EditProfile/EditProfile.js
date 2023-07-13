@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './EditProfile.css';
+import { AiFillEdit } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import RatedProducts from '../../Components/RatedProducts/RatedProducts';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
-function EditProfile() {
-  const [productsCompared, setItems] = useState([]);
-  const [activeSection, setActiveSection] = useState(1);
 
-  useEffect(() => {
-    const productComparedList = JSON.parse(localStorage.getItem('productsCompared'));
-    if (productComparedList) {
-      setItems(productComparedList);
-    }
-  }, []);
+function EditProfile() {
+
+  const [activeSection, setActiveSection] = useState(1);
+  const [editMode, setEditMode] = useState(false);
+
+  const changeInfo = () => {
+    setEditMode(true);
+  };
 
   const verifyHeader = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -30,6 +31,7 @@ function EditProfile() {
   const changeSection = (section) => {
     setActiveSection(section);
   };
+
 
   return (
     <>
@@ -70,29 +72,52 @@ function EditProfile() {
             <div className="column sections">
               <div className="edit-section-profile">
                 <h2 className="edit-section-title-profile">Informações Pessoais</h2>
+                <form className="ui form editOptions">
+                  <div className='field name label'>
+                    <label>Nome: <AiFillEdit className="" /></label>
+                    <label>Sobrenome: <AiFillEdit className="" /></label>
+                  </div>
+                  <div className="field name surname" >
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} className='butaum' type="text" name="emailLogin" placeholder="Nome Sobrenome" />
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="Nome Sobrenome" />
+                  </div>
+                  <div className='field password label'>
+                    <label>Senha: <AiFillEdit className="" /></label>
+                    <label>Confirmar Senha: <AiFillEdit className="" /></label>
+                  </div>
+                  <div className="field password">
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="SuaSenha/123455" />
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="SuaSenha/123455" />
+                  </div>
+                  <div onClick={changeInfo}>
+                    <button className="editButton">Editar</button>
+                  </div>
+                </form>
               </div>
             </div>
           ) : activeSection === 2 ? (
             <div className="column sections">
               <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">a</h2>
+                <h2 className="edit-section-title-profile">Mensagens</h2>
               </div>
             </div>
           ) : activeSection === 3 ? (
             <div className="column sections">
               <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">b</h2>
+                <h2 className="edit-section-title-profile">Endereço</h2>
               </div>
             </div>
           ) : activeSection === 4 ? (
             <div className="column sections">
-              <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">c</h2>
+              <div className="edit-section-ratings">
+                <h2 className="edit-section-title-profile">Avaliações</h2>
+                <RatedProducts/>
+                <RatedProducts/>
               </div>
             </div>
           ) : null}
         </div>
-      </div>
+      </div >
       <Footer />
     </>
   );

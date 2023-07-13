@@ -17,8 +17,6 @@ import CartTransport from './Pages/CartTransport/CartTransport';
 import CartFinish from './Pages/CartFinish/CartFinish';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import EditProfile from './Pages/EditProfile/EditProfile';
-import Messages from './Pages/Messages/Messages';
-import Address from './Pages/Address/Address';
 
 
 function App() {
@@ -42,8 +40,6 @@ function App() {
           <Route path="/cart/finish" element={<CartFinish />} />
           <Route path="/orders" element={<ProfilePage />} />
           <Route path="/edit-profile" element={<EditProfile />} />
-          <Route path="/edit-address" element={<Address />} />
-          <Route path="/messages" element={<Messages />} />
         </Routes>
     </Router>
   );
