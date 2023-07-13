@@ -42,16 +42,20 @@ function Compare() {
   function addMoreProducts() {
     const product =
     {
-      name: 'Engine',
+      name: 'W-12',
       imageUrl: motor,
-      description1: 'Motor1',
+      description1: 'Potência',
       description2: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description3: 'Motor3',
+      description3: 'Polaridade',
       description4: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description5: 'Motor1',
+      description5: 'Tensão',
       description6: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description7: 'Motor3',
-      description8: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,'
+      description7: 'Frequência',
+      description8: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description9: 'Carcaça',
+      description10: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      description11: 'Cor',
+      description12: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
     }
     const newProductsCompared = [...productsCompared, product];
     setItems(newProductsCompared);
@@ -62,10 +66,10 @@ function Compare() {
   return (
     <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='compare'>
-          <div className='boxTitleSimilarCompare'>
-            <FaArrowRightArrowLeft color='var(--white)' size={40} />
-            <h1 className='titleSimilar' >Comparação</h1>
-          </div>
+        <div className='boxTitleSimilar'>
+          <FaArrowRightArrowLeft color='var(--white)' size={40} />
+          <h1 className='titleSimilar' >Comparação de Produtos</h1>
+        </div>
         <div className='products'>
           <CompareCard />
           {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
@@ -73,7 +77,13 @@ function Compare() {
           </div>}
 
         </div>
-
+        <div className='boxInfoRecommend'>
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+          </div>
       </div>
       <Footer />
     </>

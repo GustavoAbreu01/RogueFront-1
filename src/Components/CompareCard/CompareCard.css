@@ -1,10 +1,30 @@
 .productComparedCard{
-    width: 108%;
+    width: 100%;
+    height: 100%;
+    margin-top: -5%;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     background-color:var(--white);
     border-radius: 2rem;
 }
 
+.productComparedCardDetail{
+    width: 108%;
+    height: 100%;   
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    background-color:var(--blue-primary);
+    border-radius: 2rem;
+}
+
+.productImageBox {
+    display: flex;
+    justify-content: center;
+}
+
+.productNameCompareBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .productsCompared{
     display: grid;
@@ -24,14 +44,15 @@
 .compareArrow{
     position: absolute;
     color: var(--blue-primary);
-    margin-top: 15rem;
+    justify-content: center;
+    margin-top: 40%;
     margin-left: 24rem;
 }
 
 .compareArrow2{
     position: absolute;
     color: var(--blue-primary);
-    margin-top: 15rem;
+    margin-top: 40%;
     margin-left: 54rem;
 }
 
@@ -45,7 +66,6 @@
 }
 
 .productNameCompare{
-    padding-left: 3.9rem;
     padding-bottom: 2rem;
     font-size: 2.5rem;
     color: var(--black);
@@ -73,4 +93,30 @@
 
 .chevron.up.icon.Compare{
     color: var(--blue-primary);
+}
+
+.buttonsActionCompare {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.iconCompare {
+    color: var(--blue-primary);
+    font-size: 2rem;
+}
+
+.containerDescriptionText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.productDescriptionPrimary {
+    text-align: center;
 }
