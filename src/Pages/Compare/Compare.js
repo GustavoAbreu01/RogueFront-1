@@ -62,10 +62,10 @@ function Compare() {
   return (
     <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='compare'>
-          <div className='boxTitleSimilarCompare'>
-            <FaArrowRightArrowLeft color='var(--white)' size={40} />
-            <h1 className='titleSimilar' >Comparação</h1>
-          </div>
+        <div className='boxTitleSimilar'>
+          <FaArrowRightArrowLeft color='var(--white)' size={40} />
+          <h1 className='titleSimilar' >Comparação de Produtos</h1>
+        </div>
         <div className='products'>
           <CompareCard />
           {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>

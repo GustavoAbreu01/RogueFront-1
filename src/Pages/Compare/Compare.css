@@ -1,18 +1,19 @@
-.compare{
+.compare {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
 
-.products{
+.products {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.addProduct{
+.addProduct {
     cursor: pointer;
     position: absolute;
     right: 20%;
+    top: 122%;
 }
 
 .titleCompare {
@@ -36,10 +37,16 @@
     width: 40%;
 }
 
-.boxTitleSimilarCompare {
-    background-color: var(--blue-secondary);
-    color: var(--white);
-    border-radius: 10px;
-    height: 80%;
+.boxTitleSimilar {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
     width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    margin-bottom: 5rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }

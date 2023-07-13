@@ -27,8 +27,19 @@ function CompareCard() {
                 {productsCompared.map((productCompared, index) => (
                     <div className='productComparedCard'>
                         <div className="productCompared" key={index}>
-                            <div className='deleteButton'>  
-                                {verify() && <MdDelete size={'2rem'} onClick={() => deleteProduct(index)} />}
+                            <div className='buttonsActionCompare'>
+                                <button class="ui icon button compare">
+                                    <i className="info alternate icon "></i>
+                                </button>
+                                <button class="ui icon button compare">
+                                    <i className="cart plus icon "></i>
+                                </button>
+                                <div className='deleteButton'>
+                                    {verify() &&
+                                        <button onClick={() => deleteProduct(index)} class="ui icon button compare">
+                                            <i className="trash alternate icon "></i>
+                                        </button>}
+                                </div>
                             </div>
                             <div>
                                 <img src={productCompared.imageUrl} alt="" className='productImage' />
@@ -63,10 +74,10 @@ function CompareCard() {
                     </div>
                 ))}
                 <div className='compareArrow'>
-                    <MdCompareArrows size={'3rem'} />
+                    <MdCompareArrows size={'4rem'} />
                 </div>
                 {verify() && <div className='compareArrow2'>
-                    <MdCompareArrows size={'3rem'} />
+                    <MdCompareArrows size={'4rem'} />
                 </div>}
             </div>
         </>

@@ -55,8 +55,8 @@ background-color: brown;
 .boxTitleSimilar{
     display: flex;
     align-items: center;
-    background-color: var(--blue-primary);
-    width: 40%;
+    background-color: var(--blue-primary); 
+    width: 50%;
     gap: 2rem;
     height: 3rem;
     padding: 3rem;

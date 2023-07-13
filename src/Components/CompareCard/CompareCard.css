@@ -24,14 +24,15 @@
 .compareArrow{
     position: absolute;
     color: var(--blue-primary);
-    margin-top: 15rem;
+    justify-content: center;
+    margin-top: 40%;
     margin-left: 24rem;
 }
 
 .compareArrow2{
     position: absolute;
     color: var(--blue-primary);
-    margin-top: 15rem;
+    margin-top: 40%;
     margin-left: 54rem;
 }
 
@@ -73,4 +74,12 @@
 
 .chevron.up.icon.Compare{
     color: var(--blue-primary);
+}
+
+.buttonsActionCompare {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
 }
