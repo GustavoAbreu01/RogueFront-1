@@ -18,7 +18,7 @@
     border: none;
    
 }
-.titleSectionEdit{
+.edit-section-title-messages{
     padding: 1rem;
 
 }
@@ -34,17 +34,17 @@
 .ui.row.edit{
     width: 28rem;
 }
-.edit-section-profile{
+.edit-section-messages{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color: var(--white);
     width: 69rem;
     height: 36.4rem;
     border-radius: 5px;
 }
-.ui.row.editSectionProfile{
+.ui.row.editSectionMessages{
     margin-top: 1rem;
 }
-.column.sections{
+.column.sections.messages{
     margin: 2rem;
     
 }
@@ -55,6 +55,6 @@
     margin-bottom: 1rem;
     color: var(--blue-secundary);
 }
-.edit-section-title{
+.edit-section-title-messages{
     padding: 2rem;
 }
