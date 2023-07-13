@@ -81,7 +81,14 @@ function Product() {
               return <div key={item}><SaveCard item={item} /></div>;
             })}
           </div>
-          <div className='produtingos'><RecommendedSave/></div>
+          <div className='produtingos'>
+            <RecommendedSave/>
+            <RecommendedSave/>
+            <RecommendedSave/>
+            <RecommendedSave/>
+            <RecommendedSave/>
+            <RecommendedSave/>
+          </div>
         </div>
       </>
     );
