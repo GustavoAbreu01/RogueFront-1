@@ -8,6 +8,8 @@ import Footer from '../../Components/Footer/Footer';
 import RatedProducts from '../../Components/RatedProducts/RatedProducts';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import { FaStar } from 'react-icons/fa';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
 
 function EditProfile() {
@@ -89,8 +91,8 @@ function EditProfile() {
                     <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="SuaSenha/123455" />
                     <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="SuaSenha/123455" />
                   </div>
-                  <div onClick={changeInfo}>
-                    <button className="editButton">Editar</button>
+                  <div>
+                    <button onClick={changeInfo} className="editButton">Editar</button>
                   </div>
                 </form>
               </div>
@@ -118,6 +120,11 @@ function EditProfile() {
           ) : null}
         </div>
       </div >
+      <div className='boxTitleSimilarCompare'>
+          <FaStar color='var(--white)' size={40} />
+          <h1 className='titleSimilar' >Recomendados</h1>
+        </div>
+        <ProductCarouselSmallSimilar />
       <Footer />
     </>
   );
