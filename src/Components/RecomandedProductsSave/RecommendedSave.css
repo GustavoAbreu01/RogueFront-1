@@ -1,117 +1,94 @@
-.column.itens.Recommended {
-    margin: 2rem;
-}
-
-.ui.segment.itens.Recommended {
-    margin: 2rem auto 0;
-    border-radius: 1rem;
+.horizontalSmallBoxProduct.Recommended {
+    display: flex;
+    align-items: center;
     background-color: var(--white);
-    width: 40rem;
-    display: flex;
-    align-items: center;
-    /* Centraliza verticalmente */
+    width: 20rem;
+    height: 7rem;
 }
 
-a:link.Recommended {
-    text-decoration: none;
-    /* Remova a decoração de link (sublinhado) se necessário */
-}
-
-.itemContent.Recommended {
-    display: flex;
-    align-items: center;
-}
-
-#imgItens.Recommended {
-
-    margin-right: 2rem;
-    /* Espaçamento entre a imagem e as outras informações */
-}
-
-.itemInfo.Recommended {
-    flex: 1;
-    /* Ocupa o espaço disponível */
-    justify-content: space-between;
-    /* Alinha o conteúdo nos extremos da div */
-}
-
-.iconProductAction.Recommended {
-
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background-color: transparent;
-    border: none;
-}
-
-.ui.vertically.divided.grid.Recommended {
-    margin: 3rem;
-}
-
-.ui.header.motor.Recommended {
-    text-align: center;
-}
-
-.itemPreco.Recommended {
-    padding-left: 2rem;
-    color: var(--blue-primary);
-}
-
-.descricao.Recommended {
-    font-size: 1rem;
-    padding-left: 2rem;
-    color: var(--grey-primary);
-}
-
-.itemName.Recommended {
-    color: var(--black);
-    padding-left: 2rem;
-}
-
-.ui.segment.itens.Recommended:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+.horizontalSmallBoxProduct.Recommended:hover {
     transition: 0.3s;
     cursor: pointer;
 
-    .iconProductAction.Recommended {
-        opacity: 1;
+    .detailSmallProduct {
         transition: 0.3s;
+        cursor: pointer;
+        width: 1.5rem;
     }
+
 }
 
-.subtext.Recommended{
-    font-size: 1rem;
-    top: 0px;
+.horizontalSmallBoxProductPrice.Recommended {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
 }
 
-.buyButton.Recommended {
-    position: absolute;
-    height: 2rem;
-    width: 10rem;
-    bottom: 0;
-    right: 0;
-}
-
-.ui.fluid.blue.button.Recommended {
-    border-radius: 0px;
-    font-size: 1rem;
+.horizontalSmallPriceProduct.Recommended {
     font-weight: bold;
-    width: 0.2rem;
-    height: 15rem;
-    left: 0%;
 }
 
-.ui.blue.icon.button.Recommended {
+.horizontalSmallBoxProductInfo.Recommended {
+    display: flex;
+    padding-left: 0.4rem;
+    padding-right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.horizontalSmallBoxProductTitle.Recommended {
+    display: flex;
+    color: var(--grey-primary);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    height: 100%;
+}
+
+.horizontalSmallBoxProductImage.Recommended {
+    display: flex;
+    padding-left: 0.6rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.horizontalSmallBoxProductButton.Recommended {
+    right: 0%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: flex;
-    width: 2rem;
-    height: 2rem;
+    height: 100%;
+    width: 30px;
 }
 
-.trash.alternate.icon.Recommended {
+
+.ui.fluid.button.horizontalSmall.Recommended {
+    display: flex;
     align-items: center;
-    color: var(--red);
-    font-size: 0.9rem;
-    transition: 0.3s;
+    justify-content: center;
+    height: 80%;
+    width: 1rem;
+}
+
+.detailSmallProduct.Recommended {
+    align-items: end;
+    display: flex;
+    justify-content: end;
+    background-color: var(--blue-tertiary);
+    width: 0.8rem;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.detailTextSmallProduct.Recommended {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    color: var(--white);
+    rotate: 90deg;
+    font-size: 1rem;
 }

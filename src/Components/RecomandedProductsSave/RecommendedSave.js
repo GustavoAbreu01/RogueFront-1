@@ -8,23 +8,23 @@ import motor from "../../assets/img/motores.png"
 function RecomendedSave() {
     return (
         <>
-           <div className='horizontalSmallBoxProduct'>
-            <div className='horizontalSmallBoxProductImage'>
-                <img src={motor} alt='' className='productCardImage' height={90} width={90}></img>
+        <div className='horizontalSmallBoxProduct Recommended'>
+            <div className='horizontalSmallBoxProductImage Recommended'>
+                <img src={motor} alt='' className='productCardImage Recommended' height={90} width={90}></img>
             </div>
-            <div className='horizontalSmallBoxProductInfo'>
+            <div className='horizontalSmallBoxProductInfo Recommended'>
 
-                <div className='horizontalSmallBoxProductTitle'>
+                <div className='horizontalSmallBoxProductTitle Recommended'>
                     <h5>W12 Motor</h5>
                 </div>
 
-                <div className='horizontalSmallBoxProductPrice'>
-                    <p className='horizontalSmallPriceProduct'>R$ 1.259,00</p>
+                <div className='horizontalSmallBoxProductPrice Recommended'>
+                    <p className='horizontalSmallPriceProduct Recommended'>R$ 1.259,00</p>
                 </div>
                 <p style={{ paddingLeft: '1rem', paddingTop: '0.4rem' }}>Á vista no pix</p>
             </div>
-            <div className='detailSmallProduct'>
-                <div className='detailTextSmallProduct'>
+            <div className='detailSmallProduct Recommended'>
+                <div className='detailTextSmallProduct Recommended'>
                 </div>
             </div>
         </div>

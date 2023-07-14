@@ -112,13 +112,13 @@ body{
 .IAProducts.Save{
     padding-bottom: 5rem;
     margin: 0 auto;
-
+    gap: 15rem;
     display: flex;
     flex-direction: row;
 }
 
 .produtingos{
-    display: flex;
+    width: 30%;
     margin-right: 6rem;
 
 }
@@ -130,7 +130,7 @@ body{
     background-color: var(--blue-primary);
     width: 30%;
     gap: 2rem;
-    height: 50rem;
+    height: 3rem;
     padding: 3rem;
     color: var(--white);
     border-top-left-radius: 50px;
