@@ -3,6 +3,7 @@ import './EditProfile.css';
 import { AiFillEdit } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
+import Messages from '../../Components/Messages/Messages'
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import RatedProducts from '../../Components/RatedProducts/RatedProducts';
@@ -99,7 +100,9 @@ function EditProfile() {
             <div className="column sections">
               <div className="edit-section-profile">
                 <h2 className="edit-section-title-profile">Mensagens</h2>
+                <Messages/>
               </div>
+
             </div>
           ) : activeSection === 3 ? (
             <div className="column sections">
