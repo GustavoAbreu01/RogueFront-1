@@ -1,21 +1,11 @@
 .horizontalSmallBoxProduct.Recommended {
     display: flex;
-    align-items: center;
-    background-color: var(--white);
-    width: 20rem;
+    align-items: start;
+    background-color: var(--blue-primary);
+    color: var(--white);
+    width: 80%;
     height: 7rem;
-}
-
-.horizontalSmallBoxProduct.Recommended:hover {
-    transition: 0.3s;
-    cursor: pointer;
-
-    .detailSmallProduct {
-        transition: 0.3s;
-        cursor: pointer;
-        width: 1.5rem;
-    }
-
+    padding-bottom: 1rem;
 }
 
 .horizontalSmallBoxProductPrice.Recommended {
@@ -35,11 +25,12 @@
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
+    
 }
 
 .horizontalSmallBoxProductTitle.Recommended {
     display: flex;
-    color: var(--grey-primary);
+    color: var(--white);
     flex-direction: column;
     justify-content: space-between;
     padding: 0.5rem;
@@ -47,9 +38,13 @@
     height: 100%;
 }
 
+.productCardImage.Recommended {
+    border-radius: 100px;
+    border: 10px solid var(--blue-tertiary);
+}
+
 .horizontalSmallBoxProductImage.Recommended {
     display: flex;
-    padding-left: 0.6rem;
     justify-content: flex-end;
     align-items: center;
 }
@@ -91,4 +86,13 @@
     color: var(--white);
     rotate: 90deg;
     font-size: 1rem;
+}
+
+.buttonRecommendIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
 }

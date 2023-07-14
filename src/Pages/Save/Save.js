@@ -59,42 +59,47 @@ function Product() {
             <h1 className='titleSimilar'>Salvos</h1>
           </div>
           <div className='boxTitleSimilarSave'>
-            <AiFillStar color='var(--white)' size={40} />
-            <h1 className='titleSimilar'>Recomendados</h1>
+            <div className='boxTitleTheme'>
+              <AiFillStar color='var(--white)' size={40} />
+              <h1 className='titleSimilar'>Recomendados</h1>
+            </div>
+            <RecommendedSave />
+            <RecommendedSave />
+            <RecommendedSave />
+            <RecommendedSave />
+            <RecommendedSave />
           </div>
         </div>
         <button onClick={() => adicionarProdutoAoLocalHost()}>Adicionar</button>
-        <div className="noHaveProduct">
-          <h1>Aqui ficarão seus itens salvos</h1>
-        </div>
-        <div className='produtingos'>
-          <RecommendedSave />
-        </div>
 
       </>
     );
   } else {
     return (
       <><div className='titles'>
-        <div className='boxTitleSimilarOrder'>
-          <BsFillBookmarkFill color='var(--white)' size={40} />
-          <h1 className='titleSimilar'>Salvos</h1>
-        </div>
-        <div className='boxTitleSimilarSave'>
-          <AiFillStar color='var(--white)' size={40} />
-          <h1 className='titleSimilar'>Recomendados</h1>
-        </div>
-      </div>
-        <div className='IAProducts Save'>
+        <div className='boxSavedProduct'>
+          <div className='boxTitleSimilarOrder'>
+            <BsFillBookmarkFill color='var(--white)' size={40} />
+            <h1 className='titleSimilar'>Salvos</h1>
+          </div>
           <div className="products Save">
             {products.map((item) => {
               return <div key={item}><SaveCard item={item} /></div>;
             })}
           </div>
-          <div className='produtingos'>
-            <RecommendedSave />
-          </div>
         </div>
+        <div className='boxTitleSimilarSave'>
+          <div className='boxTitleTheme'>
+            <AiFillStar color='var(--white)' size={40} />
+            <h1 className='titleSimilar'>Recomendados</h1>
+          </div>
+          <RecommendedSave />
+          <RecommendedSave />
+          <RecommendedSave />
+          <RecommendedSave />
+          <RecommendedSave />
+        </div>
+      </div>
       </>
     );
   }
