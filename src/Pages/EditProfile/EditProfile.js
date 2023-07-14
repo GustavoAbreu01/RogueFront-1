@@ -17,7 +17,8 @@ function EditProfile() {
   const [activeSection, setActiveSection] = useState(1);
   const [editMode, setEditMode] = useState(false);
 
-  const changeInfo = () => {
+  const changeInfo = (event) => {
+    event.preventDefault();
     setEditMode(true);
   };
 
@@ -74,27 +75,33 @@ function EditProfile() {
             <div className="column sections">
               <div className="edit-section-profile">
                 <h2 className="edit-section-title-profile">Informações Pessoais</h2>
-                <form className="ui form editOptions">
-                  <div className='field name label'>
-                    <label>Nome: <AiFillEdit className="" /></label>
-                    <label>Sobrenome: <AiFillEdit className="" /></label>
+                <form class="ui form edit">
+                  <div class="field">
+                    <div class="two fields">
+                      <div class="field disabled">
+                        <label>Nome</label>
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
+                      </div>
+                      <div class="field disabled">
+                        <label>Sobrenome</label>
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="field name surname" >
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} className='butaum' type="text" name="emailLogin" placeholder="Nome Sobrenome" />
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="Nome Sobrenome" />
-                  </div>
-                  <div className='field password label'>
-                    <label>Senha: <AiFillEdit className="" /></label>
-                    <label>Confirmar Senha: <AiFillEdit className="" /></label>
-                  </div>
-                  <div className="field password">
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="SuaSenha/123455" />
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="emailLogin" placeholder="SuaSenha/123455" />
-                  </div>
-                  <div>
-                    <button onClick={changeInfo} className="editButton">Editar</button>
+                  <div class="field">
+                    <div class="fields">
+                      <div class="twelve wide field disabled">
+                        <label>Email Profissional</label>
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="Complemento" />
+                      </div>
+                      <div class="four wide field disabled">
+                        <label>CPF/CNPJ</label>
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="CEP " />
+                      </div>
+                    </div>
                   </div>
                 </form>
+                <button onClick={changeInfo} className="ui button edit">Editar</button>
               </div>
             </div>
           ) : activeSection === 2 ? (
@@ -113,18 +120,18 @@ function EditProfile() {
             <div className="column sections">
               <div className="edit-section-ratings">
                 <h2 className="edit-section-title-profile">Avaliações</h2>
-                <RatedProducts/>
-                <RatedProducts/>
+                <RatedProducts />
+                <RatedProducts />
               </div>
             </div>
           ) : null}
         </div>
       </div >
       <div className='boxTitleSimilarCompare'>
-          <FaStar color='var(--white)' size={40} />
-          <h1 className='titleSimilar' >Recomendados</h1>
-        </div>
-        <ProductCarouselSmallSimilar />
+        <FaStar color='var(--white)' size={40} />
+        <h1 className='titleSimilar' >Recomendados</h1>
+      </div>
+      <ProductCarouselSmallSimilar />
       <Footer />
     </>
   );

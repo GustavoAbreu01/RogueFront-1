@@ -7,44 +7,48 @@
     border-radius: 10px;
     gap: 1rem;
 }
-.containerEdit{
+
+.containerEdit {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10rem;
 }
 
-.ui.vertical.menu.edit{
+.ui.vertical.menu.edit {
     width: 20rem;
     border: none;
-   
-}
-.titleSectionEdit{
-    padding: 1rem;
-}
-.mainInfoEdit{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    
+
 }
 
-.profilePicEdit{
+.titleSectionEdit {
+    padding: 1rem;
+}
+
+.mainInfoEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.profilePicEdit {
     width: 10rem;
 }
 
-.edit-section-profile{
+.edit-section-profile {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color: var(--white);
     width: 71rem;
     height: 36.4rem;
     border-radius: 5px;
 }
-.edit-section-ratings{
+
+.edit-section-ratings {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color: var(--white);
     width: 71rem;
-    height:100%;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -55,38 +59,43 @@
     margin-bottom: 1rem;
     color: var(--blue-secundary);
 }
-.edit-section-title-profile{
+
+.edit-section-title-profile {
     padding: 2rem;
 }
 
-.ui.form.editOptions{
-    margin:2rem
+.ui.form.editOptions {
+    margin: 2rem
 }
-.field.name.surname{
+
+.field.name.surname {
     width: 65rem;
     display: flex;
     flex-direction: row;
     gap: 5rem;
 }
 
-.field.name.label{
+.field.name.label {
     display: flex;
     flex-direction: row;
     gap: 32rem;
 
 }
-.field.password{
+
+.field.password {
     width: 65rem;
     display: flex;
     flex-direction: row;
     gap: 5rem;
 }
 
-.field.password.label{
+.field.password.label {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
     gap: 32rem;
 }
 
-
+.ui.form.edit {
+    margin: 2rem;
+}
