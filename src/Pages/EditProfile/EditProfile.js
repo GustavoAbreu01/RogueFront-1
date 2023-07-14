@@ -78,30 +78,30 @@ function EditProfile() {
                 <form class="ui form edit">
                   <div class="field">
                     <div class="two fields">
-                      <div class="field">
+                      <div class="field disabled">
                         <label>Nome</label>
-                        <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
                       </div>
-                      <div class="field">
+                      <div class="field disabled">
                         <label>Sobrenome</label>
-                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" />
                       </div>
                     </div>
                   </div>
                   <div class="field">
                     <div class="fields">
-                      <div class="twelve wide field">
+                      <div class="twelve wide field disabled">
                         <label>Email Profissional</label>
-                        <input type="text" name="shipping[address]" placeholder="Complemento" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="Complemento" />
                       </div>
-                      <div class="four wide field">
+                      <div class="four wide field disabled">
                         <label>CPF/CNPJ</label>
-                        <input type="text" name="shipping[address-2]" placeholder="CEP " />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="CEP " />
                       </div>
                     </div>
                   </div>
                 </form>
-                  <button onClick={changeInfo} className="ui button edit">Salvar</button>
+                <button onClick={changeInfo} className="ui button edit">Editar</button>
               </div>
             </div>
           ) : activeSection === 2 ? (
