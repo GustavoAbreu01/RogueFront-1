@@ -118,6 +118,7 @@ body{
 }
 
 .produtingos{
+    display: flex;
     margin-right: 6rem;
 
 }
@@ -129,7 +130,7 @@ body{
     background-color: var(--blue-primary);
     width: 30%;
     gap: 2rem;
-    height: 3rem;
+    height: 50rem;
     padding: 3rem;
     color: var(--white);
     border-top-left-radius: 50px;

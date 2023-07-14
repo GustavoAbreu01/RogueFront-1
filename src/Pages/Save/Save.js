@@ -73,14 +73,6 @@ function Product() {
         <div className='boxTitleSimilarSave'>
           <AiFillStar color='var(--white)' size={40} />
           <h1 className='titleSimilar'>Recomendados</h1>
-        </div>
-        </div>
-        <div className='IAProducts Save'>
-          <div className="products Save">
-            {products.map((item) => {
-              return <div key={item}><SaveCard item={item} /></div>;
-            })}
-          </div>
           <div className='produtingos'>
             <RecommendedSave/>
             <RecommendedSave/>
@@ -89,6 +81,15 @@ function Product() {
             <RecommendedSave/>
             <RecommendedSave/>
           </div>
+        </div>
+        </div>
+        <div className='IAProducts Save'>
+          <div className="products Save">
+            {products.map((item) => {
+              return <div key={item}><SaveCard item={item} /></div>
+            })}
+          </div>
+          
         </div>
       </>
     );

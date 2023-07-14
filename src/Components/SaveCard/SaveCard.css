@@ -58,7 +58,7 @@ a:link.Save {
 }
 
 .descricao.Save {
-    font-size: 1rem;
+    font-size: 18px;
     padding-left: 2rem;
     color: var(--grey-primary);
 }
@@ -80,7 +80,7 @@ a:link.Save {
 }
 
 .subtext.Save{
-    font-size: 1rem;
+    font-size: 15px;
     top: 0px;
 }
 
@@ -96,7 +96,7 @@ a:link.Save {
     border-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 70%;
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: bold;
     width: 10rem;
     height: 2rem;
