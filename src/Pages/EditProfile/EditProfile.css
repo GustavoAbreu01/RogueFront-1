@@ -99,3 +99,71 @@
 .ui.form.edit {
     margin: 2rem;
 }
+
+.messagesContainer {
+    max-height: 25rem;
+    overflow-y: scroll;
+}
+
+.ratingContainer {
+    max-height: 25rem;
+    overflow-y: scroll;
+}
+
+.buttonsProfileEdit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.editButton {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+}
+
+.conclusionButton {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
+}
+
+.cancelButton {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.fluid.ui.button.cancel {
+    background-color: var(--grey-secondary);
+    color: var(--black);
+}
+
+.containerInformationProfile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--blue-secundary);
+    color: var(--white);
+    padding: 0.5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+}
+
+.iconInformationProfile {
+    color: var(--white);
+    margin-right: 1rem;
+    font-size: 10rem;
+}
+
+.iconInformationProfileAlert {
+    color: var(--yellow-primary);
+    transition: 1s;
+    margin-right: 1rem;
+    font-size: 10rem;
+}
