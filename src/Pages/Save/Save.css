@@ -40,7 +40,8 @@ body{
 
 .products.Save{
     padding-bottom: 5rem;
-    margin: 0 auto;
+    padding-left: 2rem;
+    display: flex;
     display: block;
 }
 
@@ -112,12 +113,13 @@ body{
 .IAProducts.Save{
     padding-bottom: 5rem;
     margin: 0 auto;
-
+    gap: 15rem;
     display: flex;
     flex-direction: row;
 }
 
 .produtingos{
+    width: 30%;
     margin-right: 6rem;
 
 }
@@ -126,18 +128,38 @@ body{
     margin-top: 2rem;
     display: flex;
     align-items: center;
+    justify-content: end;
+    flex-direction: column;
     background-color: var(--blue-primary);
     width: 30%;
     gap: 2rem;
-    height: 3rem;
-    padding: 3rem;
+    height: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     color: var(--white);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
 
 .titles{
-    gap: 39rem;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.boxTitleTheme {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.boxSavedProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1rem;
+    width: 80%;
 }
