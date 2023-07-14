@@ -24,8 +24,8 @@ function Messages() {
       <div className="cardMessage">
       
           <div className='itemContentMessage'>
-            <div>
-              <GrNotification className='notificationIconMessage' />
+            <div className='notificationIconMessage'>
+              <GrNotification color='var(--white)' className='' />
             </div>
             <div className="itemInfoMessage">
               <h4 className="itemNomeMessage">Verificação de E-mail</h4>

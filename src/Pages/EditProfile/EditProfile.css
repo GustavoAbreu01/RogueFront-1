@@ -102,11 +102,13 @@
 
 .messagesContainer {
     max-height: 25rem;
+    width: 100%;
     overflow-y: scroll;
 }
 
 .ratingContainer {
     max-height: 25rem;
+    width: 100%;
     overflow-y: scroll;
 }
 
