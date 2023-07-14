@@ -1,0 +1,38 @@
+.itemContentMessage{
+    background-color: var(--white);
+    width: 80%;
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem auto 0;
+    border-bottom: solid 2px var(--grey-secondary);
+}
+.notificationIconMessage{
+    font-size: 2rem;
+    margin: 2rem;
+}
+.itemInfoMessage{
+    width: 100%;
+}
+
+.itemComplementMessage{
+    color: var(--grey-primary);
+    width: 100%;
+}
+
+.itemNomeMessage {
+    color: var(--blue-primary);
+    width: 100%;
+}
+.ui.checkbox.message{
+    
+}
+
+
+
+
+
+
+
+
