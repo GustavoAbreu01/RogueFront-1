@@ -8,9 +8,9 @@ import motor from "../../assets/img/motores.png"
 function RecomendedSave() {
     return (
         <>
-            <div className='horizontalSmallBoxProduct Recommended'>
-                <div className='horizontalSmallBoxProductImage Recommended'>
-                    <img src={motor} alt='' className='productCardImage Recommended' height={90} width={90}></img>
+            <div className='container_recommended_save'>
+                <div className='recommender_save_image'>
+                    <img src={motor} alt='' className='recommended_save_image_tag' height={90} width={90}></img>
                 </div>
                 <div className='horizontalSmallBoxProductInfo Recommended'>
 

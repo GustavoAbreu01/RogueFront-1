@@ -1,4 +1,4 @@
-.horizontalSmallBoxProduct.Recommended {
+.container_recommended_save {
     display: flex;
     align-items: start;
     background-color: var(--blue-primary);
@@ -38,12 +38,12 @@
     height: 100%;
 }
 
-.productCardImage.Recommended {
+.recommended_save_image_tag {
     border-radius: 100px;
     border: 10px solid var(--blue-tertiary);
 }
 
-.horizontalSmallBoxProductImage.Recommended {
+.recommender_save_image {
     display: flex;
     justify-content: flex-end;
     align-items: center;
