@@ -1,4 +1,4 @@
-.container_product_card_accessed {
+.container_product_card_searched {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
@@ -8,19 +8,19 @@
     height: 35rem;
 }
 
-.container_product_card_accessed:hover {
+.container_product_card_searched:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
     cursor: pointer;
 
-    .product_card_accessed_action_icon {
+    .container_product_card_searched_action_icon {
         opacity: 1;
         transition: 0.3s;
     }
 
 }
 
-.box_product_card_accessed_info_price {
+.box_product_card_searched_info_price {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,18 +28,18 @@
     padding: 1rem;
 }
 
-.product_card_accessed_price {
+.product_card_searched_price {
     font-weight: bold;
     font-size: 25px;
     color: var(--blue-primary);
 }
 
-.product_card_accessed_price_option {
+.product_card_searched_price_option {
     color: var(--grey-primary);
     font-size: 14px;
 }
 
-.product_card_accessed_info_text {
+.product_card_searched_info_text {
     display: flex;
     color: var(--grey-primary);
     flex-direction: column;
@@ -48,12 +48,12 @@
     height: 100%;
 }
 
-.product_card_accessed_tag_icon {
+.box_product_card_searched_tag_icon {
     position: absolute;
     padding: 1rem;
 }
 
-.product_card_accessed_action_icon {
+.container_product_card_searched_action_icon {
     display: flex;
     padding: 1rem;
     gap: 0.5rem;
@@ -62,13 +62,13 @@
     opacity: 0;
 }
 
-.box_product_card_accessed_image {
+.box_product_card_searched_image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.product_card_accessed_buy_button {
+.product_card_searched_buy_button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@
     border: none;
 
 }
-.fluid.ui.button.product_card_accessed_button{
+.fluid.ui.button.product_card_searched_button{
     font-size: 16px !important; 
     background-color: var(--blue-primary);
     color: var(--white);
@@ -86,11 +86,11 @@
     color: var(--white);
 }
 
-.product_card_accessed_name{
+.product_card_searched_name{
     color: var(--grey-primary);
     font-size: 24px;
 }
 
-.product_card_highlight_description{
+.product_card_searched_description{
     font-size: 14px;
 }

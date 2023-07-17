@@ -1,11 +1,14 @@
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './BannerCarousell.css';
 import React from 'react'
+
 import Banner1 from '../../assets/img/Banner1.jpg';
 import Banner3 from '../../assets/img/Banner2.jpg';
-import './Carousel.css';
 
-function Carousell() {
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+function BannerCarousell() {
   return (
     <Carousel variant="light" className='carrossel'>
       <Carousel.Item>
@@ -28,4 +31,4 @@ function Carousell() {
   );
 }
 
-export default Carousell;
+export default BannerCarousell;

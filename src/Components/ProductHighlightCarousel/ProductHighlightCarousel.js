@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ProductHighlightCarousel.css';
-import Obj from '../../Components/ProductHighlight/ProductHighlight';
+import ProductCardHighlight from '../ProductCardHighlight/ProductCardHighlight';
 
 function ProductHighlightCarousel() {
 
@@ -47,28 +47,28 @@ function ProductHighlightCarousel() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='container_product_hightlight_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardHighlight />
                 </div>
                 <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
+                    <ProductCardHighlight />
                 </div>
             </Slider>
         </div >

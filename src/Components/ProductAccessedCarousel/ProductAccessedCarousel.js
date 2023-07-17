@@ -1,11 +1,13 @@
+import './ProductAccessedCarousel.css';
 import React, { useState } from 'react'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './ProductCarousel.css';
-import Obj from '../../Components/Product/Product';
 
-function ProductCarousel() {
+import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
+
+function ProductAccessedCarousel() {
 
 
     var settings = {
@@ -47,32 +49,32 @@ function ProductCarousel() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='container_product_accessed_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
             </Slider>
         </div >
     )
 }
 
-export default ProductCarousel
+export default ProductAccessedCarousel

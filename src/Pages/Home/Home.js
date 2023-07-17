@@ -6,7 +6,7 @@ import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/carousel/carousel'
+import BannerCarousell from '../../Components/BannerCarousell/BannerCarousell'
 import logo from "../../assets/img/logo-weg.png"
 import iconMotor from "../../assets/img/iconeMotor.png"
 import Qualidade from "../../assets/img/MOTORES-03.png"
@@ -31,7 +31,7 @@ import { FaStar } from 'react-icons/fa'
 import './Home.css'
 import motor from "../../assets/img/motor.png"
 import { Link } from 'react-router-dom'
-import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel'
+import ProductAccessedCarousel from '../../Components/ProductAccessedCarousel/ProductAccessedCarousel'
 import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
 import Aos from 'aos'
 import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
@@ -144,7 +144,7 @@ function Home() {
       <>{!verify() ? <Header /> : <HeaderLogin />}
         <WeggnerModal />
         <div className='boxCarrossel'>
-          <Carousell></Carousell>
+          <BannerCarousell></BannerCarousell>
         </div>
         <div className="dividerCarrossel"></div>
         <div className="optionPages">
@@ -191,7 +191,7 @@ function Home() {
             <h1 className='titleAccessed' >Produtos mais acessados</h1>
           </div>
           <div className='sliderProductAccessed'>
-            <ProductCarousel />
+            <ProductAccessedCarousel />
           </div>
         </div>
 

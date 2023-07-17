@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import './ProductSearchedCarousel.css';
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './ProductSearchedCarousel.css';
-import Obj from '../../Components/ProductSearched/ProductSearched';
+
+
+import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
 
 function ProductSearchedCarousel() {
 
@@ -47,28 +50,28 @@ function ProductSearchedCarousel() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='container_product_searched_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
                 </div>
             </Slider>
         </div >
