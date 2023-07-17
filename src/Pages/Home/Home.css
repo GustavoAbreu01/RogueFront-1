@@ -1,10 +1,10 @@
-.dividerCarrossel {
+.home_divider_carousel {
     width: 100%;
     height: 2rem;
     background-color: var(--blue-tertiary);
 }
 
-.optionPages {
+.box_home_option_pages {
     width: 100%;
     height: 10rem;
     border-bottom-left-radius: 40px;
@@ -16,7 +16,7 @@
     background-color: var(--white);
 }
 
-.questIcon {
+.home_optional_icons {
     padding: 2rem;
     gap: 2rem;
     justify-content: space-between;
@@ -24,26 +24,29 @@
     display: flex;
 }
 
-.dividerIcons {
+.home_divider_icons {
     width: 0.3rem;
     border-radius: 10rem;
     height: 80%;
     background-color: var(--grey-tertiary);
 }
 
-.boxCarrossel {
+.home_carousel_banner {
     z-index: 0;
 }
 
-.descOpc {
+.home_optional_description {
     color: var(--grey-quaternary);
+    font-size: 14px;
 }
 
-.titleOpc {
+.home_optional_title {
     color: var(--grey-primary);
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.boxTitleAccessed {
+.home_accessed {
     display: flex;
     padding-left: 6%;
     padding-top: 6%;
@@ -51,30 +54,32 @@
     gap: 2rem;
 }
 
-.titleAccessed {
+.home_accessed_title {
     font-weight: bold;
     color: var(--blue-primary);
+    font-size: 35px;
 }
 
-.sliderProductAccessed {
+.home_slider_product_accessed {
     padding-bottom: 6%;
 }
 
-.boxHighlights {
+.home_highlights {
     padding-bottom: 10rem;
 }
 
-.boxHighlightsProducts {
+.home_slider_product_highlights {
     align-items: center;
     background-color: var(--blue-primary);
 }
 
-.titleHighlights {
+.home_highlights_title_text {
     color: var(--white);
     font-weight: bold;
+    font-size: 35px;
 }
 
-.boxTitleHighlights {
+.home_highlights_title {
     display: flex;
     align-items: center;
     background-color: var(--blue-primary);
@@ -86,7 +91,7 @@
     border-top-right-radius: 50px;
 }
 
-.boxCategoryButtons {
+.container_home_category_buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,12 +101,12 @@
     height: 30rem;
 }
 
-.categoryButtonImg {
-    width: 5rem;
-    height: 5rem;
+.home_optional_category_button_image {
+    width: 4rem;
+    height: 4rem;
 }
 
-.categoryButtonsOpt {
+.box_home_category_buttons {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -114,22 +119,22 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.categoryButton {
-    width: 8rem;
-    height: 8rem;
+.home_optional_category_button {
+    width: 7.5rem;
+    height: 7.5rem;
     border-radius: 50%;
     border: none;
     box-shadow: 0px 10px 5px var(--blue-primary);
     background-color: var(--blue-quaternary);
 }
 
-.categoryButton:hover {
+.home_optional_category_button:hover {
     background-color: var(--white);
     transition: 0.3s;
     border: solid 1px var(--blue-primary);
 }
 
-.categoryTitle {
+.home_optional_category {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -138,7 +143,7 @@
     font-weight: bold;
 }
 
-.categoryTitleBox {
+.home_category_title {
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -150,24 +155,29 @@
     width: 40rem;
     height: 7rem;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 30px;
 }
 
-.boxSearched {
+.home_optional_category_title {
+    font-size: 25px;
+}
+
+.home_searched {
     padding-bottom: 10rem;
 }
 
-.boxSearchedProducts {
+.home_slider_product_searched {
     align-items: center;
     background-color: var(--blue-secundary);
 }
 
-.titleSearched {
+.home_searched_title_text {
     color: var(--white);
     font-weight: bold;
-
+    font-size: 35px;
 }
 
-.boxTitleSearched {
+.home_searched_aling {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,7 +190,7 @@
     border-top-left-radius: 50px;
 }
 
-.containerTitleSearched {
+.home_searched_title {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -188,21 +198,21 @@
 }
 
 
-.titleInfo {
+.home_benefits_description_title {
     color: var(--blue-primary);
 }
 
-.descriptionInfo {
+.home_benefits_description {
     color: var(--grey-primary);
     text-align: center;
 }
 
-.iconInfo {
+.home_benefits_icon {
     height: 15rem;
     width: 15rem;
 }
 
-.infoDescriptionBox {
+.home_benefits_description_info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,14 +224,14 @@
     height: 100%;
 }
 
-.iconInfoBox {
+.home_benefits_info_icon {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
 }
 
-.boxBenefiitsTitle {
+.home_benefiits {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,13 +240,13 @@
     gap: 1rem;
 }
 
-.benefiitsTitle {
+.home_benefiits_title {
     color: var(--blue-primary);
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 30px;
 }
 
-.containerBenefits {
+.container_home_benefits {
     display: flex;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -248,7 +258,7 @@
 }
 
 
-.infoBox {
+.home_benefits_info {
     height: 30rem;
     width: 20rem;
     background-color: var(--white);
@@ -259,12 +269,12 @@
     border-radius: 10px;
 }
 
-.infoBox:hover {
+.home_benefits_info:hover {
     transition: 0.3s;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.boxAnnouncements {
+.home_announcements {
     padding-bottom: 10rem;
     display: flex;
     align-items: center;
@@ -272,13 +282,13 @@
     gap: 10rem;
 }
 
-.announBanner {
+.home_announcements_banner {
     width: 40%;
     height: 20rem;
     border-radius: 10px;
 }
 
-.announBanner:hover {
+.home_announcements_banner:hover {
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
