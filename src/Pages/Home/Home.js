@@ -1,19 +1,7 @@
 import React from 'react'
-<<<<<<< Updated upstream
 import './Home.css'
 
 //Importando as imagens
-=======
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
-import questIcon from "../../assets/img/questionario.png"
-import compare from '../../assets/img/compare.png'
-import weggner from '../../assets/img/WagnerDormindo.png'
-import Footer from '../../Components/Footer/Footer'
-import Header from '../../Components/Header/Header'
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/carousel/carousel'
-import logo from "../../assets/img/logo-weg.png"
->>>>>>> Stashed changes
 import iconMotor from "../../assets/img/iconeMotor.png"
 import Qualidade from "../../assets/img/MOTORES-03.png"
 import Compatibilidade from "../../assets/img/COMPATIBILIDADE-03.png"
