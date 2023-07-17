@@ -42,7 +42,7 @@ function Orders() {
           </div>
         </div>
         {isOpen && (
-          <div className="dropdownContentOrders">
+          <div className="dropdownContentOrders" data-aos="fade-down">
             <div className='moreContentOrder'>
               <div className='confirmTransportOrders'>
                 <form class="ui form confirm Orders">
