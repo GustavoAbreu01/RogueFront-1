@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import './Compare.css'
+//imagens
 import motor from "../../assets/img/motor.png"
+//
+//components
 import CompareCard from '../../Components/CompareCard/CompareCard'
-import { IoMdAddCircle } from 'react-icons/io'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
-import { BsFillBookmarkFill } from 'react-icons/bs'
-import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
-import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
-import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
+//
+//react-icons
+import { IoMdAddCircle } from 'react-icons/io'
+import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 import { FaStar } from 'react-icons/fa'
-
+//
 function Compare() {
   const [productsCompared, setItems] = useState([]);
 
@@ -67,21 +69,21 @@ function Compare() {
 
   return (
     <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='compare'>
-        <div className='boxTitleSimilar'>
+      <div className='container_compare'>
+        <div className='box_title_similar_compare'>
           <FaArrowRightArrowLeft color='var(--white)' size={40} />
-          <h1 className='titleSimilar' >Comparação de Produtos</h1>
+          <h1 className='title_similar' >Comparação de Produtos</h1>
         </div>
-        <div className='products'>
+        <div className='box_products'>
           <CompareCard />
-          {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
+          {!verify() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
 
         </div>
-        <div className='boxTitleSimilarCompare'>
+        <div className='box_title_similar_recommended'>
           <FaStar color='var(--white)' size={40} />
-          <h1 className='titleSimilar' >Produtos Recomendados</h1>
+          <h1 className='title_similar' >Produtos Recomendados</h1>
         </div>
         <ProductCarouselSmallSimilar />
       </div>

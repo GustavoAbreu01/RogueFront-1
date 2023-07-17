@@ -1,34 +1,22 @@
-.compare {
+.container_compare {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
 
-.products {
+.box_products {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.addProduct {
+.add_product_icon {
     cursor: pointer;
     position: absolute;
     right: 20%;
     top: 122%;
 }
 
-.titleCompare {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--white);
-    border-radius: 50px;
-    height: 8rem;
-    margin: 5%;
-}
-
-
-
-.boxTitleSimilarCompare {
+.box_title_similar_recommended {
     display: flex;
     align-items: center;
     background-color: var(--blue-primary);
@@ -42,7 +30,7 @@
     border-bottom-right-radius: 50px;
 }
 
-.boxTitleSimilar {
+.box_title_similar_compare {
     display: flex;
     align-items: center;
     background-color: var(--blue-primary);
@@ -54,4 +42,8 @@
     color: var(--white);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+}
+
+.title_similar{
+    font-size: 30px;
 }
