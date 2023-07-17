@@ -1,4 +1,4 @@
-.ui.mini.steps{
+.ui.mini.steps.quiz{
     margin-top: 1rem;
     display: flex;
     
@@ -10,8 +10,11 @@
     margin-bottom: 5rem;
 }
 
-.clipboard.list.icon{
-    margin-top: 1.2rem;
+.clipboard.list.icon.quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
     font-size: 40px;
     color: var(--blue-primary);
 }
@@ -46,4 +49,8 @@
     left: -3%;
     font-size: 1.3rem;
     font-weight: bold;
+}
+
+.title_similar{
+    font-size: 30px;
 }
