@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Save.css';
-import HaveProducts from './haveProducts';
+import HaveProducts from './Products';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import wegner from '../../assets/img/WagnerDormindo.png';
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -36,7 +37,7 @@ function Product() {
       <>
         <button onClick={adicionarProdutoAoLocalHost}>aaaaa</button>
         <div className="noHaveProduct">
-          <img alt="noHaveProduct" />
+          <img alt="noHaveProduct" src={wegner} />
           <h1>Está tudo muito quieto por aqui...</h1>
         </div>
       </>
@@ -44,10 +45,10 @@ function Product() {
   } else {
     return (
       <>
-        <div className="salvos">
+        <div className="container_salvos">
           <h1>Salvos</h1>
         </div>
-        <div className="products">
+        <div className="salvos_products">
           {products.map((item) => {
             return <HaveProducts item={item} />;
           })}

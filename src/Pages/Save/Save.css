@@ -26,85 +26,11 @@ body{
 
 /* Having product */
 
-.salvos h1 {
+.container_salvos h1 {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 4rem;
     margin-top: 4rem;
-}
-
-.product{
-    display: flex;
-    align-items: center;
-    width: 110vh;
-    height: 15rem;
-    padding: 0.5rem;
-    margin: 0 auto;
-    border-radius: 1rem;
-    border: 2px solid var(--blue-secundary);
-    background-color: var(--white);
-    margin-top: 5%;
-}
-
-.product .product-Image img{
-    width: 13rem;
-    height: 10rem;
-    object-fit: cover;
-    object-position: center;
-}
-
-.product-Info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 2rem;
-}
-
-.product-Info h1{
-    font-size: 2.5rem;
-    color: var(--blue-secundary);
-    margin-bottom: 2rem;
-}
-
-.product-Description{
-    width: 70%;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.product-Price{
-    display: flex;
-    align-items: center;
-}
-
-.product-Price img{
-    cursor: pointer;
-}
-
-.product-InfoAndPrice{
-    display: flex;
-}
-
-.product-Price{
-    display: flex;
-    width: 50%;
-    height: 10rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.product-Price h2{
-    font-size: 1.5rem;
-    color: var(--blue-secundary);
-}
-
-.product-Price img{
-    width: 3rem;
-    height: 3rem;
-    object-fit: cover;
-    object-position: center;
-    margin-left: 1rem;
 }
