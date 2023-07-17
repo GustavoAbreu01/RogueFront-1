@@ -194,6 +194,7 @@
 
 .descriptionInfo {
     color: var(--grey-primary);
+    text-align: center;
 }
 
 .iconInfo {
