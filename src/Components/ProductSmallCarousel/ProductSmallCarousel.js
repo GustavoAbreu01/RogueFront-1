@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import './ProductSmallCarousel.css';
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './ProductCarouselSmall.css';
-import Obj from '../../Components/SmallProductCard/SmallProductCard';
+
+import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
 
 function ProductCarouselSmall() {
 
@@ -64,25 +66,25 @@ function ProductCarouselSmall() {
         <div className='carouselProduct' >
             <Slider {...settings}>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
                 <div className='box'>
-                    <Obj />
+                    <ProductCardSmaller />
                 </div>
             </Slider>
         </div >

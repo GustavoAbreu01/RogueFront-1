@@ -3,7 +3,7 @@ import './Search.css'
 import { Link } from "react-router-dom";
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import SmallProductCard from '../../Components/SmallProductCard/SmallProductCard'
+import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import iconMotor from "../../assets/img/iconeMotor.png"
 import motors from "../../assets/img/motores.png"
 import save from "../../assets/img/salvo.png"

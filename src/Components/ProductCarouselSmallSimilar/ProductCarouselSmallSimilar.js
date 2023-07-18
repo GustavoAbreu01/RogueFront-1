@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ProductCarouselSmallSimilar.css';
-import Obj from '../../Components/SmallProductCard/SmallProductCard';
+import Obj from '../ProductCardSmaller/ProductCardSmaller';
 
 function ProductCarouselSmallSimilar() {
 

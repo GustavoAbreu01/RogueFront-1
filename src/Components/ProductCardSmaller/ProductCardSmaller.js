@@ -1,6 +1,6 @@
 import React from 'react'
 import motor from '../../assets/img/motor.png'
-import './SmallProductCard.css'
+import './ProductCardSmaller.css'
 import { Link } from 'react-router-dom'
 
 function SmallProductCard() {
