@@ -13,13 +13,13 @@ function SmallProductCard() {
             <div className='container_product_card_smaller'>
                 <div className='container_product_card_smaller_action_icon '>
                     <Link to='/save'>
-                        <button class="ui icon button product_card_smaller">
-                            <i class="bookmark icon "></i>
+                        <button className="ui icon button product_card_smaller">
+                            <i className="bookmark icon "></i>
                         </button>
                     </Link>
                     <Link to='/cart'>
-                        <button class="ui icon button product_card_smaller">
-                            <i class="cart plus icon"></i>
+                        <button className="ui icon button product_card_smaller">
+                            <i className="cart plus icon"></i>
                         </button>
                     </Link>
                 </div>
@@ -37,7 +37,7 @@ function SmallProductCard() {
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
                 <div className='box_product_card_smaller_button'>
-                    <button class="fluid ui button product_card_smaller">Comprar</button>
+                    <button className="fluid ui button product_card_smaller">Comprar</button>
 
                 </div>
 

@@ -1,4 +1,4 @@
-.itemContentMessage{
+.box_card_message_content{
     background-color: var(--white);
     width: 90%;
     display: flex;
@@ -7,26 +7,24 @@
     margin: 2rem auto 0;
     border-bottom: solid 2px var(--grey-secondary);
 }
-.notificationIconMessage{
+.card_message_icon{
     font-size: 2rem;
     margin: 2rem;
 }
-.itemInfoMessage{
+.box_card_message_info{
     width: 100%;
 }
 
-.itemComplementMessage{
+.box_card_message_description{
     color: var(--grey-primary);
     width: 100%;
 }
 
-.itemNomeMessage {
+.box_card_message_name {
     color: var(--blue-primary);
     width: 100%;
 }
-.ui.checkbox.message{
-    
-}
+
 
 
 

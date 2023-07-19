@@ -18,13 +18,13 @@ function ProductCardHighlight() {
       </div>
       <div className='container_product_card_hightlight_action_icon'>
         <Link to="/save">
-          <button class="ui icon button product_card_hightlight">
-            <i class="bookmark icon product_card_hightlight"></i>
+          <button className="ui icon button product_card_hightlight">
+            <i className="bookmark icon product_card_hightlight"></i>
           </button>
         </Link>
         <Link to="/cart">
-          <button class="ui icon button product_card_hightlight">
-            <i class="cart plus icon product_card_hightlight"></i>
+          <button className="ui icon button product_card_hightlight">
+            <i className="cart plus icon product_card_hightlight"></i>
           </button>
         </Link>
       </div>
@@ -42,7 +42,7 @@ function ProductCardHighlight() {
         <p className='product_card_hightlight_price_option'>Á vista no pix</p>
       </div>
       <div className='product_card_hightlight_buy_button'>
-        <button class="fluid ui button product_card_hightlight_button">Comprar</button>
+        <button className="fluid ui button product_card_hightlight_button">Comprar</button>
       </div>
     </Link>
   </div>

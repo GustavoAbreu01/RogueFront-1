@@ -17,13 +17,13 @@ function ProductCardAccessed() {
         </div>
         <div className='container_product_card_accessed_action_icon'>
           <Link to="/save">
-            <button class="ui icon button product_card_accessed">
-              <i class="bookmark icon product_card_accessed"></i>
+            <button className="ui icon button product_card_accessed">
+              <i className="bookmark icon product_card_accessed"></i>
             </button>
           </Link>
           <Link to="/cart">
-            <button class="ui icon button product_card_accessed">
-              <i class="cart plus icon product_card_accessed"></i>
+            <button className="ui icon button product_card_accessed">
+              <i className="cart plus icon product_card_accessed"></i>
             </button>
           </Link>
         </div>
@@ -41,7 +41,7 @@ function ProductCardAccessed() {
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <div className='product_card_accessed_buy_button'>
-          <button class="fluid ui button product_card_accessed_button">Comprar</button>
+          <button className="fluid ui button product_card_accessed_button">Comprar</button>
         </div>
       </Link>
     </div>

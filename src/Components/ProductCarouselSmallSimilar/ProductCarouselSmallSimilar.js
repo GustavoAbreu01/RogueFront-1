@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import './ProductCarouselSmallSimilar.css';
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './ProductCarouselSmallSimilar.css';
-import Obj from '../ProductCardSmaller/ProductCardSmaller';
+
+import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
 
 function ProductCarouselSmallSimilar() {
 
@@ -47,28 +49,28 @@ function ProductCarouselSmallSimilar() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='product_similar_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
                 </div>
             </Slider>
         </div >

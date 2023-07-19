@@ -16,13 +16,13 @@ function ProductCardNew() {
       </div>
       <div className='container_product_card_new_action_icon'>
         <Link to="/save">
-          <button class="ui icon button product_card_new">
-            <i class="bookmark icon product_card_new"></i>
+          <button className="ui icon button product_card_new">
+            <i className="bookmark icon product_card_new"></i>
           </button>
         </Link>
         <Link to="/cart">
-          <button class="ui icon button product_card_new">
-            <i class="cart plus icon product_card_new"></i>
+          <button className="ui icon button product_card_new">
+            <i className="cart plus icon product_card_new"></i>
           </button>
         </Link>
       </div>
@@ -40,7 +40,7 @@ function ProductCardNew() {
         <p className='product_card_new_price_option'>Á vista no pix</p>
       </div>
       <div className='product_card_new_buy_button'>
-        <button class="fluid ui button product_card_new_button">Comprar</button>
+        <button className="fluid ui button product_card_new_button">Comprar</button>
       </div>
     </Link>
   </div>
