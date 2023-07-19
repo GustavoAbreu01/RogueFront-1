@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-.MenuIcon {
+.menu_icon {
     color: #fff;
     font-size: 3rem;
     margin-left: 1.5rem;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-.modal-menu-content{
+.box_modal_menu_content{
     z-index: 250;
     font-size: 20px;
     display: flex;
@@ -41,7 +41,11 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.modal-menu-content-detail {
+.modal_menu_title{
+    font-size: 32px;
+}
+
+.container_modal_menu_content_detail {
     z-index: 250;
     font-size: 20px;
     align-items: center;
@@ -59,22 +63,17 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.backIcon {
+.back_icon {
     color: var(--white);
     font-size: 2rem;
     cursor: pointer;
 }
 
-.categoryName{
+.category_name{
     color: var(--blue-primary);
 }
 
-.listCategory{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.modal-menu-content-header {
+.box_modal_menu_content_header {
     display: flex;
     gap: 2rem;
     padding: 2rem;
@@ -83,16 +82,7 @@
     align-items: center;
 }
 
-.closeIcon {
-    color: var(--black);
-    position: fixed;
-    top: 1rem;
-    left: 20%;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-.categoryTitleSelected{
+.category_title_selected{
     display: flex;
     justify-content: start;
     padding-left: 1rem;
@@ -100,7 +90,7 @@
     gap: 1rem;
 }
 
-.subCategorySelected {
+.sub_category_selected {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,18 +99,18 @@
     gap: 0.5rem;
 }
 
-.subCategory {
+.sub_category {
     color : var(--grey-tertiary);
-    font-size: 14px;
+    font-size: 13px;
 }
 
-.titleTitleCategory {
+.category_title {
     font-size: 20px;
     color: var(--black);
     font-weight: 600;
 }
 
-.subCategory:hover {
+.sub_category:hover {
     color: var(--blue-primary);
     cursor: pointer;
     transition: 0.3s;
