@@ -21,29 +21,29 @@ function SaveCard() {
 
     return (
         <>
-            <div className="ui segment itens  Save" id="itemCategory">
+            <div className="ui segment itens save_card" id="itemCategory">
                 <Link to="/product">
-                    <div className="itemContent Save" style={{ color: 'black' }}>
-                        <div className="imgItens Save">
+                    <div className="box_save_card_product_info" style={{ color: 'black' }}>
+                        <div className="save_card_image">
                             <img src={motors} width="125" height="" />
                         </div>
-                        <div class="itemInfo Save">
-                            <h3 className="itemName Save">W12 Monofásico</h3>
-                            <h4 className="descricao Save">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                            <h2 className="itemPreco Save">R$ 495<sup> 99</sup><sub className='subtext Save'>10x Sem juros</sub></h2>
+                        <div class="save_card_product_info">
+                            <h3 className="save_card_product_name">W12 Monofásico</h3>
+                            <h4 className="save_card_product_description">Desenvolvido para oferecer versatilidade e eficiência.</h4>
+                            <h2 className="save_card_product_price">R$ 495<sup> 99</sup><sub className='save_card_product_subtext'>10x Sem juros</sub></h2>
                         </div>
                     </div>
                 </Link>
-                <div className='iconProductAction Save'>
-                    <button className="ui blue icon button Save" onClick={deleteItens} >
-                        <i className="trash alternate icon Save" ></i>
+                <div className='iconProductAction save_card'>
+                    <button className="ui blue icon button save_card" onClick={deleteItens} >
+                        <i className="trash alternate icon save_card" ></i>
                     </button>
-                    <button class="ui blue icon button  Save">
-                        <i className="cart plus icon Save"></i>
+                    <button class="ui blue icon button save_card">
+                        <i className="cart plus icon save_card"></i>
                     </button>
                 </div>
-                <div className='buyButton Save'>
-                    <button className="ui fluid blue button Save">Comprar</button>
+                <div className='save_card_buy_button'>
+                    <button className="ui fluid blue button save_card">Comprar</button>
                 </div>
             </div>
         </>
