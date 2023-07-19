@@ -1,10 +1,4 @@
-/* .ui.text.container.productPage{
-    margin-top: 2rem;
-background-color: brown;
-    height: 100%;
-   width: 200rem;
-} */
-.ui.items.producPage {
+.ui.items.product_page {
     padding: 4.5rem;
     border-top: 3rem;
     background-color: rgb(255, 255, 255);
@@ -14,29 +8,29 @@ background-color: brown;
     width: 70rem;
 }
 
-.content.productPage {
+.content.product_page {
     padding-left: 2rem !important;
 }
 
-.priceProductPage {
+.price_product_page {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
 }
 
-.description.productPage {
+.description.product_page {
     width: 35rem;
 }
 
-.imgProductPage {
+.img_product_page {
     width: 25rem;
 
 }
 
-.imageProduct {
+.image_product {
     width: 100%;
 }
 
-.buttonsProductPage {
+.buttons_product_page {
     margin: 1rem;
 }
 
@@ -347,4 +341,17 @@ table {
     /* Fim Opicionais */
 
 /* FIM TEXT */
+}
+
+.box_product_page_title_similar {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }

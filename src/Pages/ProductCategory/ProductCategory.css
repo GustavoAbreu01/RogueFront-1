@@ -1,4 +1,4 @@
-.second-filter {
+.category_second_filter {
     background-color: var(--white);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin: 2rem;
@@ -57,7 +57,7 @@ a:link {
 .ui.vertically.divided.grid {
     margin: 3rem;
 }
-.iconMotor {
+.icon_category_motor {
     display: block;
     margin: 0 auto;
     width: 50%;

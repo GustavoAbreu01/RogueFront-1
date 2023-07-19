@@ -1,12 +1,10 @@
 import React from 'react'
 import './Search.css'
-import { Link } from "react-router-dom";
+
+//Importando os componentes
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import SmallProductCard from '../../Components/SmallProductCard/SmallProductCard'
-import iconMotor from "../../assets/img/iconeMotor.png"
-import motors from "../../assets/img/motores.png"
-import save from "../../assets/img/salvo.png"
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 
 function Search() {
@@ -29,7 +27,7 @@ function Search() {
         <div className="two column row search">
           <div className="ui row search">
             <div className="column filter">
-              <div className="search-filter">
+              <div className="search_filter_search">
                 <h1 className="ui header filter">FILTROS</h1>
                 <br />
                 <div class="ui checkbox">

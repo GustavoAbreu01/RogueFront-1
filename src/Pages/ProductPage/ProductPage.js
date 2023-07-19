@@ -2,7 +2,6 @@ import './ProductPage.css'
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
 import motor from '../../assets/img/motor.png'
-import save from '../../assets/img/salvo.png'
 import { Rating } from 'semantic-ui-react';
 import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 import Footer from '../../Components/Footer/Footer'
@@ -25,41 +24,41 @@ function ProductPage() {
         <>
             {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
 
-            <div class="ui items producPage" >
-            <p class="ui blue ribbon label">Destaque</p>
-                <div class="ui item producPage">
-                    <div class="imgProductPage">
-                        <img class="imageProduct" src={motor} />
+            <div className="ui items product_page" >
+            <p className="ui blue ribbon label">Destaque</p>
+                <div className="ui item product_page">
+                    <div className="img_product_page">
+                        <img className="image_product" src={motor} />
                     </div>
-                    <div class="content productPage">
-                        <h1 class="ui header productPage">Motor W30</h1>
+                    <div className="content product_page">
+                        <h1 className="ui header product_page">Motor W30</h1>
                         <br />
-                        <Rating class="ui star rating productPage" maxRating={5} style={{ marginTop: '1rem' }} />
-                        <h1 class="priceProductPage">R$ 495<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
-                        <div class="meta">
+                        <Rating className="ui star rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
+                        <h1 className="price_product_page">R$ 495<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
+                        <div className="meta">
                             <span>Descrição</span>
                         </div>
-                        <div class="description productPage">
+                        <div className="description product_page">
                             <p>Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia. Opcionalmente pode ser fornecido com capacitor de partida e eixo e flange conforme norma NEMA.</p>
                         </div>
-                        <div className='buttonsProductPage'>
-                            <button class="ui fluid button sellProductPage">
+                        <div className='buttons_product_page'>
+                            <button className="ui fluid button sell_product_page">
                                 Comprar Agora
                             </button>
-                            <button class="ui fluid button cartProductPage">
+                            <button className="ui fluid button cart_product_page">
                                 Adicionar ao Carrinho
                             </button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h2 class="ui header aboutProductPage">Sobre o Produto</h2>
-                    <h3 class="ui header  appProductPage"> Aplicações</h3>
+                    <h2 className="ui header about_product_page">Sobre o Produto</h2>
+                    <h3 className="ui header app_product_page"> Aplicações</h3>
                     <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
-                    <h3 class="ui header  characProductPage"> Características</h3>
+                    <h3 className="ui header charac_product_page"> Características</h3>
                     <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
-                    <h3 class="ui header glCharacProductPage"> Características Gerais</h3>
-                    <table class="ui small definition table productPage">
+                    <h3 className="ui header gl_charac_product_page"> Características Gerais</h3>
+                    <table className="ui small definition table product_page">
                         <tbody>
                             <tr>
                                 <td>Potência</td>
@@ -95,14 +94,14 @@ function ProductPage() {
                             </tr>
                         </tbody>
                     </table>
-                    <h3 class="ui header optionalsProductPage"> Opcionais</h3>
+                    <h3 className="ui header optionals_product_page"> Opcionais</h3>
                     <p> Proteção térmica.</p>
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
                 </div>
-            </div>
-            <div className='boxTitleSimilar'>
+            </div> 
+            <div className='box_product_page_title_similar'>
             <FaStar color='var(--white)' size={40} />
-            <h1 className='titleSimilar' >Produtos Semelhantes</h1>
+            <h1>Produtos Semelhantes</h1>
           </div>
             <Carousel/>
             <Footer />
