@@ -41,7 +41,7 @@ import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/carousel/carousel'
+import Carousell from '../../Components/carousel/Carousel'
 
 
 function Home() {
