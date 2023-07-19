@@ -27,33 +27,33 @@ function Header() {
 
   return (
     <><header className={scrolled ? 'scrolled' : ''}>
-      <div className="img">
-        <Link to={"/"}><img className='imgHeader' src={logo} alt="" /></Link>
+      <div className="header_img">
+        <Link to={"/"}><img className='header_imgHeader' src={logo} alt="" /></Link>
       </div>
       <div className="searchInput">
         <SearchBar />
       </div>
-      <div className="opcHeader">
-        <div className="opcDeEntradaHeader">
-          <Link className="accountHeader" to="/register">Crie sua conta</Link>/<Link className="loginHeader" to="/register">Login</Link>
+      <div className="box_header_opcHeader">
+        <div className="header_opcDeEntradaHeader">
+          <Link className="header_accountHeader" to="/register">Crie sua conta</Link>/<Link className="loginHeader" to="/register">Login</Link>
         </div>
-        <Link to="/cart"><FaShoppingCart className="carrinhoHeaderDetail"/></Link>
+        <Link to="/cart"><FaShoppingCart className="header_carrinhoHeaderDetail"/></Link>
       </div>
-    </header><div className="navBarHeader">
-        <div id="menu">
+    </header><div className="box_header_navBarHeader">
+        <div id="header_menu">
           <MenuModal />
         </div>
-        <div className="divisores"></div>
+        <div className="header_divisores"></div>
         <Link to="/category" >Motores</Link>
-        <div className="divisores"></div>
+        <div className="header_divisores"></div>
         <Link to="/category" >Tintas e Vernizes</Link>
-        <div className="divisores"></div>
+        <div className="header_divisores"></div>
         <Link to="/category">Automação</Link>
-        <div className="divisores"></div>
+        <div className="header_divisores"></div>
         <Link to="/category">Paineis Eletricos</Link>
-        <div className="divisores"></div>
+        <div className="header_divisores"></div>
         <Link to="/category">Segurança</Link>
-        <div className="divisores"></div>
+        <div className="header_divisores"></div>
       </div></>
   )
 }
