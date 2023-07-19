@@ -37,8 +37,8 @@ function LanguageModal() {
   }, [flags])
 
   return (
-    <div className='languageModal'>
-      {verify() && <div className='modalLanguageContent'>
+    <div className='container_languageModal'>
+      {verify() && <div className='box_container_modalLanguageContent'>
         <div onClick={() => changeCurrentFlag(1, flags[1])}>
           <img src={flags[1]} width={40} height={25} alt='' />
         </div>
@@ -54,9 +54,9 @@ function LanguageModal() {
       </div>}
       <div>
         {!verify() ?
-          <div onClick={() => setOpenModal(openModal + 1)} className='languageButton'><img src={flags[0]} width={40} height={25} alt='' /></div>
+          <div onClick={() => setOpenModal(openModal + 1)} className='languageModal_languageButton'><img src={flags[0]} width={40} height={25} alt='' /></div>
           :
-          <div onClick={() => setOpenModal(openModal - 1)} className='languageButton'><img src={flags[0]} width={40} height={25} alt='' /></div>
+          <div onClick={() => setOpenModal(openModal - 1)} className='languageModal_languageButton'><img src={flags[0]} width={40} height={25} alt='' /></div>
         }
       </div>
     </div>
