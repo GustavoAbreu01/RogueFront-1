@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CartConfirm.css';
+
+//Importando os componentes
+import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
+import ProductCartConfirm from '../../Components/ProductCartConfirm/ProductCartConfirm';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+
+//importando as frameworks
 import { Link } from 'react-router-dom';
-import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
-import ProductCart from '../../Components/ProductCart/ProductCart';
-import ProductCartConfirm from '../../Components/ProductCartConfirm/ProductCartConfirm';
+
 
 function CartConfirm() {
 
@@ -27,7 +31,7 @@ function CartConfirm() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='boxContainerProgress  '>
+      <div className='container_progress  '>
         <div className="ui tiny steps">
           <div className="completed step">
             <i className="shop icon"></i>
@@ -55,18 +59,18 @@ function CartConfirm() {
           </div>
         </div>
       </div>
-      <div className='containerCart'>
-        <div className='boxCartProductDetail'>
-          <div className='boxCartProduct'>
-            <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Confirmar Pedido</h5>
+      <div className='container_cart_confirm'>
+        <div className='box_cart_product_detail_confirm'>
+          <div className='box_cart_product_confirm'>
+            <div className='cart_confirm_title'>
+              <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>
             <ProductCartConfirm />
             <ProductCartConfirm />
-            <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Endereço de Entrega</h5>
+            <div className='cart_confirm_title'>
+              <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>
-            <div className='confirmTransport'>
+            <div className='cart_confirm_transport'>
               <form class="ui form confirm">
                 <div class="field">
                   <div class="three fields">
@@ -102,21 +106,21 @@ function CartConfirm() {
             </div>
           </div>
         </div>
-        <div className='boxInfoTotalCart'>
-          <div className='boxInfoTotalBuy'>
-            <div className='boxInfoTotalBuyTitle'>
-              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+        <div className='box_info_total_cart'>
+          <div className='info_total_buy'>
+            <div>
+              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Subtotal R${valor}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Frete R${frete}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
+            <div>
+              <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='boxButtonTotalCart'>
+            <div className='button_total_Cart'>
               <Link to='/cart/finish'>
                 <button className="fluid ui button final">Finalizar Compra</button>
               </Link>
@@ -125,7 +129,7 @@ function CartConfirm() {
               </Link>
             </div>
           </div>
-          <div className='boxInfoRecommend'>
+          <div className='box_cart_info_recommend'>
             <SmallProductHorizontal />
             <SmallProductHorizontal />
             <SmallProductHorizontal />

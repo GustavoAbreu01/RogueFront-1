@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import './CartFinish.css';
+
+//Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import weggner from "../../assets/img/PedidoFinalizadoWeggner.PNG"
+
+//importando as frameworks
 import { Link } from 'react-router-dom';
+
+//Importando os icones
 import { BsArrowLeftShort } from 'react-icons/bs';
 
 function CartFinish() {
-
-  var valor = 1100.00;
-  var frete = 100;
-  var total = 1200;
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -26,7 +28,7 @@ function CartFinish() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='boxContainerProgress  '>
+      <div className='container_progress'>
         <div className="ui tiny steps">
           <div className="completed step">
             <i className="shop icon"></i>
@@ -54,20 +56,20 @@ function CartFinish() {
           </div>
         </div>
       </div>
-      <div className='containerCart'>
-        <div className='boxCartProductDetailInfo'>
-          <div className='boxCartProductInfo'>
-            <div className='boxCartProductTitleInfo'>
-              <h5 className='TitleTextCartProductInfo'>Pedido Finalizado</h5>
+      <div className='container_cart_finish'>
+        <div className='box_cart_detail_finish'>
+          <div className='box_cart_finish'>
+            <div className='cart_finish_title'>
+              <h5 className='cart_finish_title_text'>Pedido Finalizado</h5>
 
             </div>
-            <div className='boxCartProductImg'>
-              <img className='imgCartProductInfo' src={weggner} />
-              <div className='boxCartProductTextFinal'>
+            <div className='box_cart_finish_img'>
+              <img className='cart_finish_weggner' src={weggner} />
+              <div>
                 <h5>Agradecemos sua preferência</h5>
-                <div className='boxCartProductSubTextFinal'>
+                <div className='cart_finish_text'>
                 <BsArrowLeftShort size={15} />
-                  <Link to='/'> <p className='SubTextFinal'>Voltar para a Home</p> </Link>
+                  <Link to='/'> <p className='cart_finish_subtext'>Voltar para a Home</p> </Link>
                 </div>
               </div>
             </div>

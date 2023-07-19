@@ -60,7 +60,7 @@
     width: 100%;
 }
 
-.boxContainerProgress {
+.container_progress {
     display: flex;
     align-items: center;
     justify-content: center;

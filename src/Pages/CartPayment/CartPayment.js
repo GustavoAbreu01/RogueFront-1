@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import './CartPayment.css';
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import { Link } from 'react-router-dom';
-import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
-import { FaStar } from 'react-icons/fa';
+
+//Importando as imagens
 import CardAll from '../../assets/img/CardAll.png';
 import CardCVV from '../../assets/img/CardCVV.png';
 import CardDate from '../../assets/img/CardDate.png';
 import CardName from '../../assets/img/CardName.png';
 import CardNumber from '../../assets/img/CardNumber.png';
+
+//Importando os icones
+import { FaStar } from 'react-icons/fa';
+
+//Importando os componentes
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+
+//importando as frameworks
 import { Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 
 function CartPayment() {

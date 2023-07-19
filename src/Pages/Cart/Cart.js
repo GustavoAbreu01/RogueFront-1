@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Cart.css';
+
+//importando as frameworks
+import { Link } from 'react-router-dom';
+
+//Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCart from '../../Components/ProductCart/ProductCart';
-import { Link } from 'react-router-dom';
 import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 function Cart() {
