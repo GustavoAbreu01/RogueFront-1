@@ -93,8 +93,8 @@ function CartPayment() {
               <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>
             <div className='cart_payment_form'>
-              <form class="ui form">
-                <div class="fields">
+              <form className="ui form">
+                <div className="fields">
                   {focusedInput === '1' && (
                     <img src={CardName} className='cart_payment_card_Instrution' />
                   )}
@@ -114,7 +114,7 @@ function CartPayment() {
                     <img src={CardAll} className='cart_payment_card_Instrution' />
                   )}
                   <div className='field payment'>
-                    <div class="sixteen wide field">
+                    <div className="sixteen wide field">
                       <label>Bandera do Cartão</label>
                       <Dropdown
                         placeholder="Selecione uma opção"
@@ -124,14 +124,14 @@ function CartPayment() {
                         options={options}
                       />
                     </div>
-                    <div class="sixteen wide field">
+                    <div className="sixteen wide field">
                       <label>Nome do Titular</label>
                       <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
                         onFocus={() => handleInputFocus('1')}
                         onBlur={handleInputBlur}
                       />
                     </div>
-                    <div class="sixteen wide field">
+                    <div className="sixteen wide field">
                       <label>Número do cartão</label>
                       <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
                         onFocus={() => handleInputFocus('2')}
@@ -140,26 +140,26 @@ function CartPayment() {
                     </div>
                   </div>
                 </div>
-                <div class="fields">
-                  <div class="four wide field">
+                <div className="fields">
+                  <div className="four wide field">
                     <label>CVV</label>
                     <input id='CvvCard' type="text" name="card[cvc]" maxlength="3" placeholder="CVC"
                       onFocus={() => handleInputFocus('3')}
                       onBlur={handleInputBlur}
                     />
                   </div>
-                  <div class="ten wide field">
+                  <div className="ten wide field">
                     <label>CPF do titular</label>
                     <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
                       onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
                     />
                   </div>
-                  <div class="six wide field">
+                  <div className="six wide field">
                     <label>Validade</label>
-                    <div class="fields">
-                      <div class="ten wide field">
-                        <select id='DateCard' class="ui fluid search dropdown" name="card[expire-month]"
+                    <div className="fields">
+                      <div className="ten wide field">
+                        <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -178,8 +178,8 @@ function CartPayment() {
                           <option value="12">Dezembro</option>
                         </select>
                       </div>
-                      <div class="field">
-                      <select id='DateCard' class="ui fluid search dropdown" name="card[expire-month]"
+                      <div className="field">
+                      <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >

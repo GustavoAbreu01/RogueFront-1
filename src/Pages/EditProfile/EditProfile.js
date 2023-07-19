@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './EditProfile.css';
-import { AiFillEdit } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
+
+//Importando os icones
+import { FaStar } from 'react-icons/fa';
+import { CiSquareAlert } from 'react-icons/ci';
 import { CgProfile } from 'react-icons/cg';
+
+//Importando os componentes
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 import Messages from '../../Components/Messages/Messages'
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import RatedProducts from '../../Components/RatedProducts/RatedProducts';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import { FaStar } from 'react-icons/fa';
-import { CiSquareAlert } from 'react-icons/ci';
-import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
-
 
 function EditProfile() {
 
@@ -42,29 +44,29 @@ function EditProfile() {
     <>
       {!verifyHeader() ? <Header /> : <HeaderLogin />}
       <WeggnerModal />
-      <div className="containerEdit">
+      <div className="container_edit_profile">
         <div className="ui grid edit">
           <div className="two column row edit">
             <div className="ui row edit">
               <div className="column edit">
-                <div className="settingsBarEdit">
-                  <div className="mainInfoEdit">
-                    <CgProfile className="profileEdit" />
+                <div className="box_settings_bar_edit">
+                  <div className="settings_bar_edit_profile">
+                    <CgProfile className="edit_profile" />
                     <h4>Nome Sobrenome</h4>
                     <p>000.000.000-00</p>
                   </div>
                   <div className="ui vertical menu edit">
                     <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
-                      <p className="titleSectionEdit">Perfil</p>
+                      <p className="title_section_edit_profile">Perfil</p>
                     </div>
                     <div onClick={() => changeSection(2)} id="menssageBoxContainer" className={`item ${activeSection === 2 ? 'active' : ''}`}>
-                      <p className="titleSectionEdit">Mensagens</p>
+                      <p className="title_section_edit_profile">Mensagens</p>
                     </div>
                     <div onClick={() => changeSection(3)} id="addressBoxContainer" className={`item ${activeSection === 3 ? 'active' : ''}`}>
-                      <p className="titleSectionEdit">Endereço</p>
+                      <p className="title_section_edit_profile">Endereço</p>
                     </div>
                     <div onClick={() => changeSection(4)} id="ratingBoxContainer" className={`item ${activeSection === 4 ? 'active' : ''}`}>
-                      <p className="titleSectionEdit">Avaliações</p>
+                      <p className="title_section_edit_profile">Avaliações</p>
                     </div>
                   </div>
                 </div>
@@ -72,43 +74,43 @@ function EditProfile() {
             </div>
           </div>
         </div>
-        <div className="ui row editSectionProfile">
+        <div className="ui row edit">
           {activeSection === 1 ? (
             <div className="column sections">
-              <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">Informações Pessoais</h2>
-                <form class="ui form edit">
-                  <div class="field">
-                    <div class="two fields">
-                      <div class={editMode ? "field" : "field disabled"}>
+              <div className="box_edit_section_profile">
+                <h2 className="edit_section_title_profile">Informações Pessoais</h2>
+                <form className="ui form edit"> 
+                  <div className="field">
+                    <div className="two fields">
+                      <div className={editMode ? "field" : "field disabled"}>
                         <label>Nome</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Gustavo" />
                       </div>
-                      <div class={editMode ? "field" : "field disabled"}>
+                      <div className={editMode ? "field" : "field disabled"}>
                         <label>Sobrenome</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Abreu" />
                       </div>
                     </div>
                   </div>
-                  <div class="field">
-                    <div class="fields">
-                      <div class={editMode ? "twelve wide field" : "twelve wide field disabled"}>
+                  <div className="field">
+                    <div className="fields">
+                      <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
                         <label>Email Profissional</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
                       </div>
-                      <div class={editMode ? "four wide field" : "four wide field disabled"}>
+                      <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>CPF/CNPJ</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
                       </div>
                     </div>
                   </div>
-                  <div className="buttonsProfileEdit">
+                  <div className="buttons_profile_edit">
                     {!editMode ? (
-                      <div className='editButton'>
+                      <div className='edit_profile_Button'>
                         <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
                       </div>
                     ) : (
-                      <div className='cancelButton'>
+                      <div className='cancel_profile_Button'>
                         <button onClick={changeInfo} className="fluid ui button cancel">Cancelar</button>
                       </div>
                     )
@@ -117,17 +119,17 @@ function EditProfile() {
                       <div>
                       </div>
                     ) : (
-                      <div className='conclusionButton'>
+                      <div className='conclusion_profile_button'>
                         <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
                       </div>
                     )}
                   </div>
                 </form>
-                <div className='containerInformationProfile'>
+                <div className='container_information_profile_edit'>
                   {editMode ? (
-                    <CiSquareAlert className='iconInformationProfileAlert' />
+                    <CiSquareAlert className='icon_information_profile_alert' />
                   ) : (
-                    <CiSquareAlert className='iconInformationProfile' />
+                    <CiSquareAlert className='ico_information_profile'/>
                   )
                   }
                   <p>
@@ -142,9 +144,9 @@ function EditProfile() {
             </div>
           ) : activeSection === 2 ? (
             <div className="column sections">
-              <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">Mensagens</h2>
-                <div className='messagesContainer'>
+              <div className="box_edit_section_profile">
+                <h2 className="edit_section_title_profile">Mensagens</h2>
+                <div className='messages_container_profile'>
                   <Messages />
                   <Messages />
                   <Messages />
@@ -157,30 +159,30 @@ function EditProfile() {
             </div>
           ) : activeSection === 3 ? (
             <div className="column sections">
-              <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">Endereço Registrado</h2>
-                <form class="ui form edit">
-                  <div class="field">
-                    <div class="two fields">
-                      <div class={editMode ? "twelve wide field" : "twelve wide field disabled"}>
+              <div className="box_edit_section_profile">
+                <h2 className="edit_section_title_profile">Endereço Registrado</h2>
+                <form className="ui form edit">
+                  <div className="field">
+                    <div className="two fields">
+                      <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
                         <label>Complemento</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
                       </div>
-                      <div class={editMode ? "four wide field" : "four wide field disabled"}>
+                      <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>CEP</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
                       </div>
                     </div>
                   </div>
-                  <div class="field">
-                    <div class="fields">
-                      <div class={editMode ? "twelve wide field" : "twelve wide field disabled"}>
+                  <div className="field">
+                    <div className="fields">
+                      <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
                         <label>Endereço</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="Rua, Bairro, Número" />
                       </div>
-                      <div class={editMode ? "four wide field" : "four wide field disabled"}>
+                      <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>Estado</label>
-                        <select class="ui fluid dropdown">
+                        <select className="ui fluid dropdown">
                           <option value="">Estado</option>
                           <option value="AC">Acre</option>
                           <option value="AL">Alagoas</option>
@@ -211,9 +213,9 @@ function EditProfile() {
                           <option value="TO">Tocantins</option>
                         </select>
                       </div>
-                      <div class={editMode ? "four wide field" : "four wide field disabled"}>
+                      <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>País</label>
-                        <select class="ui fluid dropdown">
+                        <select className="ui fluid dropdown">
                           <option value="">País</option>
                           <option value="ZA">África do Sul</option>
                           <option value="DE">Alemanha</option>
@@ -245,13 +247,13 @@ function EditProfile() {
                       </div>
                     </div>
                   </div>
-                  <div className="buttonsProfileEdit">
+                  <div className="buttons_profile_edit">
                     {!editMode ? (
-                      <div className='editButton'>
+                      <div className='edit_profile_Button'>
                         <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
                       </div>
                     ) : (
-                      <div className='cancelButton'>
+                      <div className='cancel_profile_Button'>
                         <button onClick={changeInfo} className="fluid ui button cancel">Cancelar</button>
                       </div>
                     )
@@ -260,17 +262,17 @@ function EditProfile() {
                       <div>
                       </div>
                     ) : (
-                      <div className='conclusionButton'>
+                      <div className='conclusion_profile_button'>
                         <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
                       </div>
                     )}
                   </div>
                 </form>
-                <div className='containerInformationProfile'>
+                <div className='container_information_profile_edit'>
                   {editMode ? (
-                    <CiSquareAlert className='iconInformationProfileAlert' />
+                    <CiSquareAlert className='icon_information_profile_alert' />
                   ) : (
-                    <CiSquareAlert className='iconInformationProfile' />
+                    <CiSquareAlert className='ico_information_profile' />
                   )
                   }
                   <p>
@@ -285,9 +287,9 @@ function EditProfile() {
             </div>
           ) : activeSection === 4 ? (
             <div className="column sections">
-              <div className="edit-section-profile">
-                <h2 className="edit-section-title-profile">Avaliações</h2>
-                <div className='ratingContainer'>
+              <div className="box_edit_section_profile">
+                <h2 className="edit_section_title_profile">Avaliações</h2>
+                <div className='rating_container_profile'>
                   <RatedProducts />
                   <RatedProducts />
                 </div>
@@ -296,7 +298,7 @@ function EditProfile() {
           ) : null}
         </div >
       </div >
-      <div className='boxTitleSimilarCompare'>
+      <div className='box_edit_profile_title_similar'>
         <FaStar color='var(--white)' size={40} />
         <h1 className='titleSimilar' >Recomendados</h1>
       </div>

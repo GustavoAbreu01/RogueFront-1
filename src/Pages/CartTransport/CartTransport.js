@@ -68,33 +68,33 @@ function CartTransport() {
               <h5 className='cart_transport_title_text'>Verificar Transporte do Pedido</h5>
             </div> 
             <div className='cart_transport_form'>
-              <form class="ui form">
-                <div class="field">
+              <form className="ui form">
+                <div className="field">
                   <label>Nome</label>
-                  <div class="two fields">
-                    <div class="field">
+                  <div className="two fields">
+                    <div className="field">
                       <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
                     </div>
-                    <div class="field">
+                    <div className="field">
                       <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" />
                     </div>
                   </div>
                 </div>
-                <div class="field">
+                <div className="field">
                   <label>Endereço de Entrega</label>
-                  <div class="fields">
-                    <div class="twelve wide field">
+                  <div className="fields">
+                    <div className="twelve wide field">
                       <input type="text" name="shipping[address]" placeholder="Complemento" />
                     </div>
-                    <div class="four wide field">
+                    <div className="four wide field">
                       <input type="text" name="shipping[address-2]" placeholder="CEP " />
                     </div>
                   </div>
                 </div>
-                <div class="two fields">
-                  <div class="field">
+                <div className="two fields">
+                  <div className="field">
                     <label>Estado</label>
-                    <select class="ui fluid dropdown">
+                    <select className="ui fluid dropdown">
                       <option value="">Estado</option>
                       <option value="AC">Acre</option>
                       <option value="AL">Alagoas</option>
@@ -125,9 +125,9 @@ function CartTransport() {
                       <option value="TO">Tocantins</option>
                     </select>
                   </div>
-                  <div class="field">
+                  <div className="field">
                     <label>País</label>
-                    <select class="ui fluid dropdown">
+                    <select className="ui fluid dropdown">
                       <option value="ZA">África do Sul</option>
                       <option value="DE">Alemanha</option>
                       <option value="AE">Emirados Árabes Unidos</option>

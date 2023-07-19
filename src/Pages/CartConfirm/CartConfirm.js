@@ -71,33 +71,33 @@ function CartConfirm() {
               <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>
             <div className='cart_confirm_transport'>
-              <form class="ui form confirm">
-                <div class="field">
-                  <div class="three fields">
-                    <div class="field">
+              <form className="ui form confirm">
+                <div className="field">
+                  <div className="three fields">
+                    <div className="field">
                       <label>Nome do Responsável</label>
                       <p>Gustavo Guilherme de Abreu</p>
                     </div>
-                    <div class="field">
+                    <div className="field">
                       <label>Endereço:</label>
                       <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
                     </div>
-                    <div class="field">
+                    <div className="field">
                       <label>Complemento:</label>
                       <p>Torre 1, Apto 706</p>
                     </div>
                   </div>
                 </div>
-                <div class="three fields">
-                  <div class="field">
+                <div className="three fields">
+                  <div className="field">
                     <label>Estado:</label>
                     <p>Santa Catarina</p>
                   </div>
-                  <div class="field">
+                  <div className="field">
                     <label>País:</label>
                     <p>Brasil</p>
                   </div>
-                  <div class="field">
+                  <div className="field">
                     <label>CEP</label>
                     <p>89256-690</p>
                   </div>

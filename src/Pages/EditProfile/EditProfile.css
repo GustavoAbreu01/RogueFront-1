@@ -1,4 +1,4 @@
-.settingsBarEdit {
+.box_settings_bar_edit {
     background-color: var(--white);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin-right: 1rem;
@@ -8,7 +8,7 @@
     gap: 1rem;
 }
 
-.containerEdit {
+.container_edit_profile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,11 +21,11 @@
 
 }
 
-.titleSectionEdit {
+.title_section_edit_profile {
     padding: 1rem;
 }
 
-.mainInfoEdit {
+.settings_bar_edit_profile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,7 +36,7 @@
     width: 10rem;
 }
 
-.edit-section-profile {
+.box_edit_section_profile {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color: var(--white);
     width: 71rem;
@@ -52,7 +52,7 @@
     border-radius: 5px;
 }
 
-.profileEdit {
+.edit_profile {
     width: 10rem;
     height: 10rem;
     margin-top: 2rem;
@@ -60,7 +60,7 @@
     color: var(--blue-secundary);
 }
 
-.edit-section-title-profile {
+.edit_section_title_profile {
     padding: 2rem;
 }
 
@@ -100,39 +100,39 @@
     margin: 2rem;
 }
 
-.messagesContainer {
+.messages_container_profile {
     max-height: 25rem;
     width: 100%;
     overflow-y: scroll;
 }
 
-.ratingContainer {
+.rating_container_profile {
     max-height: 25rem;
     width: 100%;
     overflow-y: scroll;
 }
 
-.buttonsProfileEdit {
+.buttons_profile_edit {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.editButton {
+.edit_profile_Button {
     display: flex;
     align-items: start;
     justify-content: start;
     width: 100%;
 }
 
-.conclusionButton {
+.conclusion_profile_button {
     display: flex;
     align-items: end;
     justify-content: end;
     width: 100%;
 }
 
-.cancelButton {
+.cancel_profile_Button {
     display: flex;
     align-items: start;
     justify-content: start;
@@ -145,7 +145,7 @@
     color: var(--black);
 }
 
-.containerInformationProfile {
+.container_information_profile_edit {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -157,15 +157,28 @@
     border-radius: 10px;
 }
 
-.iconInformationProfile {
+.ico_information_profile {
     color: var(--white);
     margin-right: 1rem;
     font-size: 10rem;
 }
 
-.iconInformationProfileAlert {
+.icon_information_profile_alert {
     color: var(--yellow-primary);
     transition: 1s;
     margin-right: 1rem;
     font-size: 10rem;
+}
+
+.box_edit_profile_title_similar {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
