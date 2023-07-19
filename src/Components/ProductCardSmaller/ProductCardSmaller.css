@@ -1,4 +1,4 @@
-.smallBoxProduct {
+.container_product_card_smaller {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
@@ -7,32 +7,34 @@
     width: 15rem;
     height: 23rem;
 }
-.smallBoxProduct:hover {
+.container_product_card_smaller:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
     cursor: pointer;
 
-    .smallIconProductAction {
+    .container_product_card_smaller_action_icon {
         opacity: 1;
         transition: 0.3s;
     }
 
 }
 
-.smallBoxProductPrice {
+.box_product_card_smaller_price {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
     padding-left: 1rem;
+  
 }
 
-.smallPriceProduct {
+.product_card_smaller_price {
+    font-size: 20px;
+    color: var(--blue-primary);
     font-weight: bold;
-    font-size: large;
 }
 
-.smallBoxProductTitle {
+.box_product_card_smaller_title {
     display: flex;
     color: var(--grey-primary);
     flex-direction: column;
@@ -40,14 +42,14 @@
     padding: 0.5rem;
     padding-left: 1rem;
     height: 100%;
+   
+}
+.product_card_smaller_title{
+    font-size: 18px;
 }
 
-.smallTagIconProduct {
-    position: absolute;
-    padding: 1rem;
-}
 
-.smallIconProductAction {
+.container_product_card_smaller_action_icon {
     display: flex;
     padding: 0.5rem;
     padding-bottom: 0;
@@ -57,7 +59,7 @@
     opacity: 0;
 }
 
-.smallBoxProductImage {
+.box_product_card_smaller_image {
     position: relative;
     top:0.1rem;
     display: flex;
@@ -65,7 +67,7 @@
     align-items: center;
 }
 
-.smallBoxProductButton {
+.box_product_card_smaller_button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,10 +77,15 @@
     
 }
 
-.ui.icon.button.smallCard{
+.ui.icon.button.product_card_smaller{
     background-color: var(  --blue-secundary);
 }
 
-.ui.fluid.button.smallCard{
+.ui.fluid.button.product_card_smaller{
     background-color: var(  --blue-secundary);
+}
+
+.product_card_smaller_price_info{
+    font-size: 13px;
+    color: var(--grey-primary);
 }

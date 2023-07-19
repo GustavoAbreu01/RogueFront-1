@@ -1,4 +1,4 @@
-.productComparedCard{
+.container_card_compare_compared{
     width: 100%;
     height: 100%;
     margin-top: -5%;
@@ -7,7 +7,7 @@
     border-radius: 2rem;
 }
 
-.productComparedCardDetail{
+.container_card_compare_details{
     width: 108%;
     height: 100%;   
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -15,12 +15,12 @@
     border-radius: 2rem;
 }
 
-.productImageBox {
+.box_card_compare_image {
     display: flex;
     justify-content: center;
 }
 
-.productNameCompareBox {
+.box_card_compare_name {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,12 +36,12 @@
     margin: 2rem;
 }
 
-.productImage{
+.card_compare_image{
     height: 13rem;
     width: 15rem;
 }
 
-.compareArrow{
+.card_compare_arrow_first{
     position: absolute;
     color: var(--blue-primary);
     justify-content: center;
@@ -49,14 +49,14 @@
     margin-left: 24rem;
 }
 
-.compareArrow2{
+.card_compare_arrow_second{
     position: absolute;
     color: var(--blue-primary);
     margin-top: 40%;
     margin-left: 54rem;
 }
 
-.deleteButton{
+.card_compare_delete_button{
     cursor: pointer;
 }
 
@@ -65,13 +65,13 @@
     color: var(--blue-primary);
 }
 
-.productNameCompare{
+.card_compare_name{
     padding-bottom: 2rem;
     font-size: 2.5rem;
     color: var(--black);
 }
 
-.compareDescription{
+.card_compare_description{
     font-size: 1.5rem;
 }
 
@@ -95,7 +95,7 @@
     color: var(--blue-primary);
 }
 
-.buttonsActionCompare {
+.box_card_compare_button_action {
     display: flex;
     justify-content: start;
     gap: 1rem;
@@ -103,12 +103,12 @@
     padding-top: 1rem;
 }
 
-.iconCompare {
+.card_compare_icon {
     color: var(--blue-primary);
     font-size: 2rem;
 }
 
-.containerDescriptionText {
+.container_card_compare_description_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,6 +117,6 @@
     padding-top: 1rem;
 }
 
-.productDescriptionPrimary {
+.box_card_compare_description_primary {
     text-align: center;
 }

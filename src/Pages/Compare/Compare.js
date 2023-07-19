@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Compare.css'
 import motor from "../../assets/img/motor.png"
-import CompareCard from '../../Components/CompareCard/CompareCard'
+import CardCompare from '../../Components/CardCompare/CardCompare'
 import { IoMdAddCircle } from 'react-icons/io'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
@@ -73,7 +73,7 @@ function Compare() {
           <h1 className='titleSimilar' >Comparação de Produtos</h1>
         </div>
         <div className='products'>
-          <CompareCard />
+          <CardCompare />
           {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}

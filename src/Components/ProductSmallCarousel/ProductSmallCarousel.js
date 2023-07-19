@@ -63,27 +63,27 @@ function ProductCarouselSmall() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='carousel_product_card_smaller_carousel' >
             <Slider {...settings}>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
-                <div className='box'>
+                <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
             </Slider>
