@@ -11,7 +11,7 @@ import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSi
 function CartTransport() {
 
   var valor = 1100.00;
-  var frete = 100;
+  var frete = 100; 
   var total = 1200;
 
   const verify = () => {
