@@ -1,7 +1,3 @@
-/* .column.itens.Save {
-    margin: 2rem;
-} */
-
 .ui.segment.itens.save_card {
     margin: 2rem auto 0;
     border-radius: 1rem;
@@ -9,12 +5,10 @@
     width: 100%;
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
 a:link.Save {
     text-decoration: none;
-    /* Remova a decoração de link (sublinhado) se necessário */
 }
 
 .box_save_card_product_info {
@@ -24,9 +18,7 @@ a:link.Save {
 
 .save_card_product_info {
     flex: 1;
-    /* Ocupa o espaço disponível */
     justify-content: space-between;
-    /* Alinha o conteúdo nos extremos da div */
 }
 
 .iconProductAction.save_card {
@@ -37,14 +29,6 @@ a:link.Save {
     background-color: transparent;
     border: none;
 }
-
-/* .ui.vertically.divided.grid.Save {
-    margin: 3rem;
-}
-
-.ui.header.motor.Save {
-    text-align: center;
-} */
 
 .save_card_product_price {
     font-size: 28px;

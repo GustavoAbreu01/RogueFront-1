@@ -20,29 +20,26 @@ function Orders() {
 
   return (
     <>
-      <div className="productCardOrder">
+      <div className="container_rated_product">
         <Link to='/product'>
-        <div className='itemContent rating'>
-          <div id="imgItens order">
-            <img src={motors} width="125" height="" />
+          <div className='box_rated_product'>
+            <div id="imgItens order">
+              <img src={motors} width="125" height="" />
+            </div>
+            <div className="rated_product_product_info">
+              <h2 className="rated_product_name">Motor W22</h2>
+              <p className="rated_product_description">
+                Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...
+              </p>
+            </div>
+            <div className="buttons order">
+              <button class="ui icon button order">
+                <Rating class="ui star rating productPage" maxRating={5} style={{ marginTop: '1rem' }} />
+              </button>
+            </div>
           </div>
-          <div className="itemInfo order">
-            <h2 className="itemNome order">Motor W22</h2>
-            <p className="itemComplement order">
-              Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...
-            </p>
-          </div>
-          <div className="buttons order">
-            <button class="ui icon button order">
-            <Rating class="ui star rating productPage" maxRating={5} style={{ marginTop: '1rem' }} />
-            </button>
-          </div>
-        </div>
         </Link>
-       
       </div >
-
-
     </>
   );
 };

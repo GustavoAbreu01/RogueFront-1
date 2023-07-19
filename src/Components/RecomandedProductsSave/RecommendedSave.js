@@ -22,11 +22,11 @@ function RecomendedSave() {
                     <p style={{ paddingLeft: '1rem', paddingTop: '0.4rem' }}>Á vista no pix</p>
                 </div>
                 <div className='recommended_save_buttons_icons'>
-                    <button class="ui blue icon button recommended_save">
-                        <i class="cart plus icon recommended_save"></i>
+                    <button className="ui blue icon button recommended_save">
+                        <i className="cart plus icon recommended_save"></i>
                     </button>
-                    <button class="ui blue icon button recommended_save">
-                        <i class="bookmark icon recommended_save"></i>
+                    <button className="ui blue icon button recommended_save">
+                        <i className="bookmark icon recommended_save"></i>
                     </button>
                 </div>
 

@@ -48,45 +48,6 @@
     justify-content: flex-end;
     align-items: center;
 }
-/* 
-.horizontalSmallBoxProductButton.Recommended {
-    right: 0%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 30px;
-} */
-
-/* 
-.ui.fluid.button.horizontalSmall.Recommended {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-    width: 1rem;
-} */
-/* 
-.detailSmallProduct.Recommended {
-    align-items: end;
-    display: flex;
-    justify-content: end;
-    background-color: var(--blue-tertiary);
-    width: 0.8rem;
-    height: 80%;
-    border-radius: 10px;
-} */
-/* 
-.detailTextSmallProduct.Recommended {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    color: var(--white);
-    rotate: 90deg;
-    font-size: 1rem;
-} */
 
 .recommended_save_buttons_icons {
     display: flex;

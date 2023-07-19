@@ -19,8 +19,7 @@ function Orders() {
 
   return (
     <>
-      <div className="productCardOrder">
-      
+      <div className="container_product_order">
         <div className={`itemContent order ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>
           <div id="imgItens order">
             <img src={motors} width="125" height="" />
@@ -36,7 +35,7 @@ function Orders() {
             </p>
           </div>
           <div className="buttons order">
-            <button class="ui icon button order">
+            <button className="ui icon button order">
               <i className="angle down icon order"></i>
             </button>
           </div>
@@ -45,52 +44,52 @@ function Orders() {
           <div className="dropdownContentOrders" data-aos="fade-down">
             <div className='moreContentOrder'>
               <div className='confirmTransportOrders'>
-                <form class="ui form confirm Orders">
-                  <div class="field Orders">
-                    <div class="three fields Orders">
-                      <div class="field Orders">
+                <form className="ui form confirm Orders">
+                  <div className="field Orders">
+                    <div className="three fields Orders">
+                      <div className="field Orders">
                         <label>Produtos</label>
                         <p>Motor W33</p>
                         <p>Motor W12</p>
 
                       </div>
-                      <div class="field Orders">
+                      <div className="field Orders">
                         <br />
                         <p>x3</p>
                         <p>x1</p>
                       </div>
-                      <div class="field Orders">
+                      <div className="field Orders">
                         <br />
                         <p>R$ 2.333,33</p>
                         <p>R$ 1.333,33</p>
                       </div>
                     </div>
-                    <div class="three fields Orders">
+                    <div className="three fields Orders">
 
-                      <div class="field Orders">
+                      <div className="field Orders">
                         <label>Nome do Responsável</label>
                         <p>Gustavo Guilherme de Abreu</p>
                       </div>
-                      <div class="field Orders">
+                      <div className="field Orders">
                         <label>Endereço:</label>
                         <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
                       </div>
-                      <div class="field Orders">
+                      <div className="field Orders">
                         <label>Complemento:</label>
                         <p>Torre 1, Apto 706</p>
                       </div>
                     </div>
                   </div>
-                  <div class="three fields Orders">
-                    <div class="field Orders">
+                  <div className="three fields Orders">
+                    <div className="field Orders">
                       <label>Estado:</label>
                       <p>Santa Catarina</p>
                     </div>
-                    <div class="field Orders">
+                    <div className="field Orders">
                       <label>País:</label>
                       <p>Brasil</p>
                     </div>
-                    <div class="field Orders">
+                    <div className="field Orders">
                       <label>CEP</label>
                       <p>89256-690</p>
                     </div>

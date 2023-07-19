@@ -7,12 +7,12 @@ function CategoryCard() {
     return (
         <div className="ui segment itens container_category_card" id="itemCategory">
             <Link to="/product">
-                <p class="ui blue ribbon label category_card">Verificados</p>
+                <p className="ui blue ribbon label category_card">Verificados</p>
                 <div className="category_card_content" style={{ color: 'black' }}>
                     <div className="category_card_image">
                         <img src={motors} width="125" height="" />
                     </div>
-                    <div class="category_card_product_info">
+                    <div className="category_card_product_info">
                         <h3 className="category_card_product_name">W12 Monofásico</h3>
                         <h4 className="category_card_product_description">Desenvolvido para oferecer versatilidade e eficiência.</h4>
                         <h2 className="category_card_product_price">R$ 495<sup> 99</sup><sub className='category_card_product_subtext'>10x Sem juros</sub></h2>
@@ -23,7 +23,7 @@ function CategoryCard() {
                 <button className="ui blue icon button category_card" >
                     <i className="bookmark icon Category category_card"></i>
                 </button>
-                <button class="ui blue icon button category_card">
+                <button className="ui blue icon button category_card">
                     <i className="cart plus icon category_card"></i>
                 </button>
             </div>
