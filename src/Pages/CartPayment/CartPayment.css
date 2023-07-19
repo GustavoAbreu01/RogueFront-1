@@ -1,4 +1,4 @@
-.containerCartPayment {
+.container_cart_payment {
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -8,10 +8,9 @@
 
 .ui.tiny.steps {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-
 }
 
-.boxCartProductPayment {
+.box_cart_product_payment {
     background-color: var(--white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -21,7 +20,7 @@
     width: 100%;
 }
 
-.boxCartProductDetailPayment {
+.box_cart_product_detail_payment {
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -29,7 +28,7 @@
     width: 70%;
 }
 
-.boxInfoTotalCart {
+.box_info_total_cart {
     display: flex;
     width: 20%;
     height: 100%;
@@ -39,7 +38,7 @@
     gap: 2rem;
 }
 
-.boxInfoTotalBuy {
+.info_total_buy {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -61,7 +60,7 @@
     width: 100%;
 }
 
-.boxContainerProgress {
+.container_progress {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,34 +71,40 @@
     background-color: var(--blue-quaternary);
 }
 
-.TitleTextBuyProduct {
-    font-size: 1.5rem;
+.info_total_buy_title {
+    font-size: 23px;
     font-weight: bold;
     color: var(--blue-primary);
 }
 
-.TotalTextBuyProduct {
-    font-size: 1.5rem;
+.total_text_buy_product {
+    font-size: 23px;
     font-weight: bold;
     padding-top: 2rem;
     color: var(--blue-primary);
 }
 
-.subTextBuyProduct {
-    font-size: 1.1rem;
+.info_total_buy_subtitle {
+    font-size: 16px;
     font-weight: bold;
     color: var(--grey-terciary);
 }
 
-.boxCartProductTitle {
+.cart_payment_title {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 2rem;
 }
 
-.TitleTextCartProduct {
-    font-size: 2.5rem;
+.cart_payment_title_text {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--blue-primary);
+}
+
+.cart_product_title_text {
+    font-size: 30px;
     font-weight: bold;
     color: var(--blue-primary);
 }
@@ -137,12 +142,12 @@
     }
 }
 
-.formsPayment {
+.cart_payment_form {
     align-items: center;
     padding: 2rem;
 }
 
-.cardInstrution {
+.cart_payment_card_Instrution {
     width: 40%;
 }
 
@@ -169,32 +174,45 @@
 
 .cc.visa.icon {
     color: var(--blue-primary);
-    font-size: 2rem;
+    font-size: 20px;
     padding-top: 1%;
 }
 
 .cc.mastercard.icon {
     color: var(--blue-primary);
-    font-size: 2rem;
+    font-size: 20px;
     padding-top: 1%;
 }
 
 .cc.discover.icon {
     color: var(--blue-primary);
-    font-size: 2rem;
+    font-size: 20px;
     padding-top: 1%;
 }
 
 .cc.diners.club.icon {
     color: var(--blue-primary);
-    font-size: 2rem;
+    font-size: 20px;
     padding-top: 1%;
 }
 
-.fieldComp {
+.field.payment {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 1rem;
+}
+
+.box_cart_payment_title_similar {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }

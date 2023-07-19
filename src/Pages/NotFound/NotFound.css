@@ -1,4 +1,4 @@
-.ContainerNotFound {
+.container_not_found {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,12 +6,22 @@
     padding: 5rem;
 }
 
-.imgNotFound {
+.not_found_img {
     height: 40%;
     width: 40%;
 }
 
-.textTitleNotFound {
+.not_found_title {
     color: var(--blue-primary);
     font-weight: bold;
+    font-size: 20px;
+}
+
+.not_found_text {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--blue-primary);
+    gap: 0.5rem;
+    font-size: 14px;
 }

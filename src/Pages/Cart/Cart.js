@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Cart.css';
+
+//importando as frameworks
+import { Link } from 'react-router-dom';
+
+//Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCart from '../../Components/ProductCart/ProductCart';
-import { Link } from 'react-router-dom';
 import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 function Cart() {
@@ -27,7 +31,7 @@ function Cart() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='boxContainerProgress  '>
+      <div className='container_progress'>
         <div className="ui tiny steps">
           <div className="step">
             <i className="shop icon"></i>
@@ -55,11 +59,11 @@ function Cart() {
           </div>
         </div>
       </div>
-      <div className='containerCartAll'>
-        <div className='boxCartProductDetailAll'>
-          <div className='boxCartProductAll'>
-            <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Produtos e Frete</h5>
+      <div className='container_cart_all'>
+        <div className='box_cart_product_detail_all'>
+          <div className='box_cart_product_all'>
+            <div className='cart_product_title'>
+              <h5 className='cart_product_title_text'>Produtos e Frete</h5>
             </div>
             <ProductCart />
             <ProductCart />
@@ -67,21 +71,21 @@ function Cart() {
             <ProductCart />
           </div>
         </div>
-        <div className='boxInfoTotalCart'>
-          <div className='boxInfoTotalBuy'>
-            <div className='boxInfoTotalBuyTitle'>
-              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+        <div className='box_info_total_cart'>
+          <div className='info_total_buy'>
+            <div>
+              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Subtotal R${valor}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Frete R${frete}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
+            <div>
+              <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='boxButtonTotalCart'>
+            <div className='button_total_Cart'>
               {!verify() ?
                 <Link to='/register'>
                   <button className="fluid ui button final">Realizar Login</button>
@@ -96,7 +100,7 @@ function Cart() {
               </Link>
             </div>
           </div>
-          <div className='boxInfoRecommend'>
+          <div className='box_cart_info_recommend'>
             <SmallProductHorizontal />
             <SmallProductHorizontal />
             <SmallProductHorizontal />

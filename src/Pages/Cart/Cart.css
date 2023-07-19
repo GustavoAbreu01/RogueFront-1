@@ -1,4 +1,4 @@
-.containerCartAll {
+.container_cart_all {
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -11,7 +11,7 @@
 
 }
 
-.boxCartProductAll {
+.box_cart_product_all {
     background-color: var(--white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.boxCartProductDetailAll {
+.box_cart_product_detail_all {
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
@@ -29,7 +29,7 @@
     width: 70%;
 }
 
-.boxInfoTotalCart {
+.box_info_total_cart {
     display: flex;
     width: 20%;
     height: 100%;
@@ -39,7 +39,7 @@
     gap: 2rem;
 }
 
-.boxInfoTotalBuy {
+.info_total_buy {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -52,7 +52,7 @@
     width: 100%;
 }
 
-.boxInfoRecommend {
+.box_cart_info_recommend {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +65,7 @@
     width: 100%;
 }
 
-.boxContainerProgress{
+.container_progress{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,34 +76,34 @@
     background-color: var(--blue-quaternary);
 }
 
-.TitleTextBuyProduct {
-    font-size: 1.5rem;
+.info_total_buy_title {
+    font-size: 23px;
     font-weight: bold;
     color: var(--blue-primary);
 }
 
-.TotalTextBuyProduct {
-    font-size: 1.5rem;
+.total_text_buy_product {
+    font-size: 23px;
     font-weight: bold;
     padding-top: 2rem;
     color: var(--blue-primary);
 }
 
-.subTextBuyProduct {
-    font-size: 1.1rem;
+.info_total_buy_subtitle {
+    font-size: 16px;
     font-weight: bold;
     color: var(--grey-terciary);
 }
 
-.boxCartProductTitle {
+.cart_product_title {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 2rem;
 }
 
-.TitleTextCartProduct {
-    font-size: 2.5rem;
+.cart_product_title_text {
+    font-size: 30px;
     font-weight: bold;
     color: var(--blue-primary);
 }
@@ -113,7 +113,7 @@
     height: 100%;
 }
 
-.boxButtonTotalCart {
+.button_total_Cart {
     align-items: center;
     justify-content: center;
     display: flex;

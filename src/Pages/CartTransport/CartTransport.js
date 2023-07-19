@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 import './CartTransport.css';
+
+//Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import { FaStar } from 'react-icons/fa'
-import { Link } from 'react-router-dom';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+
+//Importando os icones
+import { FaStar } from 'react-icons/fa'
+
+//importando as frameworks
+import { Link } from 'react-router-dom';
+
 
 function CartTransport() {
 
   var valor = 1100.00;
-  var frete = 100;
+  var frete = 100; 
   var total = 1200;
 
   const verify = () => {
@@ -26,7 +33,7 @@ function CartTransport() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='boxContainerProgress  '>
+      <div className='container_progress  '>
         <div className="ui tiny steps">
           <div className="completed step">
             <i className="shop icon"></i>
@@ -54,13 +61,13 @@ function CartTransport() {
           </div>
         </div>
       </div>
-      <div className='containerCartTransport'>
-        <div className='boxCartProductDetailTransport'>
-          <div className='boxCartProductTransport'>
-            <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Verificar Transporte do Pedido</h5>
-            </div>
-            <div className='formsTransport'>
+      <div className='container_cart_transport'>
+        <div className='box_cart_product_detail_transport'>
+          <div className='box_cart_product_transport'>
+            <div className='cart_transport_title'>
+              <h5 className='cart_transport_title_text'>Verificar Transporte do Pedido</h5>
+            </div> 
+            <div className='cart_transport_form'>
               <form class="ui form">
                 <div class="field">
                   <label>Nome</label>
@@ -154,21 +161,21 @@ function CartTransport() {
             </div>
           </div>
         </div>
-        <div className='boxInfoTotalCart'>
-          <div className='boxInfoTotalBuy'>
-            <div className='boxInfoTotalBuyTitle'>
+        <div className='box_info_total_cart'>
+          <div className='info_total_buy'>
+            <div>
               <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Subtotal R${valor}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Frete R${frete}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
+            <div>
+              <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='boxButtonTotalCart'>
+            <div className='button_total_Cart'>
               <Link to='/cart/confirm'>
                 <button className="fluid ui button final">Finalizar Compra</button>
               </Link>
@@ -179,9 +186,9 @@ function CartTransport() {
           </div>
         </div>
       </div>
-      <div className='boxTitleSimilar'>
+      <div className='box_cart_transport_title_similar'>
         <FaStar color='var(--white)' size={40} />
-        <h1 className='titleSimilar' >Produtos Semelhantes</h1>
+        <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
       <Footer />

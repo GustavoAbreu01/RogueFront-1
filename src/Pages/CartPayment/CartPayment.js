@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import './CartPayment.css';
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import { Link } from 'react-router-dom';
-import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
-import { FaStar } from 'react-icons/fa';
+
+//Importando as imagens
 import CardAll from '../../assets/img/CardAll.png';
 import CardCVV from '../../assets/img/CardCVV.png';
 import CardDate from '../../assets/img/CardDate.png';
 import CardName from '../../assets/img/CardName.png';
 import CardNumber from '../../assets/img/CardNumber.png';
+
+//Importando os icones
+import { FaStar } from 'react-icons/fa';
+
+//Importando os componentes
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+
+//importando as frameworks
 import { Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 
 function CartPayment() {
@@ -50,7 +58,7 @@ function CartPayment() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='boxContainerProgress  '>
+      <div className='container_progress'>
         <div className="ui tiny steps">
           <div className="completed step">
             <i className="shop icon"></i>
@@ -78,34 +86,34 @@ function CartPayment() {
           </div>
         </div>
       </div>
-      <div className='containerCartPayment'>
-        <div className='boxCartProductDetailPayment'>
-          <div className='boxCartProductPayment'>
-            <div className='boxCartProductTitle'>
-              <h5 className='TitleTextCartProduct'>Forma de Pagamento</h5>
+      <div className='container_cart_payment'>
+        <div className='box_cart_product_detail_payment'>
+          <div className='box_cart_product_payment'>
+            <div className='cart_payment_title'>
+              <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>
-            <div className='formsPayment'>
+            <div className='cart_payment_form'>
               <form class="ui form">
                 <div class="fields">
                   {focusedInput === '1' && (
-                    <img src={CardName} className='cardInstrution' />
+                    <img src={CardName} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === '2' && (
-                    <img src={CardNumber} className='cardInstrution' />
+                    <img src={CardNumber} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === '3' && (
-                    <img data-aos="flip-left" src={CardCVV} className='cardInstrution' />
+                    <img data-aos="flip-left" src={CardCVV} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === '4' && (
-                    <img src={CardDate} className='cardInstrution' />
+                    <img src={CardDate} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === '5' && (
-                    <img src={CardDate} className='cardInstrution' />
+                    <img src={CardDate} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === null && (
-                    <img src={CardAll} className='cardInstrution' />
+                    <img src={CardAll} className='cart_payment_card_Instrution' />
                   )}
-                  <div className='fieldComp'>
+                  <div className='field payment'>
                     <div class="sixteen wide field">
                       <label>Bandera do Cartão</label>
                       <Dropdown
@@ -143,7 +151,7 @@ function CartPayment() {
                   <div class="ten wide field">
                     <label>CPF do titular</label>
                     <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
-                      onFocus={() => handleInputFocus('2')}
+                      onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
                     />
                   </div>
@@ -171,10 +179,24 @@ function CartPayment() {
                         </select>
                       </div>
                       <div class="field">
-                        <input id='YearCard' type="text" name="card[expire-year]" maxlength="4" placeholder="Ano"
-                          onFocus={() => handleInputFocus('5')}
+                      <select id='DateCard' class="ui fluid search dropdown" name="card[expire-month]"
+                          onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
-                        />
+                        >
+                          <option value="">Ano</option>
+                          <option value="23">23</option>
+                          <option value="24">24</option>
+                          <option value="25">25</option>
+                          <option value="26">26</option>
+                          <option value="27">27</option>
+                          <option value="28">28</option>
+                          <option value="29">29</option>
+                          <option value="30">30</option>
+                          <option value="31">31</option>
+                          <option value="32">32</option>
+                          <option value="33">33</option>
+                          <option value="34">34</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -183,21 +205,21 @@ function CartPayment() {
             </div>
           </div>
         </div>
-        <div className='boxInfoTotalCart'>
-          <div className='boxInfoTotalBuy'>
-            <div className='boxInfoTotalBuyTitle'>
-              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+        <div className='box_info_total_cart'>
+          <div className='info_total_buy'>
+            <div>
+              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Subtotal R${valor}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='subTextBuyProduct'>Frete R${frete}</h5>
+            <div>
+              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
             </div>
-            <div className='boxInfoTotalBuySubTitle'>
-              <h5 className='TotalTextBuyProduct'>Total R${total}</h5>
+            <div>
+              <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='boxButtonTotalCart'>
+            <div className='button_total_Cart'>
               <Link to='/cart/transport'>
                 <button className="fluid ui button final">Finalizar Compra</button>
               </Link>
@@ -209,9 +231,9 @@ function CartPayment() {
 
         </div>
       </div>
-      <div className='boxTitleSimilar'>
+      <div className='box_cart_payment_title_similar'>
         <FaStar color='var(--white)' size={40} />
-        <h1 className='titleSimilar' >Produtos Semelhantes</h1>
+        <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
       <Footer />
