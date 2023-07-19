@@ -1,88 +1,81 @@
-.column.itens {
+/* .column.itens {
     margin: 2rem;
-}
+} */
 
-.ui.segment.itens.categoryItens {
+.ui.segment.itens.container_category_card {
     border-radius: 1rem;
     background-color: var(--white);
     width: 64rem;
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
 a:link {
     text-decoration: none;
-    /* Remova a decoração de link (sublinhado) se necessário */
-}
+} 
 
-.itemContentCategory {
+.category_card_content {
     display: flex;
     align-items: center;
 }
 
-#imgItensCategory {
-
-    margin-right: 2rem;
-    /* Espaçamento entre a imagem e as outras informações */
-}
-
-.itemInfoCategory {
+.category_card_product_info {
     flex: 1;
-    /* Ocupa o espaço disponível */
     justify-content: space-between;
-    /* Alinha o conteúdo nos extremos da div */
 }
 
-.iconProductAction.category {
+.iconProductAction.category_card {
     position: absolute;
     top: 0px;
     right: 0px;
     background-color: transparent;
     border: none;
 }
-
+/* 
 .ui.vertically.divided.grid {
     margin: 3rem;
 }
 
 .ui.header.motor {
     text-align: center;
-}
+} */
 
-.itemPrecoCategory{
+.category_card_product_price {
+    font-size: 28px;
     padding-left: 2rem;
     color: var(--blue-primary);
 }
 
-.descricaoCategory{
-    font-size: 1.1rem;
+.category_card_product_description {
+    font-size: 16px;
     padding-left: 2rem;
     color: var(--grey-primary);
 }
 
-.itemNameCategory{
+.category_card_product_name {
+    font-size: 25px;
     color: var(--black);
     padding-left: 2rem;
 }
 
-.ui.segment.itens.categoryItens:hover {
+.ui.segment.itens.container_category_card:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
     cursor: pointer;
 
-    .iconProductAction {
+    .iconProductAction.category_card {
         opacity: 1;
         transition: 0.3s;
     }
 }
 
-.subtext.Category{
-    font-size: 1rem;
+.category_card_product_subtext {
+    font-size: 13px;
+    color: var(--grey-primary);
     top: 0px;
 }
 
-.buyCategoryButton {
+.category_card_buy_button {
     position: absolute;
     height: 3rem;
     width: 15rem;
@@ -90,7 +83,7 @@ a:link {
     right: 0;
 }
 
-.ui.fluid.blue.button.Category {
+.ui.fluid.blue.button.category_card {
     border-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 70%;

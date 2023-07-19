@@ -6,7 +6,7 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import iconMotor from "../../assets/img/iconeMotor.png"
 
-import NewCard from '../../Components/NewCard/NewCard';
+import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
@@ -120,7 +120,7 @@ function ProductCategory() {
             <div class="column itens">
               <div id="produtos">
                 {numero.map((i) => (
-                  <NewCard/>
+                  <CategoryCard/>
                 ))}
               </div>
             </div>
