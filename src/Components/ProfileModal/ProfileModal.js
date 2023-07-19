@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './ProfileModal.css'
-import { CgProfile } from 'react-icons/cg'
-import logoWeg from "../../assets/img/logoWEG.png"
+//import de imagens
 import logoDes from "../../assets/img/LogoWegDesing.png"
-import LanguageModal from '../LanguageModal/LanguageModal'
+//
+//import de icons do react-icons
+import { CgProfile } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
-import { AiOutlineClose } from 'react-icons/ai'
 import { BsArrowBarRight } from 'react-icons/bs'
+//
 
 export default function ProfileModal({ user }) {
   const [openModal, setOpenModal] = useState(false);
