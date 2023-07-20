@@ -34,22 +34,22 @@
     margin: 1rem;
 }
 
-.ui.fluid.button.sellProductPage {
+.ui.fluid.button.sell_product_page {
     height: 3.5rem;
     margin-top: 1rem;
 
 }
 
-.ui.fluid.button.cartProductPage {
+.ui.fluid.button.cart_product_page {
     height: 3.5rem;
     margin-top: 1rem;
     background-color: var(--blue-secundary);
 }
 
-.boxTitleSimilar{
+.boxTitleSimilar {
     display: flex;
     align-items: center;
-    background-color: var(--blue-primary); 
+    background-color: var(--blue-primary);
     width: 50%;
     gap: 2rem;
     height: 3rem;
@@ -59,39 +59,40 @@
     border-bottom-right-radius: 50px;
 }
 
-th, td {
+th,
+td {
     width: 30vw;
     height: 5vh;
     border: 1px solid #CBCBCB;
     font-size: 20px;
     text-align: center;
     margin: 0 auto;
-  }
+}
 
 table {
     border-collapse: collapse;
-  }
+}
 
-  td{
+td {
     background-color: #EDEDED;
-  }
+}
 
-  .caracterisicas td:nth-child(1){
+.caracterisicas td:nth-child(1) {
     background-color: #C6C6C6;
     border: 1px solid #D9D9D9;
     color: black;
-  }
+}
 
 /* Fim table */
 
 /* Opicionais */
 
-.opcionais h1{
+.opcionais h1 {
     color: black;
     margin: 0;
 }
 
-.opcionais h2{
+.opcionais h2 {
     font-size: 17px;
     margin: 0;
 }
@@ -99,13 +100,13 @@ table {
 .opcionais p {
     margin: 0;
 
-} 
+}
 
 
 @media screen and (max-width: 1024px) {
     /* TEXT */
 
-    .body-product{
+    .body-product {
         width: 70%;
         height: 100%;
         margin: 5% 0 0 15%;
@@ -113,73 +114,73 @@ table {
         border-radius: 10px;
     }
 
-    .body-product h3{
+    .body-product h3 {
         max-width: 90%;
     }
 
-    .save img{
+    .save img {
         width: 6%;
         float: right;
         margin-right: 25px;
     }
 
-    .avaliacao{
+    .avaliacao {
         display: flex;
         margin: none;
         margin-left: -50px;
-       }
+    }
 
-       .star-icon ul{
+    .star-icon ul {
         margin: none;
-       }
+    }
 
-      .star-icon{
+    .star-icon {
         list-style-type: none;
         border: 1px solid #fff;
         cursor: pointer;
         margin-top: -35px;
         color: #00579D;
         font-size: 25px;
-      }
+    }
 
-      .star-icon::before{
+    .star-icon::before {
         content: "\2605";
-      }
+    }
 
-      .star-icon.ativo ~ .star-icon::before{
+    .star-icon.ativo~.star-icon::before {
         content: "\2606";
-      }
+    }
 
-      .avaliacao:hover .star-icon::before{
+    .avaliacao:hover .star-icon::before {
         content: "\2605";
-      }
+    }
 
-      .star-icon:hover ~ .star-icon::before{
+    .star-icon:hover~.star-icon::before {
         content: "\2606";
-      }
+    }
 
     /* Substituir a imagem branca pela azul */
 
-    .price{
+    .price {
         display: flex;
         flex-direction: row;
-        margin-bottom: 5%; 
+        margin-bottom: 5%;
     }
 
-    .price .int{
+    .price .int {
         font-size: 40px;
     }
 
-    .price .cent{
+    .price .cent {
         margin-top: -10px;
     }
 
-    .payment a{
+    .payment a {
         color: #0080C5;
         text-decoration: none;
     }
 
-    .informacoes{
+    .informacoes {
         padding: 30px;
         color: #565656;
         width: 100%;
@@ -188,14 +189,14 @@ table {
         margin: 0 auto;
     }
 
-    .informacoes .image{
+    .informacoes .image {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
     }
 
-    .informacoes img{
+    .informacoes img {
         display: flex;
         justify-content: space-evenly;
         padding: 20px;
@@ -203,11 +204,11 @@ table {
         height: 300px;
     }
 
-    .informacoes h1{
+    .informacoes h1 {
         margin: none;
     }
 
-    .informacoes .title{
+    .informacoes .title {
         display: flex;
         justify-content: start;
         flex-direction: column;
@@ -216,9 +217,9 @@ table {
         color: #00579D;
     }
 
-/* Buy buttons */
+    /* Buy buttons */
 
-    .opcBuy{
+    .opcBuy {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -226,7 +227,7 @@ table {
         margin: 5% auto;
     }
 
-    .opcBuy .Buy button{
+    .opcBuy .Buy button {
         width: 25vw;
         height: 7vh;
         border-radius: 7px;
@@ -234,20 +235,21 @@ table {
         background-color: #00579D;
     }
 
-    .opcBuy .Buy button{
+    .opcBuy .Buy button {
         color: #fff;
         font-size: 20px;
         font-weight: bold
     }
 
-    .opcBuy .Buy button{
+    .opcBuy .Buy button {
         box-shadow: -0.5px 2px 5px 0px rgb(143, 143, 143);
     }
+
     /* Fim Buy buttons */
 
     /* Car Buttons */
 
-    .opcBuy .Car button{
+    .opcBuy .Car button {
         width: 25vw;
         height: 7vh;
         border-radius: 7px;
@@ -256,13 +258,13 @@ table {
         margin-top: 10px;
     }
 
-    .opcBuy .Car button{
+    .opcBuy .Car button {
         color: #00579D;
         font-size: 20px;
         font-weight: bold
     }
 
-    .opcBuy .Car button{
+    .opcBuy .Car button {
         box-shadow: -0.5px 2px 5px 0px rgb(143, 143, 143);
     }
 
@@ -270,21 +272,22 @@ table {
 
     /* Parte de baixo */
 
-    .aboutProduct{
+    .aboutProduct {
         margin-left: 40px;
         color: #565656;
     }
 
-    .aboutProduct h1{
+    .aboutProduct h1 {
         color: #00579D;
         font-weight: bold;
     }
-    .aboutProduct h2{
+
+    .aboutProduct h2 {
         font-weight: bold;
         margin: 0px;
     }
 
-    .aboutProduct h3{
+    .aboutProduct h3 {
         font-weight: lighter;
     }
 
@@ -292,44 +295,45 @@ table {
 
     /* Table */
 
-    table{
+    table {
         margin: 0 auto;
         align-items: center;
     }
 
-    th, td {
+    th,
+    td {
         width: 30vw;
         height: 5vh;
         border: 1px solid #CBCBCB;
         font-size: 20px;
         text-align: center;
         margin: 0 auto;
-      }
+    }
 
     table {
         border-collapse: collapse;
-      }
+    }
 
-      td{
+    td {
         background-color: #EDEDED;
-      }
+    }
 
-      .caracterisicas td:nth-child(1){
+    .caracterisicas td:nth-child(1) {
         background-color: #C6C6C6;
         border: 1px solid #D9D9D9;
         color: black;
-      }
+    }
 
     /* Fim table */
 
     /* Opicionais */
 
-    .opcionais h1{
+    .opcionais h1 {
         color: black;
         margin: 0;
     }
 
-    .opcionais h2{
+    .opcionais h2 {
         font-size: 17px;
         margin: 0;
     }
@@ -338,9 +342,10 @@ table {
         margin: 0;
 
     }
+
     /* Fim Opicionais */
 
-/* FIM TEXT */
+    /* FIM TEXT */
 }
 
 .box_product_page_title_similar {
