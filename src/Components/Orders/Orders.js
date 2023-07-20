@@ -1,11 +1,11 @@
 import React from 'react'
 import './Orders.css'
-import { useState } from 'react';
-import { Link } from "react-router-dom";
+
 import motors from "../../assets/img/motores.png"
 import CartProduct from "../ProductCart/ProductCart";
 
-
+import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function Orders() {
 
@@ -15,81 +15,79 @@ function Orders() {
     setIsOpen(!isOpen);
   };
 
-
-
   return (
     <>
       <div className="container_product_order">
-        <div className={`itemContent order ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>
+        <div className={`item_order_content ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>
           <div id="imgItens order">
             <img src={motors} width="125" height="" />
           </div>
-          <div className="itemInfo order">
-            <h2 className="itemNome order">Pedido 26/07/2023</h2>
-            <h2 id="itemPreco order" className="itemPreco order">
+          <div className="order_item_info">
+            <h2 className="order_product_name">Pedido 26/07/2023</h2>
+            <h2 id="itemPreco order" className="order_product_price">
               Total: R$ 495<sup>99</sup>
-              <sub className="subtext order">parcelado em 8x</sub>
+              <sub className="order_product_subtext">parcelado em 8x</sub>
             </h2>
-            <p className="itemComplement order">
+            <p className="order_product_complement">
               Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...
             </p>
           </div>
-          <div className="buttons order">
+          <div className="order_buttons">
             <button className="ui icon button order">
               <i className="angle down icon order"></i>
             </button>
           </div>
         </div>
         {isOpen && (
-          <div className="dropdownContentOrders" data-aos="fade-down">
-            <div className='moreContentOrder'>
-              <div className='confirmTransportOrders'>
-                <form className="ui form confirm Orders">
-                  <div className="field Orders">
-                    <div className="three fields Orders">
-                      <div className="field Orders">
+          <div className="order_dropdown" data-aos="fade-down">
+            <div className='container_order_dropdown_info'>
+              <div className='container_order_transport_info'>
+                <form className="ui form confirm order">
+                  <div className="field order">
+                    <div className="three fields order">
+                      <div className="field order">
                         <label>Produtos</label>
                         <p>Motor W33</p>
                         <p>Motor W12</p>
 
                       </div>
-                      <div className="field Orders">
+                      <div className="field order">
                         <br />
                         <p>x3</p>
                         <p>x1</p>
                       </div>
-                      <div className="field Orders">
+                      <div className="field order">
                         <br />
                         <p>R$ 2.333,33</p>
                         <p>R$ 1.333,33</p>
                       </div>
                     </div>
-                    <div className="three fields Orders">
+                    <div className="three fields order">
 
-                      <div className="field Orders">
+                      <div className="field order">
                         <label>Nome do Responsável</label>
                         <p>Gustavo Guilherme de Abreu</p>
                       </div>
-                      <div className="field Orders">
+                      <div className="field order">
                         <label>Endereço:</label>
                         <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
                       </div>
-                      <div className="field Orders">
+                      <div className="field order">
                         <label>Complemento:</label>
                         <p>Torre 1, Apto 706</p>
                       </div>
                     </div>
                   </div>
-                  <div className="three fields Orders">
-                    <div className="field Orders">
+                  <div className="three fields order">
+                    <div className="field order">
                       <label>Estado:</label>
                       <p>Santa Catarina</p>
                     </div>
-                    <div className="field Orders">
+                    <div className="field order">
                       <label>País:</label>
                       <p>Brasil</p>
                     </div>
-                    <div className="field Orders">
+                    <div className="field order">
                       <label>CEP</label>
                       <p>89256-690</p>
                     </div>
@@ -98,21 +96,21 @@ function Orders() {
 
 
               </div>
-              <div className='boxStepsOrders'>
-                <div className="ui tiny steps Orders">
-                  <div className="step Orders">
+              <div className='container_order_steps'>
+                <div className="ui tiny steps order">
+                  <div className="step order">
                     <i className="boxes icon"></i>
                     <div className="content">
                       <div className="title">Pedido finalizado</div>
                     </div>
                   </div>
-                  <div className="disabled step Orders">
+                  <div className="disabled step order">
                     <i className="dolly flatbed icon"></i>
                     <div className="content">
                       <div className="title">Entregue a transportadora</div>
                     </div>
                   </div>
-                  <div className="disabled step  Orders">
+                  <div className="disabled step order">
                     <i className="shipping fast icon"></i>
                     <div className="content">
                       <div className="title">Saiu para entrega</div>
