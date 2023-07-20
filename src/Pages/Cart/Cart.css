@@ -104,6 +104,7 @@
 
 .cart_product_title_text {
     font-size: 30px;
+    padding-bottom: 5rem;
     font-weight: bold;
     color: var(--blue-primary);
 }
