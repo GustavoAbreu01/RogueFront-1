@@ -1,14 +1,14 @@
-.searchbar {
+.container_searchBar {
   position: relative;
   display: inline-block;
 }
 
-.searchbar ::selection{
+.container_searchBar ::selection{
   background-color: rgb(0, 87, 157, 0.400);
   color: #000000;
 }
 
-.searchbar input[type="text"] {
+.container_searchBar input[type="text"] {
   width: 45rem;
   padding: 8px;
   font-size: 16px;
@@ -16,11 +16,11 @@
   border-radius: 10px;
 }
 
-.searchbar input[type="text"]:focus {
+.container_searchBar input[type="text"]:focus {
   outline: none;
 }
 
-.searchbar .suggestions {
+.container_searchBar .serarchBar_suggestions {
   position: absolute;
   top: 100%;
   left: 0;
@@ -36,11 +36,11 @@
   z-index: 10;
 }
 
-.searchbar .suggestions li {
+.container_searchBar .serarchBar_suggestions li {
   cursor: pointer;
   padding: 8px;
 }
 
-.searchbar .suggestions li:hover {
+.container_searchBar .serarchBar_suggestions li:hover {
   background-color: #f5f5f5;
 }

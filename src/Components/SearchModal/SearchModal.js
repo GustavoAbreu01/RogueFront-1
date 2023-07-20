@@ -37,7 +37,7 @@ function SearchBar() {
   ];
 
   return (
-    <div className="searchbar">
+    <div className="container_searchBar">
       <input
         type="text"
         placeholder="Pesquisar..."
@@ -45,7 +45,7 @@ function SearchBar() {
         onChange={handleInputChange}
       />
       {showSuggestions && (
-        <ul className="suggestions">
+        <ul className="serarchBar_suggestions">
           {suggestions
             .filter((suggestion) =>
               suggestion.toLowerCase().includes(searchTerm.toLowerCase())
