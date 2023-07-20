@@ -1,4 +1,4 @@
-.modal-profile-content{
+.modal_profile_content{
     z-index: 250;
     font-size: 20px;
     display: flex;
@@ -15,7 +15,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.modal-profile-content-detail {
+.modal_profile_content_container {
     z-index: 250;
     font-size: 20px;
     align-items: center;
@@ -33,31 +33,32 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.backIcon {
+.back_icon {
     color: var(--white);
     font-size: 2rem;
     cursor: pointer;
 }
 
-.profileIcon {
+.profile_icon {
+    color: var(--white);
     font-size: 35px;
     margin-left: 1rem;
 }
 
-.profileIcon:hover {
+.profile_icon:hover {
     color: var(--blue-secundary);
     transition: 0.3s;
     cursor: pointer;
 }
 
-.profile-modal-header {
+.profile_modal_header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.perfil-image {
+.perfil_image {
     width: 35%;
     height: 35%;
     margin-top: 2rem;
@@ -65,7 +66,7 @@
     color: var(--blue-secundary);
 }
 
-.circular.ui.icon.button.edit {
+.circular.ui.icon.button.edit.profile {
     position: absolute;
     right: 0;
     top: 0;
@@ -77,23 +78,23 @@
     cursor: pointer;
 }
 
-.circular.ui.icon.button.edit:hover {
+.circular.ui.icon.button.edit.profile:hover {
     background-color: var(--blue-primary);
     color: var(--blue-secundary);
     transition: 0.3s;
 }
 
-.profile-modal-header {
+.profile_modal_header {
     display: flex;
     flex-direction: column;
 }
 
-.usernameProfile {
+.username_profile {
     color: var(--black);
-    font-size: 1.5rem;
+    font-size: 20px;
 }
 
-.profileItem {
+.profile_item {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -101,7 +102,7 @@
     margin-top: 1rem;
 }
 
-.profileOpt {
+.profile_opt {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,13 +112,13 @@
     padding-left: 2rem;
 }
 
-.textProfileOpt {
+.text_profile_opt {
     color: var(--black);
-    font-size: 1.3rem;
+    font-size: 18px;
     margin-top: 1rem;
 }
 
-.textProfileContainer {
+.text_profile_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -126,7 +127,7 @@
     padding-left: 2rem;
 }
 
-.profileFooter {
+.profile_footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,7 +136,7 @@
     bottom: 0;
 }
 
-.profileLogo {
+.profile_logo {
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -143,18 +144,18 @@
     color: var(--blue-secundary);
 }
 
-.logoWeg {
+.logo_weg {
     width: 90%;
     color: var(--blue-secundary);
 }
 
-.textProfileFooter {
+.text_profile_footer {
     color: var(--blue-secundary);
-    font-size: 1rem;
+    font-size: 13px;
     margin-top: -rem;
 }
 
-.baseFooter {
+.base_footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -163,67 +164,67 @@
     margin-top: 1rem;
 }
 
-.textProfileOpt:hover {
+.text_profile_opt:hover {
     color: var(--blue-primary);
     transition: 0.3s;
     cursor: pointer;
 }
 
-.ui.icon.button.question {
+.ui.icon.button.question.profile {
     background-color: var(--blue-secundary);
 }
 
-.ui.icon.button.basket {
+.ui.icon.button.basket.profile {
     background-color: var(--blue-secundary);
 }
 
-.ui.icon.button.shopping {
+.ui.icon.button.shopping.profile {
     background-color: var(--blue-secundary);
 }
 
-.ui.icon.button.vision {
+.ui.icon.button.vision.profile {
     background-color: var(--blue-secundary);
 }
 
-.ui.icon.button.question:hover {
+.ui.icon.button.question.profile:hover {
     background-color: var(--blue-primary);
 }
 
-.ui.icon.button.basket:hover {
+.ui.icon.button.basket.profile:hover {
     background-color: var(--blue-primary);
 }
 
-.ui.icon.button.shopping:hover {
+.ui.icon.button.shopping.profile:hover {
     background-color: var(--blue-primary);
 }
 
-.ui.icon.button.vision:hover {
+.ui.icon.button.vision.profile:hover {
     background-color: var(--blue-primary);
 }
 
-.youtube.circle.icon {
+.youtube.circle.icon.profile {
     color: var(--blue-primary);
 }
 
-.spotify.circle.icon {
+.spotify.circle.icon.profile {
     color: var(--blue-primary);
 }
 
-.linkedin.circle.icon {
+.linkedin.circle.icon.profile {
     color: var(--blue-primary);
 }
 
-.skype.circle.icon {
+.skype.circle.icon.profile {
     color: var(--blue-primary);
 }
 
-.envelope.circle.icon {
+.envelope.circle.icon.profile {
     color: var(--blue-primary);
 }
 
-.cpfProfile {
+.cpf_profile {
     color: var(--grey-tertiary);
-    font-size: 1.1rem;
+    font-size: 14px;
 }
 
 .modal-profile-acessibility-container {
@@ -247,12 +248,12 @@
     padding-left: 1rem;
 }
 
-.profile-acessibility-container {
+.box_profile_acessibility {
     position: fixed;
     left: 0;
 }
 
-.modal-profile-acessibility-container {
+.modal_profile_acessibility_container {
     position: fixed;
     top: 15%;
     right: 0;
@@ -266,19 +267,19 @@
     border-radius: 10px;
 }
 
-.ui.left.compact.segment {
+.ui.left.compact.segment.profile {
     background-color: var(--blue-secundary);
     border: none;
     box-shadow: none;
 }
 
-.ui.fitted.slider.checkbox {
+.ui.fitted.slider.checkbox.profile {
     color: var(--black);
     border: none;
     box-shadow: none;
 }
 
-.ui.field.left.compact.segment {
+.ui.field.left.compact.segment.profile {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -287,18 +288,18 @@
     gap: 1rem;
 }
 
-.titleAcessibility {
+.title_acessibility {
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     top: 5%;
-    font-size: 2rem;
+    font-size: 26px;
     left: 10%;
     position: fixed;
 }
 
-.buttonAcessibility {
+.button_acessibility {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,14 +309,14 @@
     top: 85%;
 }
 
-.ui.right.labeled.icon.button {
+.ui.right.labeled.icon.button.profile {
     background-color: var(--blue-primary);
     height: 10%;
     width: 100%;
     color: var(--blue-white);
 }
 
-.ui.right.labeled.icon.button:hover {
+.ui.right.labeled.icon.button.profile:hover {
     background-color: var(--blue-secundary);
     border: solid 1px #fff;
     color: var(--blue-white);
