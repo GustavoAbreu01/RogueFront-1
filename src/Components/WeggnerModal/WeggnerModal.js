@@ -21,28 +21,28 @@ function WeggnerModal() {
 
 
     <div>
-      {verify() && <div data-aos="fade-up" className='modalContent'>
-        <div className='textWeggnerModal'>
-          <div class="chat">
-            <div class="yours messages">
-              <div id='text' class="message last">
+      {verify() && <div data-aos="fade-up" className='container_modalContent'>
+        <div className='box_modalContent_textWeggnerModal'>
+          <div class="modalContent_chat">
+            <div class="yours modalContent_messages">
+              <div id='text' class="modalContent_message last">
                 <p>Olá, eu sou o Wegner, seu assistente virtual. Como posso te ajudar?</p>
               </div>
               <TypeWriter />
             </div>
           </div>
-          <div className='inputWeggnerModal'>
+          <div className='box_inputWeggnerModal'>
             <div class="ui fluid action input">
               <input type="text" placeholder="Enviar Mensagem..."/>
             </div>
           </div>
         </div>
       </div>}
-      <div className='wegnerModal'>
+      <div className='box_modalContent_wegnerModal'>
         {!verify() ?
-          <div onClick={() => setOpenModal(openModal + 1)}><img src={wegnerSleeping} alt='' className='wegner'></img></div>
+          <div onClick={() => setOpenModal(openModal + 1)}><img src={wegnerSleeping} alt='' className='modalContent_wegner'></img></div>
           :
-          <div onClick={() => setOpenModal(openModal - 1)}><img src={wegnerAwake} alt='' className='wegner'></img></div>
+          <div onClick={() => setOpenModal(openModal - 1)}><img src={wegnerAwake} alt='' className='modalContent_wegner'></img></div>
         }
       </div>
     </div>
