@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
+//import de icons do react-icons
 import { BiMenu } from 'react-icons/bi';
 import { Link } from 'react-router-dom'; 
 import { BsArrowBarLeft } from 'react-icons/bs';
+//
+//import de imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
 import iconTecSolutions from "../../assets/img/DIFERENTESTECNOLOGIAS.png"
 import iconEnergy from "../../assets/img/ENERGIA FOTOVOLTAICA_SOLAR.png"
 import iconPaint from "../../assets/img/PINTURA_TINTAS.png"
+
 
 import './MenuModal.css';
 
@@ -53,61 +57,61 @@ function MenuModal() {
   return (
     <>
       <div>
-        <BiMenu className="MenuIcon" onClick={toggleModal}></BiMenu>
+        <BiMenu className="menu_icon" onClick={toggleModal}></BiMenu>
       </div>
       {openModal && (
-        <div className="modal-menu-content-detail">
-          <BsArrowBarLeft className="backIcon" onClick={toggleModal}></BsArrowBarLeft>
-          <div className="modal-menu-content" data-aos="fade-right">
-            <div className="modal-menu-content-header">
-              <h1 className="modal-menu-title">Categorias</h1>
+        <div className="container_modal_menu_content_detail">
+          <BsArrowBarLeft className="back_icon" onClick={toggleModal}></BsArrowBarLeft>
+          <div className="box_modal_menu_content" data-aos="fade-right">
+            <div className="box_modal_menu_content_header">
+              <h1 className="modal_menu_title">Categorias</h1>
             </div>
-            <div className="modal-menu-content-body">
-              <div className="categorySelected">
-                <div className="categoryTitleSelected">
+            <div className="modal_menu_content_body">
+              <div className="category_selected">
+                <div className="category_title_selected">
                   <img src={iconMotor} alt="iconeMotor" width={30} />
-                  <p className="titleTitleCategory" >Motores Elétricos</p>
+                  <p className="category_title" >Motores Elétricos</p>
                 </div>
-                <div className="subCategorySelected" >
-                  <Link to='/category'><li className="subCategory" >Monofásico</li></Link>
-                  <Link to='/category'><li className="subCategory" >Trifásico - Baixa Tensão</li></Link>
-                  <Link to='/category'><li className="subCategory" >Trifásico - Alta Tensão</li></Link>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Monofásico</li></Link>
+                  <Link to='/category'><li className="sub_category" >Trifásico - Baixa Tensão</li></Link>
+                  <Link to='/category'><li className="sub_category" >Trifásico - Alta Tensão</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider"></div>
-              <div className="categorySelected">
-                <div className="categoryTitleSelected">
+              <div class="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
                   <img src={iconTecSolutions} alt="iconeMotor" width={25} />
-                  <p className="titleTitleCategory">Digital Solutions</p>
+                  <p className="category_title">Digital Solutions</p>
                 </div>
-                <div className="subCategorySelected" >
-                  <Link to='/category'><li className="subCategory" >Categorias Plataforma IoT</li></Link>
-                  <Link to='/category'><li className="subCategory" >Gestão de Energia</li></Link>
-                  <Link to='/category'><li className="subCategory" >Inteligência Artificial</li></Link>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Categorias Plataforma IoT</li></Link>
+                  <Link to='/category'><li className="sub_category" >Gestão de Energia</li></Link>
+                  <Link to='/category'><li className="sub_category" >Inteligência Artificial</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider"></div>
-              <div className="categorySelected">
-                <div className="categoryTitleSelected">
+              <div class="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
                   <img src={iconPaint} alt="iconeMotor" width={25} />
-                  <p className="titleTitleCategory">Tintas e Vernizes</p>
+                  <p className="category_title">Tintas e Vernizes</p>
                 </div>
-                <div className="subCategorySelected" >
-                  <Link to='/category'><li className="subCategory" >Tinta Liquida</li></Link>
-                  <Link to='/category'><li className="subCategory" >Tinta Pó</li></Link>
-                  <Link to='/category'><li className="subCategory" >Vernizes Impregnação</li></Link>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Tinta Liquida</li></Link>
+                  <Link to='/category'><li className="sub_category" >Tinta Pó</li></Link>
+                  <Link to='/category'><li className="sub_category" >Vernizes Impregnação</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider"></div>
-              <div className="categorySelected">
-                <div className="categoryTitleSelected">
+              <div class="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
                   <img src={iconEnergy} alt="iconeMotor" width={25} />
-                  <p className="titleTitleCategory">Geradores</p>
+                  <p className="category_title">Geradores</p>
                 </div>
-                <div className="subCategorySelected" >
-                  <Link to='/category'><li className="subCategory" >Aerogeradores</li></Link>
-                  <Link to='/category'><li className="subCategory" >Gerador Solar Fotovoltaico</li></Link>
-                  <Link to='/category'><li className="subCategory" >Turbinas Hidráulicas</li></Link>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Aerogeradores</li></Link>
+                  <Link to='/category'><li className="sub_category" >Gerador Solar Fotovoltaico</li></Link>
+                  <Link to='/category'><li className="sub_category" >Turbinas Hidráulicas</li></Link>
                 </div>
               </div>
             </div>
