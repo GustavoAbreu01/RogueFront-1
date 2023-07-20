@@ -4,7 +4,7 @@
     background-color: #0080C5;
 }
 
-.footer{
+.container_footer {
     background-color: #023A67;
     border-top: 2px solid #0080C5;
     height: 100%;
@@ -12,24 +12,23 @@
     color: white;
 }
 
-.informations{
-    margin-right: 5%;
+.box_footer_informations{
     font-family: 'Inter Tight', sans-serif;
     display: flex;
     justify-content: space-around;
     line-height: 25px;
 }
 
-.local{
+.footer_location_informations{
     max-width: 250px;
     margin-top: 5%;
 }
 
-.local h4{
+.footer_location_informations h4{
     align-items: center;
 }
 
-.localDivisor{
+.location_footer_divisor {
     display: flex;
     justify-content: left;
     width: 80px;
@@ -37,7 +36,7 @@
     background-color: #2777B7;
 }
 
-.local p{
+.footer_location_informations p{
     font-family: 'Inter Tight', sans-serif;
     font-size: 85%;
     display: flex;
@@ -47,7 +46,7 @@
     color: white;
 }
 
-.local a{
+.footer_location_informations a{
     font-family: 'Inter Tight', sans-serif;
     font-size: 85%;
     display: flex;
@@ -57,11 +56,11 @@
     color: white;
 }
 
-.contacts{
+.footer_contacts{
     margin-top: 5%;
 }
 
-.contacts a {
+.footer_contacts a {
     font-family: 'Inter Tight', sans-serif;
     font-size: 85%;
     display: flex;
@@ -72,15 +71,15 @@
     margin-bottom: -4px;
 }
 
-.contacts a:hover{
+.footer_contacts a:hover{
     color: #0080C5;
 }
 
-.contacts a:active{
+.footer_contacts a:active{
     color: #ffffff;
 }
 
-.contactsDivisor{
+.contacts_footer_divisor{
     display: flex;
     justify-content: center;
     width: 80px;
@@ -90,22 +89,22 @@
     background-color: #2777B7;
 }
 
-.contacts h4{
+.footer_contacts h4{
     text-align: center;
     align-items: center;
 }
 
-.social{
+.footer_social{
     margin-top: 5%;
 }
 
-.social image{
+.footer_social image{
     width: 20px;
     margin: 0 auto;
     margin-bottom: 5px;
 }
 
-.social a {
+.footer_social a {
     font-family: 'Inter Tight', sans-serif;
     font-size: 85%;
     display: flex;
@@ -114,15 +113,15 @@
     color: white;
 }
 
-.social a:hover{
+.footer_social a:hover{
     color: #0080C5;
 }
 
-.social a:active{
+.footer_social a:active{
     color: #ffffff;
 }
 
-.socialDivisor{
+.social_footer_divisor{
     display: flex;
     width: 80px;
     height: 4px;
@@ -131,33 +130,8 @@
     background-color: #2777B7;
 }
 
-footer .image{
+footer .footer_image_weg{
     display: flex;
     justify-content: center;
     padding-top: 4%;
-}
-
-.navBar {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    background-color: #2777B7;
-    height: 49px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.navBar a{
-    color: white;
-    margin-right: 20px;
-    text-decoration: none;
-    
-}
-
-.divisores{
-    background-color: white;
-    width: 1px;
-    height: 20px;
 }
