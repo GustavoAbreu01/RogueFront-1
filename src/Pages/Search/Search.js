@@ -4,7 +4,7 @@ import './Search.css'
 //Importando os componentes
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import SmallProductCard from '../../Components/SmallProductCard/SmallProductCard'
+import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 
 function Search() {

@@ -12,6 +12,9 @@ import Assistência from "../../assets/img/CALL_CENTER-03.png"
 import IoT from "../../assets/img/PLATAFORMA_IOT_WEGNOLOGY-03.png"
 import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
 import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
+import questIcon from "../../assets/img/questionario.png"
+import compare from '../../assets/img/compare.png'
+import weggner from '../../assets/img/WagnerDormindo.png'
 import motor from "../../assets/img/motor.png"
 
 //importando as frameworks
@@ -28,21 +31,17 @@ import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
-import './Home.css'
-import motor from "../../assets/img/motor.png"
-import { Link } from 'react-router-dom'
-import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel'
+
+//Importando os componentes
+import ProductCarousel from '../../Components/ProductAccessedCarousel/ProductAccessedCarousel'
 import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
 import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
 import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
-import questIcon from "../../assets/img/questionario.png"
-import compare from '../../assets/img/compare.png'
-import weggner from '../../assets/img/WagnerDormindo.png'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/carousel/Carousel'
+import Carousell from '../../Components/BannerCarousell/BannerCarousell'
 
 
 function Home() {

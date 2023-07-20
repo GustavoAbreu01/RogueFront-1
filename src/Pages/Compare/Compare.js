@@ -3,7 +3,6 @@ import './Compare.css'
 //imagens
 import motor from "../../assets/img/motor.png"
 import CardCompare from '../../Components/CardCompare/CardCompare'
-import { IoMdAddCircle } from 'react-icons/io'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
