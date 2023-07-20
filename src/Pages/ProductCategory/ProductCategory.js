@@ -93,7 +93,7 @@ function ProductCategory() {
             <div className="column itens">
               <div id="produtos">
                 {numero.map((i) => (
-                  <NewCard/>
+                  <CategoryCard/>
                 ))}
               </div>
             </div>
