@@ -29,11 +29,137 @@ body{
 
 /* Having product */
 
-.container_salvos h1 {
+.salvos h1 {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 4rem;
     margin-top: 4rem;
+}
+
+.products.Save{
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    display: flex;
+    display: block;
+}
+
+.product .product-Image img{
+    width: 13rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-Info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 2rem;
+}
+
+.product-Info h1{
+    font-size: 2.5rem;
+    color: var(--blue-secundary);
+    margin-bottom: 2rem;
+}
+
+.product-Description{
+    width: 70%;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.product-Price{
+    display: flex;
+    align-items: center;
+}
+
+.product-Price img{
+    cursor: pointer;
+}
+
+.product-InfoAndPrice{
+    display: flex;
+}
+
+.product-Price{
+    display: flex;
+    width: 50%;
+    height: 10rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-Price h2{
+    font-size: 1.5rem;
+    color: var(--blue-secundary);
+}
+
+.product-Price img{
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    object-position: center;
+    margin-left: 1rem;
+}
+
+.saveCard{
+    margin: auto;
+}
+
+.IAProducts.Save{
+    padding-bottom: 5rem;
+    margin: 0 auto;
+    gap: 15rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.produtingos{
+    width: 30%;
+    margin-right: 6rem;
+
+}
+
+.boxTitleSimilarSave{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    background-color: var(--blue-primary);
+    width: 30%;
+    gap: 2rem;
+    height: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: var(--white);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.titles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.boxTitleTheme {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.boxSavedProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1rem;
+    width: 80%;
 }

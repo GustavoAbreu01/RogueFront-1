@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Save.css';
-import HaveProducts from './Products';
+import HaveProducts from './haveProducts';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import wegner from '../../assets/img/WagnerDormindo.png';
@@ -49,10 +49,22 @@ function Product() {
   if (lista.length === 0) {
     return (
       <>
-        <button onClick={adicionarProdutoAoLocalHost}>aaaaa</button>
-        <div className="noHaveProduct">
-          <img alt="noHaveProduct" />
-          <h1>Está tudo muito quieto por aqui...</h1>
+        <div className='titles'>
+          <div className='boxTitleSimilarOrder'>
+            <BsFillBookmarkFill color='var(--white)' size={40} />
+            <h1 className='titleSimilar'>Salvos</h1>
+          </div>
+          <div className='boxTitleSimilarSave'>
+            <div className='boxTitleTheme'>
+              <AiFillStar color='var(--white)' size={40} />
+              <h1 className='titleSimilar'>Recomendados</h1>
+            </div>
+            <RecommendedSave />
+            <RecommendedSave />
+            <RecommendedSave />
+            <RecommendedSave />
+            <RecommendedSave />
+          </div>
         </div>
         <button onClick={() => adicionarProdutoAoLocalHost()}>Adicionar</button>
 
@@ -60,15 +72,30 @@ function Product() {
     );
   } else {
     return (
-      <>
-        <div className="salvos">
-          <h1>Salvos</h1>
+      <><div className='titles'>
+        <div className='boxSavedProduct'>
+          <div className='boxTitleSimilarOrder'>
+            <BsFillBookmarkFill color='var(--white)' size={40} />
+            <h1 className='titleSimilar'>Salvos</h1>
+          </div>
+          <div className="products Save">
+            {products.map((item) => {
+              return <div key={item}><SaveCard item={item} /></div>;
+            })}
+          </div>
         </div>
-        <div className="products">
-          {products.map((item) => {
-            return <HaveProducts item={item} />;
-          })}
+        <div className='boxTitleSimilarSave'>
+          <div className='boxTitleTheme'>
+            <AiFillStar color='var(--white)' size={40} />
+            <h1 className='titleSimilar'>Recomendados</h1>
+          </div>
+          <RecommendedSave />
+          <RecommendedSave />
+          <RecommendedSave />
+          <RecommendedSave />
+          <RecommendedSave />
         </div>
+      </div>
       </>
     );
   }
