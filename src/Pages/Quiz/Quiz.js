@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './Quiz.css'
 import Footer from '../../Components/Footer/Footer'
-import ProductCarouselSmall from '../../Components/ProductCarouselSmall/ProductCarouselSmall'
+import ProductSmallCarousel from '../../Components/ProductSmallCarousel/ProductSmallCarousel'
 import w50 from "../../assets/img/motorW50.png"
 import Header from '../../Components/Header/Header';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
@@ -208,7 +208,7 @@ function Quiz() {
         <FaStar color='var(--white)' size={40} />
         <h1 className='titleSimilar' >Produtos Semelhantes</h1>
       </div>
-      <ProductCarouselSmall />
+      <ProductSmallCarousel />
       <Footer />
     </>
   );

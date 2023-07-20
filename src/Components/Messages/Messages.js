@@ -1,44 +1,32 @@
 import React from 'react'
 import './Messages.css'
-import { useState } from 'react';
-import { Rating } from 'semantic-ui-react';
-import { Link } from "react-router-dom";
+
 import { GrNotification } from 'react-icons/gr'
-import motors from "../../assets/img/motores.png"
-import CartProduct from "../ProductCart/ProductCart";
+
 
 
 
 function Messages() {
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-
-
   return (
     <>
-      <div className="cardMessage">
-      
-          <div className='itemContentMessage'>
-            <div className='notificationIconMessage'>
-              <GrNotification color='var(--white)' className='' />
-            </div>
-            <div className="itemInfoMessage">
-              <h4 className="itemNomeMessage">Verificação de E-mail</h4>
-              <p className="itemComplementMessage">
-               Verifique seu email para finalizar seu processo de cadastro
-              </p>
-            </div>
-
-            <div class="ui checkbox notifications">
-                  <input className="check" type="checkbox" id="visualizado" name="visualizado" value="visualizado" />
-                  <label className="desc" htmlFor="visualizado"></label>
-                </div>
+      <div className="container_card_message">
+        <div className='box_card_message_content'>
+          <div className='card_message_icon'>
+            <GrNotification color='var(--white)' className='' />
           </div>
+          <div className="box_card_message_info">
+            <h4 className="box_card_message_name">Verificação de E-mail</h4>
+            <p className="box_card_message_description">
+              Verifique seu email para finalizar seu processo de cadastro
+            </p>
+          </div>
+
+          <div className="ui checkbox card_message">
+            <input className="check" type="checkbox" id="visualizado" name="visualizado" value="visualizado" />
+            <label className="desc" htmlFor="visualizado"></label>
+          </div>
+        </div>
       </div >
     </>
   );

@@ -1,44 +1,32 @@
+import './ProductAccessedCarousel.css';
 import React, { useState } from 'react'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './ProductCarouselSmall.css';
-import Obj from '../../Components/SmallProductCard/SmallProductCard';
 
-function ProductCarouselSmall() {
+import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
+
+function ProductAccessedCarousel() {
 
 
     var settings = {
         className: "center",
         infinite: true,
-        slidesToShow: 7,
+        slidesToShow: 5,
         swipeToSlide: true,
         responsive: [
             {
-                breakpoint: 1824,
-                settings: {
-                    slidesToShow: 7,
-                    slidesToScroll: 4,
-                }
-            },
-            {
                 breakpoint: 1624,
                 settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 4,
-                }
-            },
-            {
-                breakpoint: 1324,
-                settings: {
                     slidesToShow: 4,
-                    slidesToScroll: 3,
+                    slidesToScroll: 4,
                 }
             },
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 2,
                 }
             },
@@ -61,32 +49,32 @@ function ProductCarouselSmall() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='container_product_accessed_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
-                <div className='box'>
-                    <Obj />
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
                 </div>
             </Slider>
         </div >
     )
 }
 
-export default ProductCarouselSmall
+export default ProductAccessedCarousel

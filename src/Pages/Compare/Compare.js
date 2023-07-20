@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './Compare.css'
 //imagens
 import motor from "../../assets/img/motor.png"
-//
-//components
-import CompareCard from '../../Components/CompareCard/CompareCard'
+import CardCompare from '../../Components/CardCompare/CardCompare'
+import { IoMdAddCircle } from 'react-icons/io'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
@@ -74,9 +73,9 @@ function Compare() {
           <FaArrowRightArrowLeft color='var(--white)' size={40} />
           <h1 className='title_similar' >Comparação de Produtos</h1>
         </div>
-        <div className='box_products'>
-          <CompareCard />
-          {!verify() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
+        <div className='products'>
+          <CardCompare />
+          {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
 

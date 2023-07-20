@@ -28,8 +28,9 @@ import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
-
-//Importando os componentes
+import './Home.css'
+import motor from "../../assets/img/motor.png"
+import { Link } from 'react-router-dom'
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel'
 import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
 import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
@@ -149,7 +150,7 @@ function Home() {
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
         <WeggnerModal />
-        <div className='home_carousel_banner'>
+        <div className='boxCarrossel'>
           <Carousell></Carousell>
         </div>
         <div className="home_divider_carousel"></div>
@@ -196,7 +197,7 @@ function Home() {
             <BiLineChart color='var(--blue-primary)' size={50} />
             <h1 className='home_accessed_title' >Produtos mais acessados</h1>
           </div>
-          <div className='home_slider_product_accessed'> 
+          <div className='sliderProductAccessed'>
             <ProductCarousel />
           </div>
         </div>
