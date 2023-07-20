@@ -32,9 +32,9 @@ function Orders() {
                 Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...
               </p>
             </div>
-            <div className="buttons order">
-              <button class="ui icon button order">
-                <Rating class="ui star rating productPage" maxRating={5} style={{ marginTop: '1rem' }} />
+            <div className="rated_product_buttons">
+              <button className="ui icon button rated_product">
+                <Rating className="ui rating rated_product" maxRating={5} style={{ marginTop: '1rem' }} />
               </button>
             </div>
           </div>
