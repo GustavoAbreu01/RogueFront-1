@@ -1,4 +1,4 @@
-.horizontalSmallBoxProduct.Recommended {
+.container_recommended_save {
     display: flex;
     align-items: start;
     background-color: var(--blue-primary);
@@ -8,17 +8,17 @@
     padding-bottom: 1rem;
 }
 
-.horizontalSmallBoxProductPrice.Recommended {
+.recommended_save_product_price {
     display: flex;
     align-items: center;
     padding-left: 1rem;
 }
 
-.horizontalSmallPriceProduct.Recommended {
+.recommended_save_product_price_tag {
     font-weight: bold;
 }
 
-.horizontalSmallBoxProductInfo.Recommended {
+.recommended_save_product_info {
     display: flex;
     padding-left: 0.4rem;
     padding-right: 1rem;
@@ -28,7 +28,7 @@
     
 }
 
-.horizontalSmallBoxProductTitle.Recommended {
+.recommended_save_product_title {
     display: flex;
     color: var(--white);
     flex-direction: column;
@@ -38,57 +38,18 @@
     height: 100%;
 }
 
-.productCardImage.Recommended {
+.recommended_save_image_tag {
     border-radius: 100px;
     border: 10px solid var(--blue-tertiary);
 }
 
-.horizontalSmallBoxProductImage.Recommended {
+.recommender_save_image {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.horizontalSmallBoxProductButton.Recommended {
-    right: 0%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 30px;
-}
-
-
-.ui.fluid.button.horizontalSmall.Recommended {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-    width: 1rem;
-}
-
-.detailSmallProduct.Recommended {
-    align-items: end;
-    display: flex;
-    justify-content: end;
-    background-color: var(--blue-tertiary);
-    width: 0.8rem;
-    height: 80%;
-    border-radius: 10px;
-}
-
-.detailTextSmallProduct.Recommended {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    color: var(--white);
-    rotate: 90deg;
-    font-size: 1rem;
-}
-
-.buttonRecommendIcons {
+.recommended_save_buttons_icons {
     display: flex;
     flex-direction: column;
     align-items: center;

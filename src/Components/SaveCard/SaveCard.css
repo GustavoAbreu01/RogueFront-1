@@ -1,41 +1,27 @@
-.column.itens.Save {
-    margin: 2rem;
-}
-
-.ui.segment.itens.Save {
+.ui.segment.itens.save_card {
     margin: 2rem auto 0;
     border-radius: 1rem;
     background-color: var(--white);
     width: 100%;
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
 a:link.Save {
     text-decoration: none;
-    /* Remova a decoração de link (sublinhado) se necessário */
 }
 
-.itemContent.Save {
+.box_save_card_product_info {
     display: flex;
     align-items: center;
 }
 
-#imgItens.Save {
-
-    margin-right: 2rem;
-    /* Espaçamento entre a imagem e as outras informações */
-}
-
-.itemInfo.Save {
+.save_card_product_info {
     flex: 1;
-    /* Ocupa o espaço disponível */
     justify-content: space-between;
-    /* Alinha o conteúdo nos extremos da div */
 }
 
-.iconProductAction.Save {
+.iconProductAction.save_card {
 
     position: absolute;
     top: 0px;
@@ -44,47 +30,42 @@ a:link.Save {
     border: none;
 }
 
-.ui.vertically.divided.grid.Save {
-    margin: 3rem;
-}
-
-.ui.header.motor.Save {
-    text-align: center;
-}
-
-.itemPreco.Save {
+.save_card_product_price {
+    font-size: 28px;
     padding-left: 2rem;
     color: var(--blue-primary);
 }
 
-.descricao.Save {
-    font-size: 16px;
+.save_card_product_description {
+    font-size: 15px;
     padding-left: 2rem;
     color: var(--grey-primary);
 }
 
-.itemName.Save {
+.save_card_product_name {
+    font-size: 25px;
     color: var(--black);
     padding-left: 2rem;
 }
 
-.ui.segment.itens.Save:hover {
+.ui.segment.itens.save_card:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
     cursor: pointer;
 
-    .iconProductAction.Save {
+    .iconProductAction.save_card {
         opacity: 1;
         transition: 0.3s;
     }
 }
 
-.subtext.Save{
+.save_card_product_subtext {
+    color: var(--grey-primary);
     font-size: 13px;
     top: 0px;
 }
 
-.buyButton.Save {
+.save_card_buy_button {
     position: absolute;
     height: 2rem;
     width: 10rem;
@@ -92,7 +73,7 @@ a:link.Save {
     right: 0;
 }
 
-.ui.fluid.blue.button.Save {
+.ui.fluid.blue.button.save_card {
     border-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 70%;
@@ -103,7 +84,7 @@ a:link.Save {
     left: 0%;
 }
 
-.ui.blue.icon.button.Save {
+.ui.blue.icon.button.save_card {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -111,7 +92,7 @@ a:link.Save {
     height: 2rem;
 }
 
-.trash.alternate.icon.Save {
+.trash.alternate.icon.save_card{
     align-items: center;
     color: var(--red);
     font-size: 0.9rem;

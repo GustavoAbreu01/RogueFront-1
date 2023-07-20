@@ -1,6 +1,10 @@
 import React from 'react'
 import './ProductCart.css'
+
+// frameWork
 import { Link } from "react-router-dom";
+
+// images
 import motors from "../../assets/img/motores.png"
 
 
@@ -30,29 +34,29 @@ function ProductCart() {
 
   return (
     <>
-      <div className="row itens CardCart">
-        <div className="column itens CardCart">
-          <div className="itemContent CardCart" style={{ color: 'black' }}>
+      <div className="container_card_cart">
+        <div className="box_product_cart">
+          <div className="product_cart_card" style={{ color: 'black' }}>
             <div id="imgItens CardCart">
               <Link to="/product">
                 <img src={motors} width="125" height="" />
               </Link>
             </div>
-            <div className="itemInfo CardCart">
+            <div className="product_cart_informations">
               <Link to="/product">
-                <h2 className="itemNome CardCart">W12 Monofásico</h2>
-                <h2 id="itemPreco CardCart" className='itemPreco CardCart'>R${valor}<sup>{subValor}</sup><sub className='subtext CardCart'>10x Sem juros</sub></h2>
-                <p className="itemComplement CardCart">Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
+                <h2 className="product_cart_item_name">W12 Monofásico</h2>
+                <p className="product_cart_complement" >Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
+                <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext'>10x Sem juros</sub></h2>
               </Link>
             </div>
-            <div className='buttons CardCart'>
-              <button class="ui icon button CardCart">
-                <i className="trash alternate icon CardCart"></i>
+            <div className='product_cart_buttons'>
+              <button class="ui icon button product_cart">
+                <i className="trash alternate icon product_cart"></i>
               </button>
-              <div className="ui small buttons CardCart">
-                <button onClick={diminuirQuantidade} className="ui button active CardCart">-</button>
-                <div className='or CardCart' data-text={quantidade}></div>
-                <button onClick={aumentarQuantidade} className="ui button CardCart">+</button>
+              <div className="ui small buttons product_cart">
+                <button onClick={diminuirQuantidade} className="ui button active product_cart">-</button>
+                <div className='or product_cart' data-text={quantidade}></div>
+                <button onClick={aumentarQuantidade} className="ui button product_cart">+</button>
               </div>
             </div>
           </div>

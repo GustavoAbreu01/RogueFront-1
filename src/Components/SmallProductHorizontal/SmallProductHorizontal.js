@@ -6,23 +6,23 @@ function SmallProductHorizontal() {
 
 
     return (
-        <div className='horizontalSmallBoxProduct'>
-            <div className='horizontalSmallBoxProductImage'>
-                <img src={motor} alt='' className='productCardImage' height={90} width={90}></img>
+        <div className='container_small_product_horizontal'>
+            <div className='horizontal_small_product_image'>
+                <img src={motor} alt='' className='horizontal_small_product_image_tag' height={90} width={90}></img>
             </div>
-            <div className='horizontalSmallBoxProductInfo'>
+            <div className='small_product_horizontal_item_informations'>
 
-                <div className='horizontalSmallBoxProductTitle'>
+                <div className='small_product_horizontal_item_title'>
                     <h5>W12 Motor</h5>
                 </div>
 
-                <div className='horizontalSmallBoxProductPrice'>
-                    <p className='horizontalSmallPriceProduct'>R$ 1.259,00</p>
+                <div className='small_product_horizontal_item_price'>
+                    <p className='small_product_horizontal_item_price_tag'>R$ 1.259,00</p>
                 </div>
-                <p style={{ paddingLeft: '1rem', paddingTop: '0.4rem' }}>Á vista no pix</p>
+                <p style={{ paddingLeft: '1rem', paddingTop: '0.4rem' }} className='small_product_horizontal_item_subtext'>Á vista no pix</p>
             </div>
-            <div className='detailSmallProduct'>
-                <div className='detailTextSmallProduct'>
+            <div className='small_product_horizontal_detail'>
+                <div className='small_product_horizontal_detail_text'>
                 </div>
             </div>
         </div>

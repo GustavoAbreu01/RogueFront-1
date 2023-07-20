@@ -4,8 +4,7 @@ import './ProductCategory.css'
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
 
-//Importando os componentes
-import NewCard from '../../Components/NewCard/NewCard';
+import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
@@ -94,7 +93,7 @@ function ProductCategory() {
             <div className="column itens">
               <div id="produtos">
                 {numero.map((i) => (
-                  <NewCard />
+                  <NewCard/>
                 ))}
               </div>
             </div>

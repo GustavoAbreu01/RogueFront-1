@@ -1,4 +1,4 @@
-.horizontalSmallBoxProduct {
+.container_small_product_horizontal {
   display: flex;
   align-items: center;
   background-color: var(--white);
@@ -6,11 +6,11 @@
   height: 7rem;
 }
 
-.horizontalSmallBoxProduct:hover {
+.container_small_product_horizontal:hover {
   transition: 0.3s;
   cursor: pointer;
 
-  .detailSmallProduct {
+  .small_product_horizontal_detail {
     transition: 0.3s;
     cursor: pointer;
     width: 1.5rem;
@@ -18,17 +18,19 @@
 
 }
 
-.horizontalSmallBoxProductPrice {
+.small_product_horizontal_item_price {
   display: flex;
   align-items: center;
   padding-left: 1rem;
+  font-size: 17px;
+  color: var(--blue-primary);
 }
 
-.horizontalSmallPriceProduct {
+.small_product_horizontal_item_price_tag {
   font-weight: bold;
 }
 
-.horizontalSmallBoxProductInfo {
+.small_product_horizontal_item_informations {
   display: flex;
   padding-left: 0.4rem;
   padding-right: 1rem;
@@ -37,7 +39,7 @@
   width: 50%;
 }
 
-.horizontalSmallBoxProductTitle {
+.small_product_horizontal_item_title {
   display: flex;
   color: var(--grey-primary);
   flex-direction: column;
@@ -45,34 +47,17 @@
   padding: 0.5rem;
   padding-left: 1rem;
   height: 100%;
+  font-size: 16px;
 }
 
-.horizontalSmallBoxProductImage {
+.horizontal_small_product_image {
   display: flex;
   padding-left: 0.6rem;
   justify-content: flex-end;
   align-items: center;
 }
 
-.horizontalSmallBoxProductButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 30px;
-}
-
-
-.ui.fluid.button.horizontalSmall {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
-  width: 1rem;
-}
-
-.detailSmallProduct {
+.small_product_horizontal_detail {
   align-items: end;
   display: flex;
   justify-content: end;
@@ -82,7 +67,7 @@
   border-radius: 10px;
 }
 
-.detailTextSmallProduct {
+.small_product_horizontal_detail_text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,4 +75,9 @@
   color: var(--white);
   rotate: 90deg;
   font-size: 1rem;
+}
+
+.small_product_horizontal_item_subtext{
+  font-size: 13px;
+  color: var(--grey-primary);
 }
