@@ -3,11 +3,6 @@ import './Save.css';
 import HaveProducts from './haveProducts';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-<<<<<<< HEAD
-import wegner from '../../assets/img/WagnerDormindo.png';
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-=======
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
@@ -15,7 +10,6 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 import { AiFillStar } from 'react-icons/ai'
 import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 
->>>>>>> parent of f313f7e (Merge remote-tracking branch 'origin/Save-Padronizado' into master.tester)
 
 function Product() {
   const [products, setProducts] = useState([]);
