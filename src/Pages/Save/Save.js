@@ -4,6 +4,8 @@ import HaveProducts from './Products';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import wegner from '../../assets/img/WagnerDormindo.png';
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 
 function Product() {
   const [products, setProducts] = useState([]);
