@@ -19,11 +19,11 @@ header {
     height: 100px;
 }
 
-.img {
+.header_img {
     margin-left: 3%;
 }
 
-.imgHeader img {
+.header_imgHeader img {
     width: 100px;
 }
 
@@ -41,7 +41,7 @@ header .opcHeader {
     margin-right: 15%;
 }
 
-header .accountHeader {
+header .header_accountHeader {
     margin-left: -100px;
     color: white;
     text-decoration: none;
@@ -71,7 +71,7 @@ header .savesHeader {
     font-size: 15px;
 }
 
-.carrinhoHeaderDetail {
+.header-carrinhoHeaderDetail {
     color: white;
     text-decoration: none;
     margin-left: 10rem;
@@ -84,7 +84,7 @@ header .loginHeader {
     font-size: 15px;
 }
 
-.navBarHeader {
+.box_header_navBarHeader {
     position: sticky;
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@ header .loginHeader {
     text-decoration: none;
 }
 
-.divisores {
+.header_divisores {
     background-color: white;
     width: 1px;
     height: 20px;
@@ -202,7 +202,7 @@ header .scrolled {
         width: 60px;
     }
 
-    .searchInput {
+    .header_searchInput {
         opacity: 0;
     }
 }
