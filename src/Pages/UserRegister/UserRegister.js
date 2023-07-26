@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./UserRegister.css"
 import { useState } from "react";
 import { UserService } from '../../Service';
+import axios from 'axios';
 
 
 function UserRegister() {
