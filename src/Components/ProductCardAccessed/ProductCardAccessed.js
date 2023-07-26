@@ -1,13 +1,16 @@
 import React from 'react'
+import axios from 'axios'
+
 import './ProductCardAccessed.css'
 
 import motor from '../../assets/img/motor.png'
 
 import { Link } from 'react-router-dom'
 
-function ProductCardAccessed() {
+const ProductCardAccessed = ({product}) => {
 
   return (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_accessed'>
       <Link to='/product'>
         <div className='box_product_card_accessed_tag_icon'>
@@ -32,18 +35,19 @@ function ProductCardAccessed() {
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>
-            <h3 className='product_card_accessed_name'>W12 Monofásico</h3>
-            <p className='product_card_accessed_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 className='product_card_accessed_name'>{product.name}</h3>
+            <p className='product_card_accessed_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price'>{product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <div className='product_card_accessed_buy_button'>
           <button className="fluid ui button product_card_accessed_button">Comprar</button>
         </div>
       </Link>
+    </div>
     </div>
   )
 }

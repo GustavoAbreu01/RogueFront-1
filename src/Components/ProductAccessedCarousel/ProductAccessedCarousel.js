@@ -9,6 +9,7 @@ import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
 
 function ProductAccessedCarousel() {
 
+    const [products, setProducts] = useState([]);
 
     var settings = {
         className: "center",
@@ -51,27 +52,9 @@ function ProductAccessedCarousel() {
     return (
         <div className='container_product_accessed_carousel' >
             <Slider {...settings}>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
+            {products.map((product) => (
+                    <ProductCardAccessed product={product}/>
+                ))}
             </Slider>
         </div >
     )

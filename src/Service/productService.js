@@ -39,6 +39,17 @@ export const ProductService = {
         axios.patch(url + '/' + product + '/' + id).then((response) => {
             return response.data
         })
-    }
+    },
 
+    findAcessed: function() {
+      return new Promise((resolve, reject) => {
+        axios.get(url + '/acessedProducts')
+          .then((response) => {
+            resolve(response.data);
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
+    }
 }
