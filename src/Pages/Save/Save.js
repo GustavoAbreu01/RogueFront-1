@@ -54,9 +54,11 @@ function Product() {
     return (
       <>
         <div className='container_save_titles'>
-          <div className='box_title_similar_save'>
-            <BsFillBookmarkFill color='var(--white)' size={40} />
-            <h1 className='save_title'>Salvos</h1>
+          <div className='save_saved_product'>
+            <div className='box_title_similar_save'>
+              <BsFillBookmarkFill color='var(--white)' size={40} />
+              <h1 className='save_title'>Salvos</h1>
+            </div>
           </div>
           <div className='box_title_similar_save_rec'>
             <div className='save_title_theme'>
