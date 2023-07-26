@@ -9,13 +9,27 @@ import axios from 'axios';
 function UserRegister() {
   const navigate = useNavigate();
 
-  const [emailLogin, setEmailLogin] = useState('');
-  const [passwordLogin, setPasswordLogin] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [confPassword, setConfPassword] = useState('');
-  const [cpf, setCpf] = useState('');
+
+  const [userLogin, setUserLogin] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+    cpf: '',
+  });
+
+  const atualizaInformation = (event) => {
+    setCard({ ...card, [event.target.name]: event.target.value });
+  }
+
+  const handleInputChange = (event) => {
+    setValor(event.target.value);
+  };
 
   const handleRegister = () => {
     if (password === confPassword) {
@@ -60,8 +74,8 @@ function UserRegister() {
             <h2 className="ui header titleRegister">Login</h2>
 
             <div className="field emailLogin">
-              <label>Email:</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="emailLogin" placeholder="seuEmail@email.com" value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)} />
+              <label>Email:</label >
+              <input value={emailLogin} onChange={atualizaInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="emailLogin" placeholder="seuEmail@email.com" />
             </div>
 
             <div className="field passwordLogin">
