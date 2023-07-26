@@ -24,7 +24,7 @@ export const UserService = {
   },
 
   findOne: function (id) {
-    axios.post(url + '/' + id).then((response) => {
+    axios.get(url + '/' + id).then((response) => {
       return response.data;
     });
   },
@@ -34,7 +34,7 @@ export const UserService = {
     })
   },
   delete: function(id){
-    axios.post(url + '/'+ id).then((response) => {
+    axios.delete(url + '/'+ id).then((response) => {
         return response.data;
       });
 }
