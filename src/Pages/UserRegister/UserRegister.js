@@ -9,11 +9,11 @@ import axios from 'axios';
 function UserRegister() {
   const navigate = useNavigate();
 
-  const [confPassword, setConfPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
 
   const [userLogin, setUserLogin] = useState({
-    email: '',
-    password: '',
+    emailLogin: '',
+    passwordLogin: '',
   });
 
   const [user, setUser] = useState({
@@ -23,44 +23,39 @@ function UserRegister() {
     cpf: '',
   });
 
-  const atualizaInformation = (event) => {
-    setCard({ ...card, [event.target.name]: event.target.value });
+  const updateLoginInformation = (event) => {
+    setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
   }
 
-  const handleInputChange = (event) => {
-    setValor(event.target.value);
-  };
+  const updateRegisterInformation = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  }
 
-  const handleRegister = () => {
-    if (password === confPassword) {
-      let userProv = ({
-        name: name,
-        email: email,
-        password: password,
-        register: cpf
-      });
-      localStorage.setItem("verifyLogin", 'yes');
-      UserService.create(userProv)
-      localStorage.setItem("userCpf", userProv.register)
-      navigate("/");
-    } else {
-      alert('Senhas diferem')
-    }
-  };
+  const updateConfirmInformation = (event) => {
+    setPasswordConfirm(event.target.value);
+  }
 
   const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem('user')) || [];
-    users.forEach((register) => {
-      if (emailLogin === register.email) {
-        if (passwordLogin === register.password) {
-          localStorage.setItem('verifyLogin', 'yes');
-          navigate("/");
-        } else {
-          alert("Senha ou email incorretos!!");
-        }
-      }
-    });
+    localStorage.setItem('verifyLogin', 'yes');
+    navigate("/");
+    alert("Senha ou email incorretos!!");
   };
+
+  function create(event) {
+    if (user.password !== passwordConfirm) {
+      event.preventDefault();
+    } else {
+      event.preventDefault();
+      localStorage.setItem("verifyLogin", 'yes');
+      UserService.create(user)
+        .then(response => {
+          navigate('/home');
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }
 
   return (
 
@@ -75,12 +70,12 @@ function UserRegister() {
 
             <div className="field emailLogin">
               <label>Email:</label >
-              <input value={emailLogin} onChange={atualizaInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="emailLogin" placeholder="seuEmail@email.com" />
+              <input value={userLogin.emailLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuEmail@email.com" />
             </div>
 
             <div className="field passwordLogin">
               <label>Senha:</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="passwordLogin" placeholder="suasenha/123455" value={passwordLogin} onChange={(e) => setPasswordLogin(e.target.value)} />
+              <input value={userLogin.passwordLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
             </div>
             <div className='box'>
               <button className="ui big fluid button" onClick={() => handleLogin()}>Entrar</button>
@@ -99,30 +94,30 @@ function UserRegister() {
 
             <div className="field">
               <label>Nome</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="nameRegister" placeholder="Seu nome" value={name} onChange={(e) => setName(e.target.value)} />
+              <input value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
             </div>
 
             <div className="field">
               <label>Email</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="emailRegister" placeholder="seuemail@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
             </div>
 
             <div className="field">
               <label>CPF/CNPJ</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="cpflRegister" placeholder="12312312334" value={cpf} onChange={(e) => setCpf(e.target.value)} />
+              <input value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
             </div>
 
             <div className="field passwordRegister">
               <label>Senha:</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="passwordRegister" placeholder="suasenha/123455" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <input value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
             </div>
 
             <div className="field passwordConfirm">
               <label>Senha:</label>
-              <input style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" name="passwordConfirm" placeholder="suasenha/123455" value={confPassword} onChange={(e) => setConfPassword(e.target.value)} />
+              <input value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
             </div>
             <div className='box'>
-              <button className="ui big fluid button" onClick={() => handleRegister()}>Cadastrar</button>
+              <button className="ui big fluid button" onClick={create}>Cadastrar</button>
             </div>
           </form>
         </div>
