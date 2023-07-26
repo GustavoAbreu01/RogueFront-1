@@ -13,22 +13,22 @@ body::-webkit-scrollbar-thumb {
 
 header {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     background-color: #00579D;
     height: 100px;
     transition: 0.3s;
 }
 
-.img{
+.img {
     margin-left: 3%;
 }
 
-.img img{
+.img img {
     width: 100px;
 }
 
-header .opc{
+header .opc {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@ header .opc{
     margin-right: 3rem;
 }
 
-header .icons{
+header .icons {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,23 +50,23 @@ header .account {
     font-size: 15px;
 }
 
-header .saves{
+header .saves {
     cursor: pointer;
     color: #EFEFEF;
 }
 
-header .account:hover{
+header .account:hover {
     color: #EFEFEF;
     cursor: pointer;
     transition: 0.3s;
 }
 
-header .saves:hover{
+header .saves:hover {
     color: #0080C5;
     transition: 0.3s;
 }
 
-header .login:hover{
+header .login:hover {
     color: #EFEFEF;
     cursor: pointer;
     transition: 0.3s;
@@ -79,7 +79,7 @@ header .cart {
     cursor: pointer;
 }
 
-header .profileIcon{
+header .profileIcon {
     cursor: pointer;
     color: var(--white);
 }
@@ -90,7 +90,7 @@ header .carrinho {
     font-size: 35px;
 }
 
-header .carrinho:hover{
+header .carrinho:hover {
     color: #0080C5;
     transition: 0.3s;
 }
@@ -115,65 +115,65 @@ header .login {
     z-index: 1;
 }
 
-.navBar a{
+.navBar a {
     color: white;
     text-decoration: none;
-    
+
 }
 
-.navBar a:hover{
+.navBar a:hover {
     color: #90C1E3;
     text-decoration: none;
 }
 
 
 
-.divisores{
+.divisores {
     background-color: white;
     width: 1px;
     height: 20px;
 }
 
-#logo{
+#logo {
     position: absolute;
     margin-top: -3%;
     margin-left: -3%;
 }
 
-#ModalPerfil{
+#ModalPerfil {
     display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
 }
 
-#colunaUm{
+#colunaUm {
     display: grid;
     justify-content: center;
     align-items: center;
     color: #00579D;
 }
 
-#colunaUm > h3{
+#colunaUm>h3 {
     margin-left: 25%;
 }
 
-#colunaDois > h4{
+#colunaDois>h4 {
     opacity: 50%;
 }
 
-#colunaDois > h3{
+#colunaDois>h3 {
     color: #00579D;
     font-weight: bolder;
 }
 
-#colunaTres{
-margin-left: 5%;
-margin-top: -38%;
-color: #00579D;
-font-weight: bolder;
+#colunaTres {
+    margin-left: 5%;
+    margin-top: -38%;
+    color: #00579D;
+    font-weight: bolder;
 }
 
-.tracoAzul{
+.tracoAzul {
     position: absolute;
     width: 5px;
     height: 30px;
@@ -182,7 +182,7 @@ font-weight: bolder;
     margin-left: -2%;
 }
 
-.tracoCinza{
+.tracoCinza {
     position: absolute;
     width: 200px;
     height: 1px;
@@ -225,5 +225,5 @@ header.scrolled {
     .searchInput {
         opacity: 0;
     }
-    
+
 }
