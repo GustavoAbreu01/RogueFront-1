@@ -4,16 +4,16 @@ const url = 'http://localhost:8081/product'
 
 export const ProductService = {
 
-    create: function(user) {
-        console.log(user)
-        axios.post(url + '/create', user).then((response) => {
+    create: function(product) {
+        console.log(product)
+        axios.post(url, product).then((response) => {
             return response.data;
           });
     },
 
-    getAll: function() {
+    findAll: function() {
         return new Promise((resolve, reject) => {
-          axios.get(url + '/getAll')
+          axios.get(url)
             .then((response) => {
               resolve(response.data);
             })
@@ -23,20 +23,20 @@ export const ProductService = {
         });
       },
 
-    getOne: function(id){
-        axios.post(url + '/getOne/'+ id).then((response) => {
+      findOne: function(id){
+        axios.post(url + '/' + id).then((response) => {
             return response.data;
           });
     },
     
     delete: function(id){
-        axios.post(url + '/delete/'+ id).then((response) => {
+        axios.post(url + '/'+ id).then((response) => {
             return response.data;
           });
     },
 
-    edit: function(id, prod){
-        axios.put(url + '/edit/'+ id, prod).then((response) => {
+    update: function(id, product){
+        axios.patch(url + '/' + product + '/' + id).then((response) => {
             return response.data
         })
     }

@@ -6,14 +6,14 @@ export const UserService = {
 
   create: function (user) {
     console.log(user)
-    axios.post(url + '/create', user).then((response) => {
+    axios.post(url, user).then((response) => {
       return response.data;
     });
   },
 
-  getAll: function () {
+  findAll: function () {
     return new Promise((resolve, reject) => {
-      axios.get(url + '/getAll')
+      axios.get(url)
         .then((response) => {
           resolve(response.data);
         })
@@ -23,18 +23,18 @@ export const UserService = {
     });
   },
 
-  getOne: function (id) {
-    axios.post(url + '/getOne/', id).then((response) => {
+  findOne: function (id) {
+    axios.post(url + '/' + id).then((response) => {
       return response.data;
     });
   },
   edit: function (id, user) {
-    axios.put(url + '/edit/' + id, user).then((response) => {
+    axios.patch(url + '/' + id, user).then((response) => {
       return response.data
     })
   },
   delete: function(id){
-    axios.post(url + '/delete/'+ id).then((response) => {
+    axios.post(url + '/'+ id).then((response) => {
         return response.data;
       });
 }

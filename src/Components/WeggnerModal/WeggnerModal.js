@@ -18,8 +18,6 @@ function WeggnerModal() {
     }
   }
   return (
-
-
     <div>
       {verify() && <div data-aos="fade-up" className='container_modalContent'>
         <div className='box_modalContent_textWeggnerModal'>
@@ -46,9 +44,7 @@ function WeggnerModal() {
         }
       </div>
     </div>
-
   )
-
 }
 
 export default WeggnerModal
