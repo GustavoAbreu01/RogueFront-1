@@ -54,7 +54,7 @@ function HeaderLogin() {
       </div>
       <div className="opc">
         <div className='opc_user'>
-          <Link to="/register "><p className='opc_login'>Login</p></Link><Link to="/register "><p className='opc_register'>Realizar Cadastro</p></Link>
+          <Link to="/register "><p className='opc_login'>Login</p></Link><Link to="/register "><p className='opc_register'>/</p></Link><Link to="/register "><p className='opc_register'>Realizar Cadastro</p></Link>
         </div>
         <div className='icons'>
           <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
