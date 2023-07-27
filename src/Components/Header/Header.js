@@ -50,7 +50,8 @@ function HeaderLogin() {
         <Link to="/"><img src={logo} alt="" /></Link>
       </div>
       <div className="searchInput">
-        <SearchBar />
+        <SearchBar/>
+        
       </div>
       <div className="opc">
         <div className='opc_user'>
