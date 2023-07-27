@@ -90,11 +90,13 @@ function ProductCardSearched() {
           <h3 className='product_card_searched_price'>R$ 1.259,00</h3>
           <p className='product_card_searched_price_option'>Á vista no pix</p>
         </div>
-        <div className='product_card_searched_buy_button'>
-          <button className="fluid ui button product_card_searched_button">Comprar</button>
-        </div>
-      </Link>
-    </div>
+        <Link to='/cart'>
+          <div className='product_card_searched_buy_button'>
+            <button className="fluid ui button product_card_searched_button">Comprar</button>
+          </div>
+        </Link>
+      </Link >
+    </div >
   )
 }
 

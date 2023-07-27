@@ -83,9 +83,11 @@ function SmallProductCard() {
                     <h3 className='product_card_smaller_price'>R$ 1.259,00</h3>
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
-                <div className='box_product_card_smaller_button'>
-                    <button className="fluid ui button product_card_smaller">Comprar</button>
-                </div>
+                <Link to='/cart'>
+                    <div className='box_product_card_smaller_button'>
+                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                    </div>
+                </Link>
             </Link >
         </div>
     )

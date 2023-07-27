@@ -41,7 +41,9 @@ function Product() {
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <div className='product_card_accessed_buy_button'>
-          <button class="fluid ui button product_card_accessed_button">Comprar</button>
+          <Link to='/cart'>
+            <button class="fluid ui button product_card_accessed_button">Comprar</button>
+          </Link>
         </div>
       </Link>
     </div>
