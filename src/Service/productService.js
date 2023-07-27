@@ -1,18 +1,20 @@
 import axios from "axios";
 
-const url = 'http://localhost:8081/product'
+const url = 'http://localhost:8081/categories/'
 
 export const ProductService = {
 
-    create: function(product) {
-        console.log(product)
-        axios.post(url, product).then((response) => {
+    create: function(categories) {
+        console.log(categories)
+        axios.post(url, categories).then((response) => {
             return response.data;
           });
     },
 
     findAll: function() {
+      console.log("alo")
         return new Promise((resolve, reject) => {
+         
           axios.get(url)
             .then((response) => {
               resolve(response.data);
@@ -52,4 +54,5 @@ export const ProductService = {
           });
       });
     }
-}
+};
+export default ProductService;

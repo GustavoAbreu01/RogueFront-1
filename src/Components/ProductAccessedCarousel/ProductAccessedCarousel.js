@@ -1,15 +1,23 @@
 import './ProductAccessedCarousel.css';
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
+import ProductService from '../../Service/ProductService'; // Importe o serviço de produtos aqui
+
 
 function ProductAccessedCarousel() {
 
     const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      // Quando o componente for montado, buscar os produtos e atualizar o estado
+      ProductService.findAll()
+        .then((data) => setProducts(data))
+        .catch((error) => console.error('Erro ao buscar produtos:', error));
+    }, []);
 
     var settings = {
         className: "center",
@@ -50,13 +58,13 @@ function ProductAccessedCarousel() {
 
 
     return (
-        <div className='container_product_accessed_carousel' >
-            <Slider {...settings}>
-            {products.map((product) => (
-                    <ProductCardAccessed product={product}/>
-                ))}
-            </Slider>
-        </div >
+        <div className='container_product_accessed_carousel'>
+      <Slider {...settings}>
+        {products.map((categories) => (
+          <ProductCardAccessed key={categories.id} categories={categories} />
+        ))}
+      </Slider>
+    </div>
     )
 }
 
