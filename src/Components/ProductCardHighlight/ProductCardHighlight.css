@@ -76,6 +76,7 @@
     border: none;
 
 }
+
 .fluid.ui.button.product_card_hightlight_button{
     font-size: 16px !important; 
     background-color: var(--blue-primary);

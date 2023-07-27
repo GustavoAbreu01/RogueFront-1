@@ -38,11 +38,11 @@ function CardCompare() {
                         <div className='container_card_compare_compared'>
                             <div className="productCompared" key={index}>
                                 <div className='box_card_compare_button_action'>
-                                    <button className="ui icon button card_compare">
+                                    <button className="ui icon button card_compare_icon">
                                         <i className="info alternate icon "></i>
                                     </button>
-                                    <button classname="ui icon button card_compare">
-                                        <i className="cart plus icon "></i>
+                                    <button className="ui icon button product_card_hightlight">
+                                        <i className="cart plus icon product_card_hightlight"></i>
                                     </button>
                                     <div className='card_compare_delete_button'>
                                         {verify() &&
