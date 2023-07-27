@@ -3,12 +3,38 @@ import './SaveCard.css'
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import motors from "../../assets/img/motores.png"
+import Swal from 'sweetalert2';
 
 
 function SaveCard() {
 
     const [isOpen, setIsOpen] = useState(false);
-    
+
+    const AddProductInCart = () => {
+        Swal.fire({
+            title: 'Produto adicionado a carrinho!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/cart"
+            }
+        }
+        )
+    }
 
     const deleteItens = (item) => {
         const products = JSON.parse(localStorage.getItem('products'))
@@ -38,12 +64,14 @@ function SaveCard() {
                     <button className="ui blue icon button save_card" onClick={deleteItens} >
                         <i className="trash alternate icon save_card" ></i>
                     </button>
-                    <button class="ui blue icon button save_card">
+                    <button onClick={AddProductInCart} class="ui blue icon button save_card">
                         <i className="cart plus icon save_card"></i>
                     </button>
                 </div>
                 <div className='save_card_buy_button'>
-                    <button className="ui fluid blue button save_card">Comprar</button>
+                    <Link to='/cart'>
+                        <button className="ui fluid blue button save_card">Comprar</button>
+                    </Link>
                 </div>
             </div>
         </>

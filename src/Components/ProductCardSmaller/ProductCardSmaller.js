@@ -4,26 +4,73 @@ import './ProductCardSmaller.css'
 import motor from '../../assets/img/motor.png'
 
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function SmallProductCard() {
 
+    const AddProductInCart = () => {
+        Swal.fire({
+            title: 'Produto adicionado a carrinho!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/cart"
+            }
+        }
+        )
+    }
+
+    const AddProductInSave = () => {
+        Swal.fire({
+            title: 'Produto adicionado a lista de salvos!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para a lista de salvos',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/save"
+            }
+        }
+        )
+    }
 
     return (
-        <Link to='/product'>
-            <div className='container_product_card_smaller'>
-                <div className='container_product_card_smaller_action_icon '>
-                    <Link to='/save'>
-                        <button className="ui icon button product_card_smaller">
-                            <i className="bookmark icon "></i>
-                        </button>
-                    </Link>
-                    <Link to='/cart'>
-                        <button className="ui icon button product_card_smaller">
-                            <i className="cart plus icon"></i>
-                        </button>
-                    </Link>
-                </div>
-
+        <div className='container_product_card_smaller'>
+            <div className='container_product_card_smaller_action_icon '>
+                <button onClick={AddProductInSave} className="ui icon button product_card_smaller">
+                    <i className="bookmark icon "></i>
+                </button>
+                <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
+                    <i className="cart plus icon"></i>
+                </button>
+            </div>
+            <Link to='/product'>
                 <div className='box_product_card_smaller_image'>
                     <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
@@ -38,11 +85,9 @@ function SmallProductCard() {
                 </div>
                 <div className='box_product_card_smaller_button'>
                     <button className="fluid ui button product_card_smaller">Comprar</button>
-
                 </div>
-
-            </div>
-        </Link>
+            </Link >
+        </div>
     )
 }
 

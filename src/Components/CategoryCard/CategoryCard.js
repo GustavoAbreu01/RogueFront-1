@@ -9,11 +9,13 @@ function CategoryCard() {
 
     const AddProductInCart = () => {
         swal.fire({
-            title: 'Produto adicionado ao carrinho!',
+            title: 'Produto adicionado a carrinho!',
             icon: 'success',
-            showConfirmButton: false,
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
             position: 'top-end',
-            timer: 3000,
+            timer: 5000,
             timerProgressBar: true,
             toast: true,
             width: 400,
@@ -23,35 +25,23 @@ function CategoryCard() {
             hideClass: {
                 popup: 'animate__animated animate__backOutRight'
             },
-        })
-    }
-
-    const AddProductInCompare = () => {
-        swal.fire({
-            title: 'Produto adicionado a comparação!',
-            icon: 'success',
-            showConfirmButton: false,
-            position: 'top-end',
-            timer: 3000,
-            timerProgressBar: true,
-            toast: true,
-            width: 400,
-            showClass: {
-                popup: 'animate__animated animate__backInRight'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__backOutRight'
-            },
-        })
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/cart"
+            }
+        }
+        )
     }
 
     const AddProductInSave = () => {
         swal.fire({
             title: 'Produto adicionado a lista de salvos!',
             icon: 'success',
-            showConfirmButton: false,
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para a lista de salvos',
+            confirmButtonColor: 'var(--blue-primary)',
             position: 'top-end',
-            timer: 3000,
+            timer: 5000,
             timerProgressBar: true,
             toast: true,
             width: 400,
@@ -61,7 +51,38 @@ function CategoryCard() {
             hideClass: {
                 popup: 'animate__animated animate__backOutRight'
             },
-        })
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/save"
+            }
+        }
+        )
+    }
+
+    const AddProductInCompare = () => {
+        swal.fire({
+            title: 'Produto adicionado a comparação!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para a tela comparação',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/compare"
+            }
+        }
+        )
     }
 
 
