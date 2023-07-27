@@ -22,7 +22,9 @@ a:link.Save {
 }
 
 .iconProductAction.save_card {
-
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
     position: absolute;
     top: 0px;
     right: 0px;

@@ -33,7 +33,7 @@ function ProductPage() {
                     <div className="content product_page">
                         <h1 className="ui header product_page">Motor W30</h1>
                         <br />
-                        <Rating className="ui star rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
+                        <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
                         <h1 className="price_product_page">R$ 495<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
                         <div className="meta">
                             <span>Descrição</span>
