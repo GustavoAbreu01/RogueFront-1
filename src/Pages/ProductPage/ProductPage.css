@@ -46,6 +46,13 @@
     background-color: var(--blue-secundary);
 }
 
+.ui.fluid.icon.button.cart_product_compare {
+    height: 3.5rem;
+    width: 120%;
+    margin-top: 1rem;
+    background-color: var(--blue-secundary);
+}
+
 .boxTitleSimilar {
     display: flex;
     align-items: center;
@@ -359,4 +366,10 @@ td {
     color: var(--white);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+}
+
+.buttons_product_page_opc_add {
+    display: flex;
+    gap: 0.5rem;
+    width: 150%;
 }

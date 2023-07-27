@@ -12,6 +12,7 @@
     justify-content: end;
     flex-direction: column;
     background-color: var(--blue-primary);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 30%;
     gap: 2rem;
     height: 100%;

@@ -25,7 +25,7 @@ function ProductPage() {
             {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
 
             <div className="ui items product_page" >
-            <p className="ui blue ribbon label">Destaque</p>
+                <p className="ui blue ribbon label">Destaque</p>
                 <div className="ui item product_page">
                     <div className="img_product_page">
                         <img className="image_product" src={motor} />
@@ -45,9 +45,18 @@ function ProductPage() {
                             <button className="ui fluid button sell_product_page">
                                 Comprar Agora
                             </button>
-                            <button className="ui fluid button cart_product_page">
-                                Adicionar ao Carrinho
-                            </button>
+                            <div className='buttons_product_page_opc_add'>
+                                <div>
+                                    <button className="ui fluid button cart_product_page">
+                                        Adicionar ao Carrinho
+                                    </button>
+                                </div>
+                                <div>
+                                    <button className="ui fluid icon button cart_product_compare">
+                                    <i class="exchange icon"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,12 +107,12 @@ function ProductPage() {
                     <p> Proteção térmica.</p>
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
                 </div>
-            </div> 
+            </div>
             <div className='box_product_page_title_similar'>
-            <FaStar color='var(--white)' size={40} />
-            <h1>Produtos Semelhantes</h1>
-          </div>
-            <Carousel/>
+                <FaStar color='var(--white)' size={40} />
+                <h1>Produtos Semelhantes</h1>
+            </div>
+            <Carousel />
             <Footer />
         </>
     )
