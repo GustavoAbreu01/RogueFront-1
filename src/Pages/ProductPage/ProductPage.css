@@ -42,6 +42,7 @@
 
 .ui.fluid.button.cart_product_page {
     height: 3.5rem;
+    width: 28.5rem;
     margin-top: 1rem;
     background-color: var(--blue-secundary);
 }
@@ -371,5 +372,5 @@ td {
 .buttons_product_page_opc_add {
     display: flex;
     gap: 0.5rem;
-    width: 150%;
+    width: 100%;
 }
