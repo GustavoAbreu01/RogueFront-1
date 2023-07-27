@@ -114,6 +114,18 @@ function MenuModal() {
                   <Link to='/category'><li className="sub_category" >Turbinas Hidráulicas</li></Link>
                 </div>
               </div>
+              <div class="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
+                  <img src={iconEnergy} alt="iconeMotor" width={25} />
+                  <p className="category_title">Geradores</p>
+                </div>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Aerogeradores</li></Link>
+                  <Link to='/category'><li className="sub_category" >Gerador Solar Fotovoltaico</li></Link>
+                  <Link to='/category'><li className="sub_category" >Turbinas Hidráulicas</li></Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
