@@ -213,7 +213,7 @@ function Home() {
 
         <div className='container_home_category_buttons' >
           <h1 className='home_category_title'>Departamentos</h1>
-          <div className='box_home_category_buttons'> 
+          <div className='box_home_category_buttons'>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
@@ -264,16 +264,16 @@ function Home() {
               <CgSearchFound color='var(--white)' size={50} />
             </div>
           </div>
-          <div className='home_slider_product_searched'> 
+          <div className='home_slider_product_searched'>
             <ProductSearchedCarousel />
           </div>
         </div>
 
-        <div> 
+        <div>
           <div className='home_benefiits'>
             <LiaCertificateSolid color='var(--blue-primary)' size={50} />
             <h1 className='home_benefiits_title'>Benefícios de compra</h1>
-          </div> 
+          </div>
 
           <div className="container_home_benefits">
             {iconsInfoOne.map((icon) => (
@@ -284,7 +284,7 @@ function Home() {
                 <div className='home_benefits_description_info'>
                   <h1 className="home_benefits_description_title" >{icon.name}</h1>
                   <p className="home_benefits_description">{icon.description}</p>
-                </div> 
+                </div>
               </div>
             ))}
           </div>
