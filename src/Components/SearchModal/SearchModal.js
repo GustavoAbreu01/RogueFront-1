@@ -38,13 +38,13 @@ function SearchBar() {
 
   return (
     <div className="container_searchBar">
-      <input
+      <input 
         type="text"
         placeholder="Pesquisar..."
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <i class="search icon"></i>
+      <i class="search icon input"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
