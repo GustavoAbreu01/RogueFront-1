@@ -21,6 +21,9 @@ a:link {
 }
 
 .iconProductAction.category_card {
+    gap: 0.5rem;
+    display: flex;
+    margin: 1rem;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -78,3 +81,7 @@ a:link {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
+/* .ui.icon.button.category_card_compare {
+   background-color: var(--blue-quaternary);
+} */
