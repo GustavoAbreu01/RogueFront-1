@@ -27,7 +27,7 @@ function CategoryCard() {
                     <i className="cart plus icon category_card"></i>
                 </button>
                 <button className="ui icon button category_card_compare">
-                <i class="exchange alternate icon"></i>
+                    <i class="exchange alternate icon"></i>
                 </button>
             </div>
             <div className='category_card_buy_button'>

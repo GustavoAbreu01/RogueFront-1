@@ -52,7 +52,6 @@ a:link {
 .ui.segment.itens.container_category_card:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
-    cursor: pointer;
 
     .iconProductAction.category_card {
         opacity: 1;
