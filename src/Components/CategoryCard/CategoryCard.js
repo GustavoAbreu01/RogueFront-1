@@ -1,9 +1,19 @@
 import React from 'react'
 import motors from "../../assets/img/motores.png"
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 import './CategoryCard.css'
 
 function CategoryCard() {
+
+    const AddProductInCart = () => {
+        Swal.fire({
+            title: 'Produto adicionado ao carrinho!',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+        })
+    }
+
     return (
         <div className="ui segment itens container_category_card" id="itemCategory">
             <Link to="/product">
@@ -20,7 +30,7 @@ function CategoryCard() {
                 </div>
             </Link>
             <div className='iconProductAction category_card'>
-                <button className="ui blue icon button category_card" >
+                <button onClick={AddProductInCart} className="ui blue icon button category_card" >
                     <i className="bookmark icon Category category_card"></i>
                 </button>
                 <button className="ui blue icon button category_card">
