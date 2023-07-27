@@ -83,6 +83,7 @@
 }
 
 .category_title_selected{
+    margin-bottom: 0.5rem;
     display: flex;
     justify-content: start;
     padding-left: 1rem;
@@ -91,6 +92,7 @@
 }
 
 .sub_category_selected {
+    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
