@@ -53,7 +53,7 @@ function ProductPage() {
                                 </div>
                                 <div>
                                     <button className="ui fluid icon button cart_product_compare">
-                                    <i class="exchange icon"></i>
+                                        <i class="exchange icon"></i>
                                     </button>
                                 </div>
                             </div>

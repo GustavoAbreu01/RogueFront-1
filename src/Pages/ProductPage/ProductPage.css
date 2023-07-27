@@ -54,6 +54,16 @@
     background-color: var(--blue-secundary);
 }
 
+.ui.fluid.button.cart_product_page:hover {
+    color: var(--white);
+    background-color: var(--grey-primary);
+}
+
+.ui.fluid.icon.button.cart_product_compare:hover {
+    color: var(--white);
+    background-color: var(--grey-primary);
+}
+
 .boxTitleSimilar {
     display: flex;
     align-items: center;

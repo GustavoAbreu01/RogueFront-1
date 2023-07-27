@@ -3,33 +3,46 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin: 2rem;
     margin-right: 1rem;
-    height: 36rem;
+    height: auto;
     width: 20rem;
+    transition: 0.3s;
     align-items: center;
     padding: 2rem;
     border-radius: 10px;
 }
 
-.ui.row.category{
+.category_filter_dropdown {
+    font-size: 20px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.ui.row.category {
     width: 28rem;
 }
-.column.filter{
+
+.column.filter {
     margin-left: 3rem;
 }
-.column.itens{
+
+.column.itens {
     margin: 2rem;
 }
+
 .ui.segment.itens.categoryItens {
-  border-radius: 1rem;
+    border-radius: 1rem;
     background-color: var(--white);
     width: 63rem;
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
 }
+
 a:link {
-      text-decoration: none; /* Remova a decoração de link (sublinhado) se necessário */
- }
+    text-decoration: none;
+}
+
 .itemContentCategory {
     display: flex;
     align-items: center;
@@ -46,6 +59,12 @@ a:link {
     justify-content: space-between;
     /* Alinha o conteúdo nos extremos da div */
 }
+
+.angle.down.icon.category {
+    color: var(--blue-primary);
+    font-size: 1.7rem;
+}
+
 .saveCategory {
     position: absolute;
     top: 10px;
@@ -57,14 +76,19 @@ a:link {
 .ui.vertically.divided.grid {
     margin: 3rem;
 }
+
 .icon_category_motor {
     display: block;
     margin: 0 auto;
     width: 50%;
-  }
- 
-  .ui.header.motor {
+}
+
+.ui.header.motor {
     text-align: center;
-  }
+}
 
-
+.angle.down.icon.category.open {
+    color: var(--blue-quaternary);
+    transition: 0.2s;
+    font-size: 1.7rem;
+}
