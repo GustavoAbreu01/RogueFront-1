@@ -44,6 +44,7 @@ function SearchBar() {
         value={searchTerm}
         onChange={handleInputChange}
       />
+      <i class="search icon"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
