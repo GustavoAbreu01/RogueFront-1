@@ -30,6 +30,7 @@ function ProfilePage() {
             <Orders />
             <Orders />
             <Orders />
+            <div className='spacement'></div>
             <Footer />
 
         </>
