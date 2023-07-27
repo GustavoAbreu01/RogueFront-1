@@ -10,6 +10,9 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 
+import { useState } from 'react';
+import { Divider } from 'semantic-ui-react';
+
 
 
 function ProductCategory() {
@@ -23,20 +26,33 @@ function ProductCategory() {
     }
   }
 
-  const handleDropdownChange = (event, { value }) => {
-    console.log('Selected value:', value);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const [isOpen2, setIsOpen2] = useState(false);
+
+  const toggleDropdown2 = () => {
+    setIsOpen2(!isOpen2);
+  };
+
+  const [isOpen3, setIsOpen3] = useState(false);
+
+  const toggleDropdown3 = () => {
+    setIsOpen3(!isOpen3);
+  };
+  const [isOpen4, setIsOpen4] = useState(false);
+
+  const toggleDropdown4 = () => {
+    setIsOpen4(!isOpen4);
   };
 
 
 
 
-  const menuOptions = [
-    { key: 'monofasico', value: 'monofasico', text: 'Monofásico' },
-    { key: 'trifasicoBT', value: 'trifasicoBT', text: 'Trifásico - Baixa Tensão' },
-    { key: 'trifasicoAT', value: 'trifasicoAT', text: 'Trifásico - Alta Tensão' },
-    { key: 'sincronos', value: 'sincronos', text: 'Síncronos' },
-    { key: 'aneis', value: 'aneis', text: 'Anéis' },
-  ];
+
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -47,10 +63,19 @@ function ProductCategory() {
         <div className="two column row category">
           <div className="ui row category">
             <div className="column filter">
+
+
               <div className="category_second_filter">
                 <img className="icon_category_motor" src={iconMotor} />
                 <h1 className="ui header motor">MOTORES</h1>
                 <br />
+                <div className='container_category_filter_expanded'>
+                <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Voltagem
+              
+              <i className="angle down icon category"></i>
+</div>
+                {isOpen && (
+                <div className='category_transition'>
                 <div className="ui checkbox">
                   <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
                   <label className="desc" htmlFor="Monofasico"> Monofásico </label>
@@ -81,25 +106,160 @@ function ProductCategory() {
                 </div>
                 <br />
                 <br />
-
+                
+                </div>
+               
+                )
+                }
+                </div>
+                <Divider></Divider>
+                <div className='container_category_filter_expanded'>
+                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Voltagem
+              
+              <i className="angle down icon category"></i>
+</div>
+                {isOpen2 && (
+                <div className='category_transition'>
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                  <label className="desc" htmlFor="Monofasico"> Monofásico </label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                  <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                  <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                  <label className="desc" htmlFor="Sincronos">Síncronos</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                  <label className="desc" htmlFor="Aneis">Anéis</label>
+                </div>
+                <br />
+                <br />
+                </div>
+                )
+                }
+                </div>
+                <Divider></Divider>
+                <div className='container_category_filter_expanded'>
+                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Voltagem
+              
+              <i className="angle down icon category"></i>
+</div>
+                {isOpen3 && (
+                <div className='category_transition'>
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                  <label className="desc" htmlFor="Monofasico"> Monofásico </label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                  <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                  <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                  <label className="desc" htmlFor="Sincronos">Síncronos</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                  <label className="desc" htmlFor="Aneis">Anéis</label>
+                </div>
+                <br />
+                <br />
+                
+                </div>
+               
+                )
+                }
+                </div>
+                <Divider></Divider>
+                <div className='container_category_filter_expanded'>
+                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Voltagem
+              
+              <i className="angle down icon category"></i>
+</div>
+                {isOpen4 && (
+                <div className='category_transition'>
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                  <label className="desc" htmlFor="Monofasico"> Monofásico </label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                  <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                  <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                  <label className="desc" htmlFor="Sincronos">Síncronos</label>
+                </div>
+                <br />
+                <br />
+                <div className="ui checkbox">
+                  <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                  <label className="desc" htmlFor="Aneis">Anéis</label>
+                </div>
+                <br />
+                <br />
+                </div>
+                )
+                }
+                </div>
               </div>
             </div>
+
           </div>
+   
 
 
 
 
-          <div className="ui row category">
-            <div className="column itens">
-              <div id="produtos">
-                {numero.map((i) => (
-                  <CategoryCard/>
-                ))}
-              </div>
+        <div className="ui row category">
+          <div className="column itens">
+            <div id="produtos">
+              {numero.map((i) => (
+                <CategoryCard />
+              ))}
             </div>
           </div>
         </div>
-      </div >
+      </div>
+    </div >
       <Footer />
     </>
   );

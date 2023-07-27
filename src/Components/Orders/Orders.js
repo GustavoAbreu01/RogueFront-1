@@ -2,10 +2,8 @@ import React from 'react'
 import './Orders.css'
 
 import motors from "../../assets/img/motores.png"
-import CartProduct from "../ProductCart/ProductCart";
 
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 
 function Orders() {
 
