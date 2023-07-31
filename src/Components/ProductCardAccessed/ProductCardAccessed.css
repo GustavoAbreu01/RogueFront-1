@@ -76,8 +76,9 @@
     border: none;
 
 }
-.fluid.ui.button.product_card_accessed_button{
-    font-size: 16px !important; 
+
+.fluid.ui.button.product_card_accessed_button {
+    font-size: 16px !important;
     background-color: var(--blue-primary);
     color: var(--white);
 }
@@ -86,12 +87,11 @@
     color: var(--white);
 }
 
-.product_card_accessed_name{
+.product_card_accessed_name {
     color: var(--grey-primary);
     font-size: 24px;
 }
 
-.product_card_highlight_description{
+.product_card_highlight_description {
     font-size: 14px;
 }
-
