@@ -17,11 +17,14 @@ import CartTransport from './Pages/CartTransport/CartTransport';
 import CartFinish from './Pages/CartFinish/CartFinish';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import EditProfile from './Pages/EditProfile/EditProfile';
+import ScrollToTop from './ScrollToTop'; // Import the ScrollToTop component
+
 
 
 function App() {
   return (
     <Router>
+       <ScrollToTop />
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
@@ -41,6 +44,7 @@ function App() {
           <Route path="/orders" element={<ProfilePage />} />
           <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
+        
     </Router>
   );
 }
