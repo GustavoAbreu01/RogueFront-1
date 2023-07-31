@@ -2,7 +2,7 @@ body {
     background-color: var(--grey-secondary);
 }
 
-.ui.vertical.divider{
+.ui.vertical.divider {
     height: 10rem;
 }
 
@@ -13,18 +13,17 @@ body {
     align-items: center;
     width: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    background-color:var(--white);;
+    background-color: var(--white);
     border-radius: 2rem;
     padding: 3rem;
 }
 
-.box{
+.box {
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
-.ui.button{
+.ui.button {
     background-color: var(--blue-primary);
     color: var(--white);
 }
-
