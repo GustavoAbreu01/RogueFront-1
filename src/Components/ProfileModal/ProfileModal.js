@@ -70,11 +70,11 @@ export default function ProfileModal({ user }) {
     if (selectedSize === 'small')
       document.body.style.fontSize = "12px";
     else if (selectedSize === 'medium')
-      document.body.style.fontSize = "16px";
+      document.body.style.fontSize = "14px";
     else if (selectedSize === 'large')
-      document.body.style.fontSize = "18px";
+      document.body.style.fontSize = "16px";
     else if (selectedSize === 'veryLarge')
-      document.body.style.fontSize = "20px";
+      document.body.style.fontSize = "18px";
   };
 
   return (

@@ -304,6 +304,7 @@ function EditProfile() {
               <div className="box_edit_section_profile">
 
                 <h2 className="edit_section_title_profile">Acessibilidade</h2>
+                <div className='acessebility_containerscrowll_profile' >
                 
                 <div className='acessebility_container_profile' >
                 <div className='acessebility_box_profile'>
@@ -351,6 +352,7 @@ function EditProfile() {
                 </div>
               </div>
      
+            </div>
             </div>
           ) : null}
 
