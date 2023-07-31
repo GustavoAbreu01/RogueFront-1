@@ -6,7 +6,6 @@ import logo from "../../assets/img/logo-weg.png"
 import { Link } from 'react-router-dom'
 import SearchBar from '../SearchModal/SearchModal'
 import MenuModal from '../MenuModal/MenuModal'
-import PerfilModal from '../ProfileModal/ProfileModal'
 import { UserService } from '../../Service'
 
 function HeaderLogin() {
@@ -51,11 +50,10 @@ function HeaderLogin() {
       </div>
       <div className="searchInput">
         <SearchBar/>
-        
       </div>
       <div className="opc">
         <div className='opc_user'>
-          <Link to="/register "><p className='opc_login'>Login</p></Link><Link to="/register "><p className='opc_register'>/</p></Link><Link to="/register "><p className='opc_register'>Realizar Cadastro</p></Link>
+          <Link to="/login "><p className='opc_login'>Login</p></Link><Link to="/register "><p className='opc_register'>/</p></Link><Link to="/register "><p className='opc_register'>Realizar Cadastro</p></Link>
         </div>
         <div className='icons'>
           <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
