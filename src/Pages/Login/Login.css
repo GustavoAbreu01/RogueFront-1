@@ -1,24 +1,14 @@
-body {
-    background-color: var(--grey-secondary);
-}
-
-.ui.vertical.divider {
-    height: 10rem;
-}
-
-.ui.three.column.stackable.grid.container {
-    margin-top: 1.6rem;
-    display: flex;
-    justify-content: center;
+.ui.header.titleLogin {
     align-items: center;
-    width: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    background-color: var(--white);
-    border-radius: 2rem;
-    padding: 3rem;
+    justify-content: center;
+    display: flex;
+    color: var(--blue-primary);
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .box {
+    padding-top: 5rem;
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -26,4 +16,63 @@ body {
 .ui.button {
     background-color: var(--blue-primary);
     color: var(--white);
+}
+
+.box_login_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 5rem;
+    height: 70%;
+    width: 50%;
+    background-color: var(--white);
+    border-radius: 10%;
+    z-index: 100;
+}
+
+.box_login_inputs_detail {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    gap: 1rem;
+    padding: 1.5rem;
+    height: 70%;
+    width: 53%;
+    border-radius: 10%;
+    background: rgb(39, 119, 183);
+    background: linear-gradient(180deg, rgba(39, 119, 183, 1) 0%, rgba(2, 58, 103, 1) 100%);
+    z-index: 1;
+}
+
+.container_login_inputs {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_image_login {
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+    height: 5rem;
+    z-index: 100;
+}
+
+.container_login_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.ui.big.fluid.button.login {
+    border-radius: 100px;
 }

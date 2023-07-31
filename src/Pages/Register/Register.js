@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css"
 import logo from "../../assets/img/logoWEG.png"
 import { useState } from "react";
@@ -11,11 +11,6 @@ function Register() {
 
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
-    const [userLogin, setUserLogin] = useState({
-        emailLogin: '',
-        passwordLogin: '',
-    });
-
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -23,9 +18,6 @@ function Register() {
         cpf: '',
     });
 
-    const updateLoginInformation = (event) => {
-        setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
-    }
 
     const updateRegisterInformation = (event) => {
         setUser({ ...user, [event.target.name]: event.target.value });
@@ -35,11 +27,6 @@ function Register() {
         setPasswordConfirm(event.target.value);
     }
 
-    const handleLogin = () => {
-        localStorage.setItem('verifyLogin', 'yes');
-        navigate("/");
-        alert("Senha ou email incorretos!!");
-    };
 
     function create(event) {
         if (user.password !== passwordConfirm) {
@@ -48,12 +35,7 @@ function Register() {
             event.preventDefault();
             localStorage.setItem("verifyLogin", 'yes');
             UserService.create(user)
-                .then(response => {
-                    navigate('/home');
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+            navigate('/');
         }
     }
 
@@ -61,7 +43,7 @@ function Register() {
 
         <>
             <div className='container_register_image'>
-                <img src={logo}  />
+                <Link to={'/'}><img className='logo_image_register' src={logo} /></Link>
             </div>
             <div className="container_register_inputs">
                 <div className="box_register_inputs_detail"></div>
@@ -94,7 +76,6 @@ function Register() {
                                 <label>Senha:</label>
                                 <input value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
                             </div>
-
                             <div className="eight wide field passwordConfirm">
                                 <label>Confirmar Senha:</label>
                                 <input value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
