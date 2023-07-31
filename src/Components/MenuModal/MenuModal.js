@@ -9,6 +9,12 @@ import iconMotor from "../../assets/img/iconeMotor.png"
 import iconTecSolutions from "../../assets/img/DIFERENTESTECNOLOGIAS.png"
 import iconEnergy from "../../assets/img/ENERGIA FOTOVOLTAICA_SOLAR.png"
 import iconPaint from "../../assets/img/PINTURA_TINTAS.png"
+import generator from "../../assets/img/gerador.png"
+import power from "../../assets/img/ENERGIA_POTÊNCIA.jpg"
+import reducer from "../../assets/img/REDUTOR02.png"
+import industry from "../../assets/img/Segurança_industria.png"
+import building from "../../assets/img/CONSTRUÇÃO.png"
+
 
 
 import './MenuModal.css';
@@ -78,7 +84,7 @@ function MenuModal() {
                   <Link to='/category'><li className="sub_category" >Trifásico - Alta Tensão</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider menu_modal"></div>
+              <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
                   <img src={iconTecSolutions} alt="iconeMotor" width={25} />
@@ -90,7 +96,7 @@ function MenuModal() {
                   <Link to='/category'><li className="sub_category" >Inteligência Artificial</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider menu_modal"></div>
+              <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
                   <img src={iconPaint} alt="iconeMotor" width={25} />
@@ -102,10 +108,10 @@ function MenuModal() {
                   <Link to='/category'><li className="sub_category" >Vernizes Impregnação</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider menu_modal"></div>
+              <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconEnergy} alt="iconeMotor" width={25} />
+                  <img src={generator} alt="iconeMotor" width={25} />
                   <p className="category_title">Geradores</p>
                 </div>
                 <div className="sub_category_selected" >
@@ -114,16 +120,64 @@ function MenuModal() {
                   <Link to='/category'><li className="sub_category" >Turbinas Hidráulicas</li></Link>
                 </div>
               </div>
-              <div class="ui inverted divider menu_modal"></div>
+              <div className="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
+                  <img src={industry} alt="iconeMotor" width={25} />
+                  <p className="category_title">Automação e controle industrial</p>
+                </div>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Drives</li></Link>
+                  <Link to='/category'><li className="sub_category" >Controls</li></Link>
+                  <Link to='/category'><li className="sub_category" >Controle de Processos</li></Link>
+                </div>
+              </div>
+              <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
                   <img src={iconEnergy} alt="iconeMotor" width={25} />
-                  <p className="category_title">Geradores</p>
+                  <p className="category_title">Painéis elétricos</p>
                 </div>
                 <div className="sub_category_selected" >
-                  <Link to='/category'><li className="sub_category" >Aerogeradores</li></Link>
-                  <Link to='/category'><li className="sub_category" >Gerador Solar Fotovoltaico</li></Link>
-                  <Link to='/category'><li className="sub_category" >Turbinas Hidráulicas</li></Link>
+                  <Link to='/category'><li className="sub_category" >cubículos MT</li></Link>
+                  <Link to='/category'><li className="sub_category" >Load center</li></Link>
+                  <Link to='/category'><li className="sub_category" >Eletrocentros</li></Link>
+                </div>
+              </div>
+              <div className="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
+                  <img src={building} alt="iconeMotor" width={25} />
+                  <p className="category_title">Building & Infrastructure</p>
+                </div>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Tomadas e interruptores residenciais</li></Link>
+                  <Link to='/category'><li className="sub_category" >Plugues e tomadas residenciais</li></Link>
+                  <Link to='/category'><li className="sub_category" >WEG home</li></Link>
+                </div>
+              </div>
+              <div className="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
+                  <img src={power} alt="iconeMotor" width={25} />
+                  <p className="category_title">Critical power</p>
+                </div>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Residencial</li></Link>
+                  <Link to='/category'><li className="sub_category" >Industrial</li></Link>
+                  <Link to='/category'><li className="sub_category" >Corporativo / Empresas</li></Link>
+                </div>
+              </div>
+              <div className="ui inverted divider menu_modal"></div>
+              <div className="category_selected">
+                <div className="category_title_selected">
+                  <img src={reducer} alt="iconeMotor" width={25} />
+                  <p className="category_title">Redutores de velocidade</p>
+                </div>
+                <div className="sub_category_selected" >
+                  <Link to='/category'><li className="sub_category" >Industrial</li></Link>
+                  <Link to='/category'><li className="sub_category" >Coroa e rosca</li></Link>
+                  <Link to='/category'><li className="sub_category" >Acoplamento</li></Link>
                 </div>
               </div>
             </div>
