@@ -7,10 +7,10 @@ import motor from '../../assets/img/motor.png'
 
 import { Link } from 'react-router-dom'
 
-const ProductCardAccessed = ({categories}) => {
+const ProductCardAccessed = ({product}) => {
 
   return (
-    <div className="product_acessed" key={categories.id}>
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_accessed'>
       <Link to='/product'>
         <div className='box_product_card_accessed_tag_icon'>
@@ -35,12 +35,12 @@ const ProductCardAccessed = ({categories}) => {
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>
-            <h3 className='product_card_accessed_name'>{categories.name}</h3>
-            <p className='product_card_accessed_description'>{categories.type}</p>
+            <h3 className='product_card_accessed_name'>{product.name}</h3>
+            <p className='product_card_accessed_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>{categories.name}</h3>
+          <h3 className='product_card_accessed_price'>{product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <div className='product_card_accessed_buy_button'>

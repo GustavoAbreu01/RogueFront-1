@@ -60,8 +60,8 @@ function ProductAccessedCarousel() {
     return (
         <div className='container_product_accessed_carousel'>
       <Slider {...settings}>
-        {products.map((categories) => (
-          <ProductCardAccessed key={categories.id} categories={categories} />
+        {products.map((product) => (
+          <ProductCardAccessed key={product.id} product={product} />
         ))}
       </Slider>
     </div>
