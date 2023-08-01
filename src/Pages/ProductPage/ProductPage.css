@@ -374,9 +374,14 @@ td {
     gap: 2rem;
     height: 3rem;
     padding: 3rem;
+    margin-top: 10%;
     color: var(--white);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+}
+
+.box_product_page_carousel_similar {
+    padding-bottom: 5rem;
 }
 
 .buttons_product_page_opc_add {

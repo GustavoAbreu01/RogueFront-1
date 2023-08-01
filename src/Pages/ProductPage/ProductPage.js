@@ -112,7 +112,9 @@ function ProductPage() {
                 <FaStar color='var(--white)' size={40} />
                 <h1>Produtos Semelhantes</h1>
             </div>
-            <Carousel />
+            <div className='box_product_page_carousel_similar'>
+                <Carousel />
+            </div>
             <Footer />
         </>
     )

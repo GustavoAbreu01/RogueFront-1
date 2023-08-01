@@ -83,7 +83,9 @@ function Compare() {
           <FaStar color='var(--white)' size={40} />
           <h1 className='title_similar' >Produtos Recomendados</h1>
         </div>
-        <ProductCarouselSmallSimilar />
+        <div className='box_carousel_similar_recommended'>
+          <ProductCarouselSmallSimilar />
+        </div>
       </div>
       <Footer />
     </>

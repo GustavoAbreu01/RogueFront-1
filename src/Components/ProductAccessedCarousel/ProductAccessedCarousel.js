@@ -72,6 +72,27 @@ function ProductAccessedCarousel() {
                 <div className='box_product_accessed_carousel'>
                     <ProductCardAccessed />
                 </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
             </Slider>
         </div >
     )
