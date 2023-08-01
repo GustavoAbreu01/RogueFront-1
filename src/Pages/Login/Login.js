@@ -5,6 +5,8 @@ import { useState } from "react";
 import { UserService } from '../../Service';
 import logo from "../../assets/img/logoWEG.png"
 
+//Importando os icones
+import { BsArrowLeftShort } from 'react-icons/bs';
 
 function Login() {
     const navigate = useNavigate();
@@ -72,6 +74,10 @@ function Login() {
                         </div>
                         <div className='box'>
                             <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>
+                        </div>
+                        <div className='login_finish_text'>
+                            <BsArrowLeftShort size={15} />
+                            <Link to='/register'> <p className='cart_finish_subtext'>Não Possui cadastro? <b>Realizar Cadastro</b></p> </Link>
                         </div>
                     </form>
                 </div>

@@ -22,10 +22,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
     height: 70%;
-    width: 50%;
+    width: 45%;
     background-color: var(--white);
     border-radius: 10%;
     z-index: 100;
@@ -39,7 +39,7 @@
     gap: 1rem;
     padding: 1.5rem;
     height: 70%;
-    width: 55%;
+    width: 50%;
     border-radius: 10%;
     background: rgb(39, 119, 183);
     background: linear-gradient(180deg, rgba(39, 119, 183, 1) 0%, rgba(2, 58, 103, 1) 100%);
@@ -75,4 +75,13 @@
 .ui.big.fluid.button.login {
     border-radius: 100px;
     margin-top: 10%;
+}
+
+.login_finish_text {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 3%;
+    color: var(--blue-primary);
+    gap: 0.5rem;
 }

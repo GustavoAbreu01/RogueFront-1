@@ -115,6 +115,13 @@ function ProductPage() {
             <div className='box_product_page_carousel_similar'>
                 <Carousel />
             </div>
+            <div className='box_product_page_title_highlights'>
+                <FaStar color='var(--white)' size={40} />
+                <h1>Produtos Destaques</h1>
+            </div>
+            <div className='box_product_page_carousel_highlights'>
+                <Carousel />
+            </div>
             <Footer />
         </>
     )

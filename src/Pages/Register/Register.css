@@ -81,6 +81,24 @@
 }
 
 .ui.big.fluid.button.register {
-    margin-top: 5rem;
     border-radius: 100px;
+    margin-top: 5% !important;
+}
+
+.eight.wide.field.register {
+    margin-top: 3% !important;
+}
+
+.field.register {
+    margin-top: 3% !important;
+}
+
+
+.register_finish_text {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 3%;
+    color: var(--blue-primary);
+    gap: 0.5rem;
 }
