@@ -2,11 +2,28 @@
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    background-color: var(--grey-secondary);
+    background-color: var(--white);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     border-radius: 10px;
     width: 15rem;
     height: 23rem;
 }
+
+.product_card_smaller_compare_button {
+    width: 10%;
+    background-color: black;
+    margin: 1rem;
+}
+
+.ui.icon.button.product.card.smaller.compare {
+    background-color: var(--blue-quaternary) !important;
+}
+
+.ui.icon.button.product_card_smaller_compare {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .container_product_card_smaller:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     transition: 0.3s;
@@ -25,7 +42,7 @@
     justify-content: space-between;
     align-items: start;
     padding-left: 1rem;
-  
+
 }
 
 .product_card_smaller_price {
@@ -42,9 +59,10 @@
     padding: 0.5rem;
     padding-left: 1rem;
     height: 100%;
-   
+
 }
-.product_card_smaller_title{
+
+.product_card_smaller_title {
     font-size: 18px;
 }
 
@@ -61,7 +79,7 @@
 
 .box_product_card_smaller_image {
     position: relative;
-    top:0.1rem;
+    top: 0.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,18 +92,33 @@
     padding: 1rem;
     padding-top: 0.5rem;
     border: none;
-    
+
 }
 
-.ui.icon.button.product_card_smaller{
-    background-color: var(  --blue-secundary);
+.ui.icon.button.product_card_smaller {
+    background-color: var(--blue-secundary);
 }
 
-.ui.fluid.button.product_card_smaller{
-    background-color: var(  --blue-secundary);
+.ui.fluid.button.product_card_smaller {
+    background-color: var(--blue-secundary);
 }
 
-.product_card_smaller_price_info{
+.product_card_smaller_price_info {
     font-size: 13px;
     color: var(--grey-primary);
+}
+
+.container_product_smaller_buttons_div{
+    height: 1rem;
+}
+
+.product_card_small_button_compare{
+    left: 1rem;
+}
+
+.product_card_small_button_compare {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 2rem;
 }

@@ -60,9 +60,41 @@ function SmallProductCard() {
         )
     }
 
+
+    const AddProductInCompare = () => {
+        Swal.fire({
+            title: 'Produto adicionado a comparação!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para a tela comparação',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/compare"
+            }
+        }
+        )
+    }
+
     return (
         <div className='container_product_card_smaller'>
-            <div className='container_product_card_smaller_action_icon '>
+            <div className='container_product_card_smaller_action_icon'>
+                <div className='product_card_small_button_compare'>
+                    <button onClick={AddProductInCompare} className="ui icon button product_card_smaller_compare">
+                        <i class="exchange alternate icon"></i>
+                    </button>
+                </div>
                 <button onClick={AddProductInSave} className="ui icon button product_card_smaller">
                     <i className="bookmark icon "></i>
                 </button>
