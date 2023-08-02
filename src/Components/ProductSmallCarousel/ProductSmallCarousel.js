@@ -86,6 +86,18 @@ function ProductCarouselSmall() {
                 <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
             </Slider>
         </div >
     )

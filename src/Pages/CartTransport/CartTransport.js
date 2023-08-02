@@ -1,3 +1,4 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './CartTransport.css';
 import axios from "axios";
@@ -9,12 +10,11 @@ import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
-//Importando os icones
-import { FaStar } from 'react-icons/fa'
-
 //importando as frameworks
 import { Link } from 'react-router-dom';
 
+//Importando os icones
+import { FaStar } from 'react-icons/fa'
 
 function CartTransport() {
 
@@ -38,6 +38,7 @@ function CartTransport() {
   };
 
   var valor = 1100.00;
+  var frete = 100;
   var frete = 100;
   var total = 1200;
 

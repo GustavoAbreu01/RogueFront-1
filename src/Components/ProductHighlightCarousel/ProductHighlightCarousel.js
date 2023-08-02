@@ -64,10 +64,31 @@ function ProductHighlightCarousel() {
                 <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box'>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
+                    <ProductCardHighlight />
+                </div>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
             </Slider>

@@ -1,10 +1,18 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import "./Login.css"
-import { useState } from "react";
-import { UserService } from '../../Service';
-import axios from 'axios';
 
+//Importando a Service
+import { UserService } from '../../Service';
+
+//importando as frameworks
+import { useNavigate, Link } from "react-router-dom";
+
+//Importando as imagens
+import logo from "../../assets/img/logoWEG.png"
+
+//Importando os icones
+import { BsArrowLeftShort } from 'react-icons/bs';
 
 function Login() {
     const navigate = useNavigate();
@@ -27,13 +35,6 @@ function Login() {
         setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
     }
 
-    const updateRegisterInformation = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value });
-    }
-
-    const updateConfirmInformation = (event) => {
-        setPasswordConfirm(event.target.value);
-    }
 
     const handleLogin = () => {
         localStorage.setItem('verifyLogin', 'yes');
@@ -60,29 +61,34 @@ function Login() {
     return (
 
         <>
-
-            <div className="ui three column stackable grid container">
-
-                <div className="column">
+            <div className='container_login_image'>
+                <Link to={'/'}><img className='logo_image_login' src={logo} /></Link>
+            </div>
+            <div className="container_login_inputs">
+                <div className="box_login_inputs_detail"></div>
+                <div className="box_login_inputs">
                     <form className="ui form login">
-
-                        <h2 className="ui header titleRegister">Login</h2>
-
-                        <div className="field emailLogin">
-                            <label>Email:</label >
-                            <input value={userLogin.emailLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuEmail@email.com" />
+                        <h2 className="ui header titleLogin">Login</h2>
+                        <div className="field">
+                            <label>Email</label>
+                            <input value={userLogin.emailLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                         </div>
 
-                        <div className="field passwordLogin">
-                            <label>Senha:</label>
-                            <input value={userLogin.passwordLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                        <div className="field">
+                            <label>Senha</label>
+                            <input value={userLogin.passwordLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                         </div>
                         <div className='box'>
-                            <button className="ui big fluid button" onClick={() => handleLogin()}>Entrar</button>
+                            <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>
+                        </div>
+                        <div className='login_finish_text'>
+                            <BsArrowLeftShort size={15} />
+                            <Link to='/register'> <p className='cart_finish_subtext'>Não Possui cadastro? <b>Realizar Cadastro</b></p> </Link>
                         </div>
                     </form>
                 </div>
-            </div></>
+            </div>
+        </>
     )
 }
 export default Login

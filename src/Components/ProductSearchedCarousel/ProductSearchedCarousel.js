@@ -52,6 +52,27 @@ function ProductSearchedCarousel() {
     return (
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
+            <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
                 <div className='box_product_searched_carousel'>
                     <ProductCardSearched />
                 </div>

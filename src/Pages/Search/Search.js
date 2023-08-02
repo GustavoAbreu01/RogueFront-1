@@ -1,4 +1,5 @@
-import React from 'react'
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import './Search.css'
 
 //Importando os componentes
@@ -6,8 +7,11 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import { useState } from 'react';
+
+//importando as frameworks
 import { Divider } from 'semantic-ui-react';
+
+//Importando as imagens
 import mignifyingGlass from "../../assets/img/Search.png"
 
 function Search() {
@@ -49,9 +53,9 @@ function Search() {
   return (
     <div>
       {!verify() ? <Header /> : <HeaderLogin />}
-      <div className='container_search_page'>
-        <div className="ui row search">
-          <div className="column filter search">
+      <div className='container_search_page_layout'>
+        <div className='container_search_page_detail'>
+          <div className='container_search_page'>
             <div className="search_second_filter">
               <img className="icon_search" src={mignifyingGlass} />
               <h1 className="ui header motor search">Filtros</h1>
@@ -95,6 +99,7 @@ function Search() {
                     <br />
 
                   </div>
+
 
                 )
                 }
@@ -177,8 +182,8 @@ function Search() {
                       <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
                       <label className="desc search" htmlFor="Aneis">Anéis</label>
                     </div>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                   </div>
 
                 )
@@ -228,20 +233,20 @@ function Search() {
               </div>
             </div>
           </div>
-        </div>
 
 
 
-        <div className="ui grid search container_searchBar">
-          <div className="two column row search box_searchBar">
-            <div class="ui row searchItens searchBar_checkbox ">
-              <div class="column itens">
-                <div id="produtos" className="ui grid searchItens">
-                  {numero.map((i) => (
-                    <div className="four wide column" key={i} >
-                      <SmallProductCard />
-                    </div>
-                  ))}
+          <div className="search container_searchBar">
+            <div className="search box_searchBar">
+              <div class="searchItens searchBar_checkbox ">
+                <div class="column itens">
+                  <div id="produtos" className="">
+                    {numero.map((i) => (
+                      <div className="searchItens" key={i} >
+                        <SmallProductCard />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

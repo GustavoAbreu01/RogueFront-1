@@ -9,8 +9,8 @@
     height: 10rem;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    justify-content: space-between;
-    display: flex;
+    justify-content: space-evenly;
+    display: flex; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     align-items: center;
     background-color: var(--white);

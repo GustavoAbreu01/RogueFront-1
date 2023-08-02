@@ -70,6 +70,27 @@ function ProductNewCarousel() {
                 <div className='box'>
                     <Obj />
                 </div>
+                <div className='box'>
+                    <Obj />
+                </div>
+                <div className='box'>
+                    <Obj />
+                </div>
+                <div className='box'>
+                    <Obj />
+                </div>
+                <div className='box'>
+                    <Obj />
+                </div>
+                <div className='box'>
+                    <Obj />
+                </div>
+                <div className='box'>
+                    <Obj />
+                </div>
+                <div className='box'>
+                    <Obj />
+                </div>
             </Slider>
         </div >
     )

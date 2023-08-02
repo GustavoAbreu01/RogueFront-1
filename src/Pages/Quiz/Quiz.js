@@ -1,13 +1,21 @@
-import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import './Quiz.css'
+
+//importando as frameworks
+import { Link, useNavigate } from "react-router-dom";
+
+//Importando os componentes
+import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer'
 import ProductSmallCarousel from '../../Components/ProductSmallCarousel/ProductSmallCarousel'
-import w50 from "../../assets/img/motorW50.png"
-import Header from '../../Components/Header/Header';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+
+//Importando as imagens
+import w50 from "../../assets/img/motorW50.png"
+
+//Importando os ícones
 import { FaStar } from 'react-icons/fa';
 
 function Quiz() {
@@ -55,7 +63,7 @@ function Quiz() {
     <>
       {!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div class="ui raised very padded text container segment quiz">
-      <p class="ui blue ribbon label quiz">Quiz</p>
+        <p class="ui blue ribbon label quiz">Quiz</p>
         <div class="ui mini steps quiz">
           <i class="clipboard list icon quiz"></i>
           <div class="box step quiz">

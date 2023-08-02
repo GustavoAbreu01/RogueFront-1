@@ -1,13 +1,22 @@
-import './ProductPage.css'
+//Importando o React e o CSS
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
-import motor from '../../assets/img/motor.png'
+import './ProductPage.css'
+
+//importando as frameworks
 import { Rating } from 'semantic-ui-react';
+
+//Importando os componentes
 import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
+
+//Importando as imagens
+import motor from '../../assets/img/motor.png'
+
+//Importando os ícones
+import { FaStar } from 'react-icons/fa'
 
 const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -112,7 +121,16 @@ function ProductPage() {
                 <FaStar color='var(--white)' size={40} />
                 <h1>Produtos Semelhantes</h1>
             </div>
-            <Carousel />
+            <div className='box_product_page_carousel_similar'>
+                <Carousel />
+            </div>
+            <div className='box_product_page_title_highlights'>
+                <FaStar color='var(--white)' size={40} />
+                <h1>Produtos Destaques</h1>
+            </div>
+            <div className='box_product_page_carousel_highlights'>
+                <Carousel />
+            </div>
             <Footer />
         </>
     )

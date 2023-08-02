@@ -1,15 +1,18 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './Save.css';
-import HaveProducts from './haveProducts';
+
+
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
-import { BsFillBookmarkFill } from 'react-icons/bs'
-import { AiFillStar } from 'react-icons/ai'
 import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 
+//Importando os ícones
+import { BsFillBookmarkFill } from 'react-icons/bs'
+import { AiFillStar } from 'react-icons/ai'
 
 function Product() {
   const [products, setProducts] = useState([]);

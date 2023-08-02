@@ -1,14 +1,15 @@
+//Importando o React e o CSS
 import React from 'react'
 import './ProfilePage.css'
-
-//Importando os icones
-import { BsFillBookmarkFill } from 'react-icons/bs'
 
 //Importando os componentes
 import Header from '../../Components/Header/Header'
 import Orders from '../../Components/Orders/Orders'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+
+//Importando os ícones
+import { BsFillBookmarkFill } from 'react-icons/bs'
 
 function ProfilePage() {
 

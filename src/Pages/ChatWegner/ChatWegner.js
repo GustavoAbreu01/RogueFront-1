@@ -1,23 +1,32 @@
+//Importando o React e o CSS
 import React from 'react'
 import './ChatWegner.css'
-import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
-import { IoIosArrowBack } from 'react-icons/io'
-import { VscSend } from 'react-icons/vsc'
+
+//importando as frameworks
 import { Link } from 'react-router-dom'
+
+//Importando os componentes
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+
+//Importando as imagens
+import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
+
+//Importando os ícones
+import { IoIosArrowBack } from 'react-icons/io'
+import { VscSend } from 'react-icons/vsc'
 
 function ChatWegner() {
 
     const verify = () => {
         const Registered = localStorage.getItem('verifyLogin');
         if (Registered === "yes") {
-          return true
+            return true
         } else {
-          return false
+            return false
         }
-      }
+    }
 
     return (
         <>{!verify() ? <Header /> : <HeaderLogin />}

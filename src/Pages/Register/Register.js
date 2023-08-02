@@ -1,20 +1,24 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import "./Register.css"
-import logo from "../../assets/img/logoWEG.png"
-import { useState } from "react";
+
+//Importando a Service
 import { UserService } from '../../Service';
+
+//importando as frameworks
+import { Link, useNavigate } from "react-router-dom";
+
+//Importando as imagens
+import logo from "../../assets/img/logoWEG.png"
+
+//Importando os ícones
+import { BsArrowLeftShort } from 'react-icons/bs';
 
 
 function Register() {
     const navigate = useNavigate();
 
     const [passwordConfirm, setPasswordConfirm] = useState('');
-
-    const [userLogin, setUserLogin] = useState({
-        emailLogin: '',
-        passwordLogin: '',
-    });
 
     const [user, setUser] = useState({
         name: '',
@@ -23,9 +27,6 @@ function Register() {
         cpf: '',
     });
 
-    const updateLoginInformation = (event) => {
-        setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
-    }
 
     const updateRegisterInformation = (event) => {
         setUser({ ...user, [event.target.name]: event.target.value });
@@ -35,11 +36,6 @@ function Register() {
         setPasswordConfirm(event.target.value);
     }
 
-    const handleLogin = () => {
-        localStorage.setItem('verifyLogin', 'yes');
-        navigate("/");
-        alert("Senha ou email incorretos!!");
-    };
 
     function create(event) {
         if (user.password !== passwordConfirm) {
@@ -48,12 +44,7 @@ function Register() {
             event.preventDefault();
             localStorage.setItem("verifyLogin", 'yes');
             UserService.create(user)
-                .then(response => {
-                    navigate('/home');
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+            navigate('/');
         }
     }
 
@@ -61,7 +52,7 @@ function Register() {
 
         <>
             <div className='container_register_image'>
-                <img src={logo}  />
+                <Link to={'/'}><img className='logo_image_register' src={logo} /></Link>
             </div>
             <div className="container_register_inputs">
                 <div className="box_register_inputs_detail"></div>
@@ -70,38 +61,41 @@ function Register() {
                         <h2 className="ui header titleRegister">Cadastro de Usuário</h2>
 
                         <div className="fields">
-                            <div className="eight wide field">
+                            <div className="eight wide field register">
                                 <label>Nome</label>
-                                <input value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                                <input className='register_input' value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
                             </div>
-                            <div className="eight wide field">
+                            <div className="eight wide field register">
                                 <label>Sobrenome</label>
-                                <input value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                                <input className='register_input' value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field register">
                             <label>Email</label>
-                            <input value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                            <input className='register_input' value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                         </div>
 
-                        <div className="field">
+                        <div className="field register">
                             <label>CPF/CNPJ</label>
-                            <input value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                            <input className='register_input' value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                         </div>
                         <div className="fields">
-                            <div className="eight wide field passwordRegister">
+                            <div className="eight wide field register">
                                 <label>Senha:</label>
-                                <input value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                <input className='register_input' value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
                             </div>
-
-                            <div className="eight wide field passwordConfirm">
+                            <div className="eight wide field register">
                                 <label>Confirmar Senha:</label>
-                                <input value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                <input className='register_input' value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
                             </div>
                         </div>
                         <div className='box'>
                             <button className="ui big fluid button register" onClick={create}>Cadastrar</button>
+                        </div>
+                        <div className='register_finish_text'>
+                            <BsArrowLeftShort size={15} />
+                            <Link to='/login'> <p className='cart_finish_subtext'>Já Possui cadastro? <b>Login</b></p> </Link>
                         </div>
                     </form>
                 </div>

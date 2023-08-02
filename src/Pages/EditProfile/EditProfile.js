@@ -1,11 +1,9 @@
+//Importando o React e o CSS
 import React, { useEffect, useState } from 'react';
 import './EditProfile.css';
-import { Link } from 'react-router-dom';
 
-//Importando os icones
-import { FaStar } from 'react-icons/fa';
-import { CiSquareAlert } from 'react-icons/ci';
-import { CgProfile } from 'react-icons/cg';
+//importando as frameworks
+import { Link } from 'react-router-dom';
 
 //Importando os componentes
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
@@ -15,6 +13,11 @@ import Footer from '../../Components/Footer/Footer';
 import RatedProducts from '../../Components/RatedProducts/RatedProducts';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+
+//Importando os icones
+import { FaStar } from 'react-icons/fa';
+import { CiSquareAlert } from 'react-icons/ci';
+import { CgProfile } from 'react-icons/cg';
 
 function EditProfile() {
 

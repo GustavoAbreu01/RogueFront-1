@@ -1,19 +1,19 @@
-import React from 'react'
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import './ProductCategory.css'
 
-//Importando as imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
+//importando as frameworks
+import { Divider } from 'semantic-ui-react';
 
+//Importando os componentes
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 
-import { useState } from 'react';
-import { Divider } from 'semantic-ui-react';
-
-
+//Importando as imagens
+import iconMotor from "../../assets/img/iconeMotor.png"
 
 function ProductCategory() {
 
