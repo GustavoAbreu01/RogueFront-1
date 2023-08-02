@@ -18,6 +18,7 @@
 }
 .acessebility_profile_description{
     margin-top: 1rem;
+ 
 }
 
 .acessebility_container_profile{
@@ -64,6 +65,15 @@
     height: 36.4rem;
     border-radius: 5px;
 }
+
+.acessebility_containerscrowll_profile{
+    
+max-height: 25rem;
+width: 100%;
+overflow-y: scroll;
+
+}
+
 
 .edit-section-ratings {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
