@@ -1,3 +1,4 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './CartTransport.css';
 
@@ -8,17 +9,16 @@ import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
-//Importando os icones
-import { FaStar } from 'react-icons/fa'
-
 //importando as frameworks
 import { Link } from 'react-router-dom';
 
+//Importando os icones
+import { FaStar } from 'react-icons/fa'
 
 function CartTransport() {
 
   var valor = 1100.00;
-  var frete = 100; 
+  var frete = 100;
   var total = 1200;
 
   const verify = () => {
@@ -66,7 +66,7 @@ function CartTransport() {
           <div className='box_cart_product_transport'>
             <div className='cart_transport_title'>
               <h5 className='cart_transport_title_text'>Verificar Transporte do Pedido</h5>
-            </div> 
+            </div>
             <div className='cart_transport_form'>
               <form className="ui form">
                 <div className="field">

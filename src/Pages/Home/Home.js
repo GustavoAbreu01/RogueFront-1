@@ -1,5 +1,21 @@
+//Importando o React e o CSS
 import React from 'react'
 import './Home.css'
+
+//importando as frameworks
+import Aos from 'aos'
+import { Link } from 'react-router-dom'
+
+//Importando os componentes
+import ProductCarousel from '../../Components/ProductAccessedCarousel/ProductAccessedCarousel'
+import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
+import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
+import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import Carousell from '../../Components/BannerCarousell/BannerCarousell'
 
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
@@ -17,10 +33,6 @@ import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
 import motor from "../../assets/img/motor.png"
 
-//importando as frameworks
-import Aos from 'aos'
-import { Link } from 'react-router-dom'
-
 //Importando os icones
 import { BiLineChart } from 'react-icons/bi'
 import { MdOutlineSecurity } from 'react-icons/md'
@@ -31,17 +43,6 @@ import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
-
-//Importando os componentes
-import ProductCarousel from '../../Components/ProductAccessedCarousel/ProductAccessedCarousel'
-import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
-import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
-import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
-import Footer from '../../Components/Footer/Footer'
-import Header from '../../Components/Header/Header'
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/BannerCarousell/BannerCarousell'
 
 
 function Home() {

@@ -1,7 +1,6 @@
+//Importando o React e o CSS
 import React from 'react'
 import './Save.css'
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
 
 const deleteItens = (item) => {
     const products = JSON.parse(localStorage.getItem('products'))

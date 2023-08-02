@@ -1,5 +1,17 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './CartPayment.css';
+
+//importando as frameworks
+import { Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+
+//Importando os componentes
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
 //Importando as imagens
 import CardAll from '../../assets/img/CardAll.png';
@@ -10,18 +22,6 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaStar } from 'react-icons/fa';
-
-//Importando os componentes
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
-
-//importando as frameworks
-import { Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-
 
 function CartPayment() {
 

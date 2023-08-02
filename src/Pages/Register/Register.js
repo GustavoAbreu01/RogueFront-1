@@ -1,11 +1,17 @@
-import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import "./Register.css"
-import logo from "../../assets/img/logoWEG.png"
-import { useState } from "react";
+
+//Importando a Service
 import { UserService } from '../../Service';
 
-//Importando os icones
+//importando as frameworks
+import { Link, useNavigate } from "react-router-dom";
+
+//Importando as imagens
+import logo from "../../assets/img/logoWEG.png"
+
+//Importando os ícones
 import { BsArrowLeftShort } from 'react-icons/bs';
 
 

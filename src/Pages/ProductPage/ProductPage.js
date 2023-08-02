@@ -1,13 +1,22 @@
-import './ProductPage.css'
+//Importando o React e o CSS
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
-import motor from '../../assets/img/motor.png'
+import './ProductPage.css'
+
+//importando as frameworks
 import { Rating } from 'semantic-ui-react';
+
+//Importando os componentes
 import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
+
+//Importando as imagens
+import motor from '../../assets/img/motor.png'
+
+//Importando os ícones
+import { FaStar } from 'react-icons/fa'
 
 const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');

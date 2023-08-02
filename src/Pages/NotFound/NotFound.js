@@ -1,14 +1,15 @@
+//Importando o React e o CSS
 import React from 'react'
 import './NotFound.css'
+
+// importando framework
+import { Link } from 'react-router-dom'
+
 // importando imagens
 import weggner from "../../assets/img/NotFoundWeggner.gif"
 
 // importando icones
 import { BsArrowLeftShort } from 'react-icons/bs'
-
-// importando framework
-import { Link } from 'react-router-dom'
-
 
 function NotFound() {
   return (

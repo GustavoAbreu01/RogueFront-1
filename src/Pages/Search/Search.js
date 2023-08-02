@@ -1,4 +1,5 @@
-import React from 'react'
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import './Search.css'
 
 //Importando os componentes
@@ -6,8 +7,11 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import { useState } from 'react';
+
+//importando as frameworks
 import { Divider } from 'semantic-ui-react';
+
+//Importando as imagens
 import mignifyingGlass from "../../assets/img/Search.png"
 
 function Search() {
