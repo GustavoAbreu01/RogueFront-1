@@ -345,7 +345,7 @@ function EditProfile() {
                     <h5>Modo Escuro</h5>
                   </div>
                   <div className="acessebility_profile_switcher">
-                    <div class="checkbox-wrapper-6">
+                    <div className="checkbox-wrapper-6">
                       <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
                       <label className="tgl-btn" for="cb1-5" />
                     </div>

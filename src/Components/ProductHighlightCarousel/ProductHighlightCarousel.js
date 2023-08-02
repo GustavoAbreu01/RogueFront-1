@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+//Importando o React e o CSS
+import React from 'react'
 import './ProductHighlightCarousel.css';
+
+//importando as frameworks
+import Slider from "react-slick";
+
+//Importando os componentes
 import ProductCardHighlight from '../ProductCardHighlight/ProductCardHighlight';
 
 function ProductHighlightCarousel() {

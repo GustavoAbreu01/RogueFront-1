@@ -1,3 +1,4 @@
+//Importando o React e o CSS
 import React from 'react'
 import './Divider.css'
 

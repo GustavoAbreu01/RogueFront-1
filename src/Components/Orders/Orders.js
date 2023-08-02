@@ -1,11 +1,12 @@
+//Importando o React e o CSS
 import React from 'react'
 import './Orders.css'
 
-import motors from "../../assets/img/motores.png"
-import CartProduct from "../ProductCart/ProductCart";
-
+//importando as frameworks
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+
+//Importando as imagens
+import motors from "../../assets/img/motores.png"
 
 function Orders() {
 

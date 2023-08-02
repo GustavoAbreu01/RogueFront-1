@@ -1,12 +1,23 @@
+//Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
 import './Header.css'
-import { FaShoppingCart } from 'react-icons/fa'
-import { BsFillBookmarkFill } from 'react-icons/bs'
-import logo from "../../assets/img/logo-weg.png"
+
+//Importando a Service
+import { UserService } from '../../Service'
+
+//importando as frameworks
 import { Link } from 'react-router-dom'
+
+//Importando os componentes
 import SearchBar from '../SearchModal/SearchModal'
 import MenuModal from '../MenuModal/MenuModal'
-import { UserService } from '../../Service'
+
+//Importando as imagens
+import logo from "../../assets/img/logo-weg.png"
+
+//Importando os ícones
+import { FaShoppingCart } from 'react-icons/fa'
+
 
 function HeaderLogin() {
 
@@ -49,7 +60,7 @@ function HeaderLogin() {
         <Link to="/"><img src={logo} alt="" /></Link>
       </div>
       <div className="searchInput">
-        <SearchBar/>
+        <SearchBar />
       </div>
       <div className="opc">
         <div className='opc_user'>

@@ -1,17 +1,19 @@
+//Importando o React e o CSS
 import React from 'react'
 import "./CardCompare.css"
-import intensity from "../../assets/img/intensity.png"
-import { MdCompareArrows, MdDelete } from 'react-icons/md'
+
+//importando as frameworks
+import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
+
+//Importando os ícones
+import { MdCompareArrows } from 'react-icons/md'
 import { FaPowerOff } from 'react-icons/fa'
-import { VscGraph } from 'react-icons/bs'
 import { GoAlertFill } from 'react-icons/go'
 import { GiLightningFrequency } from 'react-icons/gi'
 import { GiCargoCrane } from 'react-icons/gi'
 import { BiSolidColorFill } from 'react-icons/bi'
 import { BsFillMagnetFill } from 'react-icons/bs'
-import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom'
-
 
 function CardCompare() {
 

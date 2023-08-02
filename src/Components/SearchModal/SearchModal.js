@@ -1,6 +1,8 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
-import lupa from '../../assets/img/lupa.png';
-import  './SearchModal.css';
+import './SearchModal.css';
+
+
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,10 +11,10 @@ function SearchBar() {
   const handleInputChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
-  
+
     // Lógica para mostrar/ocultar as sugestões com base no valor do campo de pesquisa
     setShowSuggestions(value.length > 0);
-  
+
     if (value.length === 0) {
       setShowSuggestions(false);
     }
@@ -38,13 +40,13 @@ function SearchBar() {
 
   return (
     <div className="container_searchBar">
-      <input 
+      <input
         type="text"
         placeholder="Pesquisar..."
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <i class="search icon input"></i>
+      <i className="search icon input"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions

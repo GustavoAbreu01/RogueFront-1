@@ -238,8 +238,8 @@ function Search() {
 
           <div className="search container_searchBar">
             <div className="search box_searchBar">
-              <div class="searchItens searchBar_checkbox ">
-                <div class="column itens">
+              <div className="searchItens searchBar_checkbox ">
+                <div className="column itens">
                   <div id="produtos" className="">
                     {numero.map((i) => (
                       <div className="searchItens" key={i} >

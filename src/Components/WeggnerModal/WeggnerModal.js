@@ -1,10 +1,14 @@
+//Importando o React e o CSS
 import React, { useState } from 'react'
 import './WeggnerModal.css'
-import { Link } from 'react-router-dom'
+
+//Importando as imagens
 import wegnerSleeping from "../../assets/img/weggnerDormindo.png"
 import wegnerAwake from "../../assets/img/weggnerAcordado.PNG"
+
+//Importando as animações
 import TypeWriter from '../../animations/Transition/TypeWriter';
-import { render } from '@testing-library/react'
+
 
 function WeggnerModal() {
 
@@ -21,17 +25,17 @@ function WeggnerModal() {
     <div>
       {verify() && <div data-aos="fade-up" className='container_modalContent'>
         <div className='box_modalContent_textWeggnerModal'>
-          <div class="modalContent_chat">
-            <div class="yours modalContent_messages">
-              <div id='text' class="modalContent_message last">
+          <div className="modalContent_chat">
+            <div className="yours modalContent_messages">
+              <div id='text' className="modalContent_message last">
                 <p>Olá, eu sou o Wegner, seu assistente virtual. Como posso te ajudar?</p>
               </div>
               <TypeWriter />
             </div>
           </div>
           <div className='box_inputWeggnerModal'>
-            <div class="ui fluid action input">
-              <input type="text" placeholder="Enviar Mensagem..."/>
+            <div className="ui fluid action input">
+              <input type="text" placeholder="Enviar Mensagem..." />
             </div>
           </div>
         </div>

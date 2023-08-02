@@ -1,10 +1,13 @@
+//Importando o React e o CSS
 import './ProductCardNew.css'
 import React from 'react'
 
-import motor from '../../assets/img/motor.png'
-
+//importando as frameworks
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+
+//Importando as imagens
+import motor from '../../assets/img/motor.png'
 
 function ProductCardNew() {
 

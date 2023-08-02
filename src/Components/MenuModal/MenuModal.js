@@ -1,9 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+//Importando o React e o CSS
+import React, { useState, useEffect } from "react";
+import './MenuModal.css';
+
+//importando as frameworks
+import { Link } from 'react-router-dom'; 
+
 //import de icons do react-icons
 import { BiMenu } from 'react-icons/bi';
-import { Link } from 'react-router-dom'; 
 import { BsArrowBarLeft } from 'react-icons/bs';
-//
+
 //import de imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
 import iconTecSolutions from "../../assets/img/DIFERENTESTECNOLOGIAS.png"
@@ -17,7 +22,7 @@ import building from "../../assets/img/CONSTRUÇÃO.png"
 
 
 
-import './MenuModal.css';
+
 
 
 function MenuModal() {

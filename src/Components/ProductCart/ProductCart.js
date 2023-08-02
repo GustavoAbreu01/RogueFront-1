@@ -1,10 +1,11 @@
+//Importando o React e o CSS
 import React from 'react'
 import './ProductCart.css'
 
-// frameWork
+//importando as frameworks
 import { Link } from "react-router-dom";
 
-// images
+//Importando as imagens
 import motors from "../../assets/img/motores.png"
 
 
@@ -50,7 +51,7 @@ function ProductCart() {
               </Link>
             </div>
             <div className='product_cart_buttons'>
-              <button class="ui icon button product_cart">
+              <button className="ui icon button product_cart">
                 <i className="trash alternate icon product_cart"></i>
               </button>
               <div className="ui small buttons product_cart">

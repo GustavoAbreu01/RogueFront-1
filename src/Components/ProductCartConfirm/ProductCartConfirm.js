@@ -1,8 +1,12 @@
+//Importando o React e o CSS
 import React from 'react'
 import './ProductCartConfirm.css'
-import { Link } from "react-router-dom";
-import motors from "../../assets/img/motores.png"
 
+//importando as frameworks
+import { Link } from "react-router-dom";
+
+//Importando as imagens
+import motors from "../../assets/img/motores.png"
 
 function ProductCartConfirm() {
 
@@ -18,7 +22,7 @@ function ProductCartConfirm() {
     }
   }, [quantidade]);
 
-    const Random = () => {
+  const Random = () => {
     const random = Math.floor(Math.random() * 10);
     if (random === 0) {
       return 1;

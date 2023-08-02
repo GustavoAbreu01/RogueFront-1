@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; //React Router
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from './Pages/NotFound/NotFound';
 import Compare from './Pages/Compare/Compare';
 import ProductCategory from './Pages/ProductCategory/ProductCategory';
@@ -18,7 +18,7 @@ import CartTransport from './Pages/CartTransport/CartTransport';
 import CartFinish from './Pages/CartFinish/CartFinish';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import EditProfile from './Pages/EditProfile/EditProfile';
-import ScrollToTop from './ScrollToTop'; // Import the ScrollToTop component
+import ScrollToTop from './ScrollToTop';
 
 
 

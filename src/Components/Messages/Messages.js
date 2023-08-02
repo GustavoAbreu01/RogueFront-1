@@ -1,10 +1,9 @@
+//Importando o React e o CSS
 import React from 'react'
 import './Messages.css'
 
+//Importando os ícones
 import { GrNotification } from 'react-icons/gr'
-
-
-
 
 function Messages() {
 

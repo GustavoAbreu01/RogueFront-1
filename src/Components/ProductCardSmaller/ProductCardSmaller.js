@@ -1,10 +1,15 @@
+//Importando o React e o CSS
 import React from 'react'
 import './ProductCardSmaller.css'
 
-import motor from '../../assets/img/motor.png'
-
+//importando as frameworks
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+
+//Importando as imagens
+import motor from '../../assets/img/motor.png'
+
+
 
 function SmallProductCard() {
 
@@ -92,7 +97,7 @@ function SmallProductCard() {
             <div className='container_product_card_smaller_action_icon'>
                 <div className='product_card_small_button_compare'>
                     <button onClick={AddProductInCompare} className="ui icon button product_card_smaller_compare">
-                        <i class="exchange alternate icon"></i>
+                        <i className="exchange alternate icon"></i>
                     </button>
                 </div>
                 <button onClick={AddProductInSave} className="ui icon button product_card_smaller">

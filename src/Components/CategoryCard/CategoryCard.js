@@ -1,9 +1,16 @@
+//Importando o React e o CSS
 import React from 'react'
-import motors from "../../assets/img/motores.png"
+import './CategoryCard.css'
+import 'animate.css';
+
+//importando as frameworks
 import { Link } from "react-router-dom";
 import swal from 'sweetalert2';
-import 'animate.css';
-import './CategoryCard.css'
+
+//Importando as imagens
+import motors from "../../assets/img/motores.png"
+
+
 
 function CategoryCard() {
 
@@ -109,13 +116,13 @@ function CategoryCard() {
                     <i className="cart plus icon category_card"></i>
                 </button>
                 <button onClick={AddProductInCompare} className="ui icon button category_card_compare">
-                    <i class="exchange alternate icon"></i>
+                    <i className="exchange alternate icon"></i>
                 </button>
             </div>
             <Link to="/cart">
-            <div className='category_card_buy_button'>
-                <button className="ui fluid blue button category_card">Comprar</button>
-            </div>
+                <div className='category_card_buy_button'>
+                    <button className="ui fluid blue button category_card">Comprar</button>
+                </div>
             </Link>
         </div>
     )

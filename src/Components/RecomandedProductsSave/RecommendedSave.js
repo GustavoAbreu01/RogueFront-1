@@ -1,9 +1,12 @@
+//Importando o React e o CSS
 import React from 'react'
 import './RecommendedSave.css'
-import { useState } from 'react';
-import { Link } from "react-router-dom";
-import motor from "../../assets/img/motores.png"
+
+//importando as frameworks
 import Swal from 'sweetalert2';
+
+//Importando as imagens
+import motor from "../../assets/img/motores.png"
 
 
 function RecomendedSave() {

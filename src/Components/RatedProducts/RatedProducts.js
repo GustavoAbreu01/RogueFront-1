@@ -1,12 +1,13 @@
-import React from 'react'
+//Importando o React e o CSS
+import React, { useState } from 'react'
 import './RatedProducts.css'
-import { useState } from 'react';
+
+//importando as frameworks
 import { Rating } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
+
+//importando as imagens
 import motors from "../../assets/img/motores.png"
-import CartProduct from "../ProductCart/ProductCart";
-
-
 
 function Orders() {
 
