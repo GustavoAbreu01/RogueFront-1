@@ -46,7 +46,6 @@ function App() {
           <Route path="/orders" element={<ProfilePage />} />
           <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
-        
     </Router>
   );
 }
