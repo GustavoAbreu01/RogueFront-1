@@ -35,7 +35,8 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/save" element={<Save />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/register" element={<UserRegister />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/cart/payment" element={<CartPayment />} />
           <Route path="/cart/confirm" element={<CartConfirm />} />
