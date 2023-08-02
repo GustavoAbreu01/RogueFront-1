@@ -93,15 +93,26 @@
 
 .SearchItens {
     width: 100%;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(4, 1fr);
   }
-  
-  .ui.grid.SearchItens#produtos .column {
-    width: calc(25% - 1rem); /* Ajuste a largura conforme necessário */
-    margin-bottom: 1rem;
-    margin-left: 2rem;
+
+  .container_search_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem;
   }
+
+  .box_search_bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
 
   
 

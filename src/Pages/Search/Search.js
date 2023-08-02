@@ -16,7 +16,7 @@ import mignifyingGlass from "../../assets/img/Search.png"
 
 function Search() {
 
-  const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -236,19 +236,13 @@ function Search() {
 
 
 
-          <div className="search container_searchBar">
-            <div className="search box_searchBar">
-              <div className="searchItens searchBar_checkbox ">
-                <div className="column itens">
-                  <div id="produtos" className="">
-                    {numero.map((i) => (
-                      <div className="searchItens" key={i} >
-                        <SmallProductCard />
-                      </div>
-                    ))}
-                  </div>
+          <div className="container_search_bar">
+            <div className="box_search_bar">
+              {numero.map((i) => (
+                <div className="searchItens" key={i} >
+                  <SmallProductCard />
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
