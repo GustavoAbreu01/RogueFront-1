@@ -100,7 +100,7 @@ function SmallProductCard() {
                         <i className="exchange alternate icon"></i>
                     </button>
                 </div>
-                <button onClick={AddProductInSave} className="ui icon button product_card_smaller">
+                <button onClick={AddProductInSave} className="ui icon button product_card_smaller"> 
                     <i className="bookmark icon "></i>
                 </button>
                 <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
