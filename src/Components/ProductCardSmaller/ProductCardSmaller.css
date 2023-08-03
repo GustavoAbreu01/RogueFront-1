@@ -121,7 +121,7 @@
 
 .ui.icon.button.product_card_smaller_compare:hover {
     transition: 0.3s;
-    background-color: var(--blue-tertiary);
+    background-color: var(--grey-quinary);
 }
 
 /* 
@@ -132,6 +132,11 @@
 
 .ui.icon.button.product_card_smaller_compare:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.fluid.ui.button.product_card_smaller:hover {
+    transition: 0.3s;
+    background-color: var(--grey-quinary);
 }
 
 .product_card_smaller_price_info {
