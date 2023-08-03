@@ -100,3 +100,8 @@
 .product_card_highlight_description {
     font-size: 14px;
 }
+
+.ui.icon.button.product_card_accessed:hover, .circular.ui.icon.button.product_card.accessed:hover, .fluid.ui.button.product_card_accessed_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
+}

@@ -99,3 +99,8 @@
 .product_card_new_description{
     font-size: 14px;
 }
+
+.circular.ui.icon.button.product_card_new:hover, .ui.icon.button.product_card_new:hover, .fluid.ui.button.product_card_new_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
+}
