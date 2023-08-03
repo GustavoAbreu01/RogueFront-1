@@ -121,7 +121,7 @@
 
 .ui.icon.button.product_card_smaller_compare:hover {
     transition: 0.3s;
-    background-color: var(--blue-tertiary);
+    background-color: var(--grey-quinary);
 }
 
 /* 
