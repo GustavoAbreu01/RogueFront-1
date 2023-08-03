@@ -12,6 +12,7 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 //Importando as imagens
 import CardAll from '../../assets/img/CardAll.png';
@@ -22,7 +23,7 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaStar } from 'react-icons/fa';
-import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
+
 
 function CartPayment() {
 

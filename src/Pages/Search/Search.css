@@ -128,5 +128,25 @@
       }
 
   }
+
+  .container_breadcrumb {
+    display: flex;
+    width: 20%;
+    height: 10%;
+    align-items: start;
+    padding: 1rem;
+    border-radius: 10px;
+    justify-content: start;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  .active.section {
+    color: var(--blue-primary);
+  }
+
+  .section {
+    color: var(--blue-primary);
+  }
   
 

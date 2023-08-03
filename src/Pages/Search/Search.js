@@ -10,9 +10,11 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 
 //importando as frameworks
 import { Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
 
 //Importando as imagens
 import mignifyingGlass from "../../assets/img/Search.png"
+
 
 function Search() {
 
@@ -53,7 +55,14 @@ function Search() {
   return (
     <div>
       {!verify() ? <Header /> : <HeaderLogin />}
-      <div className='container_search_page_layout'> 
+      <div className='container_breadcrumb'>
+        <div className="ui breadcrumb">
+          <Link to="/" className="section">Home</Link>
+          <i className="right arrow icon divider"></i>
+          <div className="section">Pesquisa: <b>Redutores</b></div>
+        </div>
+      </div>
+      <div className='container_search_page_layout'>
         <div className='container_search_page_detail'>
           <div className='container_search_page'>
             <div className="search_second_filter">

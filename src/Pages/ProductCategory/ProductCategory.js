@@ -4,6 +4,7 @@ import './ProductCategory.css'
 
 //importando as frameworks
 import { Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 //Importando os componentes
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
@@ -14,6 +15,10 @@ import Footer from '../../Components/Footer/Footer'
 
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
+
+//Importando os icones
+import { BsGrid, BsGridFill } from 'react-icons/bs' 
+import { TiThListOutline, TiThList } from 'react-icons/ti'
 
 function ProductCategory() {
 
@@ -59,6 +64,24 @@ function ProductCategory() {
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='container_breadcrumb'>
+        <div className="ui breadcrumb">
+          <Link to="/" className="section">Home</Link>
+          <i className="right chevron icon divider"></i>
+          <Link to="/" className="section">Categoria</Link>
+          <i className="right arrow icon divider"></i>
+          <div className="active section">Motores</div>
+        </div>
+      </div>
+      <div>
+        <div className='container_pagination_config'>
+          <div className='container_pagination'>
+            <div className='pagination_product_totally'>
+              <p>Produtos Totais: <b>800</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>

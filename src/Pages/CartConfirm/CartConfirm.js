@@ -32,6 +32,7 @@ function CartConfirm() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+    
       <div className='container_progress_cart_confirm'>
         <div className="ui small steps">
           <div className="completed step">
