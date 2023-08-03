@@ -77,13 +77,13 @@
 
 }
 
-.fluid.ui.button.product_card_hightlight_button{
-    font-size: 16px !important; 
+.fluid.ui.button.product_card_hightlight_button {
+    font-size: 16px !important;
     background-color: var(--blue-primary);
     color: var(--white);
 }
 
-.fluid.ui.button.product_card_hightlight_button:active{
+.fluid.ui.button.product_card_hightlight_button:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
 }
@@ -92,11 +92,11 @@
     color: var(--white);
 }
 
-.product_card_hightlight_name{
+.product_card_hightlight_name {
     color: var(--grey-primary);
     font-size: 24px;
 }
 
-.product_card_highlight_description{
+.product_card_highlight_description {
     font-size: 14px;
 }

@@ -116,7 +116,7 @@ function CategoryCard() {
                     <i className="cart plus icon category_card"></i>
                 </button>
                 <button onClick={AddProductInCompare} className="ui icon button category_card_compare">
-                    <i className="exchange alternate icon"></i>
+                    <i className="exchange alternate icon category_card"></i>
                 </button>
             </div>
             <Link to="/cart">
