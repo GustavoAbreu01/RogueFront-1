@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     left: 4%;
+    padding: 2rem;
     position: relative;
     padding-bottom: 1.5rem;
     border-bottom: solid 2px var(--grey-secondary);
@@ -28,24 +29,6 @@
     padding-left: 1rem;
     font-size: 23px;
 }
-
-/* .ui.button.CardCart{
-    align-items: center;
-    width: 5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.ui.icon.button.CardCart{
-    margin-bottom: 1.5rem;
-    background-color: transparent;
-    padding-left: 9rem;
-} */
-
-/* .trash.alternate.icon.CardCart{
-    color: var(--blue-primary);
-    font-size: 1.7rem;
-} */
 
 .product_cart_confirm_product_description {
     font-size: 15px;

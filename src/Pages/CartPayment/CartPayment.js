@@ -60,7 +60,7 @@ function CartPayment() {
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart_payment'>
-        <div className="ui large tiny steps">
+        <div className="ui small steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">
@@ -94,7 +94,7 @@ function CartPayment() {
               <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>
             <div className='cart_payment_form'>
-              <form className="ui form">
+              <form className="ui large form">
                 <div className="fields">
                   {focusedInput === '1' && (
                     <img src={CardName} className='cart_payment_card_Instrution' />

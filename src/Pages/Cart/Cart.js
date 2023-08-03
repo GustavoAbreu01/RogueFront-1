@@ -33,7 +33,7 @@ function Cart() {
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart'>
-        <div className="ui large tiny steps">
+        <div className="ui small steps">
           <div className="step">
             <i className="shop icon"></i>
             <div className="content">

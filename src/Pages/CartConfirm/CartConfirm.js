@@ -33,7 +33,7 @@ function CartConfirm() {
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart_confirm'>
-        <div className="ui large tiny steps">
+        <div className="ui small steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">

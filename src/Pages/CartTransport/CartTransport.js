@@ -54,7 +54,7 @@ function CartTransport() {
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart_transport'>
-        <div className="ui large tiny steps">
+        <div className="ui small steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">
@@ -88,7 +88,7 @@ function CartTransport() {
               <h5 className='cart_transport_title_text'>Verificar Transporte do Pedido</h5>
             </div>
             <div className='cart_transport_form'>
-              <form className="ui form">
+              <form className="ui large form">
                 <div className="field">
                   <label>Nome</label>
                   <div className="two fields">
