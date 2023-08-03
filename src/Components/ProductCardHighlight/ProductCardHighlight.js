@@ -5,10 +5,10 @@ import motor from '../../assets/img/motor.png'
 
 import { Link } from 'react-router-dom'
 
-function ProductCardHighlight() {
-
+const ProductCardHighlight = ({product}) => {
 
   return (
+    <div className="product_highlight" key={product.id}>
     <div className='container_product_card_hightlight'>
     <Link to='/product'>
       <div className='box_product_card_hightlight_tag_icon'>
@@ -33,18 +33,19 @@ function ProductCardHighlight() {
       </div>
       <div className='box_product_card_hightlight_info'>
         <div className='product_card_hightlight_info_text'>
-          <h3 className='product_card_hightlight_name'>W12 Monofásico</h3>
-          <p className='product_card_hightlight_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+          <h3 className='product_card_hightlight_name'>{product.name}</h3>
+          <p className='product_card_hightlight_description'>{product.description}</p>
         </div>
       </div>
       <div className='box_product_card_hightlight_info_price'>
-        <h3 className='product_card_hightlight_price'>R$ 1.259,00</h3>
+        <h3 className='product_card_hightlight_price'>R$ {product.price}</h3>
         <p className='product_card_hightlight_price_option'>Á vista no pix</p>
       </div>
       <div className='product_card_hightlight_buy_button'>
         <button className="fluid ui button product_card_hightlight_button">Comprar</button>
       </div>
     </Link>
+  </div>
   </div>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './Search.css'
 
 //Importando os componentes
@@ -6,6 +6,7 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import ProductService from '../../Service/ProductService';
 
 function Search() {
 
@@ -19,6 +20,14 @@ function Search() {
       return false
     }
   }
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+      ProductService.findAll()
+          .then((data) => setProducts(data))
+          .catch((error) => console.error('Erro ao buscar produtos:', error));
+  }, []);
 
   return (
     <div>
@@ -65,10 +74,12 @@ function Search() {
           <div class="ui row searchItens searchBar_checkbox ">
             <div class="column itens">
               <div id="produtos" className="ui grid searchItens">
-                {numero.map((i) => (
-                  <div className="four wide column" key={i} >
-                    <SmallProductCard />
-                  </div>
+
+
+              {products.map((product) => (
+                    <div className="four wide column" >
+                        <SmallProductCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import './ProductSearchedCarousel.css';
 
 import Slider from "react-slick";
@@ -7,8 +7,17 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
+import ProductService from '../../Service/ProductService';
 
 function ProductSearchedCarousel() {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        ProductService.findAll()
+            .then((data) => setProducts(data))
+            .catch((error) => console.error('Erro ao buscar produtos:', error));
+    }, []);
 
 
     var settings = {
@@ -52,27 +61,11 @@ function ProductSearchedCarousel() {
     return (
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
+            {products.map((product) => (
+            <div className='box_product_searched_carousel'>
+                        <ProductCardSearched key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

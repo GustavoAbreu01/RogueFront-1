@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ProductNewCarousel.css';
-import Obj from '../ProductCardNew/ProductCardNew';
+import ProductCardNew from '../ProductCardNew/ProductCardNew';
+
+import ProductService from '../../Service/ProductService';
 
 function ProductNewCarousel() {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        ProductService.findAll()
+            .then((data) => setProducts(data))
+            .catch((error) => console.error('Erro ao buscar produtos:', error));
+    }, []);
 
 
     var settings = {
@@ -47,29 +57,13 @@ function ProductNewCarousel() {
 
 
     return (
-        <div className='carouselProduct' >
+        <div className='container_product_new_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
+            {products.map((product) => (
+                    <div className='box_product_new_carousel'>
+                        <ProductCardNew key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

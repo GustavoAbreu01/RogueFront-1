@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
-import ProductService from '../../Service/ProductService'; // Importe o serviço de produtos aqui
+import ProductService from '../../Service/ProductService';
 
 
 function ProductAccessedCarousel() {
@@ -13,10 +13,9 @@ function ProductAccessedCarousel() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      // Quando o componente for montado, buscar os produtos e atualizar o estado
-      ProductService.findAll()
-        .then((data) => setProducts(data))
-        .catch((error) => console.error('Erro ao buscar produtos:', error));
+        ProductService.findAll()
+            .then((data) => setProducts(data))
+            .catch((error) => console.error('Erro ao buscar produtos:', error));
     }, []);
 
     var settings = {
@@ -59,12 +58,14 @@ function ProductAccessedCarousel() {
 
     return (
         <div className='container_product_accessed_carousel'>
-      <Slider {...settings}>
-        {products.map((product) => (
-          <ProductCardAccessed key={product.id} product={product} />
-        ))}
-      </Slider>
-    </div>
+            <Slider {...settings}>
+                {products.map((product) => (
+                    <div className='box_product_hightlight_carousel'>
+                        <ProductCardAccessed key={product.id} product={product} />
+                    </div>
+                ))}
+            </Slider>
+        </div>
     )
 }
 

@@ -6,7 +6,7 @@
 }
 
 
-.carouselProduct{
+.container_product_new_carousel{
     padding: 5rem;
     color: var(--blue-primary);
 }
@@ -23,6 +23,6 @@
     border-radius: 50px;
 }
 
-.box {
+.box_product_new_carousel {
     padding: 1rem;
 }

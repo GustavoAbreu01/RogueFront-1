@@ -40,7 +40,7 @@ const ProductCardAccessed = ({product}) => {
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>{product.price}</h3>
+          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <div className='product_card_accessed_buy_button'>

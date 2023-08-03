@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import './ProductHighlightCarousel.css';
 import ProductCardHighlight from '../ProductCardHighlight/ProductCardHighlight';
+import ProductService from '../../Service/ProductService';
 
 function ProductHighlightCarousel() {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        ProductService.findAll()
+            .then((data) => setProducts(data))
+            .catch((error) => console.error('Erro ao buscar produtos:', error));
+    }, []);
 
 
     var settings = {
@@ -49,27 +60,11 @@ function ProductHighlightCarousel() {
     return (
         <div className='container_product_hightlight_carousel' >
             <Slider {...settings}>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box'>
-                    <ProductCardHighlight />
-                </div>
+                {products.map((product) => (
+                    <div className='box_product_hightlight_carousel'>
+                        <ProductCardHighlight key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

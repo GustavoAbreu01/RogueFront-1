@@ -5,8 +5,10 @@ import motor from '../../assets/img/motor.png'
 
 import { Link } from 'react-router-dom'
 
-function ProductCardNew() {
+const ProductCardNew = ({product}) => {
+
   return (
+    <div className="product_new" key={product.id}>
     <div className='container_product_card_new'>
     <Link to='/product'>
       <div className='box_product_card_new_tag_icon'>
@@ -31,18 +33,19 @@ function ProductCardNew() {
       </div>
       <div className='box_product_card_new_info'>
         <div className='product_card_new_info_text'>
-          <h3 className='product_card_new_name'>W12 Monofásico</h3>
-          <p className='product_card_new_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+          <h3 className='product_card_new_name'>{product.name}</h3>
+          <p className='product_card_new_description'>{product.description}</p>
         </div>
       </div>
       <div className='box_product_card_new_info_price'>
-        <h3 className='product_card_new_price'>R$ 1.259,00</h3>
+        <h3 className='product_card_new_price'>R$ {product.price}</h3>
         <p className='product_card_new_price_option'>Á vista no pix</p>
       </div>
       <div className='product_card_new_buy_button'>
         <button className="fluid ui button product_card_new_button">Comprar</button>
       </div>
     </Link>
+  </div>
   </div>
   )
 }
