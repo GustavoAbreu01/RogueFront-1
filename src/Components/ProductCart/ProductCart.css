@@ -1,10 +1,10 @@
 .product_cart_card {
     background-color: var(--white);
-    width: 90%;
+    width: 95%;
+    margin: 2rem;
     display: flex;
     align-items: center;
-    left: 4%;
-    position: relative;
+    justify-content: center;
     padding-bottom: 1.5rem;
     border-bottom: solid 2px var(--grey-secondary);
 }
@@ -16,7 +16,10 @@
 
 .product_cart_buttons {
     position: relative;
-    right: 3%;
+}
+
+.product_cart_informations {
+    padding-left: 1.5rem;
 }
 
 .product_cart_item_name {

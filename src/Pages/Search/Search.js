@@ -53,7 +53,7 @@ function Search() {
   return (
     <div>
       {!verify() ? <Header /> : <HeaderLogin />}
-      <div className='container_search_page_layout'>
+      <div className='container_search_page_layout'> 
         <div className='container_search_page_detail'>
           <div className='container_search_page'>
             <div className="search_second_filter">

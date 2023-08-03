@@ -1,7 +1,7 @@
 .ui.segment.itens.container_category_card {
     border-radius: 1rem;
     background-color: var(--white);
-    width: 64rem;
+    width: 100%;
     display: flex;
     align-items: center;
 }

@@ -22,6 +22,7 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaStar } from 'react-icons/fa';
+import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 function CartPayment() {
 
@@ -58,8 +59,8 @@ function CartPayment() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress'>
-        <div className="ui tiny steps">
+      <div className='container_progress_cart_payment'>
+        <div className="ui large tiny steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">
@@ -228,7 +229,11 @@ function CartPayment() {
               </Link>
             </div>
           </div>
-
+          <div className='box_cart_info_recommend'>
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+          </div>
         </div>
       </div>
       <div className='box_cart_payment_title_similar'>
