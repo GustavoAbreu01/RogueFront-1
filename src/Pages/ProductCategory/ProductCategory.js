@@ -3,12 +3,8 @@ import React, { useState } from 'react'
 import './ProductCategory.css'
 
 //importando as frameworks
-<<<<<<< Updated upstream
-import { Divider } from 'semantic-ui-react';
-=======
 import { Divider, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
->>>>>>> Stashed changes
 
 //Importando os componentes
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
@@ -20,14 +16,10 @@ import Footer from '../../Components/Footer/Footer'
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
 
-<<<<<<< Updated upstream
-=======
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
 
-
->>>>>>> Stashed changes
 function ProductCategory() {
 
   const verify = () => {
@@ -84,8 +76,6 @@ function ProductCategory() {
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-<<<<<<< Updated upstream
-=======
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
@@ -130,7 +120,6 @@ function ProductCategory() {
           </div>
         </div>
       </div>
->>>>>>> Stashed changes
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>

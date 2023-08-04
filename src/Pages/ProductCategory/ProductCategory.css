@@ -156,9 +156,6 @@
     justify-content: center;
   }
   
-<<<<<<< Updated upstream
-
-=======
 .container_pagination_config {
     display: flex;
     margin-left: 11.5%;
@@ -218,4 +215,3 @@
     justify-content: left;
     gap: 5rem;
 }
->>>>>>> Stashed changes
