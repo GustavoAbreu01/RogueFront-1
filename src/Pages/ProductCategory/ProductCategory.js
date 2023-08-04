@@ -3,7 +3,12 @@ import React, { useState } from 'react'
 import './ProductCategory.css'
 
 //importando as frameworks
+<<<<<<< Updated upstream
 import { Divider } from 'semantic-ui-react';
+=======
+import { Divider, Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+>>>>>>> Stashed changes
 
 //Importando os componentes
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
@@ -15,6 +20,14 @@ import Footer from '../../Components/Footer/Footer'
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
 
+<<<<<<< Updated upstream
+=======
+//Importando os icones
+import { BsGridFill } from 'react-icons/bs'
+import { FaListUl } from 'react-icons/fa'
+
+
+>>>>>>> Stashed changes
 function ProductCategory() {
 
   const verify = () => {
@@ -52,13 +65,72 @@ function ProductCategory() {
 
 
 
+  const optionsPagination = [
+    { key: 1, text: '20 por página', value: 1 },
+    { key: 2, text: '40 por página', value: 2 },
+    { key: 3, text: '60 por página', value: 3 },
+    { key: 3, text: '80 por página', value: 4 },
+  ];
 
+  const optionsSearch = [
+    { key: 1, text: 'Mais Acessados', value: 1 },
+    { key: 2, text: 'Mais Procurados', value: 2 },
+    { key: 3, text: 'Preço Crescente ', value: 3 },
+    { key: 3, text: 'Preço Decrescente', value: 4 },
+  ];
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+<<<<<<< Updated upstream
+=======
+      <div className='container_breadcrumb'>
+        <div className="ui breadcrumb">
+          <Link to="/" className="section">Home</Link>
+          <i className="right chevron icon divider"></i>
+          <Link to="/" className="section">Categoria</Link>
+          <i className="right arrow icon divider"></i>
+          <div className="active section">Motores</div>
+        </div>
+      </div>
+      <div className='box_pagination_config'>
+        <div className='container_pagination_config'>
+          <div className='container_pagination'>
+            <div className='pagination_options'>
+              <div className='text_pagination_totally'>
+                <p className='text_pagination_totally'>Produtos Totais: <b>850</b></p>
+              </div>
+              <div className="field pagination">
+                <p className='text_pagination_inst'>Ordenar por:</p>
+                <Dropdown
+                  value={1}
+                  className='dropDownCard'
+                  fluid
+                  selection
+                  options={optionsPagination}
+                />
+              </div>
+              <div className="field pagination">
+                <p className='text_pagination_inst'>Procurar por:</p>
+                <Dropdown
+                  value={1}
+                  className='dropDownCard'
+                  fluid
+                  selection
+                  options={optionsSearch}
+                />
+              </div>
+            </div>
+            <div className='icons_ordenation'>
+              <BsGridFill className='icon_pagination' size={35} />
+              <FaListUl className='icon_pagination' size={35} />
+            </div>
+          </div>
+        </div>
+      </div>
+>>>>>>> Stashed changes
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>
@@ -103,10 +175,7 @@ function ProductCategory() {
                     </div>
                     <br />
                     <br />
-
                   </div>
-
-
                 )
                 }
               </div>
