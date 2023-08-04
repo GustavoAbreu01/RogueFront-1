@@ -95,7 +95,6 @@ function ProductCategory() {
               <div className="field pagination">
                 <p className='text_pagination_inst'>Ordenar por:</p>
                 <Dropdown
-                  value={1}
                   className='dropDownCard'
                   fluid
                   selection
@@ -105,7 +104,6 @@ function ProductCategory() {
               <div className="field pagination">
                 <p className='text_pagination_inst'>Procurar por:</p>
                 <Dropdown
-                  value={1}
                   className='dropDownCard'
                   fluid
                   selection
