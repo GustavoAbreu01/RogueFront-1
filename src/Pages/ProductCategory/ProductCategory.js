@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './ProductCategory.css'
 
 //importando as frameworks
-import { Divider } from 'semantic-ui-react';
+import { Divider, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 //Importando os componentes
@@ -32,6 +32,8 @@ function ProductCategory() {
   }
 
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState(1);
+  const [pagination, setPagination] = useState(1);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -54,34 +56,35 @@ function ProductCategory() {
     setIsOpen4(!isOpen4);
   };
 
+  const alterarPagina = (e, { value }) => {
+    setPagination(value);
+    return pagination;
+  };
 
+  const alterarSearch = (e, { value }) => {
+    setSearch(value);
+    return search;
+  };
 
+  const optionsPagination = [
+    { key: 1, text: '20 por página', value: 1 },
+    { key: 2, text: '40 por página', value: 2 },
+    { key: 3, text: '60 por página', value: 3 },
+    { key: 4, text: '80 por página', value: 4 },
+  ];
 
-
+  const optionsSearch = [
+    { key: 1, text: 'Mais Acessados', value: 1 },
+    { key: 2, text: 'Mais Procurados', value: 2 },
+    { key: 3, text: 'Preço Crescente ', value: 3 },
+    { key: 3, text: 'Preço Decrescente', value: 4 },
+  ];
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_breadcrumb'>
-        <div className="ui breadcrumb">
-          <Link to="/" className="section">Home</Link>
-          <i className="right chevron icon divider"></i>
-          <Link to="/" className="section">Categoria</Link>
-          <i className="right arrow icon divider"></i>
-          <div className="active section">Motores</div>
-        </div>
-      </div>
-      <div>
-        <div className='container_pagination_config'>
-          <div className='container_pagination'>
-            <div className='pagination_product_totally'>
-              <p>Produtos Totais: <b>800</b></p>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>
@@ -126,10 +129,7 @@ function ProductCategory() {
                     </div>
                     <br />
                     <br />
-
                   </div>
-
-
                 )
                 }
               </div>
@@ -268,7 +268,7 @@ function ProductCategory() {
 
 
 
-
+              
           <div className="container_category_bar">
             <div className="box_category_bar">
               {numero.map((i) => (
