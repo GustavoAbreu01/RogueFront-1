@@ -17,7 +17,7 @@ import Footer from '../../Components/Footer/Footer'
 import iconMotor from "../../assets/img/iconeMotor.png"
 
 //Importando os icones
-import { BsGridFill } from 'react-icons/bs' 
+import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
 
 function ProductCategory() {
@@ -85,6 +85,15 @@ function ProductCategory() {
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='container_breadcrumb'>
+        <div className="ui breadcrumb">
+          <Link to="/" className="section">Home</Link>
+          <i className="right chevron icon divider"></i>
+          <Link to="/" className="section">Categoria</Link>
+          <i className="right arrow icon divider"></i>
+          <div className="active section">Motores</div>
+        </div>
+      </div>
       <div className='box_pagination_config'>
         <div className='container_pagination_config'>
           <div className='container_pagination'>
@@ -305,7 +314,7 @@ function ProductCategory() {
 
 
 
-              
+
           <div className="container_category_bar">
             <div className="box_category_bar">
               {numero.map((i) => (
@@ -327,6 +336,4 @@ function ProductCategory() {
 
 
 
-
-
-export default ProductCategory
+export default ProductCategory;
