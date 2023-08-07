@@ -32,6 +32,8 @@ function ProductCategory() {
   }
 
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState(1);
+  const [pagination, setPagination] = useState(1);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -54,14 +56,21 @@ function ProductCategory() {
     setIsOpen4(!isOpen4);
   };
 
+  const alterarPagina = (e, { value }) => {
+    setPagination(value);
+    return pagination;
+  };
 
-
+  const alterarSearch = (e, { value }) => {
+    setSearch(value);
+    return search;
+  };
 
   const optionsPagination = [
     { key: 1, text: '20 por página', value: 1 },
     { key: 2, text: '40 por página', value: 2 },
     { key: 3, text: '60 por página', value: 3 },
-    { key: 3, text: '80 por página', value: 4 },
+    { key: 4, text: '80 por página', value: 4 },
   ];
 
   const optionsSearch = [
@@ -96,18 +105,22 @@ function ProductCategory() {
                 <p className='text_pagination_inst'>Ordenar por:</p>
                 <Dropdown
                   className='dropDownCard'
+                  value={pagination}
                   fluid
                   selection
                   options={optionsPagination}
+                  onChange={alterarPagina}
                 />
               </div>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Procurar por:</p>
                 <Dropdown
                   className='dropDownCard'
+                  value={search}
                   fluid
                   selection
                   options={optionsSearch}
+                  onChange={alterarSearch}
                 />
               </div>
             </div>
@@ -301,7 +314,7 @@ function ProductCategory() {
 
 
 
-
+              
           <div className="container_category_bar">
             <div className="box_category_bar">
               {numero.map((i) => (
