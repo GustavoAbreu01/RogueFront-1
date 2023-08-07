@@ -323,21 +323,6 @@ function ProductCategory() {
             </div>
           </div>
 
-<<<<<<< Updated upstream
-
-
-
-
-
-              
-          <div className="container_category_bar">
-            <div className="box_category_bar">
-              {numero.map((i) => (
-                <div className="category_itens" key={i} >
-                  <CategoryCard />
-                </div>
-              ))}
-=======
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
@@ -347,7 +332,6 @@ function ProductCategory() {
                   </div>
                 ))}
               </div>
->>>>>>> Stashed changes
             </div>
           ) : (
             <div className="container_search_bar">
@@ -367,15 +351,4 @@ function ProductCategory() {
   );
 };
 
-<<<<<<< Updated upstream
-
-
-
-
-
-
-
-export default ProductCategory
-=======
 export default ProductCategory;
->>>>>>> Stashed changes
