@@ -1,5 +1,6 @@
 //Importando o React e o CSS
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import './Search.css'
 
 //Importando os componentes
@@ -13,10 +14,15 @@ import { Divider } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 
 //Importando as imagens
-import mignifyingGlass from "../../assets/img/Search.png"
+import magnifyingGlass from "../../assets/img/Search.png"
 
 
 function Search() {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const searchTerm = queryParams.get('query') || '';
+
+
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -59,14 +65,14 @@ function Search() {
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
           <i className="right arrow icon divider"></i>
-          <div className="section">Pesquisa: <b>Redutores</b></div>
+          <div className="section">Pesquisa: <b>{searchTerm}</b></div>
         </div>
       </div>
       <div className='container_search_page_layout'>
         <div className='container_search_page_detail'>
           <div className='container_search_page'>
             <div className="search_second_filter">
-              <img className="icon_search" src={mignifyingGlass} />
+              <img className="icon_search" src={magnifyingGlass} />
               <h1 className="ui header motor search">Filtros</h1>
               <br />
               <div className='container_search_filter_expanded'>

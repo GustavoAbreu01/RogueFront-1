@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import './SearchModal.css';
 
-
-
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -11,20 +9,21 @@ function SearchBar() {
   const handleInputChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
-
-    // Lógica para mostrar/ocultar as sugestões com base no valor do campo de pesquisa
     setShowSuggestions(value.length > 0);
-
-    if (value.length === 0) {
-      setShowSuggestions(false);
-    }
-
-    suggestions.push(value);
   };
 
   const handleSuggestionClick = (suggestion) => {
     setSearchTerm(suggestion);
     setShowSuggestions(false);
+  
+    // Redirect to the search results page with the query parameter
+    window.location.href = `/search?query=${encodeURIComponent(suggestion)}`;
+  }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      window.location.href = `/search?query=${encodeURIComponent(searchTerm)}`;
+    }
   };
 
   const suggestions = [
@@ -45,6 +44,7 @@ function SearchBar() {
         placeholder="Pesquisar..."
         value={searchTerm}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
       <i className="search icon input"></i>
       {showSuggestions && (
