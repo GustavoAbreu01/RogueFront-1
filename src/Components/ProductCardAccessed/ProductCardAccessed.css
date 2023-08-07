@@ -83,9 +83,13 @@
     color: var(--white);
 }
 
-.fluid.ui.button.product_card_accessed_button:active{
+.fluid.ui.button.product_card_accessed_button:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
+}
+
+.ui.icon.button.product_card_accessed:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .icon {
@@ -101,7 +105,9 @@
     font-size: 14px;
 }
 
-.ui.icon.button.product_card_accessed:hover, .circular.ui.icon.button.product_card.accessed:hover, .fluid.ui.button.product_card_accessed_button:hover {
+.ui.icon.button.product_card_accessed:hover,
+.circular.ui.icon.button.product_card.accessed:hover,
+.fluid.ui.button.product_card_accessed_button:hover {
     background-color: var(--grey-quinary);
     transition: 0.3s;
 }
