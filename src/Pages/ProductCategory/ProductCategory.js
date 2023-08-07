@@ -19,6 +19,7 @@ import iconMotor from "../../assets/img/iconeMotor.png"
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
+import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
 
 function ProductCategory() {
 
@@ -31,6 +32,7 @@ function ProductCategory() {
     }
   }
 
+  const [isGrid, setIsGrid] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
@@ -64,6 +66,10 @@ function ProductCategory() {
   const alterarSearch = (e, { value }) => {
     setSearch(value);
     return search;
+  };
+
+  const toggleLayout = () => {
+    setIsGrid((prevIsGrid) => !prevIsGrid);
   };
 
   const optionsPagination = [
@@ -125,8 +131,16 @@ function ProductCategory() {
               </div>
             </div>
             <div className='icons_ordenation'>
-              <BsGridFill className='icon_pagination' size={35} />
-              <FaListUl className='icon_pagination' size={35} />
+              <BsGridFill
+                className={`icon_pagination ${!isGrid ? 'active' : ''}`}
+                size={35}
+                onClick={toggleLayout}
+              />
+              <FaListUl
+                className={`icon_pagination ${isGrid ? 'active' : ''}`}
+                size={35}
+                onClick={toggleLayout}
+              />
             </div>
           </div>
         </div>
@@ -330,6 +344,8 @@ function ProductCategory() {
     </>
   );
 };
+
+
 
 
 

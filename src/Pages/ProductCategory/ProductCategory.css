@@ -208,6 +208,13 @@
     margin-left: 1rem;
 }
 
+.icon_pagination.active {
+    color: var(--blue-primary);
+    padding: 0.3rem;
+    border-radius: 10px;
+    font-size: 1.7rem;
+}
+
 .field.pagination {
     margin: 0;
     padding: 0;
