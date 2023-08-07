@@ -19,6 +19,7 @@ import iconMotor from "../../assets/img/iconeMotor.png"
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
+import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
 
 function ProductCategory() {
 
@@ -31,6 +32,7 @@ function ProductCategory() {
     }
   }
 
+  const [isGrid, setIsGrid] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
@@ -64,6 +66,10 @@ function ProductCategory() {
   const alterarSearch = (e, { value }) => {
     setSearch(value);
     return search;
+  };
+
+  const toggleLayout = () => {
+    setIsGrid((prevIsGrid) => !prevIsGrid);
   };
 
   const optionsPagination = [
@@ -125,8 +131,16 @@ function ProductCategory() {
               </div>
             </div>
             <div className='icons_ordenation'>
-              <BsGridFill className='icon_pagination' size={35} />
-              <FaListUl className='icon_pagination' size={35} />
+              <BsGridFill
+                className={`icon_pagination ${!isGrid ? 'active' : ''}`}
+                size={35}
+                onClick={toggleLayout}
+              />
+              <FaListUl
+                className={`icon_pagination ${isGrid ? 'active' : ''}`}
+                size={35}
+                onClick={toggleLayout}
+              />
             </div>
           </div>
         </div>
@@ -309,6 +323,7 @@ function ProductCategory() {
             </div>
           </div>
 
+<<<<<<< Updated upstream
 
 
 
@@ -322,8 +337,29 @@ function ProductCategory() {
                   <CategoryCard />
                 </div>
               ))}
+=======
+          {isGrid ? (
+            <div className="container_category_bar">
+              <div className="box_category_bar">
+                {numero.map((i) => (
+                  <div className="category_itens" key={i} >
+                    <CategoryCard />
+                  </div>
+                ))}
+              </div>
+>>>>>>> Stashed changes
             </div>
-          </div>
+          ) : (
+            <div className="container_search_bar">
+              <div className="box_search_bar">
+                {numero.map((i) => (
+                  <div className="searchItens" key={i} >
+                    <SmallProductCard />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         <Footer />
       </div>
@@ -331,6 +367,7 @@ function ProductCategory() {
   );
 };
 
+<<<<<<< Updated upstream
 
 
 
@@ -339,3 +376,6 @@ function ProductCategory() {
 
 
 export default ProductCategory
+=======
+export default ProductCategory;
+>>>>>>> Stashed changes
