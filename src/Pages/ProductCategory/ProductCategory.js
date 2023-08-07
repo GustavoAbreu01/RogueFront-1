@@ -7,6 +7,7 @@ import { Divider, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 //Importando os componentes
+import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
@@ -19,7 +20,7 @@ import iconMotor from "../../assets/img/iconeMotor.png"
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
-import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
+
 
 function ProductCategory() {
 

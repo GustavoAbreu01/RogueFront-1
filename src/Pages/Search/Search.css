@@ -1,6 +1,6 @@
 .search_second_filter {
     background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     margin: 2rem;
     margin-right: 15%;
     height: auto;
@@ -47,6 +47,7 @@
 .container_search_page_detail {
     display: flex;
     flex-direction: row;
+    width: 90%;
 }
 
 

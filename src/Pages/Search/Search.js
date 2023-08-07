@@ -6,15 +6,20 @@ import './Search.css'
 //Importando os componentes
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 
 //importando as frameworks
-import { Divider } from 'semantic-ui-react';
+import { Divider, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 
 //Importando as imagens
 import magnifyingGlass from "../../assets/img/Search.png"
+
+//Importando os icones
+import { BsGridFill } from 'react-icons/bs'
+import { FaListUl } from 'react-icons/fa'
 
 
 function Search() {
@@ -24,7 +29,10 @@ function Search() {
 
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
+  const [isGrid, setIsGrid] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState(1);
+  const [pagination, setPagination] = useState(1);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -47,6 +55,20 @@ function Search() {
     setIsOpen4(!isOpen4);
   };
 
+  const alterarPagina = (e, { value }) => {
+    setPagination(value);
+    return pagination;
+  };
+
+  const alterarSearch = (e, { value }) => {
+    setSearch(value);
+    return search;
+  };
+
+  const toggleLayout = () => {
+    setIsGrid((prevIsGrid) => !prevIsGrid);
+  };
+
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -56,6 +78,20 @@ function Search() {
     }
   }
 
+  const optionsPagination = [
+    { key: 1, text: '20 por página', value: 1 },
+    { key: 2, text: '40 por página', value: 2 },
+    { key: 3, text: '60 por página', value: 3 },
+    { key: 4, text: '80 por página', value: 4 },
+  ];
+
+  const optionsSearch = [
+    { key: 1, text: 'Mais Acessados', value: 1 },
+    { key: 2, text: 'Mais Procurados', value: 2 },
+    { key: 3, text: 'Preço Crescente ', value: 3 },
+    { key: 3, text: 'Preço Decrescente', value: 4 },
+  ];
+
   return (
     <div>
       {!verify() ? <Header /> : <HeaderLogin />}
@@ -64,6 +100,51 @@ function Search() {
           <Link to="/" className="section">Home</Link>
           <i className="right arrow icon divider"></i>
           <div className="section">Pesquisa: <b>{searchTerm}</b></div>
+        </div>
+      </div>
+      <div className='box_pagination_config'>
+        <div className='container_pagination_config'>
+          <div className='container_pagination'>
+            <div className='pagination_options'>
+              <div className='text_pagination_totally'>
+                <p className='text_pagination_totally'>Produtos Totais: <b>850</b></p>
+              </div>
+              <div className="field pagination">
+                <p className='text_pagination_inst'>Ordenar por:</p>
+                <Dropdown
+                  className='dropDownCard'
+                  value={pagination}
+                  fluid
+                  selection
+                  options={optionsPagination}
+                  onChange={alterarPagina}
+                />
+              </div>
+              <div className="field pagination">
+                <p className='text_pagination_inst'>Procurar por:</p>
+                <Dropdown
+                  className='dropDownCard'
+                  value={search}
+                  fluid
+                  selection
+                  options={optionsSearch}
+                  onChange={alterarSearch}
+                />
+              </div>
+            </div>
+            <div className='icons_ordenation'>
+              <BsGridFill
+                className={`icon_pagination ${!isGrid ? 'active' : ''}`}
+                size={35}
+                onClick={toggleLayout}
+              />
+              <FaListUl
+                className={`icon_pagination ${isGrid ? 'active' : ''}`}
+                size={35}
+                onClick={toggleLayout}
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className='container_search_page_layout'>
@@ -249,15 +330,27 @@ function Search() {
 
 
 
-          <div className="container_search_bar">
-            <div className="box_search_bar">
-              {numero.map((i) => (
-                <div className="searchItens" key={i} >
-                  <SmallProductCard />
-                </div>
-              ))}
+          {isGrid ? (
+            <div className="container_category_bar">
+              <div className="box_category_bar">
+                {numero.map((i) => (
+                  <div className="category_itens" key={i} >
+                    <CategoryCard />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="container_search_bar">
+              <div className="box_search_bar">
+                {numero.map((i) => (
+                  <div className="searchItens" key={i} >
+                    <SmallProductCard />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer />
