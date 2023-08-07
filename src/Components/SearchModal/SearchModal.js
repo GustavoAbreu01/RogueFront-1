@@ -17,7 +17,7 @@ function SearchBar() {
     setShowSuggestions(false);
   
     // Redirect to the search results page with the query parameter
-    window.location.href = `/search?query=${encodeURIComponent(suggestion)}`;
+    window.location.href = `/product?query=${encodeURIComponent(suggestion)}`;
   }
 
   const handleKeyPress = (event) => {
