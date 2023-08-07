@@ -84,7 +84,10 @@
 
 .fluid.ui.button.product_card_searched_button:active{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
 
+.ui.icon.button.product_card_searched:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .icon {
@@ -98,4 +101,9 @@
 
 .product_card_searched_description{
     font-size: 14px;
+}
+
+.circular.ui.icon.button.product_card_searched:hover, .ui.icon.button.product_card_searched:hover, .fluid.ui.button.product_card_searched_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
 }
