@@ -17,8 +17,8 @@ import Footer from '../../Components/Footer/Footer'
 import iconMotor from "../../assets/img/iconeMotor.png"
 
 //Importando os icones
-import { BsGrid, BsGridFill } from 'react-icons/bs' 
-import { TiThListOutline, TiThList } from 'react-icons/ti'
+import { BsGridFill } from 'react-icons/bs' 
+import { FaListUl } from 'react-icons/fa'
 
 function ProductCategory() {
 
@@ -85,6 +85,43 @@ function ProductCategory() {
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='box_pagination_config'>
+        <div className='container_pagination_config'>
+          <div className='container_pagination'>
+            <div className='pagination_options'>
+              <div className='text_pagination_totally'>
+                <p className='text_pagination_totally'>Produtos Totais: <b>850</b></p>
+              </div>
+              <div className="field pagination">
+                <p className='text_pagination_inst'>Ordenar por:</p>
+                <Dropdown
+                  className='dropDownCard'
+                  value={pagination}
+                  fluid
+                  selection
+                  options={optionsPagination}
+                  onChange={alterarPagina}
+                />
+              </div>
+              <div className="field pagination">
+                <p className='text_pagination_inst'>Procurar por:</p>
+                <Dropdown
+                  className='dropDownCard'
+                  value={search}
+                  fluid
+                  selection
+                  options={optionsSearch}
+                  onChange={alterarSearch}
+                />
+              </div>
+            </div>
+            <div className='icons_ordenation'>
+              <BsGridFill className='icon_pagination' size={35} />
+              <FaListUl className='icon_pagination' size={35} />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>
