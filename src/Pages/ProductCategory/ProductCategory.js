@@ -323,33 +323,32 @@ function ProductCategory() {
             </div>
           </div>
 
-
-
-
-
-
-
-          <div className="container_category_bar">
-            <div className="box_category_bar">
-              {numero.map((i) => (
-                <div className="category_itens" key={i} >
-                  <CategoryCard />
-                </div>
-              ))}
+          {isGrid ? (
+            <div className="container_category_bar">
+              <div className="box_category_bar">
+                {numero.map((i) => (
+                  <div className="category_itens" key={i} >
+                    <CategoryCard />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="container_search_bar">
+              <div className="box_search_bar">
+                {numero.map((i) => (
+                  <div className="searchItens" key={i} >
+                    <SmallProductCard />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         <Footer />
       </div>
     </>
   );
 };
-
-
-
-
-
-
-
 
 export default ProductCategory;
