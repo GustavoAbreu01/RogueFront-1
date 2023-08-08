@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00579D;
+    background-color: var(--blue-primary);
     height: 100px;
+    width: 100%;
     transition: 0.3s;
 }
 
@@ -139,15 +140,16 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--blue-primary);
-    height: 100px;
+    width: 100%;
+    height: 70px;
     transition: 0.3s;
 }
 
-.image_logo_header_login {
+.image_logo_header_mobile {
     width: 50px;
 }
 
-.box_logo_header_login {
+.box_logo_header_mobile {
     margin-left: 3%;
 }
 

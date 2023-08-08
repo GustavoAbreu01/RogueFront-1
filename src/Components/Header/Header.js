@@ -36,35 +36,7 @@ function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        let users = await UserService.getAll();
-        users.forEach((user1) => {
-          if (user1.register === JSON.parse(localStorage.getItem('userCpf'))) {
-            setUser(user1)
-          }
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  
 
   const renderDesktopView = () => (
     <><div className={scrolled ? 'scrolled_desktop' : 'header_desktop'}>
@@ -100,10 +72,10 @@ function Header() {
       </div></>
   )
 
-  const renderMobileView = () => (
+  const renderTabletView = () => (
     <><div className={scrolled ? 'scrolled_mobile' : 'header_mobile'}>
-      <div className='box_logo_header_login'>
-        <Link to="/"><img className='image_logo_header_login' src={logo} /></Link>
+      <div className='box_logo_header_mobile'  >
+        <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
       </div>
       <div className='search_input_header'>
         <SearchBar />
@@ -134,11 +106,12 @@ function Header() {
       </div></>
   )
 
-  const renderTabletView = () => (
-    <div>
-    </div>
+  const renderMobileView = () => (
+    <>
+      <div>
+      </div>
+    </>
   )
-
 
   const getViewToRender = () => {
     if (screenSize.width > 900) {
