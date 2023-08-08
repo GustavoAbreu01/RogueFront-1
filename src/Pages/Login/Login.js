@@ -73,7 +73,7 @@ function Login() {
 
     const renderDesktopView = () => (
         <>
-         <div>
+         <div className='container_login'>
             <div className='container_login_image'>
                 <Link to={'/'}><img className='logo_image_login' src={logo} /></Link>
             </div>
@@ -106,7 +106,7 @@ function Login() {
     )
 
     const renderMobileView = () => (
-        <div>
+        <div className='container_login_mobile'>
         <div className='container_login_image_mobile'>
             <Link to={'/'}><img className='logo_image_login_mobile' src={logo} /></Link>
         </div>
