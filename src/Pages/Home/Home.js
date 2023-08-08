@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.css'
 
 //importando as frameworks
@@ -146,7 +146,20 @@ function Home() {
     }
   }
 
-  return (
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const renderDesktopView = () => (
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
         <WeggnerModal />
@@ -322,8 +335,376 @@ function Home() {
 
         <Footer /></>
     </div>
-
   )
+
+  const renderMobileView = () => (
+    <div>
+      <>{!verify() ? <Header /> : <HeaderLogin />}
+        <WeggnerModal />
+        <div className='boxCarrossel'>
+          <Carousell></Carousell>
+        </div>
+        <div className="home_divider_carousel"></div>
+        <div className="box_home_option_pages">
+          <Link to='/quiz' style={{ textDecoration: 'none' }}>
+            <div>
+              <div className="home_optional_icons">
+                <img src={questIcon} alt="" width={75} />
+                <div>
+                  <h4 className='home_optional_title'>Descubra qual é<br />
+                    o produto para você!</h4>
+                  <p className='home_optional_description'>Faça o nosso questionário</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <div className='home_divider_icons'></div>
+          <Link to='/compare' style={{ textDecoration: 'none' }}>
+            <div>
+              <div className="home_optional_icons">
+                <img src={compare} alt="" width={150} />
+                <div>
+                  <h4 className='home_optional_title'>Compare produtos</h4>
+                  <p className='home_optional_description'>Veja qual se encaixa melhor<br />
+                    com a sua necessidade</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <div className='home_divider_icons'></div>
+          <div>
+            <div className="home_optional_icons">
+              <img src={weggner} alt="" width={125} />
+              <div>
+                <h4 className='home_optional_title'>Conheça o nosso<br />
+                  Assistente Virtual!</h4>
+                <p className='home_optional_description'>Navegar ficou ainda mais fácil</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className='home_accessed'>
+            <BiLineChart color='var(--blue-primary)' size={50} />
+            <h1 className='home_accessed_title' >Produtos mais acessados</h1>
+          </div>
+          <div className='sliderProductAccessed'>
+            <ProductCarousel />
+          </div>
+        </div>
+
+        <div className='home_highlights' >
+          <div className='home_highlights_title'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text' >Destaques da semana</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductHighlightCarousel />
+          </div>
+        </div>
+
+        <div className='container_home_category_buttons' >
+          <h1 className='home_category_title'>Departamentos</h1>
+          <div className='box_home_category_buttons'>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image' ></MdOutlineSecurity>
+                </button>
+                <h2 className='home_optional_category_title'>Segurança</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image' ></BsPaintBucket>
+                </button>
+                <h2 className='home_optional_category_title'>Tintas</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image' ></CgSmartphoneChip>
+                </button>
+                <h2 className='home_optional_category_title'>Automação</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image'></TfiPanel>
+                </button>
+                <h2 className='home_optional_category_title'>Painéis</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <img src={iconMotor} width={75} height={50} alt=''></img>
+                </button>
+                <h2 className='home_optional_category_title'>Motores</h2>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        <div className='home_searched' >
+          <div className='home_searched_title'>
+            <div className='home_searched_aling'>
+              <h1 className='home_searched_title_text' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={50} />
+            </div>
+          </div>
+          <div className='home_slider_product_searched'>
+            <ProductSearchedCarousel />
+          </div>
+        </div>
+
+        <div>
+          <div className='home_benefiits'>
+            <LiaCertificateSolid color='var(--blue-primary)' size={50} />
+            <h1 className='home_benefiits_title'>Benefícios de compra</h1>
+          </div>
+
+          <div className="container_home_benefits">
+            {iconsInfoOne.map((icon) => (
+              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
+                <div className="home_benefits_info_icon">
+                  <img src={icon.icon} className="home_benefits_icon" alt='' />
+                </div>
+                <div className='home_benefits_description_info'>
+                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
+                  <p className="home_benefits_description">{icon.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="container_home_benefits">
+            {iconsInfoTwo.map((icon) => (
+              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
+                <div className="home_benefits_info_icon">
+                  <img src={icon.icon} className="home_benefits_icon" alt='' />
+                </div>
+                <div className='home_benefits_description_info'>
+                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
+                  <p className="home_benefits_description" >{icon.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className='home_highlights' >
+          <div className='home_highlights_title'>
+            <MdOutlineNewReleases color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text' >Novidades</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductNewCarousel />
+          </div>
+        </div>
+
+        <div className='home_announcements' data-aos="fade-up" >
+          <img className='home_announcements_banner' src={BannerAnnouncementOne} />
+          <img className='home_announcements_banner' src={BannerAnnouncementTwo} />
+        </div>
+
+        <Footer /></>
+    </div>
+  )
+
+  const renderTabletView = () => (
+    <div>
+      <>{!verify() ? <Header /> : <HeaderLogin />}
+        <WeggnerModal />
+        <div className='boxCarrossel'>
+          <Carousell></Carousell>
+        </div>
+        <div className="home_divider_carousel"></div>
+        <div className="box_home_option_pages">
+          <Link to='/quiz' style={{ textDecoration: 'none' }}>
+            <div>
+              <div className="home_optional_icons">
+                <img src={questIcon} alt="" width={75} />
+                <div>
+                  <h4 className='home_optional_title'>Descubra qual é<br />
+                    o produto para você!</h4>
+                  <p className='home_optional_description'>Faça o nosso questionário</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <div className='home_divider_icons'></div>
+          <Link to='/compare' style={{ textDecoration: 'none' }}>
+            <div>
+              <div className="home_optional_icons">
+                <img src={compare} alt="" width={150} />
+                <div>
+                  <h4 className='home_optional_title'>Compare produtos</h4>
+                  <p className='home_optional_description'>Veja qual se encaixa melhor<br />
+                    com a sua necessidade</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <div className='home_divider_icons'></div>
+          <div>
+            <div className="home_optional_icons">
+              <img src={weggner} alt="" width={125} />
+              <div>
+                <h4 className='home_optional_title'>Conheça o nosso<br />
+                  Assistente Virtual!</h4>
+                <p className='home_optional_description'>Navegar ficou ainda mais fácil</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className='home_accessed'>
+            <BiLineChart color='var(--blue-primary)' size={50} />
+            <h1 className='home_accessed_title' >Produtos mais acessados</h1>
+          </div>
+          <div className='sliderProductAccessed'>
+            <ProductCarousel />
+          </div>
+        </div>
+
+        <div className='home_highlights' >
+          <div className='home_highlights_title'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text' >Destaques da semana</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductHighlightCarousel />
+          </div>
+        </div>
+
+        <div className='container_home_category_buttons' >
+          <h1 className='home_category_title'>Departamentos</h1>
+          <div className='box_home_category_buttons'>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image' ></MdOutlineSecurity>
+                </button>
+                <h2 className='home_optional_category_title'>Segurança</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image' ></BsPaintBucket>
+                </button>
+                <h2 className='home_optional_category_title'>Tintas</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image' ></CgSmartphoneChip>
+                </button>
+                <h2 className='home_optional_category_title'>Automação</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image'></TfiPanel>
+                </button>
+                <h2 className='home_optional_category_title'>Painéis</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <img src={iconMotor} width={75} height={50} alt=''></img>
+                </button>
+                <h2 className='home_optional_category_title'>Motores</h2>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        <div className='home_searched' >
+          <div className='home_searched_title'>
+            <div className='home_searched_aling'>
+              <h1 className='home_searched_title_text' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={50} />
+            </div>
+          </div>
+          <div className='home_slider_product_searched'>
+            <ProductSearchedCarousel />
+          </div>
+        </div>
+
+        <div>
+          <div className='home_benefiits'>
+            <LiaCertificateSolid color='var(--blue-primary)' size={50} />
+            <h1 className='home_benefiits_title'>Benefícios de compra</h1>
+          </div>
+
+          <div className="container_home_benefits">
+            {iconsInfoOne.map((icon) => (
+              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
+                <div className="home_benefits_info_icon">
+                  <img src={icon.icon} className="home_benefits_icon" alt='' />
+                </div>
+                <div className='home_benefits_description_info'>
+                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
+                  <p className="home_benefits_description">{icon.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="container_home_benefits">
+            {iconsInfoTwo.map((icon) => (
+              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
+                <div className="home_benefits_info_icon">
+                  <img src={icon.icon} className="home_benefits_icon" alt='' />
+                </div>
+                <div className='home_benefits_description_info'>
+                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
+                  <p className="home_benefits_description" >{icon.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className='home_highlights' >
+          <div className='home_highlights_title'>
+            <MdOutlineNewReleases color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text' >Novidades</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductNewCarousel />
+          </div>
+        </div>
+
+        <div className='home_announcements' data-aos="fade-up" >
+          <img className='home_announcements_banner' src={BannerAnnouncementOne} />
+          <img className='home_announcements_banner' src={BannerAnnouncementTwo} />
+        </div>
+
+        <Footer /></>
+    </div>
+  )
+
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
 }
 
 export default Home

@@ -158,33 +158,6 @@ header .login {
     align-items: center;
 }
 
-#colunaUm {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    color: #00579D;
-}
-
-#colunaUm>h3 {
-    margin-left: 25%;
-}
-
-#colunaDois>h4 {
-    opacity: 50%;
-}
-
-#colunaDois>h3 {
-    color: #00579D;
-    font-weight: bolder;
-}
-
-#colunaTres {
-    margin-left: 5%;
-    margin-top: -38%;
-    color: #00579D;
-    font-weight: bolder;
-}
-
 .tracoAzul {
     position: absolute;
     width: 5px;
@@ -239,3 +212,5 @@ header.scrolled {
     }
 
 }
+
+/* Mobile version */
