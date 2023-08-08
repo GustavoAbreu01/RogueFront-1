@@ -78,14 +78,8 @@ function SearchBar() {
 
   const renderTabletView = () => (
     <div className="container_searchBar_mobile">
-      <input
-        type="text"
-        placeholder="Pesquisar..."
-        value={searchTerm}
-        onChange={handleInputChange}
-        onKeyPress={handleKeyPress}
-      />
-      <i className="search icon input"></i>
+
+      <i className="search icon input mobile"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
