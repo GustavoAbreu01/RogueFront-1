@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProfilePage.css'
 
 //Importando os componentes
@@ -22,7 +22,22 @@ function ProfilePage() {
         }
     }
 
-    return (
+    
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+   
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []); 
+
+
+    const renderDesktopView = () => (
         <>{!verify() ? <Header /> : <HeaderLogin />}
             <div className='box_title_similar_order'>
                 <BsFillBookmarkFill color='var(--white)' size={40} />
@@ -36,6 +51,33 @@ function ProfilePage() {
 
         </>
     )
+
+    const renderMobileView = () => (
+        <>
+        <div className='box_title_similar_order_mobile'>
+            <BsFillBookmarkFill color='var(--white)' size={40} />
+            <h1>Seus Pedidos</h1>
+        </div>
+        <Orders />
+        <Orders />
+        <Orders />
+        <div className='spacement_mobile'></div>
+        
+
+    </>
+    )
+
+    const getViewToRender = () => {
+        if (screenSize.width > 900) {
+          return renderDesktopView();
+        // } else if (screenSize.width < 900 && screenSize.width > 500) {
+        //   return renderTabletView();
+        } else {
+          return renderMobileView();
+        }
+      };
+    
+      return <>{getViewToRender()}</>;
 }
 
 export default ProfilePage
