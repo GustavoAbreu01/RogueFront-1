@@ -15,3 +15,23 @@
 .spacement {
     margin-top: 2rem;
 }
+
+/* VERSÃO MOBILE */
+
+.box_title_similar_order_mobile {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 90%;
+    gap: 2rem;
+    height: 2rem;
+    padding: 3rem;
+    color: var(--white); 
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.spacement_mobile {
+    margin-top: 2rem;
+}
