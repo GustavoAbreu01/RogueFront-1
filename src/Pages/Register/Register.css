@@ -153,8 +153,8 @@
     background: rgb(39,119,183);
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 281px;
-    border-top-right-radius: 281px;
+    border-bottom-left-radius: 68px;
+    border-top-right-radius: 48px;
     z-index:1;
     margin-bottom: 3rem;
 }
