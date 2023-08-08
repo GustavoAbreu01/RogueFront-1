@@ -56,39 +56,40 @@ function HeaderLogin() {
   }, []);
 
   return (
-    <><header className={scrolled ? 'scrolled' : ''}>
-      <div className="img">
-        <Link to="/"><img src={logo} alt="" /></Link>
+    <><div className={scrolled ? 'scrolled_login_desktop' : 'header_login_desktop'}>
+      <div className="box_logo_header_login">
+        <Link to="/"><img src={logo} className='image_logo_header_login' /></Link>
       </div>
-      <div className="searchInput">
+      <div className="search_input_header">
         <SearchBar />
       </div>
-      <div className="opc">
-        <div className='icons'>
-          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves' /></Link>
+      <div className="opc_header_login">
+        <div className='icons_header_login'>
+          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves_header_login' /></Link>
         </div>
-        <div className='icons'>
-          <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
+        <div className='icons_header_login'>
+          <Link to="/cart"><FaShoppingCart className="cart_header_login" /></Link>
         </div>
         <div>
           <PerfilModal user={user} />
         </div>
       </div>
-    </header><div className="navBar">
+    </div>
+      <div className="nav_bar_header_login">
         <div id="menu">
           <MenuModal />
         </div>
-        <div className="divisores"></div>
+        <div className="divisor_header_login"></div>
         <Link to="/category">Motores</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header_login"></div>
         <Link to="/category">Tintas e Vernizes</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header_login"></div>
         <Link to="/category">Automação</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header_login"></div>
         <Link to="/category">Paineis Eletricos</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header_login"></div>
         <Link to="/category">Segurança</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header_login"></div>
       </div></>
   )
 }
