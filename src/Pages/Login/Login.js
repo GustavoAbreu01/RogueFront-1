@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Login.css"
 
 //Importando a Service
@@ -58,9 +58,22 @@ function Login() {
         }
     }
 
-    return (
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+   
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []); 
 
+    const renderDesktopView = () => (
         <>
+         <div>
             <div className='container_login_image'>
                 <Link to={'/'}><img className='logo_image_login' src={logo} /></Link>
             </div>
@@ -73,7 +86,6 @@ function Login() {
                             <label>Email</label>
                             <input value={userLogin.emailLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                         </div>
-
                         <div className="field">
                             <label>Senha</label>
                             <input value={userLogin.passwordLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
@@ -88,7 +100,24 @@ function Login() {
                     </form>
                 </div>
             </div>
+            </div>
+           
         </>
     )
+
+    const renderMobileView = () => (
+        <p>henlo</p>
+    )
+    const getViewToRender = () => {
+        if (screenSize.width > 900) {
+          return renderDesktopView();
+        // } else if (screenSize.width < 900 && screenSize.width > 500) {
+        //   return renderTabletView();
+        } else {
+          return renderMobileView();
+        }
+      };
+    
+      return <>{getViewToRender()}</>;
 }
 export default Login
