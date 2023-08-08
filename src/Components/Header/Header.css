@@ -1,34 +1,22 @@
-body::-webkit-scrollbar {
-    width: 0.5rem;
-}
-
-body::-webkit-scrollbar-track {
-    background: #EFEFEF;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #00579D;
-}
-
-
-header {
+.header_desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00579D;
+    background-color: var(--blue-primary);
     height: 100px;
+    width: 100%;
     transition: 0.3s;
 }
 
-.img {
-    margin-left: 3%;
-}
-
-.img img {
+.image_logo_header {
     width: 100px;
 }
 
-header .opc {
+.box_logo_header {
+    margin-left: 3%;
+}
+
+.opc_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,85 +24,60 @@ header .opc {
     margin-right: 3rem;
 }
 
-header .icons {
+.icons_header {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1.5rem;
 }
 
-.opc_user {
+.opc_user_header {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header .account {
+.account {
     margin-left: -100px;
     color: white;
     text-decoration: none;
     font-size: 15px;
 }
 
-header .opc_register {
+.opc_register_header {
     cursor: pointer;
     color: #EFEFEF;
     margin-left: 2rem;
 }
 
-header .opc_login {
+.opc_login_header {
     cursor: pointer;
     color: #EFEFEF;
 }
 
-header .opc_login:hover {
+.opc_login_header:hover {
     color: #0080C5;
     cursor: pointer;
     transition: 0.3s;
 }
 
-header .opc_register:hover {
+.opc_register_header:hover {
     color: #0080C5;
     transition: 0.3s;
 }
 
-header .login:hover {
-    color: #EFEFEF;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-header .cart {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-header .profileIcon {
-    cursor: pointer;
-    color: var(--white);
-}
-
-header .carrinho {
+.cart_icon_header {
     color: white;
     text-decoration: none;
     font-size: 35px;
 }
 
-header .carrinho:hover {
+.cart_icon_header:hover {
     color: #0080C5;
     transition: 0.3s;
 }
 
-header .login {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-
-.navBar {
+.nav_bar_header {
     position: sticky;
     display: flex;
     justify-content: space-between;
@@ -127,114 +90,181 @@ header .login {
     z-index: 1;
 }
 
-.navBar a {
+.nav_bar_header a {
     color: white;
     text-decoration: none;
 
 }
 
-.navBar a:hover {
+.nav_bar_header a:hover {
     color: #90C1E3;
     text-decoration: none;
 }
 
-
-
-.divisores {
+.divisor_header {
     background-color: white;
     width: 1px;
     height: 20px;
 }
 
-#logo {
-    position: absolute;
-    margin-top: -3%;
-    margin-left: -3%;
-}
-
-#ModalPerfil {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#colunaUm {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    color: #00579D;
-}
-
-#colunaUm>h3 {
-    margin-left: 25%;
-}
-
-#colunaDois>h4 {
-    opacity: 50%;
-}
-
-#colunaDois>h3 {
-    color: #00579D;
-    font-weight: bolder;
-}
-
-#colunaTres {
-    margin-left: 5%;
-    margin-top: -38%;
-    color: #00579D;
-    font-weight: bolder;
-}
-
-.tracoAzul {
-    position: absolute;
-    width: 5px;
-    height: 30px;
-    background-color: #00579D;
-    margin-top: -8%;
-    margin-left: -2%;
-}
-
-.tracoCinza {
-    position: absolute;
-    width: 200px;
-    height: 1px;
-    background-color: rgb(78, 78, 78);
-    margin-top: -3%;
-    margin-left: -2%;
-}
-
-header.scrolled {
+.scrolled_desktop {
     background-color: #0000007c;
     height: 50px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     z-index: 150;
     position: fixed;
 
-    .saves {
+    .cart_icon_header {
         color: var(--white);
         font-size: 30px;
     }
 
-    .carrinho {
-        color: var(--white);
-        font-size: 30px;
-    }
-
-    .account {
-        color: var(--white);
-        font-size: 30px;
-    }
-
-    .profileIcon {
-        color: var(--white);
-        font-size: 30px;
-    }
-
-    .img img {
+    .image_logo_header {
         width: 60px;
     }
 
-    .searchInput {
+    .search_input_header {
+        opacity: 0;
+    }
+
+}
+
+/* ----------------------------Modelo Mobile---------------------------- */
+
+.header_mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 100%;
+    height: 70px;
+    transition: 0.3s;
+}
+
+.image_logo_header_mobile {
+    width: 50px;
+}
+
+.box_logo_header_mobile {
+    margin-left: 3%;
+}
+
+.opc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 3rem;
+}
+
+.icons_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+}
+
+.opc_user_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account {
+    margin-left: -100px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.opc_register_header {
+    cursor: pointer;
+    color: #EFEFEF;
+    margin-left: 2rem;
+}
+
+.opc_login_header {
+    cursor: pointer;
+    color: #EFEFEF;
+}
+
+.opc_login_header:hover {
+    color: #0080C5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opc_register_header:hover {
+    color: #0080C5;
+    transition: 0.3s;
+}
+
+.cart_icon_header {
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+.cart_icon_header:hover {
+    color: #0080C5;
+    transition: 0.3s;
+}
+
+.nav_bar_header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2777B7;
+    height: 49px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.nav_bar_header a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.nav_bar_header a:hover {
+    color: #90C1E3;
+    text-decoration: none;
+}
+
+.divisor_header {
+    background-color: white;
+    width: 1px;
+    height: 20px;
+}
+
+.scrolled_mobile {
+    background-color: #0000007c;
+    height: 50px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 150;
+    position: fixed;
+
+    .cart_icon_header {
+        color: var(--white);
+        font-size: 30px;
+    }
+
+    .image_logo_header {
+        width: 60px;
+    }
+
+    .search_input_header {
         opacity: 0;
     }
 

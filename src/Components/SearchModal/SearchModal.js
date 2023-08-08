@@ -1,10 +1,22 @@
 //Importando o React e o CSS
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SearchModal.css';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -15,8 +27,6 @@ function SearchBar() {
   const handleSuggestionClick = (suggestion) => {
     setSearchTerm(suggestion);
     setShowSuggestions(false);
-  
-    // Redirect to the search results page with the query parameter
     window.location.href = `/product?query=${encodeURIComponent(suggestion)}`;
   }
 
@@ -37,7 +47,7 @@ function SearchBar() {
     'Express.js',
   ];
 
-  return (
+  const renderDesktopView = () => (
     <div className="container_searchBar">
       <input
         type="text"
@@ -64,7 +74,55 @@ function SearchBar() {
         </ul>
       )}
     </div>
-  );
+  )
+
+  const renderTabletView = () => (
+    <div className="container_searchBar_mobile">
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        value={searchTerm}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
+      />
+      <i className="search icon input"></i>
+      {showSuggestions && (
+        <ul className="serarchBar_suggestions">
+          {suggestions
+            .filter((suggestion) =>
+              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion}
+              </li>
+            ))}
+        </ul>
+      )}
+    </div>
+  )
+
+  const renderMobileView = () => (
+    <>
+      <div>
+      </div>
+    </>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
 }
 
 export default SearchBar;

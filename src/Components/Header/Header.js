@@ -19,73 +19,112 @@ import logo from "../../assets/img/logo-weg.png"
 import { FaShoppingCart } from 'react-icons/fa'
 
 
-function HeaderLogin() {
+function Header() {
 
   const [user, setUser] = useState({});
   const [scrolled, setScrolled] = useState(false);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        let users = await UserService.getAll();
-        users.forEach((user1) => {
-          if (user1.register === JSON.parse(localStorage.getItem('userCpf'))) {
-            setUser(user1)
-          }
-        });
-      } catch (error) {
-        console.log(error);
-      }
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener('resize', handleResize);
+    handleResize();
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  return (
-    <><header className={scrolled ? 'scrolled' : ''}>
-      <div className="img">
-        <Link to="/"><img src={logo} alt="" /></Link>
+  
+
+  const renderDesktopView = () => (
+    <><div className={scrolled ? 'scrolled_desktop' : 'header_desktop'}>
+      <div className='box_logo_header'>
+        <Link to="/"><img className='image_logo_header' src={logo} /></Link>
       </div>
-      <div className="searchInput">
+      <div className='search_input_header'>
         <SearchBar />
       </div>
-      <div className="opc">
-        <div className='opc_user'>
-          <Link to="/login "><p className='opc_login'>Login</p></Link><Link to="/register "><p className='opc_register'>/</p></Link><Link to="/register "><p className='opc_register'>Realizar Cadastro</p></Link>
+      <div className="opc_header">
+        <div className='opc_user_header'>
+          <Link to="/login "><p className='opc_login_header'>Login</p></Link><Link to="/register "><p className='opc_register_header'>/</p></Link><Link to="/register "><p className='opc_register_header'>Realizar Cadastro</p></Link>
         </div>
-        <div className='icons'>
-          <Link className="cart" to="/cart"><FaShoppingCart className="carrinho" /></Link>
+        <div className='icons_header'>
+          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header" /></Link>
         </div>
       </div>
-    </header><div className="navBar">
+    </div><div className="nav_bar_header">
         <div id="menu">
           <MenuModal />
         </div>
-        <div className="divisores"></div>
+        <div className="divisor_header"></div>
         <Link to="/category">Motores</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header"></div>
         <Link to="/category">Tintas e Vernizes</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header"></div>
         <Link to="/category">Automação</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header"></div>
         <Link to="/category">Paineis Eletricos</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header"></div>
         <Link to="/category">Segurança</Link>
-        <div className="divisores"></div>
+        <div className="divisor_header"></div>
       </div></>
   )
+
+  const renderTabletView = () => (
+    <><div className={scrolled ? 'scrolled_mobile' : 'header_mobile'}>
+      <div className='box_logo_header_mobile'  >
+        <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
+      </div>
+      <div className='search_input_header'>
+        <SearchBar />
+      </div>
+      <div className="opc_header">
+        <div className='opc_user_header'>
+          <Link to="/login "><p className='opc_login_header'>Login</p></Link><Link to="/register "><p className='opc_register_header'>/</p></Link><Link to="/register "><p className='opc_register_header'>Realizar Cadastro</p></Link>
+        </div>
+        <div className='icons_header'>
+          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header" /></Link>
+        </div>
+      </div>
+    </div><div className="nav_bar_header">
+        <div id="menu">
+          <MenuModal />
+        </div>
+        <div className="divisor_header"></div>
+        <Link to="/category">Motores</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category">Tintas e Vernizes</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category">Automação</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category">Paineis Eletricos</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category">Segurança</Link>
+        <div className="divisor_header"></div>
+      </div></>
+  )
+
+  const renderMobileView = () => (
+    <>
+      <div>
+      </div>
+    </>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
+
 }
-export default HeaderLogin
+
+export default Header;
