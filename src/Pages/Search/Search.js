@@ -23,6 +23,9 @@ import { FaListUl } from 'react-icons/fa'
 
 
 function Search() {
+
+
+  
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const searchTerm = queryParams.get('query') || '';

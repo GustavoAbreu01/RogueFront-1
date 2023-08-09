@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Quiz.css'
 
 //importando as frameworks
@@ -28,7 +28,21 @@ function Quiz() {
   const Question4 = () => progresso === 3;
   const Question5 = () => progresso === 4;
 
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
   const proximo = () => {
+
     setProgresso(prevProgresso => prevProgresso + 1);
     if (progresso === 4) {
       console.log("fim");
@@ -59,7 +73,7 @@ function Quiz() {
     }
   }
 
-  return (
+  const renderDesktopView = () => (
     <>
       {!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className="ui raised very padded text container segment quiz">
@@ -219,7 +233,21 @@ function Quiz() {
       <ProductSmallCarousel />
       <Footer />
     </>
-  );
+  )
+  const renderMobileView = () => (
+    <></>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+        return renderDesktopView();
+        // } else if (screenSize.width < 900 && screenSize.width > 500) {
+        //   return renderTabletView();
+    } else {
+        return renderMobileView();
+    }
+};
+return <>{getViewToRender()}</>;
 }
 
 export default Quiz
