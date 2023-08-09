@@ -109,6 +109,7 @@
 
 .scrolled_login_desktop {
     background-color: #0000007c;
+    backdrop-filter: blur( 2px );
     height: 50px;
     transition: 0.3s;
     display: flex;

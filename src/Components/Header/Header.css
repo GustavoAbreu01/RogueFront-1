@@ -113,6 +113,7 @@
     transition: 0.3s;
     display: flex;
     justify-content: space-between;
+    backdrop-filter: blur( 2px );
     align-items: center;
     width: 100%;
     z-index: 150;
@@ -250,6 +251,7 @@
     height: 50px;
     transition: 0.3s;
     display: flex;
+    backdrop-filter: blur( 2px );
     justify-content: space-between;
     align-items: center;
     width: 100%;

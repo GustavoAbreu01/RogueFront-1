@@ -36,7 +36,18 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
 
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const renderDesktopView = () => (
     <><div className={scrolled ? 'scrolled_desktop' : 'header_desktop'}>
@@ -80,7 +91,8 @@ function Header() {
       </div>
       <div className="opc_header">
         <div className='search_input_header'>
-          <SearchBar />        </div>
+          <SearchBar />
+        </div>
         <div className='icons_header'>
           <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header" /></Link>
         </div>
