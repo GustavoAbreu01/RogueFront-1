@@ -410,16 +410,63 @@ td {
 /* MOBILE */
 
 .ui.items.product_page_mobile {
-    border-top: 3rem;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin: 3rem auto;
     height: 100%;
     width: fit-content;
 }
 
+.image_product_mobile {
+    width: 55%;
+}
+
+.img_product_page_mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+}
+
+.title_price_product_page_mobile {
+    padding-left: 2rem;
+}
+
+.ui.rating.ui.rating.product_page_mobile {
+    font-size: 25px;
+    padding-left: 2rem;
+}
+
+.price_product_page_mobile {
+    color: var(--blue-primary);
+    font-size: 35px;
+}
+
+.box_description_product_page {
+    padding: 2rem;
+}
+
+.subtext_product_page {
+    color: var(--grey-primary);
+    font-size: 15px;
+}
+
+.buttons_product_page_mobile {
+    padding: 2rem;
+}
+
+.buttons_product_page_opc_add_mobile {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+/*
 .content.product_page_mobile {
-    padding-left: 2rem !important;
+    padding: 1rem !important;
 }
 
 .price_product_page_mobile {
@@ -511,13 +558,13 @@ td {
     background-color: #C6C6C6;
     border: 1px solid #D9D9D9;
     color: black;
-}
+} */
 
 /* Fim table */
 
 /* Opicionais */
 
-.opcionais h1 {
+/* .opcionais h1 {
     color: black;
     margin: 0;
 }
@@ -530,13 +577,13 @@ td {
 .opcionais p {
     margin: 0;
 
-}
+} */
 
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     /* TEXT */
 
-    .body-product {
+/* .body-product {
         width: 70%;
         height: 100%;
         margin: 5% 0 0 15%;
@@ -587,11 +634,11 @@ td {
 
     .star-icon:hover~.star-icon::before {
         content: "\2606";
-    }
+    } */
 
-    /* Substituir a imagem branca pela azul */
+/* Substituir a imagem branca pela azul */
 
-    .price {
+/* .price {
         display: flex;
         flex-direction: row;
         margin-bottom: 5%;
@@ -645,11 +692,11 @@ td {
         margin: none;
         padding: none;
         color: #00579D;
-    }
+    } */
 
-    /* Buy buttons */
+/* Buy buttons */
 
-    .opcBuy {
+/* .opcBuy {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -673,12 +720,12 @@ td {
 
     .opcBuy .Buy button {
         box-shadow: -0.5px 2px 5px 0px rgb(143, 143, 143);
-    }
+    } */
 
-    /* Fim Buy buttons */
+/* Fim Buy buttons */
 
-    /* Car Buttons */
-
+/* Car Buttons */
+/* 
     .opcBuy .Car button {
         width: 25vw;
         height: 7vh;
@@ -696,13 +743,13 @@ td {
 
     .opcBuy .Car button {
         box-shadow: -0.5px 2px 5px 0px rgb(143, 143, 143);
-    }
+    } */
 
-    /* Fim Car Buttons */
+/* Fim Car Buttons */
 
-    /* Parte de baixo */
+/* Parte de baixo */
 
-    .aboutProduct {
+/* .aboutProduct {
         margin-left: 40px;
         color: #565656;
     }
@@ -719,12 +766,12 @@ td {
 
     .aboutProduct h3 {
         font-weight: lighter;
-    }
+    } */
 
-    /* Fim Parte de baixo */
+/* Fim Parte de baixo */
 
-    /* Table */
-
+/* Table */
+/* 
     table {
         margin: 0 auto;
         align-items: center;
@@ -752,12 +799,12 @@ td {
         background-color: #C6C6C6;
         border: 1px solid #D9D9D9;
         color: black;
-    }
+    } */
 
-    /* Fim table */
+/* Fim table */
 
-    /* Opicionais */
-
+/* Opicionais */
+/* 
     .opcionais h1 {
         color: black;
         margin: 0;
@@ -769,14 +816,14 @@ td {
     }
 
     .opcionais p {
-        margin: 0;
+        margin: 0; */
 
-    }
+/* } */
 
-    /* Fim Opicionais */
+/* Fim Opicionais */
 
-    /* FIM TEXT */
-}
+/* FIM TEXT */
+/* }
 
 .box_product_page_title_similar_mobile {
     display: flex;
@@ -834,4 +881,4 @@ td {
 
 .ui.rating.ui.rating.product_page_mobile {
     font-size: 30px;
-}
+  */

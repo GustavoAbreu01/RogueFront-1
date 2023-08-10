@@ -165,12 +165,13 @@ function ProductPage() {
                         </div>
                         <br />
                         <Rating className="ui rating product_page_mobile" maxRating={5} style={{ marginTop: '1rem' }} />
-
-                        <div className="meta">
-                            <span>Descrição</span>
-                        </div>
-                        <div className="description product_page_mobile">
-                            <p className='description product_page_mobile_p'>Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia. Opcionalmente pode ser fornecido com capacitor de partida e eixo e flange conforme norma NEMA.</p>
+                        <div className='box_description_product_page'>
+                            <div className="meta">
+                                <span>Descrição</span>
+                            </div>
+                            <div className="description product_page_mobile">
+                                <p className='description product_page_mobile_p'>Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia. Opcionalmente pode ser fornecido com capacitor de partida e eixo e flange conforme norma NEMA.</p>
+                            </div>
                         </div>
                         <div className='buttons_product_page_mobile'>
                             <button className="ui fluid button sell_product_page_mobile">
