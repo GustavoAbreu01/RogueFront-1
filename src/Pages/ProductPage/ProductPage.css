@@ -406,3 +406,479 @@ td {
     gap: 0.5rem;
     width: 100%;
 }
+
+/* MOBILE */
+
+.ui.items.product_page_mobile {
+    background-color: rgb(255, 255, 255);
+    margin: 3rem auto;
+    height: 100%;
+    width: fit-content;
+}
+
+.image_product_mobile {
+    width: 55%;
+}
+
+.img_product_page_mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+}
+
+.title_price_product_page_mobile {
+    padding-left: 2rem;
+}
+
+.ui.rating.ui.rating.product_page_mobile {
+    font-size: 25px;
+    padding-left: 2rem;
+}
+
+.price_product_page_mobile {
+    color: var(--blue-primary);
+    font-size: 35px;
+}
+
+.box_description_product_page {
+    padding: 2rem;
+}
+
+.subtext_product_page {
+    color: var(--grey-primary);
+    font-size: 15px;
+}
+
+.buttons_product_page_mobile {
+    padding: 2rem;
+}
+
+.buttons_product_page_opc_add_mobile {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+/*
+.content.product_page_mobile {
+    padding: 1rem !important;
+}
+
+.price_product_page_mobile {
+    font-size: 45px;
+    color: var(--blue-primary);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.description.product_page_mobile {
+}
+
+.img_product_page_mobile {
+    align-self: center;
+    width: 25rem;
+
+}
+
+.image_product_mobile {
+    width: 100%;
+}
+
+.buttons_product_page_mobile {
+    margin: 1rem;
+}
+
+.ui.fluid.button.sell_product_page_mobile {
+    height: 3.5rem;
+    margin-top: 1rem;
+
+}
+
+.ui.fluid.button.cart_product_page_mobile {
+    height: 3.5rem;
+    width: 28.5rem;
+    margin-top: 1rem;
+    background-color: var(--blue-secundary);
+}
+
+.ui.fluid.icon.button.cart_product_compare_mobile {
+    height: 3.5rem;
+    width: 120%;
+    margin-top: 1rem;
+    background-color: var(--blue-secundary);
+}
+
+.ui.fluid.button.cart_product_page_mobile:hover {
+    color: var(--white);
+    background-color: var(--grey-primary);
+}
+
+.ui.fluid.icon.button.cart_product_compare_mobile:hover {
+    color: var(--white);
+    background-color: var(--grey-primary);
+}
+
+.boxTitleSimilar {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 50%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+th,
+td {
+    width: 30vw;
+    height: 5vh;
+    border: 1px solid #CBCBCB;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    background-color: #EDEDED;
+}
+
+.caracterisicas td:nth-child(1) {
+    background-color: #C6C6C6;
+    border: 1px solid #D9D9D9;
+    color: black;
+} */
+
+/* Fim table */
+
+/* Opicionais */
+
+/* .opcionais h1 {
+    color: black;
+    margin: 0;
+}
+
+.opcionais h2 {
+    font-size: 17px;
+    margin: 0;
+}
+
+.opcionais p {
+    margin: 0;
+
+} */
+
+
+/* @media screen and (max-width: 1024px) {
+    /* TEXT */
+
+/* .body-product {
+        width: 70%;
+        height: 100%;
+        margin: 5% 0 0 15%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+
+    .body-product h3 {
+        max-width: 90%;
+    }
+
+    .save img {
+        width: 6%;
+        float: right;
+        margin-right: 25px;
+    }
+
+    .avaliacao {
+        display: flex;
+        margin: none;
+        margin-left: -50px;
+    }
+
+    .star-icon ul {
+        margin: none;
+    }
+
+    .star-icon {
+        list-style-type: none;
+        border: 1px solid #fff;
+        cursor: pointer;
+        margin-top: -35px;
+        color: #00579D;
+        font-size: 25px;
+    }
+
+    .star-icon::before {
+        content: "\2605";
+    }
+
+    .star-icon.ativo~.star-icon::before {
+        content: "\2606";
+    }
+
+    .avaliacao:hover .star-icon::before {
+        content: "\2605";
+    }
+
+    .star-icon:hover~.star-icon::before {
+        content: "\2606";
+    } */
+
+/* Substituir a imagem branca pela azul */
+
+/* .price {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5%;
+    }
+
+    .price .int {
+        font-size: 40px;
+    }
+
+    .price .cent {
+        margin-top: -10px;
+    }
+
+    .payment a {
+        color: #0080C5;
+        text-decoration: none;
+    }
+
+    .informacoes {
+        padding: 30px;
+        color: #565656;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .informacoes .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .informacoes img {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+        width: 350px;
+        height: 300px;
+    }
+
+    .informacoes h1 {
+        margin: none;
+    }
+
+    .informacoes .title {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        margin: none;
+        padding: none;
+        color: #00579D;
+    } */
+
+/* Buy buttons */
+
+/* .opcBuy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5% auto;
+    }
+
+    .opcBuy .Buy button {
+        width: 25vw;
+        height: 7vh;
+        border-radius: 7px;
+        border: none;
+        background-color: #00579D;
+    }
+
+    .opcBuy .Buy button {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold
+    }
+
+    .opcBuy .Buy button {
+        box-shadow: -0.5px 2px 5px 0px rgb(143, 143, 143);
+    } */
+
+/* Fim Buy buttons */
+
+/* Car Buttons */
+/* 
+    .opcBuy .Car button {
+        width: 25vw;
+        height: 7vh;
+        border-radius: 7px;
+        border: none;
+        background-color: #C7DCEC;
+        margin-top: 10px;
+    }
+
+    .opcBuy .Car button {
+        color: #00579D;
+        font-size: 20px;
+        font-weight: bold
+    }
+
+    .opcBuy .Car button {
+        box-shadow: -0.5px 2px 5px 0px rgb(143, 143, 143);
+    } */
+
+/* Fim Car Buttons */
+
+/* Parte de baixo */
+
+/* .aboutProduct {
+        margin-left: 40px;
+        color: #565656;
+    }
+
+    .aboutProduct h1 {
+        color: #00579D;
+        font-weight: bold;
+    }
+
+    .aboutProduct h2 {
+        font-weight: bold;
+        margin: 0px;
+    }
+
+    .aboutProduct h3 {
+        font-weight: lighter;
+    } */
+
+/* Fim Parte de baixo */
+
+/* Table */
+/* 
+    table {
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    th,
+    td {
+        width: 30vw;
+        height: 5vh;
+        border: 1px solid #CBCBCB;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        background-color: #EDEDED;
+    }
+
+    .caracterisicas td:nth-child(1) {
+        background-color: #C6C6C6;
+        border: 1px solid #D9D9D9;
+        color: black;
+    } */
+
+/* Fim table */
+
+/* Opicionais */
+/* 
+    .opcionais h1 {
+        color: black;
+        margin: 0;
+    }
+
+    .opcionais h2 {
+        font-size: 17px;
+        margin: 0;
+    }
+
+    .opcionais p {
+        margin: 0; */
+
+/* } */
+
+/* Fim Opicionais */
+
+/* FIM TEXT */
+/* }
+
+.box_product_page_title_similar_mobile {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    margin-top: 10%;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.box_product_page_carousel_similar_mobile {
+    padding-bottom: 5rem;
+}
+
+.box_product_page_title_highlights_mobile {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-secundary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.box_product_page_carousel_highlights_mobile {
+    padding-bottom: 5rem;
+}
+
+.buttons_product_page_opc_add_mobile {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.subtext_product_page {
+    color: var(--black);
+    font-size: 20px;
+}
+
+.ui.header.product_page_mobile {
+    font-size: 35px;
+}
+
+.description.product_page_mobile_p{
+    font-size: 18px;
+}
+
+.ui.rating.ui.rating.product_page_mobile {
+    font-size: 30px;
+  */

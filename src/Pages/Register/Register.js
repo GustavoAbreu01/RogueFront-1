@@ -42,7 +42,6 @@ function Register() {
         cpf: '',
     });
 
-
     const updateRegisterInformation = (event) => {
         setUser({ ...user, [event.target.name]: event.target.value });
     }
@@ -50,7 +49,6 @@ function Register() {
     const updateConfirmInformation = (event) => {
         setPasswordConfirm(event.target.value);
     }
-
 
     function create(event) {
         if (user.password !== passwordConfirm) {
