@@ -1,11 +1,9 @@
+//Importando o React e o CSS
 import React, { useEffect, useState } from 'react';
 import './EditProfile.css';
-import { Link } from 'react-router-dom';
 
-//Importando os icones
-import { FaStar } from 'react-icons/fa';
-import { CiSquareAlert } from 'react-icons/ci';
-import { CgProfile } from 'react-icons/cg';
+//importando as frameworks
+import { Link } from 'react-router-dom';
 
 //Importando os componentes
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
@@ -15,6 +13,11 @@ import Footer from '../../Components/Footer/Footer';
 import RatedProducts from '../../Components/RatedProducts/RatedProducts';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+
+//Importando os icones
+import { FaStar } from 'react-icons/fa';
+import { CiSquareAlert } from 'react-icons/ci';
+import { CgProfile } from 'react-icons/cg';
 
 function EditProfile() {
 
@@ -68,6 +71,9 @@ function EditProfile() {
                     <div onClick={() => changeSection(4)} id="ratingBoxContainer" className={`item ${activeSection === 4 ? 'active' : ''}`}>
                       <p className="title_section_edit_profile">Avaliações</p>
                     </div>
+                    <div onClick={() => changeSection(5)} id="ratingBoxContainer" className={`item ${activeSection === 5 ? 'active' : ''}`}>
+                      <p className="title_section_edit_profile">Acessibilidade</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -79,7 +85,7 @@ function EditProfile() {
             <div className="column sections">
               <div className="box_edit_section_profile">
                 <h2 className="edit_section_title_profile">Informações Pessoais</h2>
-                <form className="ui form edit"> 
+                <form className="ui form edit">
                   <div className="field">
                     <div className="two fields">
                       <div className={editMode ? "field" : "field disabled"}>
@@ -129,7 +135,7 @@ function EditProfile() {
                   {editMode ? (
                     <CiSquareAlert className='icon_information_profile_alert' />
                   ) : (
-                    <CiSquareAlert className='ico_information_profile'/>
+                    <CiSquareAlert className='ico_information_profile' />
                   )
                   }
                   <p>
@@ -295,7 +301,64 @@ function EditProfile() {
                 </div>
               </div>
             </div>
+
+          ) : activeSection === 5 ? (
+            <div className="column sections">
+              <div className="box_edit_section_profile">
+
+                <h2 className="edit_section_title_profile">Acessibilidade</h2>
+                <div className='acessebility_containerscrowll_profile' >
+                
+                <div className='acessebility_container_profile' >
+                <div className='acessebility_box_profile'>
+                  <div className='acessebility_container_profile_title' >
+                    <h5>Libras</h5>
+                  </div>
+                  <div className="acessebility_profile_switcher">
+                    <div className="checkbox-wrapper-6">
+                      <input className="tgl tgl-light" id="cb1-1" type="checkbox" />
+                      <label className="tgl-btn" for="cb1-1" />
+                    </div>
+                  </div>
+                </div>
+                <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                </div>
+                
+                <div className='acessebility_container_profile' >
+                <div className='acessebility_box_profile'>
+                  <div className='acessebility_container_profile_title' >
+                    <h5>Leitura de Texto</h5>
+                  </div>
+                  <div className="acessebility_profile_switcher">
+                    <div className="checkbox-wrapper-6">
+                      <input className="tgl tgl-light" id="cb1-6" type="checkbox" />
+                      <label className="tgl-btn" for="cb1-6" />
+                    </div>
+                  </div>
+                </div>
+                <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                </div>
+
+                <div className='acessebility_container_profile' >
+                <div className='acessebility_box_profile'>
+                  <div className='acessebility_container_profile_title' >
+                    <h5>Modo Escuro</h5>
+                  </div>
+                  <div className="acessebility_profile_switcher">
+                    <div className="checkbox-wrapper-6">
+                      <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
+                      <label className="tgl-btn" for="cb1-5" />
+                    </div>
+                  </div>
+                  </div>
+                  <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                </div>
+              </div>
+     
+            </div>
+            </div>
           ) : null}
+
         </div >
       </div >
       <div className='box_edit_profile_title_similar'>

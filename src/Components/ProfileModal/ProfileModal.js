@@ -1,13 +1,17 @@
+//Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
 import './ProfileModal.css'
-//import de imagens
-import logoDes from "../../assets/img/LogoWegDesing.png"
-//
-//import de icons do react-icons
-import { CgProfile } from 'react-icons/cg'
+
+//importando as frameworks
 import { Link } from 'react-router-dom'
+
+//Importando as imagens
+import logoDes from "../../assets/img/LogoWegDesing.png"
+
+//Importando os ícones
+import { CgProfile } from 'react-icons/cg'
 import { BsArrowBarRight } from 'react-icons/bs'
-//
+
 
 export default function ProfileModal({ user }) {
   const [openModal, setOpenModal] = useState(false);
@@ -70,11 +74,11 @@ export default function ProfileModal({ user }) {
     if (selectedSize === 'small')
       document.body.style.fontSize = "12px";
     else if (selectedSize === 'medium')
-      document.body.style.fontSize = "16px";
+      document.body.style.fontSize = "14px";
     else if (selectedSize === 'large')
-      document.body.style.fontSize = "18px";
+      document.body.style.fontSize = "16px";
     else if (selectedSize === 'veryLarge')
-      document.body.style.fontSize = "20px";
+      document.body.style.fontSize = "18px";
   };
 
   return (
@@ -90,37 +94,37 @@ export default function ProfileModal({ user }) {
                 <div className='title_acessibility'>
                   <p>Tamanhos</p>
                 </div>
-                <div class="grouped fields profile">
-                  <div class="ui field left compact segment profile">
+                <div className="grouped fields profile">
+                  <div className="ui field left compact segment profile">
                     <p>Pequena</p>
-                    <div class="ui fitted slider checkbox profile">
+                    <div className="ui fitted slider checkbox profile">
                       <input type="radio" name="throughput" value="small"
                         checked={selectedSize === 'small'}
                         onChange={handleSizeChange} />
                       <label></label>
                     </div>
                   </div>
-                  <div class="ui field left compact segment profile">
+                  <div className="ui field left compact segment profile">
                     <p>Média</p>
-                    <div class="ui fitted slider checkbox">
+                    <div className="ui fitted slider checkbox">
                       <input type="radio" name="throughput" value="medium"
                         checked={selectedSize === 'medium'}
                         onChange={handleSizeChange} />
                       <label></label>
                     </div>
                   </div>
-                  <div class="ui field left compact segment profile">
+                  <div className="ui field left compact segment profile">
                     <p>Grande</p>
-                    <div class="ui fitted slider checkbox">
+                    <div className="ui fitted slider checkbox">
                       <input type="radio" name="throughput" value="large"
                         checked={selectedSize === 'large'}
                         onChange={handleSizeChange} />
                       <label></label>
                     </div>
                   </div>
-                  <div class="ui field left compact segment profile">
+                  <div className="ui field left compact segment profile">
                     <p>Muito Grande</p>
-                    <div class="ui fitted slider checkbox profile">
+                    <div className="ui fitted slider checkbox profile">
                       <input type="radio" name="throughput" value="veryLarge"
                         checked={selectedSize === 'veryLarge'}
                         onChange={handleSizeChange} />
@@ -130,8 +134,8 @@ export default function ProfileModal({ user }) {
 
                 </div>
                 <div className='button_acessibility'>
-                  <button onClick={applyFontSize} class="ui right labeled icon button">
-                    <i class="low vision icon"></i>
+                  <button onClick={applyFontSize} className="ui right labeled icon button">
+                    <i className="low vision icon"></i>
                     Aplicar Mudaças
                   </button>
                 </div>
@@ -144,9 +148,9 @@ export default function ProfileModal({ user }) {
             <div className=''>
               <div className='profile_modal_header'>
                 <Link to='/edit-profile'>
-                <button className="circular ui icon button edit profile">
-                  <i className="edit outline icon profile profile"></i>
-                </button>
+                  <button className="circular ui icon button edit profile">
+                    <i className="edit outline icon profile profile"></i>
+                  </button>
                 </Link>
                 <CgProfile className='perfil_image'></CgProfile>
                 <p className='username_profile'>Nome Sobrenome</p>
@@ -154,8 +158,8 @@ export default function ProfileModal({ user }) {
               </div>
               <div className='profile_opt'>
                 <div className='profile_item'>
-                  <button onClick={toggleModalAcessibility} class="ui icon button vision profile">
-                    <i onClick={toggleModalAcessibility} class="low vision icon profile"></i>
+                  <button onClick={toggleModalAcessibility} className="ui icon button vision profile">
+                    <i onClick={toggleModalAcessibility} className="low vision icon profile"></i>
                   </button>
                   <div className='text_profile_container'>
                     <p onClick={toggleModalAcessibility} className='text_profile_opt'>Alterar fonte</p>

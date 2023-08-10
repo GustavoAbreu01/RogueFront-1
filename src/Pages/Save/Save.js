@@ -1,15 +1,18 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './Save.css';
-import HaveProducts from './haveProducts';
+
+
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
-import { BsFillBookmarkFill } from 'react-icons/bs'
-import { AiFillStar } from 'react-icons/ai'
 import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 
+//Importando os ícones
+import { BsFillBookmarkFill } from 'react-icons/bs'
+import { AiFillStar } from 'react-icons/ai'
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -53,15 +56,17 @@ function Product() {
   if (lista.length === 0) {
     return (
       <>
-        <div className='titles'>
-          <div className='boxTitleSimilarOrder'>
-            <BsFillBookmarkFill color='var(--white)' size={40} />
-            <h1 className='titleSimilar'>Salvos</h1>
+        <div className='container_save_titles'>
+          <div className='save_saved_product'>
+            <div className='box_title_similar_save'>
+              <BsFillBookmarkFill color='var(--white)' size={40} />
+              <h1 className='save_title'>Salvos</h1>
+            </div>
           </div>
-          <div className='boxTitleSimilarSave'>
-            <div className='boxTitleTheme'>
+          <div className='box_title_similar_save_rec'>
+            <div className='save_title_theme'>
               <AiFillStar color='var(--white)' size={40} />
-              <h1 className='titleSimilar'>Recomendados</h1>
+              <h1 className='save_title'>Recomendados</h1>
             </div>
             <RecommendedSave />
             <RecommendedSave />
@@ -76,22 +81,22 @@ function Product() {
     );
   } else {
     return (
-      <><div className='titles'>
-        <div className='boxSavedProduct'>
-          <div className='boxTitleSimilarOrder'>
+      <><div className='container_save_titles'>
+        <div className='save_saved_product'>
+          <div className='box_title_similar_save'>
             <BsFillBookmarkFill color='var(--white)' size={40} />
-            <h1 className='titleSimilar'>Salvos</h1>
+            <h1 className='save_title'>Salvos</h1>
           </div>
-          <div className="products Save">
+          <div className="save_products">
             {products.map((item) => {
               return <div key={item}><SaveCard item={item} /></div>;
             })}
           </div>
         </div>
-        <div className='boxTitleSimilarSave'>
-          <div className='boxTitleTheme'>
+        <div className='box_title_similar_save_rec'>
+          <div className='save_title_theme'>
             <AiFillStar color='var(--white)' size={40} />
-            <h1 className='titleSimilar'>Recomendados</h1>
+            <h1 className='save_title'>Recomendados</h1>
           </div>
           <RecommendedSave />
           <RecommendedSave />

@@ -1,3 +1,4 @@
+//Importando o React e o CSS
 import React from 'react';
 import './Cart.css';
 
@@ -31,8 +32,8 @@ function Cart() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress'>
-        <div className="ui tiny steps">
+      <div className='container_progress_cart'>
+        <div className="ui small steps">
           <div className="step">
             <i className="shop icon"></i>
             <div className="content">

@@ -42,8 +42,26 @@
 
 .ui.fluid.button.cart_product_page {
     height: 3.5rem;
+    width: 28.5rem;
     margin-top: 1rem;
     background-color: var(--blue-secundary);
+}
+
+.ui.fluid.icon.button.cart_product_compare {
+    height: 3.5rem;
+    width: 120%;
+    margin-top: 1rem;
+    background-color: var(--blue-secundary);
+}
+
+.ui.fluid.button.cart_product_page:hover {
+    color: var(--white);
+    background-color: var(--grey-primary);
+}
+
+.ui.fluid.icon.button.cart_product_compare:hover {
+    color: var(--white);
+    background-color: var(--grey-primary);
 }
 
 .boxTitleSimilar {
@@ -356,7 +374,35 @@ td {
     gap: 2rem;
     height: 3rem;
     padding: 3rem;
+    margin-top: 10%;
     color: var(--white);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+}
+
+.box_product_page_carousel_similar {
+    padding-bottom: 5rem;
+}
+
+.box_product_page_title_highlights {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-secundary);
+    width: 40%;
+    gap: 2rem;
+    height: 3rem;
+    padding: 3rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.box_product_page_carousel_highlights {
+    padding-bottom: 5rem;
+}
+
+.buttons_product_page_opc_add {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
 }

@@ -1,10 +1,10 @@
 .product_cart_card {
     background-color: var(--white);
-    width: 90%;
+    width: 95%;
+    margin: 2rem;
     display: flex;
     align-items: center;
-    left: 4%;
-    position: relative;
+    justify-content: center;
     padding-bottom: 1.5rem;
     border-bottom: solid 2px var(--grey-secondary);
 }
@@ -16,7 +16,10 @@
 
 .product_cart_buttons {
     position: relative;
-    right: 3%;
+}
+
+.product_cart_informations {
+    padding-left: 1.5rem;
 }
 
 .product_cart_item_name {
@@ -42,6 +45,15 @@
     color: var(--blue-primary);
     font-size: 1.7rem;
 }
+
+.ui.button.active.product_cart:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
+}
+.ui.button.product_cart:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
+}
+
+
 
 .product_cart_complement {
     color: var(--grey-primary);

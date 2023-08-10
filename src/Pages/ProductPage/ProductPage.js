@@ -1,13 +1,22 @@
-import './ProductPage.css'
+//Importando o React e o CSS
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
-import motor from '../../assets/img/motor.png'
+import './ProductPage.css'
+
+//importando as frameworks
 import { Rating } from 'semantic-ui-react';
+
+//Importando os componentes
 import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
+
+//Importando as imagens
+import motor from '../../assets/img/motor.png'
+
+//Importando os ícones
+import { FaStar } from 'react-icons/fa'
 
 const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -25,7 +34,7 @@ function ProductPage() {
             {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
 
             <div className="ui items product_page" >
-            <p className="ui blue ribbon label">Destaque</p>
+                <p className="ui blue ribbon label">Destaque</p>
                 <div className="ui item product_page">
                     <div className="img_product_page">
                         <img className="image_product" src={motor} />
@@ -33,7 +42,7 @@ function ProductPage() {
                     <div className="content product_page">
                         <h1 className="ui header product_page">Motor W30</h1>
                         <br />
-                        <Rating className="ui star rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
+                        <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
                         <h1 className="price_product_page">R$ 495<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
                         <div className="meta">
                             <span>Descrição</span>
@@ -45,9 +54,18 @@ function ProductPage() {
                             <button className="ui fluid button sell_product_page">
                                 Comprar Agora
                             </button>
-                            <button className="ui fluid button cart_product_page">
-                                Adicionar ao Carrinho
-                            </button>
+                            <div className='buttons_product_page_opc_add'>
+                                <div>
+                                    <button className="ui fluid button cart_product_page">
+                                        Adicionar ao Carrinho
+                                    </button>
+                                </div>
+                                <div>
+                                    <button className="ui fluid icon button cart_product_compare">
+                                        <i className="exchange icon"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,12 +116,21 @@ function ProductPage() {
                     <p> Proteção térmica.</p>
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
                 </div>
-            </div> 
+            </div>
             <div className='box_product_page_title_similar'>
-            <FaStar color='var(--white)' size={40} />
-            <h1>Produtos Semelhantes</h1>
-          </div>
-            <Carousel/>
+                <FaStar color='var(--white)' size={40} />
+                <h1>Produtos Semelhantes</h1>
+            </div>
+            <div className='box_product_page_carousel_similar'>
+                <Carousel />
+            </div>
+            <div className='box_product_page_title_highlights'>
+                <FaStar color='var(--white)' size={40} />
+                <h1>Produtos Destaques</h1>
+            </div>
+            <div className='box_product_page_carousel_highlights'>
+                <Carousel />
+            </div>
             <Footer />
         </>
     )

@@ -1,19 +1,49 @@
+//Importando o React e o CSS
 import React from 'react'
 import "./CardCompare.css"
-import intensity from "../../assets/img/intensity.png"
-import { MdCompareArrows, MdDelete } from 'react-icons/md'
+
+//importando as frameworks
+import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
+
+//Importando os ícones
+import { MdCompareArrows } from 'react-icons/md'
 import { FaPowerOff } from 'react-icons/fa'
-import { VscGraph } from 'react-icons/bs'
 import { GoAlertFill } from 'react-icons/go'
 import { GiLightningFrequency } from 'react-icons/gi'
 import { GiCargoCrane } from 'react-icons/gi'
 import { BiSolidColorFill } from 'react-icons/bi'
 import { BsFillMagnetFill } from 'react-icons/bs'
 
-
 function CardCompare() {
 
     let productsCompared = JSON.parse(localStorage.getItem("productsCompared"))
+
+    const AddProductInCart = () => {
+        Swal.fire({
+            title: 'Produto adicionado a carrinho!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/cart"
+            }
+        }
+        )
+    }
 
     function verify() {
         if (productsCompared.length === 3) {
@@ -38,11 +68,13 @@ function CardCompare() {
                         <div className='container_card_compare_compared'>
                             <div className="productCompared" key={index}>
                                 <div className='box_card_compare_button_action'>
-                                    <button className="ui icon button card_compare">
-                                        <i className="info alternate icon "></i>
-                                    </button>
-                                    <button classname="ui icon button card_compare">
-                                        <i className="cart plus icon "></i>
+                                    <Link to='/product'>
+                                        <button className="ui icon button card_compare_icon">
+                                            <i className="info alternate icon "></i>
+                                        </button>
+                                    </Link>
+                                    <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+                                        <i className="cart plus icon product_card_hightlight"></i>
                                     </button>
                                     <div className='card_compare_delete_button'>
                                         {verify() &&

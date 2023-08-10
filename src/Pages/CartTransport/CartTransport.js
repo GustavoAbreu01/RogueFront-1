@@ -1,5 +1,7 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './CartTransport.css';
+import axios from "axios";
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -8,17 +10,36 @@ import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
-//Importando os icones
-import { FaStar } from 'react-icons/fa'
-
 //importando as frameworks
 import { Link } from 'react-router-dom';
 
+//Importando os icones
+import { FaStar } from 'react-icons/fa'
 
 function CartTransport() {
 
+  const [cep, setCep] = useState('');
+  const [addressInfo, setAddressInfo] = useState(false);
+  const [endereco, setEndereco] = useState({});
+
+  const buscarEndereco = () => {
+    if (cep.length === 8) {
+      axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => setEndereco(response.data))
+        .catch(error => console.log('Erro na busca do CEP:', error));
+    }
+  };
+
+  const handleChangeCep = (event) => {
+    const novoCep = event.target.value;
+    setCep(novoCep);
+    setAddressInfo(true)
+    buscarEndereco();
+  };
+
   var valor = 1100.00;
-  var frete = 100; 
+  var frete = 100;
+  var frete = 100;
   var total = 1200;
 
   const verify = () => {
@@ -30,11 +51,10 @@ function CartTransport() {
     }
   }
 
-
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress  '>
-        <div className="ui tiny steps">
+      <div className='container_progress_cart_transport'>
+        <div className="ui small steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">
@@ -66,9 +86,9 @@ function CartTransport() {
           <div className='box_cart_product_transport'>
             <div className='cart_transport_title'>
               <h5 className='cart_transport_title_text'>Verificar Transporte do Pedido</h5>
-            </div> 
+            </div>
             <div className='cart_transport_form'>
-              <form className="ui form">
+              <form className="ui large form">
                 <div className="field">
                   <label>Nome</label>
                   <div className="two fields">
@@ -76,7 +96,12 @@ function CartTransport() {
                       <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
                     </div>
                     <div className="field">
-                      <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" />
+                      {!addressInfo ?
+                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" value="" />
+                        :
+                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" value={endereco.localidade + ", " + endereco.bairro + ", " + endereco.logradouro} />
+                      }
+
                     </div>
                   </div>
                 </div>
@@ -87,14 +112,14 @@ function CartTransport() {
                       <input type="text" name="shipping[address]" placeholder="Complemento" />
                     </div>
                     <div className="four wide field">
-                      <input type="text" name="shipping[address-2]" placeholder="CEP " />
+                      <input type="text" name="shipping[address-2]" placeholder="CEP " onBlur={(event) => handleChangeCep(event)} />
                     </div>
                   </div>
                 </div>
                 <div className="two fields">
                   <div className="field">
                     <label>Estado</label>
-                    <select className="ui fluid dropdown">
+                    <select className="ui fluid dropdown" value={endereco.uf}>
                       <option value="">Estado</option>
                       <option value="AC">Acre</option>
                       <option value="AL">Alagoas</option>

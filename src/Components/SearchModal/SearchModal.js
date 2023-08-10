@@ -1,28 +1,39 @@
-import React, { useState } from 'react';
-import lupa from '../../assets/img/lupa.png';
-import  './SearchModal.css';
+//Importando o React e o CSS
+import React, { useEffect, useState } from 'react';
+import './SearchModal.css';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleInputChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
-  
-    // Lógica para mostrar/ocultar as sugestões com base no valor do campo de pesquisa
     setShowSuggestions(value.length > 0);
-  
-    if (value.length === 0) {
-      setShowSuggestions(false);
-    }
-
-    suggestions.push(value);
   };
 
   const handleSuggestionClick = (suggestion) => {
     setSearchTerm(suggestion);
     setShowSuggestions(false);
+    window.location.href = `/product?query=${encodeURIComponent(suggestion)}`;
+  }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      window.location.href = `/search?query=${encodeURIComponent(searchTerm)}`;
+    }
   };
 
   const suggestions = [
@@ -36,14 +47,16 @@ function SearchBar() {
     'Express.js',
   ];
 
-  return (
+  const renderDesktopView = () => (
     <div className="container_searchBar">
       <input
         type="text"
         placeholder="Pesquisar..."
         value={searchTerm}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
+      <i className="search icon input"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
@@ -61,7 +74,71 @@ function SearchBar() {
         </ul>
       )}
     </div>
-  );
+  )
+
+  const renderTabletView = () => (
+    <div className="container_searchBar_tablet">
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        value={searchTerm}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
+      />
+      <i className="search icon input"></i>
+      {showSuggestions && (
+        <ul className="serarchBar_suggestions">
+          {suggestions
+            .filter((suggestion) =>
+              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion}
+              </li>
+            ))}
+        </ul>
+      )}
+    </div>
+  )
+
+  const renderMobileView = () => (
+    <div className="container_searchBar_mobile">
+
+      <i className="search icon input mobile"></i>
+      {showSuggestions && (
+        <ul className="serarchBar_suggestions">
+          {suggestions
+            .filter((suggestion) =>
+              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion}
+              </li>
+            ))}
+        </ul>
+      )}
+    </div>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
 }
 
 export default SearchBar;

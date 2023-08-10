@@ -1,6 +1,10 @@
+//Importando o React e o CSS
 import React from 'react'
-import motor from '../../assets/img/motor.png'
 import './SmallProductHorizontal.css'
+
+//Importando as imagens
+import motor from '../../assets/img/motor.png'
+
 
 function SmallProductHorizontal() {
 

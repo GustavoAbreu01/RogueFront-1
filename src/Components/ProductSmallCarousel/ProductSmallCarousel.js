@@ -1,10 +1,11 @@
+//Importando o React e o CSS
 import React, { useState } from 'react'
 import './ProductSmallCarousel.css';
 
+//importando as frameworks
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
+//Importando os componentes
 import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
 
 function ProductCarouselSmall() {
@@ -65,6 +66,18 @@ function ProductCarouselSmall() {
     return (
         <div className='carousel_product_card_smaller_carousel' >
             <Slider {...settings}>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_card_smaller_carousel'>
+                    <ProductCardSmaller />
+                </div>
                 <div className='box_product_card_smaller_carousel'>
                     <ProductCardSmaller />
                 </div>

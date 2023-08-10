@@ -61,7 +61,7 @@
     width: 100%;
 }
 
-.container_progress{
+.container_progress_cart_confirm{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,6 +102,7 @@
     font-size: 30px;
     font-weight: bold;
     color: var(--blue-primary);
+    padding-bottom: 2rem;
 }
 
 .fluid.ui.button {

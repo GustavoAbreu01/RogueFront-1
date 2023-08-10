@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+//Importando o React e o CSS
+import React from 'react'
 import './ProductCarouselSmallSimilar.css';
 
+//importando as frameworks
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
+//Importando os componentes
 import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
 
 function ProductCarouselSmallSimilar() {
@@ -13,9 +14,16 @@ function ProductCarouselSmallSimilar() {
     var settings = {
         className: "center",
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 7,
         swipeToSlide: true,
         responsive: [
+            {
+                breakpoint: 1824,
+                settings: {
+                    slidesToShow: 7,
+                    slidesToScroll: 4,
+                }
+            },
             {
                 breakpoint: 1624,
                 settings: {
@@ -24,9 +32,16 @@ function ProductCarouselSmallSimilar() {
                 }
             },
             {
+                breakpoint: 1324,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                }
+            },
+            {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                 }
             },
@@ -51,6 +66,27 @@ function ProductCarouselSmallSimilar() {
     return (
         <div className='product_similar_carousel' >
             <Slider {...settings}>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
                 <div className='box_product_similar_carousel'>
                     <ProductCardSmaller />
                 </div>

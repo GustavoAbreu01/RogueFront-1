@@ -1,5 +1,21 @@
-import React from 'react'
+//Importando o React e o CSS
+import React, { useEffect, useState } from 'react'
 import './Home.css'
+
+//importando as frameworks
+import Aos from 'aos'
+import { Link } from 'react-router-dom'
+
+//Importando os componentes
+import ProductCarousel from '../../Components/ProductAccessedCarousel/ProductAccessedCarousel'
+import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
+import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
+import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import Carousell from '../../Components/BannerCarousell/BannerCarousell'
 
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
@@ -17,10 +33,6 @@ import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
 import motor from "../../assets/img/motor.png"
 
-//importando as frameworks
-import Aos from 'aos'
-import { Link } from 'react-router-dom'
-
 //Importando os icones
 import { BiLineChart } from 'react-icons/bi'
 import { MdOutlineSecurity } from 'react-icons/md'
@@ -31,17 +43,6 @@ import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
-
-//Importando os componentes
-import ProductCarousel from '../../Components/ProductAccessedCarousel/ProductAccessedCarousel'
-import ProductHighlightCarousel from '../../Components/ProductHighlightCarousel/ProductHighlightCarousel'
-import ProductSearchedCarousel from '../../Components/ProductSearchedCarousel/ProductSearchedCarousel'
-import ProductNewCarousel from '../../Components/ProductNewCarousel/ProductNewCarousel'
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
-import Footer from '../../Components/Footer/Footer'
-import Header from '../../Components/Header/Header'
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
-import Carousell from '../../Components/BannerCarousell/BannerCarousell'
 
 
 function Home() {
@@ -145,7 +146,20 @@ function Home() {
     }
   }
 
-  return (
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const renderDesktopView = () => (
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
         <WeggnerModal />
@@ -213,7 +227,7 @@ function Home() {
 
         <div className='container_home_category_buttons' >
           <h1 className='home_category_title'>Departamentos</h1>
-          <div className='box_home_category_buttons'> 
+          <div className='box_home_category_buttons'>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
@@ -264,16 +278,16 @@ function Home() {
               <CgSearchFound color='var(--white)' size={50} />
             </div>
           </div>
-          <div className='home_slider_product_searched'> 
+          <div className='home_slider_product_searched'>
             <ProductSearchedCarousel />
           </div>
         </div>
 
-        <div> 
+        <div>
           <div className='home_benefiits'>
             <LiaCertificateSolid color='var(--blue-primary)' size={50} />
             <h1 className='home_benefiits_title'>Benefícios de compra</h1>
-          </div> 
+          </div>
 
           <div className="container_home_benefits">
             {iconsInfoOne.map((icon) => (
@@ -284,7 +298,7 @@ function Home() {
                 <div className='home_benefits_description_info'>
                   <h1 className="home_benefits_description_title" >{icon.name}</h1>
                   <p className="home_benefits_description">{icon.description}</p>
-                </div> 
+                </div>
               </div>
             ))}
           </div>
@@ -321,8 +335,137 @@ function Home() {
 
         <Footer /></>
     </div>
-
   )
+
+  const renderMobileView = () => (
+    <div>
+      <>{!verify() ? <Header /> : <HeaderLogin />}
+        <WeggnerModal />
+        <div className='boxCarrossel_mobile'>
+          <Carousell></Carousell>
+        </div>
+        <div className="home_divider_carousel"></div>
+        <div className="box_home_option_pages_mobile">
+          <Link to='/category'>
+            <div className='home_optional_category_mobile'>
+              <button className='home_optional_category_button_mobile'>
+                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></MdOutlineSecurity>
+              </button>
+              <h2 className='home_optional_category_title_mobile'>Segurança</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_mobile'>
+              <button className='home_optional_category_button_mobile'>
+                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></BsPaintBucket>
+              </button>
+              <h2 className='home_optional_category_title_mobile'>Tintas</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_mobile'>
+              <button className='home_optional_category_button_mobile'>
+                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></CgSmartphoneChip>
+              </button>
+              <h2 className='home_optional_category_title_mobile'>Automação</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_mobile'>
+              <button className='home_optional_category_button_mobile'>
+                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_mobile'></TfiPanel>
+              </button>
+              <h2 className='home_optional_category_title_mobile'>Painéis</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_mobile'>
+              <button className='home_optional_category_button_mobile'>
+                <img src={iconMotor} width={40} height={25} alt=''></img>
+              </button>
+              <h2 className='home_optional_category_title_mobile'>Motores</h2>
+            </div>
+          </Link>
+        </div>
+        <div>
+          <div className='home_accessed_mobile'>
+            <BiLineChart color='var(--blue-primary)' size={30} />
+            <h1 className='home_accessed_title_mobile' >Produtos mais acessados</h1>
+          </div>
+          <div className='sliderProductAccessed'>
+            <ProductCarousel />
+          </div>
+        </div>
+
+        <div className='home_highlights' >
+          <div className='home_highlights_title'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text' >Destaques da semana</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductHighlightCarousel />
+          </div>
+        </div>
+
+
+        <div className='home_searched' >
+          <div className='home_searched_title'>
+            <div className='home_searched_aling'>
+              <h1 className='home_searched_title_text' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={50} />
+            </div>
+          </div>
+          <div className='home_slider_product_searched'>
+            <ProductSearchedCarousel />
+          </div>
+        </div>
+
+        <div>
+
+
+          <div className="container_home_benefits">
+
+          </div>
+
+          <div className="container_home_benefits">
+
+          </div>
+        </div>
+
+        <div className='home_highlights' >
+          <div className='home_highlights_title'>
+            <MdOutlineNewReleases color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text' >Novidades</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductNewCarousel />
+          </div>
+        </div>
+
+        <Footer /></>
+    </div>
+  )
+
+  const renderTabletView = () => (
+    <div>
+      <>{!verify() ? <Header /> : <HeaderLogin />}
+
+      </>
+    </div>
+  )
+
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
 }
 
 export default Home

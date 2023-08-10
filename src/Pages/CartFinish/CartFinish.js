@@ -1,5 +1,9 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './CartFinish.css';
+
+//importando as frameworks
+import { Link } from 'react-router-dom';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -7,9 +11,6 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import weggner from "../../assets/img/PedidoFinalizadoWeggner.PNG"
-
-//importando as frameworks
-import { Link } from 'react-router-dom';
 
 //Importando os icones
 import { BsArrowLeftShort } from 'react-icons/bs';
@@ -28,8 +29,8 @@ function CartFinish() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress'>
-        <div className="ui tiny steps">
+      <div className='container_progress_cart_finish'>
+        <div className="ui small steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">

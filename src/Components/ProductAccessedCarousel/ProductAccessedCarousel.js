@@ -1,10 +1,11 @@
+//Importando o React e o CSS
 import './ProductAccessedCarousel.css';
-import React, { useState } from 'react'
+import React from 'react'
 
+//importando as frameworks
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
+//Importando os componentes
 import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
 
 function ProductAccessedCarousel() {
@@ -51,6 +52,27 @@ function ProductAccessedCarousel() {
     return (
         <div className='container_product_accessed_carousel' >
             <Slider {...settings}>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
                 <div className='box_product_accessed_carousel'>
                     <ProductCardAccessed />
                 </div>

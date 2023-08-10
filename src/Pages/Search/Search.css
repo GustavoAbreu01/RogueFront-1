@@ -1,3 +1,56 @@
+.search_second_filter {
+    background-color: var(--white);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    margin: 2rem;
+    margin-right: 15%;
+    height: auto;
+    width: 20rem;
+    transition: 0.3s;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+.icon_search {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+}
+
+.search_filter_dropdown {
+    font-size: 20px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.angle.down.icon.search {
+    color: var(--blue-primary);
+    font-size: 1.7rem;
+}
+
+.angle.down.icon.search.open {
+    color: var(--blue-quaternary);
+    transition: 0.2s;
+    font-size: 1.7rem;
+}
+
+.container_search_page_layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_search_page_detail {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+
 .search-search_filter_search {
     background-color: var(--white);
     box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
@@ -16,7 +69,7 @@
     width: 66rem;
 }
 
-.column.filter {
+.column.filter.search {
     margin-left: 3rem;
 }
 
@@ -41,15 +94,60 @@
     text-align: center;
 }
 
-.ui.grid.SearchItens#produtos {
+.SearchItens {
     width: 100%;
-  }
-  
-  .ui.grid.SearchItens#produtos .column {
-    width: calc(25% - 1rem); /* Ajuste a largura conforme necessário */
-    margin-bottom: 1rem;
-    margin-left: 2rem;
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
   }
 
+  .container_search_bar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin: 3rem;
+  }
+
+  .box_search_bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 1600px) {
+    
+    .box_search_bar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 3rem;
+        align-items: center;
+        justify-content: center;
+      }
+
+  }
+
+  .container_breadcrumb {
+    display: flex;
+    width: 20%;
+    height: 10%;
+    align-items: start;
+    padding: 1rem;
+    border-radius: 10px;
+    justify-content: start;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  .active.section {
+    color: var(--blue-primary);
+  }
+
+  .section {
+    color: var(--blue-primary);
+  }
   
 

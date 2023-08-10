@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+//Importando o React e o CSS
+import React from 'react'
 import './ProductSearchedCarousel.css';
 
+//importando as frameworks
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-
+//Importando os componentes
 import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
 
 function ProductSearchedCarousel() {
@@ -52,6 +52,27 @@ function ProductSearchedCarousel() {
     return (
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
+                <div className='box_product_searched_carousel'>
+                    <ProductCardSearched />
+                </div>
                 <div className='box_product_searched_carousel'>
                     <ProductCardSearched />
                 </div>

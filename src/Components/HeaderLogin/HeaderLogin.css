@@ -1,34 +1,21 @@
-body::-webkit-scrollbar {
-    width: 0.5rem;
-}
-
-body::-webkit-scrollbar-track {
-    background: #EFEFEF;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #00579D;
-}
-
-
-header {
+.header_login_desktop {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     background-color: #00579D;
     height: 100px;
     transition: 0.3s;
 }
 
-.img{
+.box_logo_header_login {
     margin-left: 3%;
 }
 
-.img img{
+.image_logo_header_login {
     width: 100px;
 }
 
-header .opc{
+.opc_header_login {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,73 +23,61 @@ header .opc{
     margin-right: 3rem;
 }
 
-header .icons{
+.icons_header_login {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1.5rem;
 }
 
-header .account {
+.account {
     margin-left: -100px;
     color: white;
     text-decoration: none;
     font-size: 15px;
 }
 
-header .saves{
+.saves_header_login {
     cursor: pointer;
     color: #EFEFEF;
 }
 
-header .account:hover{
-    color: #EFEFEF;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-header .saves:hover{
+.saves_header_login:hover {
     color: #0080C5;
     transition: 0.3s;
 }
 
-header .login:hover{
+.login:hover {
     color: #EFEFEF;
     cursor: pointer;
     transition: 0.3s;
 }
 
-header .cart {
+.cart {
     color: white;
     text-decoration: none;
     font-size: 15px;
     cursor: pointer;
 }
 
-header .profileIcon{
-    cursor: pointer;
-    color: var(--white);
-}
-
-header .carrinho {
+.cart_header_login {
     color: white;
     text-decoration: none;
     font-size: 35px;
 }
 
-header .carrinho:hover{
+.cart_header_login:hover {
     color: #0080C5;
     transition: 0.3s;
 }
 
-header .login {
+.login {
     color: white;
     text-decoration: none;
     font-size: 15px;
 }
 
-
-.navBar {
+.nav_bar_header_login {
     position: sticky;
     display: flex;
     justify-content: space-between;
@@ -115,115 +90,51 @@ header .login {
     z-index: 1;
 }
 
-.navBar a{
+.nav_bar_header_login a {
     color: white;
     text-decoration: none;
-    
+
 }
 
-.navBar a:hover{
+.nav_bar_header_login a:hover {
     color: #90C1E3;
     text-decoration: none;
 }
 
-
-
-.divisores{
+.divisor_header_login {
     background-color: white;
     width: 1px;
     height: 20px;
 }
 
-#logo{
-    position: absolute;
-    margin-top: -3%;
-    margin-left: -3%;
-}
-
-#ModalPerfil{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-}
-
-#colunaUm{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    color: #00579D;
-}
-
-#colunaUm > h3{
-    margin-left: 25%;
-}
-
-#colunaDois > h4{
-    opacity: 50%;
-}
-
-#colunaDois > h3{
-    color: #00579D;
-    font-weight: bolder;
-}
-
-#colunaTres{
-margin-left: 5%;
-margin-top: -38%;
-color: #00579D;
-font-weight: bolder;
-}
-
-.tracoAzul{
-    position: absolute;
-    width: 5px;
-    height: 30px;
-    background-color: #00579D;
-    margin-top: -8%;
-    margin-left: -2%;
-}
-
-.tracoCinza{
-    position: absolute;
-    width: 200px;
-    height: 1px;
-    background-color: rgb(78, 78, 78);
-    margin-top: -3%;
-    margin-left: -2%;
-}
-
-header.scrolled {
+.scrolled_login_desktop {
     background-color: #0000007c;
+    backdrop-filter: blur( 2px );
     height: 50px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     z-index: 150;
     position: fixed;
 
-    .saves {
+    .saves_header_login {
         color: var(--white);
         font-size: 30px;
     }
 
-    .carrinho {
+    .cart_header_login {
         color: var(--white);
         font-size: 30px;
     }
 
-    .account {
-        color: var(--white);
-        font-size: 30px;
-    }
-
-    .profileIcon {
-        color: var(--white);
-        font-size: 30px;
-    }
-
-    .img img {
+    .image_logo_header_login {
         width: 60px;
     }
 
-    .searchInput {
+    .search_input_header {
         opacity: 0;
     }
-    
+
 }

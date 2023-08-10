@@ -1,19 +1,24 @@
+//Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
 import './Compare.css'
-//imagens
-import motor from "../../assets/img/motor.png"
+
+//Importando os componentes
 import CardCompare from '../../Components/CardCompare/CardCompare'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
-//
+
+//Importando as imagens
+import motor from "../../assets/img/motor.png"
+
 //react-icons
 import { IoMdAddCircle } from 'react-icons/io'
 import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 import { FaStar } from 'react-icons/fa'
-//
+
+
 function Compare() {
   const [productsCompared, setItems] = useState([]);
 
@@ -74,7 +79,7 @@ function Compare() {
         </div>
         <div className='products'>
           <CardCompare />
-          {!verify() && <div className='addProduct' onClick={() => addMoreProducts()}>
+          {!verify() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
 
@@ -83,7 +88,9 @@ function Compare() {
           <FaStar color='var(--white)' size={40} />
           <h1 className='title_similar' >Produtos Recomendados</h1>
         </div>
-        <ProductCarouselSmallSimilar />
+        <div className='box_carousel_similar_recommended'>
+          <ProductCarouselSmallSimilar />
+        </div>
       </div>
       <Footer />
     </>

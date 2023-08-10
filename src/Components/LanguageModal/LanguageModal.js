@@ -1,5 +1,8 @@
+//Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
 import './LanguageModal.css'
+
+//Importando as imagens
 import german from "../../assets/img/german.png"
 import english from "../../assets/img/english.png"
 import spanish from "../../assets/img/spanish.png"

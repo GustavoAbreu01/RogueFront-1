@@ -1,5 +1,18 @@
+//Importando o React e o CSS
 import React, { useState } from 'react';
 import './CartPayment.css';
+
+//importando as frameworks
+import { Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+
+//Importando os componentes
+import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
 //Importando as imagens
 import CardAll from '../../assets/img/CardAll.png';
@@ -10,17 +23,6 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaStar } from 'react-icons/fa';
-
-//Importando os componentes
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
-
-//importando as frameworks
-import { Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 
 function CartPayment() {
@@ -58,8 +60,8 @@ function CartPayment() {
 
   return (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress'>
-        <div className="ui tiny steps">
+      <div className='container_progress_cart_payment'>
+        <div className="ui small steps">
           <div className="completed step">
             <i className="shop icon"></i>
             <div className="content">
@@ -93,7 +95,7 @@ function CartPayment() {
               <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>
             <div className='cart_payment_form'>
-              <form className="ui form">
+              <form className="ui large form">
                 <div className="fields">
                   {focusedInput === '1' && (
                     <img src={CardName} className='cart_payment_card_Instrution' />
@@ -228,7 +230,11 @@ function CartPayment() {
               </Link>
             </div>
           </div>
-
+          <div className='box_cart_info_recommend'>
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+            <SmallProductHorizontal />
+          </div>
         </div>
       </div>
       <div className='box_cart_payment_title_similar'>
