@@ -275,6 +275,7 @@
     width: 100%;
     z-index: 150;
     position: fixed;
+    top: 0%;
 
     .cart_icon_header_mobile {
         color: var(--white);

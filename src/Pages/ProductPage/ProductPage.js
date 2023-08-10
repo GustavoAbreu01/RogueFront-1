@@ -150,7 +150,7 @@ function ProductPage() {
     )
     const renderMobileView = () => (
         <>
-            {/* {!verify() ? <Header /> : <HeaderLogin />} */}
+            {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
             <div className="ui items product_page_mobile" >
                 {/* <p className="ui blue ribbon label_mobile">aaaaaaaaaaaaaaaaaaaaaaaaa</p> */}

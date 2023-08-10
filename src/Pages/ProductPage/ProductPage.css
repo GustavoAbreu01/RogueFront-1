@@ -412,8 +412,6 @@ td {
 .ui.items.product_page_mobile {
     background-color: rgb(255, 255, 255);
     margin: 3rem auto;
-    height: 100%;
-    width: fit-content;
 }
 
 .image_product_mobile {
