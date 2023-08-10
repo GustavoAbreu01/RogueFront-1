@@ -22,8 +22,8 @@ import { FaShoppingCart } from 'react-icons/fa'
 function Header() {
 
   const [user, setUser] = useState({});
-  const [scrolled, setScrolled] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -89,22 +89,32 @@ function Header() {
         <MenuModal />
         <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
       </div>
-      <div className="opc_header">
+      <div className="opc_header_mobile">
         <div className='search_input_header'>
           <SearchBar />
         </div>
         <div className='icons_header'>
-          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header" /></Link>
+          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>
         </div>
       </div>
     </div></>
   )
 
   const renderMobileView = () => (
-    <>
-      <div>
+    <><div className={scrolled ? 'scrolled_mobile' : 'header_mobile'}>
+      <div className='box_logo_header_mobile'  >
+        <MenuModal />
+        <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
       </div>
-    </>
+      <div className="opc_header_mobile">
+        <div className='search_input_header'>
+          <SearchBar />
+        </div>
+        <div className='icons_header'>
+          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>
+        </div>
+      </div>
+    </div></>
   )
 
   const getViewToRender = () => {
