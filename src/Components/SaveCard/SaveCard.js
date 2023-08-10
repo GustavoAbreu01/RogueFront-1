@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './SaveCard.css'
 
 //importando as frameworks
@@ -49,8 +49,23 @@ function SaveCard() {
         window.location.reload()
     }
 
-    return (
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+
+    const renderDesktopView = () => (
         <>
+        <div className="save_products" >
             <div className="ui segment itens save_card" id="itemCategory">
                 <Link to="/product">
                     <div className="box_save_card_product_info" style={{ color: 'black' }}>
@@ -78,7 +93,49 @@ function SaveCard() {
                     </Link>
                 </div>
             </div>
+            </div>
         </>
-    );
+    )
+    const renderMobileView = () => (
+        <div className="save_products_mobile" >
+        <div className="ui segment itens save_card_mobile" id="itemCategory">
+        <Link to="/product">
+            <div className="box_save_card_product_info_mobile" style={{ color: 'black' }}>
+                <div className="save_card_image_mobile">
+                    <img src={motors} width="100" height="" />
+                </div>
+                <div className="save_card_product_info_mobile">
+                    <h3 className="save_card_product_name_mobile">W12 Monofásico</h3>
+                    <h2 className="save_card_product_price_mobile">R$ 495<sup> 99</sup><sub className='save_card_product_subtext'>10x Sem juros</sub></h2>
+                </div>
+            </div>
+        </Link>
+        <div className='iconProductAction save_card_mobile'>
+            <button className="ui blue icon button save_card_mobile" onClick={deleteItens} >
+                <i className="trash alternate icon save_card_mobile" ></i>
+            </button>
+            <button onClick={AddProductInCart} className="ui blue icon button save_card_mobile">
+                <i className="cart plus icon save_card_mobile"></i>
+            </button>
+        </div>
+        <div className='save_card_buy_button_mobile'>
+            <Link to='/cart'>
+                <button className="ui fluid blue button save_card_mobile">Comprar</button>
+            </Link>
+        </div>
+    </div>
+    </div>
+    )
+        const getViewToRender = () => {
+            if (screenSize.width > 900) {
+              return renderDesktopView();
+              // } else if (screenSize.width < 900 && screenSize.width > 500) {
+              //   return renderTabletView();
+            } else {
+              return renderMobileView();
+            }
+          };
+        
+          return <>{getViewToRender()}</>;
 };
 export default SaveCard

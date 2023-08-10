@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import './Save.css';
 
 
@@ -53,57 +53,44 @@ function Product() {
     }
   }
 
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
   if (lista.length === 0) {
     return (
       <>
         <div className='container_save_titles'>
-          <div className='save_saved_product'>
-            <div className='box_title_similar_save'>
-              <BsFillBookmarkFill color='var(--white)' size={40} />
-              <h1 className='save_title'>Salvos</h1>
-            </div>
-          </div>
-          <div className='box_title_similar_save_rec'>
-            <div className='save_title_theme'>
-              <AiFillStar color='var(--white)' size={40} />
-              <h1 className='save_title'>Recomendados</h1>
-            </div>
-            <RecommendedSave />
-            <RecommendedSave />
-            <RecommendedSave />
-            <RecommendedSave />
-            <RecommendedSave />
-          </div>
+
         </div>
         <button onClick={() => adicionarProdutoAoLocalHost()}>Adicionar</button>
 
       </>
     );
   } else {
+
     return (
+
       <><div className='container_save_titles'>
         <div className='save_saved_product'>
           <div className='box_title_similar_save'>
             <BsFillBookmarkFill color='var(--white)' size={40} />
             <h1 className='save_title'>Salvos</h1>
           </div>
-          <div className="save_products">
             {products.map((item) => {
               return <div key={item}><SaveCard item={item} /></div>;
             })}
-          </div>
         </div>
-        <div className='box_title_similar_save_rec'>
-          <div className='save_title_theme'>
-            <AiFillStar color='var(--white)' size={40} />
-            <h1 className='save_title'>Recomendados</h1>
-          </div>
-          <RecommendedSave />
-          <RecommendedSave />
-          <RecommendedSave />
-          <RecommendedSave />
-          <RecommendedSave />
-        </div>
+        
       </div>
       </>
     );
@@ -123,9 +110,9 @@ function Salvos() {
 
   return (
     <>
-      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      {/* {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal /> */}
       <div>{Product()}</div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
