@@ -126,10 +126,9 @@
   background-color: var(--white);
 }
 
-.search.icon.input.mobile {
+.search.icon.inputmobile {
   color: var(--white);
   width: 3rem;
   height: 3rem;
   font-size: 1.3rem;
-  background-color: var(--blue-primary);
 }
