@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './BannerCarousell.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +13,21 @@ import Banner3 from '../../assets/img/Banner2.jpg';
 
 
 function BannerCarousell() {
-  return (
+
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const renderDesktopView = () => (
     <Carousel variant="light" className='carrossel'>
       <Carousel.Item>
         <img
@@ -32,7 +46,47 @@ function BannerCarousell() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  );
+  )
+
+  const renderMobileView = () => (
+    <Carousel variant="light" className='carrossel'>
+      <Carousel.Item>
+        <img
+          className="d-block w-100 mobile"
+          src={Banner1}
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100 mobile"
+          src={Banner3}
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  )
+
+  const renderTabletView = () => (
+    <div>
+
+    </div>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
+
 }
 
 export default BannerCarousell;

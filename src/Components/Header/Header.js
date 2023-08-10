@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 //Importando os componentes
 import SearchBar from '../SearchModal/SearchModal'
 import MenuModal from '../MenuModal/MenuModal'
+import PerfilModal from '../ProfileModal/ProfileModal'
 
 //Importando as imagens
 import logo from "../../assets/img/logo-weg.png"
@@ -84,17 +85,20 @@ function Header() {
   )
 
   const renderTabletView = () => (
-    <><div className={scrolled ? 'scrolled_mobile' : 'header_mobile'}>
+    <><div className={scrolled ? 'scrolled_mobile' : 'header_tablet'}>
       <div className='box_logo_header_mobile'  >
         <MenuModal />
         <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
       </div>
-      <div className="opc_header_mobile">
-        <div className='search_input_header'>
+      <div className='search_input_header'>
           <SearchBar />
         </div>
+      <div className="opc_header_mobile">
         <div className='icons_header'>
           <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>
+        </div>
+        <div>
+          <PerfilModal user={user} />
         </div>
       </div>
     </div></>
@@ -110,8 +114,8 @@ function Header() {
         <div className='search_input_header'>
           <SearchBar />
         </div>
-        <div className='icons_header'>
-          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>
+        <div>
+          <PerfilModal user={user} />
         </div>
       </div>
     </div></>

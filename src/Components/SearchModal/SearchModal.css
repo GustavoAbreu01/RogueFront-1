@@ -59,6 +59,23 @@
   border-top-right-radius: 10px;
 }
 
+/* ----------------------------Modelo Tablet---------------------------- */
+
+.container_searchBar_tablet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_searchBar_tablet input[type="text"] {
+  width: 30rem;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--white);
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
 /* ----------------------------Modelo Mobile---------------------------- */
 
 .container_searchBar_mobile {

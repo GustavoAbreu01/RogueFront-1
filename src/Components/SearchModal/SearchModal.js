@@ -77,9 +77,15 @@ function SearchBar() {
   )
 
   const renderTabletView = () => (
-    <div className="container_searchBar_mobile">
-
-      <i className="search icon input mobile"></i>
+    <div className="container_searchBar_tablet">
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        value={searchTerm}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
+      />
+      <i className="search icon input"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
@@ -100,10 +106,26 @@ function SearchBar() {
   )
 
   const renderMobileView = () => (
-    <>
-      <div>
-      </div>
-    </>
+    <div className="container_searchBar_mobile">
+
+      <i className="search icon input mobile"></i>
+      {showSuggestions && (
+        <ul className="serarchBar_suggestions">
+          {suggestions
+            .filter((suggestion) =>
+              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((suggestion, index) => (
+              <li
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion}
+              </li>
+            ))}
+        </ul>
+      )}
+    </div>
   )
 
   const getViewToRender = () => {

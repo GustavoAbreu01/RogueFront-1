@@ -136,6 +136,18 @@
 
 }
 
+/* ----------------------------Modelo Tablet---------------------------- */
+
+.header_tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blue-primary);
+    width: 100%;
+    height: 70px;
+    transition: 0.3s;
+}
+
 /* ----------------------------Modelo Mobile---------------------------- */
 
 .header_mobile {
@@ -160,6 +172,13 @@
 .opc_header_mobile {
     display: flex;
     align-items: center;
+    margin-right: 2.5%;
+}
+
+.icons_header_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icons_header {

@@ -23,7 +23,19 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 function HeaderLogin() {
 
   const [user, setUser] = useState({});
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -55,43 +67,93 @@ function HeaderLogin() {
     };
   }, []);
 
-  return (
+  const renderDesktopView = () => (
     <><div className={scrolled ? 'scrolled_login_desktop' : 'header_login_desktop'}>
-      <div className="box_logo_header_login">
-        <Link to="/"><img src={logo} className='image_logo_header_login' /></Link>
+    <div className="box_logo_header_login">
+      <Link to="/"><img src={logo} className='image_logo_header_login' /></Link>
+    </div>
+    <div className="search_input_header">
+      <SearchBar />
+    </div>
+    <div className="opc_header_login">
+      <div className='icons_header_login'>
+        <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves_header_login' /></Link>
       </div>
-      <div className="search_input_header">
-        <SearchBar />
+      <div className='icons_header_login'>
+        <Link to="/cart"><FaShoppingCart className="cart_header_login" /></Link>
       </div>
-      <div className="opc_header_login">
-        <div className='icons_header_login'>
-          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves_header_login' /></Link>
+      <div>
+        <PerfilModal user={user} />
+      </div>
+    </div>
+  </div>
+    <div className="nav_bar_header_login">
+      <div id="menu">
+        <MenuModal />
+      </div>
+      <div className="divisor_header_login"></div>
+      <Link to="/category">Motores</Link>
+      <div className="divisor_header_login"></div>
+      <Link to="/category">Tintas e Vernizes</Link>
+      <div className="divisor_header_login"></div>
+      <Link to="/category">Automação</Link>
+      <div className="divisor_header_login"></div>
+      <Link to="/category">Paineis Eletricos</Link>
+      <div className="divisor_header_login"></div>
+      <Link to="/category">Segurança</Link>
+      <div className="divisor_header_login"></div>
+    </div></>
+  )
+
+  const renderTabletView = () => (
+    <><div className={scrolled ? 'scrolled_mobile' : 'header_tablet'}>
+      <div className='box_logo_header_mobile'  >
+        <MenuModal />
+        <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
+      </div>
+      <div className='search_input_header'>
+          <SearchBar />
         </div>
-        <div className='icons_header_login'>
-          <Link to="/cart"><FaShoppingCart className="cart_header_login" /></Link>
+      <div className="opc_header_mobile">
+        <div className='icons_header'>
+          <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>
         </div>
         <div>
           <PerfilModal user={user} />
         </div>
       </div>
-    </div>
-      <div className="nav_bar_header_login">
-        <div id="menu">
-          <MenuModal />
-        </div>
-        <div className="divisor_header_login"></div>
-        <Link to="/category">Motores</Link>
-        <div className="divisor_header_login"></div>
-        <Link to="/category">Tintas e Vernizes</Link>
-        <div className="divisor_header_login"></div>
-        <Link to="/category">Automação</Link>
-        <div className="divisor_header_login"></div>
-        <Link to="/category">Paineis Eletricos</Link>
-        <div className="divisor_header_login"></div>
-        <Link to="/category">Segurança</Link>
-        <div className="divisor_header_login"></div>
-      </div></>
+    </div></>
   )
+
+  const renderMobileView = () => (
+    <><div className={scrolled ? 'scrolled_mobile' : 'header_mobile'}>
+      <div className='box_logo_header_mobile'  >
+        <MenuModal />
+        <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
+      </div>
+      <div className="opc_header_mobile">
+        <div className='search_input_header'>
+          <SearchBar />
+        </div>
+        <div>
+          <PerfilModal user={user} />
+        </div>
+      </div>
+    </div></>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
+
 }
 
 export default HeaderLogin

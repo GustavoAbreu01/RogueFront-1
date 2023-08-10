@@ -130,8 +130,18 @@
     background-color: #2777B7;
 }
 
-footer .footer_image_weg{
+.footer_image_weg{
     display: flex;
     justify-content: center;
-    padding-top: 4%;
+    align-items: center;
+    width: 10rem;
+}
+
+.container_footer_mobile {
+    background-color: #023A67;
+    border-top: 2px solid #0080C5;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    color: white;
 }

@@ -20,10 +20,15 @@ Carousel.Item {
 
 .carrossel{
     position: relative;
+    width: 100%;
     z-index: 0 !important;
 }
 
 .carrossel:hover {
     z-index: 1;
     height: 100%; 
+}
+
+.w-100.mobile {
+    height: 15rem !important;
 }
