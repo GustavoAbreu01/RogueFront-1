@@ -108,7 +108,7 @@ function SearchBar() {
   const renderMobileView = () => (
     <div className="container_searchBar_mobile">
 
-      <i className="search icon input mobile"></i>
+      <i className="search icon inputmobile"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
