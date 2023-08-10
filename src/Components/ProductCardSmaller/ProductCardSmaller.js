@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductCardSmaller.css'
 
 //importando as frameworks
@@ -92,19 +92,19 @@ function SmallProductCard() {
         )
     }
 
-    
+
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-   
+
     useEffect(() => {
-      function handleResize() {
-        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
-      }
-      window.addEventListener('resize', handleResize);
-      handleResize();
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []); 
+        function handleResize() {
+            setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
 
     const renderDesktopView = () => (
@@ -115,7 +115,7 @@ function SmallProductCard() {
                         <i className="exchange alternate icon"></i>
                     </button>
                 </div>
-                <button onClick={AddProductInSave} className="ui icon button product_card_smaller"> 
+                <button onClick={AddProductInSave} className="ui icon button product_card_smaller">
                     <i className="bookmark icon "></i>
                 </button>
                 <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
@@ -145,40 +145,51 @@ function SmallProductCard() {
     )
     const renderMobileView = () => (
         <div className='container_product_card_smaller'>
-        <div className='container_product_card_smaller_action_icon'>
-            <div className='product_card_small_button_compare'>
-                <button onClick={AddProductInCompare} className="ui icon button product_card_smaller_compare">
-                    <i className="exchange alternate icon"></i>
+            <div className='container_product_card_smaller_action_icon'>
+                <div className='product_card_small_button_compare'>
+                    <button onClick={AddProductInCompare} className="ui icon button product_card_smaller_compare">
+                        <i className="exchange alternate icon"></i>
+                    </button>
+                </div>
+                <button onClick={AddProductInSave} className="ui icon button product_card_smaller">
+                    <i className="bookmark icon "></i>
+                </button>
+                <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
+                    <i className="cart plus icon"></i>
                 </button>
             </div>
-            <button onClick={AddProductInSave} className="ui icon button product_card_smaller"> 
-                <i className="bookmark icon "></i>
-            </button>
-            <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
-                <i className="cart plus icon"></i>
-            </button>
+            <Link to='/product'>
+                <div className='box_product_card_smaller_image'>
+                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                </div>
+                <div >
+                    <div className='box_product_card_smaller_title'>
+                        <h3 className='product_card_smaller_title'>W12 Motor</h3>
+                    </div>
+                </div>
+                <div className='box_product_card_smaller_price'>
+                    <h3 className='product_card_smaller_price'>R$ 1.259,00</h3>
+                    <p className='product_card_smaller_price_info'>Á vista no pix</p>
+                </div>
+                <Link to='/cart'>
+                    <div className='box_product_card_smaller_button'>
+                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                    </div>
+                </Link>
+            </Link >
         </div>
-        <Link to='/product'>
-            <div className='box_product_card_smaller_image'>
-                <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
-            </div>
-            <div >
-                <div className='box_product_card_smaller_title'>
-                    <h3 className='product_card_smaller_title'>W12 Motor</h3>
-                </div>
-            </div>
-            <div className='box_product_card_smaller_price'>
-                <h3 className='product_card_smaller_price'>R$ 1.259,00</h3>
-                <p className='product_card_smaller_price_info'>Á vista no pix</p>
-            </div>
-            <Link to='/cart'>
-                <div className='box_product_card_smaller_button'>
-                    <button className="fluid ui button product_card_smaller">Comprar</button>
-                </div>
-            </Link>
-        </Link >
-    </div>
-)
+    )
+    const getViewToRender = () => {
+        if (screenSize.width > 900) {
+            return renderDesktopView();
+            // } else if (screenSize.width < 900 && screenSize.width > 500) {
+            //   return renderTabletView();
+        } else {
+            return renderMobileView();
+        }
+    };
+
+    return <>{getViewToRender()}</>;
 }
 
 export default SmallProductCard
