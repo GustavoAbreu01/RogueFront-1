@@ -1,10 +1,17 @@
 .ui.segment.itens.save_card {
-    margin: 2rem auto 0;
     border-radius: 1rem;
     background-color: var(--white);
     width: 100%;
     display: flex;
     align-items: center;
+}
+.save_products {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    display: block;
 }
 
 a:link.Save {
@@ -107,4 +114,119 @@ a:link.Save {
 
 .ui.blue.icon.button.save_card:active, .ui.fluid.blue.button.save_card:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+/* MOBILE */
+
+.ui.segment.itens.save_card_mobile {
+    border-radius: 1rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    background-color: var(--white);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+a:link.Save {
+    text-decoration: none;
+}
+
+.box_save_card_product_info_mobile {
+    display: flex;
+    align-items: center;
+}
+
+.save_card_product_info_mobile {
+    flex: 1;
+    justify-content: space-between;
+}
+
+.iconProductAction.save_card_mobile {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.save_card_product_price_mobile {
+    font-size: 23px;
+    padding-left: 2rem;
+    color: var(--blue-primary);
+}
+
+.save_card_product_name_mobile {
+    font-size: 20px;
+    color: var(--black);
+    padding-left: 2rem;
+}
+
+.ui.segment.itens.save_card_mobile:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .iconProductAction.save_card_mobile {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+.save_card_product_subtext_mobile {
+    color: var(--grey-primary);
+    font-size: 13px;
+    top: 0px;
+}
+
+.save_card_buy_button_mobile {
+    position: absolute;
+    height: 2.5rem;
+    width: 10rem;
+    bottom: 0;
+    right: 0;
+}
+
+.ui.fluid.blue.button.save_card_mobile {
+    border-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 70%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ui.blue.icon.button.save_card_mobile {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+}
+
+.trash.alternate.icon.save_card_mobile{
+    align-items: center;
+    color: var(--red);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.ui.blue.icon.button.save_card_mobile:hover,.ui.fluid.blue.button.save_card_mobile:hover {
+    background-color: var(--grey-quinary);
+}
+
+.ui.blue.icon.button.save_card_mobile:active, .ui.fluid.blue.button.save_card_mobile:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.save_products_mobile {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    display: block;
 }
