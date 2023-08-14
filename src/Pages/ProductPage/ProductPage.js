@@ -244,14 +244,125 @@ function ProductPage() {
             </div>
             <div className='box_product_page_title_similar_mobile'>
                 <FaStar color='var(--white)' size={30} />
-                <h1 className='title_product_page_moblie'>Produtos Semelhantes</h1>
+                <h1 className='title_product_page_mobile'>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
                 <Carousel />
             </div>
             <div className='box_product_page_title_highlights_mobile'>
                 <FaStar color='var(--white)' size={30} />
-                <h1 className='title_product_page_moblie'>Produtos Destaques</h1>
+                <h1 className='title_product_page_mobile'>Produtos Destaques</h1>
+            </div>
+            <div className='box_product_page_carousel_highlights'>
+                <Carousel />
+            </div>
+            <Footer />
+        </>
+    )
+    const renderTabletView = () => (
+        <>
+            {!verify() ? <Header /> : <HeaderLogin />}
+            <WeggnerModal />
+            <div className="ui items product_page_tablet" >
+                {/* <p className="ui blue ribbon label_mobile">aaaaaaaaaaaaaaaaaaaaaaaaa</p> */}
+                <div className="ui item product_page_tablet">
+                    <div className="img_product_page_tablet">
+                        <img className="image_product_tablet" src={motor} />
+                    </div>
+                    <div className="content product_page_tablet">
+                        <div className='title_price_product_page_tablet'>
+                            <h1 className="ui header product_page_tablet">Motor W30</h1>
+                            <h1 className="price_product_page_tablet">R$ 495<sup> 99</sup><sub className='subtext_product_page'>10x sem juros</sub></h1>
+                        </div>
+                        <br />
+                        <Rating className="ui rating product_page_tablet" maxRating={5} />
+                        <div className='box_description_product_page_tablet'>
+                            <div className="meta">
+                                <span>Descrição</span>
+                            </div>
+                            <div className="description product_page_tablet">
+                                <p className='description product_page_tablet_p'>Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia. Opcionalmente pode ser fornecido com capacitor de partida e eixo e flange conforme norma NEMA.</p>
+                            </div>
+                        </div>
+                        <div className='buttons_product_page_mobile'>
+                            <button className="ui fluid button sell_product_page_tablet">
+                                Comprar Agora
+                            </button>
+                            <div className='buttons_product_page_opc_add_tablet'>
+                                <div className='div_button_product_page_tablet'>
+                                    <button className="ui fluid button cart_product_page_tablet">
+                                        Adicionar ao Carrinho
+                                    </button>
+                                </div>
+                                <div>
+                                    <button className="ui fluid icon button product_page_compare_tablet">
+                                        <i className="exchange icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='div_table_product_page_tablet'>
+                    <h2 className="ui header about_product_page_tablet">Sobre o Produto</h2>
+                    <h3 className="ui header app_product_page_tablet"> Aplicações</h3>
+                    <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
+                    <h3 className="ui header charac_product_page_tablet"> Características</h3>
+                    <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
+                    <h3 className="ui header gl_charac_product_page_tablet"> Características Gerais</h3>
+                    <table className="ui small definition table product_page_tablet">
+                        <tbody>
+                            <tr>
+                                <td>Potência</td>
+                                <td className='table_item_product_page_tablet'>1/8 a 3 cv</td>
+                            </tr>
+                            <tr>
+                                <td>Polaridade</td>
+                                <td className='table_item_product_page_tablet'>2 ou 4</td>
+                            </tr>
+                            <tr>
+                                <td>Tensão</td>
+                                <td className='table_item_product_page_tablet'> 127/220 ou 220/440 V</td>
+                            </tr>
+                            <tr>
+                                <td>Frequência</td>
+                                <td className='table_item_product_page_tablet'> 60 ou 50 Hz</td>
+                            </tr>
+                            <tr>
+                                <td>Carcaças</td>
+                                <td className='table_item_product_page_tablet'>B48 a G56H</td>
+                            </tr>
+                            <tr>
+                                <td>Tipo de Carcaça</td>
+                                <td className='table_item_product_page_tablet'>Chapa de Aço</td>
+                            </tr>
+                            <tr>
+                                <td>Grau de Proteção</td>
+                                <td className='table_item_product_page_tablet'>IP21</td>
+                            </tr>
+                            <tr>
+                                <td>Cor</td>
+                                <td className='table_item_product_page_tablet'>Preto fosco (Munsell N1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div className='opcionais_product_page_tablet'>
+                        <h3 className="ui header optionals_product_page_tablet"> Opcionais</h3>
+                        <p> Proteção térmica.</p>
+                        <p>Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
+                    </div>
+                </div>
+            </div>
+            <div className='box_product_page_title_similar_tablet'>
+                <FaStar color='var(--white)' size={30} />
+                <h1 className='title_product_page_tablet'>Produtos Semelhantes</h1>
+            </div>
+            <div className='box_product_page_carousel_similar'>
+                <Carousel />
+            </div>
+            <div className='box_product_page_title_highlights_tablet'>
+                <FaStar color='var(--white)' size={30} />
+                <h1 className='title_product_page_tablet'>Produtos Destaques</h1>
             </div>
             <div className='box_product_page_carousel_highlights'>
                 <Carousel />
@@ -262,8 +373,8 @@ function ProductPage() {
     const getViewToRender = () => {
         if (screenSize.width > 900) {
             return renderDesktopView();
-            // } else if (screenSize.width < 900 && screenSize.width > 500) {
-            //   return renderTabletView();
+        } else if (screenSize.width < 900 && screenSize.width > 500) {
+            return renderTabletView();
         } else {
             return renderMobileView();
         }
