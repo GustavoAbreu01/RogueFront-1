@@ -119,15 +119,15 @@ function ProductCardNew() {
     <div className='container_product_card_new_tablet'>
 
       <div className='box_product_card_new_tag_icon'>
-        <button className="circular ui icon button product_card_new">
+        <button className="circular blue big ui icon button product_card_new">
           <i className="exclamation circle icon"></i>
         </button>
       </div>
       <div className='container_product_card_new_action_icon_tablet'>
-        <button onClick={AddProductInSave} className="ui icon button product_card_new">
+        <button onClick={AddProductInSave} className="big ui icon button product_card_new">
           <i className="bookmark icon product_card_new"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_new">
+        <button onClick={AddProductInCart} className="big ui icon button product_card_new">
           <i className="cart plus icon product_card_new"></i>
         </button>
       </div>
@@ -157,7 +157,7 @@ function ProductCardNew() {
   const renderMobileView = () => (
     <div className='container_product_card_new_mobile'>
       <div className='box_product_card_new_tag_icon_mobile'>
-        <button className="circular mini ui icon button product_card_new">
+        <button className="circular blue mini ui icon button product_card_new">
           <i className="exclamation circle icon"></i>
         </button>
       </div>
