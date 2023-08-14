@@ -48,6 +48,27 @@ function BannerCarousell() {
     </Carousel>
   )
 
+  const renderTabletView = () => (
+    <Carousel variant="light" className='carrossel'>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={Banner1}
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={Banner3}
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  )
+
   const renderMobileView = () => (
     <Carousel variant="light" className='carrossel'>
       <Carousel.Item>
@@ -67,12 +88,6 @@ function BannerCarousell() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  )
-
-  const renderTabletView = () => (
-    <div>
-
-    </div>
   )
 
   const getViewToRender = () => {
