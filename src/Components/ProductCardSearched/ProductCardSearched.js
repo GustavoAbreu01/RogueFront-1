@@ -116,14 +116,14 @@ function ProductCardSearched() {
   )
 
   const renderTabletView = () => (
-    <div className='container_product_card_searched'>
+    <div className='container_product_card_searched_tablet'>
 
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
         </button>
       </div>
-      <div className='container_product_card_searched_action_icon'>
+      <div className='container_product_card_searched_action_icon_tablet'>
         <button onClick={AddProductInSave} className="ui icon button product_card_searched">
           <i className="bookmark icon product_card_searched"></i>
         </button>

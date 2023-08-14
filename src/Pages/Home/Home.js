@@ -342,119 +342,80 @@ function Home() {
   const renderTabletView = () => (
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
-      <WeggnerModal />
-        <div className='boxCarrossel'>
+        <div className='boxCarrossel_mobile'>
           <Carousell></Carousell>
         </div>
         <div className="home_divider_carousel"></div>
-        <div className="box_home_option_pages">
-          <Link to='/quiz' style={{ textDecoration: 'none' }}>
-            <div>
-              <div className="home_optional_icons">
-                <img src={questIcon} alt="" width={75} />
-                <div>
-                  <h4 className='home_optional_title'>Descubra qual é<br />
-                    o produto para você!</h4>
-                  <p className='home_optional_description'>Faça o nosso questionário</p>
-                </div>
-              </div>
+        <div className="box_home_option_pages_tablet">
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></MdOutlineSecurity>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Segurança</h2>
             </div>
           </Link>
-          <div className='home_divider_icons'></div>
-          <Link to='/compare' style={{ textDecoration: 'none' }}>
-            <div>
-              <div className="home_optional_icons">
-                <img src={compare} alt="" width={150} />
-                <div>
-                  <h4 className='home_optional_title'>Compare produtos</h4>
-                  <p className='home_optional_description'>Veja qual se encaixa melhor<br />
-                    com a sua necessidade</p>
-                </div>
-              </div>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></BsPaintBucket>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Tintas</h2>
             </div>
           </Link>
-          <div className='home_divider_icons'></div>
-          <div>
-            <div className="home_optional_icons">
-              <img src={weggner} alt="" width={125} />
-              <div>
-                <h4 className='home_optional_title'>Conheça o nosso<br />
-                  Assistente Virtual!</h4>
-                <p className='home_optional_description'>Navegar ficou ainda mais fácil</p>
-              </div>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></CgSmartphoneChip>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Automação</h2>
             </div>
-          </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_tablet'></TfiPanel>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Painéis</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <img src={iconMotor} width={50} height={35} alt=''></img>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Motores</h2>
+            </div>
+          </Link>
         </div>
         <div>
-          <div className='home_accessed'>
-            <BiLineChart color='var(--blue-primary)' size={50} />
-            <h1 className='home_accessed_title' >Produtos mais acessados</h1>
+          <div className='home_accessed_tablet'>
+            <BiLineChart color='var(--blue-primary)' size={40} />
+            <h1 className='home_accessed_title_tablet' >Produtos mais acessados</h1>
           </div>
-          <div className='sliderProductAccessed'>
+          <div className='home_slider_product_accessed_tablet'>
             <ProductCarousel />
           </div>
         </div>
 
-        <div className='home_highlights' >
-          <div className='home_highlights_title'>
+        <div className='home_highlights_tablet' >
+          <div className='home_highlights_title_tablet'>
             <FaStar color='var(--white)' size={40} />
-            <h1 className='home_highlights_title_text' >Destaques da semana</h1>
+            <h1 className='home_highlights_title_text_tablet' >Destaques da semana</h1>
           </div>
           <div className='home_slider_product_highlights'>
             <ProductHighlightCarousel />
           </div>
         </div>
 
-        <div className='container_home_category_buttons' >
-          <h1 className='home_category_title'>Departamentos</h1>
-          <div className='box_home_category_buttons'>
-            <Link to='/category'>
-              <div className='home_optional_category'>
-                <button className='home_optional_category_button'>
-                  <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image' ></MdOutlineSecurity>
-                </button>
-                <h2 className='home_optional_category_title'>Segurança</h2>
-              </div>
-            </Link>
-            <Link to='/category'>
-              <div className='home_optional_category'>
-                <button className='home_optional_category_button'>
-                  <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image' ></BsPaintBucket>
-                </button>
-                <h2 className='home_optional_category_title'>Tintas</h2>
-              </div>
-            </Link>
-            <Link to='/category'>
-              <div className='home_optional_category'>
-                <button className='home_optional_category_button'>
-                  <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image' ></CgSmartphoneChip>
-                </button>
-                <h2 className='home_optional_category_title'>Automação</h2>
-              </div>
-            </Link>
-            <Link to='/category'>
-              <div className='home_optional_category'>
-                <button className='home_optional_category_button'>
-                  <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image'></TfiPanel>
-                </button>
-                <h2 className='home_optional_category_title'>Painéis</h2>
-              </div>
-            </Link>
-            <Link to='/category'>
-              <div className='home_optional_category'>
-                <button className='home_optional_category_button'>
-                  <img src={iconMotor} width={75} height={50} alt=''></img>
-                </button>
-                <h2 className='home_optional_category_title'>Motores</h2>
-              </div>
-            </Link>
-          </div>
+        <div className='home_announcements_products_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementThree} />
         </div>
 
-        <div className='home_searched' >
+        <div className='home_searched_tablet' >
           <div className='home_searched_title'>
-            <div className='home_searched_aling'>
-              <h1 className='home_searched_title_text' >Mais procurados</h1>
+            <div className='home_searched_aling_tablet'>
+              <h1 className='home_searched_title_text_tablet' >Mais procurados</h1>
               <CgSearchFound color='var(--white)' size={50} />
             </div>
           </div>
@@ -463,54 +424,22 @@ function Home() {
           </div>
         </div>
 
-        <div>
-          <div className='home_benefiits'>
-            <LiaCertificateSolid color='var(--blue-primary)' size={50} />
-            <h1 className='home_benefiits_title'>Benefícios de compra</h1>
-          </div>
-
-          <div className="container_home_benefits">
-            {iconsInfoOne.map((icon) => (
-              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
-                <div className="home_benefits_info_icon">
-                  <img src={icon.icon} className="home_benefits_icon" alt='' />
-                </div>
-                <div className='home_benefits_description_info'>
-                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
-                  <p className="home_benefits_description">{icon.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="container_home_benefits">
-            {iconsInfoTwo.map((icon) => (
-              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
-                <div className="home_benefits_info_icon">
-                  <img src={icon.icon} className="home_benefits_icon" alt='' />
-                </div>
-                <div className='home_benefits_description_info'>
-                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
-                  <p className="home_benefits_description" >{icon.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className='home_announcements_products_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementFour} />
         </div>
 
-        <div className='home_highlights' >
-          <div className='home_highlights_title'>
+        <div className='home_highlights_tablet' >
+          <div className='home_highlights_title_tablet'>
             <MdOutlineNewReleases color='var(--white)' size={40} />
-            <h1 className='home_highlights_title_text' >Novidades</h1>
+            <h1 className='home_highlights_title_text_tablet' >Novidades</h1>
           </div>
           <div className='home_slider_product_highlights'>
             <ProductNewCarousel />
           </div>
         </div>
 
-        <div className='home_announcements' data-aos="fade-up" >
-          <img className='home_announcements_banner' src={BannerAnnouncementOne} />
-          <img className='home_announcements_banner' src={BannerAnnouncementTwo} />
+        <div className='home_announcements_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_tablet' src={BannerAnnouncementTwo} />
         </div>
 
         <Footer /></>

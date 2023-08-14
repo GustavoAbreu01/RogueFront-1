@@ -113,6 +113,24 @@
 
 /* ----------------------------Modelo Tablet---------------------------- */
 
+.container_product_card_accessed_action_icon_tablet {
+    display: flex;
+    padding: 1rem;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+    opacity: 1;
+}
+
+.container_product_card_accessed_tablet {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey-secondary);
+    border-radius: 10px;
+    width: 25rem;
+    height: 35rem;
+}
 
 /* ----------------------------Modelo Mobile---------------------------- */
 

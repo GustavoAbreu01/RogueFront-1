@@ -116,14 +116,14 @@ function ProductCardNew() {
   )
 
   const renderTabletView = () => (
-    <div className='container_product_card_new'>
+    <div className='container_product_card_new_tablet'>
 
       <div className='box_product_card_new_tag_icon'>
         <button className="circular ui icon button product_card_new">
           <i className="exclamation circle icon"></i>
         </button>
       </div>
-      <div className='container_product_card_new_action_icon'>
+      <div className='container_product_card_new_action_icon_tablet'>
         <button onClick={AddProductInSave} className="ui icon button product_card_new">
           <i className="bookmark icon product_card_new"></i>
         </button>
