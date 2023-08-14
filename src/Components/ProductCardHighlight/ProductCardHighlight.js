@@ -116,15 +116,15 @@ function ProductCardHighlight() {
   const renderTabletView = () => (
     <div className='container_product_card_hightlight_tablet'>
       <div className='box_product_card_hightlight_tag_icon'>
-        <button className="circular ui icon button product_card_hightlight">
+        <button className="circular blue big ui icon button product_card_hightlight">
           <i className="star icon product_card_hightlight"></i>
         </button>
       </div>
       <div className='container_product_card_hightlight_action_icon_tablet'>
-        <button onClick={AddProductInSave} className="ui icon button product_card_hightlight">
+        <button onClick={AddProductInSave} className="big ui icon button product_card_hightlight">
           <i className="bookmark icon product_card_hightlight"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+        <button onClick={AddProductInCart} className="big ui icon button product_card_hightlight">
           <i className="cart plus icon product_card_hightlight"></i>
         </button>
       </div>
@@ -154,7 +154,7 @@ function ProductCardHighlight() {
   const renderMobileView = () => (
     <div className='container_product_card_hightlight_mobile'>
       <div className='box_product_card_hightlight_tag_icon_mobile'>
-        <button className="circular mini ui icon button product_card_hightlight">
+        <button className="circular blue mini ui icon button product_card_hightlight">
           <i className="star icon product_card_hightlight"></i>
         </button>
       </div>
