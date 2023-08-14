@@ -5,9 +5,20 @@
     background-color: var(--white);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     border-radius: 10px;
-    width: 100%;
-
+    width: 15rem;
+    height: 23rem;
 }
+
+.container_product_card_smaller_mobile {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    width: 100%;
+}
+
 
 .product_card_smaller_compare_button {
     width: 10%;
