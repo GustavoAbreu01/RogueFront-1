@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './CategoryCard.css'
 import 'animate.css';
 
@@ -92,8 +92,21 @@ function CategoryCard() {
         )
     }
 
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
-    return (
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+
+    const renderDesktopView = () => (
         <div className="ui segment itens container_category_card" id="itemCategory">
             <Link to="/product">
                 <p className="ui blue ribbon label category_card">Verificados</p>
@@ -126,6 +139,50 @@ function CategoryCard() {
             </Link>
         </div>
     )
+    const renderMobileView = () => (
+        <div className="ui segment itens container_category_card_mobile" id="itemCategory">
+        <Link to="/product">
+            <p className="ui blue ribbon label category_card_mobile">Verificados</p>
+            <div className="category_card_content_mobile" style={{ color: 'black' }}>
+                <div className="category_card_image_mobile">
+                    <img src={motors} width="100" height="" />
+                </div>
+                <div className="category_card_product_info_mobile">
+                    <h3 className="category_card_product_name_mobile">W12 Monofásico</h3>
+                    <h2 className="category_card_product_price_mobile">R$ 495<sup> 99</sup><sub className='category_card_product_subtext_mobile'>10x Sem juros</sub></h2>
+                </div>
+            </div>
+        </Link>
+        <div className='iconProductAction category_card_mobile'>
+            <button onClick={AddProductInSave} className="ui blue icon button category_card_mobile" >
+                <i className="bookmark icon Category category_card"></i>
+            </button>
+            <button onClick={AddProductInCart} className="ui blue icon button category_card">
+                <i className="cart plus icon category_card"></i>
+            </button>
+            <button onClick={AddProductInCompare} className="ui icon button category_card_compare">
+                <i className="exchange alternate icon category_card"></i>
+            </button>
+        </div>
+        <Link to="/cart">
+            <div className='category_card_buy_button_mobile'>
+                <button className="ui fluid blue button category_card_mobile">Comprar</button>
+            </div>
+        </Link>
+    </div>
+
+    )
+    const getViewToRender = () => {
+        if (screenSize.width > 900) {
+          return renderDesktopView();
+          // } else if (screenSize.width < 900 && screenSize.width > 500) {
+          //   return renderTabletView();
+        } else {
+          return renderMobileView();
+        }
+      };
+    
+      return <>{getViewToRender()}</>;
 }
 
 export default CategoryCard

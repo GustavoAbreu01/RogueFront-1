@@ -26,3 +26,7 @@
 .box_product_hightlight_carousel {
     padding: 1rem;
 }
+
+.container_product_hightlight_carousel_mobile {
+    color: var(--blue-primary);
+}

@@ -28,6 +28,8 @@ import Assistência from "../../assets/img/CALL_CENTER-03.png"
 import IoT from "../../assets/img/PLATAFORMA_IOT_WEGNOLOGY-03.png"
 import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
 import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
+import BannerAnnouncementThree from '../../assets/img/BannerAnnun3.jpg'
+import BannerAnnouncementFour from '../../assets/img/BannerAnnun4.jpg'
 import questIcon from "../../assets/img/questionario.png"
 import compare from '../../assets/img/compare.png'
 import weggner from '../../assets/img/WagnerDormindo.png'
@@ -337,10 +339,17 @@ function Home() {
     </div>
   )
 
+  const renderTabletView = () => (
+    <div>
+      <>{!verify() ? <Header /> : <HeaderLogin />}
+
+      </>
+    </div>
+  )
+
   const renderMobileView = () => (
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
-        <WeggnerModal />
         <div className='boxCarrossel_mobile'>
           <Carousell></Carousell>
         </div>
@@ -392,27 +401,30 @@ function Home() {
             <BiLineChart color='var(--blue-primary)' size={30} />
             <h1 className='home_accessed_title_mobile' >Produtos mais acessados</h1>
           </div>
-          <div className='sliderProductAccessed'>
+          <div className='home_slider_product_accessed'>
             <ProductCarousel />
           </div>
         </div>
 
-        <div className='home_highlights' >
-          <div className='home_highlights_title'>
-            <FaStar color='var(--white)' size={40} />
-            <h1 className='home_highlights_title_text' >Destaques da semana</h1>
+        <div className='home_highlights_mobile' >
+          <div className='home_highlights_title_mobile'>
+            <FaStar color='var(--white)' size={30} />
+            <h1 className='home_highlights_title_text_mobile' >Destaques da semana</h1>
           </div>
           <div className='home_slider_product_highlights'>
             <ProductHighlightCarousel />
           </div>
         </div>
 
+        <div className='home_announcements_products_mobile' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementThree} />
+        </div>
 
-        <div className='home_searched' >
+        <div className='home_searched_mobile' >
           <div className='home_searched_title'>
-            <div className='home_searched_aling'>
-              <h1 className='home_searched_title_text' >Mais procurados</h1>
-              <CgSearchFound color='var(--white)' size={50} />
+            <div className='home_searched_aling_mobile'>
+              <h1 className='home_searched_title_text_mobile' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={40} />
             </div>
           </div>
           <div className='home_slider_product_searched'>
@@ -420,37 +432,29 @@ function Home() {
           </div>
         </div>
 
-        <div>
-
-
-          <div className="container_home_benefits">
-
-          </div>
-
-          <div className="container_home_benefits">
-
-          </div>
+        <div className='home_announcements_products_mobile' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementFour} />
         </div>
 
-        <div className='home_highlights' >
-          <div className='home_highlights_title'>
+        <div className='home_highlights_mobile' >
+          <div className='home_highlights_title_mobile'>
             <MdOutlineNewReleases color='var(--white)' size={40} />
-            <h1 className='home_highlights_title_text' >Novidades</h1>
+            <h1 className='home_highlights_title_text_mobile' >Novidades</h1>
           </div>
           <div className='home_slider_product_highlights'>
             <ProductNewCarousel />
           </div>
         </div>
 
+        <div className='home_announcements_mobile' data-aos="fade-up" >
+          <img className='home_announcements_banner_mobile' src={BannerAnnouncementTwo} />
+        </div>
+
+        <div className='home_announcements_mobile' data-aos="fade-up" >
+          <img className='home_announcements_banner_mobile' src={BannerAnnouncementOne} />
+        </div>
+
         <Footer /></>
-    </div>
-  )
-
-  const renderTabletView = () => (
-    <div>
-      <>{!verify() ? <Header /> : <HeaderLogin />}
-
-      </>
     </div>
   )
 

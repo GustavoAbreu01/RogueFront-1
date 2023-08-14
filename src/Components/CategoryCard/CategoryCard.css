@@ -103,3 +103,114 @@ a:link {
     transition: 0.3s;
     background-color: var(--grey-quinary);
 }
+
+/* MOBILE */
+
+.ui.segment.itens.container_category_card_mobile {
+    border-radius: 1rem;
+    background-color: var(--white);
+    width: 100%;
+    height: 11rem;
+    display: flex;
+    align-items: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.category_card_content_mobile {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.category_card_product_info_mobile {
+    flex: 1;
+    justify-content: space-between;
+}
+
+.iconProductAction.category_card_mobile {
+    gap: 0.5rem;
+    display: flex;
+    margin: 1rem;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.category_card_product_price_mobile {
+    font-size: 23px;
+    padding-left: 2rem;
+    color: var(--blue-primary);
+}
+
+.category_card_product_description_mobile {
+    font-size: 16px;
+    padding-left: 2rem;
+    color: var(--grey-primary);
+}
+
+.category_card_product_name_mobile {
+    font-size: 20px;
+    color: var(--black);
+    padding-left: 2rem;
+}
+
+.ui.segment.itens.container_category_card_mobile:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+
+    .iconProductAction.category_card {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+.category_card_product_subtext_mobile {
+    font-size: 13px;
+    color: var(--grey-primary);
+    top: 0px;
+}
+
+.category_card_buy_button_mobile {
+    position: absolute;
+    height: 2.5rem;
+    width: 10rem;
+    bottom: 0;
+    right: 0;
+}
+
+.ui.fluid.blue.button.category_card_mobile {
+    border-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 70%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ui.fluid.blue.button.category_card_mobile:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.ui.icon.button.category_card_compare_mobile:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.ui.icon.button.category_card_compare_mobile {
+    background-color: var(--blue-quaternary);
+}
+
+.ui.blue.icon.button.category_card_mobile:hover, .ui.icon.button.category_card_compare_mobile:hover {
+    transition: 0.3s;
+    background-color: var(--grey-quinary);
+}
+
+.ui.fluid.blue.button.category_card:hover{
+    transition: 0.3s;
+    background-color: var(--grey-quinary);
+}

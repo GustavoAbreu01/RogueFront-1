@@ -61,7 +61,7 @@
 }
 
 .home_slider_product_accessed {
-    padding-bottom: 6%;
+    padding-bottom: 20%;
 }
 
 .home_highlights {
@@ -363,8 +363,113 @@
 
 .home_accessed_mobile {
     display: flex;
-    padding-left: 6%;
+    padding-left: 3%;
     padding-top: 20%;
     align-items: center;
     gap: 1rem;
+}
+
+.home_highlights_title_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: var(--blue-primary);
+    width: 85%;
+    gap: 1rem;
+    height: 2rem;
+    padding: 2rem;
+    color: var(--white);
+    border-top-right-radius: 50px;
+} 
+
+.home_highlights_title_text_mobile {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.home_searched_aling_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--blue-secundary);
+    width: 85%;
+    gap: 1rem;
+    height: 2rem;
+    padding: 2rem;
+    color: var(--white);
+    border-top-left-radius: 50px;
+}
+
+.home_searched_title_text_mobile {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.home_searched_aling_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--blue-secundary);
+    width: 85%;
+    gap: 1rem;
+    height: 2rem;
+    padding: 2rem;
+    color: var(--white);
+    border-top-left-radius: 50px;
+}
+
+.home_searched_title_text_mobile {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.home_announcements_mobile {
+    padding-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.home_announcements_banner_mobile {
+    width: 90%;
+    height: 13rem;
+    border-radius: 10px;
+}
+
+.home_announcements_banner_mobile:active {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.home_announcements_products_mobile {
+    padding-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.home_announcements_banner_products_mobile {
+    width: 90%;
+    height: 10rem;
+    border-radius: 10px;
+}
+
+.home_announcements_banner_products_mobile:active {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.home_highlights_mobile {
+    padding-bottom: 2.5rem;
+}
+
+.home_searched_mobile {
+    padding-bottom: 2.5rem;
 }
