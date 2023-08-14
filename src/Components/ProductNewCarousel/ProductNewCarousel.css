@@ -22,3 +22,8 @@
 .carouselProduct_mobile {
     color: var(--blue-primary);
 }
+
+.carouselProduct_tablet{
+    padding: 3rem;
+    color: var(--blue-primary);
+}

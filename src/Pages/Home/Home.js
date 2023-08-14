@@ -382,41 +382,41 @@ function Home() {
           <Link to='/category'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
-                <img src={iconMotor} width={40} height={25} alt=''></img>
+                <img src={iconMotor} width={50} height={35} alt=''></img>
               </button>
               <h2 className='home_optional_category_title_tablet'>Motores</h2>
             </div>
           </Link>
         </div>
         <div>
-          <div className='home_accessed_mobile'>
+          <div className='home_accessed_tablet'>
             <BiLineChart color='var(--blue-primary)' size={40} />
             <h1 className='home_accessed_title_tablet' >Produtos mais acessados</h1>
           </div>
-          <div className='home_slider_product_accessed'>
+          <div className='home_slider_product_accessed_tablet'>
             <ProductCarousel />
           </div>
         </div>
 
-        <div className='home_highlights_mobile' >
-          <div className='home_highlights_title_mobile'>
-            <FaStar color='var(--white)' size={30} />
-            <h1 className='home_highlights_title_text_mobile' >Destaques da semana</h1>
+        <div className='home_highlights_tablet' >
+          <div className='home_highlights_title_tablet'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text_tablet' >Destaques da semana</h1>
           </div>
           <div className='home_slider_product_highlights'>
             <ProductHighlightCarousel />
           </div>
         </div>
 
-        <div className='home_announcements_products_mobile' data-aos="fade-up" >
-          <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementThree} />
+        <div className='home_announcements_products_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementThree} />
         </div>
 
-        <div className='home_searched_mobile' >
+        <div className='home_searched_tablet' >
           <div className='home_searched_title'>
-            <div className='home_searched_aling_mobile'>
-              <h1 className='home_searched_title_text_mobile' >Mais procurados</h1>
-              <CgSearchFound color='var(--white)' size={40} />
+            <div className='home_searched_aling_tablet'>
+              <h1 className='home_searched_title_text_tablet' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={50} />
             </div>
           </div>
           <div className='home_slider_product_searched'>
@@ -424,26 +424,22 @@ function Home() {
           </div>
         </div>
 
-        <div className='home_announcements_products_mobile' data-aos="fade-up" >
-          <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementFour} />
+        <div className='home_announcements_products_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementFour} />
         </div>
 
-        <div className='home_highlights_mobile' >
-          <div className='home_highlights_title_mobile'>
+        <div className='home_highlights_tablet' >
+          <div className='home_highlights_title_tablet'>
             <MdOutlineNewReleases color='var(--white)' size={40} />
-            <h1 className='home_highlights_title_text_mobile' >Novidades</h1>
+            <h1 className='home_highlights_title_text_tablet' >Novidades</h1>
           </div>
           <div className='home_slider_product_highlights'>
             <ProductNewCarousel />
           </div>
         </div>
 
-        <div className='home_announcements_mobile' data-aos="fade-up" >
-          <img className='home_announcements_banner_mobile' src={BannerAnnouncementTwo} />
-        </div>
-
-        <div className='home_announcements_mobile' data-aos="fade-up" >
-          <img className='home_announcements_banner_mobile' src={BannerAnnouncementOne} />
+        <div className='home_announcements_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_tablet' src={BannerAnnouncementTwo} />
         </div>
 
         <Footer /></>

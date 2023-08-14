@@ -22,3 +22,12 @@
 .container_product_hightlight_carousel_mobile {
     color: var(--blue-primary);
 }
+
+.container_product_hightlight_carousel_tablet{
+    padding: 3rem;
+    color: var(--blue-primary);
+}
+
+.box_product_accessed_hightlight_tablet {
+    padding: 1rem;
+}

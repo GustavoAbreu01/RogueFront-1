@@ -17,7 +17,6 @@ function ProductSearchedCarousel() {
         infinite: true,
         slidesToShow: 5,
         swipeToSlide: true,
-        arrows: false,
         responsive: [
             {
                 breakpoint: 1624,
@@ -31,6 +30,8 @@ function ProductSearchedCarousel() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
+                    dots: true,
                 }
             },
             {
@@ -38,13 +39,15 @@ function ProductSearchedCarousel() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    arrows: false,
                 }
             }
         ],
@@ -112,7 +115,7 @@ function ProductSearchedCarousel() {
     )
 
     const renderTabletView = () => (
-        <div className='container_product_searched_carousel' >
+        <div className='container_product_searched_carousel_tablet' >
             <Slider {...settings}>
                 <div className='box_product_searched_carousel'>
                     <ProductCardSearched />

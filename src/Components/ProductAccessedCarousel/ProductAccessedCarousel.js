@@ -18,7 +18,6 @@ function ProductAccessedCarousel() {
         infinite: true,
         slidesToShow: 5,
         swipeToSlide: false,
-        arrows: false,
         responsive: [
             {
                 breakpoint: 1624,
@@ -31,13 +30,16 @@ function ProductAccessedCarousel() {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    dots: true,
+                    arrows: false,
+                    slidesToScroll: 1,
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
+                    arrows: false,
                     slidesToScroll: 2,
                 }
             },
@@ -45,6 +47,7 @@ function ProductAccessedCarousel() {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
+                    arrows: false,
                     slidesToScroll: 1
                 }
             }
@@ -112,48 +115,48 @@ function ProductAccessedCarousel() {
     )
 
     const renderTabletView = () => (
-        <div className='container_product_accessed_carousel' >
+        <div className='container_product_accessed_carousel_tablet' >
             <Slider {...settings}>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
-                <div className='box_product_accessed_carousel'>
+                <div className='box_product_accessed_carousel_tablet'>
                     <ProductCardAccessed />
                 </div>
             </Slider>
