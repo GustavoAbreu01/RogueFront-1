@@ -173,7 +173,7 @@ function SmallProductCard() {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                        <button className="small ui button buy_product_card_smaller_mobile">Comprar</button>
                     </div>
                 </Link>
             </Link >

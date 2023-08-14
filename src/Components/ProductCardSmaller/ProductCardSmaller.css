@@ -154,6 +154,10 @@
 
 /* //MOBILE// */
 
+.small.ui.button.buy_product_card_smaller_mobile {
+    width: 100% !important;
+}
+
 .ui.icon.button.product_card_smaller_mobile:active {
     opacity: 0;
     background-color: var(--blue-secundary);

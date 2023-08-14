@@ -41,6 +41,8 @@ function ProductCarouselSmallSimilar() {
             {
                 breakpoint: 1024,
                 settings: {
+                    arrows: false,
+                    dots: true,
                     slidesToShow: 3,
                     slidesToScroll: 2,
                 }
@@ -48,6 +50,8 @@ function ProductCarouselSmallSimilar() {
             {
                 breakpoint: 600,
                 settings: {
+                    arrows: false,
+                    dots: true,
                     slidesToShow: 2,
                     slidesToScroll: 2,
                 }
