@@ -346,52 +346,52 @@ function Home() {
           <Carousell></Carousell>
         </div>
         <div className="home_divider_carousel"></div>
-        <div className="box_home_option_pages_mobile">
+        <div className="box_home_option_pages_tablet">
           <Link to='/category'>
-            <div className='home_optional_category_mobile'>
-              <button className='home_optional_category_button_mobile'>
-                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></MdOutlineSecurity>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></MdOutlineSecurity>
               </button>
-              <h2 className='home_optional_category_title_mobile'>Segurança</h2>
+              <h2 className='home_optional_category_title_tablet'>Segurança</h2>
             </div>
           </Link>
           <Link to='/category'>
-            <div className='home_optional_category_mobile'>
-              <button className='home_optional_category_button_mobile'>
-                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></BsPaintBucket>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></BsPaintBucket>
               </button>
-              <h2 className='home_optional_category_title_mobile'>Tintas</h2>
+              <h2 className='home_optional_category_title_tablet'>Tintas</h2>
             </div>
           </Link>
           <Link to='/category'>
-            <div className='home_optional_category_mobile'>
-              <button className='home_optional_category_button_mobile'>
-                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></CgSmartphoneChip>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></CgSmartphoneChip>
               </button>
-              <h2 className='home_optional_category_title_mobile'>Automação</h2>
+              <h2 className='home_optional_category_title_tablet'>Automação</h2>
             </div>
           </Link>
           <Link to='/category'>
-            <div className='home_optional_category_mobile'>
-              <button className='home_optional_category_button_mobile'>
-                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_mobile'></TfiPanel>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_tablet'></TfiPanel>
               </button>
-              <h2 className='home_optional_category_title_mobile'>Painéis</h2>
+              <h2 className='home_optional_category_title_tablet'>Painéis</h2>
             </div>
           </Link>
           <Link to='/category'>
-            <div className='home_optional_category_mobile'>
-              <button className='home_optional_category_button_mobile'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
                 <img src={iconMotor} width={40} height={25} alt=''></img>
               </button>
-              <h2 className='home_optional_category_title_mobile'>Motores</h2>
+              <h2 className='home_optional_category_title_tablet'>Motores</h2>
             </div>
           </Link>
         </div>
         <div>
           <div className='home_accessed_mobile'>
-            <BiLineChart color='var(--blue-primary)' size={30} />
-            <h1 className='home_accessed_title_mobile' >Produtos mais acessados</h1>
+            <BiLineChart color='var(--blue-primary)' size={40} />
+            <h1 className='home_accessed_title_tablet' >Produtos mais acessados</h1>
           </div>
           <div className='home_slider_product_accessed'>
             <ProductCarousel />
