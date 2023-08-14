@@ -144,7 +144,7 @@ function SmallProductCard() {
         </div>
     )
     const renderMobileView = () => (
-        <div className='container_product_card_smaller'>
+        <div className='container_product_card_smaller_mobile'>
             <div className='container_product_card_smaller_action_icon'>
                 <div className='product_card_small_button_compare'>
                     <button onClick={AddProductInCompare} className="ui icon button product_card_smaller_compare">
