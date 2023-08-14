@@ -627,7 +627,7 @@ function ProductCategory() {
               </div>
             )}
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </>
     )
