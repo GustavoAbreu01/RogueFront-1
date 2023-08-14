@@ -44,7 +44,7 @@ function ProductPage() {
 
     const renderDesktopView = () => (
         <>
-            {/* {!verify() ? <Header /> : <HeaderLogin />} */}
+            {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
 
             <div className="ui items product_page" >
@@ -131,7 +131,7 @@ function ProductPage() {
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
                 </div>
             </div>
-            {/* <div className='box_product_page_title_similar'>
+            <div className='box_product_page_title_similar'>
                 <FaStar color='var(--white)' size={40} />
                 <h1>Produtos Semelhantes</h1>
             </div>
@@ -144,8 +144,8 @@ function ProductPage() {
             </div>
             <div className='box_product_page_carousel_highlights'>
                 <Carousel />
-            </div> */}
-            {/* <Footer /> */}
+            </div>
+            <Footer />
         </>
     )
     const renderMobileView = () => (
@@ -242,21 +242,21 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
-            {/* <div className='box_product_page_title_similar'>
-    <FaStar color='var(--white)' size={40} />
-    <h1>Produtos Semelhantes</h1>
-</div>
-<div className='box_product_page_carousel_similar'>
-    <Carousel />
-</div>
-<div className='box_product_page_title_highlights'>
-    <FaStar color='var(--white)' size={40} />
-    <h1>Produtos Destaques</h1>
-</div>
-<div className='box_product_page_carousel_highlights'>
-    <Carousel />
-</div> */}
-            {/* <Footer /> */}
+            <div className='box_product_page_title_similar_mobile'>
+                <FaStar color='var(--white)' size={30} />
+                <h1 className='title_product_page_moblie'>Produtos Semelhantes</h1>
+            </div>
+            <div className='box_product_page_carousel_similar'>
+                <Carousel />
+            </div>
+            <div className='box_product_page_title_highlights_mobile'>
+                <FaStar color='var(--white)' size={30} />
+                <h1 className='title_product_page_moblie'>Produtos Destaques</h1>
+            </div>
+            <div className='box_product_page_carousel_highlights'>
+                <Carousel />
+            </div>
+            <Footer />
         </>
     )
     const getViewToRender = () => {
