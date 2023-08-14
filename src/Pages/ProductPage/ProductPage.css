@@ -412,8 +412,6 @@ td {
 .ui.items.product_page_mobile {
     background-color: rgb(255, 255, 255);
     margin: 3rem auto;
-    height: 100%;
-    width: fit-content;
 }
 
 .image_product_mobile {
@@ -461,7 +459,23 @@ td {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
+    gap: 1rem;
+}
+
+.div_table_product_page_mobile {
+    margin: 2rem;
+}
+
+.table_item_product_page_mobile {
+    font-size: 15px;
+}
+
+.ui.fluid.icon.button.product_page_compare_mobile{
+    background-color: var(--blue-quaternary);
+}
+
+.opcionais_product_page_mobile {
+    padding-bottom: 3rem;
 }
 
 /*
@@ -882,3 +896,8 @@ td {
 .ui.rating.ui.rating.product_page_mobile {
     font-size: 30px;
   */
+
+
+.div_button_product_page_mobile{
+    width: 100%;
+}

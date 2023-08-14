@@ -150,7 +150,7 @@ function ProductPage() {
     )
     const renderMobileView = () => (
         <>
-            {/* {!verify() ? <Header /> : <HeaderLogin />} */}
+            {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
             <div className="ui items product_page_mobile" >
                 {/* <p className="ui blue ribbon label_mobile">aaaaaaaaaaaaaaaaaaaaaaaaa</p> */}
@@ -178,13 +178,13 @@ function ProductPage() {
                                 Comprar Agora
                             </button>
                             <div className='buttons_product_page_opc_add_mobile'>
-                                <div>
+                                <div className='div_button_product_page_mobile'>
                                     <button className="ui fluid button cart_product_page_mobile">
                                         Adicionar ao Carrinho
                                     </button>
                                 </div>
                                 <div>
-                                    <button className="ui fluid icon button cart_product_compare_mobile">
+                                    <button className="ui fluid icon button product_page_compare_mobile">
                                         <i className="exchange icon"></i>
                                     </button>
                                 </div>
@@ -192,7 +192,7 @@ function ProductPage() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className='div_table_product_page_mobile'>
                     <h2 className="ui header about_product_page_mobile">Sobre o Produto</h2>
                     <h3 className="ui header app_product_page_mobile"> Aplicações</h3>
                     <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
@@ -203,41 +203,43 @@ function ProductPage() {
                         <tbody>
                             <tr>
                                 <td>Potência</td>
-                                <td>1/8 a 3 cv</td>
+                                <td className='table_item_product_page_mobile'>1/8 a 3 cv</td>
                             </tr>
                             <tr>
                                 <td>Polaridade</td>
-                                <td>2 ou 4</td>
+                                <td className='table_item_product_page_mobile'>2 ou 4</td>
                             </tr>
                             <tr>
                                 <td>Tensão</td>
-                                <td> 127/220 ou 220/440 V</td>
+                                <td className='table_item_product_page_mobile'> 127/220 ou 220/440 V</td>
                             </tr>
                             <tr>
                                 <td>Frequência</td>
-                                <td> 60 ou 50 Hz</td>
+                                <td className='table_item_product_page_mobile'> 60 ou 50 Hz</td>
                             </tr>
                             <tr>
                                 <td>Carcaças</td>
-                                <td>B48 a G56H</td>
+                                <td className='table_item_product_page_mobile'>B48 a G56H</td>
                             </tr>
                             <tr>
                                 <td>Tipo de Carcaça</td>
-                                <td>Chapa de Aço</td>
+                                <td className='table_item_product_page_mobile'>Chapa de Aço</td>
                             </tr>
                             <tr>
                                 <td>Grau de Proteção</td>
-                                <td>IP21</td>
+                                <td className='table_item_product_page_mobile'>IP21</td>
                             </tr>
                             <tr>
                                 <td>Cor</td>
-                                <td>Preto fosco (Munsell N1)</td>
+                                <td className='table_item_product_page_mobile'>Preto fosco (Munsell N1)</td>
                             </tr>
                         </tbody>
                     </table>
-                    <h3 className="ui header optionals_product_page_mobile"> Opcionais</h3>
-                    <p> Proteção térmica.</p>
-                    <p>Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
+                    <div className='opcionais_product_page_mobile'>
+                        <h3 className="ui header optionals_product_page_mobile"> Opcionais</h3>
+                        <p> Proteção térmica.</p>
+                        <p>Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
+                    </div>
                 </div>
             </div>
             {/* <div className='box_product_page_title_similar'>
