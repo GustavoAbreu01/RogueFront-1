@@ -116,18 +116,18 @@ function ProductCardSearched() {
   )
 
   const renderTabletView = () => (
-    <div className='container_product_card_searched'>
+    <div className='container_product_card_searched_tablet'>
 
       <div className='box_product_card_searched_tag_icon'>
-        <button className="circular ui icon button product_card_searched">
+        <button className="circular big blue ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
         </button>
       </div>
-      <div className='container_product_card_searched_action_icon'>
-        <button onClick={AddProductInSave} className="ui icon button product_card_searched">
+      <div className='container_product_card_searched_action_icon_tablet'>
+        <button onClick={AddProductInSave} className="ui big icon button product_card_searched">
           <i className="bookmark icon product_card_searched"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_searched">
+        <button onClick={AddProductInCart} className="ui big icon button product_card_searched">
           <i className="cart plus icon product_card_searched"></i>
         </button>
       </div>
@@ -158,7 +158,7 @@ function ProductCardSearched() {
     <div className='container_product_card_searched_mobile'>
 
       <div className='box_product_card_searched_tag_icon_mobile'>
-        <button className="circular mini ui icon button product_card_searched">
+        <button className="circular blue mini ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
         </button>
       </div>

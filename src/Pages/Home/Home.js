@@ -342,8 +342,107 @@ function Home() {
   const renderTabletView = () => (
     <div>
       <>{!verify() ? <Header /> : <HeaderLogin />}
+        <div className='boxCarrossel_mobile'>
+          <Carousell></Carousell>
+        </div>
+        <div className="home_divider_carousel"></div>
+        <div className="box_home_option_pages_tablet">
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></MdOutlineSecurity>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Segurança</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></BsPaintBucket>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Tintas</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></CgSmartphoneChip>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Automação</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_tablet'></TfiPanel>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Painéis</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <img src={iconMotor} width={50} height={35} alt=''></img>
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Motores</h2>
+            </div>
+          </Link>
+        </div>
+        <div>
+          <div className='home_accessed_tablet'>
+            <BiLineChart color='var(--blue-primary)' size={40} />
+            <h1 className='home_accessed_title_tablet' >Produtos mais acessados</h1>
+          </div>
+          <div className='home_slider_product_accessed_tablet'>
+            <ProductCarousel />
+          </div>
+        </div>
 
-      </>
+        <div className='home_highlights_tablet' >
+          <div className='home_highlights_title_tablet'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text_tablet' >Destaques da semana</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductHighlightCarousel />
+          </div>
+        </div>
+
+        <div className='home_announcements_products_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementThree} />
+        </div>
+
+        <div className='home_searched_tablet' >
+          <div className='home_searched_title'>
+            <div className='home_searched_aling_tablet'>
+              <h1 className='home_searched_title_text_tablet' >Mais procurados</h1>
+              <CgSearchFound color='var(--white)' size={50} />
+            </div>
+          </div>
+          <div className='home_slider_product_searched'>
+            <ProductSearchedCarousel />
+          </div>
+        </div>
+
+        <div className='home_announcements_products_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementFour} />
+        </div>
+
+        <div className='home_highlights_tablet' >
+          <div className='home_highlights_title_tablet'>
+            <MdOutlineNewReleases color='var(--white)' size={40} />
+            <h1 className='home_highlights_title_text_tablet' >Novidades</h1>
+          </div>
+          <div className='home_slider_product_highlights'>
+            <ProductNewCarousel />
+          </div>
+        </div>
+
+        <div className='home_announcements_tablet' data-aos="fade-up" >
+          <img className='home_announcements_banner_tablet' src={BannerAnnouncementTwo} />
+        </div>
+
+        <Footer /></>
     </div>
   )
 

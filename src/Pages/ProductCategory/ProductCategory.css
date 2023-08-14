@@ -256,6 +256,7 @@
 .search_mobile {
     align-items: center;
     display: flex;
+    font-weight: bold;
     justify-content: center;
 }
 
@@ -311,9 +312,7 @@
     width: 28rem;
 }
 
-.ui.row.searchItens_mobile {
-    width: 66rem;
-}
+
 
 .column.filter.search_mobile {
     margin-left: 3rem;

@@ -17,7 +17,6 @@ function ProductHighlightCarousel() {
         infinite: true,
         slidesToShow: 5,
         swipeToSlide: true,
-        arrows: false,
         responsive: [
             {
                 breakpoint: 1624,
@@ -31,6 +30,8 @@ function ProductHighlightCarousel() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
+                    dots: true,
                 }
             },
             {
@@ -38,12 +39,14 @@ function ProductHighlightCarousel() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
+                    arrows: false,
                     slidesToScroll: 1
                 }
             }
@@ -62,48 +65,48 @@ function ProductHighlightCarousel() {
     }, []);
 
     const renderDesktopView = () => (
-        < div className='container_product_hightlight_carousel' >
+        < div className='container_product_hightlight_carousel_tablet' >
             <Slider {...settings}>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_hightlight_carousel_tablet'>
                     <ProductCardHighlight />
                 </div>
             </Slider>
@@ -111,9 +114,9 @@ function ProductHighlightCarousel() {
     )
 
     const renderTabletView = () => (
-        < div className='container_product_hightlight_carousel' >
+        < div className='container_product_hightlight_carousel_tablet' >
             <Slider {...settings}>
-                <div className='box_product_hightlight_carousel'>
+                <div className='box_product_accessed_hightlight_tablet'>
                     <ProductCardHighlight />
                 </div>
                 <div className='box_product_hightlight_carousel'>

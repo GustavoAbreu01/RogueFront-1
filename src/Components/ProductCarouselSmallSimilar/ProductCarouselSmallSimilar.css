@@ -1,11 +1,3 @@
-
-*{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-}
-
-
 .product_similar_carousel{
     padding-left: 5rem;
     padding-right: 5rem;
@@ -27,4 +19,10 @@
 
 .box_product_similar_carousel {
     padding: 1rem;
+}
+
+.product_similar_carousel_mobile {
+    padding-top: 2rem;
+    margin: 0.5rem;
+    color: var(--blue-primary);
 }

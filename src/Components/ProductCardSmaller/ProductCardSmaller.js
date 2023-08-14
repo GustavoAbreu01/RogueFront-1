@@ -144,17 +144,17 @@ function SmallProductCard() {
         </div>
     )
     const renderMobileView = () => (
-        <div className='container_product_card_smaller'>
-            <div className='container_product_card_smaller_action_icon'>
+        <div className='container_product_card_smaller_mobile'>
+            <div className='container_product_card_smaller_mobile_action_icon'>
                 <div className='product_card_small_button_compare'>
-                    <button onClick={AddProductInCompare} className="ui icon button product_card_smaller_compare">
+                    <button onClick={AddProductInCompare} className="mini ui icon button product_card_smaller_compare">
                         <i className="exchange alternate icon"></i>
                     </button>
                 </div>
-                <button onClick={AddProductInSave} className="ui icon button product_card_smaller">
+                <button onClick={AddProductInSave} className="mini ui icon button product_card_smaller_mobile">
                     <i className="bookmark icon "></i>
                 </button>
-                <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
+                <button onClick={AddProductInCart} className="mini ui icon button product_card_smaller_mobile">
                     <i className="cart plus icon"></i>
                 </button>
             </div>
@@ -173,7 +173,7 @@ function SmallProductCard() {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                        <button className="small ui button buy_product_card_smaller_mobile">Comprar</button>
                     </div>
                 </Link>
             </Link >

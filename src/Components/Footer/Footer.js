@@ -4,6 +4,7 @@ import './Footer.css';
 
 //Importando as imagens
 import img from '../../assets/img/footer.png';
+import logo from '../../assets/img/logo-weg.png';
 
 const Footer = () => {
 
@@ -69,7 +70,86 @@ const Footer = () => {
   )
 
   const renderMobileView = () => (
-    <footer className='container_footer_mobile'>
+    <><div className='footer_container'>
+      <footer className="text-center ">
+        <div className="container p-4">
+          <section className="">
+            <div className="row">
+              <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">WEG S.A.</h5>
+
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" className="text-white">Av. Pref. Waltermar Grubba,</a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-white">Jaraguá do Sul - SC / Brasil</a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-white">Telefone: 55 47 3276-4000</a>
+                  </li>
+                  <li>
+                    <a href="https://mail.google.com/mail/u/0/#search/info-br%40weg.net?compose=CllgCJlKnNzSNTsBmkTvPwDKhClXHSMtXRxWkLKjVhmJQcVKPXTbCLrGnmZkSnPlTrHgGpPrJdV" className="text-white">E-mail: info-br@weg.net</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">Contatos</h5>
+
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" className="text-white">Fale conosco</a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-white">Onde comprar</a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-white">Assistencia tecnica</a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-white">FAQ</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 className="text-uppercase">Redes Sociais</h5>
+
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <a className="text-white" href="https://www.instagram.com/weg.group/">
+                      <i className="instagram icon"></i> Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-white" href="https://www.youtube.com/wegvideos">
+                      <i className="youtube icon"></i> Youtube
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-white" href="https://www.linkedin.com/company/weg">
+                      <i className="linkedin in icon"></i> Linkedin
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+        </div>
+        <img src={logo} width={100} />
+        <div className="text-center p-3" >
+          © 2023 Copyright:
+          <a className="text-white" href="https://weg.com/"> Weg.com</a>
+        </div>
+
+      </footer>
+    </div>
+    </>
+
+  )
+
+  const renderTabletView = () => (
+    <footer className='container_footer'>
       <div className="box_footer_informations">
         <div className="footer_location_informations">
           <h4 style={{ alignItems: 'center' }}>WEG S.A.</h4>
@@ -110,13 +190,10 @@ const Footer = () => {
           </a>
         </div>
       </div>
+      <div className="footer_image_weg">
+        <img src={img} alt="" />
+      </div>
     </footer>
-  )
-
-  const renderTabletView = () => (
-    <div>
-
-    </div>
   )
 
   const getViewToRender = () => {

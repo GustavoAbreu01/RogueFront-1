@@ -69,6 +69,7 @@ function Product() {
   if (lista.length === 0) {
     return (
       <>
+        {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
         <div className='container_save_titles'>
 
         </div>
@@ -79,11 +80,13 @@ function Product() {
   } else {
 
     return (
-
-      <><div className='container_save_titles'>
+      
+      <>
+        {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+        <div className='container_save_titles'>
         <div className='save_saved_product'>
           <div className='box_title_similar_save'>
-            <BsFillBookmarkFill color='var(--white)' size={40} />
+            <BsFillBookmarkFill color='var(--white)' size={30} />
             <h1 className='save_title'>Salvos</h1>
           </div>
             {products.map((item) => {

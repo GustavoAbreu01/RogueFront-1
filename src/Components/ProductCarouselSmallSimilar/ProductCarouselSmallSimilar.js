@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductCarouselSmallSimilar.css';
 
 //importando as frameworks
@@ -41,6 +41,8 @@ function ProductCarouselSmallSimilar() {
             {
                 breakpoint: 1024,
                 settings: {
+                    arrows: false,
+                    dots: true,
                     slidesToShow: 3,
                     slidesToScroll: 2,
                 }
@@ -48,6 +50,8 @@ function ProductCarouselSmallSimilar() {
             {
                 breakpoint: 600,
                 settings: {
+                    arrows: false,
+                    dots: true,
                     slidesToShow: 2,
                     slidesToScroll: 2,
                 }
@@ -55,15 +59,30 @@ function ProductCarouselSmallSimilar() {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    arrows: false,
+                    dots: true,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
         ],
     };
 
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+   
+    useEffect(() => {
+      function handleResize() {
+        setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []); 
 
-    return (
+
+    const renderDesktopView = () => (
         <div className='product_similar_carousel' >
             <Slider {...settings}>
                 <div className='box_product_similar_carousel'>
@@ -111,6 +130,34 @@ function ProductCarouselSmallSimilar() {
             </Slider>
         </div >
     )
+    const renderMobileView = () => (
+        <div className='product_similar_carousel_mobile' >
+            <Slider {...settings}>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+                <div className='box_product_similar_carousel'>
+                    <ProductCardSmaller />
+                </div>
+            </Slider>
+        </div >
+    )
+    const getViewToRender = () => {
+        if (screenSize.width > 900) {
+          return renderDesktopView();
+        // } else if (screenSize.width < 900 && screenSize.width > 500) {
+        //   return renderTabletView();
+        } else {
+          return renderMobileView();
+        }
+      };
+      return <>{getViewToRender()}</>;
 }
 
 export default ProductCarouselSmallSimilar

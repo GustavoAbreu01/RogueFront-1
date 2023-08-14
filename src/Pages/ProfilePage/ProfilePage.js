@@ -7,6 +7,7 @@ import Header from '../../Components/Header/Header'
 import Orders from '../../Components/Orders/Orders'
 import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
+import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 
 //Importando os ícones
 import { BsFillBookmarkFill } from 'react-icons/bs'
@@ -38,7 +39,7 @@ function ProfilePage() {
 
 
     const renderDesktopView = () => (
-        <>{!verify() ? <Header /> : <HeaderLogin />}
+        <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
             <div className='box_title_similar_order'>
                 <BsFillBookmarkFill color='var(--white)' size={40} />
                 <h1>Seus Pedidos</h1>
@@ -54,6 +55,7 @@ function ProfilePage() {
 
     const renderMobileView = () => (
         <>
+        {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
         <div className='box_title_similar_order_mobile'>
             <BsFillBookmarkFill color='var(--white)' size={40} />
             <h1>Seus Pedidos</h1>
