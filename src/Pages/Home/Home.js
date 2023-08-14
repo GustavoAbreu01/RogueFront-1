@@ -392,7 +392,7 @@ function Home() {
             <BiLineChart color='var(--blue-primary)' size={30} />
             <h1 className='home_accessed_title_mobile' >Produtos mais acessados</h1>
           </div>
-          <div className='sliderProductAccessed'>
+          <div className='home_slider_product_accessed'>
             <ProductCarousel />
           </div>
         </div>

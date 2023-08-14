@@ -16,8 +16,6 @@
     margin-left: 3%;
 }
 
-
-
 .icons_header {
     display: flex;
     align-items: center;
@@ -118,7 +116,7 @@
     backdrop-filter: blur( 2px );
     align-items: center;
     width: 100%;
-    z-index: 150;
+    z-index: 100;
     position: fixed;
 
     .cart_icon_header {
@@ -269,7 +267,6 @@
     height: 50px;
     transition: 0.3s;
     display: flex;
-    backdrop-filter: blur( 2px );
     justify-content: space-between;
     align-items: center;
     width: 100%;

@@ -1,6 +1,6 @@
 //Importando o React e o CSS
 import './ProductAccessedCarousel.css';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 //importando as frameworks
 import Slider from "react-slick";
@@ -10,12 +10,15 @@ import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
 
 function ProductAccessedCarousel() {
 
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     var settings = {
         className: "center",
+        accessibility: false,
         infinite: true,
         slidesToShow: 5,
-        swipeToSlide: true,
+        swipeToSlide: false,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1624,
@@ -41,15 +44,25 @@ function ProductAccessedCarousel() {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1
                 }
             }
         ],
     };
 
+    useEffect(() => {
+        function handleResize() {
+            setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-    return (
+    const renderDesktopView = () => (
         <div className='container_product_accessed_carousel' >
             <Slider {...settings}>
                 <div className='box_product_accessed_carousel'>
@@ -97,6 +110,117 @@ function ProductAccessedCarousel() {
             </Slider>
         </div >
     )
+
+    const renderTabletView = () => (
+        <div className='container_product_accessed_carousel' >
+            <Slider {...settings}>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+            </Slider>
+        </div >
+    )
+
+    const renderMobileView = () => (
+        <div className='container_product_accessed_carousel_mobile' >
+            <Slider {...settings}>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+                <div className='box_product_accessed_carousel'>
+                    <ProductCardAccessed />
+                </div>
+            </Slider>
+        </div >
+    )
+
+    const getViewToRender = () => {
+        if (screenSize.width > 900) {
+            return renderDesktopView();
+        } else if (screenSize.width < 900 && screenSize.width > 500) {
+            return renderTabletView();
+        } else {
+            return renderMobileView();
+        }
+    };
+
+    return <>{getViewToRender()}</>;
+
 }
 
 export default ProductAccessedCarousel
