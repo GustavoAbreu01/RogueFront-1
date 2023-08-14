@@ -182,7 +182,7 @@ function ProductCardAccessed() {
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button_mobile'>
-            <button className="fluid ui button product_card_accessed_button">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button_mobile">Comprar</button>
           </div>
         </Link>
       </Link>
