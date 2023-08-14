@@ -20,3 +20,9 @@
 .box_product_similar_carousel {
     padding: 1rem;
 }
+
+.product_similar_carousel_mobile {
+    padding-top: 2rem;
+    margin: 0.5rem;
+    color: var(--blue-primary);
+}
