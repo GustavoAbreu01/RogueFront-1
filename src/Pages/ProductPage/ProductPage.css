@@ -554,6 +554,16 @@ background-color: var(--blue-quaternary);
     margin-top: 1rem;
 }
 
+.price_product_page_tablet {
+    color: var(--blue-primary);
+}
+
+.subtext_product_page_tablet {
+    font-size: 13px;
+    color: var(--grey-primary);
+}
+
+
 /*
 .content.product_page_mobile {
     padding: 1rem !important;
