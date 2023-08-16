@@ -375,7 +375,9 @@
     width: 100%;
     overflow-y: scroll;
 }
-
+.state_edit_section_profile_mobile{
+    margin-top: 1.2rem !important;
+}
 /* 
 .acessebility_box_profile_mobile {
     display: flex;
