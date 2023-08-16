@@ -4,6 +4,7 @@ import './Footer.css';
 
 //Importando as imagens
 import img from '../../assets/img/footer.png';
+import imageFooter from '../../assets/img/footer-removebg-preview.png';
 import logo from '../../assets/img/logo-weg.png';
 
 const Footer = () => {
