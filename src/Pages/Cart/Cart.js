@@ -227,16 +227,12 @@ function Cart() {
           </div>
         </div>
       </div>
-      <div className='container_cart_all'>
-        <div className='box_cart_product_detail_all'>
-          <div className='box_cart_product_all'>
+      <div className='container_cart_all_mobile'>
+        <div className='box_cart_product_detail_all_mobile'>
+          <div className='box_cart_product_all_mobile'>
             <div className='cart_product_title'>
               <h5 className='cart_product_title_text'>Produtos e Frete</h5>
             </div>
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
           </div>
         </div>
         <div className='box_info_total_cart'>
