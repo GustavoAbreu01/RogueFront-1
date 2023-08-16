@@ -142,3 +142,12 @@
         color: var(--blue-primary);
     }
 }
+
+/* -------------version Mobile------------- */
+
+.container_progress_cart_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}

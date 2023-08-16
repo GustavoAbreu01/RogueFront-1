@@ -211,7 +211,7 @@ function Cart() {
 
   const renderMobileView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress_cart'>
+      <div className='container_progress_cart_mobile'>
         <div className="ui mini steps">
           <div className="step">
             <i className="shop icon"></i>
