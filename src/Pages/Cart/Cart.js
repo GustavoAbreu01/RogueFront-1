@@ -142,7 +142,7 @@ function Cart() {
 
   const renderTabletView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress_cart'>
+      <div className='container_progress_cart_tablet'>
         <div className="ui small steps">
           <div className="step">
             <i className="shop icon"></i>
@@ -170,16 +170,29 @@ function Cart() {
           </div>
         </div>
       </div>
-      <div className='container_cart_all'>
-        <div className='box_cart_product_detail_all'>
-          <div className='box_cart_product_all'>
+      <div className='container_cart_all_tablet'>
+        <div className='box_cart_product_detail_all_tablet'>
+          <div className='box_cart_product_all_tablet'>
             <div className='cart_product_title'>
               <h5 className='cart_product_title_text'>Produtos no carrinho</h5>
             </div>
-
+            {hasProductsInCart() ? (
+              <>
+                <ProductCart />
+              </>
+            ) : (
+              <div className='box_empty_cart_tablet'>
+                <img className='img_empty_cart_tablet' src={imgEmptyCart} />
+                <p className='text_empty_cart_tablet'>Não foi adicionado nenhum produto em seu carrinho.</p>
+                <div className='box_subtext_empty_cart_tablet'>
+                  <BsArrowLeftShort size={15} />
+                  <Link className='subtext_empty_cart_tablet' to='/'> <p>Voltar para a Home</p> </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-        <div className='box_info_total_cart'>
+        <div className='box_info_total_cart_tablet'>
           <div className='info_total_buy'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
@@ -240,7 +253,7 @@ function Cart() {
             </div>
             {hasProductsInCart() ? (
               <>
-              <ProductCart />
+                <ProductCart />
               </>
             ) : (
               <div className='box_empty_cart_mobile'>
@@ -270,17 +283,11 @@ function Cart() {
             </div>
             <div className='button_total_Cart_mobile'>
               {!verify() ?
-                <Link to='/register'>
                   <button className="fluid ui button final">Realizar Login</button>
-                </Link>
                 :
-                <Link to='/cart/payment'>
                   <button className="fluid ui button final">Finalizar Compra</button>
-                </Link>
               }
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+                <button onClick={} className="fluid ui button blue basic cont">Continuar Comprando</button>
             </div>
           </div>
         </div>
