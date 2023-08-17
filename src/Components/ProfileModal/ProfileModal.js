@@ -198,6 +198,16 @@ export default function ProfileModal({ user }) {
                     <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'><p className='text_profile_opt'>Ajuda</p></Link>
                   </div>
                 </div>
+                <div className='profile_item'>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="sign-out icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/quiz'><p className='text_profile_opt'>Sair</p></Link>
+                  </div>
+                </div>
               </div>
               <div className='profile_footer'>
                 <div className='profile_logo'>
@@ -309,7 +319,26 @@ export default function ProfileModal({ user }) {
                     <p onClick={toggleModalAcessibility} className='text_profile_opt'>Alterar fonte</p>
                   </div>
                 </div>
-
+                <div className='profile_item'>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="exchange icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/compare'><p className='text_profile_opt'>Comparar Produtos</p></Link>
+                  </div>
+                </div>
+                <div className='profile_item'>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="paste icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/quiz'><p className='text_profile_opt'>Questionário</p></Link>
+                  </div>
+                </div>
                 <div className='profile_item'>
                   <Link to='/save'>
                     <button className="ui icon button shopping profile">
@@ -338,6 +367,16 @@ export default function ProfileModal({ user }) {
                   </Link>
                   <div className='text_profile_container'>
                     <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'><p className='text_profile_opt'>Ajuda</p></Link>
+                  </div>
+                </div>
+                <div className='profile_item'>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="sign-out icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/quiz'><p className='text_profile_opt'>Sair</p></Link>
                   </div>
                 </div>
               </div>
@@ -374,61 +413,6 @@ export default function ProfileModal({ user }) {
       </div>
       {openModal && (
         <div className="modal_profile_content_container_mobile">
-          {openModalAcessibility && (
-            <div data-aos="fade-left" className='modal_profile_acessibility_container'>
-              <div className='box_profile_acessibility'>
-                <div className='title_acessibility'>
-                  <p>Tamanhos</p>
-                </div>
-                <div className="grouped fields profile">
-                  <div className="ui field left compact segment profile">
-                    <p>Pequena</p>
-                    <div className="ui fitted slider checkbox profile">
-                      <input type="radio" name="throughput" value="small"
-                        checked={selectedSize === 'small'}
-                        onChange={handleSizeChange} />
-                      <label></label>
-                    </div>
-                  </div>
-                  <div className="ui field left compact segment profile">
-                    <p>Média</p>
-                    <div className="ui fitted slider checkbox">
-                      <input type="radio" name="throughput" value="medium"
-                        checked={selectedSize === 'medium'}
-                        onChange={handleSizeChange} />
-                      <label></label>
-                    </div>
-                  </div>
-                  <div className="ui field left compact segment profile">
-                    <p>Grande</p>
-                    <div className="ui fitted slider checkbox">
-                      <input type="radio" name="throughput" value="large"
-                        checked={selectedSize === 'large'}
-                        onChange={handleSizeChange} />
-                      <label></label>
-                    </div>
-                  </div>
-                  <div className="ui field left compact segment profile">
-                    <p>Muito Grande</p>
-                    <div className="ui fitted slider checkbox profile">
-                      <input type="radio" name="throughput" value="veryLarge"
-                        checked={selectedSize === 'veryLarge'}
-                        onChange={handleSizeChange} />
-                      <label></label>
-                    </div>
-                  </div>
-
-                </div>
-                <div className='button_acessibility'>
-                  <button onClick={applyFontSize} className="ui right labeled icon button">
-                    <i className="low vision icon"></i>
-                    Aplicar Mudaças
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          )}
           <BsArrowBarRight className="back_icon" onClick={toggleModal}></BsArrowBarRight>
           <div className="modal_profile_content_moibile" data-aos="fade-left">
             <div className=''>
@@ -443,15 +427,37 @@ export default function ProfileModal({ user }) {
                 <p className='cpf_profile'>076.137.949.54</p>
               </div>
               <div className='profile_opt'>
+
                 <div className='profile_item'>
-                  <button onClick={toggleModalAcessibility} className="ui icon button vision profile">
-                    <i onClick={toggleModalAcessibility} className="low vision icon profile"></i>
-                  </button>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="exchange icon profile"></i>
+                    </button>
+                  </Link>
                   <div className='text_profile_container'>
-                    <p onClick={toggleModalAcessibility} className='text_profile_opt'>Alterar fonte</p>
+                    <Link to='/compare'><p className='text_profile_opt'>Comparar Produtos</p></Link>
                   </div>
                 </div>
-
+                <div className='profile_item'>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="paste icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/quiz'><p className='text_profile_opt'>Questionário</p></Link>
+                  </div>
+                </div>
+                <div className='profile_item'>
+                  <Link to='/cart'>
+                    <button className="ui icon button shopping profile">
+                      <i className="cart icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/cart'><p className='text_profile_opt'>Carrinho</p></Link>
+                  </div>
+                </div>
                 <div className='profile_item'>
                   <Link to='/save'>
                     <button className="ui icon button shopping profile">
@@ -480,6 +486,16 @@ export default function ProfileModal({ user }) {
                   </Link>
                   <div className='text_profile_container'>
                     <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'><p className='text_profile_opt'>Ajuda</p></Link>
+                  </div>
+                </div>
+                <div className='profile_item'>
+                  <Link to='/quiz'>
+                    <button className="ui icon button shopping profile">
+                      <i className="sign-out icon profile"></i>
+                    </button>
+                  </Link>
+                  <div className='text_profile_container'>
+                    <Link to='/'><p className='text_profile_opt'>Sair</p></Link>
                   </div>
                 </div>
               </div>

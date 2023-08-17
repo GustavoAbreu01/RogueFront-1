@@ -13,6 +13,15 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCart from '../../Components/ProductCart/ProductCart';
 import SmallProductHorizontal from '../../Components/SmallProductHorizontal/SmallProductHorizontal';
 
+//Importando as imagens
+import imgEmptyCart from '../../assets/img/weggnerAcordado.PNG';
+
+//Importando os icones
+import { FaShoppingCart, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
+import { BsArrowLeftShort } from 'react-icons/bs';
+
+
+
 function Cart() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -40,6 +49,12 @@ function Cart() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const hasProductsInCart = () => {
+    // Replace this with your logic to check if there are products in the cart
+    const productsInCart = 1; // Replace with the actual count of products in the cart
+    return productsInCart > 0;
+  };
 
   const renderDesktopView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
@@ -75,7 +90,7 @@ function Cart() {
         <div className='box_cart_product_detail_all'>
           <div className='box_cart_product_all'>
             <div className='cart_product_title'>
-              <h5 className='cart_product_title_text'>Produtos e Frete</h5>
+              <h5 className='cart_product_title_text'>Produtos no carrinho</h5>
             </div>
             <ProductCart />
             <ProductCart />
@@ -92,7 +107,7 @@ function Cart() {
               <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${frete}</h5>
             </div>
             <div>
               <h5 className='total_text_buy_product'>Total R${total}</h5>
@@ -127,7 +142,7 @@ function Cart() {
 
   const renderTabletView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress_cart'>
+      <div className='container_progress_cart_tablet'>
         <div className="ui small steps">
           <div className="step">
             <i className="shop icon"></i>
@@ -155,20 +170,30 @@ function Cart() {
           </div>
         </div>
       </div>
-      <div className='container_cart_all'>
-        <div className='box_cart_product_detail_all'>
-          <div className='box_cart_product_all'>
+      <div className='container_cart_all_tablet'>
+        <div className='box_cart_product_detail_all_tablet'>
+          <div className='box_cart_product_all_tablet'>
             <div className='cart_product_title'>
-              <h5 className='cart_product_title_text'>Produtos e Frete</h5>
+              <h5 className='cart_product_title_text'>Produtos no carrinho</h5>
             </div>
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
+            {hasProductsInCart() ? (
+              <>
+                <ProductCart />
+              </>
+            ) : (
+              <div className='box_empty_cart_tablet'>
+                <img className='img_empty_cart_tablet' src={imgEmptyCart} />
+                <p className='text_empty_cart_tablet'>Não foi adicionado nenhum produto em seu carrinho.</p>
+                <div className='box_subtext_empty_cart_tablet'>
+                  <BsArrowLeftShort size={15} />
+                  <Link className='subtext_empty_cart_tablet' to='/'> <p>Voltar para a Home</p> </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-        <div className='box_info_total_cart'>
-          <div className='info_total_buy'>
+        <div className='box_info_total_cart_tablet'>
+          <div className='info_total_buy_tablet'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
@@ -176,32 +201,19 @@ function Cart() {
               <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${frete}</h5>
             </div>
             <div>
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='button_total_Cart'>
-              {!verify() ?
-                <Link to='/register'>
-                  <button className="fluid ui button final">Realizar Login</button>
-                </Link>
+            <div className='button_total_Cart_tablet'>
+            {!verify() ?
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
                 :
-                <Link to='/cart/payment'>
-                  <button className="fluid ui button final">Finalizar Compra</button>
-                </Link>
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
               }
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
-          </div>
-          <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
           </div>
         </div>
       </div>
@@ -212,18 +224,18 @@ function Cart() {
   const renderMobileView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart_mobile'>
-        <div className="ui mini steps">
-          <div className="step">
-            <i className="shop icon"></i>
+        <div className="menu_edit_profile">
+          <div>
+            <FaShoppingCart className="edit_icon_mobile" />
           </div>
-          <div className="disabled step">
-            <i className="payment icon"></i>
+          <div >
+            <FaCreditCard className="edit_icon_mobile" color='grey' />
           </div>
-          <div className="disabled step">
-            <i className="truck icon"></i>
+          <div >
+            <FaTruck className="edit_icon_mobile" color='grey' />
           </div>
-          <div className="disabled step">
-            <i className="info icon"></i>
+          <div >
+            <FaInfo className="edit_icon_mobile" color='grey' />
           </div>
         </div>
       </div>
@@ -231,11 +243,25 @@ function Cart() {
         <div className='box_cart_product_detail_all_mobile'>
           <div className='box_cart_product_all_mobile'>
             <div className='cart_product_title'>
-              <h5 className='cart_product_title_text'>Produtos e Frete</h5>
+              <h5 className='cart_product_title_text'>Produtos no carrinho</h5>
             </div>
+            {hasProductsInCart() ? (
+              <>
+                <ProductCart />
+              </>
+            ) : (
+              <div className='box_empty_cart_mobile'>
+                <img className='img_empty_cart_mobile' src={imgEmptyCart} />
+                <p className='text_empty_cart_mobile'>Não foi adicionado nenhum produto em seu carrinho.</p>
+                <div className='box_subtext_empty_cart_mobile'>
+                  <BsArrowLeftShort size={15} />
+                  <Link className='subtext_empty_cart_mobile' to='/'> <p>Voltar para a Home</p> </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-        <div className='box_info_total_cart'>
+        <div className='box_info_total_cart_mobile'>
           <div className='info_total_buy'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
@@ -244,32 +270,19 @@ function Cart() {
               <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${frete}</h5>
             </div>
             <div>
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='button_total_Cart'>
+            <div className='button_total_Cart_mobile'>
               {!verify() ?
-                <Link to='/register'>
-                  <button className="fluid ui button final">Realizar Login</button>
-                </Link>
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
                 :
-                <Link to='/cart/payment'>
-                  <button className="fluid ui button final">Finalizar Compra</button>
-                </Link>
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
               }
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
-          </div>
-          <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
           </div>
         </div>
       </div>

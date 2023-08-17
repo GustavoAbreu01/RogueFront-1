@@ -65,3 +65,36 @@
     font-size: 13px;
     color: var(--grey-primary);
 }
+
+/* -------------version Tablet------------- */
+
+/* -------------version Mobile------------- */
+
+.product_cart_card_mobile {
+    background-color: var(--white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    border-bottom: solid 2px var(--grey-secondary);
+}
+
+.product_card_cart_info_up {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.product_cart_buttons_mobile {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.ui.small.buttons.product_cart {
+    position: absolute;
+}
