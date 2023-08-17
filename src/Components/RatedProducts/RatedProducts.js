@@ -56,40 +56,60 @@ function Orders() {
   )
 
   const renderMobileView = () => (
-  <>
-    <div className="container_rated_product_mobile">
+    <>
+
       <Link to='/product'>
         <div className='box_rated_product_mobile'>
-          <div className='box_two_rated_product_mobile'>
           <div id="imgItens order">
             <img src={motors} width="100" height="" />
           </div>
           <div className="rated_product_product_info_mobile">
             <h2 className="rated_product_name_mobile">Motor W22</h2>
-            {/* <p className="rated_product_description_mobile">
-              Motor monofásico de carcaça de chapa, para uso geral...
-            </p> */}
             <div className="rated_product_buttons_mobile">
               <button className="ui icon button rated_product_mobile">
                 <Rating className="ui rating rated_product_mobile" maxRating={5} style={{ marginTop: '1rem' }} />
               </button>
             </div>
           </div>
-          </div>
         </div>
       </Link>
-    </div >
-  </>
-)
-const getViewToRender = () => {
-  if (screenSize.width > 900) {
-    return renderDesktopView();
-    // } else if (screenSize.width < 900 && screenSize.width > 500) {
-    //   return renderTabletView();
-  } else {
-    return renderMobileView();
-  }
-};
-return <>{getViewToRender()}</>;
+
+    </>
+  )
+
+  const renderTabletView = () => (
+    <>
+      <div className="container_rated_product_tablet">
+        <Link to='/product'>
+          <div className='box_rated_product_tablet'>
+            <div id="imgItens order">
+              <img src={motors} width="125" height="" />
+            </div>
+            <div className="rated_product_product_info_tablet">
+              <h2 className="rated_product_name_tablet">Motor W22</h2>
+              <p className="rated_product_description_tablet">
+                Motor monofásico de carcaça de chapa, para uso geral desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia.
+              </p>
+            </div>
+            <div className="rated_product_buttons_tablet">
+              <button className="ui icon button rated_product_tablet">
+                <Rating className="ui rating rated_product_tablet" maxRating={5} style={{ marginTop: '1rem' }} />
+              </button>
+            </div>
+          </div>
+        </Link>
+      </div >
+    </>
+  )
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+  return <>{getViewToRender()}</>;
 };
 export default Orders
