@@ -24,8 +24,6 @@ import { AiOutlineStar } from 'react-icons/ai';
 import { RxAccessibility } from 'react-icons/rx';
 
 
-
-
 function EditProfile() {
 
   const [activeSection, setActiveSection] = useState(1);
@@ -36,6 +34,10 @@ function EditProfile() {
     setEditMode(true);
   };
 
+  const dontChangeInfo = (event) => {
+    event.preventDefault();
+    setEditMode(false);
+  };
   const verifyHeader = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === 'yes') {
@@ -61,6 +63,23 @@ function EditProfile() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeChange = (event) => {
+    setSelectedSize(event.target.value);
+  };
+
+  const applyFontSize = () => {
+    if (selectedSize === 'small')
+      document.body.style.fontSize = "12px";
+    else if (selectedSize === 'medium')
+      document.body.style.fontSize = "14px";
+    else if (selectedSize === 'large')
+      document.body.style.fontSize = "16px";
+    else if (selectedSize === 'veryLarge')
+      document.body.style.fontSize = "18px";
+  };
 
 
 
@@ -138,7 +157,7 @@ function EditProfile() {
                       </div>
                     ) : (
                       <div className='cancel_profile_Button'>
-                        <button onClick={changeInfo} className="fluid ui button cancel">Cancelar</button>
+                        <button onClick={dontChangeInfo} className="fluid ui button cancel">Cancelar</button>
                       </div>
                     )
                     }
@@ -281,7 +300,7 @@ function EditProfile() {
                       </div>
                     ) : (
                       <div className='cancel_profile_Button'>
-                        <button onClick={changeInfo} className="fluid ui button cancel">Cancelar</button>
+                        <button onClick={dontChangeInfo} className="fluid ui button cancel">Cancelar</button>
                       </div>
                     )
                     }
@@ -319,6 +338,8 @@ function EditProfile() {
                 <div className='rating_container_profile'>
                   <RatedProducts />
                   <RatedProducts />
+                  <RatedProducts />
+                <RatedProducts />
                 </div>
               </div>
             </div>
@@ -451,7 +472,7 @@ function EditProfile() {
                   </div>
                 ) : (
                   <div className='cancel_profile_Button_mobile'>
-                    <button onClick={changeInfo} className="fluid ui button cancel">Cancelar</button>
+                    <button onClick={dontChangeInfo} className="fluid ui button cancel">Cancelar</button>
                   </div>
                 )}
                 {!editMode ? (
@@ -480,7 +501,7 @@ function EditProfile() {
 
         ) : activeSection === 2 ? (
           <div className="column sections">
-            <div className="box_edit_section_profile_mobile">
+            <div className="box_section_profile_mobile">
               <h2 className="edit_section_title_profile_mobile">Mensagens</h2>
               <div className='messages_container_profile_mobile'>
                 <Messages />
@@ -590,7 +611,7 @@ function EditProfile() {
                     </div>
                   ) : (
                     <div className='cancel_profile_Button_mobile'>
-                      <button onClick={changeInfo} className="fluid ui button cancel">Cancelar</button>
+                      <button onClick={dontChangeInfo} className="fluid ui button cancel">Cancelar</button>
                     </div>
                   )}
                   {!editMode ? (
@@ -619,11 +640,14 @@ function EditProfile() {
           </div>
         ) : activeSection === 4 ? (
           <div className="column sections">
-            <div className="box_edit_section_profile_mobile">
+            <div className="box_section_profile_mobile">
               <h2 className="edit_section_title_profile_mobile">Avaliações</h2>
               <div className='rating_container_profile_mobile'>
                 <RatedProducts />
                 <RatedProducts />
+                <RatedProducts />
+                <RatedProducts />
+                
               </div>
             </div>
           </div>
@@ -633,6 +657,64 @@ function EditProfile() {
             <div className="box_edit_section_profile_mobile">
               <h2 className="edit_section_title_profile_mobile">Acessibilidade</h2>
               <div className='acessebility_containerscrowll_profile_mobile'>
+
+              <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h5>Alterador de Fonte</h5>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Pequena</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-2" type="checkbox" value="small" checked={selectedSize === 'small'}
+                        onChange={handleSizeChange}  />
+                        <label className="tgl-btn" for="cb1-2" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Média</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-3" type="checkbox" value="medium" checked={selectedSize === 'medium'}
+                        onChange={handleSizeChange} />
+                        <label className="tgl-btn" for="cb1-3" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Grande</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" value="large" checked={selectedSize === 'large'}
+                        onChange={handleSizeChange}/>
+                        <label className="tgl-btn" for="cb1-5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Muito grande</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-7" type="checkbox" value="veryLarge" checked={selectedSize === 'veryLarge'}
+                        onChange={handleSizeChange} />
+                        <label className="tgl-btn" for="cb1-7" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
@@ -649,7 +731,7 @@ function EditProfile() {
                 </div>
 
                 <div className='acessebility_container_profile_mobile'>
-                  <div className='acessebility_box_profile'>
+                  <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
                       <h5>Leitura de Texto</h5>
                     </div>
@@ -660,42 +742,408 @@ function EditProfile() {
                       </div>
                     </div>
                   </div>
-                  <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
 
-                <div className='acessebility_container_profile'>
-                  <div className='acessebility_box_profile'>
-                    <div className='acessebility_container_profile_title'>
+                <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
                       <h5>Modo Escuro</h5>
                     </div>
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
-                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
+                        <input className="tgl tgl-light" id="cb1-9" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-9" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                </div>
+              </div>
+              <button className="fluid ui button conclusion" onClick={applyFontSize} >Aplicar</button>
+            </div>
+          </div>
+        ) : null}
+         
+      
+      </div>
+  
+      <div className='edit_profile_footer_margin'>
+       
+      </div>
+      
+      <Footer />
+    </>
+  )
+  const renderTabletView = () => (
+    <>
+      {!verifyHeader() ? <Header /> : <HeaderLogin />}
+      <WeggnerModal />
+      <div className="container_edit_profile_mobile">
+        <div className="box_settings_bar_edit_mobile">
+          <div className="settings_bar_edit_profile_mobile">
+            <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
+              <CgProfile className="edit_profile_mobile" />
+            </div>
+            <h4>Nome Sobrenome</h4>
+            <p>000.000.000-00</p>
+          </div>
+          <div className="menu_edit_profile">
+            <div onClick={() => changeSection(2)} id="menssageBoxContainer" className={`item ${activeSection === 2 ? 'active' : ''}`}>
+              <AiOutlineBell className="edit_icon_mobile" />
+            </div>
+            <div onClick={() => changeSection(3)} id="addressBoxContainer" className={`item ${activeSection === 3 ? 'active' : ''}`}>
+              <BiBuildingHouse className="edit_icon_mobile" />
+            </div>
+            <div onClick={() => changeSection(4)} id="ratingBoxContainer" className={`item ${activeSection === 4 ? 'active' : ''}`}>
+              <AiOutlineStar className="edit_icon_mobile" />
+            </div>
+            <div onClick={() => changeSection(5)} id="ratingBoxContainer" className={`item ${activeSection === 5 ? 'active' : ''}`}>
+              <RxAccessibility className="edit_icon_mobile" />
+            </div>
+          </div>
+        </div>
+
+
+        {activeSection === 1 ? (
+          <div className="box_edit_section_profile_mobile">
+            <h2 className="edit_section_title_profile_mobile">Informações Pessoais</h2>
+            <form className="ui form edit">
+              <div className="field">
+                <div className="four fields">
+                  <div className={editMode ? "field" : "field disabled"}>
+                    <label>Nome</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Gustavo" />
+                  </div>
+                  <div className={editMode ? "field" : "field disabled"}>
+                    <label>Sobrenome</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Abreu" />
+                  </div>
+                </div>
+                  <div className={editMode ? "field" : "field disabled"}>
+                    <label>Email Profissional</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
+                  </div>
+                  <div className={editMode ? "field" : "field disabled"}>
+                    <label>CPF/CNPJ</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
+                  </div>
+                </div>
+              <div className="buttons_profile_edit">
+                {!editMode ? (
+                  <div className='edit_profile_Button_mobile'>
+                    <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
+                  </div>
+                ) : (
+                  <div className='cancel_profile_Button_mobile'>
+                    <button onClick={dontChangeInfo} className="fluid ui button cancel">Cancelar</button>
+                  </div>
+                )}
+                {!editMode ? (
+                  <div>
+                  </div>
+                ) : (
+                  <div className='conclusion_profile_button_mobile'>
+                    <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                  </div>
+                )}
+              </div>
+            </form>
+            <div className='container_information_profile_edit_mobile'>
+              {editMode ? (
+                <CiSquareAlert className='icon_information_profile_alert_mobile' />
+              ) : (
+                <CiSquareAlert className='ico_information_profile_mobile' />
+              )}
+              <p>
+                Para garantir a precisão e integridade das informações,
+                pedimos que verifique cuidadosamente todos os dados antes de
+                concluir qualquer edição em sua conta de e-commerce.
+              </p>
+            </div>
+          </div>
+
+        ) : activeSection === 2 ? (
+          <div className="column sections">
+            <div className="box_section_profile_mobile">
+              <h2 className="edit_section_title_profile_mobile">Mensagens</h2>
+              <div className='messages_container_profile_mobile'>
+                <Messages />
+                <Messages />
+                <Messages />
+                <Messages />
+                <Messages />
+                <Messages />
+              </div>
+            </div>
+
+          </div>
+        ) : activeSection === 3 ? (
+          <div className="column sections">
+            <div className="box_edit_section_profile_mobile">
+              <h2 className="edit_section_title_profile_mobile">Endereço Registrado</h2>
+              <form className="ui form edit">
+                <div className="field">
+                 
+                    <div className={editMode ? "field" : "twelve wide field disabled"}>
+                      <label>Complemento</label>
+                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
+                    </div>
+                    <div className={editMode ? "field" : "field disabled"}>
+                      <label>CEP</label>
+                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
+                    </div>
+               
+                </div>
+                <div className="field">
+                  <div className="fields">
+                    <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
+                      <label>Endereço</label>
+                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="Rua, Bairro, Número" />
+                    </div>
+                    <div className={editMode ? "four wide field" : "four wide field disabled"}>
+                      <label className='state_edit_section_profile_mobile'>Estado</label>
+                      <select className="ui fluid dropdown">
+                        <option value="">Estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                      </select>
+                    </div>
+                    <div className={editMode ? "four wide field" : "four wide field disabled"}>
+                      <label className='state_edit_section_profile_mobile' >País</label>
+                      <select className="ui fluid dropdown">
+                        <option value="">País</option>
+                        <option value="ZA">África do Sul</option>
+                        <option value="DE">Alemanha</option>
+                        <option value="AE">Emirados Árabes Unidos</option>
+                        <option value="AR">Argentina</option>
+                        <option value="DZ">Argélia</option>
+                        <option value="AU">Austrália</option>
+                        <option value="BR">Brasil</option>
+                        <option value="BE">Bélgica</option>
+                        <option value="CA">Canadá</option>
+                        <option value="KZ">Cazaquistão</option>
+                        <option value="CL">Chile</option>
+                        <option value="CN">China</option>
+                        <option value="CO">Colômbia</option>
+                        <option value="KR">Coreia do Sul</option>
+                        <option value="AE">Emirados Árabes Unidos</option>
+                        <option value="ES">Espanha</option>
+                        <option value="US">Estados Unidos</option>
+                        <option value="FR">França</option>
+                        <option value="IN">Índia</option>
+                        <option value="IT">Itália</option>
+                        <option value="MX">México</option>
+                        <option value="PT">Portugal</option>
+                        <option value="GB">Reino Unido</option>
+                        <option value="TR">Turquia</option>
+
+                        , Equador, Espanha, Estados Unidos, França, Gana, Itália, Japão, Malásia, Países Baixos, Peru, Polônia, Reino Unido, Rússia,[a] Singapura, Suécia, Tailândia, Turquia e Índia, além de 57 filiais[24] e distribuição em mais de 135 países.
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div className="buttons_profile_edit">
+                  {!editMode ? (
+                    <div className='edit_profile_Button_mobile'>
+                      <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
+                    </div>
+                  ) : (
+                    <div className='cancel_profile_Button_mobile'>
+                      <button onClick={dontChangeInfo} className="fluid ui button cancel">Cancelar</button>
+                    </div>
+                  )}
+                  {!editMode ? (
+                    <div>
+                    </div>
+                  ) : (
+                    <div className='conclusion_profile_button_mobile'>
+                      <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                    </div>
+                  )}
+                </div>
+              </form>
+              <div className='container_information_profile_edit_mobile'>
+                {editMode ? (
+                  <CiSquareAlert className='icon_information_profile_alert_mobile' />
+                ) : (
+                  <CiSquareAlert className='ico_information_profile_mobile' />
+                )}
+                <p>
+                  Para garantir a precisão e integridade das informações,
+                  pedimos que verifique cuidadosamente todos os dados antes de
+                  concluir qualquer edição em sua conta de e-commerce.
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === 4 ? (
+          <div className="column sections">
+            <div className="box_section_profile_mobile">
+              <h2 className="edit_section_title_profile_mobile">Avaliações</h2>
+              <div className='rating_container_profile_tablet'>
+                <RatedProducts />
+                <RatedProducts />
+                <RatedProducts />
+                <RatedProducts />
+                
+              </div>
+            </div>
+          </div>
+
+        ) : activeSection === 5 ? (
+          <div className="column sections">
+            <div className="box_edit_section_profile_mobile">
+              <h2 className="edit_section_title_profile_mobile">Acessibilidade</h2>
+              <div className='acessebility_containerscrowll_profile_mobile'>
+
+              <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h5>Alterador de Fonte</h5>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Pequena</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-2" type="checkbox" value="small" checked={selectedSize === 'small'}
+                        onChange={handleSizeChange}  />
+                        <label className="tgl-btn" for="cb1-2" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Média</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-3" type="checkbox" value="medium" checked={selectedSize === 'medium'}
+                        onChange={handleSizeChange} />
+                        <label className="tgl-btn" for="cb1-3" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Grande</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" value="large" checked={selectedSize === 'large'}
+                        onChange={handleSizeChange}/>
                         <label className="tgl-btn" for="cb1-5" />
                       </div>
                     </div>
                   </div>
-                  <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Muito grande</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-7" type="checkbox" value="veryLarge" checked={selectedSize === 'veryLarge'}
+                        onChange={handleSizeChange} />
+                        <label className="tgl-btn" for="cb1-7" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h5>Libras</h5>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-1" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-1" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                </div>
+
+                <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h5>Leitura de Texto</h5>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-6" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-6" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                </div>
+
+                <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h5>Modo Escuro</h5>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-9" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-9" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
               </div>
-
+              <button className="fluid ui button conclusion" onClick={applyFontSize} >Aplicar</button>
             </div>
           </div>
         ) : null}
+         
+      
       </div>
-      {/* <div className='box_edit_profile_title_similar'>
-        <FaStar color='var(--white)' size={40} />
-        <h1 className='titleSimilar'>Recomendados</h1>
+  
+      <div className='edit_profile_footer_margin'>
+       
       </div>
-      <ProductCarouselSmallSimilar />
-      <Footer /> */}
+      
+      <Footer />
     </>
   )
   const getViewToRender = () => {
     if (screenSize.width > 900) {
       return renderDesktopView();
-      // } else if (screenSize.width < 900 && screenSize.width > 500) {
-      //   return renderTabletView();
+      } else if (screenSize.width < 900 && screenSize.width > 500) {
+        return renderTabletView();
     } else {
       return renderMobileView();
     }
