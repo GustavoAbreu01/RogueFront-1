@@ -489,7 +489,7 @@ function Home() {
           <Link to='/category'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-                <img src={iconMotor} width={40} height={25} alt=''></img>
+                <img src={iconMotor} width={30} height={20} alt=''></img>
               </button>
               <h2 className='home_optional_category_title_mobile'>Motores</h2>
             </div>
