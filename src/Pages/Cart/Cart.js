@@ -52,7 +52,7 @@ function Cart() {
 
   const hasProductsInCart = () => {
     // Replace this with your logic to check if there are products in the cart
-    const productsInCart = 0; // Replace with the actual count of products in the cart
+    const productsInCart = 1; // Replace with the actual count of products in the cart
     return productsInCart > 0;
   };
 
@@ -193,7 +193,7 @@ function Cart() {
           </div>
         </div>
         <div className='box_info_total_cart_tablet'>
-          <div className='info_total_buy'>
+          <div className='info_total_buy_tablet'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
@@ -206,19 +206,13 @@ function Cart() {
             <div>
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='button_total_Cart'>
-              {!verify() ?
-                <Link to='/register'>
-                  <button className="fluid ui button final">Realizar Login</button>
-                </Link>
+            <div className='button_total_Cart_tablet'>
+            {!verify() ?
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
                 :
-                <Link to='/cart/payment'>
-                  <button className="fluid ui button final">Finalizar Compra</button>
-                </Link>
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
               }
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
@@ -283,11 +277,11 @@ function Cart() {
             </div>
             <div className='button_total_Cart_mobile'>
               {!verify() ?
-                  <button className="fluid ui button final">Realizar Login</button>
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
                 :
-                  <button className="fluid ui button final">Finalizar Compra</button>
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
               }
-                <button onClick={} className="fluid ui button blue basic cont">Continuar Comprando</button>
+                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
