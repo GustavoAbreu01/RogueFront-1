@@ -499,8 +499,8 @@ function EditProfile() {
               <h2 className="edit_section_title_profile_mobile">Endereço Registrado</h2>
               <form className="ui form edit">
                 <div className="field">
-                  <div className="two fields">
-                    <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
+                 
+                    <div className={editMode ? "field" : "twelve wide field disabled"}>
                       <label>Complemento</label>
                       <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
                     </div>
@@ -508,7 +508,7 @@ function EditProfile() {
                       <label>CEP</label>
                       <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
                     </div>
-                  </div>
+               
                 </div>
                 <div className="field">
                   <div className="fields">
@@ -517,7 +517,7 @@ function EditProfile() {
                       <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="Rua, Bairro, Número" />
                     </div>
                     <div className={editMode ? "four wide field" : "four wide field disabled"}>
-                      <label>Estado</label>
+                      <label className='state_edit_section_profile_mobile'>Estado</label>
                       <select className="ui fluid dropdown">
                         <option value="">Estado</option>
                         <option value="AC">Acre</option>
@@ -550,7 +550,7 @@ function EditProfile() {
                       </select>
                     </div>
                     <div className={editMode ? "four wide field" : "four wide field disabled"}>
-                      <label>País</label>
+                      <label className='state_edit_section_profile_mobile' >País</label>
                       <select className="ui fluid dropdown">
                         <option value="">País</option>
                         <option value="ZA">África do Sul</option>
@@ -631,10 +631,8 @@ function EditProfile() {
         ) : activeSection === 5 ? (
           <div className="column sections">
             <div className="box_edit_section_profile_mobile">
-
               <h2 className="edit_section_title_profile_mobile">Acessibilidade</h2>
               <div className='acessebility_containerscrowll_profile_mobile'>
-
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
