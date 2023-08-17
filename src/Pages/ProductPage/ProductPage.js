@@ -370,6 +370,7 @@ function ProductPage() {
             <Footer />
         </>
     )
+    
     const getViewToRender = () => {
         if (screenSize.width > 900) {
             return renderDesktopView();
