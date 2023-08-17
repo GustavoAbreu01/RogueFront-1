@@ -93,7 +93,7 @@
 }
 
 .edit_section_title_profile {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .ui.form.editOptions {
@@ -139,7 +139,7 @@
 }
 
 .rating_container_profile {
-    max-height: 25rem;
+    max-height: 27rem;
     width: 100%;
     overflow-y: scroll;
 }
@@ -171,7 +171,11 @@
     background-color: var(--white);
     width: 100%;
 }
+.fluid.ui.button.conclusion{
+    width: 90%;
+    margin: 0 auto;
 
+}
 .fluid.ui.button.cancel {
     background-color: var(--grey-secondary);
     color: var(--black);
@@ -337,6 +341,7 @@
     margin-top: 1rem;
     display: flex;
     padding: 1rem;
+    border: solid 0.05px var( --grey-senary);
     border-radius: 10px;
     background-color: var(--white);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -378,18 +383,43 @@
 .state_edit_section_profile_mobile{
     margin-top: 1.2rem !important;
 }
-/* 
+
+.rating_container_profile_mobile {
+    max-height: 35rem;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.box_edit_section_acessibility_mobile {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    background-color: var(--white);
+    width: 90%;
+    margin: 2rem auto 0;
+    border: solid 0.05px var( --grey-senary);
+    border-radius: 5px;
+}
+
 .acessebility_box_profile_mobile {
     display: flex;
+    padding: 1rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
    
 }
-.acessebility_profile_description_mobile{
-    margin-top: 1rem;
- 
+
+.apply_profile_button {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
 }
+
+
+.acessebility_profile_description_mobile {
+    padding: 1rem;
+}
+/*
 
 .acessebility_container_profile_mobile{
     margin: 4rem;
@@ -415,7 +445,7 @@
     width: 10rem;
 }
 
-.box_edit_section_profile_mobile {
+.box_edit_section_acessibility_mobile {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color: var(--white);
     width: 71rem;
@@ -481,11 +511,6 @@ overflow-y: scroll;
 
 
 
-.rating_container_profile_mobile {
-    max-height: 25rem;
-    width: 100%;
-    overflow-y: scroll;
-}
 
 .buttons_profile_edit_mobile {
     display: flex;
@@ -547,7 +572,7 @@ overflow-y: scroll;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
 }
-
+*/
 .checkbox-wrapper-6 .tgl {
     display: none;
   }
@@ -607,7 +632,7 @@ overflow-y: scroll;
   }
 
   .checkbox-wrapper-6 .tgl-light + .tgl-btn {
-    background: #f0f0f0;
+    background: var( --grey-senary);
     border-radius: 2em;
     padding: 2px;
     transition: all 0.4s ease;
@@ -619,4 +644,4 @@ overflow-y: scroll;
   }
   .checkbox-wrapper-6 .tgl-light:checked + .tgl-btn {
     background: var(--blue-secundary);
-  } */
+  } 

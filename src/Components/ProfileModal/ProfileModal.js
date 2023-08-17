@@ -64,6 +64,8 @@ export default function ProfileModal({ user }) {
     setOpenModalAcessibility(!openModalAcessibility);
   }
 
+
+  /////////
   const [selectedSize, setSelectedSize] = useState('');
 
   const handleSizeChange = (event) => {
@@ -80,7 +82,7 @@ export default function ProfileModal({ user }) {
     else if (selectedSize === 'veryLarge')
       document.body.style.fontSize = "18px";
   };
-
+//////
   const renderDesktopView = () => (
     <>
       <div>

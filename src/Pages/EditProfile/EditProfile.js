@@ -319,6 +319,8 @@ function EditProfile() {
                 <div className='rating_container_profile'>
                   <RatedProducts />
                   <RatedProducts />
+                  <RatedProducts />
+                <RatedProducts />
                 </div>
               </div>
             </div>
@@ -624,15 +626,72 @@ function EditProfile() {
               <div className='rating_container_profile_mobile'>
                 <RatedProducts />
                 <RatedProducts />
+                <RatedProducts />
+                <RatedProducts />
               </div>
             </div>
           </div>
 
         ) : activeSection === 5 ? (
           <div className="column sections">
-            <div className="box_edit_section_profile_mobile">
+            <div className="box_edit_section_acessibility_mobile">
               <h2 className="edit_section_title_profile_mobile">Acessibilidade</h2>
               <div className='acessebility_containerscrowll_profile_mobile'>
+
+              <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h5>Alterador de Fonte</h5>
+                    </div>
+                  </div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Pequena</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-2" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Média</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-3" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Grande</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
+                      <h6>Muito grande</h6>
+                    </div>
+                    <div className="acessebility_profile_switcher">
+                      <div className="checkbox-wrapper-6">
+                        <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
+                        <label className="tgl-btn" for="cb1-5" />
+                      </div>
+                    </div>
+                  </div>
+                  <button className="fluid ui button conclusion" >Aplicar</button>
+                </div>
+
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
@@ -649,7 +708,7 @@ function EditProfile() {
                 </div>
 
                 <div className='acessebility_container_profile_mobile'>
-                  <div className='acessebility_box_profile'>
+                  <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
                       <h5>Leitura de Texto</h5>
                     </div>
@@ -660,12 +719,12 @@ function EditProfile() {
                       </div>
                     </div>
                   </div>
-                  <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
 
-                <div className='acessebility_container_profile'>
-                  <div className='acessebility_box_profile'>
-                    <div className='acessebility_container_profile_title'>
+                <div className='acessebility_container_profile_mobile'>
+                  <div className='acessebility_box_profile_mobile'>
+                    <div className='acessebility_container_profile_title_mobile'>
                       <h5>Modo Escuro</h5>
                     </div>
                     <div className="acessebility_profile_switcher">
@@ -675,7 +734,7 @@ function EditProfile() {
                       </div>
                     </div>
                   </div>
-                  <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
+                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
               </div>
 
