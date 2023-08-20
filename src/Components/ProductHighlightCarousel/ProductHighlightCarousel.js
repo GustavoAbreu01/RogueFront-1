@@ -65,48 +65,48 @@ function ProductHighlightCarousel() {
     }, []);
 
     const renderDesktopView = () => (
-        < div className='container_product_hightlight_carousel_tablet' >
+        < div className='container_product_hightlight_carousel' >
             <Slider {...settings}>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
-                <div className='box_product_hightlight_carousel_tablet'>
+                <div className='box_product_hightlight_carousel'>
                     <ProductCardHighlight />
                 </div>
             </Slider>

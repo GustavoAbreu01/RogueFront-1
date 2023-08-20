@@ -272,7 +272,7 @@ function ProductPage() {
                     <div className="content product_page_tablet">
                         <div className='title_price_product_page_tablet'>
                             <h1 className="ui header product_page_tablet">Motor W30</h1>
-                            <h1 className="price_product_page_tablet">R$ 495<sup> 99</sup><sub className='subtext_product_page'>10x sem juros</sub></h1>
+                            <h1 className="price_product_page_tablet">R$ 495<sup> 99</sup><sub className='subtext_product_page_tablet'>10x sem juros</sub></h1>
                         </div>
                         <br />
                         <Rating className="ui rating product_page_tablet" maxRating={5} />
@@ -370,6 +370,7 @@ function ProductPage() {
             <Footer />
         </>
     )
+    
     const getViewToRender = () => {
         if (screenSize.width > 900) {
             return renderDesktopView();

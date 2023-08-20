@@ -38,6 +38,16 @@
   }
 }
 
+.font_decoration_none_blue {
+  text-decoration: none;
+  color: var(--blue-primary);
+}
+
+.font_decoration_none_white {
+  text-decoration: none;
+  color: var(--white);
+}
+
 :root {
   --blue-primary: #00579D;
   --blue-secundary: #2777B7;
