@@ -248,6 +248,12 @@ function Cart() {
             {hasProductsInCart() ? (
               <>
                 <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
               </>
             ) : (
               <div className='box_empty_cart_mobile'>

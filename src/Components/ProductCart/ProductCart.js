@@ -91,7 +91,7 @@ function ProductCart() {
               <Link to="/product">
                 <h2 className="product_cart_item_name">W12 Monofásico</h2>
                 <p className="product_cart_complement" >Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
-                <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext'>10x Sem juros</sub></h2>
+                <h2 id="itemPreco CardCart" className='product_cart_item_price_tablet'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_tablet'>10x Sem juros</sub></h2>
               </Link>
             </div>
             <div className='product_cart_buttons'>
@@ -120,23 +120,23 @@ function ProductCart() {
                 <Link to="/product">
                   <img src={motors} width="125" height="" />
                 </Link>
-              </div>
-              <div className="product_cart_informations">
+              </div> 
+              <div className="product_cart_informations_mobile">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name">W12 Monofásico</h2>
-                  <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext'>10x Sem juros</sub></h2>
+                  <h2 className="product_cart_item_name_mobile">W12 Monofásico</h2>
+                  <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_mobile'>10x Sem juros</sub></h2>
                 </Link>
               </div>
             </div>
             <div className='product_cart_buttons_mobile'>
-              <button className="ui icon button product_cart">
-                <i className="trash alternate icon product_cart"></i>
-              </button>
-              <div className="ui small buttons product_cart">
+            <div className="ui small buttons product_cart">
                 <button onClick={diminuirQuantidade} className="ui button active product_cart">-</button>
                 <div className='or product_cart' data-text={quantidade}></div>
                 <button onClick={aumentarQuantidade} className="ui button product_cart">+</button>
               </div>
+              <button className="ui icon button product_cart_mobile">
+                <i className="trash alternate icon product_cart_mobile"></i>
+              </button>
             </div>
           </div>
         </div>
