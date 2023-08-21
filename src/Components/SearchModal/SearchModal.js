@@ -14,6 +14,8 @@ function SearchBar() {
 
 
   function toggleModal() {
+    setSearchTerm('');
+    setShowSuggestions(false);
     setOpenModal(!openModal);
   }
 
