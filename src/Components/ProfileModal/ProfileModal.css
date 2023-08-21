@@ -256,6 +256,21 @@
     position: fixed;
     top: 25%;
     right: 0;
+    width: 40%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue-secundary);
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.modal_profile_acessibility_container_tablet {
+    position: fixed;
+    top: 25%;
+    right: 0;
     width: 80%;
     height: 45%;
     display: flex;

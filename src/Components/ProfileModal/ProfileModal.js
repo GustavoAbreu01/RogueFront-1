@@ -243,7 +243,7 @@ export default function ProfileModal({ user }) {
       {openModal && (
         <div className="modal_profile_content_container_tablet">
           {openModalAcessibility && (
-            <div data-aos="fade-left" className='modal_profile_acessibility_container'>
+            <div data-aos="fade-left" className='modal_profile_acessibility_container_tablet'>
               <div className='box_profile_acessibility'>
                 <div className='title_acessibility'>
                   <p>Tamanhos</p>

@@ -34,6 +34,11 @@ function EditProfile() {
     setEditMode(true);
   };
 
+  const ConfirmChangeInfo = (event) => {
+    event.preventDefault();
+    setEditMode(false);
+  };
+
   const dontChangeInfo = (event) => {
     event.preventDefault();
     setEditMode(false);
@@ -166,7 +171,7 @@ function EditProfile() {
                       </div>
                     ) : (
                       <div className='conclusion_profile_button'>
-                        <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                        <button onClick={ConfirmChangeInfo} className="fluid ui button conclusion">Concluir</button>
                       </div>
                     )}
                   </div>
@@ -309,7 +314,7 @@ function EditProfile() {
                       </div>
                     ) : (
                       <div className='conclusion_profile_button'>
-                        <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                        <button onClick={ConfirmChangeInfo} className="fluid ui button conclusion">Concluir</button>
                       </div>
                     )}
                   </div>
@@ -465,7 +470,7 @@ function EditProfile() {
                   </div>
                 ) : (
                   <div className='conclusion_profile_button_mobile'>
-                    <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                    <button onClick={ConfirmChangeInfo} className="fluid ui button conclusion">Concluir</button>
                   </div>
                 )}
               </div>
@@ -604,7 +609,7 @@ function EditProfile() {
                     </div>
                   ) : (
                     <div className='conclusion_profile_button_mobile'>
-                      <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                      <button onClick={ConfirmChangeInfo} className="fluid ui button conclusion">Concluir</button>
                     </div>
                   )}
                 </div>
@@ -817,7 +822,7 @@ function EditProfile() {
                   </div>
                 ) : (
                   <div className='conclusion_profile_button_mobile'>
-                    <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                    <button onClick={ConfirmChangeInfo} className="fluid ui button conclusion">Concluir</button>
                   </div>
                 )}
               </div>
@@ -956,7 +961,7 @@ function EditProfile() {
                     </div>
                   ) : (
                     <div className='conclusion_profile_button_mobile'>
-                      <button onClick={changeInfo} className="fluid ui button conclusion">Concluir</button>
+                      <button onClick={ConfirmChangeInfo} className="fluid ui button conclusion">Concluir</button>
                     </div>
                   )}
                 </div>
