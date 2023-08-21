@@ -2,21 +2,31 @@
 import React, { useEffect, useState } from 'react';
 import './SearchModal.css';
 
+
 //icons
 import { BiRightArrowAlt } from 'react-icons/bi';
-import { getValue } from '@testing-library/user-event/dist/utils';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [openModal, setOpenModal] = useState(false);
+  const [disableScroll, setDisableScroll] = useState(false);
 
+
+  useEffect(() => {
+    if (disableScroll) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [disableScroll]);
 
   function toggleModal() {
     setSearchTerm('');
     setShowSuggestions(false);
     setOpenModal(!openModal);
+    setDisableScroll(!disableScroll);
   }
 
   useEffect(() => {
