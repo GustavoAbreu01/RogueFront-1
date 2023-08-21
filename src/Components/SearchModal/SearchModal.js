@@ -112,15 +112,18 @@ function SearchBar() {
   )
 
   const renderMobileView = () => (
-    <div className="container_searchBar_mobile" onClick={toggleModal}>
+    <div className="container_searchBar_mobile" >
       {openModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <input type='text'></input>
+        <div className="modal_search">
+        <div className="modal-content_search">
+          <div className='div_inputs_search_modal'>
+            <input type='text' placeholder='Pesquisar...' className='input_modal_seacrh_mobile'></input>
+            <i className="search icon inputmobile_modal" ></i>
           </div>
         </div>
+      </div>
       )}
-      <i className="search icon inputmobile" ></i>
+      <i className="search icon inputmobile" onClick={toggleModal}></i>
 
       {showSuggestions && (
         <ul className="serarchBar_suggestions">

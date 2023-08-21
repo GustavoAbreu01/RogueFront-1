@@ -155,34 +155,43 @@
   font-size: 1.3rem;
 }
 
-.modal {
+.modal_search {
   display: block;
   position: fixed;
   z-index: 100;
   left: 0;
-  top: 3.69rem;
+  top: 3.65rem;
   width: 100%;
   height: 100%;
   background-color:white;
 }
 
-.modal-content {
+.modal-content_search {
   background-color: white;
-  margin: 15% auto;
+  width: 100%;
+  height: 100%;
   padding: 20px;
-  border: 1px solid #888;
-  width: 60%;
   position: relative;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+.input_modal_seacrh_mobile {
+  width: 100%!important;
 }
 
-.close:hover {
-  color: black;
+.div_inputs_search_modal {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search.icon.inputmobile_modal {
+  margin-right: 1rem;
+  font-size: 20px;
+  color: var(--blue-primary);
+  display: flex;
+  align-items: center;
 }
