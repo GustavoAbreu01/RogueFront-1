@@ -15,8 +15,8 @@
     background-color: var(--white);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    border-top-left-radius: 20%;
-    border-bottom-right-radius: 20%;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
     padding-bottom: 15%;
     height: 100%;
     width: 100%;
