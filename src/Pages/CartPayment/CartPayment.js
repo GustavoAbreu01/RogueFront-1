@@ -287,7 +287,7 @@ function CartPayment() {
           </div>
         </div>
       </div>
-      <div className='container_cart_payment'>
+      <div className='container_cart_payment_tablet'>
         <div className='box_cart_product_detail_payment_tablet'>
           <div className='box_cart_product_payment_tablet'>
             <div className='cart_payment_title'>

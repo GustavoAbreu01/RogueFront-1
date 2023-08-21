@@ -339,7 +339,7 @@ function EditProfile() {
                   <RatedProducts />
                   <RatedProducts />
                   <RatedProducts />
-                <RatedProducts />
+                  <RatedProducts />
                 </div>
               </div>
             </div>
@@ -365,7 +365,7 @@ function EditProfile() {
                     </div>
                     <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                   </div>
-
+                  <div className='divider'></div>
                   <div className='acessebility_container_profile' >
                     <div className='acessebility_box_profile'>
                       <div className='acessebility_container_profile_title' >
@@ -375,21 +375,6 @@ function EditProfile() {
                         <div className="checkbox-wrapper-6">
                           <input className="tgl tgl-light" id="cb1-6" type="checkbox" />
                           <label className="tgl-btn" for="cb1-6" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="acessebility_profile_description">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
-                  </div>
-
-                  <div className='acessebility_container_profile' >
-                    <div className='acessebility_box_profile'>
-                      <div className='acessebility_container_profile_title' >
-                        <h5>Modo Escuro</h5>
-                      </div>
-                      <div className="acessebility_profile_switcher">
-                        <div className="checkbox-wrapper-6">
-                          <input className="tgl tgl-light" id="cb1-5" type="checkbox" />
-                          <label className="tgl-btn" for="cb1-5" />
                         </div>
                       </div>
                     </div>
@@ -456,15 +441,15 @@ function EditProfile() {
                     <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Abreu" />
                   </div>
                 </div>
-                  <div className={editMode ? "field" : "field disabled"}>
-                    <label>Email Profissional</label>
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
-                  </div>
-                  <div className={editMode ? "field" : "field disabled"}>
-                    <label>CPF/CNPJ</label>
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
-                  </div>
+                <div className={editMode ? "field" : "field disabled"}>
+                  <label>Email Profissional</label>
+                  <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
                 </div>
+                <div className={editMode ? "field" : "field disabled"}>
+                  <label>CPF/CNPJ</label>
+                  <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
+                </div>
+              </div>
               <div className="buttons_profile_edit">
                 {!editMode ? (
                   <div className='edit_profile_Button_mobile'>
@@ -520,16 +505,16 @@ function EditProfile() {
               <h2 className="edit_section_title_profile_mobile">Endereço Registrado</h2>
               <form className="ui form edit">
                 <div className="field">
-                 
-                    <div className={editMode ? "field" : "twelve wide field disabled"}>
-                      <label>Complemento</label>
-                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
-                    </div>
-                    <div className={editMode ? "field" : "field disabled"}>
-                      <label>CEP</label>
-                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
-                    </div>
-               
+
+                  <div className={editMode ? "field" : "twelve wide field disabled"}>
+                    <label>Complemento</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
+                  </div>
+                  <div className={editMode ? "field" : "field disabled"}>
+                    <label>CEP</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
+                  </div>
+
                 </div>
                 <div className="field">
                   <div className="fields">
@@ -650,7 +635,7 @@ function EditProfile() {
                 <RatedProducts />
                 <RatedProducts />
                 <RatedProducts />
-                
+
               </div>
             </div>
           </div>
@@ -661,7 +646,7 @@ function EditProfile() {
               <h2 className="edit_section_title_profile_mobile">Acessibilidade</h2>
               <div className='acessebility_containerscrowll_profile_mobile'>
 
-              <div className='acessebility_container_profile_mobile'>
+                <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
                       <h5>Alterador de Fonte</h5>
@@ -675,7 +660,7 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-2" type="checkbox" value="small" checked={selectedSize === 'small'}
-                        onChange={handleSizeChange}  />
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-2" />
                       </div>
                     </div>
@@ -687,7 +672,7 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-3" type="checkbox" value="medium" checked={selectedSize === 'medium'}
-                        onChange={handleSizeChange} />
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-3" />
                       </div>
                     </div>
@@ -699,7 +684,7 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-5" type="checkbox" value="large" checked={selectedSize === 'large'}
-                        onChange={handleSizeChange}/>
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-5" />
                       </div>
                     </div>
@@ -711,13 +696,13 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-7" type="checkbox" value="veryLarge" checked={selectedSize === 'veryLarge'}
-                        onChange={handleSizeChange} />
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-7" />
                       </div>
                     </div>
                   </div>
                 </div>
-
+                <div className='divider'></div>
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
@@ -732,7 +717,7 @@ function EditProfile() {
                   </div>
                   <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
-
+                <div className='divider'></div>
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
@@ -747,34 +732,19 @@ function EditProfile() {
                   </div>
                   <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
-
-                <div className='acessebility_container_profile_mobile'>
-                  <div className='acessebility_box_profile_mobile'>
-                    <div className='acessebility_container_profile_title_mobile'>
-                      <h5>Modo Escuro</h5>
-                    </div>
-                    <div className="acessebility_profile_switcher">
-                      <div className="checkbox-wrapper-6">
-                        <input className="tgl tgl-light" id="cb1-9" type="checkbox" />
-                        <label className="tgl-btn" for="cb1-9" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
-                </div>
               </div>
               <button className="fluid ui button conclusion" onClick={applyFontSize} >Aplicar</button>
             </div>
           </div>
         ) : null}
-         
-      
+
+
       </div>
-  
+
       <div className='edit_profile_footer_margin'>
-       
+
       </div>
-      
+
       <Footer />
     </>
   )
@@ -823,15 +793,15 @@ function EditProfile() {
                     <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Abreu" />
                   </div>
                 </div>
-                  <div className={editMode ? "field" : "field disabled"}>
-                    <label>Email Profissional</label>
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
-                  </div>
-                  <div className={editMode ? "field" : "field disabled"}>
-                    <label>CPF/CNPJ</label>
-                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
-                  </div>
+                <div className={editMode ? "field" : "field disabled"}>
+                  <label>Email Profissional</label>
+                  <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
                 </div>
+                <div className={editMode ? "field" : "field disabled"}>
+                  <label>CPF/CNPJ</label>
+                  <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
+                </div>
+              </div>
               <div className="buttons_profile_edit">
                 {!editMode ? (
                   <div className='edit_profile_Button_mobile'>
@@ -887,16 +857,16 @@ function EditProfile() {
               <h2 className="edit_section_title_profile_mobile">Endereço Registrado</h2>
               <form className="ui form edit">
                 <div className="field">
-                 
-                    <div className={editMode ? "field" : "twelve wide field disabled"}>
-                      <label>Complemento</label>
-                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
-                    </div>
-                    <div className={editMode ? "field" : "field disabled"}>
-                      <label>CEP</label>
-                      <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
-                    </div>
-               
+
+                  <div className={editMode ? "field" : "twelve wide field disabled"}>
+                    <label>Complemento</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
+                  </div>
+                  <div className={editMode ? "field" : "field disabled"}>
+                    <label>CEP</label>
+                    <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
+                  </div>
+
                 </div>
                 <div className="field">
                   <div className="fields">
@@ -1014,7 +984,7 @@ function EditProfile() {
                 <RatedProducts />
                 <RatedProducts />
                 <RatedProducts />
-                
+
               </div>
             </div>
           </div>
@@ -1025,7 +995,7 @@ function EditProfile() {
               <h2 className="edit_section_title_profile_mobile">Acessibilidade</h2>
               <div className='acessebility_containerscrowll_profile_mobile'>
 
-              <div className='acessebility_container_profile_mobile'>
+                <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
                       <h5>Alterador de Fonte</h5>
@@ -1039,7 +1009,7 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-2" type="checkbox" value="small" checked={selectedSize === 'small'}
-                        onChange={handleSizeChange}  />
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-2" />
                       </div>
                     </div>
@@ -1051,7 +1021,7 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-3" type="checkbox" value="medium" checked={selectedSize === 'medium'}
-                        onChange={handleSizeChange} />
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-3" />
                       </div>
                     </div>
@@ -1063,7 +1033,7 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-5" type="checkbox" value="large" checked={selectedSize === 'large'}
-                        onChange={handleSizeChange}/>
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-5" />
                       </div>
                     </div>
@@ -1075,13 +1045,13 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-7" type="checkbox" value="veryLarge" checked={selectedSize === 'veryLarge'}
-                        onChange={handleSizeChange} />
+                          onChange={handleSizeChange} />
                         <label className="tgl-btn" for="cb1-7" />
                       </div>
                     </div>
                   </div>
                 </div>
-
+                <div className='divider'></div>
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
@@ -1096,7 +1066,7 @@ function EditProfile() {
                   </div>
                   <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
-
+                <div className='divider'></div>
                 <div className='acessebility_container_profile_mobile'>
                   <div className='acessebility_box_profile_mobile'>
                     <div className='acessebility_container_profile_title_mobile'>
@@ -1111,42 +1081,27 @@ function EditProfile() {
                   </div>
                   <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
                 </div>
-
-                <div className='acessebility_container_profile_mobile'>
-                  <div className='acessebility_box_profile_mobile'>
-                    <div className='acessebility_container_profile_title_mobile'>
-                      <h5>Modo Escuro</h5>
-                    </div>
-                    <div className="acessebility_profile_switcher">
-                      <div className="checkbox-wrapper-6">
-                        <input className="tgl tgl-light" id="cb1-9" type="checkbox" />
-                        <label className="tgl-btn" for="cb1-9" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="acessebility_profile_description_mobile">Auxilio de todo o site com um assistente de libras. Clique na palavra que deseja transcrever para ver seu signficado em libras.</div>
-                </div>
               </div>
               <button className="fluid ui button conclusion" onClick={applyFontSize} >Aplicar</button>
             </div>
           </div>
         ) : null}
-         
-      
+
+
       </div>
-  
+
       <div className='edit_profile_footer_margin'>
-       
+
       </div>
-      
+
       <Footer />
     </>
   )
   const getViewToRender = () => {
     if (screenSize.width > 900) {
       return renderDesktopView();
-      } else if (screenSize.width < 900 && screenSize.width > 500) {
-        return renderTabletView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
     } else {
       return renderMobileView();
     }

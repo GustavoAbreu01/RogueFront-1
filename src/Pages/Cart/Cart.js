@@ -51,8 +51,7 @@ function Cart() {
   }, []);
 
   const hasProductsInCart = () => {
-    // Replace this with your logic to check if there are products in the cart
-    const productsInCart = 0; // Replace with the actual count of products in the cart
+    const productsInCart = 0;
     return productsInCart > 0;
   };
 
