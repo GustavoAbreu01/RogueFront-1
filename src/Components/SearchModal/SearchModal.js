@@ -2,10 +2,32 @@
 import React, { useEffect, useState } from 'react';
 import './SearchModal.css';
 
+
+//icons
+import { BiRightArrowAlt } from 'react-icons/bi';
+
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [openModal, setOpenModal] = useState(false);
+  const [disableScroll, setDisableScroll] = useState(false);
+
+
+  useEffect(() => {
+    if (disableScroll) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [disableScroll]);
+
+  function toggleModal() {
+    setSearchTerm('');
+    setShowSuggestions(false);
+    setOpenModal(!openModal);
+    setDisableScroll(!disableScroll);
+  }
 
   useEffect(() => {
     function handleResize() {
@@ -45,6 +67,33 @@ function SearchBar() {
     'CSS',
     'Node.js',
     'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+    'Express.js',
+
   ];
 
   const renderDesktopView = () => (
@@ -104,22 +153,40 @@ function SearchBar() {
       )}
     </div>
   )
-
   const renderMobileView = () => (
-    <div className="container_searchBar_mobile">
-
-      <i className="search icon inputmobile"></i>
+    <div className="container_searchBar_mobile" >
+      {openModal && (
+        <div className="modal_search">
+          <div className="modal-content_search">
+            <div className='div_inputs_search_modal'>
+              <input type='text' placeholder='Pesquisar...' className='input_modal_seacrh_mobile'
+                value={searchTerm}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
+                id="input_search"
+              ></input>
+              <i className="search icon inputmobile_modal" ></i>
+            </div>
+          </div>
+        </div>
+      )}
+      {!openModal ? (
+        <i className="search icon inputmobile" onClick={toggleModal} ></i>
+      ) : (
+        <i className="close icon inputmobile" onClick={toggleModal} ></i>
+      )}
       {showSuggestions && (
-        <ul className="serarchBar_suggestions">
+        <ul className="serarchBar_suggestions_mobile">
           {suggestions
             .filter((suggestion) =>
               suggestion.toLowerCase().includes(searchTerm.toLowerCase())
-            )
+            ).slice(0, 10)
             .map((suggestion, index) => (
-              <li
+              <li className='li_search_mobile'
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
               >
+                <BiRightArrowAlt className='arrow_search_mobile' />
                 {suggestion}
               </li>
             ))}
