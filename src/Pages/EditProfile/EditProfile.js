@@ -640,9 +640,12 @@ function EditProfile() {
           </div>
         ) : activeSection === 4 ? (
           <div className="column sections">
-            <div className="box_section_profile_mobile">
+            <div className="box_section_rating_mobile">
               <h2 className="edit_section_title_profile_mobile">Avaliações</h2>
               <div className='rating_container_profile_mobile'>
+                <RatedProducts />
+                <RatedProducts />
+                <RatedProducts />
                 <RatedProducts />
                 <RatedProducts />
                 <RatedProducts />

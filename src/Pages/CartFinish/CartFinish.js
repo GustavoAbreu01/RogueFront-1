@@ -193,8 +193,8 @@ function CartFinish() {
           </div>
         </div>
       </div>
-      <div className='home_announcements_products_tablet' data-aos="fade-up" >
-        <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementThree} />
+      <div className='home_announcements_products_mobile' data-aos="fade-up" >
+        <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementThree} />
       </div>
       <Footer />
     </>

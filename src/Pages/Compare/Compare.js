@@ -9,6 +9,7 @@ import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
+import NotFound from '../NotFound/NotFound';
 
 //Importando as imagens
 import motor from "../../assets/img/motor.png"
@@ -21,6 +22,18 @@ import { FaStar } from 'react-icons/fa'
 
 function Compare() {
   const [productsCompared, setItems] = useState([]);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const productComparedList = JSON.parse(localStorage.getItem('productsCompared'));
@@ -31,6 +44,14 @@ function Compare() {
 
   function verify() {
     if (productsCompared.length === 3) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  function verifyTablet() {
+    if (productsCompared.length === 2) {
       return true
     } else {
       return false
@@ -70,7 +91,7 @@ function Compare() {
     console.log(newProductsCompared)
   }
 
-  return (
+  const renderDesktopView = () => (
     <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_compare'>
         <div className='box_title_similar_compare'>
@@ -95,6 +116,34 @@ function Compare() {
       <Footer />
     </>
   )
+
+  const renderTabletView = () => (
+    <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='container_compare'>
+        <div className='box_title_similar_compare'>
+          <FaArrowRightArrowLeft color='var(--white)' size={40} />
+          <h1 className='title_similar' >Comparação de Produtos</h1>
+        </div>
+        <div className='products'>
+          <CardCompare />
+          {!verifyTablet() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
+            <IoMdAddCircle size={'5rem'} />
+          </div>}
+        </div>
+      </div>
+      <Footer />
+    </>
+  )
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    }
+  }
+
+  return <>{getViewToRender()}</>;
+
 }
 
 export default Compare

@@ -69,9 +69,10 @@
     display: flex;
     gap: 1rem;
     flex-direction: row;
+    margin: 2rem auto 0;
     align-items: center;
     background-color: var(--white);
-    width: 28rem;
+    width: 90%;
     display: flex;
     border: solid 0.05px var( --grey-senary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
