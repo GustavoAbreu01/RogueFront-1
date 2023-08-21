@@ -10,6 +10,11 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
 import NotFound from '../NotFound/NotFound';
+import weggner from '../../assets/img/weggnerSemiAcord.png';
+
+
+import { Link } from 'react-router-dom'
+
 
 //Importando as imagens
 import motor from "../../assets/img/motor.png"
@@ -18,10 +23,11 @@ import motor from "../../assets/img/motor.png"
 import { IoMdAddCircle } from 'react-icons/io'
 import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 import { FaStar } from 'react-icons/fa'
+import { BsArrowLeftShort } from 'react-icons/bs'
 
 
 function Compare() {
-  const [productsCompared, setItems] = useState([]);
+  const [productsInCompare, setItems] = useState([]);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -36,14 +42,14 @@ function Compare() {
   }, []);
 
   useEffect(() => {
-    const productComparedList = JSON.parse(localStorage.getItem('productsCompared'));
+    const productComparedList = JSON.parse(localStorage.getItem('productsInCompare'));
     if (productComparedList) {
       setItems(productComparedList);
     }
   }, []);
 
   function verify() {
-    if (productsCompared.length === 3) {
+    if (productsInCompare.length === 3) {
       return true
     } else {
       return false
@@ -51,7 +57,7 @@ function Compare() {
   }
 
   function verifyTablet() {
-    if (productsCompared.length === 2) {
+    if (productsInCompare.length === 2) {
       return true
     } else {
       return false
@@ -66,6 +72,36 @@ function Compare() {
       return false
     }
   }
+
+  if(productsInCompare.length === 0){
+    return(
+      <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      <div className='container_compare'>
+        <div className='box_title_similar_compare'>
+          <FaArrowRightArrowLeft color='var(--white)' size={40} />
+          <h1 className='title_similar' >Comparação de Produtos</h1>
+        </div>
+        <img src={weggner} alt='' className="no_products_saved_img"></img>
+        <div className='not_saved_text'>
+          <h5>Ainda não há nenhum produto salvo...</h5>
+          <div className='back_to_home_not_saved'>
+            <BsArrowLeftShort size={15} />
+            <Link to='/'> <p>Voltar para a Home</p> </Link>
+          </div>
+
+        </div>
+        <div className='box_title_similar_recommended'>
+          <FaStar color='var(--white)' size={40} />
+          <h1 className='title_similar' >Produtos Recomendados</h1>
+        </div>
+        <div className='box_carousel_similar_recommended'>
+          <ProductCarouselSmallSimilar />
+        </div>
+      </div>
+      <Footer />
+      </>
+    )
+}
 
   function addMoreProducts() {
     const product =
@@ -85,9 +121,9 @@ function Compare() {
       description11: 'Cor',
       description12: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
     }
-    const newProductsCompared = [...productsCompared, product];
+    const newProductsCompared = [...productsInCompare, product];
     setItems(newProductsCompared);
-    localStorage.setItem('productsCompared', JSON.stringify(newProductsCompared));
+    localStorage.setItem('productsInCompare', JSON.stringify(newProductsCompared));
     console.log(newProductsCompared)
   }
 
