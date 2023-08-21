@@ -61,7 +61,6 @@ function Salvos() {
           </div>
 
         </div>
-        {/* <img src={weggner} alt="weggner" className="no_products_saved_img" /> */}
       </div>
 
     </div>

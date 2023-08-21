@@ -23,7 +23,7 @@ import { BsArrowLeftShort } from 'react-icons/bs';
 
 
 function Cart() {
-
+  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   var valor = 1100.00;
@@ -51,8 +51,11 @@ function Cart() {
   }, []);
 
   const hasProductsInCart = () => {
-    const productsInCart = 0;
-    return productsInCart > 0;
+   if(productsInCart.length === 0){
+    return false;
+   }else{
+    return true;
+   }
   };
 
   const renderDesktopView = () => (
@@ -93,13 +96,11 @@ function Cart() {
             </div>
             {hasProductsInCart() ? (
               <>
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
+                {productsInCart.map((item, index) => (
+            <div key={index}>
+              <ProductCart item={item} />
+            </div>
+          ))}
               </>
             ) : (
               <div className='box_empty_cart'>
