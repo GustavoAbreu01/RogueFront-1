@@ -25,6 +25,9 @@ function ProductCardNew(product) {
   }, []);
 
   const AddProductInCart = () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    productsInCart.push(product);
+    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -91,7 +94,7 @@ function ProductCardNew(product) {
         <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_new">
           <i className="bookmark icon product_card_new"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_new">
+        <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_new">
           <i className="cart plus icon product_card_new"></i>
         </button>
       </div>
@@ -130,7 +133,7 @@ function ProductCardNew(product) {
         <button onClick={() => AddProductInSave(product)}className="big ui icon button product_card_new">
           <i className="bookmark icon product_card_new"></i>
         </button>
-        <button onClick={AddProductInCart} className="big ui icon button product_card_new">
+        <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_new">
           <i className="cart plus icon product_card_new"></i>
         </button>
       </div>
@@ -165,10 +168,10 @@ function ProductCardNew(product) {
         </button>
       </div>
       <div className='container_product_card_new_action_icon_mobile'>
-        <button onClick={AddProductInSave} className="mini ui icon button product_card_new_mobile">
+        <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_new_mobile">
           <i className="bookmark icon product_card_new"></i>
         </button>
-        <button onClick={AddProductInCart} className="mini ui icon button product_card_new">
+        <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_new">
           <i className="cart plus icon product_card_new"></i>
         </button>
       </div>

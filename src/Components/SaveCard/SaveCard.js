@@ -10,11 +10,14 @@ import Swal from 'sweetalert2';
 import motors from "../../assets/img/motores.png"
 
 
-function SaveCard({ item }) {
+function SaveCard({ item }, product) {
 
     const [isOpen, setIsOpen] = useState(false);
 
     const AddProductInCart = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
             title: 'Produto adicionado a carrinho!',
             icon: 'success',
@@ -89,7 +92,7 @@ function SaveCard({ item }) {
                             <i className="trash alternate icon save_card" ></i>
                         </button>
 
-                        <button onClick={AddProductInCart} className="ui blue icon button save_card">
+                        <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card">
                             <i className="cart plus icon save_card"></i>
                         </button>
                     </div>
@@ -122,7 +125,7 @@ function SaveCard({ item }) {
                         onClick={() => deleteItens(item)}>
                         <i className="trash alternate icon save_card" ></i>
                     </button>
-                    <button onClick={AddProductInCart} className="ui blue icon button save_card_mobile">
+                    <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card_mobile">
                         <i className="cart plus icon save_card_mobile"></i>
                     </button>
                 </div>

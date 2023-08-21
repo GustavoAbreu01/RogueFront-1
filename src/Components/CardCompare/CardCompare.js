@@ -33,6 +33,9 @@ function CardCompare(product) {
     let productsInCompare = JSON.parse(localStorage.getItem("productsInCompare"))
 
     const AddProductInCart = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
             title: 'Produto adicionado a carrinho!',
             icon: 'success',
@@ -74,7 +77,6 @@ function CardCompare(product) {
         }
     }
 
-    //index
     const deleteItens = (item) => {
         const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare'));
         const index = productsInCompare.findIndex(product => product.id === item.id);
@@ -98,7 +100,7 @@ function CardCompare(product) {
                                             <i className="info alternate icon "></i>
                                         </button>
                                     </Link>
-                                    <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+                                    <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_hightlight">
                                         <i className="cart plus icon product_card_hightlight"></i>
                                     </button>
                                     <div className='card_compare_delete_button'>
@@ -191,7 +193,7 @@ function CardCompare(product) {
                                             <i className="info alternate icon "></i>
                                         </button>
                                     </Link>
-                                    <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+                                    <button onClick={() => AddProductInCart(product)}  className="ui icon button product_card_hightlight">
                                         <i className="cart plus icon product_card_hightlight"></i>
                                     </button>
                                     <div className='card_compare_delete_button'>
