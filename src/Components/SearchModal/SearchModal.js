@@ -6,6 +6,12 @@ function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [openModal, setOpenModal] = useState(false);
+
+
+  function toggleModal() {
+    setOpenModal(!openModal);
+  }
 
   useEffect(() => {
     function handleResize() {
@@ -106,9 +112,16 @@ function SearchBar() {
   )
 
   const renderMobileView = () => (
-    <div className="container_searchBar_mobile">
+    <div className="container_searchBar_mobile" onClick={toggleModal}>
+      {openModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <input type='text'></input>
+          </div>
+        </div>
+      )}
+      <i className="search icon inputmobile" ></i>
 
-      <i className="search icon inputmobile"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
           {suggestions
