@@ -115,18 +115,20 @@ function SearchBar() {
     <div className="container_searchBar_mobile" >
       {openModal && (
         <div className="modal_search">
-        <div className="modal-content_search">
-          <div className='div_inputs_search_modal'>
-            <input type='text' placeholder='Pesquisar...' className='input_modal_seacrh_mobile'></input>
-            <i className="search icon inputmobile_modal" ></i>
+          <div className="modal-content_search">
+            <div className='div_inputs_search_modal'>
+              <input type='text' placeholder='Pesquisar...' className='input_modal_seacrh_mobile'
+                value={searchTerm}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}></input>
+              <i className="search icon inputmobile_modal" ></i>
+            </div>
           </div>
         </div>
-      </div>
       )}
       <i className="search icon inputmobile" onClick={toggleModal}></i>
-
       {showSuggestions && (
-        <ul className="serarchBar_suggestions">
+        <ul className="serarchBar_suggestions_mobile">
           {suggestions
             .filter((suggestion) =>
               suggestion.toLowerCase().includes(searchTerm.toLowerCase())
