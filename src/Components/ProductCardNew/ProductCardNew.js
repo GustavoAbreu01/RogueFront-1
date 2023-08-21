@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardNew() {
+function ProductCardNew(product) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -51,6 +51,9 @@ function ProductCardNew() {
   }
 
   const AddProductInSave = () => {
+    const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
+    savedProducts.push(product);
+    localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
     Swal.fire({
       title: 'Produto adicionado a lista de salvos!',
       icon: 'success',
@@ -85,7 +88,7 @@ function ProductCardNew() {
         </button>
       </div>
       <div className='container_product_card_new_action_icon'>
-        <button onClick={AddProductInSave} className="ui icon button product_card_new">
+        <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_new">
           <i className="bookmark icon product_card_new"></i>
         </button>
         <button onClick={AddProductInCart} className="ui icon button product_card_new">
@@ -124,7 +127,7 @@ function ProductCardNew() {
         </button>
       </div>
       <div className='container_product_card_new_action_icon_tablet'>
-        <button onClick={AddProductInSave} className="big ui icon button product_card_new">
+        <button onClick={() => AddProductInSave(product)}className="big ui icon button product_card_new">
           <i className="bookmark icon product_card_new"></i>
         </button>
         <button onClick={AddProductInCart} className="big ui icon button product_card_new">
