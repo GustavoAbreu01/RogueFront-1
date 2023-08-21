@@ -82,7 +82,7 @@ export default function ProfileModal({ user }) {
     else if (selectedSize === 'veryLarge')
       document.body.style.fontSize = "18px";
   };
-//////
+  //////
   const renderDesktopView = () => (
     <>
       <div>
@@ -485,23 +485,6 @@ export default function ProfileModal({ user }) {
                   </Link>
                   <div className='text_profile_container'>
                     <Link to='/'><p className='text_profile_opt'>Sair</p></Link>
-                  </div>
-                </div>
-              </div>
-              <div className='profile_footer'>
-                <div className='profile_logo'>
-                  <img src={logoDes} alt='logoWeg' className='logo_weg'></img>
-                </div>
-                <div className='base_footer'>
-                  <div className='profile_footer_icons'>
-                    <i className="youtube circle icon profile"></i>
-                    <i className="spotify circle icon profile"></i>
-                    <i className="linkedin circle icon profile"></i>
-                    <i className="skype circle icon profile"></i>
-                    <i className="envelope circle icon profile"></i>
-                  </div>
-                  <div>
-                    <p className='text_profile_footer'>Versão 1.0.2</p>
                   </div>
                 </div>
               </div>

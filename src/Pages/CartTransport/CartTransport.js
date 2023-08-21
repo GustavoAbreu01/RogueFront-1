@@ -215,12 +215,8 @@ function CartTransport() {
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
             <div className='button_total_Cart'>
-              <Link to='/cart/confirm'>
-                <button className="fluid ui button final">Finalizar Compra</button>
-              </Link>
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+            <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
@@ -385,7 +381,7 @@ function CartTransport() {
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Finalizar Compra</Link></button>
+            <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
@@ -533,7 +529,7 @@ function CartTransport() {
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
             <div className='button_total_Cart'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Finalizar Compra</Link></button>
+            <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>

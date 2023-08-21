@@ -128,18 +128,16 @@ function Cart() {
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
             <div className='button_total_Cart'>
-              {!verify() ?
-                <Link to='/register'>
-                  <button className="fluid ui button final">Realizar Login</button>
-                </Link>
-                :
-                <Link to='/cart/payment'>
-                  <button className="fluid ui button final">Finalizar Compra</button>
-                </Link>
-              }
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+              {!verify() ? (
+                <button className="fluid ui button final"><Link to='/register'>Realizar Login</Link></button>
+              ) : (
+                !hasProductsInCart() ? (
+                  <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
+                ) : (
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/payment'>Finalizar Compra</Link></button>
+                )
+              )}
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to='/'>Continuar Comprando</Link></button>
             </div>
           </div>
           <div className='box_cart_info_recommend'>
@@ -222,12 +220,16 @@ function Cart() {
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
-            {!verify() ?
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
-                :
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
-              }
-                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
+              {!verify() ? (
+                <button className="fluid ui button final"><Link to='/register'>Realizar Login</Link></button>
+              ) : (
+                !hasProductsInCart() ? (
+                  <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
+                ) : (
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/payment'>Finalizar Compra</Link></button>
+                )
+              )}
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
@@ -297,12 +299,16 @@ function Cart() {
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
-              {!verify() ?
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
-                :
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
-              }
-                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
+              {!verify() ? (
+                <button className="fluid ui button final"><Link to='/register'>Realizar Login</Link></button>
+              ) : (
+                !hasProductsInCart() ? (
+                  <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
+                ) : (
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/payment'>Finalizar Compra</Link></button>
+                )
+              )}
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
