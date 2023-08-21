@@ -25,6 +25,9 @@ function ProductCardAccessed(product) {
   }, []);
 
   const AddProductInCart = () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    productsInCart.push(product);
+    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -90,7 +93,7 @@ function ProductCardAccessed(product) {
         <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_accessed">
           <i className="bookmark icon product_card_accessed"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_accessed">
+        <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_accessed">
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
@@ -128,7 +131,7 @@ function ProductCardAccessed(product) {
         <button  onClick={() => AddProductInSave(product)} className="big ui icon button product_card_accessed">
           <i className="bookmark icon product_card_accessed"></i>
         </button>
-        <button onClick={AddProductInCart} className="big ui icon button product_card_accessed">
+        <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_accessed">
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
@@ -166,7 +169,7 @@ function ProductCardAccessed(product) {
         <button  onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_accessed_mobile">
           <i className="bookmark icon product_card_accessed" ></i>
         </button>
-        <button onClick={AddProductInCart} className="mini ui icon button product_card_accessed">
+        <button onClick={() => AddProductInCart(product)}  className="mini ui icon button product_card_accessed">
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>

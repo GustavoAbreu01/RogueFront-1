@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import motors from "../../assets/img/motores.png"
 
 
-function ProductCart() {
+function ProductCart(item) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [quantidade, setQuantidade] = React.useState(1);
   const [valor, setValor] = React.useState(1);
@@ -44,6 +44,17 @@ function ProductCart() {
     }
   }, [quantidade]);
 
+  const deleteItens = (item) => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart'));
+    const index = productsInCart.findIndex(product => product.id === item.id);
+    if (index !== -1) {
+      productsInCart.splice(index, 1);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+        // You might also want to update the component state to reflect the change
+    }
+    window.location.reload();
+};
+
   const renderDesktopView = () => (
     <>
       <div className="container_card_cart">
@@ -62,7 +73,7 @@ function ProductCart() {
               </Link>
             </div>
             <div className='product_cart_buttons'>
-              <button className="ui icon button product_cart">
+              <button onClick={() => deleteItens(item)} className="ui icon button product_cart">
                 <i className="trash alternate icon product_cart"></i>
               </button>
               <div className="ui small buttons product_cart">

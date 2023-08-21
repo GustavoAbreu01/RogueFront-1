@@ -24,6 +24,9 @@ function ProductCardHighlight(product) {
   }, []);
 
   const AddProductInCart = () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    productsInCart.push(product);
+    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -89,7 +92,7 @@ function ProductCardHighlight(product) {
         <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_hightlight">
           <i className="bookmark icon product_card_hightlight"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+        <button onClick={() => AddProductInSave(product)}  className="ui icon button product_card_hightlight">
           <i className="cart plus icon product_card_hightlight"></i>
         </button>
       </div>
@@ -127,7 +130,7 @@ function ProductCardHighlight(product) {
         <button onClick={() => AddProductInSave(product)} className="big ui icon button product_card_hightlight">
           <i className="bookmark icon product_card_hightlight"></i>
         </button>
-        <button onClick={AddProductInCart} className="big ui icon button product_card_hightlight">
+        <button  onClick={() => AddProductInCart(product)} className="big ui icon button product_card_hightlight">
           <i className="cart plus icon product_card_hightlight"></i>
         </button>
       </div>
@@ -162,10 +165,10 @@ function ProductCardHighlight(product) {
         </button>
       </div>
       <div className='container_product_card_hightlight_action_icon_mobile'>
-        <button onClick={AddProductInSave} className="mini ui icon button product_card_hightlight_mobile">
+        <button  onClick={() => AddProductInSave(product)}  className="mini ui icon button product_card_hightlight_mobile">
           <i className="bookmark icon product_card_hightlight"></i>
         </button>
-        <button onClick={AddProductInCart} className="mini ui icon button product_card_hightlight">
+        <button  onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_hightlight">
           <i className="cart plus icon product_card_hightlight"></i>
         </button>
       </div>
