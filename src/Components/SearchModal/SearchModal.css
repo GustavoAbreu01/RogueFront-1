@@ -100,8 +100,8 @@
 .container_searchBar_mobile .serarchBar_suggestions_mobile {
   position: absolute;
   top: 14%;
-  left: 9%;
-  width: 10rem;
+  left: 8%;
+  width: 82%;
   font-size: 14px;
   overflow-y: auto;
   padding: 0.5rem;
