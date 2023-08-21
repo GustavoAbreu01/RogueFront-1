@@ -96,7 +96,7 @@
 
 .yours .modalContent_message {
     margin-right: 25%;
-    background-color: #eee;
+    background-color: var(--grey-septenary);
     position: relative;
 }
 
@@ -108,7 +108,7 @@
     left: -7px;
     height: 20px;
     width: 20px;
-    background: #eee;
+    background-color: var(--grey-septenary);
     border-bottom-right-radius: 15px;
 }
 
@@ -165,4 +165,180 @@
     position: absolute;
     bottom: 3%;
     width: 100%;
+}
+
+/* 
+//////MOBILE/////// */
+
+.box_modalContent_wegnerModal_mobile {
+    position: fixed;
+    float: right;
+    bottom: 1rem;
+    right: 8rem;
+    width: 1rem;
+    z-index: 99;
+
+}
+
+.box_modalContent_textWeggnerModal_mobile {
+    text-align: center;
+    color: var(--blue-primary);
+}
+
+.modalContent_wegner_mobile {
+    z-index: 99;
+    background-color: var(--blue-primary);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.modalContent_wegner_mobile:hover {
+    background-color: var(--blue-secundary);
+}
+
+.container_modalContent_mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    z-index: 10;
+    position: fixed;
+    float: right;
+    bottom: 3rem;
+    right: 5rem;
+    width: 55%; 
+    /* //mexer aqui */
+    height: 35%;
+    background-color: var(--white);
+    border: solid 0.01rem rgba(0, 0, 0, 0.151);
+    border-radius: 20px;
+    -webkit-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(0, 0, 0, 0.77);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* The typewriter cursor effect */
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.modalContent_chat_mobile {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.modalContent_messages_mobile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.modalContent_message_mobile {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.yours {
+    align-items: flex-start;
+}
+
+.yours .modalContent_message_mobile {
+    margin-right: 25%;
+    background-color: var(--grey-quaternary);
+    position: relative;
+}
+
+.yours .modalContent_message_mobile .last:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -7px;
+    height: 20px;
+    width: 20px;
+    background: #eee;
+    border-bottom-right-radius: 15px;
+}
+
+.yours .modalContent_message_mobile .last:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    background: white;
+    border-bottom-right-radius: 10px;
+}
+
+.mine {
+    align-items: flex-end;
+}
+
+.mine .modalContent_message {
+    color: white;
+    margin-left: 25%;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+.mine .modalContent_message .last:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: -8px;
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    border-bottom-left-radius: 15px;
+}
+
+.mine .modalContent_message .last:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: -10px;
+    width: 10px;
+    height: 20px;
+    background: white;
+    border-bottom-left-radius: 10px;
+}
+
+.box_inputWeggnerModal_mobile {
+    position: absolute;
+    bottom: 3%;
+    width: 86%;
+}
+
+.text_weggner_modal_mobile{
+font-size: 11px;
 }
