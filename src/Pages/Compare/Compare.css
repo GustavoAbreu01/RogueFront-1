@@ -53,3 +53,12 @@
 .title_similar{
     font-size: 30px;
 }
+
+/* -------------version Tablet------------- */
+
+.add_product_icon {
+    cursor: pointer;
+    position: absolute;
+    right: 25%;
+    top: 40%;
+}

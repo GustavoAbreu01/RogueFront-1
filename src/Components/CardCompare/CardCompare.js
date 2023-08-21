@@ -162,7 +162,7 @@ function CardCompare() {
 
     const renderTabletView = () => (
         <>
-            <div className='productsCompared'>
+            <div className='productsCompared_tablet'>
                 {productsCompared.map((productCompared, index) => (
                     <div className='container_card_compare_details'>
                         <div className='container_card_compare_compared'>

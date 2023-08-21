@@ -130,13 +130,6 @@ function Compare() {
             <IoMdAddCircle size={'5rem'} />
           </div>}
         </div>
-        <div className='box_title_similar_recommended'>
-          <FaStar color='var(--white)' size={40} />
-          <h1 className='title_similar' >Produtos Recomendados</h1>
-        </div>
-        <div className='box_carousel_similar_recommended'>
-          <ProductCarouselSmallSimilar />
-        </div>
       </div>
       <Footer />
     </>
@@ -146,7 +139,7 @@ function Compare() {
       return renderDesktopView();
     } else if (screenSize.width < 900 && screenSize.width > 500) {
       return renderTabletView();
-    } 
+    }
   }
 
   return <>{getViewToRender()}</>;
