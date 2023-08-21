@@ -425,17 +425,6 @@ export default function ProfileModal({ user }) {
                 <p className='cpf_profile'>076.137.949.54</p>
               </div>
               <div className='profile_opt_mobile'>
-
-                <div className='profile_item'>
-                  <Link to='/quiz'>
-                    <button className="ui icon button shopping profile">
-                      <i className="exchange icon profile"></i>
-                    </button>
-                  </Link>
-                  <div className='text_profile_container'>
-                    <Link to='/compare'><p className='text_profile_opt'>Comparar Produtos</p></Link>
-                  </div>
-                </div>
                 <div className='profile_item'>
                   <Link to='/quiz'>
                     <button className="ui icon button shopping profile">

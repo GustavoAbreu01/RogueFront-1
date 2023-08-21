@@ -121,3 +121,10 @@
 .box_card_compare_description_primary {
     text-align: center;
 }
+
+.card_compare_arrow_second_tablet {
+    position: absolute;
+    color: var(--blue-primary);
+    margin-top: 40%;
+    margin-left: 10rem;
+}
