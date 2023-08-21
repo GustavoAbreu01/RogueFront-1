@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import './SearchModal.css';
 
+//icons
+import { BiRightArrowAlt } from 'react-icons/bi';
+import { getValue } from '@testing-library/user-event/dist/utils';
+
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -41,6 +45,7 @@ function SearchBar() {
       window.location.href = `/search?query=${encodeURIComponent(searchTerm)}`;
     }
   };
+
 
   const suggestions = [
     'React',
@@ -120,13 +125,15 @@ function SearchBar() {
               <input type='text' placeholder='Pesquisar...' className='input_modal_seacrh_mobile'
                 value={searchTerm}
                 onChange={handleInputChange}
-                onKeyPress={handleKeyPress}></input>
+                onKeyPress={handleKeyPress}
+                id = "input_search"
+                ></input>
               <i className="search icon inputmobile_modal" ></i>
             </div>
           </div>
         </div>
       )}
-      <i className="search icon inputmobile" onClick={toggleModal}></i>
+      <i className="search icon inputmobile" onClick={toggleModal} ></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions_mobile">
           {suggestions
@@ -138,6 +145,7 @@ function SearchBar() {
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
               >
+                <BiRightArrowAlt className='arrow_search_mobile'/>
                 {suggestion}
               </li>
             ))}
