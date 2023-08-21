@@ -17,7 +17,8 @@
     border-radius: 30px;
     border-top-left-radius: 20%;
     border-bottom-right-radius: 20%;
-    height: 70rem;
+    padding-bottom: 10%;
+    height: 100%;
     width: 100%;
 }
 
@@ -25,7 +26,7 @@
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    height: 70rem;
+    height: 100%;
     width: 70%;
 }
 
@@ -141,6 +142,47 @@
     .icon {
         color: var(--blue-primary);
     }
+}
+
+.box_empty_cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.img_empty_cart {
+    width: 50%;
+    height: 50%;
+    margin-top: -10%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.text_empty_cart {
+    font-size: 16px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--blue-primary);
+}
+
+.box_subtext_empty_cart {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: var(--blue-primary);
+    font-size: 14px;
+}
+
+.subtext_empty_cart {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue-primary);
 }
 
 /* -------------version Tablet------------- */
@@ -285,7 +327,7 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     height: 100%;
-    width: 90%;
+    width: 100%;
 }
 
 .box_info_total_cart_mobile {
