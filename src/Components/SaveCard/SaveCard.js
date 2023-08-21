@@ -49,7 +49,7 @@ function SaveCard({ item }) {
         }
         window.location.reload();
     };
-    
+
 
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -117,8 +117,10 @@ function SaveCard({ item }) {
                     </div>
                 </Link>
                 <div className='iconProductAction save_card_mobile'>
-                    <button className="ui blue icon button save_card_mobile" onClick={deleteItens} >
-                        <i className="trash alternate icon save_card_mobile" ></i>
+                    <button
+                        className="ui blue icon button save_card"
+                        onClick={() => deleteItens(item)}>
+                        <i className="trash alternate icon save_card" ></i>
                     </button>
                     <button onClick={AddProductInCart} className="ui blue icon button save_card_mobile">
                         <i className="cart plus icon save_card_mobile"></i>
