@@ -46,7 +46,6 @@ function SearchBar() {
     }
   };
 
-
   const suggestions = [
     'React',
     'Angular',
@@ -142,7 +141,6 @@ function SearchBar() {
       )}
     </div>
   )
-
   const renderMobileView = () => (
     <div className="container_searchBar_mobile" >
       {openModal && (
@@ -153,14 +151,18 @@ function SearchBar() {
                 value={searchTerm}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
-                id = "input_search"
-                ></input>
+                id="input_search"
+              ></input>
               <i className="search icon inputmobile_modal" ></i>
             </div>
           </div>
         </div>
       )}
-      <i className="search icon inputmobile" onClick={toggleModal} ></i>
+      {!openModal ? (
+        <i className="search icon inputmobile" onClick={toggleModal} ></i>
+      ) : (
+        <i className="close icon inputmobile" onClick={toggleModal} ></i>
+      )}
       {showSuggestions && (
         <ul className="serarchBar_suggestions_mobile">
           {suggestions
@@ -172,7 +174,7 @@ function SearchBar() {
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
               >
-                <BiRightArrowAlt className='arrow_search_mobile'/>
+                <BiRightArrowAlt className='arrow_search_mobile' />
                 {suggestion}
               </li>
             ))}
