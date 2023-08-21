@@ -331,6 +331,13 @@
     border-radius: 5px;
     padding-bottom: 1rem;
 }
+.box_section_rating_mobile {
+    width: 93vw;
+    margin: 2rem auto 0;
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    height: auto;
+}
 
 .acessebility_box_profile_mobile {
     display: flex;
