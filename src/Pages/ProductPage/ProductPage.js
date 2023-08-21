@@ -4,6 +4,8 @@ import './ProductPage.css'
 
 //importando as frameworks
 import { Rating } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 //Importando os componentes
 import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
@@ -27,7 +29,8 @@ const verify = () => {
     }
 }
 
-function ProductPage() {
+
+function ProductPage(product) {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -41,6 +44,35 @@ function ProductPage() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    
+    const AddProductInCart = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+        Swal.fire({
+          title: 'Produto adicionado a carrinho!',
+          icon: 'success',
+          showConfirmButton: true,
+          confirmButtonText: 'Ir para o carrinho',
+          confirmButtonColor: 'var(--blue-primary)',
+          position: 'top-end',
+          timer: 5000,
+          timerProgressBar: true,
+          toast: true,
+          width: 400,
+          showClass: {
+            popup: 'animate__animated animate__backInRight'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__backOutRight'
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/cart"
+          }
+        }
+        )
+      }
 
     const renderDesktopView = () => (
         <>
@@ -70,7 +102,7 @@ function ProductPage() {
                             </button>
                             <div className='buttons_product_page_opc_add'>
                                 <div>
-                                    <button className="ui fluid button cart_product_page">
+                                    <button onClick={() => AddProductInCart(product)} className="ui fluid button cart_product_page">
                                         Adicionar ao Carrinho
                                     </button>
                                 </div>
