@@ -288,8 +288,8 @@ function CartPayment() {
         </div>
       </div>
       <div className='container_cart_payment'>
-        <div className='box_cart_product_detail_payment'>
-          <div className='box_cart_product_payment'>
+        <div className='box_cart_product_detail_payment_tablet'>
+          <div className='box_cart_product_payment_tablet'>
             <div className='cart_payment_title'>
               <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>
@@ -297,24 +297,24 @@ function CartPayment() {
               <form className="ui large form">
                 <div className="fields">
                   {focusedInput === '1' && (
-                    <img src={CardName} className='cart_payment_card_Instrution' />
+                    <img src={CardName} className='cart_payment_card_Instrution_tablet' />
                   )}
                   {focusedInput === '2' && (
-                    <img src={CardNumber} className='cart_payment_card_Instrution' />
+                    <img src={CardNumber} className='cart_payment_card_Instrution_tablet' />
                   )}
                   {focusedInput === '3' && (
-                    <img data-aos="flip-left" src={CardCVV} className='cart_payment_card_Instrution' />
+                    <img data-aos="flip-left" src={CardCVV} className='cart_payment_card_Instrution_tablet' />
                   )}
                   {focusedInput === '4' && (
-                    <img src={CardDate} className='cart_payment_card_Instrution' />
+                    <img src={CardDate} className='cart_payment_card_Instrution_tablet' />
                   )}
                   {focusedInput === '5' && (
-                    <img src={CardDate} className='cart_payment_card_Instrution' />
+                    <img src={CardDate} className='cart_payment_card_Instrution_tablet' />
                   )}
                   {focusedInput === null && (
-                    <img src={CardAll} className='cart_payment_card_Instrution' />
+                    <img src={CardAll} className='cart_payment_card_Instrution_tablet' />
                   )}
-                  <div className='field payment'>
+                  <div className='field payment_tablet'>
                     <div className="sixteen wide field">
                       <label>Bandera do Cartão</label>
                       <Dropdown
@@ -332,14 +332,14 @@ function CartPayment() {
                         onBlur={handleInputBlur}
                       />
                     </div>
-                    <div className="sixteen wide field">
-                      <label>Número do cartão</label>
-                      <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
-                        onFocus={() => handleInputFocus('2')}
-                        onBlur={handleInputBlur}
-                      />
-                    </div>
                   </div>
+                </div>
+                <div className="sixteen wide field">
+                  <label>Número do cartão</label>
+                  <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
+                    onFocus={() => handleInputFocus('2')}
+                    onBlur={handleInputBlur}
+                  />
                 </div>
                 <div className="fields">
                   <div className="four wide field">
@@ -406,7 +406,7 @@ function CartPayment() {
             </div>
           </div>
         </div>
-        <div className='box_info_total_cart'>
+        <div className='box_info_total_cart_tablet'>
           <div className='info_total_buy'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
@@ -420,27 +420,15 @@ function CartPayment() {
             <div>
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='button_total_Cart'>
-              <Link to='/cart/transport'>
-                <button className="fluid ui button final">Finalizar Compra</button>
-              </Link>
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+            <div className='button_total_Cart_tablet'>
+
+              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Finalizar Compra</Link></button>
+
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
-          </div>
-          <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
           </div>
         </div>
       </div>
-      <div className='box_cart_payment_title_similar'>
-        <FaStar color='var(--white)' size={40} />
-        <h1>Produtos Semelhantes</h1>
-      </div>
-      <ProductCarouselSmallSimilar />
       <Footer />
     </>
   )
@@ -469,9 +457,9 @@ function CartPayment() {
             <div className='cart_payment_title'>
               <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>
-            <div className='cart_payment_form'>
+            <div className='cart_payment_form_mobile'>
               <form className="ui large form">
-                  <div className="fields">
+                <div className="fields">
                   <div className='field payment'>
                     <div className="sixteen wide field">
                       <label>Bandera do Cartão</label>
@@ -497,72 +485,89 @@ function CartPayment() {
                         onBlur={handleInputBlur}
                       />
                     </div>
-                  </div>
-                </div>
-                <div className="fields">
-                  <div className="four wide field">
-                    <label>CVV</label>
-                    <input id='CvvCard' type="text" name="card[cvc]" maxlength="3" placeholder="CVC"
-                      onFocus={() => handleInputFocus('3')}
-                      onBlur={handleInputBlur}
-                    />
-                  </div>
-                  <div className="ten wide field">
-                    <label>CPF do titular</label>
-                    <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
-                      onFocus={() => handleInputFocus(null)}
-                      onBlur={handleInputBlur}
-                    />
-                  </div>
-                    <div className="two fields">
-                    <label>Validade</label>
-                      <div className="wide field">
-                        <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
-                          onFocus={() => handleInputFocus('4')}
-                          onBlur={handleInputBlur}
-                        >
-                          <option value="">Mês</option>
-                          <option value="1">Janeiro</option>
-                          <option value="2">Fevereiro</option>
-                          <option value="3">Março</option>
-                          <option value="4">Abril</option>
-                          <option value="5">Maio</option>
-                          <option value="6">Junho</option>
-                          <option value="7">Julho</option>
-                          <option value="8">Agosto</option>
-                          <option value="9">Setembro</option>
-                          <option value="10">Outubro</option>
-                          <option value="11">Novembro</option>
-                          <option value="12">Dezembro</option>
-                        </select>
-                      </div>
-                      <div className="four wide field">
-                        <select id='DateCard' className="ui search dropdown" name="card[expire-month]"
-                          onFocus={() => handleInputFocus('4')}
-                          onBlur={handleInputBlur}
-                        >
-                          <option value="">Ano</option>
-                          <option value="23">23</option>
-                          <option value="24">24</option>
-                          <option value="25">25</option>
-                          <option value="26">26</option>
-                          <option value="27">27</option>
-                          <option value="28">28</option>
-                          <option value="29">29</option>
-                          <option value="30">30</option>
-                          <option value="31">31</option>
-                          <option value="32">32</option>
-                          <option value="33">33</option>
-                          <option value="34">34</option>
-                        </select>
-                      </div>
+                    <div className="sixteen wide field">
+                      <label>CVV</label>
+                      <input id='CvvCard' type="text" name="card[cvc]" maxlength="3" placeholder="CVC"
+                        onFocus={() => handleInputFocus('3')}
+                        onBlur={handleInputBlur}
+                      />
+                    </div>
+                    <div className="sixteen wide field">
+                      <label>CPF do titular</label>
+                      <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
+                        onFocus={() => handleInputFocus(null)}
+                        onBlur={handleInputBlur}
+                      />
+                    </div>
+                    <div className="sixteen wide field">
+                      <label>Validade - Mês</label>
+                      <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
+                        onFocus={() => handleInputFocus('4')}
+                        onBlur={handleInputBlur}
+                      >
+                        <option value="">Mês</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                      </select>
+                    </div>
+                    <div className="sixteen wide field">
+                      <label>Validade - Ano</label>
+                      <select id='DateCard' className="ui search dropdown" name="card[expire-month]"
+                        onFocus={() => handleInputFocus('4')}
+                        onBlur={handleInputBlur}
+                      >
+                        <option value="">Ano</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                      </select>
                     </div>
                   </div>
+                </div>
               </form>
+              <div className='box_cart_payment_card_Instrution_mobile'>
+                {focusedInput === '1' && (
+                  <img src={CardName} className='cart_payment_card_Instrution_mobile' />
+                )}
+                {focusedInput === '2' && (
+                  <img src={CardNumber} className='cart_payment_card_Instrution_mobile' />
+                )}
+                {focusedInput === '3' && (
+                  <img data-aos="flip-left" src={CardCVV} className='cart_payment_card_Instrution_mobile' />
+                )}
+                {focusedInput === '4' && (
+                  <img src={CardDate} className='cart_payment_card_Instrution_mobile' />
+                )}
+                {focusedInput === '5' && (
+                  <img src={CardDate} className='cart_payment_card_Instrution_mobile' />
+                )}
+                {focusedInput === null && (
+                  <img src={CardAll} className='cart_payment_card_Instrution_mobile' />
+                )}
+              </div>
             </div>
           </div>
         </div>
-        <div className='box_info_total_cart'>
+        <div className='box_info_total_cart_mobile'>
           <div className='info_total_buy'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
@@ -576,13 +581,9 @@ function CartPayment() {
             <div>
               <h5 className='total_text_buy_product'>Total R${total}</h5>
             </div>
-            <div className='button_total_Cart'>
-              <Link to='/cart/transport'>
-                <button className="fluid ui button final">Finalizar Compra</button>
-              </Link>
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+            <div className='button_total_Cart_mobile'>
+              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Finalizar Compra</Link></button>
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
