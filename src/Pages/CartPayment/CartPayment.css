@@ -16,7 +16,7 @@
     border-radius: 30px;
     border-top-left-radius: 20%;
     border-bottom-right-radius: 20%;
-    height: 50rem;
+    height: 100%;
     width: 100%;
 }
 
@@ -24,7 +24,7 @@
     background-color: var(--blue-primary);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    height: 50rem;
+    height: 100%;
     width: 70%;
 }
 
@@ -222,4 +222,98 @@
     color: var(--white);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
+}
+
+/* -------------version Tablet------------- */
+
+.cart_payment_card_Instrution_tablet {
+    width: 20rem;
+    height: 14rem;
+}
+
+.field.payment_tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.box_cart_product_payment_tablet {
+    background-color: var(--white);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    height: 100%;
+    width: 100%;
+}
+
+.box_cart_product_detail_payment_tablet {
+    background-color: var(--blue-primary);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    height: 100%;
+    width: 90%;
+}
+
+.container_cart_payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* -------------version Mobile------------- */
+
+.cart_payment_form_mobile {
+    align-items: center;
+    padding: 3rem 0.5rem 3rem 0.5rem;
+}
+
+.container_cart_payment_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.box_cart_product_detail_payment_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.box_cart_product_payment_mobile {
+    background-color: var(--white);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+
+.cart_payment_card_Instrution_mobile {
+    width: 20rem;
+    z-index: 0;
+}
+
+.box_cart_payment_card_Instrution_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    gap: 1rem;
+    z-index: 1;
 }

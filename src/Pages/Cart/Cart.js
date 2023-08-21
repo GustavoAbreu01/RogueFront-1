@@ -52,7 +52,7 @@ function Cart() {
 
   const hasProductsInCart = () => {
     // Replace this with your logic to check if there are products in the cart
-    const productsInCart = 1; // Replace with the actual count of products in the cart
+    const productsInCart = 0; // Replace with the actual count of products in the cart
     return productsInCart > 0;
   };
 
@@ -92,10 +92,26 @@ function Cart() {
             <div className='cart_product_title'>
               <h5 className='cart_product_title_text'>Produtos no carrinho</h5>
             </div>
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
+            {hasProductsInCart() ? (
+              <>
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+              </>
+            ) : (
+              <div className='box_empty_cart'>
+                <img className='img_empty_cart' src={imgEmptyCart} />
+                <p className='text_empty_cart'>Não foi adicionado nenhum produto em seu carrinho.</p>
+                <div className='box_subtext_empty_cart'>
+                  <BsArrowLeftShort size={15} />
+                  <Link className='subtext_empty_cart' to='/'> <p>Voltar para a Home</p> </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className='box_info_total_cart'>
@@ -247,6 +263,12 @@ function Cart() {
             </div>
             {hasProductsInCart() ? (
               <>
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
+                <ProductCart />
                 <ProductCart />
               </>
             ) : (

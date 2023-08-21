@@ -396,3 +396,13 @@
     border-bottom-left-radius: 10%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+.profile_opt_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}

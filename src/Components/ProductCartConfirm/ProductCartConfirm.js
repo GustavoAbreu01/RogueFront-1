@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductCartConfirm.css'
 
 //importando as frameworks
@@ -11,6 +11,7 @@ import motors from "../../assets/img/motores.png"
 function ProductCartConfirm() {
 
   const [quantidade, setQuantidade] = React.useState(1);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [valor, setValor] = React.useState(1);
   const [subValor, setSubValor] = React.useState(99);
 
@@ -30,7 +31,18 @@ function ProductCartConfirm() {
     return random;
   };
 
-  return (
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const renderDesktopView = () => (
     <>
       <div className="container_product_cart_confirm">
         <div className="box_itens_product_cart_confirm">
@@ -56,6 +68,73 @@ function ProductCartConfirm() {
         </div>
       </div>
     </>
-  );
-};
+  )
+
+  const renderTabletView = () => (
+    <>
+      <div className="container_product_cart_confirm">
+        <div className="box_itens_product_cart_confirm">
+          <div className="product_cart_confirm_item_content" style={{ color: 'black' }}>
+            <div id="product_cart_confirm_image">
+              <Link to="/product">
+                <img src={motors} width="125" height="" />
+              </Link>
+            </div>
+            <div className="product_cart_confirm_item_info">
+              <Link to="/product">
+                <h2 className="product_cart_confirm_product_name">W12 Monofásico</h2>
+                <p className="product_cart_confirm_product_description">Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
+                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price'>R${valor * Random()}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext'>10x Sem juros</sub></h2>
+              </Link>
+            </div>
+            <div className='product_cart_confirm_qauntity'>
+              <div className="ui small buttons product_cart_confirm">
+                <p className='product_cart_confirm'>Quantidade: {Random()}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+
+  const renderMobileView = () => (
+    <>
+      <div className="container_product_cart_confirm">
+        <div className="box_itens_product_cart_confirm">
+          <div className="product_cart_confirm_item_content_mobile" style={{ color: 'black' }}>
+            <div id="product_cart_confirm_image">
+              <Link to="/product">
+                <img src={motors} width="125" height="" />
+              </Link>
+            </div>
+            <div className="product_cart_confirm_item_info_mobile">
+              <Link to="/product">
+                <h2 className="product_cart_confirm_product_name_mobile">W12 Monofásico</h2>
+                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price_mobile'>R${valor * Random()}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext_mobile'>10x Sem juros</sub></h2>
+              </Link>
+              <div className='product_cart_confirm_quantity_mobile'>
+                <p className='product_cart_confirm_mobile'>Quantidade: {Random()}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else if (screenSize.width < 900 && screenSize.width > 500) {
+      return renderTabletView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
+
+}
+
 export default ProductCartConfirm

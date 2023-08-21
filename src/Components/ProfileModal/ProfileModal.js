@@ -426,7 +426,7 @@ export default function ProfileModal({ user }) {
                 <p className='username_profile'>Nome Sobrenome</p>
                 <p className='cpf_profile'>076.137.949.54</p>
               </div>
-              <div className='profile_opt'>
+              <div className='profile_opt_mobile'>
 
                 <div className='profile_item'>
                   <Link to='/quiz'>
