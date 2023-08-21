@@ -12,8 +12,11 @@ import motor from '../../assets/img/motor.png'
 
 
 function SmallProductCard(product) {
-   
+
     const AddProductInCart = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
             title: 'Produto adicionado a carrinho!',
             icon: 'success',
@@ -121,7 +124,7 @@ function SmallProductCard(product) {
                 <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_smaller">
                     <i className="bookmark icon "></i>
                 </button>
-                <button onClick={AddProductInCart} className="ui icon button product_card_smaller">
+                <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_smaller">
                     <i className="cart plus icon"></i>
                 </button>
             </div>
@@ -157,7 +160,7 @@ function SmallProductCard(product) {
                 <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_smaller_mobile">
                     <i className="bookmark icon "></i>
                 </button>
-                <button onClick={AddProductInCart} className="mini ui icon button product_card_smaller_mobile">
+                <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_smaller_mobile">
                     <i className="cart plus icon"></i>
                 </button>
             </div>

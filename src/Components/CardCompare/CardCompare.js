@@ -15,7 +15,7 @@ import { GiCargoCrane } from 'react-icons/gi'
 import { BiSolidColorFill } from 'react-icons/bi'
 import { BsFillMagnetFill } from 'react-icons/bs'
 
-function CardCompare() {
+function CardCompare(product) {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -33,6 +33,9 @@ function CardCompare() {
     let productsCompared = JSON.parse(localStorage.getItem("productsCompared"))
 
     const AddProductInCart = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
             title: 'Produto adicionado a carrinho!',
             icon: 'success',
@@ -73,7 +76,7 @@ function CardCompare() {
             return false
         }
     }
-
+    
     const deleteProduct = (index) => {
         const updatedProductsCompared = productsCompared.filter((_, i) => i !== index);
         localStorage.setItem('productsCompared', JSON.stringify(updatedProductsCompared));
@@ -94,7 +97,7 @@ function CardCompare() {
                                             <i className="info alternate icon "></i>
                                         </button>
                                     </Link>
-                                    <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+                                    <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_hightlight">
                                         <i className="cart plus icon product_card_hightlight"></i>
                                     </button>
                                     <div className='card_compare_delete_button'>
@@ -173,7 +176,7 @@ function CardCompare() {
                                             <i className="info alternate icon "></i>
                                         </button>
                                     </Link>
-                                    <button onClick={AddProductInCart} className="ui icon button product_card_hightlight">
+                                    <button onClick={() => AddProductInCart(product)}  className="ui icon button product_card_hightlight">
                                         <i className="cart plus icon product_card_hightlight"></i>
                                     </button>
                                     <div className='card_compare_delete_button'>

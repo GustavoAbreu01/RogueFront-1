@@ -113,10 +113,11 @@ function SearchBar() {
               suggestion.toLowerCase().includes(searchTerm.toLowerCase())
             )
             .map((suggestion, index) => (
-              <li
+              <li className='li_search_desktop'
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
               >
+                <BiRightArrowAlt className='arrow_search_desktop' />
                 {suggestion}
               </li>
             ))}
@@ -140,12 +141,13 @@ function SearchBar() {
           {suggestions
             .filter((suggestion) =>
               suggestion.toLowerCase().includes(searchTerm.toLowerCase())
-            )
+            ).slice(0, 10)
             .map((suggestion, index) => (
-              <li
+              <li className='li_search_tablet'
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
               >
+                <BiRightArrowAlt className='arrow_search_tablet' />
                 {suggestion}
               </li>
             ))}

@@ -92,7 +92,7 @@ function ProductCardHighlight(product) {
         <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_hightlight">
           <i className="bookmark icon product_card_hightlight"></i>
         </button>
-        <button onClick={() => AddProductInSave(product)}  className="ui icon button product_card_hightlight">
+        <button onClick={() => AddProductInCart(product)}  className="ui icon button product_card_hightlight">
           <i className="cart plus icon product_card_hightlight"></i>
         </button>
       </div>

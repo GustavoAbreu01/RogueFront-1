@@ -9,9 +9,12 @@ import Swal from 'sweetalert2';
 import motor from "../../assets/img/motores.png"
 
 
-function RecomendedSave() {
+function RecomendedSave(product) {
 
     const AddProductInCart = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
             title: 'Produto adicionado a carrinho!',
             icon: 'success',
@@ -38,6 +41,9 @@ function RecomendedSave() {
     }
 
     const AddProductInSave = () => {
+        const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
+        savedProducts.push(product);
+        localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
         Swal.fire({
             title: 'Produto adicionado a lista de salvos!',
             icon: 'success',
@@ -79,10 +85,10 @@ function RecomendedSave() {
                     <p style={{ paddingLeft: '1rem', paddingTop: '0.4rem' }}>Á vista no pix</p>
                 </div>
                 <div className='recommended_save_buttons_icons'>
-                    <button onClick={AddProductInCart} className="ui blue icon button recommended_save">
+                    <button onClick={() => AddProductInCart(product)} className="ui blue icon button recommended_save">
                         <i className="cart plus icon recommended_save"></i>
                     </button>
-                    <button onClick={AddProductInSave} className="ui blue icon button recommended_save">
+                    <button onClick={() => AddProductInSave(product)} className="ui blue icon button recommended_save">
                         <i className="bookmark icon recommended_save"></i>
                     </button>
                 </div>
