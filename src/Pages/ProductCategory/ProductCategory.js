@@ -15,6 +15,7 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Filter from '../../Components/Filter/Filter'
 
+
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"
 
@@ -24,7 +25,7 @@ import { FaListUl } from 'react-icons/fa'
 
 
 function ProductCategory() {
-
+  const [products, setProducts] = useState([]);
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -35,30 +36,8 @@ function ProductCategory() {
   }
 
   const [isGrid, setIsGrid] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const [isOpen2, setIsOpen2] = useState(false);
-
-  const toggleDropdown2 = () => {
-    setIsOpen2(!isOpen2);
-  };
-
-  const [isOpen3, setIsOpen3] = useState(false);
-
-  const toggleDropdown3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-  const [isOpen4, setIsOpen4] = useState(false);
-
-  const toggleDropdown4 = () => {
-    setIsOpen4(!isOpen4);
-  };
 
   const alterarPagina = (e, { value }) => {
     setPagination(value);

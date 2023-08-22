@@ -12,11 +12,12 @@ import ProductCardNew from '../ProductCardNew/ProductCardNew';
 import ProductService from '../../Service/ProductService';
 
 
-    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  
 
 
 function ProductNewCarousel() {
 
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [products, setProducts] = useState([]);
 
     useEffect(() => {

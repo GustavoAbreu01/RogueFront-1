@@ -9,7 +9,7 @@ import ProductService from '../../Service/ProductService';
 
 
 function ProductAccessedCarousel() {
-
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [products, setProducts] = useState([]);
 
     useEffect(() => {

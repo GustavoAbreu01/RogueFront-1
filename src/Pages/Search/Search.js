@@ -11,6 +11,7 @@ import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSma
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Filter from '../../Components/Filter/Filter'
+import ProductService from '../../Service/ProductService'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
@@ -26,6 +27,7 @@ import { FaListUl } from 'react-icons/fa'
 
 function Search() {
 
+  const [products, setProducts] = useState([]);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const searchTerm = queryParams.get('query') || '';
@@ -39,30 +41,9 @@ function Search() {
   }
 
   const [isGrid, setIsGrid] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const [isOpen2, setIsOpen2] = useState(false);
-
-  const toggleDropdown2 = () => {
-    setIsOpen2(!isOpen2);
-  };
-
-  const [isOpen3, setIsOpen3] = useState(false);
-
-  const toggleDropdown3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-  const [isOpen4, setIsOpen4] = useState(false);
-
-  const toggleDropdown4 = () => {
-    setIsOpen4(!isOpen4);
-  };
 
   const alterarPagina = (e, { value }) => {
     setPagination(value);
@@ -103,7 +84,6 @@ function Search() {
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     ProductService.findAll()
@@ -186,7 +166,7 @@ function Search() {
             <div className="container_category_bar">
               <div className="box_category_bar">
                 {products.map((product) => (
-                  <div className="category_itens" key={i} >
+                  <div className="category_itens">
                     <SmallProductCard key={product.id} product={product} />
                   </div>
                 ))}
