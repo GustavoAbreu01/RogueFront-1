@@ -10,11 +10,12 @@ import App from './App';
 import Libras from './accessibility/libras/Libras';
 
 const verify = () => {
-  const libras = localStorage.getItem('libras');
+  const libras = localStorage.getItem('showComponent');
   if (libras) {
     return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
