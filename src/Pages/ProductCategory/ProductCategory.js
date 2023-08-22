@@ -33,6 +33,7 @@ function ProductCategory() {
       return false
     }
   }
+  
 
   const [isGrid, setIsGrid] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
