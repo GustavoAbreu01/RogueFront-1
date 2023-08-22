@@ -81,7 +81,7 @@ function ProductCardHighlight(product) {
     )
   }
 
-  const renderDesktopView = ({ product }) => (
+  const renderDesktopView = () => (
 
     <div className="product_highlight" key={product.code}>
       <div className='container_product_card_hightlight'>
@@ -122,8 +122,8 @@ function ProductCardHighlight(product) {
     </div>
   )
 
-  const renderTabletView = ({ product }) => (
-    <div className="product_highlight" key={product.id}>
+  const renderTabletView = () => (
+    <div className="product_highlight" key={product.code}>
       <div className='container_product_card_hightlight_tablet'>
         <div className='box_product_card_hightlight_tag_icon'>
           <button className="circular blue big ui icon button product_card_hightlight">
@@ -163,7 +163,7 @@ function ProductCardHighlight(product) {
   )
 
   const renderMobileView = ({ product }) => (
-    <div className="product_highlight" key={product.id}>
+    <div className="product_highlight" key={product.code}>
       <div className='container_product_card_hightlight_mobile'>
         <div className='box_product_card_hightlight_tag_icon_mobile'>
           <button className="circular blue mini ui icon button product_card_hightlight">

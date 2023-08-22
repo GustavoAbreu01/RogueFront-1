@@ -82,7 +82,7 @@ function ProductCardNew(product) {
     )
   }
 
-  const renderDesktopView = ({product}) => (
+  const renderDesktopView = () => (
     <div className="product_new" key={product.code}>
     <div className='container_product_card_new'>
 
@@ -122,6 +122,7 @@ function ProductCardNew(product) {
   )
 
   const renderTabletView = () => (
+    <div className="product_new" key={product.code}>
     <div className='container_product_card_new_tablet'>
 
       <div className='box_product_card_new_tag_icon'>
@@ -158,9 +159,11 @@ function ProductCardNew(product) {
         </Link>
       </Link>
     </div>
+    </div>
   )
 
   const renderMobileView = () => (
+    <div className="product_new" key={product.code}>
     <div className='container_product_card_new_mobile'>
       <div className='box_product_card_new_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_new">
@@ -194,6 +197,7 @@ function ProductCardNew(product) {
           </div>
         </Link>
       </Link>
+    </div>
     </div>
   )
 

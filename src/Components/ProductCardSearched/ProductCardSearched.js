@@ -82,7 +82,7 @@ function ProductCardSearched(product) {
     )
   }
 
-  const renderDesktopView = ({product}) => (
+  const renderDesktopView = () => (
     <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched'>
       <div className='box_product_card_searched_tag_icon'>
@@ -122,8 +122,8 @@ function ProductCardSearched(product) {
     </div >
   )
 
-  const renderTabletView = ({product}) => (
-    <div className="product_acessed" key={product.id}>
+  const renderTabletView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched_tablet'>
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular big blue ui icon button product_card_searched">
@@ -162,8 +162,8 @@ function ProductCardSearched(product) {
     </div >
   )
 
-  const renderMobileView = ({product}) => (
-    <div className="product_acessed" key={product.id}>
+  const renderMobileView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched_mobile'>
       <div className='box_product_card_searched_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_searched">
