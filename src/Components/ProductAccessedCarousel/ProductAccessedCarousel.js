@@ -10,13 +10,21 @@ import ProductService from '../../Service/ProductService';
 
 function ProductAccessedCarousel() {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [productsAcceessed, setProductsAcceessed] = useState([])
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        ProductService.findAll()
-            .then((data) => setProducts(data))
-            .catch((error) => console.error('Erro ao buscar produtos:', error));
+        getVideosRev();
     }, []);
+
+    const getVideosRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsAcceessed(products);
+        } else {
+            setProductsAcceessed([]);
+        }
+    }
 
     var settings = {
         className: "center",
@@ -74,9 +82,9 @@ function ProductAccessedCarousel() {
     const renderDesktopView = () => (
         <div className='container_product_accessed_carousel'>
             <Slider {...settings}>
-                {products.map((product) => (
+                {productsAcceessed.map((product) => (
                     <div className='box_product_accessed_carousel'>
-                        <ProductCardAccessed key={product.id} product={product} />
+                        <ProductCardAccessed key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -86,9 +94,9 @@ function ProductAccessedCarousel() {
     const renderTabletView = () => (
         <div className='container_product_accessed_carousel_tablet' >
             <Slider {...settings}>
-                {products.map((product) => (
+                {productsAcceessed.map((product) => (
                     <div className='box_product_accessed_carousel'>
-                        <ProductCardAccessed key={product.id} product={product} />
+                        <ProductCardAccessed key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -98,9 +106,9 @@ function ProductAccessedCarousel() {
     const renderMobileView = () => (
         <div className='container_product_accessed_carousel_mobile' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsAcceessed.map((product) => (
                     <div className='box_product_accessed_carousel'>
-                        <ProductCardAccessed key={product.id} product={product} />
+                        <ProductCardAccessed key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
