@@ -136,7 +136,7 @@ function Compare() {
         </div>
         <div className='products'>
           <CardCompare />
-          {!verify() && <div className='${} add_product_icon' onClick={() => addMoreProducts()}>
+          {!verify() && <div className={`add_product_icon ${productsInCompare.length === 2 ? 'active' : ''}`} onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
         </div>
@@ -161,7 +161,7 @@ function Compare() {
         </div>
         <div className='products'>
           <CardCompare />
-          {!verifyTablet() && <div className='add_product_icon_tablet' onClick={() => addMoreProducts()}>
+          {!verifyTablet() && <div className='add_product_icon_tablet'>
             <IoMdAddCircle size={'5rem'} />
           </div>}
         </div>
