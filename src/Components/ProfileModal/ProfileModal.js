@@ -189,14 +189,14 @@ export default function ProfileModal({ user }) {
                     <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'><p className='text_profile_opt'>Ajuda</p></Link>
                   </div>
                 </div>
-                <div className='profile_item'>
-                    <button className="ui icon button shopping profile">
+                  <div className='profile_item'>
+                    <button onClick={realizarLogout} className="ui icon button shopping profile">
                       <i className="sign-out icon profile"></i>
                     </button>
-                  <div className='text_profile_container'>
-                    <p className='text_profile_opt'>Sair</p>
+                    <div className='text_profile_container'>
+                      <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
+                    </div>
                   </div>
-                </div>
               </div>
               <div className='profile_footer'>
                 <div className='profile_logo'>
@@ -359,11 +359,11 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profile_item'>
-                    <button className="ui icon button shopping profile">
-                      <i className="sign-out icon profile"></i>
-                    </button>
+                  <button onClick={realizarLogout} className="ui icon button shopping profile">
+                    <i className="sign-out icon profile"></i>
+                  </button>
                   <div className='text_profile_container'>
-                    <p className='text_profile_opt'>Sair</p>
+                    <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>
@@ -465,13 +465,11 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profile_item'>
-                  <Link to='/quiz'>
-                    <button className="ui icon button shopping profile">
+                    <button onClick={realizarLogout} className="ui icon button shopping profile">
                       <i className="sign-out icon profile"></i>
                     </button>
-                  </Link>
                   <div className='text_profile_container'>
-                    <Link to='/'><p className='text_profile_opt'>Sair</p></Link>
+                   <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>
