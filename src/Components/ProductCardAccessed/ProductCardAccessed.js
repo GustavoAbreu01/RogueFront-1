@@ -100,7 +100,7 @@ function ProductCardAccessed({ product }) {
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
-      <Link to='/product' className='product_card_accessed_link'>
+      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
         <div className='box_product_card_accessed_image'>
           <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
         </div>
@@ -140,7 +140,7 @@ function ProductCardAccessed({ product }) {
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
-      <Link to='/product' className='product_card_accessed_link'>
+      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
         <div className='box_product_card_accessed_image'>
           <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
         </div>
@@ -180,7 +180,7 @@ function ProductCardAccessed({ product }) {
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
-      <Link to='/product' className='product_card_accessed_link'>
+      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
         <div className='box_product_card_accessed_image'>
           <img src={motor} alt='' className='product_card_accessed_image' height={100} width={100}></img>
         </div>

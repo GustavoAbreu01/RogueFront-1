@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardNew({product}) {
+function ProductCardNew({ product }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -84,120 +84,122 @@ function ProductCardNew({product}) {
 
   const renderDesktopView = () => (
     <div className="product_new" key={product.code}>
-    <div className='container_product_card_new'>
+      <div className='container_product_card_new'>
 
-      <div className='box_product_card_new_tag_icon'>
-        <button className="circular ui icon button product_card_new">
-          <i className="exclamation circle icon"></i>
-        </button>
-      </div>
-      <div className='container_product_card_new_action_icon'>
-        <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_new">
-          <i className="bookmark icon product_card_new"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_new">
-          <i className="cart plus icon product_card_new"></i>
-        </button>
-      </div>
-      <div className='box_product_card_new_image'>
-        <img src={motor} alt='' className='product_card_new_image' height={150} width={150}></img>
-      </div>
-      <div className='box_product_card_new_info'>
-        <div className='product_card_new_info_text'>
-          <h3 title= {product.name} className='product_card_new_name'>{product.name}</h3>
-          <p className='product_card_new_description'>{product.description}</p>
+        <div className='box_product_card_new_tag_icon'>
+          <button className="circular ui icon button product_card_new">
+            <i className="exclamation circle icon"></i>
+          </button>
         </div>
+        <div className='container_product_card_new_action_icon'>
+          <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_new">
+            <i className="bookmark icon product_card_new"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_new">
+            <i className="cart plus icon product_card_new"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`}>
+          <div className='box_product_card_new_image'>
+            <img src={motor} alt='' className='product_card_new_image' height={150} width={150}></img>
+          </div>
+          <div className='box_product_card_new_info'>
+            <div className='product_card_new_info_text'>
+              <h3 title={product.name} className='product_card_new_name'>{product.name}</h3>
+              <p className='product_card_new_description'>{product.description}</p>
+            </div>
+          </div>
+          <div className='box_product_card_new_info_price'>
+            <h3 className='product_card_new_price'>R$ {product.price}</h3>
+            <p className='product_card_new_price_option'>Á vista no pix</p>
+          </div>
+          <Link to='/cart'>
+            <div className='product_card_new_buy_button'>
+              <button className="fluid ui button product_card_new_button">Comprar</button>
+            </div>
+          </Link>
+        </Link>
       </div>
-      <div className='box_product_card_new_info_price'>
-        <h3 className='product_card_new_price'>R$ {product.price}</h3>
-        <p className='product_card_new_price_option'>Á vista no pix</p>
-      </div>
-      <Link to='/cart'>
-      <div className='product_card_new_buy_button'>
-        <button className="fluid ui button product_card_new_button">Comprar</button>
-      </div>
-    </Link>
-  </div>
-  </div>
+    </div>
   )
 
   const renderTabletView = () => (
     <div className="product_new" key={product.code}>
-    <div className='container_product_card_new_tablet'>
+      <div className='container_product_card_new_tablet'>
 
-      <div className='box_product_card_new_tag_icon'>
-        <button className="circular blue big ui icon button product_card_new">
-          <i className="exclamation circle icon"></i>
-        </button>
-      </div>
-      <div className='container_product_card_new_action_icon_tablet'>
-        <button onClick={() => AddProductInSave(product)}className="big ui icon button product_card_new">
-          <i className="bookmark icon product_card_new"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_new">
-          <i className="cart plus icon product_card_new"></i>
-        </button>
-      </div>
-      <Link to='/product'>
-        <div className='box_product_card_new_image'>
-          <img src={motor} alt='' className='product_card_new_image' height={150} width={150}></img>
+        <div className='box_product_card_new_tag_icon'>
+          <button className="circular blue big ui icon button product_card_new">
+            <i className="exclamation circle icon"></i>
+          </button>
         </div>
-        <div className='box_product_card_new_info'>
-          <div className='product_card_new_info_text'>
-            <h3 title= {product.name} className='product_card_new_name'>title= {product.name}</h3>
-            <p className='product_card_new_description'>title= {product.description}</p>
+        <div className='container_product_card_new_action_icon_tablet'>
+          <button onClick={() => AddProductInSave(product)} className="big ui icon button product_card_new">
+            <i className="bookmark icon product_card_new"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_new">
+            <i className="cart plus icon product_card_new"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`}>
+          <div className='box_product_card_new_image'>
+            <img src={motor} alt='' className='product_card_new_image' height={150} width={150}></img>
           </div>
-        </div>
-        <div className='box_product_card_new_info_price'>
-          <h3 className='product_card_new_price'>R$ {product.price}</h3>
-          <p className='product_card_new_price_option'>Á vista no pix</p>
-        </div>
-        <Link to='/cart'>
-          <div className='product_card_new_buy_button'>
-            <button className="fluid ui button product_card_new_button">Comprar</button>
+          <div className='box_product_card_new_info'>
+            <div className='product_card_new_info_text'>
+              <h3 title={product.name} className='product_card_new_name'>title= {product.name}</h3>
+              <p className='product_card_new_description'>title= {product.description}</p>
+            </div>
           </div>
+          <div className='box_product_card_new_info_price'>
+            <h3 className='product_card_new_price'>R$ {product.price}</h3>
+            <p className='product_card_new_price_option'>Á vista no pix</p>
+          </div>
+          <Link to='/cart'>
+            <div className='product_card_new_buy_button'>
+              <button className="fluid ui button product_card_new_button">Comprar</button>
+            </div>
+          </Link>
         </Link>
-      </Link>
-    </div>
+      </div>
     </div>
   )
 
   const renderMobileView = () => (
     <div className="product_new" key={product.code}>
-    <div className='container_product_card_new_mobile'>
-      <div className='box_product_card_new_tag_icon_mobile'>
-        <button className="circular blue mini ui icon button product_card_new">
-          <i className="exclamation circle icon"></i>
-        </button>
-      </div>
-      <div className='container_product_card_new_action_icon_mobile'>
-        <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_new_mobile">
-          <i className="bookmark icon product_card_new"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_new">
-          <i className="cart plus icon product_card_new"></i>
-        </button>
-      </div>
-      <Link to='/product'>
-        <div className='box_product_card_new_image'>
-          <img src={motor} alt='' className='product_card_new_image' height={100} width={100}></img>
+      <div className='container_product_card_new_mobile'>
+        <div className='box_product_card_new_tag_icon_mobile'>
+          <button className="circular blue mini ui icon button product_card_new">
+            <i className="exclamation circle icon"></i>
+          </button>
         </div>
-        <div className='box_product_card_new_info'>
-          <div className='product_card_new_info_text_mobile'>
-            <h3 title= {product.name} className='product_card_new_name_mobile'>{product.name}</h3>
+        <div className='container_product_card_new_action_icon_mobile'>
+          <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_new_mobile">
+            <i className="bookmark icon product_card_new"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_new">
+            <i className="cart plus icon product_card_new"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`}>
+          <div className='box_product_card_new_image'>
+            <img src={motor} alt='' className='product_card_new_image' height={100} width={100}></img>
           </div>
-        </div>
-        <div className='box_product_card_new_info_price'>
-          <h3 className='product_card_new_price_mobile'>R$ {product.description}</h3>
-          <p className='product_card_new_price_option_mobile'>Á vista no pix</p>
-        </div>
-        <Link to='/cart'>
-          <div className='product_card_new_buy_button_mobile'>
-            <button className="fluid ui button product_card_new_button_mobile">Comprar</button>
+          <div className='box_product_card_new_info'>
+            <div className='product_card_new_info_text_mobile'>
+              <h3 title={product.name} className='product_card_new_name_mobile'>{product.name}</h3>
+            </div>
           </div>
+          <div className='box_product_card_new_info_price'>
+            <h3 className='product_card_new_price_mobile'>R$ {product.description}</h3>
+            <p className='product_card_new_price_option_mobile'>Á vista no pix</p>
+          </div>
+          <Link to='/cart'>
+            <div className='product_card_new_buy_button_mobile'>
+              <button className="fluid ui button product_card_new_button_mobile">Comprar</button>
+            </div>
+          </Link>
         </Link>
-      </Link>
-    </div>
+      </div>
     </div>
   )
 

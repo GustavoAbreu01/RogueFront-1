@@ -98,7 +98,7 @@ function ProductCardHighlight({product}) {
             <i className="cart plus icon product_card_hightlight"></i>
           </button>
         </div>
-        <Link to='/product'>
+        <Link to={`/product/${product.code}`}>
           <div className='box_product_card_hightlight_image'>
             <img src={motor} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
           </div>
@@ -138,7 +138,7 @@ function ProductCardHighlight({product}) {
             <i className="cart plus icon product_card_hightlight"></i>
           </button>
         </div>
-        <Link to='/product'>
+        <Link to={`/product/${product.code}`}>
           <div className='box_product_card_hightlight_image'>
             <img src={motor} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
           </div>
@@ -178,7 +178,7 @@ function ProductCardHighlight({product}) {
             <i className="cart plus icon product_card_hightlight"></i>
           </button>
         </div>
-        <Link to='/product'>
+        <Link to={`/product/${product.code}`}>
           <div className='box_product_card_hightlight_image'>
             <img src={motor} alt='' className='product_card_hightlight_image' height={100} width={100}></img>
           </div>
