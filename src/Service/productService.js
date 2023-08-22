@@ -12,7 +12,7 @@ export const ProductService = {
     },
 
     findAll: async () => {
-      const randomPageSize = 30;
+      const randomPageSize = 20;
       try {
           const response = await axios.get(url + "/all?size=" + randomPageSize + "&page=" + 0);
           return response.data;
