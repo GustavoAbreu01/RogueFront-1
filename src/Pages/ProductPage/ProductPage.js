@@ -45,147 +45,35 @@ function ProductPage(product) {
         };
     }, []);
 
+
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
         productsInCart.push(product);
         localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
-          title: 'Produto adicionado a carrinho!',
-          icon: 'success',
-          showConfirmButton: true,
-          confirmButtonText: 'Ir para o carrinho',
-          confirmButtonColor: 'var(--blue-primary)',
-          position: 'top-end',
-          timer: 5000,
-          timerProgressBar: true,
-          toast: true,
-          width: 400,
-          showClass: {
-            popup: 'animate__animated animate__backInRight'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__backOutRight'
-          },
+            title: 'Produto adicionado a carrinho!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
         }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/cart"
-          }
+            if (result.isConfirmed) {
+                window.location.href = "/cart"
+            }
         }
         )
       }
-      
-      const AddProductInCompare = () => {
-        const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-    
-        if (productsInCompare.length <= 2) {
-            productsInCompare.push(product);
-            localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
-    
-            Swal.fire({
-                title: 'Produto adicionado a comparação!',
-                icon: 'success',
-                showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
-                confirmButtonColor: 'var(--blue-primary)',
-                position: 'top-end',
-                timer: 5000,
-                timerProgressBar: true,
-                toast: true,
-                width: 400,
-                showClass: {
-                    popup: 'animate__animated animate__backInRight'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__backOutRight'
-                },
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/compare";
-                }
-            });
-        } else {
-            Swal.fire({
-                title: 'Produto não pode ser adicionado no carrinho',
-                icon: 'warning',
-                showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
-                confirmButtonColor: 'var(--blue-primary)',
-                position: 'top-end',
-                timer: 5000,
-                timerProgressBar: true,
-                toast: true,
-                width: 400,
-                showClass: {
-                    popup: 'animate__animated animate__backInRight'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__backOutRight'
-                },
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/compare";
-                }
-            });
-        }
-        
-    }
-
-    
-    const AddProductInCompareTablet = () => {
-        const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-    
-        if (productsInCompare.length <= 1) {
-            productsInCompare.push(product);
-            localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
-    
-            Swal.fire({
-                title: 'Produto adicionado a comparação!',
-                icon: 'success',
-                showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
-                confirmButtonColor: 'var(--blue-primary)',
-                position: 'top-end',
-                timer: 5000,
-                timerProgressBar: true,
-                toast: true,
-                width: 400,
-                showClass: {
-                    popup: 'animate__animated animate__backInRight'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__backOutRight'
-                },
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/compare";
-                }
-            });
-        } else {
-            Swal.fire({
-                title: 'Produto não pode ser adicionado no carrinho',
-                icon: 'warning',
-                showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
-                confirmButtonColor: 'var(--blue-primary)',
-                position: 'top-end',
-                timer: 5000,
-                timerProgressBar: true,
-                toast: true,
-                width: 400,
-                showClass: {
-                    popup: 'animate__animated animate__backInRight'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__backOutRight'
-                },
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/compare";
-                }
-            });
-        }
-        
-    }
 
     const renderDesktopView = () => (
         <>
@@ -277,7 +165,7 @@ function ProductPage(product) {
                 </div>
             </div>
             <div className='box_product_page_title_similar'>
-                <FaStar color='var(--white)' size={40} />
+                <i class="magic icon" color='var(--white)'></i>
                 <h1>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
@@ -515,7 +403,7 @@ function ProductPage(product) {
             <Footer />
         </>
     )
-    
+
     const getViewToRender = () => {
         if (screenSize.width > 900) {
             return renderDesktopView();
