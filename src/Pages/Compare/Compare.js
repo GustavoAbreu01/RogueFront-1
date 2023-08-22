@@ -136,7 +136,7 @@ function Compare() {
         </div>
         <div className='products'>
           <CardCompare />
-          {!verify() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
+          {!verify() && <div className='${} add_product_icon' onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
         </div>
