@@ -200,6 +200,12 @@ function SmallProductCard(product) {
         };
     }, []);
 
+    const buttonComprar = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    }
+
 
     const renderDesktopView = () => (
         <div className='container_product_card_smaller'>
@@ -231,7 +237,7 @@ function SmallProductCard(product) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
                     </div>
                 </Link>
             </Link >
@@ -267,7 +273,7 @@ function SmallProductCard(product) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
                     </div>
                 </Link>
             </Link >
@@ -303,7 +309,7 @@ function SmallProductCard(product) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="small ui button buy_product_card_smaller_mobile">Comprar</button>
+                        <button className="small ui button buy_product_card_smaller_mobile" onClick={buttonComprar}>Comprar</button>
                     </div>
                 </Link>
             </Link >

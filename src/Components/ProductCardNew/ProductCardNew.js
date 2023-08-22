@@ -24,6 +24,12 @@ function ProductCardNew(product) {
     };
   }, []);
 
+  const buttonComprar = () => {
+      const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+      productsInCart.push(product);
+      localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+  }
+
   const AddProductInCart = () => {
     const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
     productsInCart.push(product);
@@ -114,10 +120,10 @@ function ProductCardNew(product) {
         </div>
         <Link to='/cart'>
           <div className='product_card_new_buy_button'>
-            <button className="fluid ui button product_card_new_button">Comprar</button>
+            <button className="fluid ui button product_card_new_button" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
-      </Link>
+      </Link> 
     </div>
   )
 
@@ -153,7 +159,7 @@ function ProductCardNew(product) {
         </div>
         <Link to='/cart'>
           <div className='product_card_new_buy_button'>
-            <button className="fluid ui button product_card_new_button">Comprar</button>
+            <button className="fluid ui button product_card_new_button" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
@@ -190,7 +196,7 @@ function ProductCardNew(product) {
         </div>
         <Link to='/cart'>
           <div className='product_card_new_buy_button_mobile'>
-            <button className="fluid ui button product_card_new_button_mobile">Comprar</button>
+            <button className="fluid ui button product_card_new_button_mobile" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>

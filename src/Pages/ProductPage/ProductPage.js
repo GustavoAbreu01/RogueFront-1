@@ -73,15 +73,15 @@ function ProductPage(product) {
             }
         }
         )
-      }
+    }
 
-      const AddProductInCompare = () => {
+    const AddProductInCompare = () => {
         const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-    
+
         if (productsInCompare.length <= 2) {
             productsInCompare.push(product);
             localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
-    
+
             Swal.fire({
                 title: 'Produto adicionado a comparação!',
                 icon: 'success',
@@ -128,17 +128,23 @@ function ProductPage(product) {
                 }
             });
         }
-        
+
     }
 
-    
+    const buttonComprar = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    }
+
+
     const AddProductInCompareTablet = () => {
         const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-    
+
         if (productsInCompare.length <= 1) {
             productsInCompare.push(product);
             localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
-    
+
             Swal.fire({
                 title: 'Produto adicionado a comparação!',
                 icon: 'success',
@@ -185,7 +191,7 @@ function ProductPage(product) {
                 }
             });
         }
-        
+
     }
 
     const renderDesktopView = () => (
@@ -211,9 +217,11 @@ function ProductPage(product) {
                             <p>Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia. Opcionalmente pode ser fornecido com capacitor de partida e eixo e flange conforme norma NEMA.</p>
                         </div>
                         <div className='buttons_product_page'>
-                            <button className="ui fluid button sell_product_page">
+                            <Link to={"/cart"}>
+                            <button className="ui fluid button sell_product_page" onClick={buttonComprar}>
                                 Comprar Agora
                             </button>
+                            </Link>
                             <div className='buttons_product_page_opc_add'>
                                 <div>
                                     <button onClick={() => AddProductInCart(product)} className="ui fluid button cart_product_page">
@@ -320,9 +328,11 @@ function ProductPage(product) {
                             </div>
                         </div>
                         <div className='buttons_product_page_mobile'>
-                            <button className="ui fluid button sell_product_page_mobile">
-                                Comprar Agora
-                            </button>
+                            <Link to={"/cart"}>
+                                <button className="ui fluid button sell_product_page_mobile" onClick={buttonComprar}>
+                                    Comprar Agora
+                                </button>
+                            </Link>
                             <div className='buttons_product_page_opc_add_mobile'>
                                 <div className='div_button_product_page_mobile'>
                                     <button className="ui fluid button cart_product_page_mobile">
@@ -431,9 +441,11 @@ function ProductPage(product) {
                             </div>
                         </div>
                         <div className='buttons_product_page_mobile'>
-                            <button className="ui fluid button sell_product_page_tablet">
-                                Comprar Agora
-                            </button>
+                            <Link to={"/cart"}>
+                                <button className="ui fluid button sell_product_page_tablet" onClick={buttonComprar}>
+                                    Comprar Agora
+                                </button>
+                            </Link>
                             <div className='buttons_product_page_opc_add_tablet'>
                                 <div className='div_button_product_page_tablet'>
                                     <button className="ui fluid button cart_product_page_tablet">

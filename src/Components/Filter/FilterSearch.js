@@ -1,21 +1,21 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import './Filter.css'
+import './FilterSearch.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 //Importando os componentes
-import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
-import CategoryCard from '../../Components/CategoryCard/CategoryCard';
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
+import SmallProductCard from '../ProductCardSmaller/ProductCardSmaller';
+import CategoryCard from '../CategoryCard/CategoryCard';
+import HeaderLogin from '../HeaderLogin/HeaderLogin';
+import WeggnerModal from '../WeggnerModal/WeggnerModal';
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 //Importando as imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
+import iconSearch from '../../assets/img/Search.png'
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
@@ -24,9 +24,7 @@ import { FaListUl } from 'react-icons/fa'
 
 function Filter() {
 
-
     const [isOpen, setIsOpen] = useState(false);
-
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -144,8 +142,8 @@ function Filter() {
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <img className="icon_category" src={iconMotor} />
-                            <h1 className="ui header motor search">Motores</h1>
+                            <img className="icon_category" src={iconSearch} />
+                            <h1 className="ui header motor search">Filtros</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
                                 <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço

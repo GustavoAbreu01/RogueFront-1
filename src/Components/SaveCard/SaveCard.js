@@ -68,6 +68,12 @@ function SaveCard({ item }, product) {
         };
     }, []);
 
+    const buttonComprar = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    }
+
 
     const renderDesktopView = () => (
         <>
@@ -98,7 +104,7 @@ function SaveCard({ item }, product) {
                     </div>
                     <div className='save_card_buy_button'>
                         <Link to='/cart'>
-                            <button className="ui fluid blue button save_card">Comprar</button>
+                            <button className="ui fluid blue button save_card" onClick={buttonComprar}>Comprar</button>
                         </Link>
                     </div>
                 </div>
@@ -131,7 +137,7 @@ function SaveCard({ item }, product) {
                 </div>
                 <div className='save_card_buy_button_mobile'>
                     <Link to='/cart'>
-                        <button className="ui fluid blue button save_card_mobile">Comprar</button>
+                        <button className="ui fluid blue button save_card_mobile" onClick={buttonComprar}>Comprar</button>
                     </Link>
                 </div>
             </div>

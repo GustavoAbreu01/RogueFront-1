@@ -53,6 +53,12 @@ function ProductCardAccessed(product) {
     )
   }
 
+  const buttonComprar = () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    productsInCart.push(product);
+    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+}
+
   const AddProductInSave = () => {
     const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
     savedProducts.push(product);
@@ -113,7 +119,7 @@ function ProductCardAccessed(product) {
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button'>
-            <button className="fluid ui button product_card_accessed_button">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
@@ -151,7 +157,7 @@ function ProductCardAccessed(product) {
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button'>
-            <button className="fluid ui button product_card_accessed_button">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
@@ -188,7 +194,7 @@ function ProductCardAccessed(product) {
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button_mobile'>
-            <button className="fluid ui button product_card_accessed_button_mobile">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button_mobile" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
