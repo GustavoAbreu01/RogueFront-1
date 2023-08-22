@@ -18,7 +18,7 @@ export default function ProfileModal({ user }) {
   const [openModalAcessibility, setOpenModalAcessibility] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
-  function realizarLogouta() {
+  function realizarLogout() {
     localStorage.removeItem('verifyLogin');
     window.location.reload();
   }
@@ -71,7 +71,9 @@ export default function ProfileModal({ user }) {
     else if (selectedSize === 'veryLarge')
       document.body.style.fontSize = "18px";
   };
-  //////
+
+
+
   const renderDesktopView = () => (
     <>
       <div>
