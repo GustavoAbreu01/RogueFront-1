@@ -18,13 +18,20 @@ import ProductService from '../../Service/ProductService';
 function ProductNewCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-    const [products, setProducts] = useState([]);
+    const [productsNew, setProductsNew] = useState([])
 
     useEffect(() => {
-        ProductService.findAll()
-            .then((data) => setProducts(data))
-            .catch((error) => console.error('Erro ao buscar produtos:', error));
+        getProductsRev();
     }, []);
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsNew(products);
+        } else {
+            setProductsNew([]);
+        }
+    }
 
 
     var settings = {
@@ -82,9 +89,9 @@ function ProductNewCarousel() {
     const renderDesktopView = () => (
         <div className='container_product_new_carousel' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsNew.map((product) => (
                     <div className='box_product_new_carousel'>
-                        <ProductCardNew key={product.id} product={product} />
+                        <ProductCardNew key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -94,9 +101,9 @@ function ProductNewCarousel() {
     const renderTabletView = () => (
         <div className='carouselProduct_tablet' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsNew.map((product) => (
                     <div className='box_product_new_carousel'>
-                        <ProductCardNew key={product.id} product={product} />
+                        <ProductCardNew key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -106,9 +113,9 @@ function ProductNewCarousel() {
     const renderMobileView = () => (
         <div className='carouselProduct_mobile' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsNew.map((product) => (
                     <div className='box_product_new_carousel'>
-                        <ProductCardNew key={product.id} product={product} />
+                        <ProductCardNew key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>

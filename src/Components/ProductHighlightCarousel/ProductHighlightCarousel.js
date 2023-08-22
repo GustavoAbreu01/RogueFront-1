@@ -15,13 +15,20 @@ import ProductService from '../../Service/ProductService';
 function ProductHighlightCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-    const [products, setProducts] = useState([]);
+    const [productsHightlight, setProductsHightlight] = useState([])
 
     useEffect(() => {
-        ProductService.findAll()
-            .then((data) => setProducts(data))
-            .catch((error) => console.error('Erro ao buscar produtos:', error));
+        getProductsRev();
     }, []);
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsHightlight(products);
+        } else {
+            setProductsHightlight([]);
+        }
+    }
 
 
     var settings = {
@@ -79,9 +86,9 @@ function ProductHighlightCarousel() {
     const renderDesktopView = () => (
         < div className='container_product_hightlight_carousel' >
             <Slider {...settings}>
-                {products.map((product) => (
+                {productsHightlight.map((product) => (
                     <div className='box_product_hightlight_carousel'>
-                        <ProductCardHighlight key={product.id} product={product} />
+                        <ProductCardHighlight key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -91,9 +98,9 @@ function ProductHighlightCarousel() {
     const renderTabletView = () => (
         < div className='container_product_hightlight_carousel_tablet' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsHightlight.map((product) => (
                     <div className='box_product_hightlight_carousel'>
-                        <ProductCardHighlight key={product.id} product={product} />
+                        <ProductCardHighlight key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -103,9 +110,9 @@ function ProductHighlightCarousel() {
     const renderMobileView = () => (
         < div className='container_product_hightlight_carousel_mobile' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsHightlight.map((product) => (
                     <div className='box_product_hightlight_carousel'>
-                        <ProductCardHighlight key={product.id} product={product} />
+                        <ProductCardHighlight key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>

@@ -11,13 +11,12 @@ import ProductService from '../../Service/ProductService';
 function ProductAccessedCarousel() {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsAcceessed, setProductsAcceessed] = useState([])
-    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        getVideosRev();
+        getProductsRev();
     }, []);
 
-    const getVideosRev = async () => {
+    const getProductsRev = async () => {
         const products = await ProductService.findAll();
         if (products) {
             setProductsAcceessed(products);

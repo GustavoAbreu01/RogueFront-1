@@ -85,7 +85,7 @@ function ProductCardAccessed({ product }) {
   }
 
   const renderDesktopView = ({product}) => (
-    <div className="product_acessed" key={product.id}>
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_accessed'>
       <div className='box_product_card_accessed_tag_icon'>
         <button className="circular ui icon button product_card_accessed">
@@ -125,7 +125,7 @@ function ProductCardAccessed({ product }) {
   )
 
   const renderTabletView = ({product}) => (
-    <div className="product_acessed" key={product.id}>
+    <div className="product_acessed"  key={product.code}>
     <div className='container_product_card_accessed_tablet'>
       <div className='box_product_card_accessed_tag_icon'>
         <button className="circular blue big ui icon button product_card_accessed">
@@ -165,7 +165,7 @@ function ProductCardAccessed({ product }) {
   )
 
   const renderMobileView = ({product}) => (
-    <div className="product_acessed" key={product.id}>
+    <div className="product_acessed"  key={product.code}>
     <div className='container_product_card_accessed_mobile'>
       <div className='box_product_card_accessed_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_accessed">

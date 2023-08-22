@@ -12,13 +12,21 @@ import ProductService from '../../Service/ProductService';
 function ProductSearchedCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-    const [products, setProducts] = useState([]);
+    const [productsSearched, setProductsSearched] = useState([])
 
     useEffect(() => {
-        ProductService.findAll()
-            .then((data) => setProducts(data))
-            .catch((error) => console.error('Erro ao buscar produtos:', error));
+        getProductsRev();
     }, []);
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsSearched(products);
+        } else {
+            setProductsSearched([]);
+        }
+    }
+
 
 
     var settings = {
@@ -77,9 +85,9 @@ function ProductSearchedCarousel() {
     const renderDesktopView = () => (
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsSearched.map((product) => (
             <div className='box_product_searched_carousel'>
-                        <ProductCardSearched key={product.id} product={product} />
+                        <ProductCardSearched key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -89,9 +97,9 @@ function ProductSearchedCarousel() {
     const renderTabletView = () => (
         <div className='container_product_searched_carousel_tablet' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsSearched.map((product) => (
             <div className='box_product_searched_carousel'>
-                        <ProductCardSearched key={product.id} product={product} />
+                        <ProductCardSearched key={product.code} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -101,7 +109,7 @@ function ProductSearchedCarousel() {
     const renderMobileView = () => (
         <div className='container_product_searched_carousel_mobile' >
             <Slider {...settings}>
-            {products.map((product) => (
+            {productsSearched.map((product) => (
             <div className='box_product_searched_carousel'>
                         <ProductCardSearched key={product.id} product={product} />
                     </div>

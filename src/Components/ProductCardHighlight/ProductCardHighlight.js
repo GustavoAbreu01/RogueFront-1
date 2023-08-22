@@ -83,7 +83,7 @@ function ProductCardHighlight(product) {
 
   const renderDesktopView = ({ product }) => (
 
-    <div className="product_highlight" key={product.id}>
+    <div className="product_highlight" key={product.code}>
       <div className='container_product_card_hightlight'>
         <div className='box_product_card_hightlight_tag_icon'>
           <button className="circular ui icon button product_card_hightlight">

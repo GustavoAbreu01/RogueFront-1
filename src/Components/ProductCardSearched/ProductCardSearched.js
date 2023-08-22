@@ -83,7 +83,7 @@ function ProductCardSearched(product) {
   }
 
   const renderDesktopView = ({product}) => (
-    <div className="product_acessed" key={product.id}>
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched'>
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular ui icon button product_card_searched">

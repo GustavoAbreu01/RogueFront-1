@@ -83,7 +83,7 @@ function ProductCardNew(product) {
   }
 
   const renderDesktopView = ({product}) => (
-    <div className="product_new" key={product.id}>
+    <div className="product_new" key={product.code}>
     <div className='container_product_card_new'>
 
       <div className='box_product_card_new_tag_icon'>
