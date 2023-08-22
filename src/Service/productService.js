@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'http://localhost:8081/product'
+const url = 'http://localhost:8082/product'
 
 export const ProductService = {
 
@@ -14,7 +14,6 @@ export const ProductService = {
     findAll: function() {
       console.log("alo")
         return new Promise((resolve, reject) => {
-         
           axios.get(url)
             .then((response) => {
               resolve(response.data);
