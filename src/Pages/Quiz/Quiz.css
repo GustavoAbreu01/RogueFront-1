@@ -129,7 +129,7 @@
 
 .checkbox-wrapper-37 .checkbox-box {
     border-radius: 20px;
-    fill: var(--grey-secondary);
+    fill: var(--grey-septenary) !important;
     border: var(--blue-primary);
     stroke: var(--blue-primary);
     stroke-dasharray: 800;

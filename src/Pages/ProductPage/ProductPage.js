@@ -75,6 +75,119 @@ function ProductPage(product) {
         )
       }
 
+      const AddProductInCompare = () => {
+        const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
+    
+        if (productsInCompare.length <= 2) {
+            productsInCompare.push(product);
+            localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
+    
+            Swal.fire({
+                title: 'Produto adicionado a comparação!',
+                icon: 'success',
+                showConfirmButton: true,
+                confirmButtonText: 'Ir para a tela comparação',
+                confirmButtonColor: 'var(--blue-primary)',
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/compare";
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Produto não pode ser adicionado no carrinho',
+                icon: 'warning',
+                showConfirmButton: true,
+                confirmButtonText: 'Ir para a tela comparação',
+                confirmButtonColor: 'var(--blue-primary)',
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/compare";
+                }
+            });
+        }
+        
+    }
+
+    
+    const AddProductInCompareTablet = () => {
+        const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
+    
+        if (productsInCompare.length <= 1) {
+            productsInCompare.push(product);
+            localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
+    
+            Swal.fire({
+                title: 'Produto adicionado a comparação!',
+                icon: 'success',
+                showConfirmButton: true,
+                confirmButtonText: 'Ir para a tela comparação',
+                confirmButtonColor: 'var(--blue-primary)',
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/compare";
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Produto não pode ser adicionado no carrinho',
+                icon: 'warning',
+                showConfirmButton: true,
+                confirmButtonText: 'Ir para a tela comparação',
+                confirmButtonColor: 'var(--blue-primary)',
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/compare";
+                }
+            });
+        }
+        
+    }
+
     const renderDesktopView = () => (
         <>
             {!verify() ? <Header /> : <HeaderLogin />}

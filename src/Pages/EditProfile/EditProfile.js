@@ -28,6 +28,21 @@ function EditProfile() {
 
   const [activeSection, setActiveSection] = useState(1);
   const [editMode, setEditMode] = useState(false);
+  const [showComponent, setShowComponent] = useState(false);
+
+  useEffect(() => {
+    const storedValue = localStorage.getItem('showComponent');
+    if (storedValue) {
+      setShowComponent(storedValue === 'true');
+    }
+  }, []);
+
+  const handleCheckboxChange = (event) => {
+    const newValue = event.target.checked;
+    setShowComponent(newValue);
+    localStorage.setItem('showComponent', newValue);
+    window.location.reload();
+  };
 
   const changeInfo = (event) => {
     event.preventDefault();
@@ -363,7 +378,9 @@ function EditProfile() {
                       </div>
                       <div className="acessebility_profile_switcher">
                         <div className="checkbox-wrapper-6">
-                          <input className="tgl tgl-light" id="cb1-1" type="checkbox" />
+                          <input className="tgl tgl-light" id="cb1-1" type="checkbox" 
+                          onChange={handleCheckboxChange}
+                          checked={showComponent}/>
                           <label className="tgl-btn" for="cb1-1" />
                         </div>
                       </div>
@@ -715,7 +732,9 @@ function EditProfile() {
                     </div>
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
-                        <input className="tgl tgl-light" id="cb1-1" type="checkbox" />
+                        <input className="tgl tgl-light" id="cb1-1" type="checkbox"
+                        onChange={handleCheckboxChange}
+                        checked={showComponent} />
                         <label className="tgl-btn" for="cb1-1" />
                       </div>
                     </div>

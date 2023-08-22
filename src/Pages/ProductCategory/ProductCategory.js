@@ -15,9 +15,6 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Filter from '../../Components/Filter/Filter'
 
-//Importando as imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
-
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
@@ -33,8 +30,9 @@ function ProductCategory() {
       return false
     }
   }
+  
 
-  const [isGrid, setIsGrid] = useState(true);
+  const [isGrid, setIsGrid] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
