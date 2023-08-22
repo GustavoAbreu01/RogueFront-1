@@ -150,12 +150,6 @@ function CardCompare() {
                         </div>
                     </div>
                 ))}
-                <div className='card_compare_arrow_first'>
-                    <MdCompareArrows size={'4rem'} />
-                </div>
-                {verify() && <div className='card_compare_arrow_second'>
-                    <MdCompareArrows size={'4rem'} />
-                </div>}
             </div>
         </>
     )
@@ -229,9 +223,6 @@ function CardCompare() {
                         </div>
                     </div>
                 ))}
-                {verifyTablet() && <div className='card_compare_arrow_second_tablet'>
-                    <MdCompareArrows size={'4rem'} />
-                </div>}
             </div>
         </>
     )

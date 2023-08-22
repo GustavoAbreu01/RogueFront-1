@@ -103,7 +103,6 @@ function Compare() {
           {!verify() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
-
         </div>
         <div className='box_title_similar_recommended'>
           <FaStar color='var(--white)' size={40} />
