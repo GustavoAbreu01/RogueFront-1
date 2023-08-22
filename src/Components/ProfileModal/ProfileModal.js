@@ -18,24 +18,15 @@ export default function ProfileModal({ user }) {
   const [openModalAcessibility, setOpenModalAcessibility] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
+  function realizarLogouta() {
+    localStorage.removeItem('verifyLogin');
+    window.location.reload();
+  }
+
   useEffect(() => {
     function handleOutsideClick(event) {
       if (event.target.classList.contains('background')) {
         setOpenModalAcessibility(false);
-      }
-    }
-
-    document.addEventListener('click', handleOutsideClick);
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
-
-
-  useEffect(() => {
-    function handleOutsideClick(event) {
-      if (event.target.classList.contains('background')) {
-        setOpenModal(false);
       }
     }
 
@@ -64,8 +55,6 @@ export default function ProfileModal({ user }) {
     setOpenModalAcessibility(!openModalAcessibility);
   }
 
-
-  /////////
   const [selectedSize, setSelectedSize] = useState('');
 
   const handleSizeChange = (event) => {
@@ -199,13 +188,11 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profile_item'>
-                  <Link to='/quiz'>
                     <button className="ui icon button shopping profile">
                       <i className="sign-out icon profile"></i>
                     </button>
-                  </Link>
                   <div className='text_profile_container'>
-                    <Link to='/quiz'><p className='text_profile_opt'>Sair</p></Link>
+                    <p className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>
@@ -370,13 +357,11 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profile_item'>
-                  <Link to='/quiz'>
                     <button className="ui icon button shopping profile">
                       <i className="sign-out icon profile"></i>
                     </button>
-                  </Link>
                   <div className='text_profile_container'>
-                    <Link to='/quiz'><p className='text_profile_opt'>Sair</p></Link>
+                    <p className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>

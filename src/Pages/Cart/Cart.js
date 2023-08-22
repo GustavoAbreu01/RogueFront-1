@@ -152,7 +152,7 @@ function Cart() {
             </div>
             <div className='button_total_Cart'>
               {!verify() ? (
-                <button className="fluid ui button final"><Link to='/register'>Realizar Login</Link></button>
+                <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
               ) : (
                 !hasProductsInCart() ? (
                   <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
@@ -244,7 +244,7 @@ function Cart() {
             </div>
             <div className='button_total_Cart_tablet'>
               {!verify() ? (
-                <button className="fluid ui button final"><Link to='/register'>Realizar Login</Link></button>
+                <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
               ) : (
                 !hasProductsInCart() ? (
                   <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
@@ -323,7 +323,7 @@ function Cart() {
             </div>
             <div className='button_total_Cart_mobile'>
               {!verify() ? (
-                <button className="fluid ui button final"><Link to='/register'>Realizar Login</Link></button>
+                <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
               ) : (
                 !hasProductsInCart() ? (
                   <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>

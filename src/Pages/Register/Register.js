@@ -56,7 +56,6 @@ function Register() {
         } else {
             event.preventDefault();
             localStorage.setItem("verifyLogin", 'yes');
-            UserService.create(user)
             navigate('/');
         }
     }
