@@ -44,35 +44,35 @@ function ProductPage(product) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    
+
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
         productsInCart.push(product);
         localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
         Swal.fire({
-          title: 'Produto adicionado a carrinho!',
-          icon: 'success',
-          showConfirmButton: true,
-          confirmButtonText: 'Ir para o carrinho',
-          confirmButtonColor: 'var(--blue-primary)',
-          position: 'top-end',
-          timer: 5000,
-          timerProgressBar: true,
-          toast: true,
-          width: 400,
-          showClass: {
-            popup: 'animate__animated animate__backInRight'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__backOutRight'
-          },
+            title: 'Produto adicionado a carrinho!',
+            icon: 'success',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+                popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__backOutRight'
+            },
         }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/cart"
-          }
+            if (result.isConfirmed) {
+                window.location.href = "/cart"
+            }
         }
         )
-      }
+    }
 
     const renderDesktopView = () => (
         <>
@@ -164,7 +164,7 @@ function ProductPage(product) {
                 </div>
             </div>
             <div className='box_product_page_title_similar'>
-                <FaStar color='var(--white)' size={40} />
+                <i class="magic icon" color='var(--white)'></i>
                 <h1>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
@@ -402,7 +402,7 @@ function ProductPage(product) {
             <Footer />
         </>
     )
-    
+
     const getViewToRender = () => {
         if (screenSize.width > 900) {
             return renderDesktopView();
