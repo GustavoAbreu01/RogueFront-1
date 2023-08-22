@@ -104,7 +104,7 @@ function ProductCardNew({product}) {
       </div>
       <div className='box_product_card_new_info'>
         <div className='product_card_new_info_text'>
-          <h3 className='product_card_new_name'>{product.name}</h3>
+          <h3 title= {product.name} className='product_card_new_name'>{product.name}</h3>
           <p className='product_card_new_description'>{product.description}</p>
         </div>
       </div>
@@ -144,12 +144,12 @@ function ProductCardNew({product}) {
         </div>
         <div className='box_product_card_new_info'>
           <div className='product_card_new_info_text'>
-            <h3 className='product_card_new_name'>W12 Monofásico</h3>
-            <p className='product_card_new_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 title= {product.name} className='product_card_new_name'>title= {product.name}</h3>
+            <p className='product_card_new_description'>title= {product.description}</p>
           </div>
         </div>
         <div className='box_product_card_new_info_price'>
-          <h3 className='product_card_new_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_new_price'>R$ {product.price}</h3>
           <p className='product_card_new_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -184,11 +184,11 @@ function ProductCardNew({product}) {
         </div>
         <div className='box_product_card_new_info'>
           <div className='product_card_new_info_text_mobile'>
-            <h3 className='product_card_new_name_mobile'>W12 Monofásico</h3>
+            <h3 title= {product.name} className='product_card_new_name_mobile'>{product.name}</h3>
           </div>
         </div>
         <div className='box_product_card_new_info_price'>
-          <h3 className='product_card_new_price_mobile'>R$ 1.259,00</h3>
+          <h3 className='product_card_new_price_mobile'>R$ {product.description}</h3>
           <p className='product_card_new_price_option_mobile'>Á vista no pix</p>
         </div>
         <Link to='/cart'>

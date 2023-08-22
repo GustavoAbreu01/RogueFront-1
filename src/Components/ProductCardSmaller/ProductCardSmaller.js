@@ -299,7 +299,7 @@ function SmallProductCard({product}) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>{product.name}</h3>
+                        <h3 title= {product.name} className='product_card_smaller_title'>{product.name}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>

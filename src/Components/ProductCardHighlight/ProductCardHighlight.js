@@ -104,7 +104,7 @@ function ProductCardHighlight({product}) {
           </div>
           <div className='box_product_card_hightlight_info'>
             <div className='product_card_hightlight_info_text'>
-              <h3 className='product_card_hightlight_name'>{product.name}</h3>
+              <h3 title= {product.name} className='product_card_hightlight_name'>{product.name}</h3>
               <p className='product_card_hightlight_description'>{product.description}</p>
             </div>
           </div>
@@ -144,7 +144,7 @@ function ProductCardHighlight({product}) {
           </div>
           <div className='box_product_card_hightlight_info'>
             <div className='product_card_hightlight_info_text'>
-              <h3 className='product_card_hightlight_name'>{product.name}</h3>
+              <h3 title= {product.name} className='product_card_hightlight_name'>{product.name}</h3>
               <p className='product_card_hightlight_description'>{product.description}</p>
             </div>
           </div>
@@ -184,7 +184,7 @@ function ProductCardHighlight({product}) {
           </div>
           <div className='box_product_card_hightlight_info'>
             <div className='product_card_hightlight_info_text_mobile'>
-              <h3 className='product_card_hightlight_name_mobile'>R$ {product.name}</h3>
+              <h3 title={product.name} className='product_card_hightlight_name_mobile'>R$ {product.name}</h3>
             </div>
           </div>
           <div className='box_product_card_hightlight_info_price'>

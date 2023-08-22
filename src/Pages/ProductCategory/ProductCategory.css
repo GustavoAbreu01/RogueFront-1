@@ -2,20 +2,13 @@
     background-color: var(--white);
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     margin: 2rem;
-    margin-right: 1rem;
+    margin-right: 15%;
     height: auto;
     width: 20rem;
     transition: 0.3s;
     align-items: center;
     padding: 2rem;
     border-radius: 10px;
-}
-.category_filter_dropdown{
-    font-size: 20px;
- flex-direction: row;
- display: flex;
- justify-content: space-between;
-
 }
 
 .ui.header.motor.search {
@@ -95,11 +88,28 @@
     width: 63rem;
     display: flex;
     align-items: center;
+    /* Centraliza verticalmente */
 }
-a:link {
-    text-decoration: none;
- }
-.itemContentCategory {
+
+.icon_pagination {
+    color: var(--grey-tertiary);
+    background-color: var(--grey-secondary);
+    padding: 0.3rem;
+    border-radius: 10px;
+    font-size: 1.7rem;
+}
+
+.icon_pagination:active {
+    color: var(--blue-primary);
+}
+
+.icon_pagination:hover {
+    color: var(--blue-primary);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.icons_ordenation {
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -111,19 +121,8 @@ a:link {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* Alinha o conteúdo nos extremos da div */
-}
-
-.angle.down.icon.category{
-    color: var(--blue-primary);
-    font-size: 1.7rem;
-}
-.saveCategory {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
+    align-items: center;
+    margin: 1rem;
 }
 
 .ui.vertically.divided.grid {

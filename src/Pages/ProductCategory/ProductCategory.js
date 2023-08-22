@@ -92,7 +92,7 @@ function ProductCategory() {
 
   const renderDesktopView = () => (
     <>
-      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+  {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
