@@ -10,6 +10,7 @@ import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import Filter from '../../Components/Filter/Filter'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
@@ -24,8 +25,6 @@ import { FaListUl } from 'react-icons/fa'
 
 
 function Search() {
-
-
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -104,6 +103,13 @@ function Search() {
   const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    ProductService.findAll()
+      .then((data) => setProducts(data))
+      .catch((error) => console.error('Erro ao buscar produtos:', error));
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -117,7 +123,7 @@ function Search() {
   }, []);
 
   const renderDesktopView = () => (
-    <div>
+    <>
       {!verify() ? <Header /> : <HeaderLogin />}
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
@@ -174,192 +180,14 @@ function Search() {
       <div className='container_search_page_layout'>
         <div className='container_search_page_detail'>
           <div className='container_search_page'>
-            <div className="search_second_filter">
-              <img className="icon_search" src={magnifyingGlass} />
-              <h1 className="ui header motor search">Filtros</h1>
-              <br />
-              <div className='container_search_filter_expanded'>
-                <div className={`search_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Voltagem
-
-                  <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
-                </div>
-                {isOpen && (
-                  <div className='search_transition'>
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc search" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-
-                  </div>
-
-
-                )
-                }
-              </div>
-              <Divider></Divider>
-              <div className='container_search_filter_expanded'>
-                <div className={`search_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Potência
-
-                  <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
-                </div>
-                {isOpen2 && (
-                  <div className='search_transition'>
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc search" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-                )
-                }
-              </div>
-              <Divider></Divider>
-              <div className='container_search_filter_expanded'>
-                <div className={`search_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Frequência
-
-                  <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
-                </div>
-                {isOpen3 && (
-                  <div className='search_transition'>
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc search" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-
-                )
-                }
-              </div>
-              <Divider></Divider>
-              <div className='container_search_filter_expanded'>
-                <div className={`search_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Cor
-
-                  <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
-                </div>
-                {isOpen4 && (
-                  <div className='search_transition'>
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-                )
-                }
-              </div>
-            </div>
+            <Filter />
           </div>
-
-
-
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-                {numero.map((i) => (
+                {products.map((product) => (
                   <div className="category_itens" key={i} >
-                    <CategoryCard />
+                    <SmallProductCard key={product.id} product={product} />
                   </div>
                 ))}
               </div>
@@ -367,9 +195,9 @@ function Search() {
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-                {numero.map((i) => (
-                  <div className="searchItens" key={i} >
-                    <SmallProductCard />
+                {products.map((product) => (
+                  <div className="searchItens">
+                    <CategoryCard key={product.id} product={product} />
                   </div>
                 ))}
               </div>
@@ -378,19 +206,19 @@ function Search() {
         </div>
       </div>
       <Footer />
-    </div>
-  )
+    </>
+  );
   const renderMobileView = () => (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_breadcrumb_mobile'>
-       
-          <div className="ui breadcrumb">
-            <Link to="/" className="section">Home</Link>
-            <i className="right arrow icon divider"></i>
-            <div className="section">Pesquisa: <b>{searchTerm}</b></div>
-          </div>
-  
+
+        <div className="ui breadcrumb">
+          <Link to="/" className="section">Home</Link>
+          <i className="right arrow icon divider"></i>
+          <div className="section">Pesquisa: <b>{searchTerm}</b></div>
+        </div>
+
       </div>
       <div className='box_pagination_config_mobile'>
         <div className='container_pagination_config_mobile'>
@@ -440,178 +268,7 @@ function Search() {
       <div className='container_category_page_layout_mobile'>
         <div className='container_category_page_detail_mobile'>
           <div className='container_category_page_mobile'>
-            <div className="category_second_filter_mobile">
-              <h2 className="search_mobile">Filtros</h2>
-              <br />
-              <div className='container_category_filter_expanded_mobile'>
-                <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Voltagem
-
-                  <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
-                </div>
-                {isOpen && (
-                  <div className='search_transition_mobile'>
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc search" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-                )
-                }
-              </div>
-              <Divider></Divider>
-              <div className='container_category_filter_expanded_mobile'>
-                <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Potência
-
-                  <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
-                </div>
-                {isOpen2 && (
-                  <div className='search_transition'>
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc search" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-                )
-                }
-              </div>
-              <Divider></Divider>
-              <div className='container_category_filter_expanded_mobile'>
-                <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Frequência
-
-                  <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
-                </div>
-                {isOpen3 && (
-                  <div className='search_transition_mobile'>
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox search">
-                      <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc search" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-
-                )
-                }
-              </div>
-              <Divider></Divider>
-              <div className='container_category_filter_expanded_mobile'>
-                <div className={`category_filter_dropdown_mobile ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Cor
-
-                  <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
-                </div>
-                {isOpen4 && (
-                  <div className='search_transition_mobile'>
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                      <label className="desc" htmlFor="Monofasico"> Monofásico </label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                      <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                      <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                      <label className="desc" htmlFor="Sincronos">Síncronos</label>
-                    </div>
-                    <br />
-                    <br />
-                    <div className="ui checkbox">
-                      <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                      <label className="desc" htmlFor="Aneis">Anéis</label>
-                    </div>
-                    <br />
-                    <br />
-                  </div>
-                )
-                }
-              </div>
-            </div>
+            <Filter />
           </div>
 
           {isGrid ? (
@@ -640,18 +297,16 @@ function Search() {
       </div>
     </>
   )
+
   const getViewToRender = () => {
     if (screenSize.width > 900) {
       return renderDesktopView();
-      // } else if (screenSize.width < 900 && screenSize.width > 500) {
-      //   return renderTabletView();
     } else {
       return renderMobileView();
     }
   };
 
   return <>{getViewToRender()}</>;
-};
+}
 
-
-export default Search
+export default Search;

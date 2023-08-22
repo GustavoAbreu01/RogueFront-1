@@ -15,6 +15,9 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Filter from '../../Components/Filter/Filter'
 
+//Importando as imagens
+import iconMotor from "../../assets/img/iconeMotor.png"
+
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
@@ -30,9 +33,8 @@ function ProductCategory() {
       return false
     }
   }
-  
 
-  const [isGrid, setIsGrid] = useState(false);
+  const [isGrid, setIsGrid] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
@@ -174,20 +176,20 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-                {numero.map((i) => (
-                  <div className="category_itens" key={i} >
-                    <CategoryCard />
-                  </div>
+              {products.map((product) => (
+             <div className="category_itens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-                {numero.map((i) => (
-                  <div className="searchItens" key={i} >
-                    <SmallProductCard />
-                  </div>
+              {products.map((product) => (
+             <div className="searchItens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>
@@ -262,20 +264,20 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar_mobile">
               <div className="box_category_bar_mobile">
-                {numero.map((i) => (
-                  <div className="category_itens_mobile" key={i} >
-                    <CategoryCard />
-                  </div>
+              {products.map((product) => (
+             <div className="category_itens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar_mobile">
               <div className="box_search_bar_mobile">
-                {numero.map((i) => (
-                  <div className="searchItens_mobile" key={i} >
-                    <SmallProductCard />
-                  </div>
+              {products.map((product) => (
+             <div className="searchItens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>

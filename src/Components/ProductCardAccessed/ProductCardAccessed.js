@@ -1,5 +1,7 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
 import './ProductCardAccessed.css'
 
 //importando as frameworks
@@ -82,7 +84,8 @@ function ProductCardAccessed(product) {
     )
   }
 
-  const renderDesktopView = () => (
+  const renderDesktopView = ({product}) => (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_accessed'>
       <div className='box_product_card_accessed_tag_icon'>
         <button className="circular ui icon button product_card_accessed">
@@ -103,12 +106,12 @@ function ProductCardAccessed(product) {
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>
-            <h3 className='product_card_accessed_name'>W12 Monofásico</h3>
-            <p className='product_card_accessed_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 className='product_card_accessed_name'>{product.name}</h3>
+            <p className='product_card_accessed_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -118,9 +121,11 @@ function ProductCardAccessed(product) {
         </Link>
       </Link>
     </div>
+    </div>
   )
 
-  const renderTabletView = () => (
+  const renderTabletView = ({product}) => (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_accessed_tablet'>
       <div className='box_product_card_accessed_tag_icon'>
         <button className="circular blue big ui icon button product_card_accessed">
@@ -141,12 +146,12 @@ function ProductCardAccessed(product) {
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>
-            <h3 className='product_card_accessed_name'>W12 Monofásico</h3>
-            <p className='product_card_accessed_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 className='product_card_accessed_name'>{product.name}</h3>
+            <p className='product_card_accessed_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -156,9 +161,11 @@ function ProductCardAccessed(product) {
         </Link>
       </Link>
     </div>
+    </div>
   )
 
-  const renderMobileView = () => (
+  const renderMobileView = ({product}) => (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_accessed_mobile'>
       <div className='box_product_card_accessed_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_accessed">
@@ -179,11 +186,11 @@ function ProductCardAccessed(product) {
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text_mobile'>
-            <h3 className='product_card_accessed_name_mobile'>W12 Monofásico</h3>
+            <h3 className='product_card_accessed_name_mobile'>{product.name}</h3>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price_mobile'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price_mobile'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option_mobile'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -192,6 +199,7 @@ function ProductCardAccessed(product) {
           </div>
         </Link>
       </Link>
+    </div>
     </div>
   )
 

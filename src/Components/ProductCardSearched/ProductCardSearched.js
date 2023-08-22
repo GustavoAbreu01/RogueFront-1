@@ -82,9 +82,9 @@ function ProductCardSearched(product) {
     )
   }
 
-  const renderDesktopView = () => (
+  const renderDesktopView = ({product}) => (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_searched'>
-
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
@@ -104,12 +104,12 @@ function ProductCardSearched(product) {
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 className='product_card_searched_name'>W12 Monofásico</h3>
-            <p className='product_card_searched_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 className='product_card_searched_name'>{product.name}</h3>
+            <p className='product_card_searched_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
-          <h3 className='product_card_searched_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_searched_price'>R$ {product.price}</h3>
           <p className='product_card_searched_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -119,11 +119,12 @@ function ProductCardSearched(product) {
         </Link>
       </Link >
     </div >
+    </div >
   )
 
-  const renderTabletView = () => (
+  const renderTabletView = ({product}) => (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_searched_tablet'>
-
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular big blue ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
@@ -143,12 +144,12 @@ function ProductCardSearched(product) {
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 className='product_card_searched_name'>W12 Monofásico</h3>
-            <p className='product_card_searched_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 className='product_card_searched_name'>{product.name}</h3>
+            <p className='product_card_searched_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
-          <h3 className='product_card_searched_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_searched_price'>R$ {product.price}</h3>
           <p className='product_card_searched_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -158,11 +159,12 @@ function ProductCardSearched(product) {
         </Link>
       </Link >
     </div >
+    </div >
   )
 
-  const renderMobileView = () => (
+  const renderMobileView = ({product}) => (
+    <div className="product_acessed" key={product.id}>
     <div className='container_product_card_searched_mobile'>
-
       <div className='box_product_card_searched_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
@@ -182,11 +184,11 @@ function ProductCardSearched(product) {
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text_mobile'>
-            <h3 className='product_card_searched_name_mobile'>W12 Monofásico</h3>
+            <h3 className='product_card_searched_name_mobile'>{product.name}</h3>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
-          <h3 className='product_card_searched_price_mobile'>R$ 1.259,00</h3>
+          <h3 className='product_card_searched_price_mobile'>R$ {product.price}</h3>
           <p className='product_card_searched_price_option_mobile'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -196,6 +198,7 @@ function ProductCardSearched(product) {
         </Link>
       </Link >
     </div >
+    </div>
   )
 
   const getViewToRender = () => {

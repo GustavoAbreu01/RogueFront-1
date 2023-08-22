@@ -1,16 +1,22 @@
 //Importando o React e o CSS
 import './ProductAccessedCarousel.css';
-import React, { useEffect, useState } from 'react'
-
-//importando as frameworks
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
+import ProductService from '../../Service/ProductService';
+
 
 function ProductAccessedCarousel() {
 
-    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        ProductService.findAll()
+            .then((data) => setProducts(data))
+            .catch((error) => console.error('Erro ao buscar produtos:', error));
+    }, []);
 
     var settings = {
         className: "center",
@@ -66,99 +72,25 @@ function ProductAccessedCarousel() {
     }, []);
 
     const renderDesktopView = () => (
-        <div className='container_product_accessed_carousel' >
+        <div className='container_product_accessed_carousel'>
             <Slider {...settings}>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
+                {products.map((product) => (
+                    <div className='box_product_accessed_carousel'>
+                        <ProductCardAccessed key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
-        </div >
+        </div>
     )
 
     const renderTabletView = () => (
         <div className='container_product_accessed_carousel_tablet' >
             <Slider {...settings}>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel_tablet'>
-                    <ProductCardAccessed />
-                </div>
+                {products.map((product) => (
+                    <div className='box_product_accessed_carousel'>
+                        <ProductCardAccessed key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -166,48 +98,11 @@ function ProductAccessedCarousel() {
     const renderMobileView = () => (
         <div className='container_product_accessed_carousel_mobile' >
             <Slider {...settings}>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
-                <div className='box_product_accessed_carousel'>
-                    <ProductCardAccessed />
-                </div>
+            {products.map((product) => (
+                    <div className='box_product_accessed_carousel'>
+                        <ProductCardAccessed key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
