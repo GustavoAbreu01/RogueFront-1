@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardHighlight(product) {
+function ProductCardHighlight({product}) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -162,7 +162,7 @@ function ProductCardHighlight(product) {
     </div>
   )
 
-  const renderMobileView = ({ product }) => (
+  const renderMobileView = () => (
     <div className="product_highlight" key={product.code}>
       <div className='container_product_card_hightlight_mobile'>
         <div className='box_product_card_hightlight_tag_icon_mobile'>

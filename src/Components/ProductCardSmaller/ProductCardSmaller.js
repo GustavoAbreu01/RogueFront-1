@@ -11,7 +11,7 @@ import motor from '../../assets/img/motor.png'
 
 
 
-function SmallProductCard(product) {
+function SmallProductCard({product}) {
 
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
@@ -201,7 +201,7 @@ function SmallProductCard(product) {
     }, []);
 
 
-    const renderDesktopView = ({product}) => (
+    const renderDesktopView = () => (
         <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller'>
             <div className='container_product_card_smaller_action_icon'>
@@ -239,7 +239,7 @@ function SmallProductCard(product) {
             </div>
         </div>
     )
-    const renderTabletView = ({product}) => (
+    const renderTabletView = () => (
         <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller'>
             <div className='container_product_card_smaller_action_icon'>
@@ -277,7 +277,7 @@ function SmallProductCard(product) {
         </div>
         </div>
     )
-    const renderMobileView = ({product}) => (
+    const renderMobileView = () => (
         <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller_mobile'>
             <div className='container_product_card_smaller_mobile_action_icon'>

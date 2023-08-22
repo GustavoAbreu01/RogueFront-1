@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardSearched(product) {
+function ProductCardSearched({product}) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
