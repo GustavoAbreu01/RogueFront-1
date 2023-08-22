@@ -124,7 +124,6 @@ function Filter() {
     const toggleDropdown19 = () => {
         setIsOpen19(!isOpen19);
     };
-    const [isOpen20, setIsOpen20] = useState(false);
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -784,7 +783,7 @@ function Filter() {
 
                                     <i className={`angle down icon search ${isOpen16 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen4 && (
+                                {isOpen16 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox">
                                             <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
