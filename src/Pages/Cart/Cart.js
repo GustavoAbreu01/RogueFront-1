@@ -23,12 +23,34 @@ import { BsArrowLeftShort } from 'react-icons/bs';
 
 
 function Cart() {
-
+  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
-  var valor = 1100.00;
-  var frete = 100;
-  var total = 1200;
+  const somaTaxProduct = () => {
+    var soma = 0;
+    for (var i = 0; i < productsInCart.length; i++) {
+      soma += productsInCart[i].price * 0.1;
+    }
+    return soma;
+  }
+
+  const somaProduct = () => {
+    var soma = 0;
+    console.log(productsInCart)
+    for (var i = 0; i < productsInCart.length; i++) {
+      soma += productsInCart[i].price;
+    }
+    return soma;
+  }
+
+  const somaTotal = () => {
+    var soma = 0;
+    for (var i = 0; i < productsInCart.length; i++) {
+      soma += productsInCart[i].price;
+    }
+    soma += somaTaxProduct();
+    return soma;
+  }
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -51,9 +73,11 @@ function Cart() {
   }, []);
 
   const hasProductsInCart = () => {
-    // Replace this with your logic to check if there are products in the cart
-    const productsInCart = 0; // Replace with the actual count of products in the cart
-    return productsInCart > 0;
+    if (productsInCart.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
   };
 
   const renderDesktopView = () => (
@@ -94,13 +118,11 @@ function Cart() {
             </div>
             {hasProductsInCart() ? (
               <>
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
-                <ProductCart />
+                {productsInCart.map((item, index) => (
+                  <div key={index}>
+                    <ProductCart item={item} />
+                  </div>
+                ))}
               </>
             ) : (
               <div className='box_empty_cart'>
@@ -120,27 +142,25 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${total}</h5>
+              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
             </div>
             <div className='button_total_Cart'>
-              {!verify() ?
-                <Link to='/register'>
-                  <button className="fluid ui button final">Realizar Login</button>
-                </Link>
-                :
-                <Link to='/cart/payment'>
-                  <button className="fluid ui button final">Finalizar Compra</button>
-                </Link>
-              }
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+              {!verify() ? (
+                <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
+              ) : (
+                !hasProductsInCart() ? (
+                  <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
+                ) : (
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/payment'>Finalizar Compra</Link></button>
+                )
+              )}
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to='/'>Continuar Comprando</Link></button>
             </div>
           </div>
           <div className='box_cart_info_recommend'>
@@ -214,21 +234,25 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${total}</h5>
+              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
-            {!verify() ?
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
-                :
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
-              }
-                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
+              {!verify() ? (
+                <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
+              ) : (
+                !hasProductsInCart() ? (
+                  <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
+                ) : (
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/payment'>Finalizar Compra</Link></button>
+                )
+              )}
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
@@ -289,21 +313,25 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${total}</h5>
+              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
-              {!verify() ?
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/login"}>Realizar Login</Link></button>
-                :
-                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to={"/cart/payment"}>Finalizar Compra</Link></button>
-              }
-                <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
+              {!verify() ? (
+                <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
+              ) : (
+                !hasProductsInCart() ? (
+                  <button className="fluid ui button" disabled><Link className='font_decoration_none_white'>Carrinho Vazio</Link></button>
+                ) : (
+                  <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/payment'>Finalizar Compra</Link></button>
+                )
+              )}
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>

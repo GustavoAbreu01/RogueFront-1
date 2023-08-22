@@ -27,11 +27,8 @@ import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
 
 function CartPayment() {
 
-  var valor = 1100.00;
-  var frete = 100;
-  var total = 1200;
-
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [focusedInput, setFocusedInput] = useState(null);
 
   const handleInputFocus = (inputId) => {
@@ -41,6 +38,32 @@ function CartPayment() {
   const handleInputBlur = () => {
     setFocusedInput(null);
   };
+
+  const somaTaxProduct = () => {
+    var soma = 0;
+    for (var i = 0; i < productsInCart.length; i++) {
+      soma += productsInCart[i].price * 0.1;
+    }
+    return soma;
+  }
+
+  const somaProduct = () => {
+    var soma = 0;
+    console.log(productsInCart)
+    for (var i = 0; i < productsInCart.length; i++) {
+      soma += productsInCart[i].price;
+    }
+    return soma;
+  }
+
+  const somaTotal = () => {
+    var soma = 0;
+    for (var i = 0; i < productsInCart.length; i++) {
+      soma += productsInCart[i].price;
+    }
+    soma += somaTaxProduct();
+    return soma;
+  }
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -224,21 +247,17 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${total}</h5>
+              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
             </div>
             <div className='button_total_Cart'>
-              <Link to='/cart/transport'>
-                <button className="fluid ui button final">Finalizar Compra</button>
-              </Link>
-              <Link to='/'>
-                <button className="fluid ui button blue basic cont">Continuar Comprando</button>
-              </Link>
+            <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
+              <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
           <div className='box_cart_info_recommend'>
@@ -287,7 +306,7 @@ function CartPayment() {
           </div>
         </div>
       </div>
-      <div className='container_cart_payment'>
+      <div className='container_cart_payment_tablet'>
         <div className='box_cart_product_detail_payment_tablet'>
           <div className='box_cart_product_payment_tablet'>
             <div className='cart_payment_title'>
@@ -412,18 +431,16 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${total}</h5>
+              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
-
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Finalizar Compra</Link></button>
-
+              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
@@ -573,16 +590,16 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${valor}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R${frete}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${total}</h5>
+              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Finalizar Compra</Link></button>
+              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>

@@ -257,7 +257,7 @@
     width: 90%;
 }
 
-.container_cart_payment {
+.container_cart_payment_tablet {
     display: flex;
     flex-direction: column;
     justify-content: center;

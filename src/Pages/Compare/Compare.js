@@ -11,17 +11,24 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
 import NotFound from '../NotFound/NotFound';
 
+//Importando as Frameworks
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
+
+
 //Importando as imagens
-import motor from "../../assets/img/motor.png"
+import motor from "../../assets/img/CompareIcon.png"
+import weggner from '../../assets/img/weggnerSemiAcord.png';
 
 //react-icons
 import { IoMdAddCircle } from 'react-icons/io'
 import { FaArrowRightArrowLeft } from 'react-icons/fa6'
 import { FaStar } from 'react-icons/fa'
+import { BsArrowLeftShort } from 'react-icons/bs'
 
 
 function Compare() {
-  const [productsCompared, setItems] = useState([]);
+  const [productsInCompare, setItems] = useState([]);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -36,14 +43,14 @@ function Compare() {
   }, []);
 
   useEffect(() => {
-    const productComparedList = JSON.parse(localStorage.getItem('productsCompared'));
+    const productComparedList = JSON.parse(localStorage.getItem('productsInCompare'));
     if (productComparedList) {
       setItems(productComparedList);
     }
   }, []);
 
   function verify() {
-    if (productsCompared.length === 3) {
+    if (productsInCompare.length === 3) {
       return true
     } else {
       return false
@@ -51,7 +58,7 @@ function Compare() {
   }
 
   function verifyTablet() {
-    if (productsCompared.length === 2) {
+    if (productsInCompare.length === 2) {
       return true
     } else {
       return false
@@ -67,28 +74,64 @@ function Compare() {
     }
   }
 
-  function addMoreProducts() {
-    const product =
-    {
-      name: 'W-12',
+  if (productsInCompare.length === 0) {
+    return (
+      <>{!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+        <div className='container_compare'>
+          <div className='box_title_similar_compare'>
+            <FaArrowRightArrowLeft color='var(--white)' size={40} />
+            <h1 className='title_similar' >Comparação de Produtos</h1>
+          </div>
+          <img src={weggner} alt='' className="no_products_saved_img"></img>
+          <div className='not_saved_text'>
+            <h5>Ainda não há nenhum produto salvo...</h5>
+            <div className='back_to_home_not_saved'>
+              <BsArrowLeftShort size={15} />
+              <Link to='/'> <p>Voltar para a Home</p> </Link>
+            </div>
+
+          </div>
+          <div className='box_title_similar_recommended'>
+            <FaStar color='var(--white)' size={40} />
+            <h1 className='title_similar' >Produtos Recomendados</h1>
+          </div>
+          <div className='box_carousel_similar_recommended'>
+            <ProductCarouselSmallSimilar />
+          </div>
+        </div>
+        <Footer />
+      </>
+    )
+  }
+
+  function addMoreProductsInfo() {
+    Swal.fire({
+      title: 'Como Adicionar novos produtos?',
+      text: "Para adicionar novos produtos, basta clicar no botão de comparação na página ou no card do produto que deseja!",
+      position: 'top-end',
       imageUrl: motor,
-      description1: 'Potência',
-      description2: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description3: 'Polaridade',
-      description4: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description5: 'Tensão',
-      description6: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description7: 'Frequência',
-      description8: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description9: 'Carcaça',
-      description10: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
-      description11: 'Cor',
-      description12: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+      imageWidth: 50,
+      imageHeight: 50,
+      imageAlt: 'Custom image',
+      confirmButtonText: 'Ir para a Home',
+      cancelButtonText: 'Cancelar',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      showClass: {
+        popup: 'animate__animated animate__backInRight'
+    },
+    hideClass: {
+        popup: 'animate__animated animate__backOutRight'
+    },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = '/'
+      }
     }
-    const newProductsCompared = [...productsCompared, product];
-    setItems(newProductsCompared);
-    localStorage.setItem('productsCompared', JSON.stringify(newProductsCompared));
-    console.log(newProductsCompared)
+    )
+
+
+
   }
 
   const renderDesktopView = () => (
@@ -100,10 +143,9 @@ function Compare() {
         </div>
         <div className='products'>
           <CardCompare />
-          {!verify() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
+          {!verify() && <div className={`add_product_icon ${productsInCompare.length === 2 ? 'active' : ''}`} onClick={() => addMoreProductsInfo()}>
             <IoMdAddCircle size={'5rem'} />
           </div>}
-
         </div>
         <div className='box_title_similar_recommended'>
           <FaStar color='var(--white)' size={40} />
@@ -126,7 +168,7 @@ function Compare() {
         </div>
         <div className='products'>
           <CardCompare />
-          {!verifyTablet() && <div className='add_product_icon' onClick={() => addMoreProducts()}>
+          {!verifyTablet() && <div className='add_product_icon_tablet'>
             <IoMdAddCircle size={'5rem'} />
           </div>}
         </div>

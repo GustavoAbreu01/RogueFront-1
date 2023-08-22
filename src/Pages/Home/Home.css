@@ -25,7 +25,7 @@
 }
 
 .home_divider_icons {
-    width: 0.3rem;
+    width: 3px;
     border-radius: 10rem;
     height: 80%;
     background-color: var(--grey-tertiary);

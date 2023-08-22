@@ -44,6 +44,8 @@
 
 .cart_finish_title {
     display: flex;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -95,6 +97,7 @@
     display: flex;
     color: var(--blue-primary);
     gap: 0.5rem;
+    padding-bottom: 3rem;
 }
 
 .ui.fluid.button.final.home {

@@ -12,8 +12,14 @@
 .add_product_icon {
     cursor: pointer;
     position: absolute;
+    top: 60%;
+}
+
+.add_product_icon.active {
+    cursor: pointer;
+    position: absolute;
     right: 20%;
-    top: 122%;
+    top: 60%;
 }
 
 .box_title_similar_recommended {
@@ -56,7 +62,7 @@
 
 /* -------------version Tablet------------- */
 
-.add_product_icon {
+.add_product_icon_tablet     {
     cursor: pointer;
     position: absolute;
     right: 25%;

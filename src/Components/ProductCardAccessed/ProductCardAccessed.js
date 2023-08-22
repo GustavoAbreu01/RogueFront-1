@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardAccessed() {
+function ProductCardAccessed(product) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -25,6 +25,9 @@ function ProductCardAccessed() {
   }, []);
 
   const AddProductInCart = () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    productsInCart.push(product);
+    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -51,6 +54,9 @@ function ProductCardAccessed() {
   }
 
   const AddProductInSave = () => {
+    const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
+    savedProducts.push(product);
+    localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
     Swal.fire({
       title: 'Produto adicionado a lista de salvos!',
       icon: 'success',
@@ -84,10 +90,10 @@ function ProductCardAccessed() {
         </button>
       </div>
       <div className='container_product_card_accessed_action_icon'>
-        <button onClick={AddProductInSave} className="ui icon button product_card_accessed">
+        <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_accessed">
           <i className="bookmark icon product_card_accessed"></i>
         </button>
-        <button onClick={AddProductInCart} className="ui icon button product_card_accessed">
+        <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_accessed">
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
@@ -122,10 +128,10 @@ function ProductCardAccessed() {
         </button>
       </div>
       <div className='container_product_card_accessed_action_icon_tablet'>
-        <button onClick={AddProductInSave} className="big ui icon button product_card_accessed">
+        <button  onClick={() => AddProductInSave(product)} className="big ui icon button product_card_accessed">
           <i className="bookmark icon product_card_accessed"></i>
         </button>
-        <button onClick={AddProductInCart} className="big ui icon button product_card_accessed">
+        <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_accessed">
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
@@ -160,10 +166,10 @@ function ProductCardAccessed() {
         </button>
       </div>
       <div className='container_product_card_accessed_action_icon_mobile'>
-        <button onClick={AddProductInSave} className="mini ui icon button product_card_accessed_mobile">
+        <button  onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_accessed_mobile">
           <i className="bookmark icon product_card_accessed" ></i>
         </button>
-        <button onClick={AddProductInCart} className="mini ui icon button product_card_accessed">
+        <button onClick={() => AddProductInCart(product)}  className="mini ui icon button product_card_accessed">
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>

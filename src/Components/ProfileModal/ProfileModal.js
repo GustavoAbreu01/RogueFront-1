@@ -18,24 +18,15 @@ export default function ProfileModal({ user }) {
   const [openModalAcessibility, setOpenModalAcessibility] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
+  function realizarLogout() {
+    localStorage.removeItem('verifyLogin');
+    window.location.reload();
+  }
+
   useEffect(() => {
     function handleOutsideClick(event) {
       if (event.target.classList.contains('background')) {
         setOpenModalAcessibility(false);
-      }
-    }
-
-    document.addEventListener('click', handleOutsideClick);
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
-
-
-  useEffect(() => {
-    function handleOutsideClick(event) {
-      if (event.target.classList.contains('background')) {
-        setOpenModal(false);
       }
     }
 
@@ -64,8 +55,6 @@ export default function ProfileModal({ user }) {
     setOpenModalAcessibility(!openModalAcessibility);
   }
 
-
-  /////////
   const [selectedSize, setSelectedSize] = useState('');
 
   const handleSizeChange = (event) => {
@@ -82,7 +71,9 @@ export default function ProfileModal({ user }) {
     else if (selectedSize === 'veryLarge')
       document.body.style.fontSize = "18px";
   };
-//////
+
+
+
   const renderDesktopView = () => (
     <>
       <div>
@@ -199,13 +190,11 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profile_item'>
-                  <Link to='/quiz'>
                     <button className="ui icon button shopping profile">
                       <i className="sign-out icon profile"></i>
                     </button>
-                  </Link>
                   <div className='text_profile_container'>
-                    <Link to='/quiz'><p className='text_profile_opt'>Sair</p></Link>
+                    <p className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>
@@ -243,7 +232,7 @@ export default function ProfileModal({ user }) {
       {openModal && (
         <div className="modal_profile_content_container_tablet">
           {openModalAcessibility && (
-            <div data-aos="fade-left" className='modal_profile_acessibility_container'>
+            <div data-aos="fade-left" className='modal_profile_acessibility_container_tablet'>
               <div className='box_profile_acessibility'>
                 <div className='title_acessibility'>
                   <p>Tamanhos</p>
@@ -370,13 +359,11 @@ export default function ProfileModal({ user }) {
                   </div>
                 </div>
                 <div className='profile_item'>
-                  <Link to='/quiz'>
                     <button className="ui icon button shopping profile">
                       <i className="sign-out icon profile"></i>
                     </button>
-                  </Link>
                   <div className='text_profile_container'>
-                    <Link to='/quiz'><p className='text_profile_opt'>Sair</p></Link>
+                    <p className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>
@@ -485,23 +472,6 @@ export default function ProfileModal({ user }) {
                   </Link>
                   <div className='text_profile_container'>
                     <Link to='/'><p className='text_profile_opt'>Sair</p></Link>
-                  </div>
-                </div>
-              </div>
-              <div className='profile_footer'>
-                <div className='profile_logo'>
-                  <img src={logoDes} alt='logoWeg' className='logo_weg'></img>
-                </div>
-                <div className='base_footer'>
-                  <div className='profile_footer_icons'>
-                    <i className="youtube circle icon profile"></i>
-                    <i className="spotify circle icon profile"></i>
-                    <i className="linkedin circle icon profile"></i>
-                    <i className="skype circle icon profile"></i>
-                    <i className="envelope circle icon profile"></i>
-                  </div>
-                  <div>
-                    <p className='text_profile_footer'>Versão 1.0.2</p>
                   </div>
                 </div>
               </div>

@@ -596,3 +596,8 @@ overflow-y: scroll;
   .checkbox-wrapper-6 .tgl-light:checked + .tgl-btn {
     background: var(--blue-secundary);
   } 
+
+  .divider {
+    margin: 1rem 1rem 1rem 1rem;
+    border-bottom: 1px solid var(--grey-senary);
+  }
