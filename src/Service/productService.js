@@ -11,20 +11,6 @@ export const ProductService = {
           });
     },
 
-<<<<<<< Updated upstream
-    findAll: function() {
-      console.log("alo")
-        return new Promise((resolve, reject) => {
-          axios.get(url)
-            .then((response) => {
-              resolve(response.data);
-            })
-            .catch((error) => {
-              reject(error);
-            });
-        });
-      },
-=======
     findAll: async () => {
       const randomPageSize = 30;
       try {
@@ -34,7 +20,6 @@ export const ProductService = {
           console.error(error);
       }
   }
->>>>>>> Stashed changes
 
 };
 export default ProductService;
