@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    height: 100%;
+    width: 90%;
 }
 
 .box_product_card_accessed_tag_icon {
@@ -98,10 +98,16 @@
 .product_card_accessed_name {
     color: var(--grey-primary);
     font-size: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.product_card_highlight_description {
+.product_card_accessed_description {
     font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .ui.icon.button.product_card_accessed:hover,
@@ -162,6 +168,9 @@
     color: var(--grey-primary);
     font-size: 16px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .product_card_accessed_price_mobile {
