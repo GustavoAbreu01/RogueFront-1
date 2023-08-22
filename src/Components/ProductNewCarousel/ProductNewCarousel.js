@@ -11,18 +11,10 @@ import "slick-carousel/slick/slick-theme.css";
 import ProductCardNew from '../ProductCardNew/ProductCardNew';
 import ProductService from '../../Service/ProductService';
 
-
-  
-
-
 function ProductNewCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsNew, setProductsNew] = useState([])
-
-    useEffect(() => {
-        getProductsRev();
-    }, []);
 
     const getProductsRev = async () => {
         const products = await ProductService.findAll();
@@ -76,6 +68,7 @@ function ProductNewCarousel() {
     };
 
     useEffect(() => {
+        getProductsRev();
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }

@@ -1,20 +1,22 @@
 import axios from "axios";
 
-const url = 'http://localhost:8082/product'
+const url = 'http://localhost:8082/product/'
 
 export const ProductService = {
 
-    create: function(categories) {
-        console.log(categories)
-        axios.post(url, categories).then((response) => {
+    findOne: async (videoId) => {
+        try {
+            const response = await axios.get(url + videoId);
             return response.data;
-          });
+        } catch (error) {
+            console.error(error);
+        }
     },
 
     findAll: async () => {
       const randomPageSize = 20;
       try {
-          const response = await axios.get(url + "/all?size=" + randomPageSize + "&page=" + 0);
+          const response = await axios.get(url + "all?size=" + randomPageSize + "&page=" + 0);
           return response.data;
       } catch (error) {
           console.error(error);

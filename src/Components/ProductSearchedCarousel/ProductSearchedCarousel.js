@@ -14,10 +14,6 @@ function ProductSearchedCarousel() {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsSearched, setProductsSearched] = useState([])
 
-    useEffect(() => {
-        getProductsRev();
-    }, []);
-
     const getProductsRev = async () => {
         const products = await ProductService.findAll();
         if (products) {
@@ -71,6 +67,7 @@ function ProductSearchedCarousel() {
     };
 
     useEffect(() => {
+        getProductsRev();
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
