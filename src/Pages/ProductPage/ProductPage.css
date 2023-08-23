@@ -11,10 +11,14 @@
 .content.product_page {
     padding-left: 2rem !important;
 }
-
+.subtext_productPage{
+    color: var(--grey-primary);
+    font-size: 16px;
+}
 .price_product_page {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+    color:var(--blue-primary)
 }
 
 .description.product_page {
