@@ -11,7 +11,7 @@ import motor from '../../assets/img/motor.png'
 
 
 
-function SmallProductCard(product) {
+function SmallProductCard({product}) {
 
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
@@ -200,8 +200,15 @@ function SmallProductCard(product) {
         };
     }, []);
 
+    const buttonComprar = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    }
+
 
     const renderDesktopView = () => (
+        <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller'>
             <div className='container_product_card_smaller_action_icon'>
                 <div className='product_card_small_button_compare'>
@@ -222,22 +229,24 @@ function SmallProductCard(product) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>W12 Motor</h3>
+                        <h3 className='product_card_smaller_title'>{product.name}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
-                    <h3 className='product_card_smaller_price'>R$ 1.259,00</h3>
+                    <h3 className='product_card_smaller_price'>R$ {product.price}</h3>
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
                     </div>
                 </Link>
             </Link >
+            </div>
         </div>
     )
     const renderTabletView = () => (
+        <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller'>
             <div className='container_product_card_smaller_action_icon'>
                 <div className='product_card_small_button_compare'>
@@ -258,22 +267,24 @@ function SmallProductCard(product) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>W12 Motor</h3>
+                        <h3 className='product_card_smaller_title'>{product.name}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
-                    <h3 className='product_card_smaller_price'>R$ 1.259,00</h3>
+                    <h3 className='product_card_smaller_price'>R$ {product.price}</h3>
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller">Comprar</button>
+                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
                     </div>
                 </Link>
             </Link >
         </div>
+        </div>
     )
     const renderMobileView = () => (
+        <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller_mobile'>
             <div className='container_product_card_smaller_mobile_action_icon'>
                 <div className='product_card_small_button_compare'>
@@ -294,19 +305,20 @@ function SmallProductCard(product) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>W12 Motor</h3>
+                        <h3 title= {product.name} className='product_card_smaller_title'>{product.name}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
-                    <h3 className='product_card_smaller_price'>R$ 1.259,00</h3>
+                    <h3 className='product_card_smaller_price'>R$ {product.price}</h3>
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="small ui button buy_product_card_smaller_mobile">Comprar</button>
+                        <button className="small ui button buy_product_card_smaller_mobile" onClick={buttonComprar}>Comprar</button>
                     </div>
                 </Link>
             </Link >
+        </div>
         </div>
     )
     const getViewToRender = () => {

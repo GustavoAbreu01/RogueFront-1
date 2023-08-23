@@ -7,10 +7,23 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
+import ProductService from '../../Service/ProductService';
 
 function ProductSearchedCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [productsSearched, setProductsSearched] = useState([])
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsSearched(products);
+        } else {
+            setProductsSearched([]);
+        }
+    }
+
+
 
     var settings = {
         className: "center",
@@ -54,6 +67,7 @@ function ProductSearchedCarousel() {
     };
 
     useEffect(() => {
+        getProductsRev();
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -68,48 +82,11 @@ function ProductSearchedCarousel() {
     const renderDesktopView = () => (
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
+            {productsSearched.map((product) => (
+            <div className='box_product_searched_carousel'>
+                        <ProductCardSearched key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -117,48 +94,11 @@ function ProductSearchedCarousel() {
     const renderTabletView = () => (
         <div className='container_product_searched_carousel_tablet' >
             <Slider {...settings}>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
+            {productsSearched.map((product) => (
+            <div className='box_product_searched_carousel'>
+                        <ProductCardSearched key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -166,48 +106,11 @@ function ProductSearchedCarousel() {
     const renderMobileView = () => (
         <div className='container_product_searched_carousel_mobile' >
             <Slider {...settings}>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
-                <div className='box_product_searched_carousel'>
-                    <ProductCardSearched />
-                </div>
+            {productsSearched.map((product) => (
+            <div className='box_product_searched_carousel'>
+                        <ProductCardSearched key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

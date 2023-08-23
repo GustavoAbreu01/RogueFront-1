@@ -7,8 +7,17 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
+import ProductService from '../../Service/ProductService';
 
 function ProductCarouselSmallSimilar() {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        ProductService.findAll()
+            .then((data) => setProducts(data))
+            .catch((error) => console.error('Erro ao buscar produtos:', error));
+    }, []);
 
 
     var settings = {
@@ -85,66 +94,22 @@ function ProductCarouselSmallSimilar() {
     const renderDesktopView = () => (
         <div className='product_similar_carousel' >
             <Slider {...settings}>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
+            {products.map((product) => (
+                      <div className='box_product_similar_carousel'>
+                        <ProductCardSmaller key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
     const renderMobileView = () => (
         <div className='product_similar_carousel_mobile' >
             <Slider {...settings}>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_similar_carousel'>
-                    <ProductCardSmaller />
-                </div>
+            {products.map((product) => (
+                      <div className='box_product_similar_carousel'>
+                        <ProductCardSmaller key={product.id} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

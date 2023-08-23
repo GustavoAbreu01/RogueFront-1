@@ -97,10 +97,16 @@
 .product_card_searched_name{
     color: var(--grey-primary);
     font-size: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .product_card_searched_description{
     font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .circular.ui.icon.button.product_card_searched:hover, .ui.icon.button.product_card_searched:hover, .fluid.ui.button.product_card_searched_button:hover {
@@ -159,6 +165,9 @@
     color: var(--grey-primary);
     font-size: 16px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .product_card_searched_price_mobile {

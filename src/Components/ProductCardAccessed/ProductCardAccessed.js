@@ -1,5 +1,7 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
 import './ProductCardAccessed.css'
 
 //importando as frameworks
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardAccessed(product) {
+function ProductCardAccessed({ product }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -53,6 +55,12 @@ function ProductCardAccessed(product) {
     )
   }
 
+  const buttonComprar = () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    productsInCart.push(product);
+    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+}
+
   const AddProductInSave = () => {
     const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
     savedProducts.push(product);
@@ -83,6 +91,7 @@ function ProductCardAccessed(product) {
   }
 
   const renderDesktopView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_accessed'>
       <div className='box_product_card_accessed_tag_icon'>
         <button className="circular ui icon button product_card_accessed">
@@ -97,30 +106,32 @@ function ProductCardAccessed(product) {
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
-      <Link to='/product' className='product_card_accessed_link'>
+      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
         <div className='box_product_card_accessed_image'>
           <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>
-            <h3 className='product_card_accessed_name'>W12 Monofásico</h3>
-            <p className='product_card_accessed_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 title= {product.name} className='product_card_accessed_name'>{product.name}</h3>
+            <p className='product_card_accessed_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button'>
-            <button className="fluid ui button product_card_accessed_button">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
     </div>
+    </div>
   )
 
   const renderTabletView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_accessed_tablet'>
       <div className='box_product_card_accessed_tag_icon'>
         <button className="circular blue big ui icon button product_card_accessed">
@@ -135,30 +146,32 @@ function ProductCardAccessed(product) {
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
-      <Link to='/product' className='product_card_accessed_link'>
+      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
         <div className='box_product_card_accessed_image'>
           <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>
-            <h3 className='product_card_accessed_name'>W12 Monofásico</h3>
-            <p className='product_card_accessed_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 title= {product.name} className='product_card_accessed_name'>{product.name}</h3>
+            <p className='product_card_accessed_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button'>
-            <button className="fluid ui button product_card_accessed_button">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
     </div>
+    </div>
   )
 
   const renderMobileView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_accessed_mobile'>
       <div className='box_product_card_accessed_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_accessed">
@@ -173,25 +186,26 @@ function ProductCardAccessed(product) {
           <i className="cart plus icon product_card_accessed"></i>
         </button>
       </div>
-      <Link to='/product' className='product_card_accessed_link'>
+      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
         <div className='box_product_card_accessed_image'>
           <img src={motor} alt='' className='product_card_accessed_image' height={100} width={100}></img>
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text_mobile'>
-            <h3 className='product_card_accessed_name_mobile'>W12 Monofásico</h3>
+            <h3 title= {product.name} className='product_card_accessed_name_mobile'>{product.name}</h3>
           </div>
         </div>
         <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price_mobile'>R$ 1.259,00</h3>
+          <h3 className='product_card_accessed_price_mobile'>R$ {product.price}</h3>
           <p className='product_card_accessed_price_option_mobile'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
           <div className='product_card_accessed_buy_button_mobile'>
-            <button className="fluid ui button product_card_accessed_button_mobile">Comprar</button>
+            <button className="fluid ui button product_card_accessed_button_mobile" onClick={buttonComprar}>Comprar</button>
           </div>
         </Link>
       </Link>
+    </div>
     </div>
   )
 

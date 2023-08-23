@@ -1,44 +1,26 @@
 import axios from "axios";
 
-const url = 'http://localhost:8081/product'
+const url = 'http://localhost:8082/product/'
 
 export const ProductService = {
 
-    create: function(product) {
-        console.log(product)
-        axios.post(url, product).then((response) => {
+    findOne: async (code) => {
+        try {
+            const response = await axios.get(url + code);
             return response.data;
-          });
+        } catch (error) {
+            console.error(error);
+        }
     },
 
-    findAll: function() {
-        return new Promise((resolve, reject) => {
-          axios.get(url)
-            .then((response) => {
-              resolve(response.data);
-            })
-            .catch((error) => {
-              reject(error);
-            });
-        });
-      },
+    findAll: async () => {
+      try {
+          const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+          return response.data.content;
+      } catch (error) {
+          console.error(error);
+      }
+  }
 
-      findOne: function(id){
-        axios.get(url + '/' + id).then((response) => {
-            return response.data;
-          });
-    },
-    
-    delete: function(id){
-        axios.delete(url + '/'+ id).then((response) => {
-            return response.data;
-          });
-    },
-
-    update: function(id, product){
-        axios.patch(url + '/' + product + '/' + id).then((response) => {
-            return response.data
-        })
-    }
-
-}
+};
+export default ProductService;

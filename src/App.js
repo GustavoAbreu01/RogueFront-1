@@ -31,7 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/compare" element={<Compare />} />
           <Route path="/category" element={<ProductCategory />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:code" element={<ProductPage />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/save" element={<Save />} />
           <Route path="/search" element={<Search />} />

@@ -22,7 +22,7 @@ import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
 
 
-function Filter() {
+function FilterSearch() {
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -169,4 +169,4 @@ function Filter() {
 
 };
 
-export default Filter;
+export default FilterSearch;
