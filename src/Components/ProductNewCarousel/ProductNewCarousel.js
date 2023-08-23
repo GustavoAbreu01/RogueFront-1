@@ -4,13 +4,27 @@ import './ProductNewCarousel.css';
 
 //importando as frameworks
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 //Importando os componentes
-import Obj from '../ProductCardNew/ProductCardNew';
+import ProductCardNew from '../ProductCardNew/ProductCardNew';
+import ProductService from '../../Service/ProductService';
 
 function ProductNewCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [productsNew, setProductsNew] = useState([])
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsNew(products);
+        } else {
+            setProductsNew([]);
+        }
+    }
+
 
     var settings = {
         className: "center",
@@ -54,6 +68,7 @@ function ProductNewCarousel() {
     };
 
     useEffect(() => {
+        getProductsRev();
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -65,50 +80,13 @@ function ProductNewCarousel() {
     }, []);
 
     const renderDesktopView = () => (
-        <div className='carouselProduct' >
+        <div className='container_product_new_carousel' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
+            {productsNew.map((product) => (
+                    <div className='box_product_new_carousel'>
+                        <ProductCardNew key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -116,48 +94,11 @@ function ProductNewCarousel() {
     const renderTabletView = () => (
         <div className='carouselProduct_tablet' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
+            {productsNew.map((product) => (
+                    <div className='box_product_new_carousel'>
+                        <ProductCardNew key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -165,48 +106,11 @@ function ProductNewCarousel() {
     const renderMobileView = () => (
         <div className='carouselProduct_mobile' >
             <Slider {...settings}>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
-                <div className='box'>
-                    <Obj />
-                </div>
+            {productsNew.map((product) => (
+                    <div className='box_product_new_carousel'>
+                        <ProductCardNew key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

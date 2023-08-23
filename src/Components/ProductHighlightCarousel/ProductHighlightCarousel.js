@@ -1,5 +1,8 @@
-//Importando o React e o CSS
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react';
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import './ProductHighlightCarousel.css';
 
 //importando as frameworks
@@ -7,10 +10,22 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardHighlight from '../ProductCardHighlight/ProductCardHighlight';
+import ProductService from '../../Service/ProductService';
 
 function ProductHighlightCarousel() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [productsHightlight, setProductsHightlight] = useState([])
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsHightlight(products);
+        } else {
+            setProductsHightlight([]);
+        }
+    }
+
 
     var settings = {
         className: "center",
@@ -54,6 +69,7 @@ function ProductHighlightCarousel() {
     };
 
     useEffect(() => {
+        getProductsRev();
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -67,48 +83,11 @@ function ProductHighlightCarousel() {
     const renderDesktopView = () => (
         < div className='container_product_hightlight_carousel' >
             <Slider {...settings}>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
+                {productsHightlight.map((product) => (
+                    <div className='box_product_hightlight_carousel'>
+                        <ProductCardHighlight key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -116,48 +95,11 @@ function ProductHighlightCarousel() {
     const renderTabletView = () => (
         < div className='container_product_hightlight_carousel_tablet' >
             <Slider {...settings}>
-                <div className='box_product_accessed_hightlight_tablet'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
+            {productsHightlight.map((product) => (
+                    <div className='box_product_hightlight_carousel'>
+                        <ProductCardHighlight key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
@@ -165,48 +107,11 @@ function ProductHighlightCarousel() {
     const renderMobileView = () => (
         < div className='container_product_hightlight_carousel_mobile' >
             <Slider {...settings}>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
-                <div className='box_product_hightlight_carousel'>
-                    <ProductCardHighlight />
-                </div>
+            {productsHightlight.map((product) => (
+                    <div className='box_product_hightlight_carousel'>
+                        <ProductCardHighlight key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )

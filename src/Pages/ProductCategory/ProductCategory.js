@@ -15,13 +15,17 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Filter from '../../Components/Filter/FilterSearch'
 
+
+//Importando as imagens
+import iconMotor from "../../assets/img/iconeMotor.png"
+
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
 
 
 function ProductCategory() {
-
+  const [products, setProducts] = useState([]);
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -30,33 +34,10 @@ function ProductCategory() {
       return false
     }
   }
-  
 
-  const [isGrid, setIsGrid] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isGrid, setIsGrid] = useState(true);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const [isOpen2, setIsOpen2] = useState(false);
-
-  const toggleDropdown2 = () => {
-    setIsOpen2(!isOpen2);
-  };
-
-  const [isOpen3, setIsOpen3] = useState(false);
-
-  const toggleDropdown3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-  const [isOpen4, setIsOpen4] = useState(false);
-
-  const toggleDropdown4 = () => {
-    setIsOpen4(!isOpen4);
-  };
 
   const alterarPagina = (e, { value }) => {
     setPagination(value);
@@ -111,7 +92,7 @@ function ProductCategory() {
 
   const renderDesktopView = () => (
     <>
-      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+  {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
@@ -174,20 +155,20 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-                {numero.map((i) => (
-                  <div className="category_itens" key={i} >
-                    <CategoryCard />
-                  </div>
+              {products.map((product) => (
+             <div className="category_itens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-                {numero.map((i) => (
-                  <div className="searchItens" key={i} >
-                    <SmallProductCard />
-                  </div>
+              {products.map((product) => (
+             <div className="searchItens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>
@@ -262,20 +243,20 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar_mobile">
               <div className="box_category_bar_mobile">
-                {numero.map((i) => (
-                  <div className="category_itens_mobile" key={i} >
-                    <CategoryCard />
-                  </div>
+              {products.map((product) => (
+             <div className="category_itens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar_mobile">
               <div className="box_search_bar_mobile">
-                {numero.map((i) => (
-                  <div className="searchItens_mobile" key={i} >
-                    <SmallProductCard />
-                  </div>
+              {products.map((product) => (
+             <div className="searchItens">
+                        <CategoryCard key={product.id} product={product} />
+                    </div>
                 ))}
               </div>
             </div>

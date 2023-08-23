@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-function ProductCardSearched(product) {
+function ProductCardSearched({product}) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -89,8 +89,8 @@ function ProductCardSearched(product) {
   }
 
   const renderDesktopView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched'>
-
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
@@ -104,18 +104,18 @@ function ProductCardSearched(product) {
           <i className="cart plus icon product_card_searched"></i>
         </button>
       </div>
-      <Link to='/product'>
+      <Link to={`/product/${product.code}`}>
         <div className='box_product_card_searched_image'>
           <img src={motor} alt='' className='product_card_searched_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 className='product_card_searched_name'>W12 Monofásico</h3>
-            <p className='product_card_searched_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 title= {product.name} className='product_card_searched_name'>{product.name}</h3>
+            <p className='product_card_searched_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
-          <h3 className='product_card_searched_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_searched_price'>R$ {product.price}</h3>
           <p className='product_card_searched_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -125,11 +125,12 @@ function ProductCardSearched(product) {
         </Link>
       </Link >
     </div >
+    </div >
   )
 
   const renderTabletView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched_tablet'>
-
       <div className='box_product_card_searched_tag_icon'>
         <button className="circular big blue ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
@@ -143,18 +144,18 @@ function ProductCardSearched(product) {
           <i className="cart plus icon product_card_searched"></i>
         </button>
       </div>
-      <Link to='/product'>
+      <Link to={`/product/${product.code}`}>
         <div className='box_product_card_searched_image'>
           <img src={motor} alt='' className='product_card_searched_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 className='product_card_searched_name'>W12 Monofásico</h3>
-            <p className='product_card_searched_description'>A linha W12 foi desenvolvida para oferecer versatilidade e eficiência.</p>
+            <h3 title= {product.name} className='product_card_searched_name'>{product.name}</h3>
+            <p className='product_card_searched_description'>{product.description}</p>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
-          <h3 className='product_card_searched_price'>R$ 1.259,00</h3>
+          <h3 className='product_card_searched_price'>R$ {product.price}</h3>
           <p className='product_card_searched_price_option'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -164,11 +165,12 @@ function ProductCardSearched(product) {
         </Link>
       </Link >
     </div >
+    </div >
   )
 
   const renderMobileView = () => (
+    <div className="product_acessed" key={product.code}>
     <div className='container_product_card_searched_mobile'>
-
       <div className='box_product_card_searched_tag_icon_mobile'>
         <button className="circular blue mini ui icon button product_card_searched">
           <i className="searchengin icon product_card_searched"></i>
@@ -182,17 +184,17 @@ function ProductCardSearched(product) {
           <i className="cart plus icon product_card_searched"></i>
         </button>
       </div>
-      <Link to='/product'>
+      <Link to={`/product/${product.code}`}>
         <div className='box_product_card_searched_image'>
           <img src={motor} alt='' className='product_card_searched_image' height={100} width={100}></img>
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text_mobile'>
-            <h3 className='product_card_searched_name_mobile'>W12 Monofásico</h3>
+            <h3 title= {product.name} className='product_card_searched_name_mobile'>{product.name}</h3>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
-          <h3 className='product_card_searched_price_mobile'>R$ 1.259,00</h3>
+          <h3 className='product_card_searched_price_mobile'>R$ {product.price}</h3>
           <p className='product_card_searched_price_option_mobile'>Á vista no pix</p>
         </div>
         <Link to='/cart'>
@@ -202,6 +204,7 @@ function ProductCardSearched(product) {
         </Link>
       </Link >
     </div >
+    </div>
   )
 
   const getViewToRender = () => {
