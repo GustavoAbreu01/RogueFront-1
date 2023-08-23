@@ -1,18 +1,18 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import './Filter.css'
+import './FilterSearch.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 //Importando os componentes
-import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
-import CategoryCard from '../../Components/CategoryCard/CategoryCard';
-import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
-import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
+import SmallProductCard from '../ProductCardSmaller/ProductCardSmaller';
+import CategoryCard from '../CategoryCard/CategoryCard';
+import HeaderLogin from '../HeaderLogin/HeaderLogin';
+import WeggnerModal from '../WeggnerModal/WeggnerModal';
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 //Importando as imagens
 import iconMotor from "../../assets/img/iconeMotor.png"

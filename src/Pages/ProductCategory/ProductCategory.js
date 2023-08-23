@@ -13,7 +13,7 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Filter from '../../Components/Filter/Filter'
+import Filter from '../../Components/Filter/FilterSearch'
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
