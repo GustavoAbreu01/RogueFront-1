@@ -43,6 +43,12 @@ function CategoryCard(product) {
         )
     }
 
+    const buttonComprar = () => {
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+        productsInCart.push(product);
+        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    }
+
 
     const AddProductInSave = () => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
@@ -229,7 +235,7 @@ const renderDesktopView = (product) => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button'>
-                <button className="ui fluid blue button category_card">Comprar</button>
+                <button className="ui fluid blue button category_card" onClick={buttonComprar}>Comprar</button>
             </div>
         </Link>
     </div>
@@ -263,7 +269,7 @@ const renderTabletView = (product) => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button'>
-                <button className="ui fluid blue button category_card">Comprar</button>
+                <button className="ui fluid blue button category_card" onClick={buttonComprar}>Comprar</button>
             </div>
         </Link>
     </div>
@@ -295,7 +301,7 @@ const renderMobileView = (product) => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button_mobile'>
-                <button className="ui fluid blue button category_card_mobile">Comprar</button>
+                <button className="ui fluid blue button category_card_mobile" onClick={buttonComprar}>Comprar</button>
             </div>
         </Link>
     </div>

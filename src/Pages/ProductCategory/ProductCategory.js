@@ -13,7 +13,7 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Filter from '../../Components/Filter/Filter'
+import Filter from '../../Components/Filter/FilterSearch'
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
@@ -94,7 +94,7 @@ function ProductCategory() {
   ];
 
 
-  const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20];
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
