@@ -4,7 +4,7 @@ import './ProductPage.css'
 
 //importando as frameworks
 import { Rating } from 'semantic-ui-react';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 //Importando os componentes
@@ -19,6 +19,7 @@ import motor from '../../assets/img/motor.png'
 
 //Importando os ícones
 import { FaStar } from 'react-icons/fa'
+import { ProductService } from '../../Service';
 
 const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -29,12 +30,14 @@ const verify = () => {
     }
 }
 
-
-function ProductPage(product) {
+function ProductPage() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [product, setProduct] = useState();
+    const { code } = useParams();
 
     useEffect(() => {
+        buscarProduto(code)
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -45,6 +48,9 @@ function ProductPage(product) {
         };
     }, []);
 
+    const buscarProduto = async (code) => {
+        setProduct(await ProductService.findOne(code))
+    }
 
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
@@ -206,7 +212,7 @@ function ProductPage(product) {
                         <img className="image_product" src={motor} />
                     </div>
                     <div className="content product_page">
-                        <h1 className="ui header product_page">Motor W30</h1>
+                        <h1 className="ui header product_page">{product.name}</h1>
                         <br />
                         <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
                         <h1 className="price_product_page">R$ 495<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
@@ -218,9 +224,9 @@ function ProductPage(product) {
                         </div>
                         <div className='buttons_product_page'>
                             <Link to={"/cart"}>
-                            <button className="ui fluid button sell_product_page" onClick={buttonComprar}>
-                                Comprar Agora
-                            </button>
+                                <button className="ui fluid button sell_product_page" onClick={buttonComprar}>
+                                    Comprar Agora
+                                </button>
                             </Link>
                             <div className='buttons_product_page_opc_add'>
                                 <div>

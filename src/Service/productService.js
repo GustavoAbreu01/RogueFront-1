@@ -4,9 +4,9 @@ const url = 'http://localhost:8082/product/'
 
 export const ProductService = {
 
-    findOne: async (videoId) => {
+    findOne: async (code) => {
         try {
-            const response = await axios.get(url + videoId);
+            const response = await axios.get(url + code);
             return response.data;
         } catch (error) {
             console.error(error);
