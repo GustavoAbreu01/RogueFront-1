@@ -209,7 +209,7 @@ function ProductPage() {
             {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
             <div className="ui items product_page" >
-                <p className="ui blue ribbon label">Destaque</p>
+                <p className="ui blue ribbon label">{productPage.categories}</p>
                 <div className="ui item product_page">
                     <div className="img_product_page">
                         <img className="image_product" src={motor} />

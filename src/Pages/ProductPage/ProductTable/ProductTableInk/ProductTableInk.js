@@ -1,24 +1,37 @@
 import React from 'react'
+import { useState } from 'react';
 
 function ProductTableInk({ product }) {
+
+    const [itemsToShow, setItemsToShow] = useState(5);
+
+    const handleShowMore = () => {
+        setItemsToShow(itemsToShow + 5);
+    };
+
     return (
         <div>
             <table className="ui small definition table product_page">
                 <tbody>
-                    <tr>
-                        <td>Cor</td>
-                        <td>{product.color}</td>
-                    </tr>
-                    <tr>
-                        <td>Densidade</td>
-                        <td>{product.density}</td>
-                    </tr>
-                    <tr>
-                        <td>Tipo</td>
-                        <td>{product.type}</td>
-                    </tr>
+                    {Object.entries(product).slice(0, itemsToShow).map(([property, value]) => (
+                        <tr key={property}>
+                            <td>{property}</td>
+                            <td>
+                                {typeof value === 'object' ? (
+                                    <span>{value.id}, {value.amountVotes}, {value.assessment}, {value.totalAssessment}</span>
+                                ) : (
+                                    value
+                                )}
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
+            <div className='product_show_more'>
+                {itemsToShow < Object.keys(product).length && (
+                    <button className='button_show_more' onClick={handleShowMore}>Mostrar Mais</button>
+                )}
+            </div>
         </div>
     )
 }

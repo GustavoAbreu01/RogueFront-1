@@ -8,6 +8,25 @@
     width: 70rem;
 }
 
+.button_show_more {
+    background-color: var(--blue-primary);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    padding: 0.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.product_show_more {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
 .content.product_page {
     padding-left: 2rem !important;
 }
