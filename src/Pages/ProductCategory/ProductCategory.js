@@ -14,6 +14,7 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Filter from '../../Components/Filter/FilterSearch'
+import ProductService from '../../Service/ProductService'
 
 
 //Importando as imagens
@@ -25,7 +26,17 @@ import { FaListUl } from 'react-icons/fa'
 
 
 function ProductCategory() {
-  const [products, setProducts] = useState([]);
+
+  const [products, setProducts] = useState([])
+
+  const getProductsRev = async () => {
+      const products = await ProductService.findAll();
+      if (products) {
+        setProducts(products);
+      } else {
+        setProducts([]);
+      }
+  }
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -75,11 +86,11 @@ function ProductCategory() {
   ];
 
 
-  const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20];
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
+    getProductsRev();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -89,6 +100,8 @@ function ProductCategory() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+
 
   const renderDesktopView = () => (
     <>
@@ -157,7 +170,7 @@ function ProductCategory() {
               <div className="box_category_bar">
               {products.map((product) => (
              <div className="category_itens">
-                        <CategoryCard key={product.id} product={product} />
+                        <CategoryCard key={product.code} product={product} />
                     </div>
                 ))}
               </div>
@@ -167,7 +180,7 @@ function ProductCategory() {
               <div className="box_search_bar">
               {products.map((product) => (
              <div className="searchItens">
-                        <CategoryCard key={product.id} product={product} />
+                        <SmallProductCard key={product.code} product={product} />
                     </div>
                 ))}
               </div>
@@ -255,7 +268,7 @@ function ProductCategory() {
               <div className="box_search_bar_mobile">
               {products.map((product) => (
              <div className="searchItens">
-                        <CategoryCard key={product.id} product={product} />
+                        <SmallProductCard key={product.code} product={product} />
                     </div>
                 ))}
               </div>
