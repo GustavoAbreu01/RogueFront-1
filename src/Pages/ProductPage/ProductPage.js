@@ -204,6 +204,23 @@ function ProductPage() {
 
     }
 
+    const renderPrice = () => {
+        if (productPage.price !== undefined) {
+            const priceParts = productPage.price.toString().split('.');
+            const integerPart = priceParts[0];
+            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            return (
+                <h1 className="price_product_page">
+                    R$ {integerPart}
+                    <sup> .{decimalPart}</sup>
+                    <sub className='subtext_productPage'>10x sem juros</sub>
+                </h1>
+            );
+        } else {
+            return null; // Handle the case where productPage.price is undefined
+        }
+    };
+
     const renderDesktopView = () => (
         <>
             {!verify() ? <Header /> : <HeaderLogin />}
@@ -218,7 +235,7 @@ function ProductPage() {
                         <h1 className="ui header product_page">{productPage.name}</h1>
                         <br />
                         <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
-                        <h1 className="price_product_page">{productPage.price}<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
+                        {renderPrice()}
                         <div className="meta">
                             <span>Descrição</span>
                         </div>
@@ -288,7 +305,7 @@ function ProductPage() {
                     <div className="content product_page_mobile">
                         <div className='title_price_product_page_mobile'>
                             <h1 className="ui header product_page_mobile">Motor W30</h1>
-                            <h1 className="price_product_page_mobile">R$ 495<sup> 99</sup><sub className='subtext_product_page'>10x sem juros</sub></h1>
+                            <h1 className="price_product_page_mobile">{renderPrice()}</h1>
                         </div>
                         <br />
                         <Rating className="ui rating product_page_mobile" maxRating={5} style={{ marginTop: '1rem' }} />
@@ -401,7 +418,7 @@ function ProductPage() {
                     <div className="content product_page_tablet">
                         <div className='title_price_product_page_tablet'>
                             <h1 className="ui header product_page_tablet">Motor W30</h1>
-                            <h1 className="price_product_page_tablet">R$ 495<sup> 99</sup><sub className='subtext_product_page_tablet'>10x sem juros</sub></h1>
+                            <h1 className="price_product_page_tablet">{renderPrice()}</h1>
                         </div>
                         <br />
                         <Rating className="ui rating product_page_tablet" maxRating={5} />
