@@ -28,11 +28,15 @@ export const UserService = {
       return response.data;
     });
   },
-  edit: function (id, user) {
-    axios.patch(url + '/' + id, user).then((response) => {
-      return response.data
-    })
-  },
+  login: function (email, password) {
+    const apiUrl = `http://localhost:8082/user/${email}/${password}`;
+    return axios.get(apiUrl)
+        .then(response => response.data)
+        .catch(error => {
+            throw error;
+        });
+},
+
   delete: function(id){
     axios.delete(url + '/'+ id).then((response) => {
         return response.data;

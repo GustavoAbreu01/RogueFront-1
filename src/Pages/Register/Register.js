@@ -133,31 +133,31 @@ function Register() {
                         <div className="fields">
                             <div className="eight wide field register_mobile">
                                 <label>Nome</label>
-                                <input className='register_input_mobile' value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                                <input className='register_input_mobile' name="name" value={user.name} onChange={updateRegisterInformation}  style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
                             </div>
                             <div className="eight wide field register_mobile">
                                 <label>Sobrenome</label>
-                                <input className='register_input_mobile' value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                                <input className='register_input_mobile' name="name" value={user.name} onChange={updateRegisterInformation}  style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
                             </div>
                         </div>
 
                         <div className="field register_mobile">
                             <label>Email</label>
-                            <input className='register_input_mobile' value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                            <input className='register_input_mobile' name="email" value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                         </div>
 
                         <div className="field register_mobile">
                             <label>CPF/CNPJ</label>
-                            <input className='register_input_mobile' value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                            <input className='register_input_mobile' name="cpf" value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                         </div>
                         <div className="fields">
                             <div className="eight wide field register_mobile">
                                 <label>Senha:</label>
-                                <input className='register_input_mobile' value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                <input className='register_input_mobile' name="password" value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
                             </div>
                             <div className="eight wide field register_mobile">
                                 <label>Confirmar Senha:</label>
-                                <input className='register_input_mobile' value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                <input className='register_input_mobile' name="password" value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
                             </div>
                         </div>
                         <div className='box_mobile'>
