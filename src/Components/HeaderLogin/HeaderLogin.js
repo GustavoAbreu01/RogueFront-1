@@ -91,17 +91,17 @@ function HeaderLogin() {
       <div id="menu">
         <MenuModal />
       </div>
-      <div className="divisor_header_login"></div>
-      <Link to="/category" category="MOTORS">Motores</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category" category="INK">Tintas e Vernizes</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category" category="AUTOMATION">Automação</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category" category="BUILDING">Paineis Eletricos</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category" category="SECURITY">Segurança</Link>
-      <div className="divisor_header_login"></div>
+      <div className="divisor_header"></div>
+      <Link to="/category/MOTORS">Motores</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/INK">Tintas e Vernizes</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/AUTOMATION">Automação</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/BUILDING">Paineis Eletricos</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/SECURITY">Segurança</Link>
+      <div className="divisor_header"></div>
     </div></>
   )
 

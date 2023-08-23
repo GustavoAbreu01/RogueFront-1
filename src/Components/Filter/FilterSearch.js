@@ -23,10 +23,9 @@ import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
 
 
-function FilterSearch() {
+function FilterSearch({ category }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('');
-    const { category } = useParams();
 
 
     const toggleDropdown = () => {
@@ -102,7 +101,7 @@ function FilterSearch() {
                                 }
                             </div>
                         </div>
-                        <div className="category_second_filter">
+                        <div className="filter">
                             <Filter category={category} />
                         </div>
                     </div>

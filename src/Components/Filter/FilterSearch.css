@@ -11,6 +11,10 @@
     border-radius: 10px;
 }
 
+.filter {
+    width: 100%;
+}
+
 .ui.header.motor.search {
     align-items: center;
     display: flex;

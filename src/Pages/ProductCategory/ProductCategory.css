@@ -11,6 +11,10 @@
     border-radius: 10px;
 }
 
+.ui.breadcrumb {
+    width: 100%;
+}
+
 .ui.header.motor.search {
     align-items: center;
     display: flex;
@@ -238,6 +242,7 @@
 
 .container_breadcrumb {
     padding: 2rem;
+    width: 100%;
 }
 
 

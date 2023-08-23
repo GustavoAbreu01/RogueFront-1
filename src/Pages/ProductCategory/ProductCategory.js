@@ -26,6 +26,7 @@ import FilterSearch from '../../Components/Filter/FilterSearch';
 
 function ProductCategory() {
   const [products, setProducts] = useState([]);
+  const { category } = useParams();
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -38,7 +39,6 @@ function ProductCategory() {
   const [isGrid, setIsGrid] = useState(true);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
-  const { category } = useParams();
 
   const alterarPagina = (e, { value }) => {
     setPagination(value);
@@ -81,7 +81,6 @@ function ProductCategory() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    console.log(category)
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -101,7 +100,7 @@ function ProductCategory() {
           <i className="right chevron icon divider"></i>
           <Link to="/" className="section">Categoria</Link>
           <i className="right arrow icon divider"></i>
-          <div className="active section">Motores</div>
+          <div className="active section">{category}</div>
         </div>
       </div>
       <div className='box_pagination_config'>

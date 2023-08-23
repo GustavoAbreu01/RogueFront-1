@@ -8,7 +8,6 @@ import ProductTableBuilding from './ProductTableBuilding/ProductTableBuilding';
 function ProductTable({ product }) {
 
     const getViewToRender = () => {
-        console.log(product)
         if (product.categories === "INK") {
             return <ProductTableInk product={product} />
         } else if (product.categories === "MOTORS") {

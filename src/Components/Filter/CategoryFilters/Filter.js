@@ -8,10 +8,10 @@ import FilterTintas from '../CategoryFilters/FilterTintas/FilterTintas';
 import FilterMotor from '../CategoryFilters/FilterMotor/FilterMotor'
 
 
-function Filter(category) {
+function Filter({category}) {
 
     const changeCategory = () => {
-
+        console.log(category)
         if (category === "INK") {
             return <FilterTintas/>
         } else if (category === "MOTORS") {
