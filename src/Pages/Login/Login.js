@@ -15,48 +15,73 @@ import logo from "../../assets/img/logoWEG.png"
 import { BsArrowLeftShort } from 'react-icons/bs';
 
 function Login() {
-    const navigate = useNavigate();
-
-    const [passwordConfirm, setPasswordConfirm] = useState('');
-
+    
     const [userLogin, setUserLogin] = useState({
-        emailLogin: '',
-        passwordLogin: '',
+        "username": "",
+        "password": ""
     });
 
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: '',
-        cpf: '',
-    });
-
-    const updateLoginInformation = (event) => {
+    const updateUser = (event) => {
         setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
-    }
-
-
-    const handleLogin = () => {
-        localStorage.setItem('verifyLogin', 'yes');
-        navigate("/");
-        alert("Senha ou email incorretos!!");
     };
 
-    function create(event) {
-        if (user.password !== passwordConfirm) {
-            event.preventDefault();
-        } else {
-            event.preventDefault();
-            localStorage.setItem("verifyLogin", 'yes');
-            UserService.create(user)
-                .then(response => {
-                    navigate('/home');
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+    const navigate = useNavigate();
+
+    const handleLogin = async (event) => {
+        const { email, password } = userLogin;
+        event.preventDefault();
+        try {
+            const response = await UserService.loginByEmailAndPassword(email, password);
+            console.log(response.data);
+            localStorage.setItem('verifyLogin', 'yes');
+            navigate("/");
+        } catch (error) {
+            alert("Erro ao fazer login. Verifique suas credenciais.");
+            console.log(error);
         }
-    }
+    };
+    
+
+    // const [passwordConfirm, setPasswordConfirm] = useState('');
+
+    // const [userLogin, setUserLogin] = useState({
+    //     emailLogin: '',
+    //     passwordLogin: '',
+    // });
+
+    // const [user, setUser] = useState({
+    //     name: '',
+    //     email: '',
+    //     password: '',
+
+    // });
+
+    // const updateLoginInformation = (event) => {
+    //     setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
+    // }
+
+
+    // const handleLogin = () => {
+    //     localStorage.setItem('verifyLogin', 'yes');
+    //     navigate("/");
+    //     alert("Senha ou email incorretos!!");
+    // };
+
+    // function create(event) {
+    //     if (user.password !== passwordConfirm) {
+    //         event.preventDefault();
+    //     } else {
+    //         event.preventDefault();
+    //         localStorage.setItem("verifyLogin", 'yes');
+    //         UserService.create(user)
+    //             .then(response => {
+    //                 navigate('/home');
+    //             })
+    //             .catch(error => {
+    //                 console.error(error);
+    //             });
+    //     }
+    // }
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
    
@@ -84,14 +109,14 @@ function Login() {
                         <h2 className="ui header titleLogin">Login</h2>
                         <div className="field">
                             <label>Email</label>
-                            <input value={userLogin.emailLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                            <input name="email" value={userLogin.email} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                         </div>
                         <div className="field">
                             <label>Senha</label>
-                            <input value={userLogin.passwordLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                            <input name="password" value={userLogin.password} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                         </div>
                         <div className='box'>
-                            <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>
+                            <button className="ui big fluid button login" onClick={handleLogin}>Login</button>
                         </div>
                         <div className='login_finish_text'>
                             <BsArrowLeftShort size={15} />
@@ -117,11 +142,11 @@ function Login() {
                     <h2 className="ui header titleLogin_mobile">Login</h2>
                     <div className="field">
                         <label>Email</label>
-                        <input value={userLogin.emailLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                        <input value={userLogin.emailLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                     </div>
                     <div className="field">
                         <label>Senha</label>
-                        <input value={userLogin.passwordLogin} onChange={updateLoginInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                        <input value={userLogin.passwordLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                     </div>
                     <div className='box'>
                         <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>
