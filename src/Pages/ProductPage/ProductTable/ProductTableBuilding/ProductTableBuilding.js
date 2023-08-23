@@ -11,63 +11,59 @@ function ProductTableBuilding({ product }) {
             </tr>
             <tr>
                 <td>Tipo da Bateria</td>
-                <td>2 ou 4</td>
+                <td>{product.batterytype}</td>
             </tr>
             <tr>
                 <td>Tenção de Barramento</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.busVoltage}</td>
             </tr>
             <tr>
                 <td>Invólucro</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.casing}</td>
             </tr>
             <tr>
                 <td>Código Inteligente</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.codigoInteligente}</td>
             </tr>
             <tr>
                 <td>Cor da Estrutura</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.colorStructure}</td>
             </tr>
             <tr>
                 <td>Corrente da Bateria</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.currentBatteries}</td>
             </tr>
             <tr>
                 <td>Frequência</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.frequency}</td>
             </tr>
             <tr>
                 <td>Linguagem</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.language}</td>
             </tr>
             <tr>
                 <td>Corrente Nominal</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.nominalChain}</td>
             </tr>
             <tr>
                 <td>Potência</td>
-                <td> 127/220 ou 220/440 V</td>
-            </tr>
-            <tr>
-                <td>Fator de Potência</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.ratedPower}</td>
             </tr>
             <tr>
                 <td>Referência do Produto</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.referenceProduct}</td>
             </tr>
             <tr>
                 <td>Tipo da Tomada</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.typeplug}</td>
             </tr>
             <tr>
                 <td>Tensão de Entrada</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.voltageInput}</td>
             </tr>
             <tr>
                 <td>Tensão de Saída</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.voltageOutput}</td>
             </tr>
         </tbody>
     </table>

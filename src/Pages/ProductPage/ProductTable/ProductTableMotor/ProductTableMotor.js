@@ -7,151 +7,151 @@ function ProductTableMotor({ product }) {
         <tbody>
             <tr>
                 <td>Forma Construtiva</td>
-                <td>2 ou 4</td>
+                <td>{product.constructiveWay}</td>
             </tr>
             <tr>
                 <td>Altitude</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.altitude}</td>
             </tr>
             <tr>
                 <td>Massa Aproximada</td>
-                <td>1/8 a 3 cv</td>
+                <td>{product.approximateMass}</td>
             </tr>
             <tr>
                 <td>Mancal LNA</td>
-                <td>2 ou 4</td>
+                <td>{product.bearingLNA}</td>
             </tr>
             <tr>
                 <td>Tipo Mancal</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.bearingType}</td>
             </tr>
             <tr>
                 <td>Carcaça</td>
-                <td>1/8 a 3 cv</td>
+                <td>{product.carcass}</td>
             </tr>
             <tr>
                 <td>Classe Isolamento</td>
-                <td>2 ou 4</td>
+                <td>{product.classIsolation}</td>
             </tr>
             <tr>
                 <td>Conjugado Partido</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.conjugateDeparture}</td>
             </tr>
             <tr>
                 <td>Conjugado Nominal</td>
-                <td>1/8 a 3 cv</td>
+                <td>{product.conjugateNominal}</td>
             </tr>
             <tr>
                 <td>Corrente de Partida</td>
-                <td>2 ou 4</td>
+                <td>{product.currentDeparture}</td>
             </tr>
             <tr>
                 <td>Corrente Vazia</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.currentEmpty}</td>
             </tr>
             <tr>
                 <td>Grau de Proteção</td>
-                <td>1/8 a 3 cv</td>
+                <td>{product.degreeProtection}</td>
             </tr>
             <tr>
                 <td>Frequência</td>
-                <td>2 ou 4</td>
+                <td>{product.frequency}</td>
             </tr>
             <tr>
                 <td>IP/LN</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.ipIn}</td>
             </tr>
             <tr>
                 <td>Método de Partida</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.impregnationMethod}</td>
             </tr>
             <tr>
                 <td>Material do Eixo</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.materialAxis}</td>
             </tr>
             <tr>
                 <td>Material da Tamp Defletora</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.materialBaffleCover}</td>
             </tr>
             <tr>
                 <td>Material da Carcaça</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.materialCarcass}</td>
             </tr>
             <tr>
                 <td>Conjugado Máximo</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.maximumConjugate}</td>
             </tr>
             <tr>
                 <td>Momento da Inércia</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.momentInertia}</td>
             </tr>
             <tr>
                 <td>Corrente Nominal</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.nominalChain}</td>
             </tr>
             <tr>
                 <td>Rotação Nominal</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.nominalRotation}</td>
             </tr>
             <tr>
                 <td>Pintura</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.painting}</td>
             </tr>
             <tr>
                 <td>Performace</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.performance}</td>
             </tr>
             <tr>
                 <td>Potência</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.power}</td>
             </tr>
             <tr>
                 <td>Fator Potência</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.powerFactor}</td>
             </tr>
             <tr>
                 <td>Protetor Fenólico Sobrecarga</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.protectorFenolicOverload}</td>
             </tr>
             <tr>
                 <td>Rendimento</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.ratedVoltage}</td>
             </tr>
             <tr>
                 <td>Refrigeração</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.refrigeration}</td>
             </tr>
             <tr>
                 <td>Regime de Serviço</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.regimeService}</td>
             </tr>
             <tr>
                 <td>Temperatura Ambiente</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.roomTemperature}</td>
             </tr>
             <tr>
                 <td>Direção da Rotação</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.rotationDirection ? 'Sim' : 'Não'}</td>
             </tr>
             <tr>
                 <td>Escorregamento</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.slip}</td>
             </tr>
             <tr>
                 <td>Proteção Térmica</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.thermalProtectionWinding}</td>
             </tr>
             <tr>
                 <td>Tempo Rotor Bloqueado</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.timeRotorLocked}</td>
             </tr>
             <tr>
                 <td>Pintura Tropicalizada</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.tropicalizedPainting}</td>
             </tr>
             <tr>
                 <td>Tipo de Aterramento</td>
-                <td> 127/220 ou 220/440 V</td>
+                <td>{product.typeGrounding}</td>
             </tr>
         </tbody>
     </table>
