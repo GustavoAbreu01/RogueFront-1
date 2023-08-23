@@ -12,7 +12,7 @@ import motors from "../../assets/img/motores.png"
 
 
 
-function CategoryCard(product) {
+function CategoryCard({ product }) {
 
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
@@ -191,7 +191,22 @@ function CategoryCard(product) {
         }
         
     }
-    
+    const renderPrice = () => {
+        if (product.price !== undefined) {
+            const priceParts = product.price.toString().split('.');
+            const integerPart = priceParts[0];
+            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            return (
+                <h2 className="category_card_product_price">
+                    R$ {integerPart}
+                    <sup> .{decimalPart}</sup>
+                    <sub className='subtext_productPage'>10x sem juros</sub>
+                </h2>
+            );
+        } else {
+            return null; // Handle the case where productPage.price is undefined
+        }
+    };
 
 const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -207,18 +222,18 @@ useEffect(() => {
 }, []);
 
 
-const renderDesktopView = (product) => (
-    <div className="ui segment itens container_category_card" id="itemCategory">
-        <Link to="/product">
+const renderDesktopView = () => (
+    <div className="ui segment itens container_category_card" id="itemCategory"  key={product.code}>
+         <Link to={`/product/${product.code}`}>
             <p className="ui blue ribbon label category_card">Verificados</p>
             <div className="category_card_content" style={{ color: 'black' }}>
                 <div className="category_card_image">
                     <img src={motors} width="125" height="" />
                 </div>
                 <div className="category_card_product_info">
-                    <h3 className="category_card_product_name">W12 Monofásico</h3>
-                    <h4 className="category_card_product_description">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                    <h2 className="category_card_product_price">R$ 495<sup> 99</sup><sub className='category_card_product_subtext'>10x Sem juros</sub></h2>
+                    <h3 className="category_card_product_name">{product.name}</h3>
+                    <h4 className="category_card_product_description">{product.name}</h4>
+                    {renderPrice()}
                 </div>
             </div>
         </Link>
@@ -241,7 +256,7 @@ const renderDesktopView = (product) => (
     </div>
 )
 
-const renderTabletView = (product) => (
+const renderTabletView = () => (
     <div className="ui segment itens container_category_card" id="itemCategory">
         <Link to="/product">
             <p className="ui blue ribbon label category_card">Verificados</p>
@@ -274,7 +289,7 @@ const renderTabletView = (product) => (
         </Link>
     </div>
 )
-const renderMobileView = (product) => (
+const renderMobileView = () => (
     <div className="ui segment itens container_category_card_mobile" id="itemCategory">
         <Link to="/product">
             <p className="ui blue ribbon label category_card_mobile">Verificados</p>

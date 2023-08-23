@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'http://localhost:8081/user'
+const url = 'http://localhost:8082/user'
 
 export const UserService = {
 

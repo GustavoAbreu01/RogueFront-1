@@ -183,6 +183,22 @@ function SmallProductCard({product}) {
         
     }
 
+    const renderPrice = () => {
+        if (product.price !== undefined) {
+            const priceParts = product.price.toString().split('.');
+            const integerPart = priceParts[0];
+            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            return (
+                <h2 className="category_card_product_price">
+                    R$ {integerPart}
+                    <sup> .{decimalPart}</sup>
+                    <sub className='subtext_productPage'>10x sem juros</sub>
+                </h2>
+            );
+        } else {
+            return null; // Handle the case where productPage.price is undefined
+        }
+    };
 
 
 
@@ -208,7 +224,7 @@ function SmallProductCard({product}) {
 
 
     const renderDesktopView = () => (
-        <div className="product_acessed" key={product.id}>
+        <div className="product_acessed" key={product.code}>
         <div className='container_product_card_smaller'>
             <div className='container_product_card_smaller_action_icon'>
                 <div className='product_card_small_button_compare'>
@@ -223,7 +239,7 @@ function SmallProductCard({product}) {
                     <i className="cart plus icon"></i>
                 </button>
             </div>
-            <Link to='/product'>
+            <Link to={`/product/${product.code}`}>
                 <div className='box_product_card_smaller_image'>
                     <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
