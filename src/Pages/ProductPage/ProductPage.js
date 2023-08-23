@@ -9,6 +9,7 @@ import Swal from 'sweetalert2'
 
 //Importando os componentes
 import Carousel from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
+import ProductTable from './ProductTable/ProductTable';
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
@@ -222,7 +223,7 @@ function ProductPage() {
                             <span>Descrição</span>
                         </div>
                         <div className="description product_page">
-                            <p>Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia. Opcionalmente pode ser fornecido com capacitor de partida e eixo e flange conforme norma NEMA.</p>
+                            <p>{productPage.description}</p>
                         </div>
                         <div className='buttons_product_page'>
                             <Link to={"/cart"}>
@@ -252,42 +253,7 @@ function ProductPage() {
                     <h3 className="ui header charac_product_page"> Características</h3>
                     <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
                     <h3 className="ui header gl_charac_product_page"> Características Gerais</h3>
-                    <table className="ui small definition table product_page">
-                        <tbody>
-                            <tr>
-                                <td>Potência</td>
-                                <td>1/8 a 3 cv</td>
-                            </tr>
-                            <tr>
-                                <td>Polaridade</td>
-                                <td>2 ou 4</td>
-                            </tr>
-                            <tr>
-                                <td>Tensão</td>
-                                <td> 127/220 ou 220/440 V</td>
-                            </tr>
-                            <tr>
-                                <td>Frequência</td>
-                                <td> 60 ou 50 Hz</td>
-                            </tr>
-                            <tr>
-                                <td>Carcaças</td>
-                                <td>B48 a G56H</td>
-                            </tr>
-                            <tr>
-                                <td>Tipo de Carcaça</td>
-                                <td>Chapa de Aço</td>
-                            </tr>
-                            <tr>
-                                <td>Grau de Proteção</td>
-                                <td>IP21</td>
-                            </tr>
-                            <tr>
-                                <td>Cor</td>
-                                <td>Preto fosco (Munsell N1)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <ProductTable product={productPage} />
                     <h3 className="ui header optionals_product_page"> Opcionais</h3>
                     <p> Proteção térmica.</p>
                     <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
