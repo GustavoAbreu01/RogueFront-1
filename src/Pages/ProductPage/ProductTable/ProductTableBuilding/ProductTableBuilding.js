@@ -7,7 +7,7 @@ function ProductTableBuilding({ product }) {
         <tbody>
             <tr>
                 <td>Autonomia</td>
-                <td>1/8 a 3 cv</td>
+                <td>{product.autonomy}</td>
             </tr>
             <tr>
                 <td>Tipo da Bateria</td>

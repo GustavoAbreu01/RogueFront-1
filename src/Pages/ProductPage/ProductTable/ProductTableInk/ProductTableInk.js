@@ -7,15 +7,15 @@ function ProductTableInk({ product }) {
                 <tbody>
                     <tr>
                         <td>Cor</td>
-                        <td>1/8 a 3 cv</td>
+                        <td>{product.color}</td>
                     </tr>
                     <tr>
                         <td>Densidade</td>
-                        <td>2 ou 4</td>
+                        <td>{product.density}</td>
                     </tr>
                     <tr>
                         <td>Tipo</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.type}</td>
                     </tr>
                 </tbody>
             </table>

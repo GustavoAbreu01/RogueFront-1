@@ -7,43 +7,43 @@ function ProductTableAutomation({ product }) {
                 <tbody>
                     <tr>
                         <td>Grau de Proteção</td>
-                        <td>1/8 a 3 cv</td>
+                        <td>{product.degreeProtection}</td>
                     </tr>
                     <tr>
                         <td>Alimentação Eletrônica</td>
-                        <td>2 ou 4</td>
+                        <td>{product.electronicFeed}</td>
                     </tr>
                     <tr>
                         <td>Filtro RFI</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.filterrfi}</td>
                     </tr>
                     <tr>
                         <td>Indutor Link</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.inductorLink}</td>
                     </tr>
                     <tr>
                         <td>Corrente Nominal</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.nominalChain}</td>
                     </tr>
                     <tr>
                         <td>Número de Fases de Entrada</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.numberPhasesEntry}</td>
                     </tr>
                     <tr>
                         <td>Frenagem Reostática</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.rheostaticBraking}</td>
                     </tr>
                     <tr>
                         <td>Parada de Segurança</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.safetyStop}</td>
                     </tr>
                     <tr>
                         <td>Configurações</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.settings}</td>
                     </tr>
                     <tr>
                         <td>Temperatura</td>
-                        <td> 127/220 ou 220/440 V</td>
+                        <td>{product.temperature}</td>
                     </tr>
                 </tbody>
             </table>

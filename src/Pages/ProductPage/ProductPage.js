@@ -249,14 +249,13 @@ function ProductPage() {
                 <div>
                     <h2 className="ui header about_product_page">Sobre o Produto</h2>
                     <h3 className="ui header app_product_page"> Aplicações</h3>
-                    <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
+                    <p>{productPage.application}</p>
                     <h3 className="ui header charac_product_page"> Características</h3>
-                    <p> Ventiladores, compressores, moinhos, esteiras ergométricas, picadores, forradeiras e outras de uso em geral. </p>
+                    <p>{productPage.caracteristics}</p>
                     <h3 className="ui header gl_charac_product_page"> Características Gerais</h3>
                     <ProductTable product={productPage} />
                     <h3 className="ui header optionals_product_page"> Opcionais</h3>
-                    <p> Proteção térmica.</p>
-                    <p> Capacitor de partida, capacitor permanente ou ambos, conforme potência e aplicação.</p>
+                    <p>{productPage.optional}</p>
                 </div>
             </div>
             <div className='box_product_page_title_similar'>
