@@ -67,7 +67,7 @@ function ProductCart(item) {
             </div>
             <div className="product_cart_informations">
               <Link to="/product">
-                <h2 className="product_cart_item_name">W12 Monofásico</h2>
+                <h2 className="product_cart_item_name"></h2>
                 <p className="product_cart_complement" >Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
                 <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext'>10x Sem juros</sub></h2>
               </Link>

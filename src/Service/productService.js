@@ -14,10 +14,9 @@ export const ProductService = {
     },
 
     findAll: async () => {
-      const randomPageSize = 20;
       try {
-          const response = await axios.get(url + "all?size=" + randomPageSize + "&page=" + 0);
-          return response.data;
+          const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+          return response.data.content;
       } catch (error) {
           console.error(error);
       }

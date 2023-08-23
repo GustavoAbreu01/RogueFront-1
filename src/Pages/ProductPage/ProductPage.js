@@ -31,13 +31,14 @@ const verify = () => {
 }
 
 function ProductPage() {
-
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-    const [product, setProduct] = useState();
+    const [productPage, setProductPage] = useState({});
     const { code } = useParams();
 
+    const product = 0;
+
     useEffect(() => {
-        buscarProduto(code)
+        searchProduct(code);
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -48,8 +49,13 @@ function ProductPage() {
         };
     }, []);
 
-    const buscarProduto = async (code) => {
-        setProduct(await ProductService.findOne(code))
+    const searchProduct = async (code) => {
+        const productSearched = await ProductService.findOne(code);
+        if (productSearched) {
+            setProductPage(productSearched);
+        } else {
+            setProductPage([]);
+        }
     }
 
     const AddProductInCart = () => {
@@ -83,7 +89,6 @@ function ProductPage() {
 
     const AddProductInCompare = () => {
         const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-
         if (productsInCompare.length <= 2) {
             productsInCompare.push(product);
             localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
@@ -143,10 +148,8 @@ function ProductPage() {
         localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     }
 
-
     const AddProductInCompareTablet = () => {
         const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-
         if (productsInCompare.length <= 1) {
             productsInCompare.push(product);
             localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
@@ -204,7 +207,6 @@ function ProductPage() {
         <>
             {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
-
             <div className="ui items product_page" >
                 <p className="ui blue ribbon label">Destaque</p>
                 <div className="ui item product_page">
@@ -212,10 +214,10 @@ function ProductPage() {
                         <img className="image_product" src={motor} />
                     </div>
                     <div className="content product_page">
-                        <h1 className="ui header product_page">{product.name}</h1>
+                        <h1 className="ui header product_page">{productPage.name}</h1>
                         <br />
                         <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
-                        <h1 className="price_product_page">R$ 495<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
+                        <h1 className="price_product_page">{productPage.price}<sup> 99</sup><sub className='subtext CardCart'>10x sem juros</sub></h1>
                         <div className="meta">
                             <span>Descrição</span>
                         </div>
