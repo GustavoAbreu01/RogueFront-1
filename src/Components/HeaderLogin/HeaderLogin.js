@@ -92,15 +92,15 @@ function HeaderLogin() {
         <MenuModal />
       </div>
       <div className="divisor_header_login"></div>
-      <Link to="/category">Motores</Link>
+      <Link to="/category" category="MOTORS">Motores</Link>
       <div className="divisor_header_login"></div>
-      <Link to="/category">Tintas e Vernizes</Link>
+      <Link to="/category" category="INK">Tintas e Vernizes</Link>
       <div className="divisor_header_login"></div>
-      <Link to="/category">Automação</Link>
+      <Link to="/category" category="AUTOMATION">Automação</Link>
       <div className="divisor_header_login"></div>
-      <Link to="/category">Paineis Eletricos</Link>
+      <Link to="/category" category="BUILDING">Paineis Eletricos</Link>
       <div className="divisor_header_login"></div>
-      <Link to="/category">Segurança</Link>
+      <Link to="/category" category="SECURITY">Segurança</Link>
       <div className="divisor_header_login"></div>
     </div></>
   )

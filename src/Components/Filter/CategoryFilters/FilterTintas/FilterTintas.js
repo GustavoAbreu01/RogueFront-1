@@ -1,6 +1,6 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import './Filter.css'
+import '../../FilterSearch.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
@@ -29,17 +29,6 @@ function FilterTintas() {
 
     const toggleDropdown3 = () => {
         setIsOpen3(!isOpen3);
-    };
-    const [isOpen4, setIsOpen4] = useState(false);
-
-    const toggleDropdown4 = () => {
-        setIsOpen4(!isOpen4);
-    };
-
-    const [isOpen5, setIsOpen5] = useState(false);
-
-    const toggleDropdown5 = () => {
-        setIsOpen5(!isOpen5);
     };
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });

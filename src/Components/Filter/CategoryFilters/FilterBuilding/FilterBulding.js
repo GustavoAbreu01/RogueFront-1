@@ -1,6 +1,6 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import './Filter.css'
+import '../../FilterSearch.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
@@ -29,17 +29,6 @@ function FilterSegurança() {
 
     const toggleDropdown3 = () => {
         setIsOpen3(!isOpen3);
-    };
-    const [isOpen4, setIsOpen4] = useState(false);
-
-    const toggleDropdown4 = () => {
-        setIsOpen4(!isOpen4);
-    };
-
-    const [isOpen5, setIsOpen5] = useState(false);
-
-    const toggleDropdown5 = () => {
-        setIsOpen5(!isOpen5);
     };
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -153,11 +142,11 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Casing
+                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Casing
 
-                                    <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
+                                    <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen2 && (
+                                {isOpen3 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />

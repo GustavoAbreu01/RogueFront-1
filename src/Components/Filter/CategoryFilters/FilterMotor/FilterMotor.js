@@ -1,12 +1,12 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import './Filter.css'
+import '../../FilterSearch.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
 
 //Importando as imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
+import iconMotor from "../../../../assets/img/iconeMotor.png"
 
 function FilterMotor() {
 

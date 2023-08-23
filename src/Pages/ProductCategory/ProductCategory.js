@@ -4,7 +4,7 @@ import './ProductCategory.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 //Importando os componentes
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
@@ -13,7 +13,6 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Filter from '../../Components/Filter/FilterSearch'
 
 
 //Importando as imagens
@@ -22,6 +21,7 @@ import iconMotor from "../../assets/img/iconeMotor.png"
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
+import FilterSearch from '../../Components/Filter/FilterSearch';
 
 
 function ProductCategory() {
@@ -38,6 +38,7 @@ function ProductCategory() {
   const [isGrid, setIsGrid] = useState(true);
   const [search, setSearch] = useState(1);
   const [pagination, setPagination] = useState(1);
+  const { category } = useParams();
 
   const alterarPagina = (e, { value }) => {
     setPagination(value);
@@ -80,6 +81,7 @@ function ProductCategory() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
+    console.log(category)
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -150,7 +152,7 @@ function ProductCategory() {
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>
-            <Filter />
+            <FilterSearch category={category} />
           </div>
           {isGrid ? (
             <div className="container_category_bar">
@@ -238,7 +240,7 @@ function ProductCategory() {
       <div className='container_category_page_layout_mobile'>
         <div className='container_category_page_detail_mobile'>
           <div className='container_category_page_mobile'>
-            <Filter />
+            <FilterSearch category={category} />
           </div>
           {isGrid ? (
             <div className="container_category_bar_mobile">

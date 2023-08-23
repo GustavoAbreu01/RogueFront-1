@@ -4,7 +4,7 @@ import './FilterSearch.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 //Importando os componentes
 import SmallProductCard from '../ProductCardSmaller/ProductCardSmaller';
@@ -13,9 +13,10 @@ import HeaderLogin from '../HeaderLogin/HeaderLogin';
 import WeggnerModal from '../WeggnerModal/WeggnerModal';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import Filter from './CategoryFilters/Filter';
 
 //Importando as imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
+import iconSearch from "../../assets/img/Search.png"
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
@@ -23,10 +24,9 @@ import { FaListUl } from 'react-icons/fa'
 
 
 function FilterSearch() {
-
-
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState('Motores');
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const { category } = useParams();
 
 
     const toggleDropdown = () => {
@@ -36,6 +36,7 @@ function FilterSearch() {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
+        console.log(category)
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -56,8 +57,8 @@ function FilterSearch() {
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <img className="icon_category" src={iconMotor} />
-                            <h1 className="ui header motor search">Motores</h1>
+                            <img className="icon_category" src={iconSearch} />
+                            <h1 className="ui header motor search">Filtros gerais</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
                                 <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
@@ -101,6 +102,9 @@ function FilterSearch() {
                                 }
                             </div>
                         </div>
+                        <div className="category_second_filter">
+                            <Filter category={category} />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,10 +113,10 @@ function FilterSearch() {
     const renderMobileView = () => (
         <>
             <div className="category_second_filter_mobile">
-                <h2 className="search_mobile">Motores</h2>
+                <h2 className="search_mobile">Filtros Gerais</h2>
                 <br />
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Voltagem
+                    <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
 
                         <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
                     </div>
@@ -152,6 +156,9 @@ function FilterSearch() {
                     )
                     }
                 </div>
+                <div className='container_category_filter_expanded_mobile'>
+                    <Filter category={category} />
+                </div>
             </div>
         </>
     )
@@ -164,7 +171,6 @@ function FilterSearch() {
             return renderMobileView();
         }
     };
-
     return <>{getViewToRender()}</>;
 
 };
