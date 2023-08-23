@@ -22,6 +22,8 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 function Header() {
 
+  const motores = "Motores" 
+
   const [user, setUser] = useState({});
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [scrolled, setScrolled] = useState(false);

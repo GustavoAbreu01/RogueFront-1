@@ -26,6 +26,7 @@ function Filter() {
 
 
     const [isOpen, setIsOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('Motores');
 
 
     const toggleDropdown = () => {
@@ -139,6 +140,10 @@ function Filter() {
         };
     }, []);
 
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
+    };
+
     const renderDesktopView = () => (
         <>
             <div className='container_category_page_layout'>
@@ -157,7 +162,7 @@ function Filter() {
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
+                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
                                         </div>
                                         <br />
                                         <br />
