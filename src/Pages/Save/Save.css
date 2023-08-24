@@ -26,6 +26,7 @@ body {
 }
 
 .box_title_similar_save {
+    margin-bottom: 2rem;
     margin-top: 2rem;
     display: flex;
     align-items: center;

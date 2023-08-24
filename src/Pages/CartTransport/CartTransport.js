@@ -243,7 +243,7 @@ function CartTransport() {
         </div>
       </div>
       <div className='box_cart_transport_title_similar'>
-        <FaStar color='var(--white)' size={40} />
+      <i class="magic icon" color='var(--white)'></i>
         <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
