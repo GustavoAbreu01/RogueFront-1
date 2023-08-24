@@ -7,6 +7,8 @@ import 'animate.css';
 import { Link } from "react-router-dom";
 import swal from 'sweetalert2';
 
+import { SaveService  } from '../../Service/SaveService';
+
 //Importando as imagens
 import motors from "../../assets/img/motores.png"
 
@@ -50,7 +52,7 @@ function CategoryCard({ product }) {
     }
 
 
-    const AddProductInSave = () => {
+    const AddProductInSave = (savesId, productCode) => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
         savedProducts.push(product);
         localStorage.setItem('savedProducts', JSON.stringify(savedProducts));

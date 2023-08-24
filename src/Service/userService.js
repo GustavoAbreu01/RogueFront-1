@@ -29,7 +29,7 @@ export const UserService = {
     });
   },
   login: function (email, password) {
-    const apiUrl = `http://localhost:8082/user/${email}/${password}`;
+    const apiUrl = `http://localhost:8082/user/login?email=${email}&password=${password}`;
     return axios.get(apiUrl)
         .then(response => response.data)
         .catch(error => {

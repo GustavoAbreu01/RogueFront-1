@@ -108,9 +108,6 @@ function Salvos() {
    return getViewToRender();
   }
 
-
-
-
   return (
     <>
       {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
