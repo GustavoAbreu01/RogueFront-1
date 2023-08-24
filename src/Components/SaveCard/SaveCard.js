@@ -142,9 +142,9 @@ function SaveCard({ item }, product) {
                 </Link>
                 <div className='iconProductAction save_card_mobile'>
                     <button
-                        className="ui blue icon button save_card"
+                        className="ui blue icon button save_card_mobile"
                         onClick={() => deleteItens(item)}>
-                        <i className="trash alternate icon save_card" ></i>
+                        <i className="trash alternate icon save_card_mobile" ></i>
                     </button>
                     <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card_mobile">
                         <i className="cart plus icon save_card_mobile"></i>

@@ -1,15 +1,13 @@
 .ui.segment.itens.save_card {
     border-radius: 1rem;
     background-color: var(--white);
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
 }
 .save_products {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 8rem;
     padding-bottom: 2rem;
-    padding-top: 2rem;
     display: flex;
     display: block;
 }
@@ -29,6 +27,9 @@ a:link.Save {
 }
 
 .iconProductAction.save_card {
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    gap: 1rem;
     display: flex;
     justify-content: space-between;
     margin: 0.5rem;
@@ -76,8 +77,8 @@ a:link.Save {
 
 .save_card_buy_button {
     position: absolute;
-    height: 2rem;
-    width: 10rem;
+    height: 3rem;
+    width: 14rem;
     bottom: 0;
     right: 0;
 }
@@ -86,10 +87,10 @@ a:link.Save {
     border-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 70%;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
-    width: 10rem;
-    height: 2rem;
+    width: 14rem;
+    height: 3rem;
     left: 0%;
 }
 
@@ -97,8 +98,6 @@ a:link.Save {
     align-items: center;
     justify-content: center;
     display: flex;
-    width: 2rem;
-    height: 2rem;
 }
 
 .trash.alternate.icon.save_card{
@@ -226,7 +225,6 @@ a:link.Save {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     padding-bottom: 2rem;
-    padding-top: 2rem;
     display: flex;
     display: block;
 }

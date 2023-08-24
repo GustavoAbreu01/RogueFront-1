@@ -167,7 +167,7 @@ function Search() {
               <div className="box_category_bar">
                 {products.map((product) => (
                   <div className="category_itens">
-                    <SmallProductCard key={product.id} product={product} />
+                    <CategoryCard key={product.id} product={product} />
                   </div>
                 ))}
               </div>
@@ -177,7 +177,7 @@ function Search() {
               <div className="box_search_bar">
                 {products.map((product) => (
                   <div className="searchItens">
-                    <CategoryCard key={product.id} product={product} />
+                    <SmallProductCard key={product.id} product={product} />
                   </div>
                 ))}
               </div>

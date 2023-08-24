@@ -695,7 +695,7 @@ function Quiz() {
         )}
       </div>
       <div className='box_quiz_title_similar'>
-        <FaStar color='var(--white)' size={40} />
+        <i class="magic icon" color='var(--white)'></i>
         <h1 className='quiz_title_similar' >Produtos Semelhantes</h1>
       </div>
       <ProductSmallCarousel />
