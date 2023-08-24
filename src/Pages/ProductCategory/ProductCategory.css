@@ -11,10 +11,6 @@
     border-radius: 10px;
 }
 
-.ui.breadcrumb {
-    width: 100%;
-}
-
 .ui.header.motor.search {
     align-items: center;
     display: flex;
@@ -239,6 +235,11 @@
     text-align: center;
     gap: 5rem;
 }
+
+.container_breadcrumb {
+    padding: 2rem;
+}
+
 
 /* MOBILE */
 

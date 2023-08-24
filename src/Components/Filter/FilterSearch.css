@@ -11,10 +11,6 @@
     border-radius: 10px;
 }
 
-.filter {
-    width: 100%;
-}
-
 .ui.header.motor.search {
     align-items: center;
     display: flex;
@@ -22,6 +18,7 @@
 }
 
 .icon_category {
+
     display: block;
     margin: 0 auto;
     width: 35%;
