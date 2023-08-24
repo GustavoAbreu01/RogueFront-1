@@ -21,7 +21,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 
 function Header() {
-
+ 
   const [user, setUser] = useState({});
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [scrolled, setScrolled] = useState(false);
@@ -71,16 +71,16 @@ function Header() {
           <MenuModal />
         </div>
         <div className="divisor_header"></div>
-        <Link to="/category">Motores</Link>
-        <div className="divisor_header"></div>
-        <Link to="/category">Tintas e Vernizes</Link>
-        <div className="divisor_header"></div>
-        <Link to="/category">Automação</Link>
-        <div className="divisor_header"></div>
-        <Link to="/category">Paineis Eletricos</Link>
-        <div className="divisor_header"></div>
-        <Link to="/category">Segurança</Link>
-        <div className="divisor_header"></div>
+      <Link to="/category/motors">Motores</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/ink">Tintas e Vernizes</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/automation">Automação</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/building">Paineis Eletricos</Link>
+      <div className="divisor_header"></div>
+      <Link to="/category/security">Segurança</Link>
+      <div className="divisor_header"></div>
       </div></>
   )
 

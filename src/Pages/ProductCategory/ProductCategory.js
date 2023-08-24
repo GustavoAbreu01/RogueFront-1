@@ -4,7 +4,7 @@ import './ProductCategory.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 //Importando os componentes
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
@@ -13,7 +13,6 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Filter from '../../Components/Filter/FilterSearch'
 import ProductService from '../../Service/ProductService'
 
 
@@ -23,6 +22,7 @@ import iconMotor from "../../assets/img/iconeMotor.png"
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
+import FilterSearch from '../../Components/Filter/FilterSearch';
 
 
 function ProductCategory() {
@@ -37,6 +37,7 @@ function ProductCategory() {
         setProducts([]);
       }
   }
+  const { category } = useParams();
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -101,18 +102,32 @@ function ProductCategory() {
     };
   }, []);
 
+  const formatCategoryTitle = (category) => {
+    if (category === "motors") {
+      return category = "Motores"
+    } else if (category === "ink") {
+      return category = "Tintas e Vernizes"
+    } else if (category === "automation") {
+      return category = "Automação"
+    } else if (category === "building") {
+      return category = "Painéis"
+    } else if (category === "security") {
+      return category = "Seguração"
+    }
+  };
+
 
 
   const renderDesktopView = () => (
     <>
-  {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
           <i className="right chevron icon divider"></i>
           <Link to="/" className="section">Categoria</Link>
           <i className="right arrow icon divider"></i>
-          <div className="active section">Motores</div>
+          <div className="active section">{formatCategoryTitle(category)}</div>
         </div>
       </div>
       <div className='box_pagination_config'>
@@ -163,15 +178,15 @@ function ProductCategory() {
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>
-            <Filter />
+            <FilterSearch category={category} />
           </div>
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-              {products.map((product) => (
-             <div className="category_itens">
-                        <CategoryCard key={product.code} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="category_itens">
+                    <CategoryCard key={product.code} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -180,7 +195,7 @@ function ProductCategory() {
               <div className="box_search_bar">
               {products.map((product) => (
              <div className="searchItens">
-                        <SmallProductCard key={product.code} product={product} />
+                        <CategoryCard key={product.id} product={product} />
                     </div>
                 ))}
               </div>
@@ -251,25 +266,25 @@ function ProductCategory() {
       <div className='container_category_page_layout_mobile'>
         <div className='container_category_page_detail_mobile'>
           <div className='container_category_page_mobile'>
-            <Filter />
+            <FilterSearch category={category} />
           </div>
           {isGrid ? (
             <div className="container_category_bar_mobile">
               <div className="box_category_bar_mobile">
-              {products.map((product) => (
-             <div className="category_itens">
-                        <CategoryCard key={product.id} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="category_itens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar_mobile">
               <div className="box_search_bar_mobile">
-              {products.map((product) => (
-             <div className="searchItens">
-                        <SmallProductCard key={product.code} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="searchItens">
+                    <SmallProductCard key={product.code} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
