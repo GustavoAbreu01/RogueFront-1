@@ -1,5 +1,5 @@
 //Importando o React e o CSS
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import './ProductSmallCarousel.css';
 
 //importando as frameworks
@@ -7,9 +7,20 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
+import ProductService from '../../Service/ProductService';
 
 function ProductCarouselSmall() {
 
+    const [productsSmall, setProductsSmall] = useState([])
+
+    const getProductsRev = async () => {
+        const products = await ProductService.findAll();
+        if (products) {
+            setProductsSmall(products);
+        } else {
+            setProductsSmall([]);
+        }
+    }
 
     var settings = {
         className: "center",
@@ -62,43 +73,18 @@ function ProductCarouselSmall() {
         ],
     };
 
+    useEffect(() => {
+        getProductsRev();
+    }, []);
 
     return (
         <div className='carousel_product_card_smaller_carousel' >
             <Slider {...settings}>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
-                <div className='box_product_card_smaller_carousel'>
-                    <ProductCardSmaller />
-                </div>
+                {productsSmall.map((product) => (
+                    <div className='box_product_card_smaller_carousel'>
+                        <ProductCardSmaller key={product.code} product={product} />
+                    </div>
+                ))}
             </Slider>
         </div >
     )
