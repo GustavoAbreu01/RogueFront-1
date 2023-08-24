@@ -5,11 +5,14 @@ import './SearchModal.css';
 
 //icons
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { ProductService } from '../../Service';
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [totally, setTotally] = useState([]);
+  const [product, setProduct] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [disableScroll, setDisableScroll] = useState(false);
 
@@ -30,6 +33,7 @@ function SearchBar() {
   }
 
   useEffect(() => {
+    loadProductSuggestions();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -46,55 +50,36 @@ function SearchBar() {
     setShowSuggestions(value.length > 0);
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    setSearchTerm(suggestion);
-    setShowSuggestions(false);
-    window.location.href = `/product?query=${encodeURIComponent(suggestion)}`;
-  }
-
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       window.location.href = `/search?query=${encodeURIComponent(searchTerm)}`;
     }
   };
 
-  const suggestions = [
-    'React',
-    'Angular',
-    'Vue.js',
-    'JavaScript',
-    'HTML',
-    'CSS',
-    'Node.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
-    'Express.js',
+  const loadProductSuggestions = async () => {
+    try {
+      const products = await ProductService.findAllProducts();
+      const productNames = products.map(product => product.name);
+      console.log(products);
+      setProduct(products);
+      setTotally(productNames);
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+      setProduct([]);
+      setTotally([]);
+    }
+  };
 
-  ];
+  const handleSuggestionClick = (suggestion) => {
+    setSearchTerm(suggestion);
+    setShowSuggestions(false);
+    const selectedProduct = product.find(product => product.name.toLowerCase() === suggestion.toLowerCase());
+    if (selectedProduct) {
+      window.location.href = `/product/${selectedProduct.code}`;
+    } else {
+      console.error(`Produto correspondente a "${suggestion}" não encontrado.`);
+    }
+  }
 
   const renderDesktopView = () => (
     <div className="container_searchBar">
@@ -108,17 +93,17 @@ function SearchBar() {
       <i className="search icon input"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
-          {suggestions
-            .filter((suggestion) =>
-              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+          {totally
+            .filter((totally) =>
+              totally.toLowerCase().includes(searchTerm.toLowerCase())
             )
-            .map((suggestion, index) => (
+            .map((totally, index) => (
               <li className='li_search_desktop'
                 key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
+                onClick={() => handleSuggestionClick(totally)}
               >
                 <BiRightArrowAlt className='arrow_search_desktop' />
-                {suggestion}
+                {totally}
               </li>
             ))}
         </ul>
@@ -138,17 +123,17 @@ function SearchBar() {
       <i className="search icon input"></i>
       {showSuggestions && (
         <ul className="serarchBar_suggestions">
-          {suggestions
-            .filter((suggestion) =>
-              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+          {totally
+            .filter((totally) =>
+              totally.toLowerCase().includes(searchTerm.toLowerCase())
             ).slice(0, 10)
-            .map((suggestion, index) => (
+            .map((totally, index) => (
               <li className='li_search_tablet'
                 key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
+                onClick={() => handleSuggestionClick(totally)}
               >
                 <BiRightArrowAlt className='arrow_search_tablet' />
-                {suggestion}
+                {totally}
               </li>
             ))}
         </ul>
@@ -179,17 +164,17 @@ function SearchBar() {
       )}
       {showSuggestions && (
         <ul className="serarchBar_suggestions_mobile">
-          {suggestions
-            .filter((suggestion) =>
-              suggestion.toLowerCase().includes(searchTerm.toLowerCase())
+          {totally
+            .filter((totally) =>
+              totally.toLowerCase().includes(searchTerm.toLowerCase())
             ).slice(0, 10)
             .map((suggestion, index) => (
               <li className='li_search_mobile'
                 key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
+                onClick={() => handleSuggestionClick(totally)}
               >
                 <BiRightArrowAlt className='arrow_search_mobile' />
-                {suggestion}
+                {totally}
               </li>
             ))}
         </ul>

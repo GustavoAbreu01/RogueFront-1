@@ -28,13 +28,15 @@ export const UserService = {
       return response.data;
     });
   },
-  login: function (email, password) {
+  
+  login: async function (email, password) {
     const apiUrl = `http://localhost:8082/user/login?email=${email}&password=${password}`;
-    return axios.get(apiUrl)
-        .then(response => response.data)
-        .catch(error => {
-            throw error;
-        });
+    try {
+      const response = await axios.get(apiUrl);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
 },
 
   delete: function(id){

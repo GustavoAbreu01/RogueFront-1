@@ -126,7 +126,7 @@ function ProductCategory() {
 
   const renderPaginationButtons = () => {
     const totalPages = Math.ceil(totally.length / paginationIntruct);
-  
+
     const buttons = [];
     for (let i = 1; i <= totalPages; i++) {
       buttons.push(
@@ -226,7 +226,7 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-              {productsCategory.slice(startIndex, endIndex).map((product) => (
+                {productsCategory.slice(startIndex, endIndex).map((product) => (
                   <div className="category_itens">
                     <CategoryCard key={product.id} product={product} />
                   </div>
