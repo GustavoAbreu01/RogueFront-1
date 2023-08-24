@@ -28,14 +28,17 @@ function Login() {
     const navigate = useNavigate();
 
     const handleLogin = async (event) => {
-        const { email, password } = userLogin;
-        console.log(userLogin);
-        event.preventDefault();
         try {
+            const { email, password } = userLogin;
+            console.log(userLogin);
+            event.preventDefault();
             const response = await UserService.login(email, password);
-            localStorage.setItem('user', JSON.stringify(response));
-            localStorage.setItem('verifyLogin', 'yes');
-            navigate("/");
+            if(response){
+                localStorage.setItem('userLogin', JSON.stringify(response));
+                localStorage.setItem('verifyLogin', 'yes');
+                navigate("/");
+            }
+            
         } catch (error) {
             alert("Erro ao fazer login. Verifique suas credenciais.");
             console.log(error);
