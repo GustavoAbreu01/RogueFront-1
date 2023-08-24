@@ -23,12 +23,18 @@ import { ProductService } from '../../Service';
 
 function ProductCategory() {
   const [products, setProducts] = useState([]);
+  const [totally, setTotally] = useState([]);
   const [isGrid, setIsGrid] = useState(true);
   const [search, setSearch] = useState(1);
-  const [pagination, setPagination] = useState(1);
-  const [paginationIntruct, setPaginationIntruct] = useState(1);
+  const [selectedPagination, setSelectedPagination] = useState(1);
+  const [paginationIntruct, setPaginationIntruct] = useState(20);
   const [productsCategory, setProductsCategory] = useState([])
+  const [currentPage, setCurrentPage] = useState(1);
   const { category } = useParams();
+
+  const startIndex = (currentPage - 1) * paginationIntruct;
+  const endIndex = startIndex + paginationIntruct;
+  const totalPages = Math.ceil(productsCategory.length / paginationIntruct);
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -40,29 +46,17 @@ function ProductCategory() {
   }
 
   const getProductsCategory = async () => {
-    const products = await ProductService.findAll(paginationIntruct);
+    const products = await ProductService.findCategory(paginationIntruct, currentPage);
+    const total = await ProductService.findAllProducts();
     if (products) {
+      setProducts(total);
+      setTotally(total);
       setProductsCategory(products);
     } else {
+      setProducts([]);
+      setTotally([]);
       setProductsCategory([]);
     }
-  }
-
-  const alterarPagina = (e, { value }) => {
-    if (value === 1) {
-      setPaginationIntruct(20)
-      setPagination(1)
-    } else if (value === 2) {
-      setPaginationIntruct(40)
-      setPagination(2)
-    } else if (value === 3) {
-      setPaginationIntruct(60)
-      setPagination(3)
-    } else if (value === 4) {
-      setPaginationIntruct(80)
-      setPagination(4)
-    }
-    getProductsCategory();
   };
 
   const alterarSearch = (e, { value }) => {
@@ -99,6 +93,13 @@ function ProductCategory() {
 
   useEffect(() => {
     getProductsCategory();
+    const startIndex = (currentPage - 1) * paginationIntruct;
+    const endIndex = startIndex + paginationIntruct;
+    if (productsCategory.length > 0) {
+      const productsToDisplay = productsCategory.slice(startIndex, endIndex);
+      setProducts(productsToDisplay);
+    }
+
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -107,7 +108,27 @@ function ProductCategory() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [selectedPagination, currentPage, paginationIntruct, productsCategory]);
+
+  const handlePaginationChange = (e, { value }) => {
+    setSelectedPagination(value);
+    let newPaginationIntruct;
+    if (value === 1) {
+      newPaginationIntruct = 20;
+    } else if (value === 2) {
+      newPaginationIntruct = 40;
+    } else if (value === 3) {
+      newPaginationIntruct = 60;
+    } else if (value === 4) {
+      newPaginationIntruct = 80;
+    }
+    setPaginationIntruct(newPaginationIntruct);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   const formatCategoryTitle = (category) => {
     if (category === "motors") {
@@ -140,17 +161,17 @@ function ProductCategory() {
           <div className='container_pagination'>
             <div className='pagination_options'>
               <div className='text_pagination_totally'>
-                <p className='text_pagination_totally'>Produtos Totais: <b>850</b></p>
+                <p className='text_pagination_totally'>Produtos Totais: <b>{totally.length}</b></p>
               </div>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Ordenar por:</p>
                 <Dropdown
                   className='dropDownCard'
-                  value={pagination}
+                  value={selectedPagination}
                   fluid
                   selection
                   options={optionsPagination}
-                  onChange={alterarPagina}
+                  onChange={handlePaginationChange}
                 />
               </div>
               <div className="field pagination">
@@ -188,7 +209,7 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-                {productsCategory.map((product) => (
+                {productsCategory.slice(startIndex, endIndex).map((product) => (
                   <div className="category_itens">
                     <CategoryCard key={product.id} product={product} />
                   </div>
@@ -198,7 +219,7 @@ function ProductCategory() {
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-                {productsCategory.map((product) => (
+                {productsCategory.slice(startIndex, endIndex).map((product) => (
                   <div className="searchItens">
                     <CategoryCard key={product.id} product={product} />
                   </div>
@@ -207,6 +228,17 @@ function ProductCategory() {
             </div>
           )}
         </div>
+        <div className="pagination-buttons">
+      {Array.from({ length: totalPages }, (_, index) => (
+        <button
+          key={index}
+          className={`pagination-button ${currentPage === index + 1 ? 'active-pagination-button' : ''}`}
+          onClick={() => handlePageChange(index + 1)}
+        >
+          {index + 1}
+        </button>
+      ))}
+    </div>
         <Footer />
       </div>
     </>
@@ -230,11 +262,11 @@ function ProductCategory() {
               <div className="field pagination_mobile">
                 <Dropdown
                   className='dropDownCard'
-                  value={pagination}
+                  value={selectedPagination}
                   fluid
                   selection
                   options={optionsPaginationMobile}
-                  onChange={alterarPagina}
+                  onChange={handlePaginationChange}
                 />
               </div>
               <div className="field pagination_mobile">

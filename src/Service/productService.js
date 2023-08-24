@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'http://localhost:8082/product/'
+const url = 'http://localhost:8082/product'
 
 export const ProductService = {
 
@@ -13,10 +13,27 @@ export const ProductService = {
         }
     },
 
-    findAll: async (size) => {
-        console.log(size);
+    findAllProducts: async () => {
         try {
-            const response = await axios.get(url + "all?size=" + size + "&page=" + 0);
+            const response = await axios.get(url + "/all");
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findAll: async () => {
+        try {
+            const response = await axios.get(url + "?size=" + 15 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findCategory: async (size) => {
+        try {
+            const response = await axios.get(url + "?size=" + size + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -25,7 +42,7 @@ export const ProductService = {
 
     findAccessed: async () => {
         try {
-            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -34,7 +51,7 @@ export const ProductService = {
 
     findHighlight: async () => {
         try {
-            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -43,7 +60,7 @@ export const ProductService = {
 
     findNew: async () => {
         try {
-            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -52,7 +69,7 @@ export const ProductService = {
 
     findSearched: async () => {
         try {
-            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
