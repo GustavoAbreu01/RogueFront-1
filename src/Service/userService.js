@@ -5,7 +5,6 @@ const url = 'http://localhost:8082/user'
 export const UserService = {
 
   create: function (user) {
-    console.log(user)
     axios.post(url, user).then((response) => {
       return response.data;
     });

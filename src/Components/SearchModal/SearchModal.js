@@ -60,7 +60,6 @@ function SearchBar() {
     try {
       const products = await ProductService.findAllProducts();
       const productNames = products.map(product => product.name);
-      console.log(products);
       setProduct(products);
       setTotally(productNames);
     } catch (error) {

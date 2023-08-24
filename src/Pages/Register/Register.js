@@ -53,16 +53,13 @@ function Register() {
 
     
     function create(event) {
-        console.log(user)
+        localStorage.setItem('user', JSON.stringify(UserService.create(user)));
         if (user.password !== passwordConfirm) {
             event.preventDefault();
             alert("Confirmação de senha incorreta")
         } else {
-            event.preventDefault();
-            UserService.create(user)
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem("verifyLogin", 'yes');
-            navigate('/');
         }
     }
 
