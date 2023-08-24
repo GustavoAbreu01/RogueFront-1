@@ -10,9 +10,6 @@ import { MdOutlineSecurity } from 'react-icons/md'
 
 function FilterSegurança() {
 
-    const [selectedCategory, setSelectedCategory] = useState('Motores');
-
-
     const useToggle = (initialState = false) => {
         const [isOpen, setIsOpen] = useState(initialState);
 

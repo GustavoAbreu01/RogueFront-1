@@ -27,4 +27,4 @@ function Filter({category}) {
     return <>{changeCategory()}</>;
 }
 
-export default Filter
+export default Filter;

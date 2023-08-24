@@ -53,7 +53,7 @@ function FilterMotor() {
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <img className="icon_category" src={iconMotor} />
+                            <img className="icon_category_filter_motor" src={iconMotor}/>
                             <h1 className="ui header motor search">Motores</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
