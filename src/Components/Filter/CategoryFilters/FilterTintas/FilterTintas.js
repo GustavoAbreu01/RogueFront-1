@@ -58,6 +58,48 @@ function FilterTintas() {
                             <h1 className="ui header motor search">Tintas e Vernizes</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
+                                <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
+
+                                    <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
+                                </div>
+                                {isOpen && (
+                                    <div className='search_transition'>
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                                            <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                                            <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                                            <label className="desc search" htmlFor="Sincronos">Síncronos</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                                            <label className="desc search" htmlFor="Aneis">Anéis</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                    </div>
+                                )
+                                }
+                            </div>
+                            <Divider></Divider>
+                            <div className='container_category_filter_expanded'>
                                 <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Tipo
 
                                     <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>

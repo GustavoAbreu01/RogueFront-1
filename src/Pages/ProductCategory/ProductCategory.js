@@ -75,9 +75,6 @@ function ProductCategory() {
     { key: 4, text: '80 p/ pág', value: 4 },
   ];
 
-
-  const numero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20];
-
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -91,16 +88,30 @@ function ProductCategory() {
     };
   }, []);
 
+  const formatCategoryTitle = (category) => {
+    if (category === "motors") {
+      return category = "Motores"
+    } else if (category === "ink") {
+      return category = "Tintas e Vernizes"
+    } else if (category === "automation") {
+      return category = "Automação"
+    } else if (category === "building") {
+      return category = "Painéis"
+    } else if (category === "security") {
+      return category = "Seguração"
+    }
+  };
+
   const renderDesktopView = () => (
     <>
-  {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
           <i className="right chevron icon divider"></i>
           <Link to="/" className="section">Categoria</Link>
           <i className="right arrow icon divider"></i>
-          <div className="active section">{category}</div>
+          <div className="active section">{formatCategoryTitle(category)}</div>
         </div>
       </div>
       <div className='box_pagination_config'>
@@ -156,20 +167,20 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-              {products.map((product) => (
-             <div className="category_itens">
-                        <CategoryCard key={product.id} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="category_itens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-              {products.map((product) => (
-             <div className="searchItens">
-                        <CategoryCard key={product.id} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="searchItens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -244,20 +255,20 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar_mobile">
               <div className="box_category_bar_mobile">
-              {products.map((product) => (
-             <div className="category_itens">
-                        <CategoryCard key={product.id} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="category_itens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar_mobile">
               <div className="box_search_bar_mobile">
-              {products.map((product) => (
-             <div className="searchItens">
-                        <CategoryCard key={product.id} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="searchItens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>

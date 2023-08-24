@@ -71,15 +71,15 @@ function Header() {
           <MenuModal />
         </div>
         <div className="divisor_header"></div>
-      <Link to="/category/MOTORS">Motores</Link>
+      <Link to="/category/motors">Motores</Link>
       <div className="divisor_header"></div>
-      <Link to="/category/INK">Tintas e Vernizes</Link>
+      <Link to="/category/ink">Tintas e Vernizes</Link>
       <div className="divisor_header"></div>
-      <Link to="/category/AUTOMATION">Automação</Link>
+      <Link to="/category/automation">Automação</Link>
       <div className="divisor_header"></div>
-      <Link to="/category/BUILDING">Paineis Eletricos</Link>
+      <Link to="/category/building">Paineis Eletricos</Link>
       <div className="divisor_header"></div>
-      <Link to="/category/SECURITY">Segurança</Link>
+      <Link to="/category/security">Segurança</Link>
       <div className="divisor_header"></div>
       </div></>
   )

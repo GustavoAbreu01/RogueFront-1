@@ -12,15 +12,15 @@ function Filter({category}) {
 
     const changeCategory = () => {
         console.log(category)
-        if (category === "INK") {
+        if (category === "ink") {
             return <FilterTintas/>
-        } else if (category === "MOTORS") {
+        } else if (category === "motors") {
             return <FilterMotor/>
-        } else if (category === "AUTOMATION") {
+        } else if (category === "automation") {
             return <FilterAutomacao/>
-        } else if (category === "SECURITY") {
+        } else if (category === "security") {
             return <FilterSegurança/>
-        } else if (category === "BUILDING") {
+        } else if (category === "building") {
             return <FilterBuilding/>
         }
     };
