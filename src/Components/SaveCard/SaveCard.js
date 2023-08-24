@@ -73,7 +73,22 @@ function SaveCard({ item }, product) {
         productsInCart.push(product);
         localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     }
-
+    const renderPrice = () => {
+        if (item.price !== undefined) {
+            const priceParts = item.price.toString().split('.');
+            const integerPart = priceParts[0];
+            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            return (
+                <h1 className="save_card_product_price">
+                    R$ {integerPart}
+                    <sup> .{decimalPart}</sup>
+                    <sub className='save_card_product_subtext'>10x sem juros</sub>
+                </h1>
+            );
+        } else {
+            return null; // Handle the case where productPage.price is undefined
+        }
+    };
 
     const renderDesktopView = () => (
         <>
@@ -85,9 +100,9 @@ function SaveCard({ item }, product) {
                                 <img src={motors} width="125" height="" />
                             </div>
                             <div className="save_card_product_info">
-                                <h3 className="save_card_product_name">W12 Monofásico</h3>
-                                <h4 className="save_card_product_description">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                                <h2 className="save_card_product_price">R$ 495<sup> 99</sup><sub className='save_card_product_subtext'>10x Sem juros</sub></h2>
+                                <h3 className="save_card_product_name">{item.name}</h3>
+                                <h4 className="save_card_product_description">{item.description}</h4>
+                                {renderPrice()}
                             </div>
                         </div>
                     </Link>

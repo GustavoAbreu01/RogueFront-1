@@ -31,7 +31,7 @@ function Login() {
         const { email, password } = userLogin;
         event.preventDefault();
         try {
-            const response = await UserService.loginByEmailAndPassword(email, password);
+            const response = await UserService.login(email, password);
             console.log(response.data);
             localStorage.setItem('verifyLogin', 'yes');
             navigate("/");
