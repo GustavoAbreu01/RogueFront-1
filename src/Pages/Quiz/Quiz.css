@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin: 1rem;
     font-size: 40px;
     color: var(--blue-primary);
 }
