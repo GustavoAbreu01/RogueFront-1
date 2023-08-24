@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const url = "http://localhost:8082/cart";
 
 export const CartService = {
 
-    AddProductInCart: async (cartId, productCode) => {
-        const url = `http://localhost:8082/cart/add?cartId=${cartId}&productCode=${productCode}`;
+    AddProductInCart: async function (cartId, productCode) {
+        console.log(cartId, productCode);
+        const url = `http://localhost:8082/cart/add/${cartId}/${productCode}?quantity=${1}`;
         try {
             const response = await axios.put(url);
             console.log(response.data);
@@ -15,6 +15,17 @@ export const CartService = {
         }
     },
 
+    GetCart: async function (cartId) {
+        const url = `http://localhost:8082/cart/${cartId}`;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
 
 
 }
+export default CartService;
