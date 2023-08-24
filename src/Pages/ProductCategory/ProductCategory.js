@@ -4,7 +4,7 @@ import './ProductCategory.css'
 
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 //Importando os componentes
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller';
@@ -13,30 +13,23 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Filter from '../../Components/Filter/FilterSearch'
-import ProductService from '../../Service/ProductService'
-
-
-//Importando as imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
+import FilterSearch from '../../Components/Filter/FilterSearch';
+import { ProductService } from '../../Service';
 
 
 function ProductCategory() {
+  const [products, setProducts] = useState([]);
+  const [isGrid, setIsGrid] = useState(true);
+  const [search, setSearch] = useState(1);
+  const [pagination, setPagination] = useState(1);
+  const [paginationIntruct, setPaginationIntruct] = useState(1);
+  const [productsCategory, setProductsCategory] = useState([])
+  const { category } = useParams();
 
-  const [products, setProducts] = useState([])
-
-  const getProductsRev = async () => {
-      const products = await ProductService.findAll();
-      if (products) {
-        setProducts(products);
-      } else {
-        setProducts([]);
-      }
-  }
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -46,13 +39,30 @@ function ProductCategory() {
     }
   }
 
-  const [isGrid, setIsGrid] = useState(true);
-  const [search, setSearch] = useState(1);
-  const [pagination, setPagination] = useState(1);
+  const getProductsCategory = async () => {
+    const products = await ProductService.findAll(paginationIntruct);
+    if (products) {
+      setProductsCategory(products);
+    } else {
+      setProductsCategory([]);
+    }
+  }
 
   const alterarPagina = (e, { value }) => {
-    setPagination(value);
-    return pagination;
+    if (value === 1) {
+      setPaginationIntruct(20)
+      setPagination(1)
+    } else if (value === 2) {
+      setPaginationIntruct(40)
+      setPagination(2)
+    } else if (value === 3) {
+      setPaginationIntruct(60)
+      setPagination(3)
+    } else if (value === 4) {
+      setPaginationIntruct(80)
+      setPagination(4)
+    }
+    getProductsCategory();
   };
 
   const alterarSearch = (e, { value }) => {
@@ -75,7 +85,7 @@ function ProductCategory() {
     { key: 1, text: 'Mais Acessados', value: 1 },
     { key: 2, text: 'Mais Procurados', value: 2 },
     { key: 3, text: 'Preço Crescente ', value: 3 },
-    { key: 3, text: 'Preço Decrescente', value: 4 },
+    { key: 4, text: 'Preço Decrescente', value: 4 },
   ];
 
   const optionsPaginationMobile = [
@@ -85,12 +95,10 @@ function ProductCategory() {
     { key: 4, text: '80 p/ pág', value: 4 },
   ];
 
-
-
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    getProductsRev();
+    getProductsCategory();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -101,18 +109,30 @@ function ProductCategory() {
     };
   }, []);
 
-
+  const formatCategoryTitle = (category) => {
+    if (category === "motors") {
+      return category = "Motores"
+    } else if (category === "ink") {
+      return category = "Tintas e Vernizes"
+    } else if (category === "automation") {
+      return category = "Automação"
+    } else if (category === "building") {
+      return category = "Painéis"
+    } else if (category === "security") {
+      return category = "Seguração"
+    }
+  };
 
   const renderDesktopView = () => (
     <>
-  {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_breadcrumb'>
         <div className="ui breadcrumb">
           <Link to="/" className="section">Home</Link>
           <i className="right chevron icon divider"></i>
           <Link to="/" className="section">Categoria</Link>
           <i className="right arrow icon divider"></i>
-          <div className="active section">Motores</div>
+          <div className="active section">{formatCategoryTitle(category)}</div>
         </div>
       </div>
       <div className='box_pagination_config'>
@@ -163,25 +183,25 @@ function ProductCategory() {
       <div className='container_category_page_layout'>
         <div className='container_category_page_detail'>
           <div className='container_category_page'>
-            <Filter />
+            <FilterSearch category={category} />
           </div>
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-              {products.map((product) => (
-             <div className="category_itens">
-                        <CategoryCard key={product.code} product={product} />
-                    </div>
+                {productsCategory.map((product) => (
+                  <div className="category_itens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-              {products.map((product) => (
-             <div className="searchItens">
-                        <SmallProductCard key={product.code} product={product} />
-                    </div>
+                {productsCategory.map((product) => (
+                  <div className="searchItens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -251,25 +271,25 @@ function ProductCategory() {
       <div className='container_category_page_layout_mobile'>
         <div className='container_category_page_detail_mobile'>
           <div className='container_category_page_mobile'>
-            <Filter />
+            <FilterSearch category={category} />
           </div>
           {isGrid ? (
             <div className="container_category_bar_mobile">
               <div className="box_category_bar_mobile">
-              {products.map((product) => (
-             <div className="category_itens">
-                        <CategoryCard key={product.id} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="category_itens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>
           ) : (
             <div className="container_search_bar_mobile">
               <div className="box_search_bar_mobile">
-              {products.map((product) => (
-             <div className="searchItens">
-                        <SmallProductCard key={product.code} product={product} />
-                    </div>
+                {products.map((product) => (
+                  <div className="searchItens">
+                    <CategoryCard key={product.id} product={product} />
+                  </div>
                 ))}
               </div>
             </div>

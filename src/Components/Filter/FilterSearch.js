@@ -30,7 +30,6 @@ function FilterSearch({ category }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
-        console.log(category)
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }

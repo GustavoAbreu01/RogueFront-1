@@ -13,10 +13,10 @@ export const ProductService = {
         }
     },
 
-    findAll: async () => {
-        const sizeOrganization = 10
+    findAll: async (size) => {
+        console.log(size);
         try {
-            const response = await axios.get(url + "all?size=" + sizeOrganization + "&page=" + 0);
+            const response = await axios.get(url + "all?size=" + size + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);

@@ -11,7 +11,6 @@ import FilterMotor from '../CategoryFilters/FilterMotor/FilterMotor'
 function Filter({category}) {
 
     const changeCategory = () => {
-        console.log(category)
         if (category === "ink") {
             return <FilterTintas/>
         } else if (category === "motors") {
