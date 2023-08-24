@@ -14,6 +14,16 @@ export const ProductService = {
     },
 
     findAll: async () => {
+        sizeOrganization = 10
+        try {
+            const response = await axios.get(url + "all?size=" + sizeOrganization + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findAccessed: async () => {
         try {
             const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
             return response.data.content;
@@ -22,7 +32,7 @@ export const ProductService = {
         }
     },
 
-    findAll: async () => {
+    findHighlight: async () => {
         try {
             const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
             return response.data.content;
@@ -31,7 +41,7 @@ export const ProductService = {
         }
     },
 
-    findAll: async () => {
+    findNew: async () => {
         try {
             const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
             return response.data.content;
@@ -40,16 +50,7 @@ export const ProductService = {
         }
     },
 
-    findAll: async () => {
-        try {
-            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
-            return response.data.content;
-        } catch (error) {
-            console.error(error);
-        }
-    },
-
-    findAll: async () => {
+    findSearched: async () => {
         try {
             const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
             return response.data.content;
