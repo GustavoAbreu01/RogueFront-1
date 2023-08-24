@@ -60,6 +60,7 @@ function Register() {
         } else {
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem("verifyLogin", 'yes');
+            navigate('/login');
         }
     }
 
