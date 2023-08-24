@@ -4,7 +4,8 @@
   justify-content: center;
   background-color: var(--white);
   width: 100%;
-  height: 7rem;
+  height: 9rem;
+  margin-bottom: 0.5rem;
 }
 
 .container_small_product_horizontal:hover {
