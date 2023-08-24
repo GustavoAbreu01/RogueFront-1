@@ -10,26 +10,25 @@ import { TfiPanel } from 'react-icons/tfi'
 
 function FilterSegurança() {
 
-
-    const [isOpen, setIsOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('Motores');
 
 
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    const useToggle = (initialState = false) => {
+        const [isOpen, setIsOpen] = useState(initialState);
+
+        const toggle = () => {
+            setIsOpen(!isOpen);
+        };
+
+        return [isOpen, toggle];
     };
 
-    const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen, toggleDropdown] = useToggle();
+    const [isOpen2, toggleDropdown2] = useToggle();
+    const [isOpen3, toggleDropdown3] = useToggle();
+    const [isOpen4, toggleDropdown4] = useToggle();
 
-    const toggleDropdown2 = () => {
-        setIsOpen2(!isOpen2);
-    };
 
-    const [isOpen3, setIsOpen3] = useState(false);
-
-    const toggleDropdown3 = () => {
-        setIsOpen3(!isOpen3);
-    };
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -100,11 +99,11 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Tipo do plug
+                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Tipo do plug
 
-                                    <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
+                                    <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen && (
+                                {isOpen2 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
@@ -142,11 +141,11 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Tipo da bateria
+                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Tipo da bateria
 
-                                    <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
+                                    <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen2 && (
+                                {isOpen3 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
@@ -184,11 +183,11 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Casing
+                                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Casing
 
-                                    <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
+                                    <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen3 && (
+                                {isOpen4 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
@@ -237,7 +236,7 @@ function FilterSegurança() {
                 <h2 className="search_mobile">Painéis elétricos</h2>
                 <br />
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Tipo de plug
+                    <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
 
                         <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
                     </div>
@@ -279,11 +278,53 @@ function FilterSegurança() {
                 </div>
                 <Divider></Divider>
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Tipo de bateria
+                    <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Tipo de plug
 
                         <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
                     </div>
                     {isOpen2 && (
+                        <div className='search_transition_mobile'>
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                                <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                                <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                                <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                                <label className="desc search" htmlFor="Sincronos">Síncronos</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                                <label className="desc search" htmlFor="Aneis">Anéis</label>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                    )
+                    }
+                </div>
+                <Divider></Divider>
+                <div className='container_category_filter_expanded_mobile'>
+                    <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Tipo de bateria
+
+                        <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
+                    </div>
+                    {isOpen3 && (
                         <div className='search_transition'>
                             <div className="ui checkbox search">
                                 <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
@@ -321,11 +362,11 @@ function FilterSegurança() {
                 </div>
                 <Divider></Divider>
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Casing
+                    <div className={`category_filter_dropdown_mobile ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Casing
 
-                        <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
+                        <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
                     </div>
-                    {isOpen2 && (
+                    {isOpen4 && (
                         <div className='search_transition'>
                             <div className="ui checkbox search">
                                 <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />

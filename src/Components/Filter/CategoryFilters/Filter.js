@@ -5,7 +5,7 @@ import FilterSegurança from '../CategoryFilters/FilterSegurança/FilterSeguran�
 import FilterBuilding from '../CategoryFilters/FilterBuilding/FilterBulding';
 import FilterAutomacao from '../CategoryFilters/FilterAutomacao/FilterAutomacao';
 import FilterTintas from '../CategoryFilters/FilterTintas/FilterTintas';
-import FilterMotor from '../CategoryFilters/FilterMotor/FilterMotor'
+import FilterMotor from '../CategoryFilters/FilterMotor/FilterMotor';
 
 
 function Filter({category}) {
@@ -27,4 +27,4 @@ function Filter({category}) {
     return <>{changeCategory()}</>;
 }
 
-export default Filter
+export default Filter;
