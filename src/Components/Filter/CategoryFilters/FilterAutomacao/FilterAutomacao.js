@@ -9,45 +9,25 @@ import { Divider, Dropdown } from 'semantic-ui-react';
 import operacao from "../../../../assets/img/OPERAÇÃO.png"
 
 function FilterAutomacao() {
-
-
-    const [isOpen, setIsOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('Motores');
 
 
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    const useToggle = (initialState = false) => {
+        const [isOpen, setIsOpen] = useState(initialState);
+
+        const toggle = () => {
+            setIsOpen(!isOpen);
+        };
+
+        return [isOpen, toggle];
     };
 
-    const [isOpen2, setIsOpen2] = useState(false);
-
-    const toggleDropdown2 = () => {
-        setIsOpen2(!isOpen2);
-    };
-
-    const [isOpen3, setIsOpen3] = useState(false);
-
-    const toggleDropdown3 = () => {
-        setIsOpen3(!isOpen3);
-    };
-
-    const [isOpen4, setIsOpen4] = useState(false);
-
-    const toggleDropdown4 = () => {
-        setIsOpen4(!isOpen4);
-    };
-
-    const [isOpen5, setIsOpen5] = useState(false);
-
-    const toggleDropdown5 = () => {
-        setIsOpen5(!isOpen5);
-    };
-
-    const [isOpen6, setIsOpen6] = useState(false);
-
-    const toggleDropdown6 = () => {
-        setIsOpen6(!isOpen6);
-    };
+    const [isOpen, toggleDropdown] = useToggle();
+    const [isOpen2, toggleDropdown2] = useToggle();
+    const [isOpen3, toggleDropdown3] = useToggle();
+    const [isOpen4, toggleDropdown4] = useToggle();
+    const [isOpen5, toggleDropdown5] = useToggle();
+    const [isOpen6, toggleDropdown6] = useToggle();
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -159,7 +139,7 @@ function FilterAutomacao() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Frequencia
+                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>RFI
 
                                     <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                                 </div>
@@ -201,7 +181,7 @@ function FilterAutomacao() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Material da carcaça
+                                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Temperatura
 
                                     <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
                                 </div>
@@ -239,90 +219,6 @@ function FilterAutomacao() {
                                         <br />
                                     </div>
 
-                                )
-                                }
-                            </div>
-                            <Divider></Divider>
-                            <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen5 ? 'open' : ''}`} onClick={toggleDropdown5}>Formato da carcaça
-
-                                    <i className={`angle down icon search ${isOpen5 ? 'open' : ''}`}></i>
-                                </div>
-                                {isOpen5 && (
-                                    <div className='search_transition'>
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc" htmlFor="Monofasico"> Monofásico </label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                                            <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                                            <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                                            <label className="desc" htmlFor="Sincronos">Síncronos</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                                            <label className="desc" htmlFor="Aneis">Anéis</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                    </div>
-                                )
-                                }
-                            </div>
-                            <Divider></Divider>
-                            <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen6 ? 'open' : ''}`} onClick={toggleDropdown6}>Tamanho
-
-                                    <i className={`angle down icon search ${isOpen6 ? 'open' : ''}`}></i>
-                                </div>
-                                {isOpen6 && (
-                                    <div className='search_transition'>
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc" htmlFor="Monofasico"> Monofásico </label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                                            <label className="desc" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                                            <label className="desc" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                                            <label className="desc" htmlFor="Sincronos">Síncronos</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox">
-                                            <input className="check" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                                            <label className="desc" htmlFor="Aneis">Anéis</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                    </div>
                                 )
                                 }
                             </div>
@@ -464,11 +360,11 @@ function FilterAutomacao() {
                 </div>
                 <Divider></Divider>
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Temperatura
+                    <div className={`category_filter_dropdown_mobile ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Temperatura
 
-                        <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
+                        <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
                     </div>
-                    {isOpen3 && (
+                    {isOpen4 && (
                         <div className='search_transition_mobile'>
                             <div className="ui checkbox search">
                                 <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />

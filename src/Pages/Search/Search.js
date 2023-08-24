@@ -10,7 +10,7 @@ import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSmaller'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
-import Filter from '../../Components/Filter/FilterSearch'
+import FilterSearched from '../../Components/Filter/CategoryFilters/FilterSearched/FilterSearched'
 import ProductService from '../../Service/ProductService'
 
 //importando as frameworks
@@ -160,7 +160,7 @@ function Search() {
       <div className='container_search_page_layout'>
         <div className='container_search_page_detail'>
           <div className='container_category_page'>
-            <Filter />
+            <FilterSearched/>
           </div>
           {isGrid ? (
             <div className="container_category_bar">
@@ -248,7 +248,7 @@ function Search() {
       <div className='container_category_page_layout_mobile'>
         <div className='container_category_page_detail_mobile'>
           <div className='container_category_page_mobile'>
-            <Filter />
+          <FilterSearched/>
           </div>
 
           {isGrid ? (
