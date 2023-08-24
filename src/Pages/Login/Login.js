@@ -33,6 +33,7 @@ function Login() {
         try {
             const response = await UserService.login(email, password);
             console.log(response.data);
+            localStorage.setItem('user', JSON.stringify(userLogin));
             localStorage.setItem('verifyLogin', 'yes');
             navigate("/");
         } catch (error) {
