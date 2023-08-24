@@ -19,12 +19,14 @@ import imgEmptyCart from '../../assets/img/weggnerAcordado.PNG';
 //Importando os icones
 import { FaShoppingCart, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { BsArrowLeftShort } from 'react-icons/bs';
+import { CartService } from '../../Service';
 
 
 
 function Cart() {
   const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [productsCart, setProductsCart] = useState([]);
 
   const somaTaxProduct = () => {
     var soma = 0;
@@ -36,7 +38,6 @@ function Cart() {
 
   const somaProduct = () => {
     var soma = 0;
-    console.log(productsInCart)
     for (var i = 0; i < productsInCart.length; i++) {
       soma += productsInCart[i].price;
     }
@@ -52,6 +53,17 @@ function Cart() {
     return soma;
   }
 
+  const getCart = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+    } else {
+      setProductsCart([]);
+    }
+}
+
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -62,6 +74,7 @@ function Cart() {
   }
 
   useEffect(() => {
+    getCart();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -142,7 +155,7 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${}</h5>
             </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>

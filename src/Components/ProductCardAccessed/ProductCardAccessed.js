@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
+import { CartService } from '../../Service/CartService'
 
 function ProductCardAccessed({ product }) {
 
@@ -27,9 +28,9 @@ function ProductCardAccessed({ product }) {
   }, []);
 
   const AddProductInCart = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
