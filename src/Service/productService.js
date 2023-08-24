@@ -14,7 +14,7 @@ export const ProductService = {
     },
 
     findAll: async () => {
-        sizeOrganization = 10
+        const sizeOrganization = 10
         try {
             const response = await axios.get(url + "all?size=" + sizeOrganization + "&page=" + 0);
             return response.data.content;
