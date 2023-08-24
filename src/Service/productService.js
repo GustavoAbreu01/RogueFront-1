@@ -14,13 +14,50 @@ export const ProductService = {
     },
 
     findAll: async () => {
-      try {
-          const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
-          return response.data.content;
-      } catch (error) {
-          console.error(error);
-      }
-  }
+        sizeOrganization = 10
+        try {
+            const response = await axios.get(url + "all?size=" + sizeOrganization + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findAccessed: async () => {
+        try {
+            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findHighlight: async () => {
+        try {
+            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findNew: async () => {
+        try {
+            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findSearched: async () => {
+        try {
+            const response = await axios.get(url + "all?size=" + 10 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
 };
 export default ProductService;
