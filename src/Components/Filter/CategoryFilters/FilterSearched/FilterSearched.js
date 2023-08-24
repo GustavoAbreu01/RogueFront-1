@@ -8,7 +8,7 @@ import { Divider, Dropdown } from 'semantic-ui-react';
 //Importando as imagens
 import iconSearch from "../../../../assets/img/Search.png"
 
-function FilterMotor() {
+function FilterSearched() {
 
     const useToggle = (initialState = false) => {
         const [isOpen, setIsOpen] = useState(initialState);
@@ -1343,4 +1343,4 @@ function FilterMotor() {
 
 };
 
-export default FilterMotor;
+export default FilterSearched;

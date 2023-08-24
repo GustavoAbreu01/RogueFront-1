@@ -6,7 +6,6 @@ import FilterBuilding from '../CategoryFilters/FilterBuilding/FilterBulding';
 import FilterAutomacao from '../CategoryFilters/FilterAutomacao/FilterAutomacao';
 import FilterTintas from '../CategoryFilters/FilterTintas/FilterTintas';
 import FilterMotor from '../CategoryFilters/FilterMotor/FilterMotor';
-import FilterSearched from '../CategoryFilters/FilterSearched/FilterSearched'
 
 
 function Filter({category}) {
