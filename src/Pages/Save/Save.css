@@ -17,6 +17,10 @@
     border-bottom-left-radius: 50px;
 }
 
+.box.step.quiz {
+    width: 6rem;
+}
+
 body {
     background-color: var(--grey-secondary);
 }
