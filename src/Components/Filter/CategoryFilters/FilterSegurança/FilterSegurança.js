@@ -32,16 +32,6 @@ function FilterSegurança() {
     };
     const [isOpen4, setIsOpen4] = useState(false);
 
-    const toggleDropdown4 = () => {
-        setIsOpen4(!isOpen4);
-    };
-
-    const [isOpen5, setIsOpen5] = useState(false);
-
-    const toggleDropdown5 = () => {
-        setIsOpen5(!isOpen5);
-    };
-
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
@@ -54,10 +44,6 @@ function FilterSegurança() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
-    const handleCategoryChange = (category) => {
-        setSelectedCategory(category);
-    };
 
     const renderDesktopView = () => (
         <>
@@ -111,11 +97,11 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Voltagem
+                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Voltagem
 
-                                    <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
+                                    <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen && (
+                                {isOpen2 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
@@ -153,11 +139,11 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Frequencia
+                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Frequencia
 
-                                    <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
+                                    <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                                 </div>
-                                {isOpen2 && (
+                                {isOpen3 && (
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
