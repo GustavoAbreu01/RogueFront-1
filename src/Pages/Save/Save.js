@@ -19,8 +19,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { BsArrowLeftShort } from 'react-icons/bs'
 
 
-function Salvos() {
-  const productsInSave = JSON.parse(localStorage.getItem('productsInSave')) || [];
+function Salvos({ product }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsSave, setProductsSave] = useState([]);
 
@@ -38,110 +37,111 @@ function Salvos() {
 
   const getSave = async () => {
     const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
+    const cartId = user.save.id;
     const products = await SaveService.getSave(cartId);
     if (products) {
       setProductsSave(products);
     } else {
       setProductsSave([]);
     }
-}
-
-    const verify = () => {
-      const Registered = localStorage.getItem('verifyLogin');
-      if (Registered === "yes") {
-        return true
-      } else {
-        return false
-      }
-    }
-
-    const renderDesktopView = () => (<>
-      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <WeggnerModal />
-      <div className='container_save_titles'>
-        <div className='save_saved_product'>
-          <div className='box_title_similar_save'>
-            <BsFillBookmarkFill color='var(--white)' size={30} />
-            <h1 className='save_title'>Salvos</h1>
-          </div>
-          <img src={weggner} alt='' className="no_products_saved_img"></img>
-          <div className='not_saved_text'>
-            <h5>Ainda não há nenhum produto salvo...</h5>
-            <div className='back_to_home_not_saved'>
-              <BsArrowLeftShort size={15} />
-              <Link to='/'> <p>Voltar para a Home</p> </Link>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <Footer />
-    </>
-    )
-
-    const renderMobileView = () => (<>
-      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <WeggnerModal />
-      <div className='container_save_titles'>
-        <div className='save_saved_product'>
-          <div className='box_title_similar_save'>
-            <BsFillBookmarkFill color='var(--white)' size={30} />
-            <h1 className='save_title'>Salvos</h1>
-          </div>
-          <img src={weggner} alt='' className="no_products_saved_img_mobile"></img>
-          <div className='not_saved_text'>
-            <h5>Ainda não há nenhum produto salvo...</h5>
-            <div className='back_to_home_not_saved'>
-              <BsArrowLeftShort size={15} />
-              <Link to='/'> <p>Voltar para a Home</p> </Link>
-            </div>
-
-          </div>
-          {/* <img src={weggner} alt="weggner" className="no_products_saved_img" /> */}
-        </div>
-
-      </div>
-
-      <Footer />
-    </>
-    )
-
-    const getViewToRender = () => {
-      if (screenSize.width > 900) {
-        return renderDesktopView();
-      } else {
-        return renderMobileView();
-      }
-    };
-
+  }
+  const hasProductsInSave = () => {
     if (productsSave.length === 0) {
-      return getViewToRender();
+      return false;
+    } else {
+      return true;
     }
+  };
 
-    return (
-      <>
-        {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-        <WeggnerModal />
-        <div className='container_save_titles'>
-          <div className='save_saved_product'>
-            <div className='box_title_similar_save'>
-              <BsFillBookmarkFill color='var(--white)' size={30} />
-              <h1 className='save_title'>Salvos</h1>
-            </div>
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
+  const renderDesktopView = () => (<>
+    {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+    <div className='container_save_titles'>
+      <div className='save_saved_product'>
+        <div className='box_title_similar_save'>
+          <BsFillBookmarkFill color='var(--white)' size={30} />
+          <h1 className='save_title'>Salvos</h1>
+        </div>
+        {hasProductsInSave() ? (
+          <>
             {productsSave.map((item, index) => (
               <div key={index}>
                 <SaveCard item={item} />
               </div>
             ))}
-          </div>
+          </>
+        ) : (
+          <>
+            <img src={weggner} alt='' className="no_products_saved_img"></img>
+            <div className='not_saved_text'>
+              <h5>Ainda não há nenhum produto salvo...</h5>
+              <div className='back_to_home_not_saved'>
+                <BsArrowLeftShort size={15} />
+                <Link to='/'> <p>Voltar para a Home</p> </Link>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+    <Footer />
+  </>
+  )
+
+  const renderMobileView = () => (<>
+    {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
+    <WeggnerModal />
+    <div className='container_save_titles'>
+      <div className='save_saved_product'>
+        <div className='box_title_similar_save'>
+          <BsFillBookmarkFill color='var(--white)' size={30} />
+          <h1 className='save_title'>Salvos</h1>
         </div>
-        <Footer />
-      </>
-    );
-  }
+        {hasProductsInSave() ? (
+          <>
+            {productsSave.map((item, index) => (
+              <div key={index}>
+                <SaveCard item={item} />
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <img src={weggner} alt='' className="no_products_saved_img_mobile"></img>
+            <div className='not_saved_text'>
+              <h5>Ainda não há nenhum produto salvo...</h5>
+              <div className='back_to_home_not_saved'>
+                <BsArrowLeftShort size={15} />
+                <Link to='/'> <p>Voltar para a Home</p> </Link>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+    <Footer />
+  </>
+  )
+
+  const getViewToRender = () => {
+    if (screenSize.width > 900) {
+      return renderDesktopView();
+    } else {
+      return renderMobileView();
+    }
+  };
+
+  return <>{getViewToRender()}</>;
+}
 
 
 export default Salvos;

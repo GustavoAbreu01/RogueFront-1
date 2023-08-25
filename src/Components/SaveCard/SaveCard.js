@@ -6,15 +6,26 @@ import './SaveCard.css'
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
-import { CartService } from '../../Service/CartService'
-
 //importando as imagens
 import motors from "../../assets/img/motores.png"
 
+import { CartService } from '../../Service/CartService'
+
 
 function SaveCard({ item }) {
-
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        function handleResize() {
+            setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
@@ -55,21 +66,6 @@ function SaveCard({ item }) {
         }
         window.location.reload();
     };
-
-
-
-    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-
-    useEffect(() => {
-        function handleResize() {
-            setScreenSize({ width: window.innerWidth, height: window.innerHeight });
-        }
-        window.addEventListener('resize', handleResize);
-        handleResize();
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     const BuyProduct = () => {
         const user = JSON.parse(localStorage.getItem('user')) || [];
