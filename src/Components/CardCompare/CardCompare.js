@@ -92,7 +92,7 @@ function CardCompare({ item }, product) {
     const [randomNumber] = useState(Math.floor(Math.random() * 100));
     const [randomNumber2] = useState(Math.floor(Math.random() * 100));
     const [randomNumber3] = useState(Math.floor(Math.random() * 100));
-    const colors = ["Azul", "Verde", "Vermelho", "Laranja", "preto"];
+    const colors = ["Azul", "Verde", "Vermelho", "Laranja", "Preto"];
     const [randomWordIndex] = useState(Math.floor(Math.random() * colors.length));
     const tipo = ["Aço", "Ferro", "Alumínio", "Chumbo"];
     const [randomWordIndex2] = useState(Math.floor(Math.random() * tipo.length));
