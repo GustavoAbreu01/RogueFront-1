@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 import motors from "../../assets/img/motores.png"
 
 
-function SaveCard({ item }, product) {
+function SaveCard({ item }) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -42,6 +42,7 @@ function SaveCard({ item }, product) {
         }
         )
     }
+    
     const deleteItens = (item) => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts'));
         const index = savedProducts.findIndex(product => product.id === item.id);
@@ -100,7 +101,7 @@ function SaveCard({ item }, product) {
                                 <img src={motors} width="125" height="" />
                             </div>
                             <div className="save_card_product_info">
-                                <h3 className="save_card_product_name">{item.name}</h3>
+                                <h3 className="save_card_product_name">{item.product.name}</h3>
                                 <h4 className="save_card_product_description">{item.description}</h4>
                                 {renderPrice()}
                             </div>
@@ -113,7 +114,7 @@ function SaveCard({ item }, product) {
                             <i className="trash alternate icon save_card" ></i>
                         </button>
 
-                        <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card">
+                        <button onClick={() => AddProductInCart(item)} className="ui blue icon button save_card">
                             <i className="cart plus icon save_card"></i>
                         </button>
                     </div>
@@ -146,7 +147,7 @@ function SaveCard({ item }, product) {
                         onClick={() => deleteItens(item)}>
                         <i className="trash alternate icon save_card_mobile" ></i>
                     </button>
-                    <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card_mobile">
+                    <button onClick={() => AddProductInCart(item)} className="ui blue icon button save_card_mobile">
                         <i className="cart plus icon save_card_mobile"></i>
                     </button>
                 </div>

@@ -25,6 +25,7 @@ function Salvos() {
   const [productsSave, setProductsSave] = useState([]);
 
   useEffect(() => {
+    getSave();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -37,13 +38,14 @@ function Salvos() {
 
   const getSave = async () => {
     const user = JSON.parse(localStorage.getItem('user')) || [];
-    const saveId = user.saves.id;
-    const products = await SaveService.getSave(saveId);
+    const cartId = user.cart.id;
+    const products = await SaveService.getSave(cartId);
     if (products) {
       setProductsSave(products);
     } else {
       setProductsSave([]);
     }
+}
 
     const verify = () => {
       const Registered = localStorage.getItem('verifyLogin');
@@ -115,7 +117,7 @@ function Salvos() {
       }
     };
 
-    if (productsInSave.length === 0) {
+    if (productsSave.length === 0) {
       return getViewToRender();
     }
 
@@ -129,7 +131,7 @@ function Salvos() {
               <BsFillBookmarkFill color='var(--white)' size={30} />
               <h1 className='save_title'>Salvos</h1>
             </div>
-            {productsInSave.map((item, index) => (
+            {productsSave.map((item, index) => (
               <div key={index}>
                 <SaveCard item={item} />
               </div>
@@ -140,7 +142,6 @@ function Salvos() {
       </>
     );
   }
-}
 
 
 export default Salvos;
