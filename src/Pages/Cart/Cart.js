@@ -24,30 +24,42 @@ import { CartService } from '../../Service';
 
 
 function Cart() {
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
+  const [total, setTotal] = useState([]);
+
+  useEffect(() => {
+    getCart();
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const somaTaxProduct = () => {
     var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
+    for (var i = 0; i < productsCart.length; i++) {
+      soma += productsCart[i].price * 0.1;
     }
     return soma;
   }
 
   const somaProduct = () => {
     var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
+    for (var i = 0; i < productsCart.length; i++) {
+      soma += productsCart[i].price;
     }
     return soma;
   }
 
   const somaTotal = () => {
     var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
+    for (var i = 0; i < productsCart.length; i++) {
+      soma += productsCart[i].price;
     }
     soma += somaTaxProduct();
     return soma;
@@ -59,6 +71,7 @@ function Cart() {
     const products = await CartService.GetCart(cartId);
     if (products) {
       setProductsCart(products);
+      setTotal(products.cartProductQuantities);
     } else {
       setProductsCart([]);
     }
@@ -73,20 +86,8 @@ function Cart() {
     }
   }
 
-  useEffect(() => {
-    getCart();
-    function handleResize() {
-      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   const hasProductsInCart = () => {
-    if (productsInCart.length === 0) {
+    if (productsCart.length === 0) {
       return false;
     } else {
       return true;
@@ -131,7 +132,7 @@ function Cart() {
             </div>
             {hasProductsInCart() ? (
               <>
-                {productsInCart.map((item, index) => (
+                {total.map((item, index) => (
                   <div key={index}>
                     <ProductCart item={item} />
                   </div>
@@ -155,13 +156,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$25.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               {!verify() ? (
