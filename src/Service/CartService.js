@@ -3,9 +3,8 @@ import axios from "axios";
 
 export const CartService = {
 
-    AddProductInCart: async function (cartId, productCode) {
-        console.log(cartId, productCode);
-        const url = `http://localhost:8082/cart/add/${cartId}/${productCode}?quantity=${1}`;
+    AddProductInCart: async function (cartId, productCode, quantity) {
+        const url = `http://localhost:8082/cart/add/${cartId}/${productCode}?quantity=${quantity}`;
         try {
             const response = await axios.put(url);
             console.log(response.data);
@@ -24,6 +23,16 @@ export const CartService = {
             console.error(error);
         }
     },
+
+    DeleteProductInCart: async function (cartId, productCode) {
+        const url = `http://localhost:8082/cart/remove/${cartId}/${productCode}`;
+        try {
+            const response = await axios.delete(url);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
 
 

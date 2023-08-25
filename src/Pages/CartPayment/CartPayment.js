@@ -23,13 +23,15 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
+import { CartService } from '../../Service';
 
 
 function CartPayment() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [focusedInput, setFocusedInput] = useState(null);
+  const [productsCart, setProductsCart] = useState([]);
+  const [total, setTotal] = useState([]);
 
   const handleInputFocus = (inputId) => {
     setFocusedInput(inputId);
@@ -39,31 +41,25 @@ function CartPayment() {
     setFocusedInput(null);
   };
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
+  const getCart = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+      setTotal(products.cartProductQuantities);
+    } else {
+      setProductsCart([]);
     }
-    return soma;
   }
 
-  const somaProduct = () => {
-    var soma = 0;
-    console.log(productsInCart)
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    return soma;
-  }
-
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    soma += somaTaxProduct();
-    return soma;
-  }
+  const [payment, setPayment] = useState({
+    "name": "",
+    "validity": "",
+    "number": "",
+    "cvv": "",
+    "user": JSON.parse(localStorage.getItem('user')) || []
+});
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -82,6 +78,7 @@ function CartPayment() {
   ];
 
   useEffect(() => {
+    getCart();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -247,16 +244,16 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-            <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
+              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
@@ -268,7 +265,7 @@ function CartPayment() {
         </div>
       </div>
       <div className='box_cart_payment_title_similar'>
-      <i class="magic icon" color='var(--white)'></i>
+        <i class="magic icon" color='var(--white)'></i>
         <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
@@ -431,13 +428,13 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
@@ -590,13 +587,13 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>

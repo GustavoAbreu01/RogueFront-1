@@ -30,7 +30,7 @@ function ProductCardAccessed({ product }) {
   const AddProductInCart = () => {
     const user = JSON.parse(localStorage.getItem('user')) || [];
     const cartId = user.cart.id;
-    CartService.AddProductInCart(cartId, product.code);
+    CartService.AddProductInCart(cartId, product.code, 1);
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',

@@ -15,14 +15,24 @@ import { Link } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
+import { CartService } from '../../Service';
 
 function CartTransport() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+  const [productsCart, setProductsCart] = useState([]);
   const [cep, setCep] = useState('');
   const [addressInfo, setAddressInfo] = useState(false);
   const [endereco, setEndereco] = useState({});
+  const [total, setTotal] = useState([]);
+
+  const [address, setAddress] = useState({
+
+  });
+
+  const updateAddress = (event) => {
+    setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
+  };
 
   const buscarEndereco = () => {
     if (cep.length === 8) {
@@ -32,30 +42,16 @@ function CartTransport() {
     }
   };
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
+  const getCart = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+      setTotal(products.cartProductQuantities);
+    } else {
+      setProductsCart([]);
     }
-    return soma;
-  }
-
-  const somaProduct = () => {
-    var soma = 0;
-    console.log(productsInCart)
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    return soma;
-  }
-
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    soma += somaTaxProduct();
-    return soma;
   }
 
   const handleChangeCep = (event) => {
@@ -66,6 +62,7 @@ function CartTransport() {
   };
 
   useEffect(() => {
+    getCart();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -227,13 +224,13 @@ function CartTransport() {
               <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
@@ -243,7 +240,7 @@ function CartTransport() {
         </div>
       </div>
       <div className='box_cart_transport_title_similar'>
-      <i class="magic icon" color='var(--white)'></i>
+        <i class="magic icon" color='var(--white)'></i>
         <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
@@ -393,13 +390,13 @@ function CartTransport() {
               <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
@@ -541,13 +538,13 @@ function CartTransport() {
               <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>

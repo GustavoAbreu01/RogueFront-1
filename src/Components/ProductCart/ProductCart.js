@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 //Importando as imagens
 import motors from "../../assets/img/motores.png"
+import { CartService } from '../../Service';
 
 
 function ProductCart({ item }) {
@@ -27,12 +28,18 @@ function ProductCart({ item }) {
   }, []);
 
   function aumentarQuantidade() {
-    setQuantidade(quantidade + 1);
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, item.product.code, item.quantity + 1);
+    window.location.reload();
   }
 
   function diminuirQuantidade() {
-    if (quantidade > 1) {
-      setQuantidade(quantidade - 1);
+    if (item.quantity > 1) {
+      const user = JSON.parse(localStorage.getItem('user')) || [];
+      const cartId = user.cart.id;
+      CartService.AddProductInCart(cartId, item.product.code, item.quantity - 1);
+      window.location.reload();
     }
   }
 
@@ -45,12 +52,9 @@ function ProductCart({ item }) {
   }, [quantidade]);
 
   const deleteItens = (item) => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart'));
-    const index = productsInCart.findIndex(product => product.id === item.id);
-    if (index !== -1) {
-      productsInCart.splice(index, 1);
-      localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-    }
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.DeleteProductInCart(cartId, item.product.code);
     window.location.reload();
   };
 

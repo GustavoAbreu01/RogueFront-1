@@ -40,31 +40,6 @@ function Cart() {
     };
   }, []);
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsCart.length; i++) {
-      soma += productsCart[i].price * 0.1;
-    }
-    return soma;
-  }
-
-  const somaProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsCart.length; i++) {
-      soma += productsCart[i].price;
-    }
-    return soma;
-  }
-
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsCart.length; i++) {
-      soma += productsCart[i].price;
-    }
-    soma += somaTaxProduct();
-    return soma;
-  }
-
   const getCart = async () => {
     const user = JSON.parse(localStorage.getItem('user')) || [];
     const cartId = user.cart.id;
@@ -159,7 +134,7 @@ function Cart() {
               <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R$25.00</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
@@ -248,13 +223,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               {!verify() ? (
@@ -327,13 +302,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
               {!verify() ? (
