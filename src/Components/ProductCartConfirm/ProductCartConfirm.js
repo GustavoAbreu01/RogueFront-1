@@ -8,30 +8,16 @@ import { Link } from "react-router-dom";
 //Importando as imagens
 import motors from "../../assets/img/motores.png"
 
-function ProductCartConfirm() {
+function ProductCartConfirm({ item }) {
 
   const [quantidade, setQuantidade] = React.useState(1);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [valor, setValor] = React.useState(1);
   const [subValor, setSubValor] = React.useState(99);
 
-  React.useEffect(() => {
-    if (quantidade > 1) {
-      setValor(quantidade * 467);
-    } else {
-      setValor(467);
-    }
-  }, [quantidade]);
-
-  const Random = () => {
-    const random = Math.floor(Math.random() * 10);
-    if (random === 0) {
-      return 1;
-    }
-    return random;
-  };
 
   useEffect(() => {
+    console.log(item);
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -41,6 +27,23 @@ function ProductCartConfirm() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const renderPrice = () => {
+    if (item.product.price !== undefined) {
+        const priceParts = item.product.price.toString().split('.');
+        const integerPart = priceParts[0];
+        const decimalPart = priceParts[1] || '00';
+        return (
+            <h1 className="product_cart_confirm_product_price">
+                R$ {integerPart}
+                <sup> .{decimalPart}</sup>
+                <sub className='product_cart_confirm_product_subtext'>10x sem juros</sub>
+            </h1>
+        );
+    } else {
+        return null;
+    }
+};
 
   const renderDesktopView = () => (
     <>
@@ -54,14 +57,14 @@ function ProductCartConfirm() {
             </div>
             <div className="product_cart_confirm_item_info">
               <Link to="/product">
-                <h2 className="product_cart_confirm_product_name">W12 Monofásico</h2>
-                <p className="product_cart_confirm_product_description">Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
-                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price'>R${valor * Random()}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext'>10x Sem juros</sub></h2>
+                <h2 className="product_cart_confirm_product_name">{item.product.name}</h2>
+                <p className="product_cart_confirm_product_description">{item.product.description}</p>
+                {renderPrice()}
               </Link>
             </div>
             <div className='product_cart_confirm_qauntity'>
               <div className="ui small buttons product_cart_confirm">
-                <p className='product_cart_confirm'>Quantidade: {Random()}</p>
+                <p className='product_cart_confirm'>Quantidade: {item.quantity}</p>
               </div>
             </div>
           </div>
@@ -84,12 +87,12 @@ function ProductCartConfirm() {
               <Link to="/product">
                 <h2 className="product_cart_confirm_product_name">W12 Monofásico</h2>
                 <p className="product_cart_confirm_product_description">Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
-                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price'>R${valor * Random()}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext'>10x Sem juros</sub></h2>
+                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price'>R${}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext'>10x Sem juros</sub></h2>
               </Link>
             </div>
             <div className='product_cart_confirm_qauntity'>
               <div className="ui small buttons product_cart_confirm">
-                <p className='product_cart_confirm'>Quantidade: {Random()}</p>
+                <p className='product_cart_confirm'>Quantidade: {}</p>
               </div>
             </div>
           </div>
@@ -111,10 +114,10 @@ function ProductCartConfirm() {
             <div className="product_cart_confirm_item_info_mobile">
               <Link to="/product">
                 <h2 className="product_cart_confirm_product_name_mobile">W12 Monofásico</h2>
-                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price_mobile'>R${valor * Random()}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext_mobile'>10x Sem juros</sub></h2>
+                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price_mobile'>R${}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext_mobile'>10x Sem juros</sub></h2>
               </Link>
               <div className='product_cart_confirm_quantity_mobile'>
-                <p className='product_cart_confirm_mobile'>Quantidade: {Random()}</p>
+                <p className='product_cart_confirm_mobile'>Quantidade: {}</p>
               </div>
             </div>
           </div>

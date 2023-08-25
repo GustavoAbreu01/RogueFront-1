@@ -27,6 +27,7 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     width: 70%;
+    height: 100%;
 }
 
 .box_info_total_cart {
@@ -141,6 +142,7 @@
 .cart_confirm_transport {
     padding-top: 3%;
     padding-left: 10%;
+    padding-bottom: 3%;
 }
 
 .ui.form.confirm {

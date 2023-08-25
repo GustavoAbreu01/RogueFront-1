@@ -20,11 +20,11 @@ import { CartService } from '../../Service';
 function CartConfirm() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const user = JSON.parse(localStorage.getItem('user')) || [];
   const [productsCart, setProductsCart] = useState([]);
   const [total, setTotal] = useState([]);
 
   const getCart = async () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
     const cartId = user.cart.id;
     const products = await CartService.GetCart(cartId);
     if (products) {
@@ -93,8 +93,13 @@ function CartConfirm() {
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>
-            <ProductCartConfirm />
-            <ProductCartConfirm />
+            <>
+                {total.map((item, index) => (
+                  <div key={index}>
+                    <ProductCartConfirm item={item} />
+                  </div>
+                ))}
+              </>
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>
@@ -104,30 +109,30 @@ function CartConfirm() {
                   <div className="three fields">
                     <div className="field">
                       <label>Nome do Responsável</label>
-                      <p>Gustavo Guilherme de Abreu</p>
+                      <p>{user.name}</p>
                     </div>
                     <div className="field">
                       <label>Endereço:</label>
-                      <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
+                      <p>{user.address[0].rua}, {user.address[0].bairro}, {user.address[0].cidade}</p>
                     </div>
                     <div className="field">
                       <label>Complemento:</label>
-                      <p>Torre 1, Apto 706</p>
+                      <p>{user.address[0].complemento}</p>
                     </div>
                   </div>
                 </div>
                 <div className="three fields">
                   <div className="field">
                     <label>Estado:</label>
-                    <p>Santa Catarina</p>
+                    <p>{user.address[0].estado}</p>
                   </div>
                   <div className="field">
                     <label>País:</label>
-                    <p>Brasil</p>
+                    <p>{user.address[0].pais}</p>
                   </div>
                   <div className="field">
                     <label>CEP</label>
-                    <p>89256-690</p>
+                    <p>{user.address[0].cep}</p>
                   </div>
                 </div>
               </form>
@@ -136,6 +141,9 @@ function CartConfirm() {
         </div>
         <div className='box_info_total_cart'>
           <div className='info_total_buy'>
+            <div>
+              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
+            </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
@@ -244,6 +252,9 @@ function CartConfirm() {
         </div>
         <div className='box_info_total_cart_tablet'>
           <div className='info_total_buy'>
+            <div>
+              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+            </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>

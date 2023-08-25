@@ -11,26 +11,34 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
 //importando as frameworks
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
-import { CartService } from '../../Service';
+import { AddressService, CartService } from '../../Service';
 
 function CartTransport() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
   const [cep, setCep] = useState('');
+  const userPresent = JSON.parse(localStorage.getItem('user')) || []
   const [addressInfo, setAddressInfo] = useState(false);
   const [endereco, setEndereco] = useState({});
   const [total, setTotal] = useState([]);
+  const navigate = useNavigate();
 
   const buscarEndereco = () => {
     if (cep.length === 8) {
       axios.get(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(response => setEndereco(response.data))
-        .catch(error => console.log('Erro na busca do CEP:', error));
+        .then((response) => {
+          setEndereco(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        }
+        );
+      console.log(endereco)
     }
   };
 
@@ -74,6 +82,44 @@ function CartTransport() {
     }
   }
 
+  const updateAddress = (event) => {
+    setAddress({ ...address, [event.target.name]: event.target.value });
+  };
+
+
+  const [address, setAddress] = useState({
+    "rua": "",
+    "numero": 400,
+    "complemento": "",
+    "bairro": "",
+    "cidade": "",
+    "estado": "",
+    "pais": "",
+    "uf": "",
+    "cep": "",
+  });
+
+  const handleTransport = async (event) => {
+    const rua = endereco.logradouro;
+    const numero = address.numero;
+    const complemento = address.complemento;
+    const bairro = endereco.bairro;
+    const cidade = endereco.localidade;
+    const estado = endereco.uf;
+    const pais = address.pais;
+    const uf = endereco.uf;
+    const cep = endereco.cep;
+    const userAddress = { rua, numero, complemento, bairro, cidade, estado, pais, uf, cep };
+    console.log(userAddress);
+    event.preventDefault();
+    if (userAddress.rua !== "" && userAddress.numero !== "" && userAddress.bairro !== "" && userAddress.cidade !== "" && userAddress.estado !== "" && userAddress.pais !== "" && userAddress.uf !== "" && userAddress.cep !== "") {
+      AddressService.create(userAddress);
+      navigate("/cart/Confirm");
+    } else {
+      alert("Alguma informação está incorreta.");
+    }
+  };
+
   const renderDesktopView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart_transport'>
@@ -116,13 +162,13 @@ function CartTransport() {
                   <label>Nome</label>
                   <div className="two fields">
                     <div className="field">
-                      <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
+                      <input onChange={updateAddress} name="name" type="text" placeholder="Primiero Nome" />
                     </div>
                     <div className="field">
                       {!addressInfo ?
-                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" value="" />
+                        <input type="text" onChange={updateAddress} placeholder="Rua, Bairro, Número" value="" />
                         :
-                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" value={endereco.localidade + ", " + endereco.bairro + ", " + endereco.logradouro} />
+                        <input type="text" onChange={updateAddress} placeholder="Rua, Bairro, Número" value={endereco.localidade + ", " + endereco.bairro + ", " + endereco.logradouro} />
                       }
 
                     </div>
@@ -132,17 +178,17 @@ function CartTransport() {
                   <label>Endereço de Entrega</label>
                   <div className="fields">
                     <div className="twelve wide field">
-                      <input type="text" name="shipping[address]" placeholder="Complemento" />
+                      <input type="text" name="complemento" onChange={updateAddress} placeholder="Complemento" />
                     </div>
                     <div className="four wide field">
-                      <input type="text" name="shipping[address-2]" placeholder="CEP " onBlur={(event) => handleChangeCep(event)} />
+                      <input type="text" name="shipping[address-2]" placeholder="CEP" onBlur={(event) => handleChangeCep(event)} />
                     </div>
                   </div>
                 </div>
                 <div className="two fields">
                   <div className="field">
                     <label>Estado</label>
-                    <select className="ui fluid dropdown" value={endereco.uf}>
+                    <select name="estado" onChange={updateAddress} className="ui fluid dropdown" value={endereco.uf}>
                       <option value="">Estado</option>
                       <option value="AC">Acre</option>
                       <option value="AL">Alagoas</option>
@@ -175,7 +221,7 @@ function CartTransport() {
                   </div>
                   <div className="field">
                     <label>País</label>
-                    <select className="ui fluid dropdown">
+                    <select name="pais" onChange={updateAddress} className="ui fluid dropdown">
                       <option value="">País</option>
                       <option value="ZA">África do Sul</option>
                       <option value="DE">Alemanha</option>
@@ -213,7 +259,7 @@ function CartTransport() {
         <div className='box_info_total_cart'>
           <div className='info_total_buy'>
             <div>
-              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
@@ -225,7 +271,7 @@ function CartTransport() {
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
+              <button onClick={handleTransport} className="fluid ui button final">Avançar Etapa</button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>

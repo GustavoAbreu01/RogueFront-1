@@ -4,7 +4,7 @@ import './CartPayment.css';
 
 //importando as frameworks
 import { Dropdown } from 'semantic-ui-react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -31,7 +31,9 @@ function CartPayment() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [focusedInput, setFocusedInput] = useState(null);
   const [productsCart, setProductsCart] = useState([]);
+  const userPresent = JSON.parse(localStorage.getItem('user')) || []
   const [total, setTotal] = useState([]);
+  const navigate = useNavigate();
 
   const handleInputFocus = (inputId) => {
     setFocusedInput(inputId);
@@ -54,11 +56,11 @@ function CartPayment() {
   }
 
   const [payment, setPayment] = useState({
-    "name": "",
-    "validity": "08/01/2023",
-    "number": "",
-    "cvv": "",
-    "user": JSON.parse(localStorage.getItem('user')) || []
+    "name": "Soundeeper",
+    "validity": "2004-08-02",
+    "number": "9999888877776666",
+    "cvv": 321,
+    "userCount": userPresent.id
   });
 
   const updatePayment = (event) => {
@@ -72,22 +74,17 @@ function CartPayment() {
     } else {
       return false
     }
-  }  
-  
-  const handleLogin = async (event) => {
-    const { name, validity, number, cvv, user } = payment;
-    console.log(payment);
+  }
+
+  const handlePayment = async (event) => {
     event.preventDefault();
-    try {
-        const response = await PaymentService.create(name, validity, number, cvv, user);
-        localStorage.setItem('user', JSON.stringify(response));
-        localStorage.setItem('verifyLogin', 'yes');
-        Navigate("/cart/transport");
-    } catch (error) {
-        alert("Erro ao fazer login. Verifique suas credenciais.");
-        console.log(error);
+    if (payment.name !== "" && payment.validity !== "" && payment.number !== "" && payment.cvv !== "" && payment.userCount !== "") {
+      PaymentService.create(payment);
+      navigate("/cart/transport");
+    } else {
+      alert("Alguma informação está incorreta.");
     }
-};
+  };
 
   const options = [
     { key: 1, icon: 'cc visa icon', text: 'Visa', value: 1 },
@@ -282,7 +279,7 @@ function CartPayment() {
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-              <button onClick={handleLogin} className="fluid ui button final">Avançar Etapa</button>
+              <button onClick={handlePayment} className="fluid ui button final">Avançar Etapa</button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
