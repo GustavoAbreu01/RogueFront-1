@@ -8,6 +8,8 @@ import './ProductCardAccessed.css'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
+import SaveService from '../../Service/SaveService'
+
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 import { CartService } from '../../Service/CartService'
@@ -63,9 +65,9 @@ function ProductCardAccessed({ product }) {
 }
 
   const AddProductInSave = () => {
-    const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
-    savedProducts.push(product);
-    localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const saveId = user.saves.id;
+    SaveService.AddProductInSave(saveId, product.code);
     Swal.fire({
       title: 'Produto adicionado a lista de salvos!',
       icon: 'success',
