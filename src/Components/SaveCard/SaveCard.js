@@ -9,10 +9,23 @@ import Swal from 'sweetalert2';
 //importando as imagens
 import motors from "../../assets/img/motores.png"
 
+import { CartService } from '../../Service/CartService'
 
-function SaveCard({ item }, product) {
 
+function SaveCard({ item }) {
+    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        function handleResize() {
+            setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const AddProductInCart = () => {
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
@@ -42,6 +55,7 @@ function SaveCard({ item }, product) {
         }
         )
     }
+    
     const deleteItens = (item) => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts'));
         const index = savedProducts.findIndex(product => product.id === item.id);
@@ -53,26 +67,13 @@ function SaveCard({ item }, product) {
         window.location.reload();
     };
 
-
-
-    const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-
-    useEffect(() => {
-        function handleResize() {
-            setScreenSize({ width: window.innerWidth, height: window.innerHeight });
-        }
-        window.addEventListener('resize', handleResize);
-        handleResize();
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const buttonComprar = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const BuyProduct = () => {
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
+        window.location.href = "/cart"
     }
+
     const renderPrice = () => {
         if (item.price !== undefined) {
             const priceParts = item.price.toString().split('.');
@@ -100,7 +101,7 @@ function SaveCard({ item }, product) {
                                 <img src={motors} width="125" height="" />
                             </div>
                             <div className="save_card_product_info">
-                                <h3 className="save_card_product_name">{item.name}</h3>
+                                <h3 className="save_card_product_name">{item.product.name}</h3>
                                 <h4 className="save_card_product_description">{item.description}</h4>
                                 {renderPrice()}
                             </div>
@@ -113,13 +114,13 @@ function SaveCard({ item }, product) {
                             <i className="trash alternate icon save_card" ></i>
                         </button>
 
-                        <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card">
+                        <button onClick={() => AddProductInCart(item)} className="ui blue icon button save_card">
                             <i className="cart plus icon save_card"></i>
                         </button>
                     </div>
                     <div className='save_card_buy_button'>
                         <Link to='/cart'>
-                            <button className="ui fluid blue button save_card" onClick={buttonComprar}>Comprar</button>
+                            <button className="ui fluid blue button save_card" onClick={() => BuyProduct(product)}>Comprar</button>
                         </Link>
                     </div>
                 </div>
@@ -146,13 +147,13 @@ function SaveCard({ item }, product) {
                         onClick={() => deleteItens(item)}>
                         <i className="trash alternate icon save_card_mobile" ></i>
                     </button>
-                    <button onClick={() => AddProductInCart(product)} className="ui blue icon button save_card_mobile">
+                    <button onClick={() => AddProductInCart(item)} className="ui blue icon button save_card_mobile">
                         <i className="cart plus icon save_card_mobile"></i>
                     </button>
                 </div>
                 <div className='save_card_buy_button_mobile'>
                     <Link to='/cart'>
-                        <button className="ui fluid blue button save_card_mobile" onClick={buttonComprar}>Comprar</button>
+                        <button className="ui fluid blue button save_card_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
                     </Link>
                 </div>
             </div>

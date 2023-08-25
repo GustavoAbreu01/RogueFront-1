@@ -21,14 +21,28 @@ import { FaShoppingCart, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { BsArrowLeftShort } from 'react-icons/bs';
 import { CartService } from '../../Service';
 
+import ProductService from '../../Service/ProductService'
 
 
-function Cart() {
+
+function Cart({product}) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
   const [total, setTotal] = useState([]);
+  const [productsSmaller, setProductsSmaller] = useState([])
+
+  const getProductsRev = async () => {
+      const products = await ProductService.findSimilar();
+      if (products) {
+        setProductsSmaller(products);
+      } else {
+        setProductsSmaller([]);
+      }
+  }
+
 
   useEffect(() => {
+    getProductsRev();
     getCart();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
@@ -153,11 +167,9 @@ function Cart() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
+          {productsSmaller.map((product) => (
+            <SmallProductHorizontal key={product.code} product={product}/>
+          ))}
           </div>
         </div>
       </div>
