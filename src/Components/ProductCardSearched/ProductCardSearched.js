@@ -9,6 +9,9 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
+//importando service
+import { CartService } from '../../Service/CartService'
+
 function ProductCardSearched({product}) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -25,9 +28,9 @@ function ProductCardSearched({product}) {
   }, []);
 
   const AddProductInCart = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -53,11 +56,18 @@ function ProductCardSearched({product}) {
     )
   }
 
-  const buttonComprar = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-}
+  const BuyProduct = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
+    window.location.href = "/cart"
+  }
+
+//   const buttonComprar = () => {
+//     const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+//     productsInCart.push(product);
+//     localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+// }
 
   const AddProductInSave = () => {
     const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
@@ -120,7 +130,7 @@ function ProductCardSearched({product}) {
         </div>
         <Link to='/cart'>
           <div className='product_card_searched_buy_button'>
-            <button className="fluid ui button product_card_searched_button" onClick={buttonComprar}>Comprar</button>
+            <button className="fluid ui button product_card_searched_button" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
         </Link>
       </Link >
@@ -160,7 +170,7 @@ function ProductCardSearched({product}) {
         </div>
         <Link to='/cart'>
           <div className='product_card_searched_buy_button'>
-            <button className="fluid ui button product_card_searched_button" onClick={buttonComprar}>Comprar</button>
+            <button className="fluid ui button product_card_searched_button" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
         </Link>
       </Link >
@@ -199,7 +209,7 @@ function ProductCardSearched({product}) {
         </div>
         <Link to='/cart'>
           <div className='product_card_searched_buy_button_mobile'>
-            <button className="fluid ui button product_card_searched_button_mobile" onClick={buttonComprar}>Comprar</button>
+            <button className="fluid ui button product_card_searched_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
         </Link>
       </Link >

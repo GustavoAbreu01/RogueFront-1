@@ -20,6 +20,7 @@ export default function ProfileModal({ user }) {
 
   function realizarLogout() {
     localStorage.removeItem('verifyLogin');
+    localStorage.removeItem("user");
     window.location.reload();
   }
 

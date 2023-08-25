@@ -60,7 +60,7 @@ function ProductCardAccessed({ product }) {
     const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
     productsInCart.push(product);
     localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-}
+  }
 
   const AddProductInSave = () => {
     const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
@@ -91,122 +91,123 @@ function ProductCardAccessed({ product }) {
     )
   }
 
+
   const renderDesktopView = () => (
     <div className="product_acessed" key={product.code}>
-    <div className='container_product_card_accessed'>
-      <div className='box_product_card_accessed_tag_icon'>
-        <button className="circular ui icon button product_card_accessed">
-          <i className="chart line icon product_card_accessed"></i>
-        </button>
-      </div>
-      <div className='container_product_card_accessed_action_icon'>
-        <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_accessed">
-          <i className="bookmark icon product_card_accessed"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_accessed">
-          <i className="cart plus icon product_card_accessed"></i>
-        </button>
-      </div>
-      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
-        <div className='box_product_card_accessed_image'>
-          <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
+      <div className='container_product_card_accessed'>
+        <div className='box_product_card_accessed_tag_icon'>
+          <button className="circular ui icon button product_card_accessed">
+            <i className="chart line icon product_card_accessed"></i>
+          </button>
         </div>
-        <div className='box_product_card_accessed_info'>
-          <div className='product_card_accessed_info_text'>
-            <h3 title= {product.name} className='product_card_accessed_name'>{product.name}</h3>
-            <p className='product_card_accessed_description'>{product.description}</p>
+        <div className='container_product_card_accessed_action_icon'>
+          <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_accessed">
+            <i className="bookmark icon product_card_accessed"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_accessed">
+            <i className="cart plus icon product_card_accessed"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
+          <div className='box_product_card_accessed_image'>
+            <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
           </div>
-        </div>
-        <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
-          <p className='product_card_accessed_price_option'>Á vista no pix</p>
-        </div>
-        <Link to='/cart'>
-          <div className='product_card_accessed_buy_button'>
-            <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
+          <div className='box_product_card_accessed_info'>
+            <div className='product_card_accessed_info_text'>
+              <h3 title={product.name} className='product_card_accessed_name'>{product.name}</h3>
+              <p className='product_card_accessed_description'>{product.description}</p>
+            </div>
           </div>
+          <div className='box_product_card_accessed_info_price'>
+            <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
+            <p className='product_card_accessed_price_option'>Á vista no pix</p>
+          </div>
+          <Link to='/cart'>
+            <div className='product_card_accessed_buy_button'>
+              <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
+            </div>
+          </Link>
         </Link>
-      </Link>
-    </div>
+      </div>
     </div>
   )
 
   const renderTabletView = () => (
     <div className="product_acessed" key={product.code}>
-    <div className='container_product_card_accessed_tablet'>
-      <div className='box_product_card_accessed_tag_icon'>
-        <button className="circular blue big ui icon button product_card_accessed">
-          <i className="chart line icon product_card_accessed"></i>
-        </button>
-      </div>
-      <div className='container_product_card_accessed_action_icon_tablet'>
-        <button  onClick={() => AddProductInSave(product)} className="big ui icon button product_card_accessed">
-          <i className="bookmark icon product_card_accessed"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_accessed">
-          <i className="cart plus icon product_card_accessed"></i>
-        </button>
-      </div>
-      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
-        <div className='box_product_card_accessed_image'>
-          <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
+      <div className='container_product_card_accessed_tablet'>
+        <div className='box_product_card_accessed_tag_icon'>
+          <button className="circular blue big ui icon button product_card_accessed">
+            <i className="chart line icon product_card_accessed"></i>
+          </button>
         </div>
-        <div className='box_product_card_accessed_info'>
-          <div className='product_card_accessed_info_text'>
-            <h3 title= {product.name} className='product_card_accessed_name'>{product.name}</h3>
-            <p className='product_card_accessed_description'>{product.description}</p>
+        <div className='container_product_card_accessed_action_icon_tablet'>
+          <button onClick={() => AddProductInSave(product)} className="big ui icon button product_card_accessed">
+            <i className="bookmark icon product_card_accessed"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="big ui icon button product_card_accessed">
+            <i className="cart plus icon product_card_accessed"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
+          <div className='box_product_card_accessed_image'>
+            <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
           </div>
-        </div>
-        <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
-          <p className='product_card_accessed_price_option'>Á vista no pix</p>
-        </div>
-        <Link to='/cart'>
-          <div className='product_card_accessed_buy_button'>
-            <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
+          <div className='box_product_card_accessed_info'>
+            <div className='product_card_accessed_info_text'>
+              <h3 title={product.name} className='product_card_accessed_name'>{product.name}</h3>
+              <p className='product_card_accessed_description'>{product.description}</p>
+            </div>
           </div>
+          <div className='box_product_card_accessed_info_price'>
+            <h3 className='product_card_accessed_price'>R$ {product.price}</h3>
+            <p className='product_card_accessed_price_option'>Á vista no pix</p>
+          </div>
+          <Link to='/cart'>
+            <div className='product_card_accessed_buy_button'>
+              <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
+            </div>
+          </Link>
         </Link>
-      </Link>
-    </div>
+      </div>
     </div>
   )
 
   const renderMobileView = () => (
     <div className="product_acessed" key={product.code}>
-    <div className='container_product_card_accessed_mobile'>
-      <div className='box_product_card_accessed_tag_icon_mobile'>
-        <button className="circular blue mini ui icon button product_card_accessed">
-          <i className="chart line icon product_card_accessed"></i>
-        </button>
-      </div>
-      <div className='container_product_card_accessed_action_icon_mobile'>
-        <button  onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_accessed_mobile">
-          <i className="bookmark icon product_card_accessed" ></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)}  className="mini ui icon button product_card_accessed">
-          <i className="cart plus icon product_card_accessed"></i>
-        </button>
-      </div>
-      <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
-        <div className='box_product_card_accessed_image'>
-          <img src={motor} alt='' className='product_card_accessed_image' height={100} width={100}></img>
+      <div className='container_product_card_accessed_mobile'>
+        <div className='box_product_card_accessed_tag_icon_mobile'>
+          <button className="circular blue mini ui icon button product_card_accessed">
+            <i className="chart line icon product_card_accessed"></i>
+          </button>
         </div>
-        <div className='box_product_card_accessed_info'>
-          <div className='product_card_accessed_info_text_mobile'>
-            <h3 title= {product.name} className='product_card_accessed_name_mobile'>{product.name}</h3>
+        <div className='container_product_card_accessed_action_icon_mobile'>
+          <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_accessed_mobile">
+            <i className="bookmark icon product_card_accessed" ></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_accessed">
+            <i className="cart plus icon product_card_accessed"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
+          <div className='box_product_card_accessed_image'>
+            <img src={motor} alt='' className='product_card_accessed_image' height={100} width={100}></img>
           </div>
-        </div>
-        <div className='box_product_card_accessed_info_price'>
-          <h3 className='product_card_accessed_price_mobile'>R$ {product.price}</h3>
-          <p className='product_card_accessed_price_option_mobile'>Á vista no pix</p>
-        </div>
-        <Link to='/cart'>
-          <div className='product_card_accessed_buy_button_mobile'>
-            <button className="fluid ui button product_card_accessed_button_mobile" onClick={buttonComprar}>Comprar</button>
+          <div className='box_product_card_accessed_info'>
+            <div className='product_card_accessed_info_text_mobile'>
+              <h3 title={product.name} className='product_card_accessed_name_mobile'>{product.name}</h3>
+            </div>
           </div>
+          <div className='box_product_card_accessed_info_price'>
+            <h3 className='product_card_accessed_price_mobile'>R$ {product.price}</h3>
+            <p className='product_card_accessed_price_option_mobile'>Á vista no pix</p>
+          </div>
+          <Link to='/cart'>
+            <div className='product_card_accessed_buy_button_mobile'>
+              <button className="fluid ui button product_card_accessed_button_mobile" onClick={buttonComprar}>Comprar</button>
+            </div>
+          </Link>
         </Link>
-      </Link>
-    </div>
+      </div>
     </div>
   )
 
