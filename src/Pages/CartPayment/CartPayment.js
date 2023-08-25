@@ -4,7 +4,7 @@ import './CartPayment.css';
 
 //importando as frameworks
 import { Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -23,7 +23,7 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
-import { CartService } from '../../Service';
+import { CartService, PaymentService } from '../../Service';
 
 
 function CartPayment() {
@@ -55,11 +55,15 @@ function CartPayment() {
 
   const [payment, setPayment] = useState({
     "name": "",
-    "validity": "",
+    "validity": "08/01/2023",
     "number": "",
     "cvv": "",
     "user": JSON.parse(localStorage.getItem('user')) || []
-});
+  });
+
+  const updatePayment = (event) => {
+    setPayment({ ...payment, [event.target.name]: event.target.value });
+  };
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -68,13 +72,28 @@ function CartPayment() {
     } else {
       return false
     }
-  }
+  }  
+  
+  const handleLogin = async (event) => {
+    const { name, validity, number, cvv, user } = payment;
+    console.log(payment);
+    event.preventDefault();
+    try {
+        const response = await PaymentService.create(name, validity, number, cvv, user);
+        localStorage.setItem('user', JSON.stringify(response));
+        localStorage.setItem('verifyLogin', 'yes');
+        Navigate("/cart/transport");
+    } catch (error) {
+        alert("Erro ao fazer login. Verifique suas credenciais.");
+        console.log(error);
+    }
+};
 
   const options = [
     { key: 1, icon: 'cc visa icon', text: 'Visa', value: 1 },
     { key: 2, icon: 'cc mastercard icon', text: 'Mastercard', value: 2 },
     { key: 3, icon: 'cc discover icon', text: 'Discover', value: 3 },
-    { key: 3, icon: 'cc diners club icon', text: 'Diners Club', value: 4 },
+    { key: 4, icon: 'cc diners club icon', text: 'Diners Club', value: 4 },
   ];
 
   useEffect(() => {
@@ -154,19 +173,24 @@ function CartPayment() {
                         className='dropDownCard'
                         fluid
                         selection
+                        onChange={updatePayment}
                         options={options}
                       />
                     </div>
                     <div className="sixteen wide field">
                       <label>Nome do Titular</label>
-                      <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
+                      <input id='NameCard' type="text" name="name" maxlength="16" placeholder="Nome Completo"
+                        value={payment.name}
+                        onChange={updatePayment}
                         onFocus={() => handleInputFocus('1')}
                         onBlur={handleInputBlur}
                       />
                     </div>
                     <div className="sixteen wide field">
                       <label>Número do cartão</label>
-                      <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
+                      <input id='NumberCard' type="text" name="number" maxlength="16" placeholder="0000 0000 0000 0000"
+                        value={payment.number}
+                        onChange={updatePayment}
                         onFocus={() => handleInputFocus('2')}
                         onBlur={handleInputBlur}
                       />
@@ -176,7 +200,9 @@ function CartPayment() {
                 <div className="fields">
                   <div className="four wide field">
                     <label>CVV</label>
-                    <input id='CvvCard' type="text" name="card[cvc]" maxlength="3" placeholder="CVC"
+                    <input id='CvvCard' type="text" name="cvv" maxlength="3" placeholder="CVC"
+                      value={payment.cvv}
+                      onChange={updatePayment}
                       onFocus={() => handleInputFocus('3')}
                       onBlur={handleInputBlur}
                     />
@@ -184,6 +210,7 @@ function CartPayment() {
                   <div className="ten wide field">
                     <label>CPF do titular</label>
                     <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
+                      onChange={updatePayment}
                       onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
                     />
@@ -193,6 +220,7 @@ function CartPayment() {
                     <div className="fields">
                       <div className="ten wide field">
                         <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
+                          onChange={updatePayment}
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -213,6 +241,7 @@ function CartPayment() {
                       </div>
                       <div className="field">
                         <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
+                          onChange={updatePayment}
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -253,7 +282,7 @@ function CartPayment() {
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
+              <button onClick={handleLogin} className="fluid ui button final">Avançar Etapa</button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>

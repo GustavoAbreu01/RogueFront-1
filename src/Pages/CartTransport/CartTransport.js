@@ -26,14 +26,6 @@ function CartTransport() {
   const [endereco, setEndereco] = useState({});
   const [total, setTotal] = useState([]);
 
-  const [address, setAddress] = useState({
-
-  });
-
-  const updateAddress = (event) => {
-    setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
-  };
-
   const buscarEndereco = () => {
     if (cep.length === 8) {
       axios.get(`https://viacep.com.br/ws/${cep}/json/`)
