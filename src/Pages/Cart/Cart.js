@@ -134,7 +134,7 @@ function Cart() {
               <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
+              <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>

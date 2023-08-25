@@ -27,6 +27,23 @@ function ProductCart({ item }) {
     };
   }, []);
 
+  const renderPrice = () => {
+    if (item.product.price !== undefined) {
+        const priceParts = item.product.price.toString().split('.');
+        const integerPart = priceParts[0];
+        const decimalPart = priceParts[1] || '00';
+        return (
+            <h1 className="product_cart_item_price">
+                R$ {integerPart}
+                <sup> .{decimalPart}</sup>
+                <sub className='product_cart_subtext'>10x sem juros</sub>
+            </h1>
+        );
+    } else {
+        return null;
+    }
+};
+
   function aumentarQuantidade() {
     const user = JSON.parse(localStorage.getItem('user')) || [];
     const cartId = user.cart.id;
@@ -42,14 +59,6 @@ function ProductCart({ item }) {
       window.location.reload();
     }
   }
-
-  React.useEffect(() => {
-    if (quantidade > 1) {
-      setValor(quantidade * 450);
-    } else {
-      setValor(450);
-    }
-  }, [quantidade]);
 
   const deleteItens = (item) => {
     const user = JSON.parse(localStorage.getItem('user')) || [];
@@ -73,7 +82,7 @@ function ProductCart({ item }) {
                 <Link to="/product">
                   <h2 className="product_cart_item_name">{item.product.name}</h2>
                   <p className="product_cart_complement" >{item.product.description}</p>
-                  <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${item.product.price}<sup>{subValor}</sup><sub className='product_cart_subtext'>10x Sem juros</sub></h2>
+                  {renderPrice()}
                 </Link>
               </div>
             </div>
