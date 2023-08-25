@@ -6,6 +6,8 @@ import './SaveCard.css'
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
+import { CartService } from '../../Service/CartService'
+
 //importando as imagens
 import motors from "../../assets/img/motores.png"
 
@@ -69,11 +71,13 @@ function SaveCard({ item }) {
         };
     }, []);
 
-    const buttonComprar = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const BuyProduct = () => {
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
+        window.location.href = "/cart"
     }
+
     const renderPrice = () => {
         if (item.price !== undefined) {
             const priceParts = item.price.toString().split('.');
@@ -120,7 +124,7 @@ function SaveCard({ item }) {
                     </div>
                     <div className='save_card_buy_button'>
                         <Link to='/cart'>
-                            <button className="ui fluid blue button save_card" onClick={buttonComprar}>Comprar</button>
+                            <button className="ui fluid blue button save_card" onClick={() => BuyProduct(product)}>Comprar</button>
                         </Link>
                     </div>
                 </div>
@@ -153,7 +157,7 @@ function SaveCard({ item }) {
                 </div>
                 <div className='save_card_buy_button_mobile'>
                     <Link to='/cart'>
-                        <button className="ui fluid blue button save_card_mobile" onClick={buttonComprar}>Comprar</button>
+                        <button className="ui fluid blue button save_card_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
                     </Link>
                 </div>
             </div>

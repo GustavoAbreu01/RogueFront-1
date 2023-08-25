@@ -13,6 +13,17 @@ export const ProductService = {
         }
     },
 
+    
+
+    findSimilar: async (size) => {
+        try {
+            const response = await axios.get(url + "?size=" + 5 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
     findAllProducts: async () => {
         try {
             const response = await axios.get(url + "/all");
