@@ -63,11 +63,6 @@ function ProductCardSearched({product}) {
     window.location.href = "/cart"
   }
 
-//   const buttonComprar = () => {
-//     const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-//     productsInCart.push(product);
-//     localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-// }
 
   const AddProductInSave = () => {
     const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];

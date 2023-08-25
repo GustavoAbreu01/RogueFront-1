@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import swal from 'sweetalert2';
 
 import { SaveService  } from '../../Service/SaveService';
+import { CartService } from '../../Service/CartService'
 
 //Importando as imagens
 import motors from "../../assets/img/motores.png"
@@ -45,12 +46,12 @@ function CategoryCard({ product }) {
         )
     }
 
-    const buttonComprar = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-    }
-
+    const BuyProduct = () => {
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
+        window.location.href = "/cart"
+      }
 
     const AddProductInSave = (savesId, productCode) => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
@@ -252,7 +253,7 @@ const renderDesktopView = () => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button'>
-                <button className="ui fluid blue button category_card" onClick={buttonComprar}>Comprar</button>
+                <button className="ui fluid blue button category_card" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
         </Link>
     </div>
@@ -286,7 +287,7 @@ const renderTabletView = () => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button'>
-                <button className="ui fluid blue button category_card" onClick={buttonComprar}>Comprar</button>
+                <button className="ui fluid blue button category_card"  onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
         </Link>
     </div>
@@ -318,7 +319,7 @@ const renderMobileView = () => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button_mobile'>
-                <button className="ui fluid blue button category_card_mobile" onClick={buttonComprar}>Comprar</button>
+                <button className="ui fluid blue button category_card_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
         </Link>
     </div>

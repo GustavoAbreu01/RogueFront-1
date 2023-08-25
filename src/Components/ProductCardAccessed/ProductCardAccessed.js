@@ -56,10 +56,11 @@ function ProductCardAccessed({ product }) {
     )
   }
 
-  const buttonComprar = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+  const BuyProduct = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
+    window.location.href = "/cart"
   }
 
   const AddProductInSave = () => {
@@ -124,7 +125,7 @@ function ProductCardAccessed({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_accessed_buy_button'>
-              <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_accessed_button"onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>
@@ -164,7 +165,7 @@ function ProductCardAccessed({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_accessed_buy_button'>
-              <button className="fluid ui button product_card_accessed_button" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_accessed_button"  onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>
@@ -203,7 +204,7 @@ function ProductCardAccessed({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_accessed_buy_button_mobile'>
-              <button className="fluid ui button product_card_accessed_button_mobile" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_accessed_button_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>

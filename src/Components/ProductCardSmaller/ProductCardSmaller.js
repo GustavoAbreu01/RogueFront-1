@@ -217,11 +217,12 @@ function SmallProductCard({product}) {
         };
     }, []);
 
-    const buttonComprar = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-    }
+    const BuyProduct = () => {
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
+        window.location.href = "/cart"
+      }
 
 
     const renderDesktopView = () => (
@@ -255,7 +256,7 @@ function SmallProductCard({product}) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
+                        <button className="fluid ui button product_card_smaller" onClick={() => BuyProduct(product)}>Comprar</button>
                     </div>
                 </Link>
             </Link >
@@ -293,7 +294,7 @@ function SmallProductCard({product}) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
+                        <button className="fluid ui button product_card_smaller"  onClick={() => BuyProduct(product)}>Comprar</button>
                     </div>
                 </Link>
             </Link >
@@ -331,7 +332,7 @@ function SmallProductCard({product}) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="small ui button buy_product_card_smaller_mobile" onClick={buttonComprar}>Comprar</button>
+                        <button className="small ui button buy_product_card_smaller_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
                     </div>
                 </Link>
             </Link >
