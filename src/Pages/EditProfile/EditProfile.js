@@ -29,6 +29,7 @@ function EditProfile() {
   const [activeSection, setActiveSection] = useState(1);
   const [editMode, setEditMode] = useState(false);
   const [showComponent, setShowComponent] = useState(false);
+  const user = JSON.parse(localStorage.getItem('user')) || [];
 
   useEffect(() => {
     const storedValue = localStorage.getItem('showComponent');
@@ -115,8 +116,8 @@ function EditProfile() {
                 <div className="box_settings_bar_edit">
                   <div className="settings_bar_edit_profile">
                     <CgProfile className="edit_profile" />
-                    <h4>Nome Sobrenome</h4>
-                    <p>000.000.000-00</p>
+                    <h4>{user.name}</h4>
+                    <p>{user.cpf}0</p>
                   </div>
                   <div className="ui vertical menu edit">
                     <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
@@ -150,11 +151,7 @@ function EditProfile() {
                     <div className="two fields">
                       <div className={editMode ? "field" : "field disabled"}>
                         <label>Nome</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Gustavo" />
-                      </div>
-                      <div className={editMode ? "field" : "field disabled"}>
-                        <label>Sobrenome</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="Abreu" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder={user.name} />
                       </div>
                     </div>
                   </div>
@@ -162,11 +159,11 @@ function EditProfile() {
                     <div className="fields">
                       <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
                         <label>Email Profissional</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="carlosabreu@gmail.com" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder={user.email} />
                       </div>
                       <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>CPF/CNPJ</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder="076.137.949-54" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder={user.cpf} />
                       </div>
                     </div>
                   </div>
@@ -232,11 +229,11 @@ function EditProfile() {
                     <div className="two fields">
                       <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
                         <label>Complemento</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder="Complemento" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder={user.address[0].complemento} />
                       </div>
                       <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>CEP</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder="89256-890" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[last-name]" placeholder={user.address[0].cep} />
                       </div>
                     </div>
                   </div>
@@ -244,12 +241,12 @@ function EditProfile() {
                     <div className="fields">
                       <div className={editMode ? "twelve wide field" : "twelve wide field disabled"}>
                         <label>Endereço</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder="Rua, Bairro, Número" />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address]" placeholder={`${user.address[0].cidade} , ${user.address[0].bairro} , ${user.address[0].rua}`} />
                       </div>
                       <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>Estado</label>
                         <select className="ui fluid dropdown">
-                          <option value="">Estado</option>
+                          <option value="">Exterior</option>
                           <option value="AC">Acre</option>
                           <option value="AL">Alagoas</option>
                           <option value="AP">Amapá</option>
@@ -281,7 +278,7 @@ function EditProfile() {
                       </div>
                       <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>País</label>
-                        <select className="ui fluid dropdown">
+                        <select value="US" className="ui fluid dropdown">
                           <option value="">País</option>
                           <option value="ZA">África do Sul</option>
                           <option value="DE">Alemanha</option>

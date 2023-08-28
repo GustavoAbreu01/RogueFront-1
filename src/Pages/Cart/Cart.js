@@ -19,49 +19,31 @@ import imgEmptyCart from '../../assets/img/weggnerAcordado.PNG';
 //Importando os icones
 import { FaShoppingCart, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { BsArrowLeftShort } from 'react-icons/bs';
+import { CartService } from '../../Service';
+
+import ProductService from '../../Service/ProductService'
 
 
 
-function Cart() {
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+function Cart({ product }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [productsCart, setProductsCart] = useState([]);
+  const [total, setTotal] = useState([]);
+  const [productsSmaller, setProductsSmaller] = useState([])
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
-    }
-    return soma;
+  const getProductsRev = async () => {
+      const products = await ProductService.findSimilar();
+      if (products) {
+        setProductsSmaller(products);
+      } else {
+        setProductsSmaller([]);
+      }
   }
 
-  const somaProduct = () => {
-    var soma = 0;
-    console.log(productsInCart)
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    return soma;
-  }
-
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    soma += somaTaxProduct();
-    return soma;
-  }
-
-  const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
-      return true
-    } else {
-      return false
-    }
-  }
 
   useEffect(() => {
+    getProductsRev();
+    getCart();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -72,8 +54,29 @@ function Cart() {
     };
   }, []);
 
+  const getCart = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+      setTotal(products.cartProductQuantities);
+    } else {
+      setProductsCart([]);
+    }
+}
+
+  const verify = () => {
+    const Registered = localStorage.getItem('verifyLogin');
+    if (Registered === "yes") {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const hasProductsInCart = () => {
-    if (productsInCart.length === 0) {
+    if (productsCart.size === 0) {
       return false;
     } else {
       return true;
@@ -118,7 +121,7 @@ function Cart() {
             </div>
             {hasProductsInCart() ? (
               <>
-                {productsInCart.map((item, index) => (
+                {total.map((item, index) => (
                   <div key={index}>
                     <ProductCart item={item} />
                   </div>
@@ -142,13 +145,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               {!verify() ? (
@@ -164,11 +167,9 @@ function Cart() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
+          {productsSmaller.map((product) => (
+            <SmallProductHorizontal key={product.code} product={product}/>
+          ))}
           </div>
         </div>
       </div>
@@ -234,13 +235,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               {!verify() ? (
@@ -313,13 +314,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
               {!verify() ? (

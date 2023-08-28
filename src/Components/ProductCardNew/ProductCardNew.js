@@ -6,6 +6,9 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
+//importando service
+import { CartService } from '../../Service/CartService'
+
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
@@ -24,16 +27,17 @@ function ProductCardNew({ product }) {
     };
   }, []);
 
-  const buttonComprar = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+  const BuyProduct = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
+    window.location.href = "/cart"
   }
 
   const AddProductInCart = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -107,7 +111,7 @@ function ProductCardNew({ product }) {
         </div>
         <Link to={`/product/${product.code}`}>
           <div className='box_product_card_new_image'>
-            <img src={motor} alt='' className='product_card_new_image' height={150} width={150}></img>
+            <img src={product.image} alt='' className='product_card_new_image' height={150} width={150}></img>
           </div>
           <div className='box_product_card_new_info'>
             <div className='product_card_new_info_text'>
@@ -121,7 +125,7 @@ function ProductCardNew({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_new_buy_button'>
-              <button className="fluid ui button product_card_new_button" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_new_button" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>
@@ -148,7 +152,7 @@ function ProductCardNew({ product }) {
         </div>
         <Link to={`/product/${product.code}`}>
           <div className='box_product_card_new_image'>
-            <img src={motor} alt='' className='product_card_new_image' height={150} width={150}></img>
+            <img src={product.image} alt='' className='product_card_new_image' height={150} width={150}></img>
           </div>
           <div className='box_product_card_new_info'>
             <div className='product_card_new_info_text'>
@@ -162,7 +166,7 @@ function ProductCardNew({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_new_buy_button'>
-              <button className="fluid ui button product_card_new_button" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_new_button" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>
@@ -188,7 +192,7 @@ function ProductCardNew({ product }) {
         </div>
         <Link to={`/product/${product.code}`}>
           <div className='box_product_card_new_image'>
-            <img src={motor} alt='' className='product_card_new_image' height={100} width={100}></img>
+            <img src={product.image} alt='' className='product_card_new_image' height={100} width={100}></img>
           </div>
           <div className='box_product_card_new_info'>
             <div className='product_card_new_info_text_mobile'>
@@ -201,7 +205,7 @@ function ProductCardNew({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_new_buy_button_mobile'>
-              <button className="fluid ui button product_card_new_button_mobile" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_new_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>

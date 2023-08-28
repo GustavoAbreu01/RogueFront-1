@@ -4,7 +4,7 @@ import './CartPayment.css';
 
 //importando as frameworks
 import { Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -23,13 +23,17 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
+import { CartService, PaymentService, ProductService } from '../../Service';
 
 
 function CartPayment() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
   const [focusedInput, setFocusedInput] = useState(null);
+  const [productsCart, setProductsCart] = useState([]);
+  const userPresent = JSON.parse(localStorage.getItem('user')) || []
+  const [total, setTotal] = useState([]);
+  const navigate = useNavigate();
 
   const handleInputFocus = (inputId) => {
     setFocusedInput(inputId);
@@ -39,31 +43,29 @@ function CartPayment() {
     setFocusedInput(null);
   };
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
+  const getCart = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+      setTotal(products.cartProductQuantities);
+    } else {
+      setProductsCart([]);
     }
-    return soma;
   }
 
-  const somaProduct = () => {
-    var soma = 0;
-    console.log(productsInCart)
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    return soma;
-  }
+  const [payment, setPayment] = useState({
+    "name": "Soundeeper",
+    "validity": "2004-08-02",
+    "number": "9999888877776666",
+    "cvv": 321,
+    "userCount": userPresent.id
+  });
 
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    soma += somaTaxProduct();
-    return soma;
-  }
+  const updatePayment = (event) => {
+    setPayment({ ...payment, [event.target.name]: event.target.value });
+  };
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -74,14 +76,37 @@ function CartPayment() {
     }
   }
 
+  const handlePayment = async (event) => {
+    event.preventDefault();
+    if (payment.name !== "" && payment.validity !== "" && payment.number !== "" && payment.cvv !== "" && payment.userCount !== "") {
+      PaymentService.create(payment);
+      navigate("/cart/transport");
+    } else {
+      alert("Alguma informação está incorreta.");
+    }
+  };
+
   const options = [
     { key: 1, icon: 'cc visa icon', text: 'Visa', value: 1 },
     { key: 2, icon: 'cc mastercard icon', text: 'Mastercard', value: 2 },
     { key: 3, icon: 'cc discover icon', text: 'Discover', value: 3 },
-    { key: 3, icon: 'cc diners club icon', text: 'Diners Club', value: 4 },
+    { key: 4, icon: 'cc diners club icon', text: 'Diners Club', value: 4 },
   ];
 
+  const [productsSmaller, setProductsSmaller] = useState([])
+
+  const getProductsRev = async () => {
+    const products = await ProductService.findSimilar();
+    if (products) {
+      setProductsSmaller(products);
+    } else {
+      setProductsSmaller([]);
+    }
+  }
+
   useEffect(() => {
+    getCart();
+    getProductsRev();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -157,19 +182,24 @@ function CartPayment() {
                         className='dropDownCard'
                         fluid
                         selection
+                        onChange={updatePayment}
                         options={options}
                       />
                     </div>
                     <div className="sixteen wide field">
                       <label>Nome do Titular</label>
-                      <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
+                      <input id='NameCard' type="text" name="name" maxlength="16" placeholder="Nome Completo"
+                        value={payment.name}
+                        onChange={updatePayment}
                         onFocus={() => handleInputFocus('1')}
                         onBlur={handleInputBlur}
                       />
                     </div>
                     <div className="sixteen wide field">
                       <label>Número do cartão</label>
-                      <input id='NumberCard' type="text" name="card[number]" maxlength="16" placeholder="0000 0000 0000 0000"
+                      <input id='NumberCard' type="text" name="number" maxlength="16" placeholder="0000 0000 0000 0000"
+                        value={payment.number}
+                        onChange={updatePayment}
                         onFocus={() => handleInputFocus('2')}
                         onBlur={handleInputBlur}
                       />
@@ -179,7 +209,9 @@ function CartPayment() {
                 <div className="fields">
                   <div className="four wide field">
                     <label>CVV</label>
-                    <input id='CvvCard' type="text" name="card[cvc]" maxlength="3" placeholder="CVC"
+                    <input id='CvvCard' type="text" name="cvv" maxlength="3" placeholder="CVC"
+                      value={payment.cvv}
+                      onChange={updatePayment}
                       onFocus={() => handleInputFocus('3')}
                       onBlur={handleInputBlur}
                     />
@@ -187,6 +219,7 @@ function CartPayment() {
                   <div className="ten wide field">
                     <label>CPF do titular</label>
                     <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
+                      onChange={updatePayment}
                       onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
                     />
@@ -196,6 +229,7 @@ function CartPayment() {
                     <div className="fields">
                       <div className="ten wide field">
                         <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
+                          onChange={updatePayment}
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -216,6 +250,7 @@ function CartPayment() {
                       </div>
                       <div className="field">
                         <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
+                          onChange={updatePayment}
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -247,28 +282,28 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-            <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
+              <button onClick={handlePayment} className="fluid ui button final">Avançar Etapa</button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
+          {productsSmaller.map((product) => (
+            <SmallProductHorizontal key={product.code} product={product}/>
+          ))}
           </div>
         </div>
       </div>
       <div className='box_cart_payment_title_similar'>
-      <i class="magic icon" color='var(--white)'></i>
+        <i class="magic icon" color='var(--white)'></i>
         <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
@@ -431,13 +466,13 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>
@@ -590,13 +625,13 @@ function CartPayment() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Taxa R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/transport'>Avançar Etapa</Link></button>

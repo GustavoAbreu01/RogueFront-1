@@ -9,38 +9,39 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
-
+//importando service
+import {CartService} from '../../Service/CartService'
 
 function SmallProductCard({product}) {
 
     const AddProductInCart = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
         Swal.fire({
-            title: 'Produto adicionado a carrinho!',
-            icon: 'success',
-            showConfirmButton: true,
-            confirmButtonText: 'Ir para o carrinho',
-            confirmButtonColor: 'var(--blue-primary)',
-            position: 'top-end',
-            timer: 5000,
-            timerProgressBar: true,
-            toast: true,
-            width: 400,
-            showClass: {
-                popup: 'animate__animated animate__backInRight'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__backOutRight'
-            },
+          title: 'Produto adicionado a carrinho!',
+          icon: 'success',
+          showConfirmButton: true,
+          confirmButtonText: 'Ir para o carrinho',
+          confirmButtonColor: 'var(--blue-primary)',
+          position: 'top-end',
+          timer: 5000,
+          timerProgressBar: true,
+          toast: true,
+          width: 400,
+          showClass: {
+            popup: 'animate__animated animate__backInRight'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__backOutRight'
+          },
         }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "/cart"
-            }
+          if (result.isConfirmed) {
+            window.location.href = "/cart"
+          }
         }
         )
-    }
+      }
 
     const AddProductInSave = () => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
@@ -216,11 +217,12 @@ function SmallProductCard({product}) {
         };
     }, []);
 
-    const buttonComprar = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-    }
+    const BuyProduct = () => {
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
+        window.location.href = "/cart"
+      }
 
 
     const renderDesktopView = () => (
@@ -241,7 +243,7 @@ function SmallProductCard({product}) {
             </div>
             <Link to={`/product/${product.code}`}>
                 <div className='box_product_card_smaller_image'>
-                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                    <img src={product.image} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
@@ -254,7 +256,7 @@ function SmallProductCard({product}) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
+                        <button className="fluid ui button product_card_smaller" onClick={() => BuyProduct(product)}>Comprar</button>
                     </div>
                 </Link>
             </Link >
@@ -279,7 +281,7 @@ function SmallProductCard({product}) {
             </div>
             <Link to='/product'>
                 <div className='box_product_card_smaller_image'>
-                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                    <img src={product.image} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
@@ -292,7 +294,7 @@ function SmallProductCard({product}) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="fluid ui button product_card_smaller" onClick={buttonComprar}>Comprar</button>
+                        <button className="fluid ui button product_card_smaller"  onClick={() => BuyProduct(product)}>Comprar</button>
                     </div>
                 </Link>
             </Link >
@@ -317,7 +319,7 @@ function SmallProductCard({product}) {
             </div>
             <Link to='/product'>
                 <div className='box_product_card_smaller_image'>
-                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                    <img src={product.image} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
@@ -330,7 +332,7 @@ function SmallProductCard({product}) {
                 </div>
                 <Link to='/cart'>
                     <div className='box_product_card_smaller_button'>
-                        <button className="small ui button buy_product_card_smaller_mobile" onClick={buttonComprar}>Comprar</button>
+                        <button className="small ui button buy_product_card_smaller_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
                     </div>
                 </Link>
             </Link >

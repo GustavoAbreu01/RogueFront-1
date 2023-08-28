@@ -7,6 +7,7 @@ import { UserService } from '../../Service/userService';
 
 //importando as frameworks
 import { Link, useNavigate } from "react-router-dom";
+import swal from 'sweetalert2';
 
 //Importando as imagens
 import logo from "../../assets/img/logoWEG.png"
@@ -31,8 +32,6 @@ function Register() {
     }, []);
 
 
-    const navigate = useNavigate();
-
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
     const [user, setUser] = useState({
@@ -50,19 +49,39 @@ function Register() {
         setPasswordConfirm(event.target.value);
     }
 
-
+    const navigate = useNavigate();
     
     function create(event) {
-        console.log(user)
         if (user.password !== passwordConfirm) {
             event.preventDefault();
             alert("Confirmação de senha incorreta")
         } else {
             event.preventDefault();
-            UserService.create(user)
+            UserService.create(user);
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem("verifyLogin", 'yes');
-            navigate('/');
+            swal.fire({
+                title: 'Redirecionando para Login!',
+                icon: 'success',
+                showConfirmButton: false,
+                confirmButtonText: 'Ir para o carrinho',
+                confirmButtonColor: 'var(--blue-primary)',
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            }).then(() => {
+                
+                    navigate('/login');
+            }
+            )
         }
     }
 

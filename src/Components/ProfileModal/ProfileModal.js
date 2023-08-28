@@ -13,13 +13,15 @@ import { CgProfile } from 'react-icons/cg'
 import { BsArrowBarRight } from 'react-icons/bs'
 
 
-export default function ProfileModal({ user }) {
+export default function ProfileModal() {
   const [openModal, setOpenModal] = useState(false);
   const [openModalAcessibility, setOpenModalAcessibility] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const user = JSON.parse(localStorage.getItem('user')) || [];
 
   function realizarLogout() {
     localStorage.removeItem('verifyLogin');
+    localStorage.removeItem("user");
     window.location.reload();
   }
 
@@ -146,8 +148,8 @@ export default function ProfileModal({ user }) {
                   </button>
                 </Link>
                 <CgProfile className='perfil_image'></CgProfile>
-                <p className='username_profile'>Nome Sobrenome</p>
-                <p className='cpf_profile'>076.137.949.54</p>
+                <p className='username_profile'>{user.name}</p>
+                <p className='cpf_profile'>{user.cpf}</p>
               </div>
               <div className='profile_opt'>
                 <div className='profile_item'>

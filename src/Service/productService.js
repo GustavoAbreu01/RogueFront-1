@@ -6,8 +6,19 @@ export const ProductService = {
 
     findOne: async (code) => {
         try {
-            const response = await axios.get(url + code);
+            const response = await axios.get(url + "/" + code);
             return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    
+
+    findSimilar: async (size) => {
+        try {
+            const response = await axios.get(url + "?size=" + 5 + "&page=" + 0);
+            return response.data.content;
         } catch (error) {
             console.error(error);
         }

@@ -15,36 +15,35 @@ import { Link } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
+import { CartService, ProductService } from '../../Service';
 
 function CartConfirm() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+  const user = JSON.parse(localStorage.getItem('user')) || [];
+  const [productsCart, setProductsCart] = useState([]);
+  const [total, setTotal] = useState([]);
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
+  const getCart = async () => {
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+      setTotal(products.cartProductQuantities);
+    } else {
+      setProductsCart([]);
     }
-    return soma;
   }
 
-  const somaProduct = () => {
-    var soma = 0;
-    console.log(productsInCart)
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    return soma;
-  }
+  const [productsSmaller, setProductsSmaller] = useState([])
 
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
+  const getProductsRev = async () => {
+    const products = await ProductService.findSimilar();
+    if (products) {
+      setProductsSmaller(products);
+    } else {
+      setProductsSmaller([]);
     }
-    soma += somaTaxProduct();
-    return soma;
   }
 
   const verify = () => {
@@ -57,6 +56,8 @@ function CartConfirm() {
   }
 
   useEffect(() => {
+    getCart();
+    getProductsRev();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -104,8 +105,13 @@ function CartConfirm() {
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>
-            <ProductCartConfirm />
-            <ProductCartConfirm />
+            <>
+                {total.map((item, index) => (
+                  <div key={index}>
+                    <ProductCartConfirm item={item} />
+                  </div>
+                ))}
+              </>
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>
@@ -115,30 +121,30 @@ function CartConfirm() {
                   <div className="three fields">
                     <div className="field">
                       <label>Nome do Responsável</label>
-                      <p>Gustavo Guilherme de Abreu</p>
+                      <p>{user.name}</p>
                     </div>
                     <div className="field">
                       <label>Endereço:</label>
-                      <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
+                      <p>{user.address[0].rua}, {user.address[0].bairro}, {user.address[0].cidade}</p>
                     </div>
                     <div className="field">
                       <label>Complemento:</label>
-                      <p>Torre 1, Apto 706</p>
+                      <p>{user.address[0].complemento}</p>
                     </div>
                   </div>
                 </div>
                 <div className="three fields">
                   <div className="field">
                     <label>Estado:</label>
-                    <p>Santa Catarina</p>
+                    <p>{user.address[0].estado}</p>
                   </div>
                   <div className="field">
                     <label>País:</label>
-                    <p>Brasil</p>
+                    <p>{user.address[0].pais}</p>
                   </div>
                   <div className="field">
                     <label>CEP</label>
-                    <p>89256-690</p>
+                    <p>{user.address[0].cep}</p>
                   </div>
                 </div>
               </form>
@@ -151,13 +157,13 @@ function CartConfirm() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/finish'>Finalizar Pedido</Link></button>
@@ -165,11 +171,9 @@ function CartConfirm() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
+          {productsSmaller.map((product) => (
+            <SmallProductHorizontal key={product.code} product={product}/>
+          ))}
           </div>
         </div>
       </div>
@@ -259,16 +263,16 @@ function CartConfirm() {
         <div className='box_info_total_cart_tablet'>
           <div className='info_total_buy'>
             <div>
-              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
+              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/finish'>Finalizar Pedido</Link></button>
@@ -351,16 +355,13 @@ function CartConfirm() {
         <div className='box_info_total_cart_mobile'>
           <div className='info_total_buy'>
             <div>
-              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
-            </div>
-            <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_mobile'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/finish'>Finalizar Pedido</Link></button>

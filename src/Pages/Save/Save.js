@@ -10,6 +10,7 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
 import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 import weggner from '../../assets/img/weggnerSemiAcord.png';
+import SaveService from '../../Service/SaveService'
 import { Link } from 'react-router-dom'
 
 //Importando os ícones
@@ -18,10 +19,12 @@ import { AiFillStar } from 'react-icons/ai'
 import { BsArrowLeftShort } from 'react-icons/bs'
 
 
-function Salvos() {
+function Salvos({ product }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [productsSave, setProductsSave] = useState([]);
 
   useEffect(() => {
+    getSave();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -32,7 +35,23 @@ function Salvos() {
     };
   }, []);
 
-  const savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
+  const getSave = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const saveId = user.saves.id;
+    const products = await SaveService.getSave(saveId);
+    if (products) {
+      setProductsSave(products[0].products);
+    } else {
+      setProductsSave([]);
+    }
+  }
+  const hasProductsInSave = () => {
+    if (productsSave.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -43,33 +62,42 @@ function Salvos() {
     }
   }
 
+
   const renderDesktopView = () => (<>
     {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-    <WeggnerModal />
     <div className='container_save_titles'>
       <div className='save_saved_product'>
         <div className='box_title_similar_save'>
           <BsFillBookmarkFill color='var(--white)' size={30} />
           <h1 className='save_title'>Salvos</h1>
         </div>
-        <img src={weggner} alt='' className="no_products_saved_img"></img>
-        <div className='not_saved_text'>
-          <h5>Ainda não há nenhum produto salvo...</h5>
-          <div className='back_to_home_not_saved'>
-            <BsArrowLeftShort size={15} />
-            <Link to='/'> <p>Voltar para a Home</p> </Link>
-          </div>
-
-        </div>
+        {hasProductsInSave() ? (
+          <>
+            {productsSave.map((item, index) => (
+              <div key={index}>
+                <SaveCard item={item} />
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <img src={weggner} alt='' className="no_products_saved_img"></img>
+            <div className='not_saved_text'>
+              <h5>Ainda não há nenhum produto salvo...</h5>
+              <div className='back_to_home_not_saved'>
+                <BsArrowLeftShort size={15} />
+                <Link to='/'> <p>Voltar para a Home</p> </Link>
+              </div>
+            </div>
+          </>
+        )}
       </div>
-
     </div>
-
     <Footer />
   </>
-   )
+  )
 
-   const renderMobileView = () => (<>
+  const renderMobileView = () => (<>
     {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
     <WeggnerModal />
     <div className='container_save_titles'>
@@ -78,23 +106,31 @@ function Salvos() {
           <BsFillBookmarkFill color='var(--white)' size={30} />
           <h1 className='save_title'>Salvos</h1>
         </div>
-        <img src={weggner} alt='' className="no_products_saved_img_mobile"></img>
-        <div className='not_saved_text'>
-          <h5>Ainda não há nenhum produto salvo...</h5>
-          <div className='back_to_home_not_saved'>
-            <BsArrowLeftShort size={15} />
-            <Link to='/'> <p>Voltar para a Home</p> </Link>
-          </div>
-
-        </div>
-        {/* <img src={weggner} alt="weggner" className="no_products_saved_img" /> */}
+        {hasProductsInSave() ? (
+          <>
+            {productsSave.map((item, index) => (
+              <div key={index}>
+                <SaveCard item={item} />
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <img src={weggner} alt='' className="no_products_saved_img_mobile"></img>
+            <div className='not_saved_text'>
+              <h5>Ainda não há nenhum produto salvo...</h5>
+              <div className='back_to_home_not_saved'>
+                <BsArrowLeftShort size={15} />
+                <Link to='/'> <p>Voltar para a Home</p> </Link>
+              </div>
+            </div>
+          </>
+        )}
       </div>
-
     </div>
-
     <Footer />
   </>
-   )
+  )
 
   const getViewToRender = () => {
     if (screenSize.width > 900) {
@@ -104,31 +140,7 @@ function Salvos() {
     }
   };
 
-  if (savedProducts.length === 0) {
-   return getViewToRender();
-  }
-
-  return (
-    <>
-      {!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <WeggnerModal />
-      <div className='container_save_titles'>
-        <div className='save_saved_product'>
-          <div className='box_title_similar_save'>
-            <BsFillBookmarkFill color='var(--white)' size={30} />
-            <h1 className='save_title'>Salvos</h1>
-          </div>
-          {savedProducts.map((item, index) => (
-            <div key={index}>
-              <SaveCard item={item} />
-            </div>
-          ))}
-
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+  return <>{getViewToRender()}</>;
 }
 
 

@@ -17,7 +17,7 @@ import { BsArrowLeftShort } from 'react-icons/bs';
 function Login() {
     
     const [userLogin, setUserLogin] = useState({
-        "username": "",
+        "email": "",
         "password": ""
     });
 
@@ -28,61 +28,22 @@ function Login() {
     const navigate = useNavigate();
 
     const handleLogin = async (event) => {
-        const { email, password } = userLogin;
-        event.preventDefault();
         try {
+            const { email, password } = userLogin;
+            console.log(userLogin);
+            event.preventDefault();
             const response = await UserService.login(email, password);
-            console.log(response.data);
-            localStorage.setItem('user', JSON.stringify(userLogin));
-            localStorage.setItem('verifyLogin', 'yes');
-            navigate("/");
+            if(response){
+                localStorage.setItem('user', JSON.stringify(response));
+                localStorage.setItem('verifyLogin', 'yes');
+                navigate("/");
+            }
+            
         } catch (error) {
             alert("Erro ao fazer login. Verifique suas credenciais.");
             console.log(error);
         }
     };
-    
-
-    // const [passwordConfirm, setPasswordConfirm] = useState('');
-
-    // const [userLogin, setUserLogin] = useState({
-    //     emailLogin: '',
-    //     passwordLogin: '',
-    // });
-
-    // const [user, setUser] = useState({
-    //     name: '',
-    //     email: '',
-    //     password: '',
-
-    // });
-
-    // const updateLoginInformation = (event) => {
-    //     setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
-    // }
-
-
-    // const handleLogin = () => {
-    //     localStorage.setItem('verifyLogin', 'yes');
-    //     navigate("/");
-    //     alert("Senha ou email incorretos!!");
-    // };
-
-    // function create(event) {
-    //     if (user.password !== passwordConfirm) {
-    //         event.preventDefault();
-    //     } else {
-    //         event.preventDefault();
-    //         localStorage.setItem("verifyLogin", 'yes');
-    //         UserService.create(user)
-    //             .then(response => {
-    //                 navigate('/home');
-    //             })
-    //             .catch(error => {
-    //                 console.error(error);
-    //             });
-    //     }
-    // }
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
    

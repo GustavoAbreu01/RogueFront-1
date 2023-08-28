@@ -82,7 +82,7 @@
 }
 .container_order_steps{
     display: flex;
-    margin-left: 7rem;
+    justify-content: center;
     align-items: center;
 }
 .ui.tiny.steps.order {

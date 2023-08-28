@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 
 //Importando as imagens
 import motors from "../../assets/img/motores.png"
+import { CartService } from '../../Service';
 
 
-function ProductCart(item) {
+function ProductCart({ item }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [quantidade, setQuantidade] = React.useState(1);
   const [valor, setValor] = React.useState(1);
@@ -26,51 +27,64 @@ function ProductCart(item) {
     };
   }, []);
 
+  const renderPrice = () => {
+    if (item.product.price !== undefined) {
+        const priceParts = item.product.price.toString().split('.');
+        const integerPart = priceParts[0];
+        const decimalPart = priceParts[1] || '00';
+        return (
+            <h1 className="product_cart_item_price">
+                R$ {integerPart}
+                <sup> .{decimalPart}</sup>
+                <sub className='product_cart_subtext'>10x sem juros</sub>
+            </h1>
+        );
+    } else {
+        return null;
+    }
+};
+
   function aumentarQuantidade() {
-    setQuantidade(quantidade + 1);
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, item.product.code, item.quantity + 1);
+    window.location.reload();
   }
 
   function diminuirQuantidade() {
-    if (quantidade > 1) {
-      setQuantidade(quantidade - 1);
+    if (item.quantity > 1) {
+      const user = JSON.parse(localStorage.getItem('user')) || [];
+      const cartId = user.cart.id;
+      CartService.AddProductInCart(cartId, item.product.code, item.quantity - 1);
+      window.location.reload();
     }
   }
 
-  React.useEffect(() => {
-    if (quantidade > 1) {
-      setValor(quantidade * 450);
-    } else {
-      setValor(450);
-    }
-  }, [quantidade]);
-
   const deleteItens = (item) => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart'));
-    const index = productsInCart.findIndex(product => product.id === item.id);
-    if (index !== -1) {
-      productsInCart.splice(index, 1);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-        // You might also want to update the component state to reflect the change
-    }
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.DeleteProductInCart(cartId, item.product.code);
     window.location.reload();
-};
+  };
 
   const renderDesktopView = () => (
     <>
       <div className="container_card_cart">
         <div className="box_product_cart">
           <div className="product_cart_card" style={{ color: 'black' }}>
-            <div id="imgItens CardCart">
-              <Link to="/product">
-                <img src={motors} width="125" height="" />
-              </Link>
-            </div>
-            <div className="product_cart_informations">
-              <Link to="/product">
-                <h2 className="product_cart_item_name"></h2>
-                <p className="product_cart_complement" >Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
-                <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext'>10x Sem juros</sub></h2>
-              </Link>
+            <div className='product_cart_description'>
+              <div id="imgItens CardCart">
+                <Link to="/product">
+                  <img src={item.product.image} width="125" height="" />
+                </Link>
+              </div>
+              <div className="product_cart_informations">
+                <Link to="/product">
+                  <h2 className="product_cart_item_name">{item.product.name}</h2>
+                  <p className="product_cart_complement" >{item.product.description}</p>
+                  {renderPrice()}
+                </Link>
+              </div>
             </div>
             <div className='product_cart_buttons'>
               <button onClick={() => deleteItens(item)} className="ui icon button product_cart">
@@ -78,7 +92,7 @@ function ProductCart(item) {
               </button>
               <div className="ui small buttons product_cart">
                 <button onClick={diminuirQuantidade} className="ui button active product_cart">-</button>
-                <div className='or product_cart' data-text={quantidade}></div>
+                <div className='or product_cart' data-text={item.quantity}></div>
                 <button onClick={aumentarQuantidade} className="ui button product_cart">+</button>
               </div>
             </div>
@@ -95,7 +109,7 @@ function ProductCart(item) {
           <div className="product_cart_card" style={{ color: 'black' }}>
             <div id="imgItens CardCart">
               <Link to="/product">
-                <img src={motors} width="125" height="" />
+                <img src={item.product.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_informations">
@@ -129,9 +143,9 @@ function ProductCart(item) {
             <div className='product_card_cart_info_up'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={motors} width="125" height="" />
+                  <img src={item.product.image} width="125" height="" />
                 </Link>
-              </div> 
+              </div>
               <div className="product_cart_informations_mobile">
                 <Link to="/product">
                   <h2 className="product_cart_item_name_mobile">W12 Monofásico</h2>
@@ -140,7 +154,7 @@ function ProductCart(item) {
               </div>
             </div>
             <div className='product_cart_buttons_mobile'>
-            <div className="ui small buttons product_cart">
+              <div className="ui small buttons product_cart">
                 <button onClick={diminuirQuantidade} className="ui button active product_cart">-</button>
                 <div className='or product_cart' data-text={quantidade}></div>
                 <button onClick={aumentarQuantidade} className="ui button product_cart">+</button>

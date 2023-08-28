@@ -8,6 +8,9 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
+//importando service
+import { CartService } from '../../Service/CartService'
+
 function ProductCardHighlight({ product }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -23,16 +26,17 @@ function ProductCardHighlight({ product }) {
     };
   }, []);
 
-  const buttonComprar = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+  const BuyProduct = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
+    window.location.href = "/cart"
   }
 
   const AddProductInCart = () => {
-    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-    productsInCart.push(product);
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    CartService.AddProductInCart(cartId, product.code);
     Swal.fire({
       title: 'Produto adicionado a carrinho!',
       icon: 'success',
@@ -106,7 +110,7 @@ function ProductCardHighlight({ product }) {
         </div>
         <Link to={`/product/${product.code}`}>
           <div className='box_product_card_hightlight_image'>
-            <img src={motor} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
+            <img src={product.image} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
           </div>
           <div className='box_product_card_hightlight_info'>
             <div className='product_card_hightlight_info_text'>
@@ -120,7 +124,7 @@ function ProductCardHighlight({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_hightlight_buy_button'>
-              <button className="fluid ui button product_card_hightlight_button" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_hightlight_button" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>
@@ -146,7 +150,7 @@ function ProductCardHighlight({ product }) {
         </div>
         <Link to={`/product/${product.code}`}>
           <div className='box_product_card_hightlight_image'>
-            <img src={motor} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
+            <img src={product.image} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
           </div>
           <div className='box_product_card_hightlight_info'>
             <div className='product_card_hightlight_info_text'>
@@ -160,7 +164,7 @@ function ProductCardHighlight({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_hightlight_buy_button'>
-              <button className="fluid ui button product_card_hightlight_button" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_hightlight_button" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>
@@ -186,7 +190,7 @@ function ProductCardHighlight({ product }) {
         </div>
         <Link to={`/product/${product.code}`}>
           <div className='box_product_card_hightlight_image'>
-            <img src={motor} alt='' className='product_card_hightlight_image' height={100} width={100}></img>
+            <img src={product.image} alt='' className='product_card_hightlight_image' height={100} width={100}></img>
           </div>
           <div className='box_product_card_hightlight_info'>
             <div className='product_card_hightlight_info_text_mobile'>
@@ -199,7 +203,7 @@ function ProductCardHighlight({ product }) {
           </div>
           <Link to='/cart'>
             <div className='product_card_hightlight_buy_button_mobile'>
-              <button className="fluid ui button product_card_hightlight_button_mobile" onClick={buttonComprar}>Comprar</button>
+              <button className="fluid ui button product_card_hightlight_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
           </Link>
         </Link>

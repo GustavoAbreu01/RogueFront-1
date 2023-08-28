@@ -11,51 +11,47 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
 
 //importando as frameworks
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
+import { AddressService, CartService } from '../../Service';
 
 function CartTransport() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+  const [productsCart, setProductsCart] = useState([]);
   const [cep, setCep] = useState('');
+  const userPresent = JSON.parse(localStorage.getItem('user')) || []
   const [addressInfo, setAddressInfo] = useState(false);
   const [endereco, setEndereco] = useState({});
+  const [total, setTotal] = useState([]);
+  const navigate = useNavigate();
 
   const buscarEndereco = () => {
     if (cep.length === 8) {
       axios.get(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(response => setEndereco(response.data))
-        .catch(error => console.log('Erro na busca do CEP:', error));
+        .then((response) => {
+          setEndereco(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        }
+        );
+      console.log(endereco)
     }
   };
 
-  const somaTaxProduct = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price * 0.1;
+  const getCart = async () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const cartId = user.cart.id;
+    const products = await CartService.GetCart(cartId);
+    if (products) {
+      setProductsCart(products);
+      setTotal(products.cartProductQuantities);
+    } else {
+      setProductsCart([]);
     }
-    return soma;
-  }
-
-  const somaProduct = () => {
-    var soma = 0;
-    console.log(productsInCart)
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    return soma;
-  }
-
-  const somaTotal = () => {
-    var soma = 0;
-    for (var i = 0; i < productsInCart.length; i++) {
-      soma += productsInCart[i].price;
-    }
-    soma += somaTaxProduct();
-    return soma;
   }
 
   const handleChangeCep = (event) => {
@@ -66,6 +62,8 @@ function CartTransport() {
   };
 
   useEffect(() => {
+    getCart();
+    console.log(userPresent)
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -84,6 +82,44 @@ function CartTransport() {
       return false
     }
   }
+
+  const updateAddress = (event) => {
+    setAddress({ ...address, [event.target.name]: event.target.value });
+  };
+
+
+  const [address, setAddress] = useState({
+    "rua": "",
+    "numero": 400,
+    "complemento": "",
+    "bairro": "",
+    "cidade": "",
+    "estado": "",
+    "pais": "",
+    "uf": "",
+    "cep": "",
+  });
+
+  const handleTransport = async (event) => {
+    const rua = userPresent.address[0].rua;
+    const numero = userPresent.address[0].numero;
+    const complemento = userPresent.address[0].complemento;
+    const bairro = userPresent.address[0].bairro;
+    const cidade = userPresent.address[0].cidade;
+    const estado = userPresent.address[0].estado;
+    const pais = userPresent.address[0].pais;
+    const uf = userPresent.address[0].uf;
+    const cep = 89256690;
+    const userAddress = { rua, numero, complemento, bairro, cidade, estado, pais, uf, cep };
+    console.log(userAddress);
+    event.preventDefault();
+    if (userAddress.rua !== "" && userAddress.numero !== "" && userAddress.bairro !== "" && userAddress.cidade !== "" && userAddress.estado !== "" && userAddress.pais !== "" && userAddress.uf !== "" && userAddress.cep !== "") {
+      AddressService.create(userAddress);
+      navigate("/cart/Confirm");
+    } else {
+      alert("Alguma informação está incorreta.");
+    }
+  };
 
   const renderDesktopView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
@@ -127,13 +163,13 @@ function CartTransport() {
                   <label>Nome</label>
                   <div className="two fields">
                     <div className="field">
-                      <input type="text" name="shipping[first-name]" placeholder="Primiero Nome" />
+                      <input onChange={updateAddress} value={userPresent.name}  name="name" type="text" placeholder="Primiero Nome" />
                     </div>
                     <div className="field">
                       {!addressInfo ?
-                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" value="" />
+                        <input type="text" name='rua' onChange={updateAddress} placeholder="Rua, Bairro, Número" value={userPresent.address[0].cidade + ", " + userPresent.address[0].bairro + ", " + userPresent.address[0].rua} />
                         :
-                        <input type="text" name="shipping[last-name]" placeholder="Rua, Bairro, Número" value={endereco.localidade + ", " + endereco.bairro + ", " + endereco.logradouro} />
+                        <input type="text" name='rua' onChange={updateAddress} placeholder="Rua, Bairro, Número" value={userPresent.address[0].cidade + ", " + userPresent.address[0].bairro + ", " + userPresent.address[0].rua} />
                       }
 
                     </div>
@@ -143,18 +179,18 @@ function CartTransport() {
                   <label>Endereço de Entrega</label>
                   <div className="fields">
                     <div className="twelve wide field">
-                      <input type="text" name="shipping[address]" placeholder="Complemento" />
+                      <input type="text" name="complemento" value={userPresent.address[0].complemento} onChange={updateAddress} placeholder="Complemento" />
                     </div>
                     <div className="four wide field">
-                      <input type="text" name="shipping[address-2]" placeholder="CEP " onBlur={(event) => handleChangeCep(event)} />
+                      <input type="text" name="shipping[address-2]" value={userPresent.address[0].cep} placeholder="CEP" onBlur={(event) => handleChangeCep(event)} />
                     </div>
                   </div>
                 </div>
                 <div className="two fields">
                   <div className="field">
                     <label>Estado</label>
-                    <select className="ui fluid dropdown" value={endereco.uf}>
-                      <option value="">Estado</option>
+                    <select name="estado" onChange={updateAddress} className="ui fluid dropdown" value={userPresent.address[0].uf}>
+                      <option value="">Exterior</option>
                       <option value="AC">Acre</option>
                       <option value="AL">Alagoas</option>
                       <option value="AP">Amapá</option>
@@ -182,11 +218,12 @@ function CartTransport() {
                       <option value="SP">São Paulo</option>
                       <option value="SE">Sergipe</option>
                       <option value="TO">Tocantins</option>
+                      <option value="TO">Exterior</option>
                     </select>
                   </div>
                   <div className="field">
                     <label>País</label>
-                    <select className="ui fluid dropdown">
+                    <select name="pais" onChange={updateAddress} value="US" className="ui fluid dropdown">
                       <option value="">País</option>
                       <option value="ZA">África do Sul</option>
                       <option value="DE">Alemanha</option>
@@ -212,7 +249,6 @@ function CartTransport() {
                       <option value="PT">Portugal</option>
                       <option value="GB">Reino Unido</option>
                       <option value="TR">Turquia</option>
-
                       , Equador, Espanha, Estados Unidos, França, Gana, Itália, Japão, Malásia, Países Baixos, Peru, Polônia, Reino Unido, Rússia,[a] Singapura, Suécia, Tailândia, Turquia e Índia, além de 57 filiais[24] e distribuição em mais de 135 países.
                     </select>
                   </div>
@@ -224,26 +260,26 @@ function CartTransport() {
         <div className='box_info_total_cart'>
           <div className='info_total_buy'>
             <div>
-              <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
+              <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
+              <button onClick={handleTransport} className="fluid ui button final">Avançar Etapa</button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>
         </div>
       </div>
       <div className='box_cart_transport_title_similar'>
-      <i class="magic icon" color='var(--white)'></i>
+        <i class="magic icon" color='var(--white)'></i>
         <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />
@@ -393,13 +429,13 @@ function CartTransport() {
               <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart_tablet'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
@@ -541,13 +577,13 @@ function CartTransport() {
               <h5 className='TitleTextBuyProduct'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${somaProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R${somaTaxProduct()}</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${somaTotal()}</h5>
+              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/confirm'>Avançar Etapa</Link></button>
