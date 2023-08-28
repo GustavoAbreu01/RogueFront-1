@@ -25,7 +25,7 @@ import ProductService from '../../Service/ProductService'
 
 
 
-function Cart({product}) {
+function Cart({ product }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
   const [total, setTotal] = useState([]);
@@ -76,7 +76,7 @@ function Cart({product}) {
   }
 
   const hasProductsInCart = () => {
-    if (productsCart.length === 0) {
+    if (productsCart.size === 0) {
       return false;
     } else {
       return true;

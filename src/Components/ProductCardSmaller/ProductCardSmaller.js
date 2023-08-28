@@ -243,7 +243,7 @@ function SmallProductCard({product}) {
             </div>
             <Link to={`/product/${product.code}`}>
                 <div className='box_product_card_smaller_image'>
-                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                    <img src={product.image} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
@@ -281,7 +281,7 @@ function SmallProductCard({product}) {
             </div>
             <Link to='/product'>
                 <div className='box_product_card_smaller_image'>
-                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                    <img src={product.image} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
@@ -319,7 +319,7 @@ function SmallProductCard({product}) {
             </div>
             <Link to='/product'>
                 <div className='box_product_card_smaller_image'>
-                    <img src={motor} alt='' className='product_card_smaller_image' height={110} width={110}></img>
+                    <img src={product.image} alt='' className='product_card_smaller_image' height={110} width={110}></img>
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>

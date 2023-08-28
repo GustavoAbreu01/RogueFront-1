@@ -10,8 +10,8 @@ import motors from "../../assets/img/motores.png"
 
 
 function Orders() {
-
   const [isOpen, setIsOpen] = useState(false);
+  const user = JSON.parse(localStorage.getItem('user')) || [];
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -20,6 +20,7 @@ function Orders() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
+    console.log(user.cart)
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -39,9 +40,9 @@ function Orders() {
             <img src={motors} width="125" height="" />
           </div>
           <div className="order_item_info">
-            <h2 className="order_product_name">Pedido 26/07/2023</h2>
+            <h2 className="order_product_name">Pedido 25/08/2023</h2>
             <h2 id="itemPreco order" className="order_product_price">
-              Total: R$ 495<sup>99</sup>
+              Total: R$ {user.cart.totalPrice}<sup></sup>
               <sub className="order_product_subtext">parcelado em 8x</sub>
             </h2>
             <p className="order_product_complement">
@@ -63,9 +64,8 @@ function Orders() {
                     <div className="three fields order">
                       <div className="field order">
                         <label>Produtos</label>
-                        <p>Motor W33</p>
+                        <p>{user.cart.product}</p>
                         <p>Motor W12</p>
-
                       </div>
                       <div className="field order">
                         <br />
@@ -82,30 +82,30 @@ function Orders() {
 
                       <div className="field order">
                         <label>Nome do Responsável</label>
-                        <p>Gustavo Guilherme de Abreu</p>
+                        <p>{user.name}</p>
                       </div>
                       <div className="field order">
                         <label>Endereço:</label>
-                        <p>Rua Adolfo Tribess, Vieiras, N. 400</p>
+                        <p>{user.address[0].rua}, {user.address[0].bairro}, {user.address[0].cidade}</p>
                       </div>
                       <div className="field order">
                         <label>Complemento:</label>
-                        <p>Torre 1, Apto 706</p>
+                        <p>{user.address[0].complemento}</p>
                       </div>
                     </div>
                   </div>
                   <div className="three fields order">
                     <div className="field order">
                       <label>Estado:</label>
-                      <p>Santa Catarina</p>
+                      <p>{user.address[0].estado}</p>
                     </div>
                     <div className="field order">
                       <label>País:</label>
-                      <p>Brasil</p>
+                      <p>{user.address[0].pais}</p>
                     </div>
                     <div className="field order">
                       <label>CEP</label>
-                      <p>89256-690</p>
+                      <p>{user.address[0].cep}</p>
                     </div>
                   </div>
                 </form>

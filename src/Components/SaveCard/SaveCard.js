@@ -14,9 +14,9 @@ import { CartService } from '../../Service/CartService'
 
 function SaveCard({ item }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        console.log(item)
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -28,9 +28,9 @@ function SaveCard({ item }) {
     }, []);
 
     const AddProductInCart = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, item.code);
         Swal.fire({
             title: 'Produto adicionado a carrinho!',
             icon: 'success',
@@ -58,7 +58,7 @@ function SaveCard({ item }) {
     
     const deleteItens = (item) => {
         const savedProducts = JSON.parse(localStorage.getItem('savedProducts'));
-        const index = savedProducts.findIndex(product => product.id === item.id);
+        const index = savedProducts.findIndex(item => item.id === item.id);
         if (index !== -1) {
             savedProducts.splice(index, 1);
             localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
@@ -70,7 +70,7 @@ function SaveCard({ item }) {
     const BuyProduct = () => {
         const user = JSON.parse(localStorage.getItem('user')) || [];
         const cartId = user.cart.id;
-        CartService.AddProductInCart(cartId, product.code);
+        CartService.AddProductInCart(cartId, item.product.code);
         window.location.href = "/cart"
     }
 
@@ -98,10 +98,10 @@ function SaveCard({ item }) {
                     <Link to="/product">
                         <div className="box_save_card_product_info" style={{ color: 'black' }}>
                             <div className="save_card_image">
-                                <img src={motors} width="125" height="" />
+                                <img src={item.image} width="125" height="" />
                             </div>
                             <div className="save_card_product_info">
-                                <h3 className="save_card_product_name">{item.product.name}</h3>
+                                <h3 className="save_card_product_name">{item.name}</h3>
                                 <h4 className="save_card_product_description">{item.description}</h4>
                                 {renderPrice()}
                             </div>
@@ -120,7 +120,7 @@ function SaveCard({ item }) {
                     </div>
                     <div className='save_card_buy_button'>
                         <Link to='/cart'>
-                            <button className="ui fluid blue button save_card" onClick={() => BuyProduct(product)}>Comprar</button>
+                            <button className="ui fluid blue button save_card" onClick={() => BuyProduct(item)}>Comprar</button>
                         </Link>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ function SaveCard({ item }) {
                 <Link to="/product">
                     <div className="box_save_card_product_info_mobile" style={{ color: 'black' }}>
                         <div className="save_card_image_mobile">
-                            <img src={motors} width="100" height="" />
+                            <img src={item.image} width="100" height="" />
                         </div>
                         <div className="save_card_product_info_mobile">
                             <h3 className="save_card_product_name_mobile">W12 Monofásico</h3>
@@ -153,7 +153,7 @@ function SaveCard({ item }) {
                 </div>
                 <div className='save_card_buy_button_mobile'>
                     <Link to='/cart'>
-                        <button className="ui fluid blue button save_card_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
+                        <button className="ui fluid blue button save_card_mobile"  onClick={() => BuyProduct(item)}>Comprar</button>
                     </Link>
                 </div>
             </div>

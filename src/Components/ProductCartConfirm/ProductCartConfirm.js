@@ -52,7 +52,7 @@ function ProductCartConfirm({ item }) {
           <div className="product_cart_confirm_item_content" style={{ color: 'black' }}>
             <div id="product_cart_confirm_image">
               <Link to="/product">
-                <img src={motors} width="125" height="" />
+                <img src={item.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_confirm_item_info">
@@ -80,7 +80,7 @@ function ProductCartConfirm({ item }) {
           <div className="product_cart_confirm_item_content" style={{ color: 'black' }}>
             <div id="product_cart_confirm_image">
               <Link to="/product">
-                <img src={motors} width="125" height="" />
+                <img src={item.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_confirm_item_info">
@@ -108,7 +108,7 @@ function ProductCartConfirm({ item }) {
           <div className="product_cart_confirm_item_content_mobile" style={{ color: 'black' }}>
             <div id="product_cart_confirm_image">
               <Link to="/product">
-                <img src={motors} width="125" height="" />
+                <img src={item.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_confirm_item_info_mobile">

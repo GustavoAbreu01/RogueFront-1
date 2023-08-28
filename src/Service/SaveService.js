@@ -23,6 +23,7 @@ export const SaveService = {
             console.error(error);
         }
     },
+    
     removeFromSaves: async function (saveId, productCode) {
         console.log(saveId, productCode);
         const url = `http://localhost:8082/saves/add/${saveId}/${productCode}`;

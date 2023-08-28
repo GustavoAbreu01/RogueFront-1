@@ -111,7 +111,7 @@ function ProductCardSearched({product}) {
       </div>
       <Link to={`/product/${product.code}`}>
         <div className='box_product_card_searched_image'>
-          <img src={motor} alt='' className='product_card_searched_image' height={150} width={150}></img>
+          <img src={product.image} alt='' className='product_card_searched_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
@@ -151,7 +151,7 @@ function ProductCardSearched({product}) {
       </div>
       <Link to={`/product/${product.code}`}>
         <div className='box_product_card_searched_image'>
-          <img src={motor} alt='' className='product_card_searched_image' height={150} width={150}></img>
+          <img src={product.image} alt='' className='product_card_searched_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
@@ -191,7 +191,7 @@ function ProductCardSearched({product}) {
       </div>
       <Link to={`/product/${product.code}`}>
         <div className='box_product_card_searched_image'>
-          <img src={motor} alt='' className='product_card_searched_image' height={100} width={100}></img>
+          <img src={product.image} alt='' className='product_card_searched_image' height={100} width={100}></img>
         </div>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text_mobile'>

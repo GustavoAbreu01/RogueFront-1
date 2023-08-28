@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
-import { CartService } from '../../Service';
+import { CartService, ProductService } from '../../Service';
 
 function CartConfirm() {
 
@@ -35,6 +35,17 @@ function CartConfirm() {
     }
   }
 
+  const [productsSmaller, setProductsSmaller] = useState([])
+
+  const getProductsRev = async () => {
+    const products = await ProductService.findSimilar();
+    if (products) {
+      setProductsSmaller(products);
+    } else {
+      setProductsSmaller([]);
+    }
+  }
+
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {
@@ -46,6 +57,7 @@ function CartConfirm() {
 
   useEffect(() => {
     getCart();
+    getProductsRev();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -159,11 +171,9 @@ function CartConfirm() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
+          {productsSmaller.map((product) => (
+            <SmallProductHorizontal key={product.code} product={product}/>
+          ))}
           </div>
         </div>
       </div>

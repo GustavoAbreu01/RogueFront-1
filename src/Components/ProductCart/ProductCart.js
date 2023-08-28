@@ -75,7 +75,7 @@ function ProductCart({ item }) {
             <div className='product_cart_description'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={motors} width="125" height="" />
+                  <img src={item.product.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations">
@@ -109,7 +109,7 @@ function ProductCart({ item }) {
           <div className="product_cart_card" style={{ color: 'black' }}>
             <div id="imgItens CardCart">
               <Link to="/product">
-                <img src={motors} width="125" height="" />
+                <img src={item.product.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_informations">
@@ -143,7 +143,7 @@ function ProductCart({ item }) {
             <div className='product_card_cart_info_up'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={motors} width="125" height="" />
+                  <img src={item.product.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations_mobile">

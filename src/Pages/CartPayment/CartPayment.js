@@ -23,7 +23,7 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
-import { CartService, PaymentService } from '../../Service';
+import { CartService, PaymentService, ProductService } from '../../Service';
 
 
 function CartPayment() {
@@ -93,8 +93,20 @@ function CartPayment() {
     { key: 4, icon: 'cc diners club icon', text: 'Diners Club', value: 4 },
   ];
 
+  const [productsSmaller, setProductsSmaller] = useState([])
+
+  const getProductsRev = async () => {
+    const products = await ProductService.findSimilar();
+    if (products) {
+      setProductsSmaller(products);
+    } else {
+      setProductsSmaller([]);
+    }
+  }
+
   useEffect(() => {
     getCart();
+    getProductsRev();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -284,9 +296,9 @@ function CartPayment() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
-            <SmallProductHorizontal />
+          {productsSmaller.map((product) => (
+            <SmallProductHorizontal key={product.code} product={product}/>
+          ))}
           </div>
         </div>
       </div>

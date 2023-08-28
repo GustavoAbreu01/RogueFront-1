@@ -37,10 +37,10 @@ function Salvos({ product }) {
 
   const getSave = async () => {
     const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.saves.id;
-    const products = await SaveService.getSave(cartId);
+    const saveId = user.saves.id;
+    const products = await SaveService.getSave(saveId);
     if (products) {
-      setProductsSave(products);
+      setProductsSave(products[0].products);
     } else {
       setProductsSave([]);
     }

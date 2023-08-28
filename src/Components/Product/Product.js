@@ -31,7 +31,7 @@ function Product() {
           </Link>
         </div>
         <div className='box_product_card_accessed_image'>
-          <img src={motor} alt='' className='product_card_accessed_image' height={150} width={150}></img>
+          <img src={product.image} alt='' className='product_card_accessed_image' height={150} width={150}></img>
         </div>
         <div className='box_product_card_accessed_info'>
           <div className='product_card_accessed_info_text'>

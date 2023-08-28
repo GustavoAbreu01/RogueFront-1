@@ -22,6 +22,10 @@
 
 }
 
+.ui.form .disabled.field {
+    opacity: 1 !important;
+}
+
 .acessebility_container_profile {
     margin: 4rem;
     flex-direction: column;

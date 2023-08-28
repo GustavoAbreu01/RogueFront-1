@@ -231,7 +231,7 @@ const renderDesktopView = () => (
             <p className="ui blue ribbon label category_card">Verificados</p>
             <div className="category_card_content" style={{ color: 'black' }}>
                 <div className="category_card_image">
-                    <img src={motors} width="125" height="" />
+                    <img src={product.image} width="125" height="" />
                 </div>
                 <div className="category_card_product_info">
                     <h3 className="category_card_product_name">{product.name}</h3>
