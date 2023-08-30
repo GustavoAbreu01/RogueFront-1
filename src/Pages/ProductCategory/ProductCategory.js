@@ -329,7 +329,7 @@ function ProductCategory() {
               <div className="box_search_bar_mobile">
                 {products.map((product) => (
                   <div className="searchItens">
-                    <CategoryCard key={product.id} product={product} />
+                    <SmallProductCard key={product.id} product={product} />
                   </div>
                 ))}
               </div>

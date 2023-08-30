@@ -85,8 +85,8 @@ function ProductCartConfirm({ item }) {
             </div>
             <div className="product_cart_confirm_item_info">
               <Link to="/product">
-                <h2 className="product_cart_confirm_product_name">W12 Monofásico</h2>
-                <p className="product_cart_confirm_product_description">Motor monofásico de carcaça de chapa, para uso geral, desenvolvido para atender as mais variadas aplicações...</p>
+                <h2 className="product_cart_confirm_product_name">{item.product.name}</h2>
+                <p className="product_cart_confirm_product_description">{item.product.description}</p>
                 <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price'>R${}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext'>10x Sem juros</sub></h2>
               </Link>
             </div>
@@ -113,7 +113,7 @@ function ProductCartConfirm({ item }) {
             </div>
             <div className="product_cart_confirm_item_info_mobile">
               <Link to="/product">
-                <h2 className="product_cart_confirm_product_name_mobile">W12 Monofásico</h2>
+                <h2 className="product_cart_confirm_product_name_mobile">{item.product.name}</h2>
                 <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price_mobile'>R${}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext_mobile'>10x Sem juros</sub></h2>
               </Link>
               <div className='product_cart_confirm_quantity_mobile'>

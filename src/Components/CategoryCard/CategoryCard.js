@@ -235,7 +235,7 @@ const renderDesktopView = () => (
                 </div>
                 <div className="category_card_product_info">
                     <h3 className="category_card_product_name">{product.name}</h3>
-                    <h4 className="category_card_product_description">{product.name}</h4>
+                    <h4 className="category_card_product_description">{product.decription}</h4>
                     {renderPrice()}
                 </div>
             </div>
@@ -260,17 +260,17 @@ const renderDesktopView = () => (
 )
 
 const renderTabletView = () => (
-    <div className="ui segment itens container_category_card" id="itemCategory">
-        <Link to="/product">
+    <div className="ui segment itens container_category_card"  key={product.code}>
+        <Link to={`/product/${product.code}`}>
             <p className="ui blue ribbon label category_card">Verificados</p>
             <div className="category_card_content" style={{ color: 'black' }}>
                 <div className="category_card_image">
-                    <img src={motors} width="125" height="" />
+                    <img src={product.image} width="125" height="" />
                 </div>
                 <div className="category_card_product_info">
-                    <h3 className="category_card_product_name">W12 Monofásico</h3>
-                    <h4 className="category_card_product_description">Desenvolvido para oferecer versatilidade e eficiência.</h4>
-                    <h2 className="category_card_product_price">R$ 495<sup> 99</sup><sub className='category_card_product_subtext'>10x Sem juros</sub></h2>
+                    <h3 className="category_card_product_name">{product.name}</h3>
+                    <h4 className="category_card_product_description">{product.description}</h4>
+                    <h2 className="category_card_product_price">{renderPrice()}<sub className='category_card_product_subtext'>10x Sem juros</sub></h2>
                 </div>
             </div>
         </Link>
@@ -287,22 +287,22 @@ const renderTabletView = () => (
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button'>
-                <button className="ui fluid blue button category_card"  onClick={() => BuyProduct(product)}>Comprar</button>
+                <button className="ui fluid blue button category_card" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
         </Link>
     </div>
 )
 const renderMobileView = () => (
-    <div className="ui segment itens container_category_card_mobile" id="itemCategory">
-        <Link to="/product">
+    <div className="ui segment itens container_category_card_mobile"  key={product.code}>
+        <Link to={`/product/${product.code}`}>
             <p className="ui blue ribbon label category_card_mobile">Verificados</p>
             <div className="category_card_content_mobile" style={{ color: 'black' }}>
                 <div className="category_card_image_mobile">
-                    <img src={motors} width="100" height="" />
+                    <img src={product.image} width="100" height="" />
                 </div>
                 <div className="category_card_product_info_mobile">
-                    <h3 className="category_card_product_name_mobile">W12 Monofásico</h3>
-                    <h2 className="category_card_product_price_mobile">R$ 495<sup> 99</sup><sub className='category_card_product_subtext_mobile'>10x Sem juros</sub></h2>
+                    <h3 className="category_card_product_name_mobile">{product.name}</h3>
+                    <h2 className="category_card_product_price_mobile">{renderPrice()}</h2>
                 </div>
             </div>
         </Link>
@@ -313,13 +313,10 @@ const renderMobileView = () => (
             <button onClick={() => AddProductInCart(product)} className="ui blue icon button category_card">
                 <i className="cart plus icon category_card"></i>
             </button>
-            <button onClick={AddProductInCompare} className="ui icon button category_card_compare">
-                <i className="exchange alternate icon category_card"></i>
-            </button>
         </div>
         <Link to="/cart">
             <div className='category_card_buy_button_mobile'>
-                <button className="ui fluid blue button category_card_mobile"  onClick={() => BuyProduct(product)}>Comprar</button>
+                <button className="ui fluid blue button category_card_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
             </div>
         </Link>
     </div>

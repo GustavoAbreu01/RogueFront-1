@@ -305,11 +305,6 @@ function SmallProductCard({product}) {
         <div className="product_acessed" key={product.id}>
         <div className='container_product_card_smaller_mobile'>
             <div className='container_product_card_smaller_mobile_action_icon'>
-                <div className='product_card_small_button_compare'>
-                    <button onClick={AddProductInCompare} className="mini ui icon button product_card_smaller_compare">
-                        <i className="exchange alternate icon"></i>
-                    </button>
-                </div>
                 <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_smaller_mobile">
                     <i className="bookmark icon "></i>
                 </button>

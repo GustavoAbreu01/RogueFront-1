@@ -200,7 +200,7 @@ function ProductCardNew({ product }) {
             </div>
           </div>
           <div className='box_product_card_new_info_price'>
-            <h3 className='product_card_new_price_mobile'>R$ {product.description}</h3>
+            <h3 className='product_card_new_price_mobile'>R$ {product.price}</h3>
             <p className='product_card_new_price_option_mobile'>Á vista no pix</p>
           </div>
           <Link to='/cart'>

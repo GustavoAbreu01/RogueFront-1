@@ -136,8 +136,8 @@ function SaveCard({ item }) {
                             <img src={item.image} width="100" height="" />
                         </div>
                         <div className="save_card_product_info_mobile">
-                            <h3 className="save_card_product_name_mobile">W12 Monofásico</h3>
-                            <h2 className="save_card_product_price_mobile">R$ 495<sup> 99</sup><sub className='save_card_product_subtext'>10x Sem juros</sub></h2>
+                            <h3 className="save_card_product_name_mobile">{item.name}</h3>
+                            <h2 className="save_card_product_price_mobile">{renderPrice()}</h2>
                         </div>
                     </div>
                 </Link>
