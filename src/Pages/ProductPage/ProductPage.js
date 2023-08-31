@@ -14,13 +14,16 @@ import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
+import ComboCard from '../../Components/ComboCard/ComboCard'
 
 //Importando as imagens
 import motor from '../../assets/img/motor.png'
 
 //Importando os ícones
-import { FaStar } from 'react-icons/fa'
+import { FaStar, FaEquals } from 'react-icons/fa'
+import { AiOutlinePlus } from 'react-icons/ai'
 import { ProductService } from '../../Service';
+import { CartService } from '../../Service/CartService'
 
 const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -143,10 +146,11 @@ function ProductPage() {
 
     }
 
-    const buttonComprar = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const BuyProduct = () => {
+        const user = JSON.parse(localStorage.getItem('user')) || [];
+        const cartId = user.cart.id;
+        CartService.AddProductInCart(cartId, product.code);
+        window.location.href = "/cart"
     }
 
     const AddProductInCompareTablet = () => {
@@ -221,6 +225,26 @@ function ProductPage() {
         }
     };
 
+
+    const renderPrice2 = () => {
+        if (productPage.price !== undefined) {
+            const priceParts = productPage.price.toString().split('.');
+            const integerPart = priceParts[0];
+            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            return (
+                <h1 className="total_price_page_product">
+                    <div className='price_combo_product_page'>
+                        R$ {integerPart}
+                        <sup> .{decimalPart}</sup>
+                    </div>
+                    <sub className='subtext_productPage_combo'>10x sem juros</sub>
+                </h1>
+            );
+        } else {
+            return null; // Handle the case where productPage.price is undefined
+        }
+    };
+
     const renderDesktopView = () => (
         <>
             {!verify() ? <Header /> : <HeaderLogin />}
@@ -244,7 +268,7 @@ function ProductPage() {
                         </div>
                         <div className='buttons_product_page'>
                             <Link to={"/cart"}>
-                                <button className="ui fluid button sell_product_page" onClick={buttonComprar}>
+                                <button className="ui fluid button sell_product_page" onClick={BuyProduct}>
                                     Comprar Agora
                                 </button>
                             </Link>
@@ -273,6 +297,26 @@ function ProductPage() {
                     <ProductTable product={productPage} />
                     <h3 className="ui header optionals_product_page"> Opcionais</h3>
                     <p>{productPage.optional}</p>
+                </div>
+            </div>
+            <div className='div_product_page_recomendation'>
+                <p className="ui blue ribbon label combo_product_page">Frequentemente comprado juntos</p>
+                <div className='container_product_page_recomendation'>
+                    <div className='box_product_page_combo_card'>
+                        <ComboCard />
+                    </div>
+                    <AiOutlinePlus color='var(--blue-primary)' fontSize={50} />
+                    <div className='box_product_page_combo_card'>
+                        <ComboCard />
+                    </div>
+                    <FaEquals color='var(--blue-primary)' fontSize={40} />
+                    <div className='final_price_produc_page_combo'>
+                        <h1 className='total_combo_product_page'>Total do combo</h1>
+                        {renderPrice2()}
+                        <div className='product_page_combo_buy_button'>
+                            <button className="fluid ui button product_page_combo_button" onClick={() => BuyProduct(product)}>Comprar Combo</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='box_product_page_title_similar'>
@@ -319,7 +363,7 @@ function ProductPage() {
                         </div>
                         <div className='buttons_product_page_mobile'>
                             <Link to={"/cart"}>
-                                <button className="ui fluid button sell_product_page_mobile" onClick={buttonComprar}>
+                                <button className="ui fluid button sell_product_page_mobile" onClick={BuyProduct}>
                                     Comprar Agora
                                 </button>
                             </Link>
@@ -432,7 +476,7 @@ function ProductPage() {
                         </div>
                         <div className='buttons_product_page_mobile'>
                             <Link to={"/cart"}>
-                                <button className="ui fluid button sell_product_page_tablet" onClick={buttonComprar}>
+                                <button className="ui fluid button sell_product_page_tablet" onClick={BuyProduct}>
                                     Comprar Agora
                                 </button>
                             </Link>
