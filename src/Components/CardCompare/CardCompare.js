@@ -7,7 +7,6 @@ import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
 
 //Importando os ícones
-import { MdCompareArrows } from 'react-icons/md'
 import motor from '../../assets/img/motor.png'
 import { FaPowerOff } from 'react-icons/fa'
 import { GoAlertFill } from 'react-icons/go'
@@ -17,6 +16,8 @@ import { BiSolidColorFill } from 'react-icons/bi'
 import { BsFillMagnetFill } from 'react-icons/bs'
 
 function CardCompare({ item }, product) {
+
+    //Revisar pois coisas so podem ser apagadas quando estiver acabado
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -88,7 +89,7 @@ function CardCompare({ item }, product) {
         window.location.reload();
     };
 
-
+    //Funções usadas para "fingir" detalhes
     const [randomNumber] = useState(Math.floor(Math.random() * 100));
     const [randomNumber2] = useState(Math.floor(Math.random() * 100));
     const [randomNumber3] = useState(Math.floor(Math.random() * 100));

@@ -10,8 +10,7 @@ import swal from 'sweetalert2';
 import { SaveService  } from '../../Service/SaveService';
 import { CartService } from '../../Service/CartService'
 
-//Importando as imagens
-import motors from "../../assets/img/motores.png"
+
 
 
 
