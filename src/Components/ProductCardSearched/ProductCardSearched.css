@@ -8,18 +8,6 @@
     height: 35rem;
 }
 
-.container_product_card_searched:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
-
-    .container_product_card_searched_action_icon {
-        opacity: 1;
-        transition: 0.3s;
-    }
-
-}
-
 .box_product_card_searched_info_price {
     display: flex;
     flex-direction: column;
@@ -82,18 +70,6 @@
     color: var(--white);
 }
 
-.fluid.ui.button.product_card_searched_button:active{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.ui.icon.button.product_card_searched:active{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.icon {
-    color: var(--white);
-}
-
 .product_card_searched_name{
     color: var(--grey-primary);
     font-size: 24px;
@@ -108,14 +84,7 @@
     white-space: nowrap;
     overflow: hidden;
 }
-
-.circular.ui.icon.button.product_card_searched:hover, .ui.icon.button.product_card_searched:hover, .fluid.ui.button.product_card_searched_button:hover {
-    background-color: var(--grey-quinary);
-    transition: 0.3s;
-}
-
 /* ----------------------------Modelo Tablet---------------------------- */
-
 .container_product_card_searched_action_icon_tablet {
     display: flex;
     padding: 1rem;
@@ -124,7 +93,6 @@
     align-items: flex-end;
     opacity: 1;
 }
-
 .container_product_card_searched_tablet {
     justify-content: space-between;
     display: flex;
@@ -134,9 +102,7 @@
     width: 25rem;
     height: 35rem;
 }
-
 /* ----------------------------Modelo Mobile---------------------------- */
-
 .container_product_card_searched_mobile {
     justify-content: space-between;
     display: flex;
@@ -176,11 +142,6 @@
     color: var(--blue-primary);
 }
 
-.product_card_searched_price_option_mobile {
-    color: var(--grey-primary);
-    font-size: 14px;
-}
-
 .product_card_searched_buy_button_mobile {
     display: flex;
     justify-content: center;
@@ -210,4 +171,31 @@
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     height: 100%;
+}
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
+.container_product_card_searched:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .container_product_card_searched_action_icon {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+}
+
+.fluid.ui.button.product_card_searched_button:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.ui.icon.button.product_card_searched:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.circular.ui.icon.button.product_card_searched:hover, 
+.ui.icon.button.product_card_searched:hover, 
+.fluid.ui.button.product_card_searched_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
 }

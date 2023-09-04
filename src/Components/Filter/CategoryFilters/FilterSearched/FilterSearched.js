@@ -10,6 +10,8 @@ import iconSearch from "../../../../assets/img/Search.png"
 
 function FilterSearched() {
 
+    //deletar
+
     const useToggle = (initialState = false) => {
         const [isOpen, setIsOpen] = useState(initialState);
 

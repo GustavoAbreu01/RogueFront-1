@@ -11,11 +11,6 @@
     border-radius: 10px;
     display: none;
 }
-
-.menu {
-    cursor: pointer;
-}
-
 .menu_icon {
     color: #fff;
     font-size: 3rem;
@@ -112,13 +107,7 @@
     font-weight: 600;
 }
 
-.sub_category:hover {
-    color: var(--blue-primary);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* ----------------mobile version---------------- */
+/* ----------------------------Modelo Mobile ---------------------------- */
 
 .container_modal_menu_content_detail_mobile { 
     z-index: 250;
@@ -155,7 +144,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* ----------------tablet version---------------- */
+/* ----------------------------Modelo Tablet ---------------------------- */
 
 .container_modal_menu_content_detail_tablet { 
     z-index: 250;
@@ -190,4 +179,11 @@
     border-top-right-radius: 10%;
     border-bottom-right-radius: 10%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
+.sub_category:hover {
+    color: var(--blue-primary);
+    cursor: pointer;
+    transition: 0.3s;
 }

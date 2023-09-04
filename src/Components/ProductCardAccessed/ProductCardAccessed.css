@@ -8,18 +8,6 @@
     height: 35rem;
 }
 
-.container_product_card_accessed:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
-
-    .container_product_card_accessed_action_icon {
-        opacity: 1;
-        transition: 0.3s;
-    }
-
-}
-
 .box_product_card_accessed_info_price {
     display: flex;
     flex-direction: column;
@@ -82,15 +70,6 @@
     color: var(--white);
 }
 
-.fluid.ui.button.product_card_accessed_button:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
-}
-
-.ui.icon.button.product_card_accessed:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
 .icon {
     color: var(--white);
 }
@@ -108,13 +87,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-}
-
-.ui.icon.button.product_card_accessed:hover,
-.circular.ui.icon.button.product_card.accessed:hover,
-.fluid.ui.button.product_card_accessed_button:hover {
-    background-color: var(--grey-quinary);
-    transition: 0.3s;
 }
 
 /* ----------------------------Modelo Tablet---------------------------- */
@@ -213,4 +185,32 @@
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     height: 100%;
+}
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
+.container_product_card_accessed:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .container_product_card_accessed_action_icon {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+}
+
+.fluid.ui.button.product_card_accessed_button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.ui.icon.button.product_card_accessed:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.ui.icon.button.product_card_accessed:hover,
+.circular.ui.icon.button.product_card.accessed:hover,
+.fluid.ui.button.product_card_accessed_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
 }

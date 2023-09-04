@@ -8,10 +8,6 @@ import Swal from 'sweetalert2'
 
 //importando service
 import { CartService } from '../../Service/CartService'
-
-//Importando as imagens
-import motor from '../../assets/img/motor.png'
-
 function ProductCardNew({ product }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -201,7 +197,7 @@ function ProductCardNew({ product }) {
           </div>
           <div className='box_product_card_new_info_price'>
             <h3 className='product_card_new_price_mobile'>R$ {product.price}</h3>
-            <p className='product_card_new_price_option_mobile'>Á vista no pix</p>
+            <p className='product_card_new_price_option'>Á vista no pix</p>
           </div>
           <Link to='/cart'>
             <div className='product_card_new_buy_button_mobile'>
@@ -212,7 +208,7 @@ function ProductCardNew({ product }) {
       </div>
     </div>
   )
-
+  
   const getViewToRender = () => {
     if (screenSize.width > 900) {
       return renderDesktopView();

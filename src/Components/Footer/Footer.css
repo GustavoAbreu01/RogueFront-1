@@ -1,9 +1,3 @@
-.divisorFooter {
-    width: 100%;
-    height: 3px;
-    background-color: #0080C5;
-}
-
 .container_footer {
     background: rgb(2, 58, 103);
     background: linear-gradient(0deg, rgba(2, 58, 103, 1) 66%, rgba(0, 128, 197, 1) 100%);
@@ -25,16 +19,63 @@
     margin-top: 5%;
 }
 
-.footer_location_informations h4 {
-    align-items: center;
-}
-
 .location_footer_divisor {
     display: flex;
     justify-content: left;
     width: 80px;
     height: 4px;
     background-color: #2777B7;
+}
+
+.footer_contacts {
+    margin-top: 5%;
+}
+
+.contacts_footer_divisor {
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 4px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #2777B7;
+}
+
+.footer_social {
+    margin-top: 5%;
+}
+
+.social_footer_divisor {
+    display: flex;
+    width: 80px;
+    height: 4px;
+    margin: 0 auto;
+    margin-right: 3%;
+    background-color: #2777B7;
+}
+
+.footer_image_weg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5%;
+    width: 100%;
+}
+
+.container_footer_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(2, 58, 103);
+    background: linear-gradient(180deg, rgba(2, 58, 103, 1) 66%, rgba(0, 87, 157, 1) 100%);
+    color: var(--white);
+    height: 100%;
+}
+/* ----------------------------Editando Componentes Diretamente ---------------------------- */
+/* ------footer_location------ */
+.footer_location_informations h4 {
+    align-items: center;
 }
 
 .footer_location_informations p {
@@ -56,11 +97,7 @@
     text-decoration: none;
     color: white;
 }
-
-.footer_contacts {
-    margin-top: 5%;
-}
-
+/* ------footer_contacts------ */
 .footer_contacts a {
     font-family: 'Inter Tight', sans-serif;
     font-size: 85%;
@@ -80,24 +117,11 @@
     color: #ffffff;
 }
 
-.contacts_footer_divisor {
-    display: flex;
-    justify-content: center;
-    width: 80px;
-    height: 4px;
-    margin: 0 auto;
-    align-items: center;
-    background-color: #2777B7;
-}
-
 .footer_contacts h4 {
     text-align: center;
     align-items: center;
 }
-
-.footer_social {
-    margin-top: 5%;
-}
+/* ------footer_social------ */
 
 .footer_social image {
     width: 20px;
@@ -120,42 +144,4 @@
 
 .footer_social a:active {
     color: #ffffff;
-}
-
-.social_footer_divisor {
-    display: flex;
-    width: 80px;
-    height: 4px;
-    margin: 0 auto;
-    margin-right: 3%;
-    background-color: #2777B7;
-}
-
-.footer_image_weg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2.5%;
-    width: 100%;
-}
-
-.container_footer_mobile {
-    background: rgb(2, 58, 103);
-    background: linear-gradient(180deg, rgba(2, 58, 103, 1) 66%, rgba(0, 128, 197, 1) 100%);
-    border-top: 2px solid #0080C5;
-    height: 100%;
-    width: 100%;
-    padding: 1rem;
-    color: white;
-}
-
-.footer_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background: rgb(2, 58, 103);
-    background: linear-gradient(180deg, rgba(2, 58, 103, 1) 66%, rgba(0, 87, 157, 1) 100%);
-    color: var(--white);
-    height: 100%;
 }

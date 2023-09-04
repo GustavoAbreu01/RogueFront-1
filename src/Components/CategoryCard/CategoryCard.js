@@ -7,12 +7,8 @@ import 'animate.css';
 import { Link } from "react-router-dom";
 import swal from 'sweetalert2';
 
-import { SaveService  } from '../../Service/SaveService';
+//importando as Services
 import { CartService } from '../../Service/CartService'
-
-
-
-
 
 function CategoryCard({ product }) {
 
@@ -197,7 +193,7 @@ function CategoryCard({ product }) {
         if (product.price !== undefined) {
             const priceParts = product.price.toString().split('.');
             const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            const decimalPart = priceParts[1] || '00'; 
             return (
                 <h2 className="category_card_product_price">
                     R$ {integerPart}
@@ -206,7 +202,7 @@ function CategoryCard({ product }) {
                 </h2>
             );
         } else {
-            return null; // Handle the case where productPage.price is undefined
+            return null; 
         }
     };
 

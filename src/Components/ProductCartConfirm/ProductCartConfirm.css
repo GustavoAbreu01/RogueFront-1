@@ -15,7 +15,7 @@
     padding-left: 1rem;
 }
 
-.product_cart_confirm_qauntity {
+.product_cart_confirm_quantity {
     align-items: end;
     justify-content: end;
     display: flex;
@@ -47,9 +47,7 @@
     padding-top: 3rem;
     padding-left: 1rem;
 }
-
-/* -------------version Mobile------------- */
-
+/* ----------------------------Modelo Mobile ---------------------------- */
 .product_cart_confirm_item_content_mobile {
     background-color: var(--white);
     width: 100%;

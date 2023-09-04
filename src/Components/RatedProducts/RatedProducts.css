@@ -36,14 +36,9 @@
     background-color: transparent;
     padding-left: 9rem;
 }
-
-
-/* MOBILE */
-.container_rated_product_mobile {
-    margin-bottom: 2rem;
-}
-.rated_product_description_mobile {
-    color: var(--grey-primary);
+/* ----------------------------Modelo Mobile ---------------------------- */
+.image_rated_product_mobile{
+   margin: 0.6rem;
 }
 
 .rated_product_name_mobile {
@@ -55,15 +50,6 @@
     flex-direction: column;
 }
 
-.box_two_rated_product_mobile {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-}
-/* .container_rated_product_mobile{
-    width: 20rem;
-    
-} */
 .box_rated_product_mobile {
     margin-bottom: 2rem;
     display: flex;
@@ -74,6 +60,7 @@
     background-color: var(--white);
     width: 90%;
     display: flex;
+    border-radius:1rem ;
     border: solid 0.05px var( --grey-senary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -87,18 +74,13 @@
     padding: 0;
     background-color: transparent;
 }
-
-
-/* TABLET */
-
+.ui.rating.rated_product_mobile{
+    margin-bottom: 0.5rem;
+}
+/* ----------------------------Modelo Tablet ---------------------------- */
 .rated_product_description_tablet {
     color: var(--grey-primary);
     padding-left: 1rem;
-}
-
-.rated_product_name_tablet {
-    padding-left: 1rem;
-    color: var(--blue-primary);
 }
 
 .box_rated_product_tablet {
@@ -107,20 +89,10 @@
     display: flex;
     align-items: center;
     margin: auto 0;
-
     padding: 2rem;
     border-radius:1rem ;
     border: solid 0.05px var( --grey-senary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.container_rated_product_tablet {
-    margin-bottom: 2rem;
-}
-
-.rated_product_buttons_tablet {
-    position: relative;
-    right: 3%;
 }
 
 .ui.icon.button.rated_product_tablet {

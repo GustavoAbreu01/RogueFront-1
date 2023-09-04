@@ -153,7 +153,7 @@ function SaveCard({ item }) {
                 </div>
                 <div className='save_card_buy_button_mobile'>
                     <Link to='/cart'>
-                        <button className="ui fluid blue button save_card_mobile"  onClick={() => BuyProduct(item)}>Comprar</button>
+                        <button className="ui fluid blue button save_card_mobile" onClick={() => BuyProduct(item)}>Comprar</button>
                     </Link>
                 </div>
             </div>

@@ -41,10 +41,6 @@
     font-size: 1.7rem;
 }
 
-.ui.button.active.product_cart:active{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
-}
-
 .product_cart_complement {
     color: var(--grey-primary);
     padding-left: 1rem;
@@ -61,8 +57,28 @@
 
 }
 
-/* -------------version Tablet------------- */
+.product_card_cart_info_up {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
+.product_cart_item_price {
+    padding-left: 1rem;
+    color: var(--blue-primary);
+    font-size: 25px;
+}
+
+.product_cart_informations {
+    padding-left: 0;
+}
+
+.trash.alternate.icon.product_cart {
+    color: var(--blue-primary);
+}
+/* ----------------------------Modelo Tablet ---------------------------- */
 .product_cart_item_price_tablet {
     color: var(--blue-primary);
 }
@@ -71,10 +87,7 @@
     font-size: 16px;
     color: var(--grey-primary);
 }
-
-
-/* -------------version Mobile------------- */
-
+/* ----------------------------Modelo Mobile ---------------------------- */
 .product_cart_card_mobile {
     background-color: var(--white);
     width: 100%;
@@ -83,14 +96,6 @@
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
     border-bottom: solid 2px var(--grey-secondary);
-}
-
-.product_card_cart_info_up {
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 
 .product_cart_buttons_mobile {
@@ -111,21 +116,12 @@
     color: var(--grey-primary);
 }
 
-.product_cart_item_price {
-    padding-left: 1rem;
-    color: var(--blue-primary);
-    font-size: 25px;
-}
-
-.product_cart_informations {
-    padding-left: 0;
-}
-
 .ui.icon.button.product_cart_mobile {
     color: var(--white);
     margin-left: 1rem;
 }
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
 
-.trash.alternate.icon.product_cart {
-    color: var(--blue-primary);
+.ui.button.active.product_cart:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
 }

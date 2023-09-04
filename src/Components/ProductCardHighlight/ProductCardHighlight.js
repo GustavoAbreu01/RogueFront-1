@@ -5,9 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-//Importando as imagens
-import motor from '../../assets/img/motor.png'
-
 //importando service
 import { CartService } from '../../Service/CartService'
 
@@ -199,7 +196,7 @@ function ProductCardHighlight({ product }) {
           </div>
           <div className='box_product_card_hightlight_info_price'>
             <h3 className='product_card_hightlight_price_mobile'>R$ {product.price}</h3>
-            <p className='product_card_hightlight_price_option_mobile'>Á vista no pix</p>
+            <p className='product_card_hightlight_price_option'>Á vista no pix</p>
           </div>
           <Link to='/cart'>
             <div className='product_card_hightlight_buy_button_mobile'>

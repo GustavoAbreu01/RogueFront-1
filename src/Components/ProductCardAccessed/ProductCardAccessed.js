@@ -1,6 +1,5 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 
 import './ProductCardAccessed.css'
 
@@ -8,11 +7,9 @@ import './ProductCardAccessed.css'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-import SaveService from '../../Service/SaveService'
-
 //Importando as imagens
-import motor from '../../assets/img/motor.png'
 import { CartService } from '../../Service/CartService'
+import SaveService from '../../Service/SaveService'
 
 function ProductCardAccessed({ product }) {
 

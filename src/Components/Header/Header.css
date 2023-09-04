@@ -23,6 +23,12 @@
     margin: 1.5rem;
 }
 
+.divisor_header {
+    background-color: white;
+    width: 1px;
+    height: 20px;
+}
+
 .opc_user_header {
     display: flex;
     align-items: center;
@@ -35,7 +41,6 @@
     text-decoration: none;
     font-size: 15px;
 }
-
 .opc_register_header {
     cursor: pointer;
     color: #EFEFEF;
@@ -47,28 +52,11 @@
     color: #EFEFEF;
 }
 
-.opc_login_header:hover {
-    color: #0080C5;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.opc_register_header:hover {
-    color: #0080C5;
-    transition: 0.3s;
-}
-
 .cart_icon_header {
     color: white;
     text-decoration: none;
     font-size: 35px;
 }
-
-.cart_icon_header:hover {
-    color: #0080C5;
-    transition: 0.3s;
-}
-
 .nav_bar_header {
     position: sticky;
     display: flex;
@@ -94,17 +82,6 @@
     color: white;
     text-decoration: none;
 
-}
-
-.nav_bar_header a:hover {
-    color: #90C1E3;
-    text-decoration: none;
-}
-
-.divisor_header {
-    background-color: white;
-    width: 1px;
-    height: 20px;
 }
 
 .scrolled_desktop {
@@ -133,9 +110,7 @@
     }
 
 }
-
 /* ----------------------------Modelo Tablet---------------------------- */
-
 .header_tablet {
     display: flex;
     justify-content: space-between;
@@ -145,9 +120,7 @@
     height: 70px;
     transition: 0.3s;
 }
-
 /* ----------------------------Modelo Mobile---------------------------- */
-
 .header_mobile {
     display: flex;
     justify-content: space-between;
@@ -179,87 +152,10 @@
     justify-content: center;
 }
 
-.icons_header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1.5rem;
-}
-
-.opc_user_header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.account {
-    margin-left: -100px;
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.opc_register_header {
-    cursor: pointer;
-    color: #EFEFEF;
-    margin-left: 2rem;
-}
-
-.opc_login_header {
-    cursor: pointer;
-    color: #EFEFEF;
-}
-
-.opc_login_header:hover {
-    color: #0080C5;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.opc_register_header:hover {
-    color: #0080C5;
-    transition: 0.3s;
-}
-
 .cart_icon_header_mobile {
     color: white;
     text-decoration: none;
     font-size: 35px;
-}
-
-.cart_icon_header_mobile:hover {
-    color: #0080C5;
-    transition: 0.3s;
-}
-
-.nav_bar_header {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    background-color: #2777B7;
-    height: 49px;
-    width: 100%;
-    margin: 0 auto;
-    z-index: 1;
-}
-
-.nav_bar_header a {
-    color: white;
-    text-decoration: none;
-
-}
-
-.nav_bar_header a:hover {
-    color: #90C1E3;
-    text-decoration: none;
-}
-
-.divisor_header {
-    background-color: white;
-    width: 1px;
-    height: 20px;
 }
 
 .scrolled_mobile {
@@ -287,4 +183,32 @@
         opacity: 0;
     }
 
+}
+/* ----------------------------Modelo Hovers---------------------------- */
+.opc_login_header:hover {
+    color: #0080C5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opc_register_header:hover {
+    color: #0080C5;
+    transition: 0.3s;
+}
+
+
+.cart_icon_header_mobile:hover {
+    color: #0080C5;
+    transition: 0.3s;
+}
+
+
+.nav_bar_header a:hover {
+    color: #90C1E3;
+    text-decoration: none;
+}
+
+.cart_icon_header:hover {
+    color: #0080C5;
+    transition: 0.3s;
 }

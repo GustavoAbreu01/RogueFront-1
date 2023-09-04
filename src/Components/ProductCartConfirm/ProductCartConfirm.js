@@ -5,9 +5,6 @@ import './ProductCartConfirm.css'
 //importando as frameworks
 import { Link } from "react-router-dom";
 
-//Importando as imagens
-import motors from "../../assets/img/motores.png"
-
 function ProductCartConfirm({ item }) {
 
   const [quantidade, setQuantidade] = React.useState(1);
@@ -62,7 +59,7 @@ function ProductCartConfirm({ item }) {
                 {renderPrice()}
               </Link>
             </div>
-            <div className='product_cart_confirm_qauntity'>
+            <div className='product_cart_confirm_quantity'>
               <div className="ui small buttons product_cart_confirm">
                 <p className='product_cart_confirm'>Quantidade: {item.quantity}</p>
               </div>
@@ -87,10 +84,10 @@ function ProductCartConfirm({ item }) {
               <Link to="/product">
                 <h2 className="product_cart_confirm_product_name">{item.product.name}</h2>
                 <p className="product_cart_confirm_product_description">{item.product.description}</p>
-                <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price'>R${}<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext'>10x Sem juros</sub></h2>
+                {renderPrice()}
               </Link>
             </div>
-            <div className='product_cart_confirm_qauntity'>
+            <div className='product_cart_confirm_quantity'>
               <div className="ui small buttons product_cart_confirm">
                 <p className='product_cart_confirm'>Quantidade: {}</p>
               </div>

@@ -160,9 +160,6 @@ function Orders() {
           <div className='box_order_icon'>
             <FaAngleDown color='var(--blue-primary)' size={30} />
           </div>
-
-
-
         </div>
         {isOpen && (
           <div className="order_dropdown_mobile" data-aos="fade-down">

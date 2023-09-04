@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 //importando as imagens
 import motors from "../../assets/img/motores.png"
 
-function Orders() {
+function RatedProducts() {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,7 +28,6 @@ function Orders() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
 
   const renderDesktopView = () => (
     <>
@@ -57,41 +56,39 @@ function Orders() {
 
   const renderMobileView = () => (
     <>
-
       <Link to='/product'>
         <div className='box_rated_product_mobile'>
-          <div id="imgItens order">
-            <img src={motors} width="100" height="" />
+          <div className='box_image_rated_product_mobile' id="imgItens order">
+            <img className='image_rated_product_mobile'  src={motors} width="80" height="" />
           </div>
           <div className="rated_product_product_info_mobile">
             <h2 className="rated_product_name_mobile">Motor W22</h2>
             <div className="rated_product_buttons_mobile">
               <button className="ui icon button rated_product_mobile">
-                <Rating className="ui rating rated_product_mobile" maxRating={5} style={{ marginTop: '1rem' }} />
+                <Rating className="ui rating rated_product_mobile" maxRating={5} />
               </button>
             </div>
           </div>
         </div>
       </Link>
-
     </>
   )
 
   const renderTabletView = () => (
     <>
-      <div className="container_rated_product_tablet">
+      <div className="container_rated_product">
         <Link to='/product'>
           <div className='box_rated_product_tablet'>
             <div id="imgItens order">
               <img src={motors} width="125" height="" />
             </div>
             <div className="rated_product_product_info_tablet">
-              <h2 className="rated_product_name_tablet">Motor W22</h2>
+              <h2 className="rated_product_name">Motor W22</h2>
               <p className="rated_product_description_tablet">
                 Motor monofásico de carcaça de chapa, para uso geral desenvolvido para atender as mais variadas aplicações com o máximo desempenho e economia.
               </p>
             </div>
-            <div className="rated_product_buttons_tablet">
+            <div className="rated_product_buttons">
               <button className="ui icon button rated_product_tablet">
                 <Rating className="ui rating rated_product_tablet" maxRating={5} style={{ marginTop: '1rem' }} />
               </button>
@@ -112,4 +109,4 @@ function Orders() {
   };
   return <>{getViewToRender()}</>;
 };
-export default Orders
+export default RatedProducts

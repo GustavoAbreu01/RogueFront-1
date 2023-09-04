@@ -4,7 +4,6 @@ import './Footer.css';
 
 //Importando as imagens
 import img from '../../assets/img/footer.png';
-import imageFooter from '../../assets/img/footer-removebg-preview.png';
 import logo from '../../assets/img/logo-weg.png';
 
 const Footer = () => {
@@ -71,7 +70,7 @@ const Footer = () => {
   )
 
   const renderMobileView = () => (
-    <><div className='footer_container'>
+    <><div className='container_footer_mobile'>
       <footer className="text-center ">
         <div className="container p-4">
           <section className="">

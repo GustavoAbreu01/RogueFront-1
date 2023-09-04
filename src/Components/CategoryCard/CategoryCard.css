@@ -6,10 +6,6 @@
     align-items: center;
 }
 
-a:link {
-    text-decoration: none;
-}
-
 .category_card_content {
     display: flex;
     align-items: center;
@@ -49,16 +45,6 @@ a:link {
     padding-left: 2rem;
 }
 
-.ui.segment.itens.container_category_card:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-
-    .iconProductAction.category_card {
-        opacity: 1;
-        transition: 0.3s;
-    }
-}
-
 .category_card_product_subtext {
     font-size: 13px;
     color: var(--grey-primary);
@@ -81,30 +67,12 @@ a:link {
     font-weight: bold;
 }
 
-.ui.fluid.blue.button.category_card:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
-}
-
-.ui.icon.button.category_card_compare:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
 
 .ui.icon.button.category_card_compare {
     background-color: var(--blue-quaternary);
 }
 
-.ui.blue.icon.button.category_card:hover, .ui.icon.button.category_card_compare:hover {
-    transition: 0.3s;
-    background-color: var(--grey-quinary);
-}
-
-.ui.fluid.blue.button.category_card:hover{
-    transition: 0.3s;
-    background-color: var(--grey-quinary);
-}
-
-/* MOBILE */
+/* ----------------------------Modelo Mobile---------------------------- */
 
 .ui.segment.itens.container_category_card_mobile {
     border-radius: 1rem;
@@ -113,10 +81,6 @@ a:link {
     height: 11rem;
     display: flex;
     align-items: center;
-}
-
-a:link {
-    text-decoration: none;
 }
 
 .category_card_content_mobile {
@@ -148,34 +112,6 @@ a:link {
     color: var(--blue-primary);
 }
 
-.category_card_product_description_mobile {
-    font-size: 16px;
-    padding-left: 2rem;
-    color: var(--grey-primary);
-}
-
-.category_card_product_name_mobile {
-    font-size: 20px;
-    color: var(--black);
-    padding-left: 2rem;
-}
-
-.ui.segment.itens.container_category_card_mobile:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-
-    .iconProductAction.category_card {
-        opacity: 1;
-        transition: 0.3s;
-    }
-}
-
-.category_card_product_subtext_mobile {
-    font-size: 13px;
-    color: var(--grey-primary);
-    top: 0px;
-}
-
 .category_card_buy_button_mobile {
     position: absolute;
     height: 2.5rem;
@@ -192,6 +128,56 @@ a:link {
     font-weight: bold;
 }
 
+.ui.icon.button.category_card_compare_mobile {
+    background-color: var(--blue-quaternary);
+}
+
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
+
+a:link {
+    text-decoration: none;
+}
+
+.ui.segment.itens.container_category_card:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+
+    .iconProductAction.category_card {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+.ui.fluid.blue.button.category_card:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.ui.icon.button.category_card_compare:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.ui.blue.icon.button.category_card:hover, .ui.icon.button.category_card_compare:hover {
+    transition: 0.3s;
+    background-color: var(--grey-quinary);
+}
+
+.ui.fluid.blue.button.category_card:hover{
+    transition: 0.3s;
+    background-color: var(--grey-quinary);
+}
+/* ----------------------------Modelo Hovers Mobile ---------------------------- */
+.ui.segment.itens.container_category_card_mobile:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+
+    .iconProductAction.category_card {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
 .ui.fluid.blue.button.category_card_mobile:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
@@ -201,16 +187,3 @@ a:link {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.ui.icon.button.category_card_compare_mobile {
-    background-color: var(--blue-quaternary);
-}
-
-.ui.blue.icon.button.category_card_mobile:hover, .ui.icon.button.category_card_compare_mobile:hover {
-    transition: 0.3s;
-    background-color: var(--grey-quinary);
-}
-
-.ui.fluid.blue.button.category_card:hover{
-    transition: 0.3s;
-    background-color: var(--grey-quinary);
-}

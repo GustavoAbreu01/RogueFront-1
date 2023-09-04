@@ -8,18 +8,6 @@
     height: 35rem;
 }
 
-.container_product_card_new:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
-
-    .container_product_card_new_action_icon {
-        opacity: 1;
-        transition: 0.3s;
-    }
-
-}
-
 .box_product_card_new_info_price {
     display: flex;
     flex-direction: column;
@@ -74,24 +62,11 @@
     align-items: center;
     padding: 1rem;
     border: none;
-
 }
 
 .fluid.ui.button.product_card_new_button {
     font-size: 16px !important;
     background-color: var(--blue-primary);
-    color: var(--white);
-}
-
-.fluid.ui.button.product_card_new_button:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.ui.icon.button.product_card_new:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.icon {
     color: var(--white);
 }
 
@@ -109,16 +84,7 @@
     white-space: nowrap;
     overflow: hidden;
 }
-
-.circular.ui.icon.button.product_card_new:hover,
-.ui.icon.button.product_card_new:hover,
-.fluid.ui.button.product_card_new_button:hover {
-    background-color: var(--grey-quinary);
-    transition: 0.3s;
-}
-
 /* ----------------------------Modelo Tablet---------------------------- */
-
 .container_product_card_new_action_icon_tablet {
     display: flex;
     padding: 1rem;
@@ -137,9 +103,7 @@
     width: 25rem;
     height: 35rem;
 }
-
 /* ----------------------------Modelo Mobile---------------------------- */
-
 .container_product_card_new_mobile {
     justify-content: space-between;
     display: flex;
@@ -179,11 +143,6 @@
     color: var(--blue-primary);
 }
 
-.product_card_new_price_option_mobile {
-    color: var(--grey-primary);
-    font-size: 14px;
-}
-
 .product_card_new_buy_button_mobile {
     display: flex;
     justify-content: center;
@@ -216,4 +175,30 @@
     white-space: nowrap;
     overflow: hidden;
     height: 100%;
+}
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
+.container_product_card_new:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .container_product_card_new_action_icon {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+.fluid.ui.button.product_card_new_button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.ui.icon.button.product_card_new:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.circular.ui.icon.button.product_card_new:hover,
+.ui.icon.button.product_card_new:hover,
+.fluid.ui.button.product_card_new_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
 }

@@ -6,9 +6,6 @@ import './ProductCardSmaller.css'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-//Importando as imagens
-import motor from '../../assets/img/motor.png'
-
 //importando service
 import {CartService} from '../../Service/CartService'
 
@@ -126,7 +123,6 @@ function SmallProductCard({product}) {
         }
         
     }
-
     
     const AddProductInCompareTablet = () => {
         const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
@@ -184,26 +180,6 @@ function SmallProductCard({product}) {
         
     }
 
-    const renderPrice = () => {
-        if (product.price !== undefined) {
-            const priceParts = product.price.toString().split('.');
-            const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
-            return (
-                <h2 className="category_card_product_price">
-                    R$ {integerPart}
-                    <sup> .{decimalPart}</sup>
-                    <sub className='subtext_productPage'>10x sem juros</sub>
-                </h2>
-            );
-        } else {
-            return null; // Handle the case where productPage.price is undefined
-        }
-    };
-
-
-
-
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
@@ -223,7 +199,6 @@ function SmallProductCard({product}) {
         CartService.AddProductInCart(cartId, product.code);
         window.location.href = "/cart"
       }
-
 
     const renderDesktopView = () => (
         <div className="product_acessed" key={product.code}>

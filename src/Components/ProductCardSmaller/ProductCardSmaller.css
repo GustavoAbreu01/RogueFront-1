@@ -9,35 +9,12 @@
     height: 23rem;
 }
 
-.product_card_smaller_compare_button {
-    width: 10%;
-    background-color: black;
-    margin: 1rem;
-}
-
-.ui.icon.button.product.card.smaller.compare {
-    background-color: var(--blue-quaternary) !important;
-}
-
 .ui.icon.button.product_card_smaller_compare {
     margin-left: 5%;
     opacity: 1;
     visibility: visible;
     background-color: var(--blue-quaternary);
 }
-
-.container_product_card_smaller:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
-
-    .ui.icon.button.product_card_smaller {
-        opacity: 1;
-        transition: 0.3s;
-    }
-
-}
-
 
 .box_product_card_smaller_price {
     display: flex;
@@ -69,7 +46,6 @@
     font-size: 18px;
 }
 
-
 .container_product_card_smaller_action_icon {
     margin-top: 3%;
     display: flex;
@@ -80,6 +56,7 @@
     align-items: end;
     opacity: 1;
 }
+
 .box_product_card_smaller_image {
     position: relative;
     top: 0.1rem;
@@ -103,10 +80,55 @@
     background-color: var(--blue-secundary);
 }
 
-
-
 .ui.fluid.button.product_card_smaller {
     background-color: var(--blue-secundary);
+}
+
+.product_card_smaller_price_info {
+    font-size: 13px;
+    color: var(--grey-primary);
+}
+
+.product_card_small_button_compare {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+/* ----------------------------Modelo Mobile ---------------------------- */
+.small.ui.button.buy_product_card_smaller_mobile {
+    width: 100% !important;
+}
+
+.container_product_card_smaller_mobile_action_icon {
+    margin-top: 3%;
+    display: flex;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    gap: 0.5rem;
+    justify-content: end;
+    align-items: end;
+    opacity: 1;
+}
+
+.container_product_card_smaller_mobile {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    width: 100%;
+}
+/* ----------------------------Modelo Hovers & Extras ---------------------------- */
+.container_product_card_smaller:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    transition: 0.3s;
+    cursor: pointer;
+
+    .ui.icon.button.product_card_smaller {
+        opacity: 1;
+        transition: 0.3s;
+    }
 }
 
 .ui.fluid.button.product_card_smaller:active, .ui.icon.button.product_card_smaller_compare:active, .ui.icon.button.product_card_smaller:active {
@@ -123,68 +145,8 @@
     background-color: var(--grey-quinary);
 }
 
-/* 
-.ui.fluid.button.product_card_smaller:active {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
-} */
-
-
 .fluid.ui.button.product_card_smaller:hover {
     transition: 0.3s;
     background-color: var(--grey-quinary);
     color: var(--white);
-}
-
-.product_card_smaller_price_info {
-    font-size: 13px;
-    color: var(--grey-primary);
-}
-
-.container_product_smaller_buttons_div {
-    height: 1rem;
-}
-
-
-.product_card_small_button_compare {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-/* //MOBILE// */
-
-.small.ui.button.buy_product_card_smaller_mobile {
-    width: 100% !important;
-}
-
-.ui.icon.button.product_card_smaller_mobile:active {
-    opacity: 0;
-    background-color: var(--blue-secundary);
-}
-
-.container_product_card_smaller_mobile_action_icon {
-    margin-top: 3%;
-    display: flex;
-    padding: 0.5rem;
-    padding-bottom: 0;
-    gap: 0.5rem;
-    justify-content: end;
-    align-items: end;
-    opacity: 1;
-}
-.container_product_card_smaller_mobile:active {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.container_product_card_smaller_mobile {
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--white);
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 10px;
-    width: 100%;
 }
