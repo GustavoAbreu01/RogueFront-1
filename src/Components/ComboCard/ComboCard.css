@@ -4,10 +4,12 @@
 }
 
 .ui.header.combo_card {
+    margin: 0.5rem;
     font-size: 17px;
 }
 
 .div_combo_card {
+    margin: 2rem;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
