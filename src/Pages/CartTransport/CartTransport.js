@@ -317,9 +317,9 @@ function CartTransport() {
           </div>
         </div>
       </div>
-      <div className='container_cart_transport_tablet'>
+      <div className='container_cart_transport_mobile'>
         <div className='box_cart_product_detail_transport_tablet'>
-          <div className='box_cart_product_transport_tablet'>
+          <div className='box_cart_product_transport_mobile'>
             <div className='cart_transport_title'>
               <h5 className='cart_transport_title_text'>Verificar Transporte do Pedido</h5>
             </div>

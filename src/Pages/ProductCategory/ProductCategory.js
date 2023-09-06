@@ -266,7 +266,7 @@ function ProductCategory() {
       </div>
       <div className='box_pagination_config_mobile'>
         <div className='container_pagination_config_mobile'>
-          <div className='container_pagination_mobile'>
+          <div className='container_pagination'>
             <div className='pagination_options_mobile'>
               <div className="field pagination_mobile">
                 <Dropdown
@@ -305,8 +305,8 @@ function ProductCategory() {
           </div>
 
         </div>
-        <div className='text_pagination_totally_mobile'>
-          <p className='text_pagination_totally_mobile'>Produtos Totais: <b>850</b></p>
+        <div className='text_pagination_totally'>
+          <p className='text_pagination_totally'>Produtos Totais: <b>850</b></p>
         </div>
       </div>
       <div className='container_category_page_layout_mobile'>
@@ -316,7 +316,7 @@ function ProductCategory() {
           </div>
           {isGrid ? (
             <div className="container_category_bar_mobile">
-              <div className="box_category_bar_mobile">
+              <div className="box_category_bar">
                 {products.map((product) => (
                   <div className="category_itens">
                     <CategoryCard key={product.id} product={product} />

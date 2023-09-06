@@ -421,7 +421,7 @@ function EditProfile() {
       <WeggnerModal />
       <div className="container_edit_profile_mobile">
         <div className="box_settings_bar_edit_mobile">
-          <div className="settings_bar_edit_profile_mobile">
+          <div className="settings_bar_edit_profile">
             <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
               <CgProfile className="edit_profile_mobile" />
             </div>
@@ -471,7 +471,7 @@ function EditProfile() {
               </div>
               <div className="buttons_profile_edit">
                 {!editMode ? (
-                  <div className='edit_profile_Button_mobile'>
+                  <div className='edit_profile_Button'>
                     <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
                   </div>
                 ) : (
@@ -489,11 +489,11 @@ function EditProfile() {
                 )}
               </div>
             </form>
-            <div className='container_information_profile_edit_mobile'>
+            <div className='container_information_profile_edit'>
               {editMode ? (
-                <CiSquareAlert className='icon_information_profile_alert_mobile' />
+                <CiSquareAlert className='icon_information_profile_alert' />
               ) : (
-                <CiSquareAlert className='ico_information_profile_mobile' />
+                <CiSquareAlert className='ico_information_profile' />
               )}
               <p>
                 Para garantir a precisão e integridade das informações,
@@ -610,7 +610,7 @@ function EditProfile() {
                 </div>
                 <div className="buttons_profile_edit">
                   {!editMode ? (
-                    <div className='edit_profile_Button_mobile'>
+                    <div className='edit_profile_Button'>
                       <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
                     </div>
                   ) : (
@@ -628,11 +628,11 @@ function EditProfile() {
                   )}
                 </div>
               </form>
-              <div className='container_information_profile_edit_mobile'>
+              <div className='container_information_profile_edit'>
                 {editMode ? (
-                  <CiSquareAlert className='icon_information_profile_alert_mobile' />
+                  <CiSquareAlert className='icon_information_profile_alert' />
                 ) : (
-                  <CiSquareAlert className='ico_information_profile_mobile' />
+                  <CiSquareAlert className='ico_information_profile' />
                 )}
                 <p>
                   Para garantir a precisão e integridade das informações,
@@ -775,7 +775,7 @@ function EditProfile() {
       <WeggnerModal />
       <div className="container_edit_profile_mobile">
         <div className="box_settings_bar_edit_mobile">
-          <div className="settings_bar_edit_profile_mobile">
+          <div className="settings_bar_edit_profile">
             <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
               <CgProfile className="edit_profile_mobile" />
             </div>
@@ -825,7 +825,7 @@ function EditProfile() {
               </div>
               <div className="buttons_profile_edit">
                 {!editMode ? (
-                  <div className='edit_profile_Button_mobile'>
+                  <div className='edit_profile_Button'>
                     <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
                   </div>
                 ) : (
@@ -843,11 +843,11 @@ function EditProfile() {
                 )}
               </div>
             </form>
-            <div className='container_information_profile_edit_mobile'>
+            <div className='container_information_profile_edit'>
               {editMode ? (
-                <CiSquareAlert className='icon_information_profile_alert_mobile' />
+                <CiSquareAlert className='icon_information_profile_alert' />
               ) : (
-                <CiSquareAlert className='ico_information_profile_mobile' />
+                <CiSquareAlert className='ico_information_profile' />
               )}
               <p>
                 Para garantir a precisão e integridade das informações,
@@ -964,7 +964,7 @@ function EditProfile() {
                 </div>
                 <div className="buttons_profile_edit">
                   {!editMode ? (
-                    <div className='edit_profile_Button_mobile'>
+                    <div className='edit_profile_Button'>
                       <button onClick={changeInfo} className="fluid ui button edit">Editar</button>
                     </div>
                   ) : (
@@ -982,11 +982,11 @@ function EditProfile() {
                   )}
                 </div>
               </form>
-              <div className='container_information_profile_edit_mobile'>
+              <div className='container_information_profile_edit'>
                 {editMode ? (
-                  <CiSquareAlert className='icon_information_profile_alert_mobile' />
+                  <CiSquareAlert className='icon_information_profile_alert' />
                 ) : (
-                  <CiSquareAlert className='ico_information_profile_mobile' />
+                  <CiSquareAlert className='ico_information_profile' />
                 )}
                 <p>
                   Para garantir a precisão e integridade das informações,

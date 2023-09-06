@@ -72,8 +72,6 @@ function ProfilePage() {
   const getViewToRender = () => {
     if (screenSize.width > 900) {
       return renderDesktopView();
-      // } else if (screenSize.width < 900 && screenSize.width > 500) {
-      //   return renderTabletView();
     } else {
       return renderMobileView();
     }

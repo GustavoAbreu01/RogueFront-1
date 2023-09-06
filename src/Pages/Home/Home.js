@@ -217,7 +217,7 @@ function Home() {
           </div>
         </div>
 
-        <div className='home_highlights' >
+        <div className='home_titles' >
           <div className='home_highlights_title'>
             <FaStar color='var(--white)' size={40} />
             <h1 className='home_highlights_title_text' >Destaques da semana</h1>
@@ -273,7 +273,7 @@ function Home() {
           </div>
         </div>
 
-        <div className='home_searched' >
+        <div className='home_titles' >
           <div className='home_searched_title'>
             <div className='home_searched_aling'>
               <h1 className='home_searched_title_text' >Mais procurados</h1>
@@ -320,7 +320,7 @@ function Home() {
           </div>
         </div>
 
-        <div className='home_highlights' >
+        <div className='home_titles' >
           <div className='home_highlights_title'>
             <MdOutlineNewReleases color='var(--white)' size={40} />
             <h1 className='home_highlights_title_text' >Novidades</h1>
@@ -391,14 +391,14 @@ function Home() {
         <div>
           <div className='home_accessed_tablet'>
             <BiLineChart color='var(--blue-primary)' size={40} />
-            <h1 className='home_accessed_title_tablet' >Produtos mais acessados</h1>
+            <h1 className='home_accessed_title' >Produtos mais acessados</h1>
           </div>
           <div className='home_slider_product_accessed_tablet'>
             <ProductCarousel />
           </div>
         </div>
 
-        <div className='home_highlights_tablet' >
+        <div className='home_titles_mobile' >
           <div className='home_highlights_title_tablet'>
             <FaStar color='var(--white)' size={40} />
             <h1 className='home_highlights_title_text_tablet' >Destaques da semana</h1>
@@ -412,7 +412,7 @@ function Home() {
           <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementThree} />
         </div>
 
-        <div className='home_searched_tablet' >
+        <div className='home_titles_mobile' >
           <div className='home_searched_title'>
             <div className='home_searched_aling_tablet'>
               <h1 className='home_searched_title_text_tablet' >Mais procurados</h1>
@@ -428,7 +428,7 @@ function Home() {
           <img className='home_announcements_banner_products_tablet' src={BannerAnnouncementFour} />
         </div>
 
-        <div className='home_highlights_tablet' >
+        <div className='home_titles_mobile' >
           <div className='home_highlights_title_tablet'>
             <MdOutlineNewReleases color='var(--white)' size={40} />
             <h1 className='home_highlights_title_text_tablet' >Novidades</h1>
@@ -505,7 +505,7 @@ function Home() {
           </div>
         </div>
 
-        <div className='home_highlights_mobile' >
+        <div className='home_titles_mobile' >
           <div className='home_highlights_title_mobile'>
             <FaStar color='var(--white)' size={30} />
             <h1 className='home_highlights_title_text_mobile' >Destaques da semana</h1>
@@ -519,7 +519,7 @@ function Home() {
           <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementThree} />
         </div>
 
-        <div className='home_searched_mobile' >
+        <div className='home_titles_mobile' >
           <div className='home_searched_title'>
             <div className='home_searched_aling_mobile'>
               <h1 className='home_searched_title_text_mobile' >Mais procurados</h1>
@@ -535,7 +535,7 @@ function Home() {
           <img className='home_announcements_banner_products_mobile' src={BannerAnnouncementFour} />
         </div>
 
-        <div className='home_highlights_mobile' >
+        <div className='home_titles_mobile' >
           <div className='home_highlights_title_mobile'>
             <MdOutlineNewReleases color='var(--white)' size={40} />
             <h1 className='home_highlights_title_text_mobile' >Novidades</h1>

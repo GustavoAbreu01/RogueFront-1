@@ -6,11 +6,8 @@ import './SaveCard.css'
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
-//importando as imagens
-import motors from "../../assets/img/motores.png"
-
+//importando as services
 import { CartService } from '../../Service/CartService'
-
 
 function SaveCard({ item }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -62,7 +59,6 @@ function SaveCard({ item }) {
         if (index !== -1) {
             savedProducts.splice(index, 1);
             localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
-            // You might also want to update the component state to reflect the change
         }
         window.location.reload();
     };
@@ -78,7 +74,7 @@ function SaveCard({ item }) {
         if (item.price !== undefined) {
             const priceParts = item.price.toString().split('.');
             const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            const decimalPart = priceParts[1] || '00'; 
             return (
                 <h1 className="save_card_product_price">
                     R$ {integerPart}
@@ -87,7 +83,7 @@ function SaveCard({ item }) {
                 </h1>
             );
         } else {
-            return null; // Handle the case where productPage.price is undefined
+            return null; 
         }
     };
 
@@ -162,8 +158,6 @@ function SaveCard({ item }) {
     const getViewToRender = () => {
         if (screenSize.width > 900) {
             return renderDesktopView();
-            // } else if (screenSize.width < 900 && screenSize.width > 500) {
-            //   return renderTabletView();
         } else {
             return renderMobileView();
         }

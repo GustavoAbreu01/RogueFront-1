@@ -129,14 +129,14 @@ function CartFinish() {
         </div>
       </div>
       <div className='container_cart_finish'>
-        <div className='box_cart_detail_finish_tablet'>
+        <div className='box_cart_detail_finish_mobile'>
           <div className='box_cart_finish'>
             <div className='cart_finish_title'>
               <h5 className='cart_finish_title_text'>Pedido Finalizado</h5>
 
             </div>
             <div className='box_cart_finish_img'>
-              <img className='cart_finish_weggner_tablet' src={weggner} />
+              <img className='cart_finish_weggner_mobile' src={weggner} />
               <div>
                 <h5>Agradecemos sua preferência</h5>
                 <div className='cart_finish_text_tablet'>

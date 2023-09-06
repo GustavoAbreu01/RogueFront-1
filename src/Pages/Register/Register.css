@@ -7,11 +7,6 @@
     padding-bottom: 1.5rem;
 }
 
-.box_register_inputs_detail {
-    padding-top: 5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
 
 .ui.button {
     background-color: var(--blue-primary);
@@ -102,8 +97,7 @@
 }
 
 
-/* MOBILE */
-
+/* --------------------versão mobile-------------------- */
 
 .ui.header.titleRegister_mobile {
     align-items: center;
@@ -144,8 +138,8 @@
     z-index: 100;
 }
 
+
 .box_register_inputs_detail_mobile {
-    
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -197,16 +191,6 @@
 
 .field.register_mobile {
     margin-top: 3% !important;
-}
-
-
-.register_finish_text_mobile {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 3%;
-    color: var(--blue-primary);
-    gap: 0.5rem;
 }
 
 .ui.form.register_mobile {

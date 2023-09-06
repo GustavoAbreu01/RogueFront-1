@@ -183,7 +183,7 @@ function Register() {
                         <div className='box_mobile'>
                             <button className="ui big fluid button register_mobile" onClick={create}>Cadastrar</button>
                         </div>
-                        <div className='register_finish_text_mobile'>
+                        <div className='register_finish_text'>
                             <BsArrowLeftShort size={15} />
                             <Link to='/login'> <p className='cart_finish_subtext'>Já Possui cadastro? <b>Login</b></p> </Link>
                         </div>

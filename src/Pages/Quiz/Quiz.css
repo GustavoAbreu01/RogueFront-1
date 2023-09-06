@@ -37,7 +37,6 @@
 
 .ui.huge.fluid.button.details {
     margin-top: 0.5rem;
-
 }
 
 .ui.checkbox {
@@ -74,6 +73,8 @@
 
 }
 
+/* --------------------versão mobile-------------------- */
+
 .steps_quiz_mobile {
     display: flex;
     flex-direction: row;
@@ -92,11 +93,6 @@
 
 .ui.blue.ribbon.label.quiz_mobile {
     margin-bottom: 2rem;
-}
-
-.quiz_mobile_title {
-    width: 2rem;
-    height: 2rem;
 }
 
 .box_content_quiz_mobile_blue {
@@ -122,7 +118,6 @@
 }
 
 .checkbox-wrapper-37 .checkbox-svg {
-
     width: 17px;
     height: 17px;
 }
@@ -138,7 +133,6 @@
 }
 
 .checkbox-wrapper-37 .checkbox-tick {
-
     stroke: var(--blue-primary);
     stroke-dasharray: 172;
     stroke-dashoffset: 172;
@@ -148,14 +142,6 @@
 .checkbox-wrapper-37 input[type="checkbox"]:checked+.terms-label .checkbox-box,
 .checkbox-wrapper-37 input[type="checkbox"]:checked+.terms-label .checkbox-tick {
     stroke-dashoffset: 0;
-}
-
-.div_buttons_quiz_mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
 }
 
 .conatiner_quiz_mobile {
@@ -175,7 +161,7 @@
     font-size: 20px !important;
 }
 
-.div_buttons_quiz_desktop {
+.div_buttons_quiz {
     display: flex;
     align-items: center;
     justify-content: center;

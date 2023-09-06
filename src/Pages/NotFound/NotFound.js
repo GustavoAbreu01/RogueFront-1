@@ -42,7 +42,7 @@ function NotFound() {
 
   const renderTabletView = () => (
     <>
-      <div className='container_not_found_tablet'>
+      <div className='container_not_found_mobile'>
         <img src={weggner} alt="weggner" className="not_found_img_tablet" />
         <h2 className="not_found_title_tablet">Página não encontrada</h2>
         <p className='not_found_text__detail_tablet'>A página que você está procurando não existe ou foi removida.</p>

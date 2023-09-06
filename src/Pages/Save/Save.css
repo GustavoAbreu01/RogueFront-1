@@ -1,28 +1,5 @@
-
-.box_title_similar_save_rec {
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    flex-direction: column;
-    background-color: var(--blue-primary);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 30%;
-    gap: 2rem;
-    height: 100%;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    color: var(--white);
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-}
-
 .box.step.quiz {
     width: 6rem;
-}
-
-body {
-    background-color: var(--grey-secondary);
 }
 
 .box_title_similar_save {
@@ -40,13 +17,6 @@ body {
     border-bottom-right-radius: 50px;
 }
 
-.save_title_theme {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 1rem;
-}
-
 .no_products_saved_img {
     background-color: var(--blue-primary);
     height: 20%;
@@ -57,10 +27,12 @@ body {
     margin-right: auto;
     border-radius: 50rem;
 }
+
 .back_to_home_not_saved{
     display: flex;
     flex-direction: row;
 }
+
 .not_saved_text {
     margin-top: 1rem;
     align-items: center;
@@ -74,7 +46,7 @@ body {
     margin-bottom: 3rem;
 }
 
-.no_products_saved_img_mobile{
+.no_products_saved_img_mobile {
     background-color: var(--blue-primary);
     height: 43%;
     width: 43%;

@@ -208,7 +208,7 @@ function ProductPage() {
         if (productPage.price !== undefined) {
             const priceParts = productPage.price.toString().split('.');
             const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            const decimalPart = priceParts[1] || '00';
             return (
                 <h1 className="price_product_page">
                     R$ {integerPart}
@@ -217,7 +217,7 @@ function ProductPage() {
                 </h1>
             );
         } else {
-            return null; // Handle the case where productPage.price is undefined
+            return null;
         }
     };
 
@@ -297,7 +297,6 @@ function ProductPage() {
             {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
             <div className="ui items product_page_mobile" >
-                {/* <p className="ui blue ribbon label_mobile">aaaaaaaaaaaaaaaaaaaaaaaaa</p> */}
                 <div className="ui item product_page_mobile">
                     <div className="img_product_page_mobile">
                         <img className="image_product_mobile" src={motor} />
@@ -410,7 +409,6 @@ function ProductPage() {
             {!verify() ? <Header /> : <HeaderLogin />}
             <WeggnerModal />
             <div className="ui items product_page_tablet" >
-                {/* <p className="ui blue ribbon label_mobile">aaaaaaaaaaaaaaaaaaaaaaaaa</p> */}
                 <div className="ui item product_page_tablet">
                     <div className="img_product_page_tablet">
                         <img className="image_product_tablet" src={motor} />
@@ -501,7 +499,7 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
-            <div className='box_product_page_title_similar_tablet'>
+            <div className='box_product_page_title_similar_mobile'>
                 <FaStar color='var(--white)' size={30} />
                 <h1 className='title_product_page_tablet'>Produtos Semelhantes</h1>
             </div>

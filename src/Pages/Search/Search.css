@@ -31,7 +31,6 @@
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-
 }
 
 .angle.down.icon.search {
@@ -57,7 +56,6 @@
     flex-direction: row;
     width: 90%;
 }
-
 
 .search-search_filter_search {
     background-color: var(--white);
@@ -91,7 +89,6 @@
     width: 63rem;
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
 

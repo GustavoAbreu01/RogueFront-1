@@ -3,12 +3,6 @@
     margin-bottom: 5rem;
 }
 
-.box_products {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .add_product_icon {
     cursor: pointer;
     position: absolute;

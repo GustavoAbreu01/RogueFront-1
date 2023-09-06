@@ -153,7 +153,7 @@ function Cart({ product }) {
             <div>
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
-            <div className='button_total_Cart'>
+            <div className='button_total_cart'>
               {!verify() ? (
                 <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
               ) : (
@@ -179,7 +179,7 @@ function Cart({ product }) {
 
   const renderTabletView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress_cart_tablet'>
+      <div className='container_progress_cart'>
         <div className="ui small steps">
           <div className="step">
             <i className="shop icon"></i>
@@ -207,7 +207,7 @@ function Cart({ product }) {
           </div>
         </div>
       </div>
-      <div className='container_cart_all_tablet'>
+      <div className='container_cart_all_mobile'>
         <div className='box_cart_product_detail_all_tablet'>
           <div className='box_cart_product_all_tablet'>
             <div className='cart_product_title'>
@@ -218,19 +218,19 @@ function Cart({ product }) {
                 <ProductCart />
               </>
             ) : (
-              <div className='box_empty_cart_tablet'>
-                <img className='img_empty_cart_tablet' src={imgEmptyCart} />
-                <p className='text_empty_cart_tablet'>Não foi adicionado nenhum produto em seu carrinho.</p>
-                <div className='box_subtext_empty_cart_tablet'>
+              <div className='box_empty_cart_mobile'>
+                <img className='img_empty_cart_mobile' src={imgEmptyCart} />
+                <p className='text_empty_cart'>Não foi adicionado nenhum produto em seu carrinho.</p>
+                <div className='box_subtext_empty_cart_mobile'>
                   <BsArrowLeftShort size={15} />
-                  <Link className='subtext_empty_cart_tablet' to='/'> <p>Voltar para a Home</p> </Link>
+                  <Link className='subtext_empty_cart' to='/'> <p>Voltar para a Home</p> </Link>
                 </div>
               </div>
             )}
           </div>
         </div>
-        <div className='box_info_total_cart_tablet'>
-          <div className='info_total_buy_tablet'>
+        <div className='box_info_total_cart_mobile'>
+          <div className='info_total_buy'>
             <div>
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
@@ -243,7 +243,7 @@ function Cart({ product }) {
             <div>
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
-            <div className='button_total_Cart_tablet'>
+            <div className='button_total_cart'>
               {!verify() ? (
                 <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
               ) : (
@@ -264,7 +264,7 @@ function Cart({ product }) {
 
   const renderMobileView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
-      <div className='container_progress_cart_mobile'>
+      <div className='container_progress_cart'>
         <div className="menu_edit_profile">
           <div>
             <FaShoppingCart className="edit_icon_mobile" />
@@ -299,10 +299,10 @@ function Cart({ product }) {
             ) : (
               <div className='box_empty_cart_mobile'>
                 <img className='img_empty_cart_mobile' src={imgEmptyCart} />
-                <p className='text_empty_cart_mobile'>Não foi adicionado nenhum produto em seu carrinho.</p>
+                <p className='text_empty_cart'>Não foi adicionado nenhum produto em seu carrinho.</p>
                 <div className='box_subtext_empty_cart_mobile'>
                   <BsArrowLeftShort size={15} />
-                  <Link className='subtext_empty_cart_mobile' to='/'> <p>Voltar para a Home</p> </Link>
+                  <Link className='subtext_empty_cart' to='/'> <p>Voltar para a Home</p> </Link>
                 </div>
               </div>
             )}
@@ -322,7 +322,7 @@ function Cart({ product }) {
             <div>
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
             </div>
-            <div className='button_total_Cart_mobile'>
+            <div className='button_total_cart'>
               {!verify() ? (
                 <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/register'>Realizar Login</Link></button>
               ) : (

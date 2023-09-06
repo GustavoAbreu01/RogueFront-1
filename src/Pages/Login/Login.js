@@ -94,10 +94,10 @@ function Login() {
 
     const renderMobileView = () => (
         <div className='container_login_mobile'>
-        <div className='container_login_image_mobile'>
+        <div className='container_login_image'>
             <Link to={'/'}><img className='logo_image_login_mobile' src={logo} /></Link>
         </div>
-        <div className="container_login_inputs_mobile">
+        <div className="container_login_inputs">
             <div className="box_login_inputs_detail_mobile"></div>
             <div className="box_login_inputs_mobile">
                 <form className="ui form login_mobile">
@@ -113,7 +113,7 @@ function Login() {
                     <div className='box'>
                         <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>
                     </div>
-                    <div className='login_finish_text_mobile'>
+                    <div className='login_finish_text'>
                         <BsArrowLeftShort size={15} />
                         <Link to='/register'> <p className='cart_finish_subtext'>Não Possui cadastro? <b>Realizar Cadastro</b></p> </Link>
                     </div>

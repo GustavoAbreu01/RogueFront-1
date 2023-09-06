@@ -341,9 +341,9 @@ function CartPayment() {
           </div>
         </div>
       </div>
-      <div className='container_cart_payment_tablet'>
+      <div className='container_cart_payment_mobile'>
         <div className='box_cart_product_detail_payment_tablet'>
-          <div className='box_cart_product_payment_tablet'>
+          <div className='box_cart_product_payment'>
             <div className='cart_payment_title'>
               <h5 className='cart_payment_title_text'>Forma de Pagamento</h5>
             </div>

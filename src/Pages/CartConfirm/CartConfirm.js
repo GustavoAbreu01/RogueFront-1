@@ -213,9 +213,9 @@ function CartConfirm() {
           </div>
         </div>
       </div>
-      <div className='container_cart_confirm_tablet'>
+      <div className='container_cart_confirm_mobile'>
         <div className='box_cart_product_detail_confirm_tablet'>
-          <div className='box_cart_product_confirm_tablet'>
+          <div className='box_cart_product_confirm_mobile'>
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>

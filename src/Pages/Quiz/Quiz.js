@@ -688,7 +688,7 @@ function Quiz() {
             </Link>
           </div>
         ) : (
-          <div className='div_buttons_quiz_desktop'>
+          <div className='div_buttons_quiz'>
             <button className="ui big button back quiz_btn_options" onClick={voltar}>Voltar</button>
             <button className="ui big button next quiz_btn_options" onClick={proximo}>Próximo</button>
           </div>
@@ -1307,7 +1307,7 @@ function Quiz() {
               </Link>
             </div>
           ) : (
-            <div className='div_buttons_quiz_mobile'>
+            <div className='div_buttons_quiz'>
               <button className="ui big button back quiz_btn_options_mobile" onClick={voltar}>Voltar</button>
               <button className="ui big button next quiz_btn_options_mobile" onClick={proximo}>Próximo</button>
             </div>
@@ -1933,7 +1933,7 @@ function Quiz() {
             </Link>
           </div>
         ) : (
-          <div className='div_buttons_quiz_desktop'>
+          <div className='div_buttons_quiz'>
             <button className="ui big button back quiz_btn_options" onClick={voltar}>Voltar</button>
             <button className="ui big button next quiz_btn_options" onClick={proximo}>Próximo</button>
           </div>

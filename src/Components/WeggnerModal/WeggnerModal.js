@@ -69,8 +69,8 @@ function WeggnerModal() {
     <div>
     {verify() && <div data-aos="fade-up" className='container_modalContent_mobile'>
       <div className='box_modalContent_textWeggnerModal_mobile'>
-        <div className="modalContent_chat_mobile">
-          <div className="yours modalContent_messages_mobile">
+        <div className="modalContent_chat">
+          <div className="yours modalContent_messages">
             <div id='text' className="modalContent_message last_mobile">
               <p className='text_weggner_modal_mobile'>Olá, eu sou o Wegner, seu assistente virtual. Como posso te ajudar?</p>
             </div>
@@ -84,7 +84,7 @@ function WeggnerModal() {
         </div>
       </div>
     </div>}
-    <div className='box_modalContent_wegnerModal_mobile'>
+    <div className='box_modalContent_wegnerModal'>
       {!verify() ?
         <div onClick={() => setOpenModal(openModal + 1)}><img src={wegnerSleeping} alt='' className='modalContent_wegner_mobile'></img></div>
         :
@@ -97,8 +97,6 @@ function WeggnerModal() {
     const getViewToRender = () => {
       if (screenSize.width > 900) {
         return renderDesktopView();
-        // } else if (screenSize.width < 900 && screenSize.width > 500) {
-        //   return renderTabletView();
       } else {
         return renderMobileView();
       }

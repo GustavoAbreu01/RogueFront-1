@@ -158,25 +158,6 @@
 
 /* -------------version Tablet------------- */
 
-.container_cart_transport_tablet {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.box_cart_product_transport_tablet {
-    background-color: var(--white);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    padding: 1rem;
-    height: 100%;
-    width: 100%;
-}
-
 .box_cart_product_detail_transport_tablet {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
