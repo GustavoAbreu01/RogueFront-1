@@ -411,7 +411,7 @@ function ProductPage() {
             <div className="ui items product_page_tablet" >
                 <div className="ui item product_page_tablet">
                     <div className="img_product_page_tablet">
-                        <img className="image_product_tablet" src={motor} />
+                        <img className="image_product" src={motor} />
                     </div>
                     <div className="content product_page_tablet">
                         <div className='title_price_product_page_tablet'>
@@ -441,7 +441,7 @@ function ProductPage() {
                                     </button>
                                 </div>
                                 <div>
-                                    <button onClick={() => AddProductInCompareTablet(product)} className="ui fluid icon button product_page_compare_tablet">
+                                    <button onClick={() => AddProductInCompareTablet(product)} className="ui fluid icon button product_page_compare_mobile">
                                         <i className="exchange icon"></i>
                                     </button>
                                 </div>
@@ -460,35 +460,35 @@ function ProductPage() {
                         <tbody>
                             <tr>
                                 <td>Potência</td>
-                                <td className='table_item_product_page_tablet'>1/8 a 3 cv</td>
+                                <td className='table_item_product_page_mobile'>1/8 a 3 cv</td>
                             </tr>
                             <tr>
                                 <td>Polaridade</td>
-                                <td className='table_item_product_page_tablet'>2 ou 4</td>
+                                <td className='table_item_product_page_mobile'>2 ou 4</td>
                             </tr>
                             <tr>
                                 <td>Tensão</td>
-                                <td className='table_item_product_page_tablet'> 127/220 ou 220/440 V</td>
+                                <td className='table_item_product_page_mobile'> 127/220 ou 220/440 V</td>
                             </tr>
                             <tr>
                                 <td>Frequência</td>
-                                <td className='table_item_product_page_tablet'> 60 ou 50 Hz</td>
+                                <td className='table_item_product_page_mobile'> 60 ou 50 Hz</td>
                             </tr>
                             <tr>
                                 <td>Carcaças</td>
-                                <td className='table_item_product_page_tablet'>B48 a G56H</td>
+                                <td className='table_item_product_page_mobile'>B48 a G56H</td>
                             </tr>
                             <tr>
                                 <td>Tipo de Carcaça</td>
-                                <td className='table_item_product_page_tablet'>Chapa de Aço</td>
+                                <td className='table_item_product_page_mobile'>Chapa de Aço</td>
                             </tr>
                             <tr>
                                 <td>Grau de Proteção</td>
-                                <td className='table_item_product_page_tablet'>IP21</td>
+                                <td className='table_item_product_page_mobile'>IP21</td>
                             </tr>
                             <tr>
                                 <td>Cor</td>
-                                <td className='table_item_product_page_tablet'>Preto fosco (Munsell N1)</td>
+                                <td className='table_item_product_page_mobile'>Preto fosco (Munsell N1)</td>
                             </tr>
                         </tbody>
                     </table>

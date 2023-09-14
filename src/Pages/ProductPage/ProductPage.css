@@ -521,10 +521,6 @@ td {
     margin: 3rem auto;
 }
 
-.image_product_tablet {
-    width: 100%;
-}
-
 .img_product_page_tablet {
     width: 40%;
 }
@@ -547,10 +543,6 @@ td {
     width: 90%;
 }
 
-.ui.fluid.icon.button.product_page_compare_tablet {
-background-color: var(--blue-quaternary);
-}
-
 .ui.rating.product_page_tablet {
     font-size: 20px;
     margin-bottom: 1rem;
@@ -568,10 +560,6 @@ background-color: var(--blue-quaternary);
 
 .div_table_product_page_tablet {
     padding: 2rem;
-}
-
-.table_item_product_page_tablet {
-    font-size: 15px;
 }
 
 .box_product_page_title_highlights_tablet {
