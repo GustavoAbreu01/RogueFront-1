@@ -8,6 +8,92 @@
     width: 70rem;
 }
 
+.box_product_page_combo_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.final_price_produc_page_combo {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product_page_combo_buy_button {
+    width: 12rem;
+    margin: 1rem;
+}
+
+.total_price_page_product {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.price_combo_product_page {
+    font-size: 35px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--blue-primary);
+    font-weight: bold;
+}
+
+.subtext_productPage_combo {
+    font-size: 17px;
+    margin-top: 1rem;
+}
+
+.fluid.ui.button.product_page_combo_button {
+    margin-top: 2.5rem;
+    font-size: 14px !important;
+    background-color: var(--blue-primary);
+    color: var(--white);
+}
+
+.total_combo_product_page {
+    font-size: 25px;
+}
+
+.fluid.ui.button.product_page_combo_button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.fluid.ui.button.product_page_combo_button:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
+}
+
+.div_product_page_recomendation {
+    width: 70rem;
+    height: 30rem;
+    padding: 1rem;
+    border-top: 3rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 3rem auto;
+}
+
+.container_product_page_recomendation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.ui.blue.ribbon.label.combo_product_page {
+    font-size: 20px;
+}
+
 .button_show_more {
     background-color: var(--blue-primary);
     color: var(--white);
@@ -377,7 +463,7 @@ td {
     gap: 2rem;
     height: 3rem;
     padding: 3rem;
-    margin-top: 10%;
+    margin-top: 4%;
     color: var(--white);
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;

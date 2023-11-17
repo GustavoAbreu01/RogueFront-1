@@ -1,0 +1,50 @@
+.image_combo_card {
+    width: 10rem;
+    height: 10rem;
+}
+
+.ui.header.combo_card {
+    margin: 0.5rem;
+    font-size: 17px;
+}
+
+.div_combo_card {
+    margin: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35%;
+}
+
+.combo_card_buy_button {
+    width: 12rem;
+    margin: 1rem;
+}
+
+.div_combo_card:hover {
+    cursor: pointer;
+    box-shadow: var(--grey-quinary) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.combo_card_price {
+    font-size: 22px;
+    color: var(--blue-primary);
+    font-weight: bold;
+}
+
+.fluid.ui.button.combo_card {
+    font-size: 14px !important;
+    background-color: var(--blue-primary);
+    color: var(--white);
+}
+
+.fluid.ui.button.combo_card:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.fluid.ui.button.combo_card:hover {
+    background-color: var(--grey-quinary);
+    transition: 0.3s;
+}
