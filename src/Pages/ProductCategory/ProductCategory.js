@@ -273,9 +273,6 @@ function ProductCategory() {
           </div>
 
         </div>
-        <div className='text_pagination_totally'>
-          <p className='text_pagination_totally'>Produtos Totais: <b>850</b></p>
-        </div>
       </div>
       <div className='container_category_page_layout_mobile'>
         <div className='container_category_page_detail_mobile'>
