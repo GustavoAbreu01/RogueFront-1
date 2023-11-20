@@ -179,8 +179,7 @@
     width: 10rem;
     color: var(--blue-primary);
     text-align: center;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    padding-top: 1rem;
 }
 
 .icon_pagination.active {
@@ -201,6 +200,13 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.select_search {
+    border-radius: 5px;
+    border: none;
+    color: var(--blue-primary);
+    font-weight: bold;
 }
 
 

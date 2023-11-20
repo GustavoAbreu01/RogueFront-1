@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './ProductCategory.css'
 
 //importando as frameworks
-import { Divider, Dropdown } from 'semantic-ui-react';
+import { Divider, Dropdown, Select } from 'semantic-ui-react';
 import { Link, useParams } from 'react-router-dom';
 
 //Importando os componentes
@@ -68,27 +68,6 @@ function ProductCategory() {
     setIsGrid((prevIsGrid) => !prevIsGrid);
   };
 
-  const optionsPagination = [
-    { key: 1, text: '20 por página', value: 1 },
-    { key: 2, text: '40 por página', value: 2 },
-    { key: 3, text: '60 por página', value: 3 },
-    { key: 4, text: '80 por página', value: 4 },
-  ];
-
-  const optionsSearch = [
-    { key: 1, text: 'Mais Acessados', value: 1 },
-    { key: 2, text: 'Mais Procurados', value: 2 },
-    { key: 3, text: 'Preço Crescente ', value: 3 },
-    { key: 4, text: 'Preço Decrescente', value: 4 },
-  ];
-
-  const optionsPaginationMobile = [
-    { key: 1, text: '20 p/ pág', value: 1 },
-    { key: 2, text: '40 p/ pág', value: 2 },
-    { key: 3, text: '60 p/ pág', value: 3 },
-    { key: 4, text: '80 p/ pág', value: 4 },
-  ];
-
   useEffect(() => {
     const startIndex = (currentPage - 1) * paginationIntruct;
     const endIndex = startIndex + paginationIntruct;
@@ -144,7 +123,7 @@ function ProductCategory() {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    getProductsCategory(); // Fetch products for the new page
+    getProductsCategory();
   };
 
   const formatCategoryTitle = (category) => {
@@ -177,30 +156,23 @@ function ProductCategory() {
         <div className='container_pagination_config'>
           <div className='container_pagination'>
             <div className='pagination_options'>
-              <div className='text_pagination_totally'>
-                <p className='text_pagination_totally'>Produtos Totais: <b>{totally.length}</b></p>
-              </div>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Ordenar por:</p>
-                <Dropdown
-                  className='dropDownCard'
-                  value={selectedPagination}
-                  fluid
-                  selection
-                  options={optionsPagination}
-                  onChange={handlePaginationChange}
-                />
+                <select onChange={handlePaginationChange} className='select_search'>
+                  <option value="1">20 por página</option>
+                  <option value="2">40 por página</option>
+                  <option value="3">60 por página</option>
+                  <option value="4">80 por página</option>
+                </select>
               </div>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Procurar por:</p>
-                <Dropdown
-                  className='dropDownCard'
-                  value={search}
-                  fluid
-                  selection
-                  options={optionsSearch}
-                  onChange={alterarSearch}
-                />
+                <select onChange={handlePageChange} className='select_search'>
+                  <option value="1">Mais Acessados</option>
+                  <option value="2">Mais Procurados</option>
+                  <option value="3">Preço Crescente</option>
+                  <option value="4">Preço Decrescente</option>
+                </select>
               </div>
             </div>
             <div className='icons_ordenation'>
@@ -269,24 +241,20 @@ function ProductCategory() {
           <div className='container_pagination'>
             <div className='pagination_options_mobile'>
               <div className="field pagination_mobile">
-                <Dropdown
-                  className='dropDownCard'
-                  value={selectedPagination}
-                  fluid
-                  selection
-                  options={optionsPaginationMobile}
-                  onChange={handlePaginationChange}
-                />
+                <select className='select_search'>
+                  <option value="1">20 p/ pág</option>
+                  <option value="2">40 p/ pág</option>
+                  <option value="3">60 p/ pág</option>
+                  <option value="4">80 p/ pág</option>
+                </select>
               </div>
               <div className="field pagination_mobile">
-                <Dropdown
-                  className='dropDownCard'
-                  value={search}
-                  fluid
-                  selection
-                  options={optionsSearch}
-                  onChange={alterarSearch}
-                />
+                <select className='select_search'>
+                  <option value="1">Mais Acessados</option>
+                  <option value="2">Mais Procurados</option>
+                  <option value="3">Preço Crescente</option>
+                  <option value="4">Preço Decrescente</option>
+                </select>
               </div>
             </div>
 
@@ -343,8 +311,6 @@ function ProductCategory() {
   const getViewToRender = () => {
     if (screenSize.width > 900) {
       return renderDesktopView();
-      // } else if (screenSize.width < 900 && screenSize.width > 500) {
-      //   return renderTabletView();
     } else {
       return renderMobileView();
     }
