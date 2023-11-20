@@ -236,7 +236,7 @@ function Home() {
         <div className='container_home_category_buttons' >
           <h1 className='home_category_title'>Segmentos</h1>
           <div className='box_home_category_buttons'>
-            <Link to='/category'>
+            <Link to='/category/agronegocio'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
                   <img className='home_optional_category_button_image' src={agro} alt="" width={125} />
@@ -244,7 +244,7 @@ function Home() {
                 <h2 className='home_optional_category_title'>Agronegócio</h2>
               </div>
             </Link>
-            <Link to='/category'>
+            <Link to='/category/naval'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
                   <img className='home_optional_category_button_image' src={naval} alt="" width={125} />
@@ -252,7 +252,7 @@ function Home() {
                 <h2 className='home_optional_category_title'>Naval</h2>
               </div>
             </Link>
-            <Link to='/category'>
+            <Link to='/category/mineracao'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
                   <img className='home_optional_category_button_image' src={mineracao} alt="" width={125} />
@@ -260,7 +260,7 @@ function Home() {
                 <h2 className='home_optional_category_title'>Mineração</h2>
               </div>
             </Link>
-            <Link to='/category'>
+            <Link to='/category/edificacao'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
                   <img className='home_optional_category_button_image' src={construcao} alt="" width={125} />
@@ -268,7 +268,7 @@ function Home() {
                 <h2 className='home_optional_category_title'>Edificação</h2>
               </div>
             </Link>
-            <Link to='/category'>
+            <Link to='/category/siderurgia'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
                   <img className='home_optional_category_button_image' src={siderurgia} alt="" width={125} />
@@ -276,7 +276,7 @@ function Home() {
                 <h2 className='home_optional_category_title'>Siderurgia</h2>
               </div>
             </Link>
-            <Link to='/category'>
+            <Link to='/category/alimenticia'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
                   <img className='home_optional_category_button_image' src={alimenticia} alt="" />

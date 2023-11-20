@@ -54,7 +54,7 @@ function FilterNaval() {
                     <div className='container_category_page'>
                         <div className="category_second_filter">
                             <img className="icon_category" src={icon} />
-                            <h1 className="ui header motor search">Painél elétrico</h1>
+                            <h1 className="ui header motor search">Naval</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
                                 <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
