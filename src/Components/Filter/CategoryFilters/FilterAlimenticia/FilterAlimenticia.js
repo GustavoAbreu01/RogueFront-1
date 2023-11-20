@@ -6,11 +6,9 @@ import '../../FilterSearch.css'
 import { Divider, Dropdown } from 'semantic-ui-react';
 
 //Importando as imagens
-import operacao from "../../../../assets/img/OPERAÇÃO.png"
+import icon from "../../../../assets/img/ALIMENTAÇÃO.png"
 
-function FilterAutomacao() {
-    const [selectedCategory, setSelectedCategory] = useState('Motores');
-
+function FilterAlimenticia() {
 
     const useToggle = (initialState = false) => {
         const [isOpen, setIsOpen] = useState(initialState);
@@ -26,8 +24,6 @@ function FilterAutomacao() {
     const [isOpen2, toggleDropdown2] = useToggle();
     const [isOpen3, toggleDropdown3] = useToggle();
     const [isOpen4, toggleDropdown4] = useToggle();
-    const [isOpen5, toggleDropdown5] = useToggle();
-    const [isOpen6, toggleDropdown6] = useToggle();
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -42,17 +38,14 @@ function FilterAutomacao() {
         };
     }, []);
 
-    const handleCategoryChange = (category) => {
-        setSelectedCategory(category);
-    };
     const renderDesktopView = () => (
         <>
             <div className='container_category_page_layout'>
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <img className="icon_category" src={operacao} />
-                            <h1 className="ui header motor search">Automação</h1>
+                            <img className="icon_category" src={icon} />
+                            <h1 className="ui header motor search">Tintas e Vernizes</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
                                 <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
@@ -63,7 +56,7 @@ function FilterAutomacao() {
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
+                                            <label className="desc search" htmlFor="Monofasico">Monofasico</label>
                                         </div>
                                         <br />
                                         <br />
@@ -97,7 +90,7 @@ function FilterAutomacao() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Voltagem
+                                <div className={`category_filter_dropdown ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Tipo
 
                                     <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
                                 </div>
@@ -105,7 +98,7 @@ function FilterAutomacao() {
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
+                                            <label className="desc search" htmlFor="Monofasico">Monofasico</label>
                                         </div>
                                         <br />
                                         <br />
@@ -139,7 +132,7 @@ function FilterAutomacao() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>RFI
+                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Densidade
 
                                     <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                                 </div>
@@ -181,7 +174,7 @@ function FilterAutomacao() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Temperatura
+                                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>cor
 
                                     <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
                                 </div>
@@ -231,52 +224,52 @@ function FilterAutomacao() {
     const renderMobileView = () => (
         <>
             <div className="category_second_filter_mobile">
-                <h2 className="search_mobile">Motores</h2>
+                <h2 className="search_mobile">Tintas e Vernizes</h2>
                 <br />
                 <div className='container_category_filter_expanded_mobile'>
-                <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
+                    <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
 
-                                    <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
-                                </div>
-                                {isOpen && (
-                                    <div className='search_transition'>
-                                        <div className="ui checkbox search">
-                                            <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox search">
-                                            <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                                            <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox search">
-                                            <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                                            <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox search">
-                                            <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                                            <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                        <div className="ui checkbox search">
-                                            <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                                            <label className="desc search" htmlFor="Aneis">Anéis</label>
-                                        </div>
-                                        <br />
-                                        <br />
-                                    </div>
-                                )
-                                }
+                        <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
+                    </div>
+                    {isOpen && (
+                        <div className='search_transition_mobile'>
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                                <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
                             </div>
-                            <Divider></Divider>
-                    <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Voltagem
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                                <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                                <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                                <label className="desc search" htmlFor="Sincronos">Síncronos</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                                <label className="desc search" htmlFor="Aneis">Anéis</label>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                    )
+                    }
+                </div>
+                <Divider></Divider>
+                <div className='container_category_filter_expanded_mobile'>
+                    <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Tipo
 
                         <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
                     </div>
@@ -318,7 +311,7 @@ function FilterAutomacao() {
                 </div>
                 <Divider></Divider>
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>RFI
+                    <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Densidade
 
                         <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                     </div>
@@ -360,7 +353,7 @@ function FilterAutomacao() {
                 </div>
                 <Divider></Divider>
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Temperatura
+                    <div className={`category_filter_dropdown_mobile ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Cor
 
                         <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
                     </div>
@@ -418,4 +411,4 @@ function FilterAutomacao() {
 
 };
 
-export default FilterAutomacao;
+export default FilterAlimenticia;

@@ -6,9 +6,9 @@ import '../../FilterSearch.css'
 import { Divider, Dropdown } from 'semantic-ui-react';
 
 //Importando icones
-import { TfiPanel } from 'react-icons/tfi'
+import icon from "../../../../assets/img/NAVAL.png"
 
-function FilterSegurança() {
+function FilterNaval() {
 
     const [selectedCategory, setSelectedCategory] = useState('Motores');
 
@@ -53,7 +53,7 @@ function FilterSegurança() {
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <TfiPanel className='icon_category' size={95} color="var(--blue-primary)"/>
+                            <img className="icon_category" src={icon} />
                             <h1 className="ui header motor search">Painél elétrico</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
@@ -419,4 +419,4 @@ function FilterSegurança() {
 
 };
 
-export default FilterSegurança;
+export default FilterNaval;

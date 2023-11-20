@@ -5,10 +5,12 @@ import '../../FilterSearch.css'
 //importando as frameworks
 import { Divider, Dropdown } from 'semantic-ui-react';
 
-//Importando icones
-import { MdOutlineSecurity } from 'react-icons/md'
+//Importando as imagens
+import icon from "../../../../assets/img/icone-rural.png"
 
-function FilterSegurança() {
+function FilterAgro() {
+    const [selectedCategory, setSelectedCategory] = useState('Motores');
+
 
     const useToggle = (initialState = false) => {
         const [isOpen, setIsOpen] = useState(initialState);
@@ -23,6 +25,9 @@ function FilterSegurança() {
     const [isOpen, toggleDropdown] = useToggle();
     const [isOpen2, toggleDropdown2] = useToggle();
     const [isOpen3, toggleDropdown3] = useToggle();
+    const [isOpen4, toggleDropdown4] = useToggle();
+    const [isOpen5, toggleDropdown5] = useToggle();
+    const [isOpen6, toggleDropdown6] = useToggle();
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -37,14 +42,17 @@ function FilterSegurança() {
         };
     }, []);
 
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
+    };
     const renderDesktopView = () => (
         <>
             <div className='container_category_page_layout'>
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <MdOutlineSecurity size={95} color="var(--blue-primary)" className='icon_category'/>
-                            <h1 className="ui header motor search">Segurança</h1>
+                            <img className="icon_category" src={icon} />
+                            <h1 className="ui header motor search">Automação</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
                                 <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
@@ -55,7 +63,7 @@ function FilterSegurança() {
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc search" htmlFor="Monofasico">Monofasico</label>
+                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
                                         </div>
                                         <br />
                                         <br />
@@ -97,7 +105,7 @@ function FilterSegurança() {
                                     <div className='search_transition'>
                                         <div className="ui checkbox search">
                                             <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                            <label className="desc search" htmlFor="Monofasico">Monofasico</label>
+                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
                                         </div>
                                         <br />
                                         <br />
@@ -131,7 +139,7 @@ function FilterSegurança() {
                             </div>
                             <Divider></Divider>
                             <div className='container_category_filter_expanded'>
-                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Frequencia
+                                <div className={`category_filter_dropdown ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>RFI
 
                                     <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                                 </div>
@@ -171,6 +179,49 @@ function FilterSegurança() {
                                 )
                                 }
                             </div>
+                            <Divider></Divider>
+                            <div className='container_category_filter_expanded'>
+                                <div className={`category_filter_dropdown ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Temperatura
+
+                                    <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
+                                </div>
+                                {isOpen4 && (
+                                    <div className='search_transition'>
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                                            <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                                            <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                                            <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                                            <label className="desc search" htmlFor="Sincronos">Síncronos</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                                            <label className="desc search" htmlFor="Aneis">Anéis</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                    </div>
+
+                                )
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,51 +231,51 @@ function FilterSegurança() {
     const renderMobileView = () => (
         <>
             <div className="category_second_filter_mobile">
-                <h2 className="search_mobile">Segurança</h2>
+                <h2 className="search_mobile">Motores</h2>
                 <br />
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
+                <div className='container_category_filter_expanded'>
+                                <div className={`category_filter_dropdown ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
 
-                        <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
-                    </div>
-                    {isOpen && (
-                        <div className='search_transition_mobile'>
-                            <div className="ui checkbox search">
-                                <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
-                                <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
+                                    <i className={`angle down icon search ${isOpen ? 'open' : ''}`}></i>
+                                </div>
+                                {isOpen && (
+                                    <div className='search_transition'>
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                                            <label className="desc search" htmlFor="Monofasico">{selectedCategory}</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                                            <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                                            <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                                            <label className="desc search" htmlFor="Sincronos">Síncronos</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <div className="ui checkbox search">
+                                            <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                                            <label className="desc search" htmlFor="Aneis">Anéis</label>
+                                        </div>
+                                        <br />
+                                        <br />
+                                    </div>
+                                )
+                                }
                             </div>
-                            <br />
-                            <br />
-                            <div className="ui checkbox search">
-                                <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
-                                <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
-                            </div>
-                            <br />
-                            <br />
-                            <div className="ui checkbox search">
-                                <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
-                                <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
-                            </div>
-                            <br />
-                            <br />
-                            <div className="ui checkbox search">
-                                <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
-                                <label className="desc search" htmlFor="Sincronos">Síncronos</label>
-                            </div>
-                            <br />
-                            <br />
-                            <div className="ui checkbox search">
-                                <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
-                                <label className="desc search" htmlFor="Aneis">Anéis</label>
-                            </div>
-                            <br />
-                            <br />
-                        </div>
-                    )
-                    }
-                </div>
-                <Divider></Divider>
-                <div className='container_category_filter_expanded_mobile'>
+                            <Divider></Divider>
                     <div className={`category_filter_dropdown_mobile ${isOpen2 ? 'open' : ''}`} onClick={toggleDropdown2}>Voltagem
 
                         <i className={`angle down icon search ${isOpen2 ? 'open' : ''}`}></i>
@@ -267,7 +318,7 @@ function FilterSegurança() {
                 </div>
                 <Divider></Divider>
                 <div className='container_category_filter_expanded_mobile'>
-                    <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>Frequencia
+                    <div className={`category_filter_dropdown_mobile ${isOpen3 ? 'open' : ''}`} onClick={toggleDropdown3}>RFI
 
                         <i className={`angle down icon search ${isOpen3 ? 'open' : ''}`}></i>
                     </div>
@@ -307,6 +358,49 @@ function FilterSegurança() {
                     )
                     }
                 </div>
+                <Divider></Divider>
+                <div className='container_category_filter_expanded_mobile'>
+                    <div className={`category_filter_dropdown_mobile ${isOpen4 ? 'open' : ''}`} onClick={toggleDropdown4}>Temperatura
+
+                        <i className={`angle down icon search ${isOpen4 ? 'open' : ''}`}></i>
+                    </div>
+                    {isOpen4 && (
+                        <div className='search_transition_mobile'>
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="monofasico" name="monofasico" value="Monofasico" />
+                                <label className="desc search" htmlFor="Monofasico"> Monofásico </label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="trifasicoBT" name="trifasicoBT" value="trifasicoBT" />
+                                <label className="desc search" htmlFor="TrifasicoBT">Trifásico - Baixa Tensão</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="trifasicoAT" name="trifasicoAT" value="trifasicoAT" />
+                                <label className="desc search" htmlFor="TrifasicoAT">Trifásico - Alta Tensão</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="sincronos" name="sincronos" value="sincronos" />
+                                <label className="desc search" htmlFor="Sincronos">Síncronos</label>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="ui checkbox search">
+                                <input className="check search" type="checkbox" id="aneis" name="aneis" value="aneis" />
+                                <label className="desc search" htmlFor="Aneis">Anéis</label>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+
+                    )
+                    }
+                </div>
             </div>
         </>
     )
@@ -324,4 +418,4 @@ function FilterSegurança() {
 
 };
 
-export default FilterSegurança;
+export default FilterAgro;

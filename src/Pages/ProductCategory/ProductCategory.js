@@ -127,16 +127,18 @@ function ProductCategory() {
   };
 
   const formatCategoryTitle = (category) => {
-    if (category === "motors") {
-      return category = "Motores"
-    } else if (category === "ink") {
-      return category = "Tintas e Vernizes"
-    } else if (category === "automation") {
-      return category = "Automação"
-    } else if (category === "building") {
-      return category = "Painéis"
-    } else if (category === "security") {
-      return category = "Seguração"
+    if (category === "agronegocio") {
+      return category = "Agronegócio"
+    } else if (category === "naval") {
+      return category = "Naval"
+    } else if (category === "mineracao") {
+      return category = "Mineração"
+    } else if (category === "edificacao") {
+      return category = "Edificação"
+    } else if (category === "siderurgica") {
+      return category = "Siderurgica"
+    } else if (category === "alimenticia") {
+      return category = "Alimentícia"
     }
   };
 

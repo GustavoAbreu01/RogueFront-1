@@ -6,9 +6,10 @@ import '../../FilterSearch.css'
 import { Divider, Dropdown } from 'semantic-ui-react';
 
 //Importando as imagens
-import iconSearch from "../../../../assets/img/Search.png"
+import icon from "../../../../assets/img/CONSTRUCAO.png"
 
-function FilterSearched() {
+
+function FilterConstrucao() {
 
     //deletar
 
@@ -56,7 +57,7 @@ function FilterSearched() {
                 <div className='container_category_page_detail'>
                     <div className='container_category_page'>
                         <div className="category_second_filter">
-                            <img className="icon_category" src={iconSearch} />
+                            <img className="icon_category" src={icon} />
                             <h1 className="ui header motor search">Filtos</h1>
                             <br />
                             <div className='container_category_filter_expanded'>
@@ -1345,4 +1346,4 @@ function FilterSearched() {
 
 };
 
-export default FilterSearched;
+export default FilterConstrucao;
