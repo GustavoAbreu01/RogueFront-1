@@ -21,7 +21,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 
 function Header() {
- 
+
   const [user, setUser] = useState({});
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [scrolled, setScrolled] = useState(false);
@@ -67,20 +67,19 @@ function Header() {
         </div>
       </div>
     </div><div className="nav_bar_header">
-        <div id="menu">
-          <MenuModal />
-        </div>
         <div className="divisor_header"></div>
-      <Link to="/category/motors">Motores</Link>
-      <div className="divisor_header"></div>
-      <Link to="/category/ink">Tintas e Vernizes</Link>
-      <div className="divisor_header"></div>
-      <Link to="/category/automation">Automação</Link>
-      <div className="divisor_header"></div>
-      <Link to="/category/building">Paineis Eletricos</Link>
-      <div className="divisor_header"></div>
-      <Link to="/category/security">Segurança</Link>
-      <div className="divisor_header"></div>
+        <Link to="/category/motors">Agronegócio</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/motors">Naval</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/ink">Mineração</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/automation">Edificação</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/building">Siderurgica</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/security">Alimentícia</Link>
+        <div className="divisor_header"></div>
       </div></>
   )
 
@@ -91,8 +90,8 @@ function Header() {
         <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
       </div>
       <div className='search_input_header'>
-          <SearchBar />
-        </div>
+        <SearchBar />
+      </div>
       <div className="opc_header_mobile">
         <div className='icons_header'>
           <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>
