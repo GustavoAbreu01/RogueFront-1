@@ -32,8 +32,8 @@ import Inovação from "../../assets/img/ESTACOES_DE_RECARGA-03.png"
 import Crescimento from "../../assets/img/GRAFICO_PRINCIPAL-03.png"
 import Assistência from "../../assets/img/CALL_CENTER-03.png"
 import IoT from "../../assets/img/PLATAFORMA_IOT_WEGNOLOGY-03.png"
-import BannerAnnouncementOne from '../../assets/img/BannerAnnun1.jpg'
-import BannerAnnouncementTwo from '../../assets/img/BannerAnnun2.jpg'
+import BannerAnnouncementOne from '../../assets/img/banner-motor.jpg'
+import BannerAnnouncementTwo from '../../assets/img/banner-motor-2.jpg'
 import BannerAnnouncementThree from '../../assets/img/BannerAnnun3.jpg'
 import BannerAnnouncementFour from '../../assets/img/BannerAnnun4.jpg'
 import questIcon from "../../assets/img/questionario.png"
