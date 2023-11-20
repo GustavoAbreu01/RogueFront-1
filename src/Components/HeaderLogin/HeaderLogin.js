@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom'
 
 //Importando os componentes
 import SearchBar from '../SearchModal/SearchModal'
-import MenuModal from '../MenuModal/MenuModal'
 import PerfilModal from '../ProfileModal/ProfileModal'
+import MenuModal from '../MenuModal/MenuModal'
 
 //Importando as imagens
 import logo from "../../assets/img/logo-weg.png"
@@ -88,20 +88,19 @@ function HeaderLogin() {
     </div>
   </div>
     <div className="nav_bar_header_login">
-      <div id="menu">
-        <MenuModal />
-      </div>
-      <div className="divisor_header_login"></div>
-      <Link to="/category/motors">Motores</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category/ink">Tintas e Vernizes</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category/automation">Automação</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category/building">Paineis Eletricos</Link>
-      <div className="divisor_header_login"></div>
-      <Link to="/category/security">Segurança</Link>
-      <div className="divisor_header_login"></div>
+    <div className="divisor_header"></div>
+        <Link to="/category/motors">Agronegócio</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/motors">Naval</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/ink">Mineração</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/automation">Edificação</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/building">Siderurgica</Link>
+        <div className="divisor_header"></div>
+        <Link to="/category/security">Alimentícia</Link>
+        <div className="divisor_header"></div>
     </div></>
   )
 
