@@ -18,6 +18,12 @@ import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import Carousell from '../../Components/BannerCarousell/BannerCarousell'
 
 //Importando as imagens
+import agro from "../../assets/img/icone-rural.png"
+import naval from "../../assets/img/NAVAL.png"
+import mineracao from "../../assets/img/mineracao.png"
+import construcao from "../../assets/img/CONSTRUCAO.png"
+import siderurgia from "../../assets/img/metalurgica.png"
+import alimenticia from "../../assets/img/ALIMENTAÇÃO.png"
 import iconMotor from "../../assets/img/iconeMotor.png"
 import Qualidade from "../../assets/img/MOTORES-03.png"
 import Compatibilidade from "../../assets/img/COMPATIBILIDADE-03.png"
@@ -228,46 +234,54 @@ function Home() {
         </div>
 
         <div className='container_home_category_buttons' >
-          <h1 className='home_category_title'>Departamentos</h1>
+          <h1 className='home_category_title'>Segmentos</h1>
           <div className='box_home_category_buttons'>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
-                  <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image' ></MdOutlineSecurity>
+                  <img className='home_optional_category_button_image' src={agro} alt="" width={125} />
                 </button>
-                <h2 className='home_optional_category_title'>Segurança</h2>
+                <h2 className='home_optional_category_title'>Agronegócio</h2>
               </div>
             </Link>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
-                  <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image' ></BsPaintBucket>
+                  <img className='home_optional_category_button_image' src={naval} alt="" width={125} />
                 </button>
-                <h2 className='home_optional_category_title'>Tintas</h2>
+                <h2 className='home_optional_category_title'>Naval</h2>
               </div>
             </Link>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
-                  <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image' ></CgSmartphoneChip>
+                  <img className='home_optional_category_button_image' src={mineracao} alt="" width={125} />
                 </button>
-                <h2 className='home_optional_category_title'>Automação</h2>
+                <h2 className='home_optional_category_title'>Mineração</h2>
               </div>
             </Link>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
-                  <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image'></TfiPanel>
+                  <img className='home_optional_category_button_image' src={construcao} alt="" width={125} />
                 </button>
-                <h2 className='home_optional_category_title'>Painéis</h2>
+                <h2 className='home_optional_category_title'>Edificação</h2>
               </div>
             </Link>
             <Link to='/category'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
-                  <img src={iconMotor} width={75} height={50} alt=''></img>
+                  <img className='home_optional_category_button_image' src={siderurgia} alt="" width={125} />
                 </button>
-                <h2 className='home_optional_category_title'>Motores</h2>
+                <h2 className='home_optional_category_title'>Siderurgia</h2>
+              </div>
+            </Link>
+            <Link to='/category'>
+              <div className='home_optional_category'>
+                <button className='home_optional_category_button'>
+                  <img className='home_optional_category_button_image' src={alimenticia} alt="" />
+                </button>
+                <h2 className='home_optional_category_title'>Alimentícia</h2>
               </div>
             </Link>
           </div>
@@ -350,41 +364,49 @@ function Home() {
           <Link to='/category'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
-                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></MdOutlineSecurity>
+                <img className='home_optional_category_button_image_tablet' src={agro} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_tablet'>Segurança</h2>
+              <h2 className='home_optional_category_title_tablet'>Agronegócio</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
-                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></BsPaintBucket>
+                <img className='home_optional_category_button_image_tablet' src={naval} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_tablet'>Tintas</h2>
+              <h2 className='home_optional_category_title_tablet'>Naval</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
-                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_tablet' ></CgSmartphoneChip>
+                <img className='home_optional_category_button_image_tablet' src={mineracao} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_tablet'>Automação</h2>
+              <h2 className='home_optional_category_title_tablet'>Mineração</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
-                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_tablet'></TfiPanel>
+                <img className='home_optional_category_button_image_tablet' src={construcao} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_tablet'>Painéis</h2>
+              <h2 className='home_optional_category_title_tablet'>Edificação</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
-                <img src={iconMotor} width={50} height={35} alt=''></img>
+                <img className='home_optional_category_button_image_tablet' src={siderurgia} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_tablet'>Motores</h2>
+              <h2 className='home_optional_category_title_tablet'>Siderurgia</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_tablet'>
+              <button className='home_optional_category_button_tablet'>
+                <img className='home_optional_category_button_image_tablet' src={alimenticia} alt="" width={125} />
+              </button>
+              <h2 className='home_optional_category_title_tablet'>Alimentícia</h2>
             </div>
           </Link>
         </div>
@@ -457,41 +479,49 @@ function Home() {
           <Link to='/category'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-                <MdOutlineSecurity color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></MdOutlineSecurity>
+              <img className='home_optional_category_button_image_mobile' src={agro} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_mobile'>Segurança</h2>
+              <h2 className='home_optional_category_title_mobile'>Agronegócio</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-                <BsPaintBucket color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></BsPaintBucket>
+              <img className='home_optional_category_button_image_mobile' src={naval} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_mobile'>Tintas</h2>
+              <h2 className='home_optional_category_title_mobile'>Naval</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-                <CgSmartphoneChip color='var(--blue-primary)' className='home_optional_category_button_image_mobile' ></CgSmartphoneChip>
+              <img className='home_optional_category_button_image_mobile' src={mineracao} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_mobile'>Automação</h2>
+              <h2 className='home_optional_category_title_mobile'>Mineração</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-                <TfiPanel color='var(--blue-primary)' className='home_optional_category_button_image_mobile'></TfiPanel>
+              <img className='home_optional_category_button_image_mobile' src={construcao} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_mobile'>Painéis</h2>
+              <h2 className='home_optional_category_title_mobile'>Edificação</h2>
             </div>
           </Link>
           <Link to='/category'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-                <img src={iconMotor} width={30} height={20} alt=''></img>
+              <img className='home_optional_category_button_image_mobile' src={siderurgia} alt="" width={125} />
               </button>
-              <h2 className='home_optional_category_title_mobile'>Motores</h2>
+              <h2 className='home_optional_category_title_mobile'>Siderurgia</h2>
+            </div>
+          </Link>
+          <Link to='/category'>
+            <div className='home_optional_category_mobile'>
+              <button className='home_optional_category_button_mobile'>
+              <img className='home_optional_category_button_image_mobile' src={alimenticia} alt="" width={125} />
+              </button>
+              <h2 className='home_optional_category_title_mobile'>Alimentícia</h2>
             </div>
           </Link>
         </div>
