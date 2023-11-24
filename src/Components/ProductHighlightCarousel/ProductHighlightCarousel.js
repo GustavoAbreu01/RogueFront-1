@@ -18,7 +18,7 @@ function ProductHighlightCarousel() {
     const [productsHightlight, setProductsHightlight] = useState([])
 
     const getProductsRev = async () => {
-        const products = await ProductService.findAll();
+        const products = await ProductService.findHighlight();
         if (products) {
             setProductsHightlight(products);
         } else {

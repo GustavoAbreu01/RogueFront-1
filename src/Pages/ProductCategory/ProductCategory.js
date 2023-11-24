@@ -22,17 +22,15 @@ import { ProductService } from '../../Service';
 
 
 function ProductCategory() {
-  const [products, setProducts] = useState([]);
-  const [isGrid, setIsGrid] = useState(true);
-  const [search, setSearch] = useState(1);
-  const [totally, setTotally] = useState([]);
-  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const [selectedPagination, setSelectedPagination] = useState(1);
-  const [paginationIntruct, setPaginationIntruct] = useState(20);
   const [productsCategory, setProductsCategory] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [paginationIntruct, setPaginationIntruct] = useState(5);
+  const [isGrid, setIsGrid] = useState(true);
+  const [totally, setTotally] = useState([]);
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const { category } = useParams();
 
+  const totalPages = Math.ceil(totally.length / paginationIntruct);
   const startIndex = (currentPage - 1) * paginationIntruct;
   const endIndex = startIndex + paginationIntruct;
 
@@ -46,37 +44,27 @@ function ProductCategory() {
   }
 
   const getProductsCategory = async () => {
-    const products = await ProductService.findCategory(paginationIntruct, currentPage);
-    const total = await ProductService.findAllProducts();
-    if (products) {
-      setProducts(total);
-      setTotally(total);
-      setProductsCategory(products);
-    } else {
-      setProducts([]);
-      setTotally([]);
-      setProductsCategory([]);
+    try {
+      const products = await ProductService.findCategory(paginationIntruct, currentPage);
+      const total = await ProductService.findAllProducts();
+      console.log(total.length)
+      if (products) {
+        setProductsCategory(products);
+        setTotally(total);
+      } else {
+        setProductsCategory([]);
+        setTotally([]);
+      }
+    } catch (error) {
+      console.error("Erro ao obter produtos:", error);
     }
   };
-
-  const alterarSearch = (e, { value }) => {
-    setSearch(value);
-    return search;
-  };
-
   const toggleLayout = () => {
     setIsGrid((prevIsGrid) => !prevIsGrid);
   };
 
   useEffect(() => {
-    const startIndex = (currentPage - 1) * paginationIntruct;
-    const endIndex = startIndex + paginationIntruct;
-    const productsToDisplay = productsCategory.slice(startIndex, endIndex);
-    setProducts(productsToDisplay);
-
     getProductsCategory();
-    setCurrentPage(1);
-
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -85,45 +73,10 @@ function ProductCategory() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [selectedPagination, paginationIntruct, productsCategory]);
-
-  const handlePaginationChange = (e, { value }) => {
-    setSelectedPagination(value);
-    let newPaginationIntruct;
-    if (value === 1) {
-      newPaginationIntruct = 20;
-    } else if (value === 2) {
-      newPaginationIntruct = 40;
-    } else if (value === 3) {
-      newPaginationIntruct = 60;
-    } else if (value === 4) {
-      newPaginationIntruct = 80;
-    }
-    setPaginationIntruct(newPaginationIntruct);
-    setCurrentPage(1);
-  };
-
-  const renderPaginationButtons = () => {
-    const totalPages = Math.ceil(totally.length / paginationIntruct);
-
-    const buttons = [];
-    for (let i = 1; i <= totalPages; i++) {
-      buttons.push(
-        <button
-          key={i}
-          className="pagination_category"
-          onClick={() => handlePageChange(i)}
-        >
-          {i}
-        </button>
-      );
-    }
-    return buttons;
-  };
+  }, [currentPage]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    getProductsCategory();
   };
 
   const formatCategoryTitle = (category) => {
@@ -160,7 +113,7 @@ function ProductCategory() {
             <div className='pagination_options'>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Ordenar por:</p>
-                <select onChange={handlePaginationChange} className='select_search'>
+                <select className='select_search'>
                   <option value="1">20 por página</option>
                   <option value="2">40 por página</option>
                   <option value="3">60 por página</option>
@@ -169,7 +122,7 @@ function ProductCategory() {
               </div>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Procurar por:</p>
-                <select onChange={handlePageChange} className='select_search'>
+                <select className='select_search'>
                   <option value="1">Mais Acessados</option>
                   <option value="2">Mais Procurados</option>
                   <option value="3">Preço Crescente</option>
@@ -201,8 +154,8 @@ function ProductCategory() {
             <div className="container_category_bar">
               <div className="box_category_bar">
                 {productsCategory.slice(startIndex, endIndex).map((product) => (
-                  <div className="category_itens">
-                    <CategoryCard key={product.id} product={product} />
+                  <div className="category_itens" key={product.id}>
+                    <CategoryCard product={product} />
                   </div>
                 ))}
               </div>
@@ -211,8 +164,8 @@ function ProductCategory() {
             <div className="container_search_bar">
               <div className="box_search_bar">
                 {productsCategory.slice(startIndex, endIndex).map((product) => (
-                  <div className="searchItens">
-                    <SmallProductCard key={product.id} product={product} />
+                  <div className="searchItens" key={product.id}>
+                    <SmallProductCard product={product} />
                   </div>
                 ))}
               </div>
@@ -220,7 +173,17 @@ function ProductCategory() {
           )}
         </div>
         <div className='pagination_buttons'>
-          {renderPaginationButtons()}
+        {Array.from({ length: totalPages }, (_, index) => index).map(
+                    (page) => (
+                        <button
+                            key={page}
+                            className={currentPage === page ? "active" : ""}
+                            onClick={() => handlePageChange(page)}
+                        >
+                            {page + 1}
+                        </button>
+                    )
+                )}
         </div>
         <Footer />
       </div>
@@ -284,9 +247,9 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar_mobile">
               <div className="box_category_bar">
-                {products.map((product) => (
-                  <div className="category_itens">
-                    <CategoryCard key={product.id} product={product} />
+                {productsCategory.map((product) => (
+                  <div className="category_itens" key={product.id}>
+                    <CategoryCard product={product} />
                   </div>
                 ))}
               </div>
@@ -294,9 +257,9 @@ function ProductCategory() {
           ) : (
             <div className="container_search_bar_mobile">
               <div className="box_search_bar_mobile">
-                {products.map((product) => (
-                  <div className="searchItens">
-                    <SmallProductCard key={product.id} product={product} />
+                {productsCategory.map((product) => (
+                  <div className="searchItens" key={product.id}>
+                    <SmallProductCard product={product} />
                   </div>
                 ))}
               </div>

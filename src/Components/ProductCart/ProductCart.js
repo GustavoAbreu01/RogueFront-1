@@ -6,7 +6,6 @@ import './ProductCart.css'
 import { Link } from "react-router-dom";
 
 //Importando as imagens
-import motors from "../../assets/img/motores.png"
 import { CartService } from '../../Service';
 
 
@@ -75,12 +74,12 @@ function ProductCart({ item }) {
             <div className='product_cart_description'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={item.product.image} width="125" height="" />
+                  <img src={item.product.motors.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name">{item.product.name}</h2>
+                  <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
                   <p className="product_cart_complement" >{item.product.description}</p>
                   {renderPrice()}
                 </Link>
@@ -109,12 +108,12 @@ function ProductCart({ item }) {
           <div className="product_cart_card" style={{ color: 'black' }}>
             <div id="imgItens CardCart">
               <Link to="/product">
-                <img src={item.product.image} width="125" height="" />
+                <img src={item.product.motors.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_informations">
               <Link to="/product">
-                <h2 className="product_cart_item_name">{item.product.name}</h2>
+                <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
                 <p className="product_cart_complement" >{item.product.description}</p>
                 <h2 id="itemPreco CardCart" className='product_cart_item_price_tablet'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_tablet'>10x Sem juros</sub></h2>
               </Link>
@@ -143,12 +142,12 @@ function ProductCart({ item }) {
             <div className='product_card_cart_info_up'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={item.product.image} width="125" height="" />
+                  <img src={item.product.motors.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations_mobile">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name_mobile">{item.product.name}</h2>
+                  <h2 className="product_cart_item_name_mobile">{item.product.motors.model}</h2>
                   <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_mobile'>10x Sem juros</sub></h2>
                 </Link>
               </div>

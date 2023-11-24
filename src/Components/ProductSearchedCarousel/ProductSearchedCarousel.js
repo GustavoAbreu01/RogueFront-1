@@ -15,7 +15,7 @@ function ProductSearchedCarousel() {
     const [productsSearched, setProductsSearched] = useState([])
 
     const getProductsRev = async () => {
-        const products = await ProductService.findAll();
+        const products = await ProductService.findSearched();
         if (products) {
             setProductsSearched(products);
         } else {

@@ -17,7 +17,7 @@ function ProductNewCarousel() {
     const [productsNew, setProductsNew] = useState([])
 
     const getProductsRev = async () => {
-        const products = await ProductService.findAll();
+        const products = await ProductService.findNew();
         if (products) {
             setProductsNew(products);
         } else {

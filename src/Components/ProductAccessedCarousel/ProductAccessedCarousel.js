@@ -13,7 +13,7 @@ function ProductAccessedCarousel() {
     const [productsAcceessed, setProductsAcceessed] = useState([])
 
     const getProductsRev = async () => {
-        const products = await ProductService.findAll();
+        const products = await ProductService.findAccessed();
         if (products) {
             setProductsAcceessed(products);
         } else {
@@ -25,7 +25,7 @@ function ProductAccessedCarousel() {
         className: "center",
         accessibility: false,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 10,
         swipeToSlide: false,
         responsive: [
             {

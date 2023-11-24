@@ -14,7 +14,7 @@ function ProductCarouselSmallSimilar() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        ProductService.findAll()
+        ProductService.findSimiliar()
             .then((data) => setProducts(data))
             .catch((error) => console.error('Erro ao buscar produtos:', error));
     }, []);

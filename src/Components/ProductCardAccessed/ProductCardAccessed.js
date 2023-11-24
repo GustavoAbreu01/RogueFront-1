@@ -110,11 +110,11 @@ function ProductCardAccessed({ product }) {
         </div>
         <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
           <div className='box_product_card_accessed_image'>
-            <img src={product.image} alt='' className='product_card_accessed_image' height={150} width={150}></img>
+            <img src={product.image} alt='' className='product_card_accessed_image' height={200} width={200}></img>
           </div>
           <div className='box_product_card_accessed_info'>
             <div className='product_card_accessed_info_text'>
-              <h3 title={product.name} className='product_card_accessed_name'>{product.name}</h3>
+              <h3 title={product.motors.model} className='product_card_accessed_name'>{product.motors.model}</h3>
               <p className='product_card_accessed_description'>{product.description}</p>
             </div>
           </div>
@@ -150,11 +150,11 @@ function ProductCardAccessed({ product }) {
         </div>
         <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
           <div className='box_product_card_accessed_image'>
-            <img src={product.image} alt='' className='product_card_accessed_image' height={150} width={150}></img>
+            <img src={product.image} alt='' className='product_card_accessed_image' height={200} width={200}></img>
           </div>
           <div className='box_product_card_accessed_info'>
             <div className='product_card_accessed_info_text'>
-              <h3 title={product.name} className='product_card_accessed_name'>{product.name}</h3>
+              <h3 title={product.motors.model} className='product_card_accessed_name'>{product.motors.model}</h3>
               <p className='product_card_accessed_description'>{product.description}</p>
             </div>
           </div>
@@ -190,11 +190,11 @@ function ProductCardAccessed({ product }) {
         </div>
         <Link to={`/product/${product.code}`} className='product_card_accessed_link'>
           <div className='box_product_card_accessed_image'>
-            <img src={product.image} alt='' className='product_card_accessed_image' height={100} width={100}></img>
+            <img src={product.image} alt='' className='product_card_accessed_image' height={150} width={150}></img>
           </div>
           <div className='box_product_card_accessed_info'>
             <div className='product_card_accessed_info_text_mobile'>
-              <h3 title={product.name} className='product_card_accessed_name_mobile'>{product.name}</h3>
+              <h3 title={product.motors.model} className='product_card_accessed_name_mobile'>{product.motors.model}</h3>
             </div>
           </div>
           <div className='box_product_card_accessed_info_price'>

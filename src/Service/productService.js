@@ -13,20 +13,10 @@ export const ProductService = {
         }
     },
 
-    
-
-    findSimilar: async (size) => {
-        try {
-            const response = await axios.get(url + "?size=" + 5 + "&page=" + 0);
-            return response.data.content;
-        } catch (error) {
-            console.error(error);
-        }
-    },
-
     findAllProducts: async () => {
         try {
             const response = await axios.get(url + "/all");
+            console.log(response.data);
             return response.data;
         } catch (error) {
             console.error(error);
@@ -35,7 +25,7 @@ export const ProductService = {
 
     findAll: async () => {
         try {
-            const response = await axios.get(url + "?size=" + 15 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 15 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -44,7 +34,7 @@ export const ProductService = {
 
     findCategory: async (size) => {
         try {
-            const response = await axios.get(url + "?size=" + size + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + size + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -53,7 +43,7 @@ export const ProductService = {
 
     findAccessed: async () => {
         try {
-            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -62,7 +52,7 @@ export const ProductService = {
 
     findHighlight: async () => {
         try {
-            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -71,7 +61,7 @@ export const ProductService = {
 
     findNew: async () => {
         try {
-            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -80,7 +70,16 @@ export const ProductService = {
 
     findSearched: async () => {
         try {
-            const response = await axios.get(url + "?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findSimiliar: async () => {
+        try {
+            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
