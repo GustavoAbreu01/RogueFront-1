@@ -168,3 +168,12 @@
     gap: 2rem;
     margin-top: 2rem;
 }
+
+.box.step.quiz {
+
+}
+
+.selectedQuestion {
+    font-weight: bolder;
+    color: red;
+}
