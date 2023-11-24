@@ -229,7 +229,7 @@ const renderDesktopView = () => (
                     <img src={product.image} width="125" height="" />
                 </div>
                 <div className="category_card_product_info">
-                    <h3 className="category_card_product_name">{product.name}</h3>
+                    <h3 className="category_card_product_name">{product.motors.model}</h3>
                     <h4 className="category_card_product_description">{product.decription}</h4>
                     {renderPrice()}
                 </div>
