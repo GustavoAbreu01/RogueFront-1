@@ -65,47 +65,59 @@ function MenuModal() {
               <h1 className="modal_menu_title">Segmentos</h1>
             </div>
             <div className="modal_menu_content_body">
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconMotor} alt="iconeMotor" width={30} />
-                  <p className="category_title" >Agronegócio</p>
+              <Link to='/category/agronegocio'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconMotor} alt="iconeMotor" width={30} />
+                    <p className="category_title" >Agronegócio</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconTecSolutions} alt="iconeMotor" width={25} />
-                  <p className="category_title">Naval</p>
-                </div>
+                <Link to='/category/naval'>
+                  <div className="category_title_selected">
+                    <img src={iconTecSolutions} alt="iconeMotor" width={25} />
+                    <p className="category_title">Naval</p>
+                  </div>
+                </Link>
               </div>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconPaint} alt="iconeMotor" width={25} />
-                  <p className="category_title">Mineração</p>
+              <Link to='/category/mineracao'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconPaint} alt="iconeMotor" width={25} />
+                    <p className="category_title">Mineração</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={generator} alt="iconeMotor" width={25} />
-                  <p className="category_title">Edificação</p>
+              <Link to='/category/edificacao'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={generator} alt="iconeMotor" width={25} />
+                    <p className="category_title">Edificação</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={industry} alt="iconeMotor" width={25} />
-                  <p className="category_title">Siderurgica</p>
+              <Link to='/category/siderurgia'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={industry} alt="iconeMotor" width={25} />
+                    <p className="category_title">Siderurgica</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconEnergy} alt="iconeMotor" width={25} />
-                  <p className="category_title">Alimentícia</p>
+              <Link to='/category/alimenticia'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconEnergy} alt="iconeMotor" width={25} />
+                    <p className="category_title">Alimentícia</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -128,47 +140,59 @@ function MenuModal() {
               <h1 className="modal_menu_title">Segmentos</h1>
             </div>
             <div className="modal_menu_content_body">
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconMotor} alt="iconeMotor" width={30} />
-                  <p className="category_title" >Agronegócio</p>
+              <Link to='/category/agronegocio'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconMotor} alt="iconeMotor" width={30} />
+                    <p className="category_title" >Agronegócio</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconTecSolutions} alt="iconeMotor" width={25} />
-                  <p className="category_title">Naval</p>
+              <Link to='/category/naval'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconTecSolutions} alt="iconeMotor" width={25} />
+                    <p className="category_title">Naval</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconPaint} alt="iconeMotor" width={25} />
-                  <p className="category_title">Mineração</p>
+              <Link to='/category/mineracao'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconPaint} alt="iconeMotor" width={25} />
+                    <p className="category_title">Mineração</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={generator} alt="iconeMotor" width={25} />
-                  <p className="category_title">Edificação</p>
+              <Link to='/category/edificacao'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={generator} alt="iconeMotor" width={25} />
+                    <p className="category_title">Edificação</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={industry} alt="iconeMotor" width={25} />
-                  <p className="category_title">Siderurgica</p>
+              <Link to='/category/siderurgia'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={industry} alt="iconeMotor" width={25} />
+                    <p className="category_title">Siderurgica</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div className="ui inverted divider menu_modal"></div>
-              <div className="category_selected">
-                <div className="category_title_selected">
-                  <img src={iconEnergy} alt="iconeMotor" width={25} />
-                  <p className="category_title">Alimentícia</p>
+              <Link to='/category/alimenticia'>
+                <div className="category_selected">
+                  <div className="category_title_selected">
+                    <img src={iconEnergy} alt="iconeMotor" width={25} />
+                    <p className="category_title">Alimentícia</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
