@@ -156,12 +156,7 @@
     border-radius: 10px;
 }
 
-.search_mobile {
-    align-items: center;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-}
+
 
 .icon_category_mobile {
     display: block;

@@ -76,7 +76,7 @@ function Header() {
         <div className="divisor_header"></div>
         <Link to="/category/edificacao">Edificação</Link>
         <div className="divisor_header"></div>
-        <Link to="/category/siderurgica">Siderurgica</Link>
+        <Link to="/category/siderurgia">Siderurgia</Link>
         <div className="divisor_header"></div>
         <Link to="/category/alimenticia">Alimentícia</Link>
         <div className="divisor_header"></div>

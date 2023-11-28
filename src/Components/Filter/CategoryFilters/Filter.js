@@ -20,7 +20,7 @@ function Filter({category}) {
             return <FilterMineracao/>
         } else if (category === "edificacao") {
             return <FilterConstrucao/>
-        } else if (category === "siderurgica") {
+        } else if (category === "siderurgia") {
             return <FilterSiderurgia/>
         } else if (category === "alimenticia") {
             return <FilterAlimenticia/>

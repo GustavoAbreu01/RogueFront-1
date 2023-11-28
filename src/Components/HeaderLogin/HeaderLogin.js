@@ -88,20 +88,21 @@ function HeaderLogin() {
     </div>
   </div>
     <div className="nav_bar_header_login">
-    <div className="divisor_header"></div>
-        <Link to="/category/motors">Agronegócio</Link>
+        </div><div className="nav_bar_header_login">
         <div className="divisor_header"></div>
-        <Link to="/category/motors">Naval</Link>
+        <Link to="/category/agronegocio">Agronegócio</Link>
         <div className="divisor_header"></div>
-        <Link to="/category/ink">Mineração</Link>
+        <Link to="/category/naval">Naval</Link>
         <div className="divisor_header"></div>
-        <Link to="/category/automation">Edificação</Link>
+        <Link to="/category/mineracao">Mineração</Link>
         <div className="divisor_header"></div>
-        <Link to="/category/building">Siderurgica</Link>
+        <Link to="/category/edificacao">Edificação</Link>
         <div className="divisor_header"></div>
-        <Link to="/category/security">Alimentícia</Link>
+        <Link to="/category/siderurgia">Siderurgia</Link>
         <div className="divisor_header"></div>
-    </div></>
+        <Link to="/category/alimenticia">Alimentícia</Link>
+        <div className="divisor_header"></div>
+      </div></>
   )
 
   const renderTabletView = () => (

@@ -231,7 +231,7 @@ function FilterAgro() {
     const renderMobileView = () => (
         <>
             <div className="category_second_filter_mobile">
-                <h2 className="search_mobile">Motores</h2>
+                <h2 className="search_mobile">Agronegócio</h2>
                 <br />
                 <div className='container_category_filter_expanded_mobile'>
                 <div className='container_category_filter_expanded'>

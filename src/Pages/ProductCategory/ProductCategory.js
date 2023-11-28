@@ -88,8 +88,8 @@ function ProductCategory() {
       return category = "Mineração"
     } else if (category === "edificacao") {
       return category = "Edificação"
-    } else if (category === "siderurgica") {
-      return category = "Siderurgica"
+    } else if (category === "siderurgia") {
+      return category = "Siderurgia"
     } else if (category === "alimenticia") {
       return category = "Alimentícia"
     }
@@ -198,7 +198,7 @@ function ProductCategory() {
           <i className="right chevron icon divider"></i>
           <Link to="/" className="section">Categoria</Link>
           <i className="right arrow icon divider"></i>
-          <div className="active section">Motores</div>
+          <div className="active section">{formatCategoryTitle(category)}</div>
         </div>
       </div>
       <div className='box_pagination_config_mobile'>

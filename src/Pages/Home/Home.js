@@ -361,7 +361,7 @@ function Home() {
         </div>
         <div className="home_divider_carousel"></div>
         <div className="box_home_option_pages_tablet">
-          <Link to='/category'>
+          <Link to='/category/agronegocio'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
                 <img className='home_optional_category_button_image_tablet' src={agro} alt="" width={125} />
@@ -369,7 +369,7 @@ function Home() {
               <h2 className='home_optional_category_title_tablet'>Agronegócio</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/naval'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
                 <img className='home_optional_category_button_image_tablet' src={naval} alt="" width={125} />
@@ -377,7 +377,7 @@ function Home() {
               <h2 className='home_optional_category_title_tablet'>Naval</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/mineracao'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
                 <img className='home_optional_category_button_image_tablet' src={mineracao} alt="" width={125} />
@@ -385,7 +385,7 @@ function Home() {
               <h2 className='home_optional_category_title_tablet'>Mineração</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/edificacao'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
                 <img className='home_optional_category_button_image_tablet' src={construcao} alt="" width={125} />
@@ -393,7 +393,7 @@ function Home() {
               <h2 className='home_optional_category_title_tablet'>Edificação</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/siderurgia'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
                 <img className='home_optional_category_button_image_tablet' src={siderurgia} alt="" width={125} />
@@ -401,7 +401,7 @@ function Home() {
               <h2 className='home_optional_category_title_tablet'>Siderurgia</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/alimenticia'>
             <div className='home_optional_category_tablet'>
               <button className='home_optional_category_button_tablet'>
                 <img className='home_optional_category_button_image_tablet' src={alimenticia} alt="" width={125} />
@@ -476,7 +476,7 @@ function Home() {
         </div>
         <div className="home_divider_carousel"></div>
         <div className="box_home_option_pages_mobile">
-          <Link to='/category'>
+          <Link to='/category/agronegocio'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
               <img className='home_optional_category_button_image_mobile' src={agro} alt="" width={125} />
@@ -484,7 +484,7 @@ function Home() {
               <h2 className='home_optional_category_title_mobile'>Agronegócio</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/naval'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
               <img className='home_optional_category_button_image_mobile' src={naval} alt="" width={125} />
@@ -492,7 +492,7 @@ function Home() {
               <h2 className='home_optional_category_title_mobile'>Naval</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/mineracao'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
               <img className='home_optional_category_button_image_mobile' src={mineracao} alt="" width={125} />
@@ -500,7 +500,7 @@ function Home() {
               <h2 className='home_optional_category_title_mobile'>Mineração</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/edificacao'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
               <img className='home_optional_category_button_image_mobile' src={construcao} alt="" width={125} />
@@ -508,7 +508,7 @@ function Home() {
               <h2 className='home_optional_category_title_mobile'>Edificação</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/siderurgia'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
               <img className='home_optional_category_button_image_mobile' src={siderurgia} alt="" width={125} />
@@ -516,7 +516,7 @@ function Home() {
               <h2 className='home_optional_category_title_mobile'>Siderurgia</h2>
             </div>
           </Link>
-          <Link to='/category'>
+          <Link to='/category/alimenticia'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
               <img className='home_optional_category_button_image_mobile' src={alimenticia} alt="" width={125} />

@@ -10,15 +10,13 @@ import { BiMenu } from 'react-icons/bi';
 import { BsArrowBarLeft } from 'react-icons/bs';
 
 //import de imagens
-import iconMotor from "../../assets/img/iconeMotor.png"
-import iconTecSolutions from "../../assets/img/DIFERENTESTECNOLOGIAS.png"
-import iconEnergy from "../../assets/img/ENERGIA FOTOVOLTAICA_SOLAR.png"
-import iconPaint from "../../assets/img/PINTURA_TINTAS.png"
-import generator from "../../assets/img/gerador.png"
-import power from "../../assets/img/ENERGIA_POTÊNCIA.jpg"
-import reducer from "../../assets/img/REDUTOR02.png"
-import industry from "../../assets/img/Segurança_industria.png"
-import building from "../../assets/img/CONSTRUÇÃO.png"
+
+import agro from "../../assets/img/icone-rural.png"
+import naval from "../../assets/img/NAVAL.png"
+import mineracao from "../../assets/img/mineracao.png"
+import construcao from "../../assets/img/CONSTRUCAO.png"
+import siderurgia from "../../assets/img/metalurgica.png"
+import alimenticia from "../../assets/img/ALIMENTAÇÃO.png"
 
 function MenuModal() {
   const [openModal, setOpenModal] = useState(false);
@@ -49,7 +47,9 @@ function MenuModal() {
   }, []);
 
   function toggleModal() {
+    console.log(openModal)
     setOpenModal(!openModal);
+    console.log(openModal)
   }
 
   const renderTabletView = () => (
@@ -67,43 +67,43 @@ function MenuModal() {
             <div className="modal_menu_content_body">
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconMotor} alt="iconeMotor" width={30} />
-                  <p className="category_title" >Agronegócio</p>
+                  <img src={agro} alt="iconeMotor" width={30} />
+                  <Link onClick={() => setOpenModal(false)} className="category_title" to="/category/agronegocio">Agronegócio</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconTecSolutions} alt="iconeMotor" width={25} />
-                  <p className="category_title">Naval</p>
+                  <img src={naval} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/naval" className="category_title">Naval</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconPaint} alt="iconeMotor" width={25} />
-                  <p className="category_title">Mineração</p>
+                  <img src={mineracao} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/mineracao" className="category_title">Mineração</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={generator} alt="iconeMotor" width={25} />
-                  <p className="category_title">Edificação</p>
+                  <img src={construcao} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/edificacao" className="category_title">Edificação</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={industry} alt="iconeMotor" width={25} />
-                  <p className="category_title">Siderurgica</p>
+                  <img src={siderurgia} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/siderurgia" className="category_title">Siderurgia</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconEnergy} alt="iconeMotor" width={25} />
-                  <p className="category_title">Alimentícia</p>
+                  <img src={alimenticia} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/alimenticia" className="category_title">Alimentícia</Link>
                 </div>
               </div>
             </div>
@@ -130,43 +130,43 @@ function MenuModal() {
             <div className="modal_menu_content_body">
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconMotor} alt="iconeMotor" width={30} />
-                  <p className="category_title" >Agronegócio</p>
+                  <img src={agro} alt="iconeMotor" width={30} />
+                  <Link onClick={() => setOpenModal(false)} className="category_title" to="/category/agronegocio">Agronegócio</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconTecSolutions} alt="iconeMotor" width={25} />
-                  <p className="category_title">Naval</p>
+                  <img src={naval} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/naval" className="category_title">Naval</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconPaint} alt="iconeMotor" width={25} />
-                  <p className="category_title">Mineração</p>
+                  <img src={mineracao} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/mineracao" className="category_title">Mineração</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={generator} alt="iconeMotor" width={25} />
-                  <p className="category_title">Edificação</p>
+                  <img src={construcao} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/edificacao" className="category_title">Edificação</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={industry} alt="iconeMotor" width={25} />
-                  <p className="category_title">Siderurgica</p>
+                  <img src={siderurgia} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/siderurgia" className="category_title">Siderurgia</Link>
                 </div>
               </div>
               <div className="ui inverted divider menu_modal"></div>
               <div className="category_selected">
                 <div className="category_title_selected">
-                  <img src={iconEnergy} alt="iconeMotor" width={25} />
-                  <p className="category_title">Alimentícia</p>
+                  <img src={alimenticia} alt="iconeMotor" width={25} />
+                  <Link onClick={() => setOpenModal(false)}  to="/category/alimenticia" className="category_title">Alimentícia</Link>
                 </div>
               </div>
             </div>

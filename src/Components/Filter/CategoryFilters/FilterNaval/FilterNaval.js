@@ -233,7 +233,7 @@ function FilterNaval() {
     const renderMobileView = () => (
         <>
             <div className="category_second_filter_mobile">
-                <h2 className="search_mobile">Painéis elétricos</h2>
+                <h2 className="search_mobile">Naval</h2>
                 <br />
                 <div className='container_category_filter_expanded_mobile'>
                     <div className={`category_filter_dropdown_mobile ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>Preço
