@@ -112,7 +112,7 @@ function ProductCardNew({ product }) {
           <div className='box_product_card_new_info'>
             <div className='product_card_new_info_text'>
               <h3 title={product.motors.model} className='product_card_new_name'>{product.motors.model}</h3>
-              <p className='product_card_new_description'>{product.description}</p>
+              <p className='product_card_new_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
             </div>
           </div>
           <div className='box_product_card_new_info_price'>
@@ -153,7 +153,7 @@ function ProductCardNew({ product }) {
           <div className='box_product_card_new_info'>
             <div className='product_card_new_info_text'>
               <h3 title={product.motors.model} className='product_card_new_name'>title= {product.motors.model}</h3>
-              <p className='product_card_new_description'>title= {product.description}</p>
+              <p className='product_card_new_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
             </div>
           </div>
           <div className='box_product_card_new_info_price'>

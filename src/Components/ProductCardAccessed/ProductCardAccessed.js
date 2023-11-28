@@ -115,7 +115,7 @@ function ProductCardAccessed({ product }) {
           <div className='box_product_card_accessed_info'>
             <div className='product_card_accessed_info_text'>
               <h3 title={product.motors.model} className='product_card_accessed_name'>{product.motors.model}</h3>
-              <p className='product_card_accessed_description'>{product.description}</p>
+              <p className='product_card_accessed_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
             </div>
           </div>
           <div className='box_product_card_accessed_info_price'>
@@ -155,7 +155,7 @@ function ProductCardAccessed({ product }) {
           <div className='box_product_card_accessed_info'>
             <div className='product_card_accessed_info_text'>
               <h3 title={product.motors.model} className='product_card_accessed_name'>{product.motors.model}</h3>
-              <p className='product_card_accessed_description'>{product.description}</p>
+              <p className='product_card_accessed_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
             </div>
           </div>
           <div className='box_product_card_accessed_info_price'>

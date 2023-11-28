@@ -25,12 +25,11 @@
 .container_searchBar .serarchBar_suggestions {
   position: absolute;
   top: 9%;
-  left: 24.5%;
   width: 43rem;
   max-height: 200px;
   overflow-y: auto;
   padding: 0;
-  margin: 8px 0;
+  margin: 20px;
   background-color: var(--white);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
