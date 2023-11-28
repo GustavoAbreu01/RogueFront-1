@@ -11,28 +11,23 @@ import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSma
 import CategoryCard from '../../Components/CategoryCard/CategoryCard';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
+import FilterSearch from '../../Components/Filter/FilterSearch';
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
-import { FaListUl } from 'react-icons/fa'
-import FilterSearch from '../../Components/Filter/FilterSearch';
+import { FaListUl, FaLongArrowAltRight, FaLongArrowAltLeft } from 'react-icons/fa'
 import { ProductService } from '../../Service';
 
 
 function ProductCategory() {
   const [productsCategory, setProductsCategory] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [paginationIntruct, setPaginationIntruct] = useState(5);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [paginationIntruct, setPaginationIntruct] = useState(8);
   const [isGrid, setIsGrid] = useState(true);
-  const [totally, setTotally] = useState([]);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const { category } = useParams();
-
-  const totalPages = Math.ceil(totally.length / paginationIntruct);
-  const startIndex = (currentPage - 1) * paginationIntruct;
-  const endIndex = startIndex + paginationIntruct;
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -43,17 +38,25 @@ function ProductCategory() {
     }
   }
 
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    // Adicione a lógica para verificar se há mais páginas
+    // ou ajuste conforme necessário
+    setCurrentPage(currentPage + 1);
+  };
+
   const getProductsCategory = async () => {
     try {
       const products = await ProductService.findCategory(paginationIntruct, currentPage);
-      const total = await ProductService.findAllProducts();
-      console.log(total.length)
       if (products) {
         setProductsCategory(products);
-        setTotally(total);
       } else {
         setProductsCategory([]);
-        setTotally([]);
       }
     } catch (error) {
       console.error("Erro ao obter produtos:", error);
@@ -153,8 +156,8 @@ function ProductCategory() {
           {isGrid ? (
             <div className="container_category_bar">
               <div className="box_category_bar">
-                {productsCategory.slice(startIndex, endIndex).map((product) => (
-                  <div className="category_itens" key={product.id}>
+                {productsCategory.map((product) => (
+                  <div className="category_itens" key={product.code}>
                     <CategoryCard product={product} />
                   </div>
                 ))}
@@ -163,8 +166,8 @@ function ProductCategory() {
           ) : (
             <div className="container_search_bar">
               <div className="box_search_bar">
-                {productsCategory.slice(startIndex, endIndex).map((product) => (
-                  <div className="searchItens" key={product.id}>
+                {productsCategory.map((product) => (
+                  <div className="searchItens" key={product.code}>
                     <SmallProductCard product={product} />
                   </div>
                 ))}
@@ -172,18 +175,15 @@ function ProductCategory() {
             </div>
           )}
         </div>
-        <div className='pagination_buttons'>
-        {Array.from({ length: totalPages }, (_, index) => index).map(
-                    (page) => (
-                        <button
-                            key={page}
-                            className={currentPage === page ? "active" : ""}
-                            onClick={() => handlePageChange(page)}
-                        >
-                            {page + 1}
-                        </button>
-                    )
-                )}
+        <div className='box_pagination_buttons'>
+          <button className='pagination_button' onClick={handlePrevPage}>
+            <FaLongArrowAltLeft className='arrow_page left' />
+            Anterior
+          </button>
+          <button className='pagination_button' onClick={handleNextPage}>
+            Próximo
+            <FaLongArrowAltRight className='arrow_page right' />
+          </button>
         </div>
         <Footer />
       </div>
@@ -266,6 +266,7 @@ function ProductCategory() {
             </div>
           )}
         </div>
+
         <Footer />
       </div>
     </>

@@ -222,7 +222,7 @@ function SmallProductCard({product}) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>{product.name}</h3>
+                        <h3 className='product_card_smaller_title'>{product.motors.model}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
@@ -260,11 +260,11 @@ function SmallProductCard({product}) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>{product.name}</h3>
+                        <h3 className='product_card_smaller_title'>{product.motors.model}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
-                    <h3 className='product_card_smaller_price'>R$ {product.price}</h3>
+                    <h3 className='product_card_smaller_price'>R$ {product.motors.price}</h3>
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
                 <Link to='/cart'>
@@ -293,11 +293,11 @@ function SmallProductCard({product}) {
                 </div>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 title= {product.name} className='product_card_smaller_title'>{product.name}</h3>
+                        <h3 title= {product.motors.model} className='product_card_smaller_title'>{product.motors.model}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
-                    <h3 className='product_card_smaller_price'>R$ {product.price}</h3>
+                    <h3 className='product_card_smaller_price'>R$ {product.motors.price}</h3>
                     <p className='product_card_smaller_price_info'>Á vista no pix</p>
                 </div>
                 <Link to='/cart'>

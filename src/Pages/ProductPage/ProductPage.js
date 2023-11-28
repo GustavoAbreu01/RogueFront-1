@@ -320,7 +320,7 @@ function ProductPage() {
                 </div>
             </div>
             <div className='box_product_page_title_similar'>
-                <i class="magic icon" color='var(--white)'></i>
+                <i className="magic icon" color='var(--white)'></i>
                 <h1>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
