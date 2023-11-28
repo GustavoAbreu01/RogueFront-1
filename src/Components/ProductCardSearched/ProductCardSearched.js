@@ -113,7 +113,7 @@ function ProductCardSearched({product}) {
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
             <h3 title= {product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
-            <p className='product_card_searched_description'>{product.description}</p>
+            <p className='product_card_searched_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
@@ -153,7 +153,7 @@ function ProductCardSearched({product}) {
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
             <h3 title= {product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
-            <p className='product_card_searched_description'>{product.description}</p>
+            <p className='product_card_searched_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>

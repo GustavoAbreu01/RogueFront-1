@@ -15,8 +15,8 @@ export const ProductService = {
 
     findAllProducts: async () => {
         try {
-            const response = await axios.get(url + "/all");
-            return response.data;
+            const response = await axios.get(url + "/completo?size=" + 15 + "&page=" + 0);
+            return response.data.content;
         } catch (error) {
             console.error(error);
         }
@@ -33,7 +33,7 @@ export const ProductService = {
 
     findCategory: async (size) => {
         try {
-            const response = await axios.get(url + "/completo?size=" + size + "&page=" + 0);
+            const response = await axios.get(url + "/resumo?size=" + size + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -43,7 +43,6 @@ export const ProductService = {
     findAccessed: async () => {
         try {
             const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
-            console.log(response.data.content);
             return response.data.content;
         } catch (error) {
             console.error(error);

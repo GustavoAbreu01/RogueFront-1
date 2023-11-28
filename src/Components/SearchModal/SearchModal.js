@@ -59,7 +59,7 @@ function SearchBar() {
   const loadProductSuggestions = async () => {
     try {
       const products = await ProductService.findAllProducts();
-      const productNames = products.map(product => product.name);
+      const productNames = products.map(product => product.motors.model);
       setProduct(products);
       setTotally(productNames);
     } catch (error) {
@@ -72,7 +72,7 @@ function SearchBar() {
   const handleSuggestionClick = (suggestion) => {
     setSearchTerm(suggestion);
     setShowSuggestions(false);
-    const selectedProduct = product.find(product => product.name.toLowerCase() === suggestion.toLowerCase());
+    const selectedProduct = product.find(product => product.motors.model.toLowerCase() === suggestion.toLowerCase());
     if (selectedProduct) {
       window.location.href = `/product/${selectedProduct.code}`;
     } else {
