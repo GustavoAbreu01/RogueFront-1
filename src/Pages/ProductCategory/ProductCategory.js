@@ -24,8 +24,9 @@ import { ProductService } from '../../Service';
 function ProductCategory() {
   const [productsCategory, setProductsCategory] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [paginationIntruct, setPaginationIntruct] = useState(8);
+  const [paginationIntruct, setPaginationIntruct] = useState(20);
   const [isGrid, setIsGrid] = useState(true);
+  const [showNextButton, setShowNextButton] = useState(true);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const { category } = useParams();
 
@@ -38,16 +39,29 @@ function ProductCategory() {
     }
   }
 
+  const alternatePaginationInstruct = (event) => {
+    setPaginationIntruct(event.target.value);
+  };
+
   const handlePrevPage = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
     }
   };
 
-  const handleNextPage = () => {
-    // Adicione a lógica para verificar se há mais páginas
-    // ou ajuste conforme necessário
-    setCurrentPage(currentPage + 1);
+  const handleNextPage = async () => {
+    try {
+      const totalProducts = await ProductService.getTotalProducts(category);
+      const remainingProducts = totalProducts - (currentPage + 1) * paginationIntruct;
+
+      if (remainingProducts > 0) {
+        setCurrentPage(currentPage + 1);
+      } else {
+        setShowNextButton(false);
+      }
+    } catch (error) {
+      console.error("Erro ao obter total de produtos:", error);
+    }
   };
 
   const getProductsCategory = async () => {
@@ -68,6 +82,7 @@ function ProductCategory() {
 
   useEffect(() => {
     getProductsCategory();
+    setShowNextButton(true);
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -76,11 +91,8 @@ function ProductCategory() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [currentPage]);
+  }, [currentPage, paginationIntruct]);
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
 
   const formatCategoryTitle = (category) => {
     if (category === "agronegocio") {
@@ -116,16 +128,16 @@ function ProductCategory() {
             <div className='pagination_options'>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Ordenar por:</p>
-                <select className='select_search'>
-                  <option value="1">20 por página</option>
-                  <option value="2">40 por página</option>
-                  <option value="3">60 por página</option>
-                  <option value="4">80 por página</option>
+                <select onChange={alternatePaginationInstruct} className='select_search'>
+                  <option value="20">20 por página</option>
+                  <option value="40">40 por página</option>
+                  <option value="60">60 por página</option>
+                  <option value="80">80 por página</option>
                 </select>
               </div>
               <div className="field pagination">
                 <p className='text_pagination_inst'>Procurar por:</p>
-                <select className='select_search'>
+                <select onChange={console.log()} className='select_search'>
                   <option value="1">Mais Acessados</option>
                   <option value="2">Mais Procurados</option>
                   <option value="3">Preço Crescente</option>
@@ -176,14 +188,18 @@ function ProductCategory() {
           )}
         </div>
         <div className='box_pagination_buttons'>
-          <button className='pagination_button' onClick={handlePrevPage}>
-            <FaLongArrowAltLeft className='arrow_page left' />
+          <button
+            className='pagination_button'
+            onClick={handlePrevPage}
+            disabled={currentPage === 0}
+          >
             Anterior
           </button>
-          <button className='pagination_button' onClick={handleNextPage}>
-            Próximo
-            <FaLongArrowAltRight className='arrow_page right' />
-          </button>
+          {showNextButton && (
+            <button className='pagination_button' onClick={handleNextPage}>
+              Próximo
+            </button>
+          )}
         </div>
         <Footer />
       </div>
