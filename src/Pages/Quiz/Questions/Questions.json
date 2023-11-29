@@ -1,0 +1,101 @@
+{
+    "perguntas_respostas": [
+        {
+            "pergunta": "Qual a tensão de alimentação necessária para o seu motor?",
+            "opcoes_resposta": [
+                "220V",
+                "380V",
+                "440V",
+                "760V"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual o tipo de partida?",
+            "opcoes_resposta": [
+                "Partida Direta",
+                "Partida Estrela Triângulo",
+                "Soft Starter",
+                "Inversor de Frequência"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual o tipo do acoplamento?",
+            "opcoes_resposta": [
+                "Acoplamento por cardã",
+                "Acoplamento por engrenagem",
+                "Acoplamento direto",
+                "Acoplamento por correia plana"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual o tipo de ambiente onde esse motor vai ser usado?",
+            "opcoes_resposta": [
+                "Normal",
+                "Atmosfera explosiva zonas 21 e 22"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual a altitude que esse motor vai se encontrar?",
+            "opcoes_resposta": [
+                "Até 1000m",
+                "1500m",
+                "2000m"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual a temperatura ambiente que esse motor vai se encontrar?",
+            "opcoes_resposta": [
+                "Até 40oC",
+                "55oC",
+                "Até 20oC",
+                "Até 35oC"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual a forma construtiva necessária para esse motor?",
+            "opcoes_resposta": [
+                "B5D",
+                "B3D",
+                "B35D",
+                "B34D"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual a relação de transmissão necessária?",
+            "campo_digitacao": true
+        },
+        {
+            "pergunta": "Qual o valor do Conjugado nominal da carga necessária?",
+            "campo_digitacao": true
+        },
+        {
+            "pergunta": "Onde a caixa de ligação do seu motor precisa estar?",
+            "opcoes_resposta": [
+                "Esquerda",
+                "Direita",
+                "Acima"
+            ],
+            "campo_digitacao": false
+        },
+        {
+            "pergunta": "Qual o tipo de proteção necessária para o seu motor?",
+            "opcoes_resposta": [
+                "IP21",
+                "IP44",
+                "IP54",
+                "IP55",
+                "IP66",
+                "IPW55",
+                "IPW66"
+            ],
+            "campo_digitacao": false
+        }
+    ]
+}
