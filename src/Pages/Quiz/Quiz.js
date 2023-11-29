@@ -27,8 +27,7 @@ function Quiz() {
   const Question1 = () => progresso === 0;
 
   const [respostas, setRespostas] = useState([]);
-
-
+  const [respostaSelecionada, setRespostaSelecionada] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = Questions ? Questions.perguntas_respostas[currentQuestionIndex] : null;
   const [concluido, setConcluido] = useState(false);
@@ -38,22 +37,24 @@ function Quiz() {
 
 
   const handleNextQuestion = () => {
-    
-    if (currentQuestionIndex < Questions.perguntas_respostas.length - 1) {
-      const respostaAtual = currentQuestion.campo_digitacao ? resposta : getOpcaoSelecionada();
-      if (currentQuestion.pergunta === "Qual o tipo do acoplamento?" && resposta === "Acoplamento por cardã") {
-        setRespostas(prevRespostas => [...prevRespostas, { tipo: respostaAtual, numeroCarda }]);
-      } else {
-        setRespostas(prevRespostas => [...prevRespostas, respostaAtual]);
-      }
+    if (respostaSelecionada) {
+      if (currentQuestionIndex < Questions.perguntas_respostas.length - 1) {
+        const respostaAtual = currentQuestion.campo_digitacao ? resposta : getOpcaoSelecionada();
+        if (currentQuestion.pergunta === "Qual o tipo do acoplamento?" && resposta === "Acoplamento por cardã") {
+          setRespostas(prevRespostas => [...prevRespostas, { tipo: respostaAtual, numeroCarda }]);
+        } else {
+          setRespostas(prevRespostas => [...prevRespostas, respostaAtual]);
+        }
 
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setResposta('');
-      setCampoCardaAberto(false);
-      setNumeroCarda('');
-    } else if (currentQuestionIndex === Questions.perguntas_respostas.length - 1) {
-      console.log(respostas);
-      setConcluido(true);
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setResposta('');
+        setCampoCardaAberto(false);
+        setNumeroCarda('');
+        setRespostaSelecionada(false)
+      } else if (currentQuestionIndex === Questions.perguntas_respostas.length - 1) {
+        console.log(respostas);
+        setConcluido(true);
+      }
     }
   };
 
@@ -163,7 +164,10 @@ function Quiz() {
                 type="text"
                 placeholder="Digite sua resposta"
                 value={resposta}
-                onChange={(e) => setResposta(e.target.value)}
+                onChange={(e) => {
+                  setResposta(e.target.value);
+                  setRespostaSelecionada(!!e.target.value); 
+                }}
               />
             ) : (
               <ul>
@@ -176,6 +180,7 @@ function Quiz() {
                       value={opcao}
                       checked={resposta === opcao}
                       onChange={() => {
+                        setRespostaSelecionada(true);
                         setResposta(opcao);
                         if (opcao === "Acoplamento por cardã") {
                           setCampoCardaAberto(true);
@@ -201,7 +206,7 @@ function Quiz() {
             )}
             <div className='div_buttons_quiz'>
               <button className="ui big button back quiz_btn_options" onClick={handlePreviousQuestion}>Voltar</button>
-              <button className="ui big button next quiz_btn_options"  onClick={handleNextQuestion}>Próximo</button>
+              <button className="ui big button next quiz_btn_options" onClick={handleNextQuestion}>Próximo</button>
             </div>
           </>
         ) : (
