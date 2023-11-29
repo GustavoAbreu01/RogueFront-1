@@ -52,26 +52,25 @@ function HeaderLogin() {
 
   const renderDesktopView = () => (
     <><div className={scrolled ? 'scrolled_login_desktop' : 'header_login_desktop'}>
-    <div className="box_logo_header_login">
-      <Link to="/"><img src={logo} className='image_logo_header_login' /></Link>
-    </div>
-    <div className="search_input_header">
-      <SearchBar />
-    </div>
-    <div className="opc_header_login">
-      <div className='icons_header_login'>
-        <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves_header_login' /></Link>
+      <div className="box_logo_header_login">
+        <Link to="/"><img src={logo} className='image_logo_header_login' /></Link>
       </div>
-      <div className='icons_header_login'>
-        <Link to="/cart"><FaShoppingCart className="cart_header_login" /></Link>
+      <div className="search_input_header">
+        <SearchBar />
       </div>
-      <div>
-        <PerfilModal user={user} />
+      <div className="opc_header_login">
+        <div className='icons_header_login'>
+          <Link to="/save "><BsFillBookmarkFill size={'2rem'} className='saves_header_login' /></Link>
+        </div>
+        <div className='icons_header_login'>
+          <Link to="/cart"><FaShoppingCart className="cart_header_login" /></Link>
+        </div>
+        <div>
+          <PerfilModal user={user} />
+        </div>
       </div>
     </div>
-  </div>
-    <div className="nav_bar_header_login">
-        </div><div className="nav_bar_header_login">
+      <div className="nav_bar_header_login">
         <div className="divisor_header"></div>
         <Link to="/category/agronegocio">Agronegócio</Link>
         <div className="divisor_header"></div>
@@ -95,8 +94,8 @@ function HeaderLogin() {
         <Link to="/"><img className='image_logo_header_mobile' src={logo} /></Link>
       </div>
       <div className='search_input_header'>
-          <SearchBar />
-        </div>
+        <SearchBar />
+      </div>
       <div className="opc_header_mobile">
         <div className='icons_header'>
           <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header_mobile" /></Link>

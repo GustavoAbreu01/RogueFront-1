@@ -230,7 +230,7 @@ function ProductPage() {
         if (productPage.price !== undefined) {
             const priceParts = productPage.price.toString().split('.');
             const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00'; // If no decimal part, default to '00'
+            const decimalPart = priceParts[1] || '00';
             return (
                 <h1 className="total_price_page_product">
                     <div className='price_combo_product_page'>
@@ -241,111 +241,111 @@ function ProductPage() {
                 </h1>
             );
         } else {
-            return null; // Handle the case where productPage.price is undefined
+            return null;
         }
     };
 
     const renderDesktopView = () => (
         <>
-        {productPage.motors && 
-        <div>
-            {!verify() ? <Header /> : <HeaderLogin />}
-            <WeggnerModal />
-            
-            <div className="ui items product_page" >
-                <p className="ui blue ribbon label">{productPage.categories}</p>
-                <div className="ui item product_page">
-                    <div className="img_product_page">
-                        <img className="image_product" src={productPage.image} />
-                    </div>
-                    <div className="content product_page">
-                        <h1 className="ui header product_page"> {productPage.motors.model}</h1>
-                        <br />
-                        <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
-                        {renderPrice()}
-                        <div className="meta">
-                            <span>Descrição</span>
-                        </div>
-                        <div className="description product_page">
-                            <p> {productPage.motors.typeDaCarcaca}, Proteção {productPage.motors.protection}
-                                </p>
-                        </div>
-                        <div className='buttons_product_page'>
-                            <Link to={"/cart"}>
-                                <button className="ui fluid button sell_product_page" onClick={BuyProduct}>
-                                    Comprar Agora
-                                </button>
-                            </Link>
-                            <div className='buttons_product_page_opc_add'>
-                                <div>
-                                    <button onClick={() => AddProductInCart(product)} className="ui fluid button cart_product_page">
-                                        Adicionar ao Carrinho
-                                    </button>
+            {productPage.motors &&
+                <div>
+                    {!verify() ? <Header /> : <HeaderLogin />}
+                    <WeggnerModal />
+
+                    <div className="ui items product_page" >
+                        <p className="ui blue ribbon label">{productPage.category}</p>
+                        <div className="ui item product_page">
+                            <div className="img_product_page">
+                                <img className="image_product" src={productPage.image} />
+                            </div>
+                            <div className="content product_page">
+                                <h1 className="ui header product_page"> {productPage.motors.model}</h1>
+                                <br />
+                                <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
+                                {renderPrice()}
+                                <div className="meta">
+                                    <span>Descrição</span>
                                 </div>
-                                <div>
-                                    <button onClick={() => AddProductInCompare(product)} className="ui fluid icon button cart_product_compare">
-                                        <i className="exchange icon"></i>
-                                    </button>
+                                <div className="description product_page">
+                                    <p> {productPage.motors.typeDaCarcaca}, Proteção {productPage.motors.protection}
+                                    </p>
+                                </div>
+                                <div className='buttons_product_page'>
+                                    <Link to={"/cart"}>
+                                        <button className="ui fluid button sell_product_page" onClick={BuyProduct}>
+                                            Comprar Agora
+                                        </button>
+                                    </Link>
+                                    <div className='buttons_product_page_opc_add'>
+                                        <div>
+                                            <button onClick={() => AddProductInCart(product)} className="ui fluid button cart_product_page">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button onClick={() => AddProductInCompare(product)} className="ui fluid icon button cart_product_compare">
+                                                <i className="exchange icon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 className="ui header about_product_page">Sobre o Produto</h2>
+                            <h3 className="ui header app_product_page"> Aplicações</h3>
+                            <p className='caracteristics_product_page' >Bem-vindo à era da potência versátil. Nosso modelo de motor generalizado redefine a eficiência e a confiabilidade em diversas aplicações. Projetado para oferecer desempenho excepcional, este motor é a escolha ideal para impulsionar uma variedade de dispositivos, desde veículos e máquinas industriais até equipamentos de energia.</p>
+                            <h3 className="ui header charac_product_page"> Características</h3>
+                            <p className='caracteristics_product_page'>Seja para veículos, máquinas industriais ou fontes de energia, nosso motor generalizado representa a vanguarda da tecnologia. Projetado para oferecer potência excepcional e eficiência superior, este motor se destaca em qualquer aplicação.
+
+                                <br /><strong>Desempenho Otimizado:</strong> Experimente um equilíbrio perfeito entre potência e eficiência energética, garantindo um rendimento excepcional em todas as condições.
+
+                                <br /><strong>Adaptabilidade sem Limites:</strong> Versátil por natureza, nosso motor se integra facilmente a uma variedade de contextos, adaptando-se às demandas específicas de cada aplicação.
+
+                                <br /><strong>Confiabilidade Inigualável:</strong> Construído com os mais altos padrões de qualidade, nosso motor generalizado oferece durabilidade superior e desempenho consistente ao longo do tempo.</p>
+                            <h3 className="ui header gl_charac_product_page"> Características Gerais</h3>
+                            <ProductTableMotor product={productPage} />
+                            <h3 className="ui header optionals_product_page"> Opcionais</h3>
+                            <p>{productPage.optional}</p>
+                        </div>
+                    </div>
+                    <div className='div_product_page_recomendation'>
+                        <p className="ui blue ribbon label combo_product_page">Frequentemente comprado juntos</p>
+                        <div className='container_product_page_recomendation'>
+                            <div className='box_product_page_combo_card'>
+                                <ComboCard />
+                            </div>
+                            <AiOutlinePlus color='var(--blue-primary)' fontSize={50} />
+                            <div className='box_product_page_combo_card'>
+                                <ComboCard />
+                            </div>
+                            <FaEquals color='var(--blue-primary)' fontSize={40} />
+                            <div className='final_price_produc_page_combo'>
+                                <h1 className='total_combo_product_page'>Total do combo</h1>
+                                {renderPrice2()}
+                                <div className='product_page_combo_buy_button'>
+                                    <button className="fluid ui button product_page_combo_button" onClick={() => BuyProduct(product)}>Comprar Combo</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <h2 className="ui header about_product_page">Sobre o Produto</h2>
-                    <h3 className="ui header app_product_page"> Aplicações</h3>
-                    <p className='caracteristics_product_page' >Bem-vindo à era da potência versátil. Nosso modelo de motor generalizado redefine a eficiência e a confiabilidade em diversas aplicações. Projetado para oferecer desempenho excepcional, este motor é a escolha ideal para impulsionar uma variedade de dispositivos, desde veículos e máquinas industriais até equipamentos de energia.</p>
-                    <h3 className="ui header charac_product_page"> Características</h3>
-                    <p className='caracteristics_product_page'>Seja para veículos, máquinas industriais ou fontes de energia, nosso motor generalizado representa a vanguarda da tecnologia. Projetado para oferecer potência excepcional e eficiência superior, este motor se destaca em qualquer aplicação.
-
-                        <br /><strong>Desempenho Otimizado:</strong> Experimente um equilíbrio perfeito entre potência e eficiência energética, garantindo um rendimento excepcional em todas as condições.
-
-                        <br /><strong>Adaptabilidade sem Limites:</strong> Versátil por natureza, nosso motor se integra facilmente a uma variedade de contextos, adaptando-se às demandas específicas de cada aplicação.
-
-                        <br /><strong>Confiabilidade Inigualável:</strong> Construído com os mais altos padrões de qualidade, nosso motor generalizado oferece durabilidade superior e desempenho consistente ao longo do tempo.</p>
-                    <h3 className="ui header gl_charac_product_page"> Características Gerais</h3>
-                    <ProductTableMotor product={productPage} />
-                    <h3 className="ui header optionals_product_page"> Opcionais</h3>
-                    <p>{productPage.optional}</p>
-                </div>
-            </div>
-            <div className='div_product_page_recomendation'>
-                <p className="ui blue ribbon label combo_product_page">Frequentemente comprado juntos</p>
-                <div className='container_product_page_recomendation'>
-                    <div className='box_product_page_combo_card'>
-                        <ComboCard />
+                    <div className='box_product_page_title_similar'>
+                        <i className="magic icon" color='var(--white)'></i>
+                        <h1>Produtos Semelhantes</h1>
                     </div>
-                    <AiOutlinePlus color='var(--blue-primary)' fontSize={50} />
-                    <div className='box_product_page_combo_card'>
-                        <ComboCard />
+                    <div className='box_product_page_carousel_similar'>
+                        <Carousel />
                     </div>
-                    <FaEquals color='var(--blue-primary)' fontSize={40} />
-                    <div className='final_price_produc_page_combo'>
-                        <h1 className='total_combo_product_page'>Total do combo</h1>
-                        {renderPrice2()}
-                        <div className='product_page_combo_buy_button'>
-                            <button className="fluid ui button product_page_combo_button" onClick={() => BuyProduct(product)}>Comprar Combo</button>
-                        </div>
+                    <div className='box_product_page_title_highlights'>
+                        <FaStar color='var(--white)' size={40} />
+                        <h1>Produtos Destaques</h1>
                     </div>
+                    <div className='box_product_page_carousel_highlights'>
+                        <Carousel />
+                    </div>
+                    <Footer />
                 </div>
-            </div>
-            <div className='box_product_page_title_similar'>
-                <i className="magic icon" color='var(--white)'></i>
-                <h1>Produtos Semelhantes</h1>
-            </div>
-            <div className='box_product_page_carousel_similar'>
-                <Carousel />
-            </div>
-            <div className='box_product_page_title_highlights'>
-                <FaStar color='var(--white)' size={40} />
-                <h1>Produtos Destaques</h1>
-            </div>
-            <div className='box_product_page_carousel_highlights'>
-                <Carousel />
-            </div>
-            <Footer />
-           </div>
-}
+            }
         </>
     )
 

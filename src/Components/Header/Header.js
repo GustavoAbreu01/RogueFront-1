@@ -66,7 +66,8 @@ function Header() {
           <Link className="cart" to="/cart"><FaShoppingCart className="cart_icon_header" /></Link>
         </div>
       </div>
-    </div><div className="nav_bar_header">
+    </div>
+      <div className="nav_bar_header">
         <div className="divisor_header"></div>
         <Link to="/category/agronegocio">Agronegócio</Link>
         <div className="divisor_header"></div>
