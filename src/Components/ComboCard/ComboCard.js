@@ -98,18 +98,18 @@ function ComboCard({ product }) {
                             <p className="ui blue ribbon label combo_product_page">Frequentemente comprado juntos</p>
                             <div className='container_product_page_recomendation'>
                                 <div className='box_product_page_combo_card'>
-                                    <img className="image_combo_card" src={productPage[getRandom].image} />
-                                    <h1 className="ui header combo_card">{renderModel(productPage[getRandom])}</h1>
-                                    {renderPrice(productPage[getRandom])}
+                                    <img className="image_combo_card" src={product.image} />
+                                    <h1 className="ui header combo_card">{renderModel(product)}</h1>
+                                    {renderPrice(product)}
                                     <div className='combo_card_buy_button'>
                                         <button className="fluid ui button combo_card_button" onClick={() => BuyProduct()}>Comprar</button>
                                     </div>
                                 </div>
                                 <FaPlus color='var(--blue-primary)' fontSize={50} />
                                 <div className='box_product_page_combo_card'>
-                                    <img className="image_combo_card" src={product.image} />
-                                    <h1 className="ui header combo_card">{renderModel(product)}</h1>
-                                    {renderPrice(product)}
+                                    <img className="image_combo_card" src={productPage[getRandom].image}  />
+                                    <h1 className="ui header combo_card">{renderModel(productPage[getRandom])}</h1>
+                                    {renderPrice(productPage[getRandom])}
                                     <div className='combo_card_buy_button'>
                                         <button className="fluid ui button combo_card_button" onClick={() => BuyProduct()}>Comprar</button>
                                     </div>
