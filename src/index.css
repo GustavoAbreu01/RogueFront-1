@@ -26,4 +26,6 @@ code {
   --grey-secondary: #EFEFEF;
   --white: #FFFFFF;
   --black: #000000;
+
+  --red: rgb(161, 23, 23);
 }

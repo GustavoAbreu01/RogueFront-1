@@ -19,6 +19,7 @@ import { BsArrowLeftShort } from 'react-icons/bs';
 function Register() {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+    const [passwordConfirm, setPasswordConfirm] = useState('');
 
     useEffect(() => {
         function handleResize() {
@@ -31,14 +32,18 @@ function Register() {
         };
     }, []);
 
-
-    const [passwordConfirm, setPasswordConfirm] = useState('');
-
     const [user, setUser] = useState({
+        cpf: '',
         name: '',
         email: '',
         password: '',
-        cpf: '',
+        address: null,
+        saves: null,
+        cart: null,
+        cards: null,
+        authorities: [
+            "CLIENT"
+        ]
     });
 
     const updateRegisterInformation = (event) => {
@@ -50,24 +55,81 @@ function Register() {
     }
 
     const navigate = useNavigate();
-    
+
     function create(event) {
         if (user.password !== passwordConfirm) {
             event.preventDefault();
-            alert("Confirmação de senha incorreta")
+            swal.fire({
+                title: 'Senhas não conferem!',
+                icon: 'error',
+                showConfirmButton: false,
+                position: 'top-end',
+                timer: 3000,
+                timerProgressBar: true,
+                background: 'var(--red)',
+                toast: true,
+                width: 400,
+                color: 'var(--white)',
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            })
+        } else if (user.cpf === '' || user.name === '' || user.email === '' || user.password === '') {
+            event.preventDefault();
+            swal.fire({
+                title: 'Preencha todos os campos!',
+                icon: 'error',
+                showConfirmButton: false,
+                position: 'top-end',
+                timer: 3000,
+                timerProgressBar: true,
+                background: 'var(--red)',
+                color: 'var(--white)',
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            })
+        } else if (user.password.length < 6) {
+            event.preventDefault();
+            swal.fire({
+                title: 'Senha deve ter no mínimo 6 caracteres!',
+                icon: false,
+                showConfirmButton: false,
+                position: 'top-end',
+                timer: 3000,
+                timerProgressBar: true,
+                background: 'var(--red)',
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            })
         } else {
             event.preventDefault();
             UserService.create(user);
+
             localStorage.setItem('user', JSON.stringify(user));
             localStorage.setItem("verifyLogin", 'yes');
             swal.fire({
-                title: 'Redirecionando para Login!',
+                title: 'Cadastro realizado com sucesso!',
+                text: 'Você será redirecionado para a página de login',
                 icon: 'success',
                 showConfirmButton: false,
-                confirmButtonText: 'Ir para o carrinho',
                 confirmButtonColor: 'var(--blue-primary)',
                 position: 'top-end',
-                timer: 5000,
+                timer: 2000,
                 timerProgressBar: true,
                 toast: true,
                 width: 400,
@@ -78,8 +140,7 @@ function Register() {
                     popup: 'animate__animated animate__backOutRight'
                 },
             }).then(() => {
-                
-                    navigate('/login');
+                navigate('/login');
             }
             )
         }
@@ -95,18 +156,10 @@ function Register() {
                 <div className="box_register_inputs">
                     <form className="ui form register">
                         <h2 className="ui header titleRegister">Cadastro de Usuário</h2>
-
-                        <div className="fields">
-                            <div className="eight wide field register">
-                                <label>Nome</label>
-                                <input className='register_input' name="name" value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
-                            </div>
-                            <div className="eight wide field register">
-                                <label>Sobrenome</label>
-                                <input className='register_input' name="name" value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
-                            </div>
+                        <div className="field register">
+                            <label>Nome Completo</label>
+                            <input className='register_input' name="name" value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome completo" />
                         </div>
-
                         <div className="field register">
                             <label>Email</label>
                             <input className='register_input' name="email" value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
@@ -119,11 +172,11 @@ function Register() {
                         <div className="fields">
                             <div className="eight wide field register">
                                 <label>Senha:</label>
-                                <input className='register_input' name="password" value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                <input className='register_input' name="password" value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="password" placeholder="suasenha/123455" />
                             </div>
                             <div className="eight wide field register">
                                 <label>Confirmar Senha:</label>
-                                <input className='register_input' name="password" value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                <input className='register_input' name="password" value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="password" placeholder="suasenha/123455" />
                             </div>
                         </div>
                         <div className='box'>
@@ -146,48 +199,48 @@ function Register() {
             </div>
             <div className="container_register_inputs_mobile">
                 <div className="box_register_inputs_detail_mobile">
-                <div className="box_register_inputs_mobile">
-                    <form className="ui form register_mobile">
-                        <h2 className="ui header titleRegister_mobile">Cadastro de Usuário</h2>
+                    <div className="box_register_inputs_mobile">
+                        <form className="ui form register_mobile">
+                            <h2 className="ui header titleRegister_mobile">Cadastro de Usuário</h2>
 
-                        <div className="fields">
-                            <div className="eight wide field register_mobile">
-                                <label>Nome</label>
-                                <input className='register_input_mobile' name="name" value={user.name} onChange={updateRegisterInformation}  style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                            <div className="fields">
+                                <div className="eight wide field register_mobile">
+                                    <label>Nome</label>
+                                    <input className='register_input_mobile' name="name" value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                                </div>
+                                <div className="eight wide field register_mobile">
+                                    <label>Sobrenome</label>
+                                    <input className='register_input_mobile' name="name" value={user.name} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
+                                </div>
                             </div>
-                            <div className="eight wide field register_mobile">
-                                <label>Sobrenome</label>
-                                <input className='register_input_mobile' name="name" value={user.name} onChange={updateRegisterInformation}  style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="Seu nome" />
-                            </div>
-                        </div>
 
-                        <div className="field register_mobile">
-                            <label>Email</label>
-                            <input className='register_input_mobile' name="email" value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
-                        </div>
+                            <div className="field register_mobile">
+                                <label>Email</label>
+                                <input className='register_input_mobile' name="email" value={user.email} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                            </div>
 
-                        <div className="field register_mobile">
-                            <label>CPF/CNPJ</label>
-                            <input className='register_input_mobile' name="cpf" value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
-                        </div>
-                        <div className="fields">
-                            <div className="eight wide field register_mobile">
-                                <label>Senha:</label>
-                                <input className='register_input_mobile' name="password" value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                            <div className="field register_mobile">
+                                <label>CPF/CNPJ</label>
+                                <input className='register_input_mobile' name="cpf" value={user.cpf} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                             </div>
-                            <div className="eight wide field register_mobile">
-                                <label>Confirmar Senha:</label>
-                                <input className='register_input_mobile' name="password" value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                            <div className="fields">
+                                <div className="eight wide field register_mobile">
+                                    <label>Senha:</label>
+                                    <input className='register_input_mobile' name="password" value={user.password} onChange={updateRegisterInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                </div>
+                                <div className="eight wide field register_mobile">
+                                    <label>Confirmar Senha:</label>
+                                    <input className='register_input_mobile' name="password" value={user.passwordConfirm} onChange={updateConfirmInformation} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="suasenha/123455" />
+                                </div>
                             </div>
-                        </div>
-                        <div className='box_mobile'>
-                            <button className="ui big fluid button register_mobile" onClick={create}>Cadastrar</button>
-                        </div>
-                        <div className='register_finish_text'>
-                            <BsArrowLeftShort size={15} />
-                            <Link to='/login'> <p className='cart_finish_subtext'>Já Possui cadastro? <b>Login</b></p> </Link>
-                        </div>
-                    </form>
+                            <div className='box_mobile'>
+                                <button className="ui big fluid button register_mobile" onClick={create}>Cadastrar</button>
+                            </div>
+                            <div className='register_finish_text'>
+                                <BsArrowLeftShort size={15} />
+                                <Link to='/login'> <p className='cart_finish_subtext'>Já Possui cadastro? <b>Login</b></p> </Link>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

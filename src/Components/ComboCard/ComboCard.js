@@ -55,7 +55,6 @@ function ComboCard({ product }) {
         const priceParts = sum.toString().split('.');
         const integerPart = priceParts[0];
         const decimalPart = priceParts[1] || '00';
-        console.log(decimalPart);
         if (decimalPart.length > 2) {
             newDecimal = decimalPart.slice(0, 2);
         }
