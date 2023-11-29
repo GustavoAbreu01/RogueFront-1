@@ -27,9 +27,21 @@ export default function ProfileModal() {
     window.location.reload();
   }
 
-
+  const getUser = () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      console.log(userClaims.sub);
+      if (user) {
+        return setUser(user);
+      }
+    }
+  }
 
   useEffect(() => {
+    getUser();
     function handleOutsideClick(event) {
       if (event.target.classList.contains('background')) {
         setOpenModalAcessibility(false);
