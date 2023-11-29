@@ -16,16 +16,15 @@
 }
 
 .final_price_produc_page_combo {
-    height: 35%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .product_page_combo_buy_button {
     width: 12rem;
-    margin: 1rem;
 }
 
 .total_price_page_product {
@@ -52,7 +51,6 @@
 }
 
 .fluid.ui.button.product_page_combo_button {
-    margin-top: 2.5rem;
     font-size: 14px !important;
     background-color: var(--blue-primary);
     color: var(--white);
@@ -87,6 +85,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
     gap: 3rem;
 }
 

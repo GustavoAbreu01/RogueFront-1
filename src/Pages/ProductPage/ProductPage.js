@@ -20,8 +20,7 @@ import ComboCard from '../../Components/ComboCard/ComboCard'
 import motor from '../../assets/img/motor.png'
 
 //Importando os ícones
-import { FaStar, FaEquals } from 'react-icons/fa'
-import { AiOutlinePlus } from 'react-icons/ai'
+import { FaStar } from 'react-icons/fa'
 import { ProductService } from '../../Service';
 import { CartService } from '../../Service/CartService'
 
@@ -51,7 +50,7 @@ function ProductPage() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [productPage]);
+    }, []);
 
     const searchProduct = async (code) => {
         const productSearched = await ProductService.findOne(code);
@@ -309,26 +308,7 @@ function ProductPage() {
                             <p>{productPage.optional}</p>
                         </div>
                     </div>
-                    <div className='div_product_page_recomendation'>
-                        <p className="ui blue ribbon label combo_product_page">Frequentemente comprado juntos</p>
-                        <div className='container_product_page_recomendation'>
-                            <div className='box_product_page_combo_card'>
-                                <ComboCard />
-                            </div>
-                            <AiOutlinePlus color='var(--blue-primary)' fontSize={50} />
-                            <div className='box_product_page_combo_card'>
-                                <ComboCard />
-                            </div>
-                            <FaEquals color='var(--blue-primary)' fontSize={40} />
-                            <div className='final_price_produc_page_combo'>
-                                <h1 className='total_combo_product_page'>Total do combo</h1>
-                                {renderPrice2()}
-                                <div className='product_page_combo_buy_button'>
-                                    <button className="fluid ui button product_page_combo_button" onClick={() => BuyProduct(product)}>Comprar Combo</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ComboCard product={productPage} />
                     <div className='box_product_page_title_similar'>
                         <i className="magic icon" color='var(--white)'></i>
                         <h1>Produtos Semelhantes</h1>

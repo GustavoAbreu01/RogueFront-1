@@ -27,8 +27,8 @@ export const ProductService = {
 
     findAll: async () => {
         try {
-            const response = await axios.get(url + "/resumo?size=" + 15 + "&page=" + 0);
-            return response.data.content;
+            const response = await axios.get(url);
+            return response.data;
         } catch (error) {
             console.error(error);
         }
