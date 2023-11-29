@@ -31,9 +31,9 @@ export const ProductService = {
         }
     },
 
-    findCategory: async (size) => {
+    findCategory: async (size, page) => {
         try {
-            const response = await axios.get(url + "/resumo?size=" + size + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + size + "&page=" + page);
             return response.data.content;
         } catch (error) {
             console.error(error);

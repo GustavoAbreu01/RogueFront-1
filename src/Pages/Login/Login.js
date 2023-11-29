@@ -1,5 +1,6 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
+import Cookies from 'js-cookie';
 import "./Login.css"
 
 //Importando a Service
@@ -16,29 +17,23 @@ import { BsArrowLeftShort } from 'react-icons/bs';
 
 function Login() {
     
-    const [userLogin, setUserLogin] = useState({
-        "email": "",
+    const [login, setLogin] = useState({
+        "username": "",
         "password": ""
     });
 
     const updateUser = (event) => {
-        setUserLogin({ ...userLogin, [event.target.name]: event.target.value });
+        setLogin({ ...login, [event.target.name]: event.target.value });
     };
 
     const navigate = useNavigate();
 
     const handleLogin = async (event) => {
+        event.preventDefault();
         try {
-            const { email, password } = userLogin;
-            console.log(userLogin);
-            event.preventDefault();
-            const response = await UserService.login(email, password);
-            if(response){
-                localStorage.setItem('user', JSON.stringify(response));
-                localStorage.setItem('verifyLogin', 'yes');
-                navigate("/");
-            }
-            
+            const response = await UserService.login(login);
+            Cookies.set('token', response.data.id);
+            navigate('/');
         } catch (error) {
             alert("Erro ao fazer login. Verifique suas credenciais.");
             console.log(error);
@@ -71,11 +66,11 @@ function Login() {
                         <h2 className="ui header titleLogin">Login</h2>
                         <div className="field">
                             <label>Email</label>
-                            <input name="email" value={userLogin.email} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                            <input name="username" value={login.username} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                         </div>
                         <div className="field">
                             <label>Senha</label>
-                            <input name="password" value={userLogin.password} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                            <input name="password" value={login.password} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                         </div>
                         <div className='box'>
                             <button className="ui big fluid button login" onClick={handleLogin}>Login</button>
@@ -104,11 +99,11 @@ function Login() {
                     <h2 className="ui header titleLogin_mobile">Login</h2>
                     <div className="field">
                         <label>Email</label>
-                        <input value={userLogin.emailLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
+                        <input value={login.emailLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="seuemail@email.com" />
                     </div>
                     <div className="field">
                         <label>Senha</label>
-                        <input value={userLogin.passwordLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                        <input value={login.passwordLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                     </div>
                     <div className='box'>
                         <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>

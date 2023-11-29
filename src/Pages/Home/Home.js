@@ -51,6 +51,7 @@ import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
+import Cookies from 'js-cookie'
 
 
 function Home() {
@@ -146,8 +147,8 @@ function Home() {
   localStorage.setItem('productsCompared', JSON.stringify(products));
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false
@@ -306,28 +307,28 @@ function Home() {
           </div>
 
           <div className="container_home_benefits">
-            {iconsInfoOne.map((icon) => (
-              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
+            {iconsInfoOne.map((iconOne) => (
+              <div className="home_benefits_info" data-aos="fade-up" key={iconOne.id}>
                 <div className="home_benefits_info_icon">
-                  <img src={icon.icon} className="home_benefits_icon" alt='' />
+                  <img src={iconOne.icon} className="home_benefits_icon" alt='' />
                 </div>
                 <div className='home_benefits_description_info'>
-                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
-                  <p className="home_benefits_description">{icon.description}</p>
+                  <h1 className="home_benefits_description_title" >{iconOne.name}</h1>
+                  <p className="home_benefits_description">{iconOne.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="container_home_benefits">
-            {iconsInfoTwo.map((icon) => (
-              <div className="home_benefits_info" data-aos="fade-up" key={icon.id}>
+            {iconsInfoTwo.map((iconTwo) => (
+              <div className="home_benefits_info" data-aos="fade-up" key={iconTwo.id}>
                 <div className="home_benefits_info_icon">
-                  <img src={icon.icon} className="home_benefits_icon" alt='' />
+                  <img src={iconTwo.icon} className="home_benefits_icon" alt='' />
                 </div>
                 <div className='home_benefits_description_info'>
-                  <h1 className="home_benefits_description_title" >{icon.name}</h1>
-                  <p className="home_benefits_description" >{icon.description}</p>
+                  <h1 className="home_benefits_description_title" >{iconTwo.name}</h1>
+                  <p className="home_benefits_description" >{iconTwo.description}</p>
                 </div>
               </div>
             ))}

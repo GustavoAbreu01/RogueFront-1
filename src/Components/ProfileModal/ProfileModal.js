@@ -11,19 +11,23 @@ import logoDes from "../../assets/img/LogoWegDesing.png"
 //Importando os ícones
 import { CgProfile } from 'react-icons/cg'
 import { BsArrowBarRight } from 'react-icons/bs'
+import Cookies from 'js-cookie'
+import { UserService } from '../../Service'
 
 
 export default function ProfileModal() {
   const [openModal, setOpenModal] = useState(false);
   const [openModalAcessibility, setOpenModalAcessibility] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const user = JSON.parse(localStorage.getItem('user')) || [];
+  const [user, setUser] = useState({});
 
   function realizarLogout() {
-    localStorage.removeItem('verifyLogin');
-    localStorage.removeItem("user");
+    Cookies.remove('token');
+    Cookies.remove('Cookie');
     window.location.reload();
   }
+
+
 
   useEffect(() => {
     function handleOutsideClick(event) {
@@ -191,14 +195,14 @@ export default function ProfileModal() {
                     <Link to='https://www.weg.net/institutional/BR/pt/contact/violation-of-the-code-of-ethics'><p className='text_profile_opt'>Ajuda</p></Link>
                   </div>
                 </div>
-                  <div className='profile_item'>
-                    <button onClick={realizarLogout} className="ui icon button shopping profile">
-                      <i className="sign-out icon profile"></i>
-                    </button>
-                    <div className='text_profile_container'>
-                      <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
-                    </div>
+                <div className='profile_item'>
+                  <button onClick={realizarLogout} className="ui icon button shopping profile">
+                    <i className="sign-out icon profile"></i>
+                  </button>
+                  <div className='text_profile_container'>
+                    <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
                   </div>
+                </div>
               </div>
               <div className='profile_footer'>
                 <div className='profile_logo'>
@@ -467,11 +471,11 @@ export default function ProfileModal() {
                   </div>
                 </div>
                 <div className='profile_item'>
-                    <button onClick={realizarLogout} className="ui icon button shopping profile">
-                      <i className="sign-out icon profile"></i>
-                    </button>
+                  <button onClick={realizarLogout} className="ui icon button shopping profile">
+                    <i className="sign-out icon profile"></i>
+                  </button>
                   <div className='text_profile_container'>
-                   <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
+                    <p onClick={realizarLogout} className='text_profile_opt'>Sair</p>
                   </div>
                 </div>
               </div>

@@ -222,7 +222,7 @@ useEffect(() => {
 
 const renderDesktopView = () => (
     <div className="ui segment itens container_category_card" id="itemCategory"  key={product.code}>
-         <Link to={`/product/${product.code}`}>
+         <Link to={`/product/${product.motors.code}`}>
             <p className="ui blue ribbon label category_card">Verificados</p>
             <div className="category_card_content" style={{ color: 'black' }}>
                 <div className="category_card_image">
@@ -230,7 +230,7 @@ const renderDesktopView = () => (
                 </div>
                 <div className="category_card_product_info">
                     <h3 className="category_card_product_name">{product.motors.model}</h3>
-                    <h4 className="category_card_product_description">{product.decription}</h4>
+                    <h4 className="category_card_product_description">{product.motors.typeDaCarcaca}, {product.motors.protection}</h4>
                     {renderPrice()}
                 </div>
             </div>
@@ -256,15 +256,15 @@ const renderDesktopView = () => (
 
 const renderTabletView = () => (
     <div className="ui segment itens container_category_card"  key={product.code}>
-        <Link to={`/product/${product.code}`}>
+        <Link to={`/product/${product.motors.code}`}>
             <p className="ui blue ribbon label category_card">Verificados</p>
             <div className="category_card_content" style={{ color: 'black' }}>
                 <div className="category_card_image">
                     <img src={product.image} width="125" height="" />
                 </div>
                 <div className="category_card_product_info">
-                    <h3 className="category_card_product_name">{product.name}</h3>
-                    <h4 className="category_card_product_description">{product.description}</h4>
+                    <h3 className="category_card_product_name">{product.motors.model}</h3>
+                    <h4 className="category_card_product_description">{product.motors.typeDaCarcaca}, {product.motors.protection}</h4>
                     <h2 className="category_card_product_price">{renderPrice()}<sub className='category_card_product_subtext'>10x Sem juros</sub></h2>
                 </div>
             </div>
@@ -289,14 +289,14 @@ const renderTabletView = () => (
 )
 const renderMobileView = () => (
     <div className="ui segment itens container_category_card_mobile"  key={product.code}>
-        <Link to={`/product/${product.code}`}>
+        <Link to={`/product/${product.motors.code}`}>
             <p className="ui blue ribbon label category_card_mobile">Verificados</p>
             <div className="category_card_content_mobile" style={{ color: 'black' }}>
                 <div className="category_card_image_mobile">
                     <img src={product.image} width="100" height="" />
                 </div>
                 <div className="category_card_product_info_mobile">
-                    <h3 className="category_card_product_name_mobile">{product.name}</h3>
+                    <h3 className="category_card_product_name_mobile">{product.motors.name}</h3>
                     <h2 className="category_card_product_price_mobile">{renderPrice()}</h2>
                 </div>
             </div>

@@ -109,11 +109,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Qual é a linha do produto que você deseja?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-37" />
-              <label for="terms-checkbox-37" class="terms-label">
+              <label for="terms-checkbox-37" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,25 +124,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">Industrial</span>
+                <span className="label-text">Industrial</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-38" />
-              <label for="terms-checkbox-38" class="terms-label">
+              <label for="terms-checkbox-38" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -153,17 +153,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">Residencial</span>
+                <span className="label-text">Residencial</span>
               </label>
             </div>
           </div>
@@ -200,11 +200,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header">Qual a voltagem necessária para o seu produto?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-40" />
-              <label for="terms-checkbox-40" class="terms-label">
+              <label for="terms-checkbox-40" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -215,25 +215,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">12V</span>
+                <span className="label-text">12V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-41" />
-              <label for="terms-checkbox-41" class="terms-label">
+              <label for="terms-checkbox-41" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -244,25 +244,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">20V</span>
+                <span className="label-text">20V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-42" />
-              <label for="terms-checkbox-42" class="terms-label">
+              <label for="terms-checkbox-42" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -273,25 +273,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">40V</span>
+                <span className="label-text">40V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-43" />
-              <label for="terms-checkbox-43" class="terms-label">
+              <label for="terms-checkbox-43" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -302,17 +302,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">80V</span>
+                <span className="label-text">80V</span>
               </label>
             </div>
           </div>
@@ -349,11 +349,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Quantas células são necessárias?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-44" />
-              <label for="terms-checkbox-44" class="terms-label">
+              <label for="terms-checkbox-44" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -364,25 +364,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">6</span>
+                <span className="label-text">6</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-45" />
-              <label for="terms-checkbox-45" class="terms-label">
+              <label for="terms-checkbox-45" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -393,25 +393,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">8</span>
+                <span className="label-text">8</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-46" />
-              <label for="terms-checkbox-46" class="terms-label">
+              <label for="terms-checkbox-46" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -422,17 +422,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">10</span>
+                <span className="label-text">10</span>
               </label>
             </div>
           </div>
@@ -469,11 +469,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Qual o grau de proteção necessário?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-47" />
-              <label for="terms-checkbox-47" class="terms-label">
+              <label for="terms-checkbox-47" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -484,25 +484,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP23</span>
+                <span className="label-text">IP23</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-48" />
-              <label for="terms-checkbox-48" class="terms-label">
+              <label for="terms-checkbox-48" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -513,25 +513,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP24(W)</span>
+                <span className="label-text">IP24(W)</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-49" />
-              <label for="terms-checkbox-49" class="terms-label">
+              <label for="terms-checkbox-49" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -542,25 +542,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP55</span>
+                <span className="label-text">IP55</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-50" />
-              <label for="terms-checkbox-50" class="terms-label">
+              <label for="terms-checkbox-50" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -571,17 +571,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP56</span>
+                <span className="label-text">IP56</span>
               </label>
             </div>
           </div>
@@ -618,11 +618,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Qual a tensão necessária?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-51" />
-              <label for="terms-checkbox-51" class="terms-label">
+              <label for="terms-checkbox-51" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -633,25 +633,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">220/380 V</span>
+                <span className="label-text">220/380 V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-52" />
-              <label for="terms-checkbox-52" class="terms-label">
+              <label for="terms-checkbox-52" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -662,17 +662,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">220/380/440 V</span>
+                <span className="label-text">220/380/440 V</span>
               </label>
             </div>
           </div>
@@ -695,7 +695,7 @@ function Quiz() {
         )}
       </div>
       <div className='box_quiz_title_similar'>
-        <i class="magic icon" color='var(--white)'></i>
+        <i className="magic icon" color='var(--white)'></i>
         <h1 className='quiz_title_similar' >Produtos Semelhantes</h1>
       </div>
       <ProductSmallCarousel />
@@ -737,11 +737,11 @@ function Quiz() {
               </div>
               <div>
                 <div className="ui large header quiz_mobile">Qual é a linha do produto que você deseja?</div>
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-37" />
-                  <label for="terms-checkbox-37" class="terms-label">
+                  <label for="terms-checkbox-37" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -752,25 +752,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">Industrial</span>
+                    <span className="label-text">Industrial</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-38" />
-                  <label for="terms-checkbox-38" class="terms-label">
+                  <label for="terms-checkbox-38" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -781,17 +781,17 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">Residencial</span>
+                    <span className="label-text">Residencial</span>
                   </label>
                 </div>
               </div></>
@@ -825,11 +825,11 @@ function Quiz() {
               </div>
               <div>
                 <div className="ui large header quiz_mobile">Qual a voltagem necessária para o seu produto?</div>
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-40" />
-                  <label for="terms-checkbox-40" class="terms-label">
+                  <label for="terms-checkbox-40" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -840,25 +840,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">12V</span>
+                    <span className="label-text">12V</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-41" />
-                  <label for="terms-checkbox-41" class="terms-label">
+                  <label for="terms-checkbox-41" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -869,25 +869,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">20V</span>
+                    <span className="label-text">20V</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-42" />
-                  <label for="terms-checkbox-42" class="terms-label">
+                  <label for="terms-checkbox-42" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -898,25 +898,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">40V</span>
+                    <span className="label-text">40V</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-43" />
-                  <label for="terms-checkbox-43" class="terms-label">
+                  <label for="terms-checkbox-43" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -927,17 +927,17 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">80V</span>
+                    <span className="label-text">80V</span>
                   </label>
                 </div>
               </div>
@@ -972,11 +972,11 @@ function Quiz() {
               </div>
               <div>
                 <div className="ui large header quiz_mobile">Quantas células são necessárias?</div>
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-44" />
-                  <label for="terms-checkbox-44" class="terms-label">
+                  <label for="terms-checkbox-44" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -987,25 +987,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">6</span>
+                    <span className="label-text">6</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-45" />
-                  <label for="terms-checkbox-45" class="terms-label">
+                  <label for="terms-checkbox-45" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1016,25 +1016,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">8</span>
+                    <span className="label-text">8</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-46" />
-                  <label for="terms-checkbox-46" class="terms-label">
+                  <label for="terms-checkbox-46" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1045,17 +1045,17 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">10</span>
+                    <span className="label-text">10</span>
                   </label>
                 </div>
               </div>
@@ -1090,11 +1090,11 @@ function Quiz() {
               </div>
               <div>
                 <div className="ui large header quiz_mobile">Qual o grau de proteção necessário?</div>
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-47" />
-                  <label for="terms-checkbox-47" class="terms-label">
+                  <label for="terms-checkbox-47" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1105,25 +1105,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">IP23</span>
+                    <span className="label-text">IP23</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-48" />
-                  <label for="terms-checkbox-48" class="terms-label">
+                  <label for="terms-checkbox-48" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1134,25 +1134,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">IP24(W)</span>
+                    <span className="label-text">IP24(W)</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-49" />
-                  <label for="terms-checkbox-49" class="terms-label">
+                  <label for="terms-checkbox-49" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1163,25 +1163,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">IP55</span>
+                    <span className="label-text">IP55</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-50" />
-                  <label for="terms-checkbox-50" class="terms-label">
+                  <label for="terms-checkbox-50" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1192,17 +1192,17 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">IP56</span>
+                    <span className="label-text">IP56</span>
                   </label>
                 </div>
               </div>
@@ -1237,11 +1237,11 @@ function Quiz() {
               </div>
               <div>
                 <div className="ui large header quiz_mobile">Qual a tensão necessária?</div>
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-51" />
-                  <label for="terms-checkbox-51" class="terms-label">
+                  <label for="terms-checkbox-51" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1252,25 +1252,25 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">220/380 V</span>
+                    <span className="label-text">220/380 V</span>
                   </label>
                 </div>
                 <br />
-                <div class="checkbox-wrapper-37">
+                <div className="checkbox-wrapper-37">
                   <input type="checkbox" name="checkbox" id="terms-checkbox-52" />
-                  <label for="terms-checkbox-52" class="terms-label">
+                  <label for="terms-checkbox-52" className="terms-label">
                     <svg
-                      class="checkbox-svg"
+                      className="checkbox-svg"
                       viewBox="0 0 200 200"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1281,17 +1281,17 @@ function Quiz() {
                       <rect
                         width="200"
                         height="200"
-                        class="checkbox-box"
+                        className="checkbox-box"
                         stroke-width="40"
                         mask="url(#path-1-inside-1_476_5-37)"
                       />
                       <path
-                        class="checkbox-tick"
+                        className="checkbox-tick"
                         d="M52 111.018L76.9867 136L149 64"
                         stroke-width="15"
                       />
                     </svg>
-                    <span class="label-text">220/380/440 V</span>
+                    <span className="label-text">220/380/440 V</span>
                   </label>
                 </div>
               </div>
@@ -1354,11 +1354,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Qual é a linha do produto que você deseja?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-37" />
-              <label for="terms-checkbox-37" class="terms-label">
+              <label for="terms-checkbox-37" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1369,25 +1369,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">Industrial</span>
+                <span className="label-text">Industrial</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-38" />
-              <label for="terms-checkbox-38" class="terms-label">
+              <label for="terms-checkbox-38" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1398,17 +1398,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">Residencial</span>
+                <span className="label-text">Residencial</span>
               </label>
             </div>
           </div>
@@ -1445,11 +1445,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header">Qual a voltagem necessária para o seu produto?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-40" />
-              <label for="terms-checkbox-40" class="terms-label">
+              <label for="terms-checkbox-40" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1460,25 +1460,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">12V</span>
+                <span className="label-text">12V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-41" />
-              <label for="terms-checkbox-41" class="terms-label">
+              <label for="terms-checkbox-41" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1489,25 +1489,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">20V</span>
+                <span className="label-text">20V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-42" />
-              <label for="terms-checkbox-42" class="terms-label">
+              <label for="terms-checkbox-42" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1518,25 +1518,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">40V</span>
+                <span className="label-text">40V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-43" />
-              <label for="terms-checkbox-43" class="terms-label">
+              <label for="terms-checkbox-43" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1547,17 +1547,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">80V</span>
+                <span className="label-text">80V</span>
               </label>
             </div>
           </div>
@@ -1594,11 +1594,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Quantas células são necessárias?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-44" />
-              <label for="terms-checkbox-44" class="terms-label">
+              <label for="terms-checkbox-44" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1609,25 +1609,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">6</span>
+                <span className="label-text">6</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-45" />
-              <label for="terms-checkbox-45" class="terms-label">
+              <label for="terms-checkbox-45" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1638,25 +1638,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">8</span>
+                <span className="label-text">8</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-46" />
-              <label for="terms-checkbox-46" class="terms-label">
+              <label for="terms-checkbox-46" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1667,17 +1667,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">10</span>
+                <span className="label-text">10</span>
               </label>
             </div>
           </div>
@@ -1714,11 +1714,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Qual o grau de proteção necessário?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-47" />
-              <label for="terms-checkbox-47" class="terms-label">
+              <label for="terms-checkbox-47" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1729,25 +1729,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP23</span>
+                <span className="label-text">IP23</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-48" />
-              <label for="terms-checkbox-48" class="terms-label">
+              <label for="terms-checkbox-48" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1758,25 +1758,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP24(W)</span>
+                <span className="label-text">IP24(W)</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-49" />
-              <label for="terms-checkbox-49" class="terms-label">
+              <label for="terms-checkbox-49" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1787,25 +1787,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP55</span>
+                <span className="label-text">IP55</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-50" />
-              <label for="terms-checkbox-50" class="terms-label">
+              <label for="terms-checkbox-50" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1816,17 +1816,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">IP56</span>
+                <span className="label-text">IP56</span>
               </label>
             </div>
           </div>
@@ -1863,11 +1863,11 @@ function Quiz() {
               </div>
             </div>
             <div className="ui large header quiz">Qual a tensão necessária?</div>
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-51" />
-              <label for="terms-checkbox-51" class="terms-label">
+              <label for="terms-checkbox-51" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1878,25 +1878,25 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">220/380 V</span>
+                <span className="label-text">220/380 V</span>
               </label>
             </div>
             <br />
-            <div class="checkbox-wrapper-37">
+            <div className="checkbox-wrapper-37">
               <input type="checkbox" name="checkbox" id="terms-checkbox-52" />
-              <label for="terms-checkbox-52" class="terms-label">
+              <label for="terms-checkbox-52" className="terms-label">
                 <svg
-                  class="checkbox-svg"
+                  className="checkbox-svg"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1907,17 +1907,17 @@ function Quiz() {
                   <rect
                     width="200"
                     height="200"
-                    class="checkbox-box"
+                    className="checkbox-box"
                     stroke-width="40"
                     mask="url(#path-1-inside-1_476_5-37)"
                   />
                   <path
-                    class="checkbox-tick"
+                    className="checkbox-tick"
                     d="M52 111.018L76.9867 136L149 64"
                     stroke-width="15"
                   />
                 </svg>
-                <span class="label-text">220/380/440 V</span>
+                <span className="label-text">220/380/440 V</span>
               </label>
             </div>
           </div>

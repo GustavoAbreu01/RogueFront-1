@@ -209,6 +209,72 @@
     font-weight: bold;
 }
 
+.box_pagination_buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.pagination_button {
+    background-color: var(--blue-primary);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.pagination_button:hover {
+    background-color: var(--blue-tertiary);
+    transition: 0.5s;
+}
+
+.arrow_page {
+    font-size: 1.5rem;
+}
+
+.pagination_button:hover .arrow_page.left {
+    animation: arrowLeft 1s infinite;
+}
+
+.pagination_button:hover .arrow_page.right {
+    animation: arrowRight 1s infinite;
+}
+
+@keyframes arrowLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes arrowRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 /* --------------------versão mobile-------------------- */
 

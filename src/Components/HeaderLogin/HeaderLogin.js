@@ -38,23 +38,6 @@ function HeaderLogin() {
   }, []);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        let users = await UserService.getAll();
-        users.forEach((user1) => {
-          if (user1.register === JSON.parse(localStorage.getItem('userCpf'))) {
-            setUser(user1)
-          }
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
       setScrolled(isScrolled);

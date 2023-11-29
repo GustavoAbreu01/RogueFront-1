@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 //importando service
 import { CartService } from '../../Service/CartService'
 
-function ProductCardSearched({product}) {
+function ProductCardSearched({ product }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -92,27 +92,28 @@ function ProductCardSearched({product}) {
 
   const renderDesktopView = () => (
     <div className="product_acessed" key={product.code}>
-    <div className='container_product_card_searched'>
-      <div className='box_product_card_searched_tag_icon'>
-        <button className="circular ui icon button product_card_searched">
-          <i className="searchengin icon product_card_searched"></i>
-        </button>
-      </div>
-      <div className='container_product_card_searched_action_icon'>
-        <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_searched">
-          <i className="bookmark icon product_card_searched"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_searched">
-          <i className="cart plus icon product_card_searched"></i>
-        </button>
-      </div>
-      <Link to={`/product/${product.code}`}>
-        <div className='box_product_card_searched_image'>
-          <img src={product.image} alt='' className='product_card_searched_image' height={200} width={200}></img>
+      <div className='container_product_card_searched'>
+        <div className='box_product_card_searched_tag_icon'>
+          <button className="circular ui icon button product_card_searched">
+            <i className="searchengin icon product_card_searched"></i>
+          </button>
         </div>
+        <div className='container_product_card_searched_action_icon'>
+          <button onClick={() => AddProductInSave(product)} className="ui icon button product_card_searched">
+            <i className="bookmark icon product_card_searched"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="ui icon button product_card_searched">
+            <i className="cart plus icon product_card_searched"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`}>
+          <div className='box_product_card_searched_image'>
+            <img src={product.image} alt='' className='product_card_searched_image' height={200} width={200}></img>
+          </div>
+        </Link>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 title= {product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
+            <h3 title={product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
             <p className='product_card_searched_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
         </div>
@@ -125,34 +126,34 @@ function ProductCardSearched({product}) {
             <button className="fluid ui button product_card_searched_button" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
         </Link>
-      </Link >
-    </div >
+      </div >
     </div >
   )
 
   const renderTabletView = () => (
     <div className="product_acessed" key={product.code}>
-    <div className='container_product_card_searched_tablet'>
-      <div className='box_product_card_searched_tag_icon'>
-        <button className="circular big blue ui icon button product_card_searched">
-          <i className="searchengin icon product_card_searched"></i>
-        </button>
-      </div>
-      <div className='container_product_card_searched_action_icon_tablet'>
-        <button onClick={() => AddProductInSave(product)} className="ui big icon button product_card_searched">
-          <i className="bookmark icon product_card_searched"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="ui big icon button product_card_searched">
-          <i className="cart plus icon product_card_searched"></i>
-        </button>
-      </div>
-      <Link to={`/product/${product.code}`}>
-        <div className='box_product_card_searched_image'>
-          <img src={product.image} alt='' className='product_card_searched_image' height={200} width={200}></img>
+      <div className='container_product_card_searched_tablet'>
+        <div className='box_product_card_searched_tag_icon'>
+          <button className="circular big blue ui icon button product_card_searched">
+            <i className="searchengin icon product_card_searched"></i>
+          </button>
         </div>
+        <div className='container_product_card_searched_action_icon_tablet'>
+          <button onClick={() => AddProductInSave(product)} className="ui big icon button product_card_searched">
+            <i className="bookmark icon product_card_searched"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="ui big icon button product_card_searched">
+            <i className="cart plus icon product_card_searched"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`}>
+          <div className='box_product_card_searched_image'>
+            <img src={product.image} alt='' className='product_card_searched_image' height={200} width={200}></img>
+          </div>
+        </Link>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 title= {product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
+            <h3 title={product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
             <p className='product_card_searched_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
         </div>
@@ -165,34 +166,34 @@ function ProductCardSearched({product}) {
             <button className="fluid ui button product_card_searched_button" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
         </Link>
-      </Link >
-    </div >
+      </div >
     </div >
   )
 
   const renderMobileView = () => (
     <div className="product_acessed" key={product.code}>
-    <div className='container_product_card_searched_mobile'>
-      <div className='box_product_card_searched_tag_icon_mobile'>
-        <button className="circular blue mini ui icon button product_card_searched">
-          <i className="searchengin icon product_card_searched"></i>
-        </button>
-      </div>
-      <div className='container_product_card_searched_action_icon_mobile'>
-        <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_searched">
-          <i className="bookmark icon product_card_searched"></i>
-        </button>
-        <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_searched">
-          <i className="cart plus icon product_card_searched"></i>
-        </button>
-      </div>
-      <Link to={`/product/${product.code}`}>
-        <div className='box_product_card_searched_image'>
-          <img src={product.image} alt='' className='product_card_searched_image' height={150} width={150}></img>
+      <div className='container_product_card_searched_mobile'>
+        <div className='box_product_card_searched_tag_icon_mobile'>
+          <button className="circular blue mini ui icon button product_card_searched">
+            <i className="searchengin icon product_card_searched"></i>
+          </button>
         </div>
+        <div className='container_product_card_searched_action_icon_mobile'>
+          <button onClick={() => AddProductInSave(product)} className="mini ui icon button product_card_searched">
+            <i className="bookmark icon product_card_searched"></i>
+          </button>
+          <button onClick={() => AddProductInCart(product)} className="mini ui icon button product_card_searched">
+            <i className="cart plus icon product_card_searched"></i>
+          </button>
+        </div>
+        <Link to={`/product/${product.code}`}>
+          <div className='box_product_card_searched_image'>
+            <img src={product.image} alt='' className='product_card_searched_image' height={150} width={150}></img>
+          </div>
+        </Link>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text_mobile'>
-            <h3 title= {product.motors.model} className='product_card_searched_name_mobile'>{product.motors.model}</h3>
+            <h3 title={product.motors.model} className='product_card_searched_name_mobile'>{product.motors.model}</h3>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>
@@ -204,8 +205,7 @@ function ProductCardSearched({product}) {
             <button className="fluid ui button product_card_searched_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
         </Link>
-      </Link >
-    </div >
+      </div >
     </div>
   )
 
