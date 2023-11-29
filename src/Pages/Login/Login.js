@@ -32,7 +32,6 @@ function Login() {
         event.preventDefault();
         try {
             const response = await UserService.login(login);
-            Cookies.set('token', response.data.id);
             navigate('/');
         } catch (error) {
             alert("Erro ao fazer login. Verifique suas credenciais.");

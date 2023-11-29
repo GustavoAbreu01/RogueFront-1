@@ -22,7 +22,6 @@ export default function ProfileModal() {
   const [user, setUser] = useState({});
 
   function realizarLogout() {
-    Cookies.remove('token');
     Cookies.remove('Cookie');
     window.location.reload();
   }
@@ -34,9 +33,9 @@ export default function ProfileModal() {
       const decodedPayload = atob(tokenPayload[1]);
       const userClaims = JSON.parse(decodedPayload);
       console.log(userClaims.sub);
-      if (user) {
-        return setUser(user);
-      }
+      UserService.findOne(userClaims.sub).then((response) => {
+        setUser(response.data);
+      });
     }
   }
 

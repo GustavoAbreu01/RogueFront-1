@@ -41,16 +41,16 @@ function ComboCard({ product }) {
         }
     }
 
-    const renderModel = () => {
-        if (productPage[getRandom].motors.model.length > 17) {
-            return productPage[getRandom].motors.model.slice(0, 17) + '...';
+    const renderModel = ( product ) => {
+        if (product.motors.model.length > 17) {
+            return product.motors.model.slice(0, 17) + '...';
         } else {
-            return productPage[getRandom].motors.model;
+            return product.motors.model;
         }
     }
 
     const sumPrices = () => {
-        let sum = productPage[getRandom].price + productPage[getRandom].price + product.price;
+        let sum = productPage[getRandom].price + product.price;
         let newDecimal = 0;
         const priceParts = sum.toString().split('.');
         const integerPart = priceParts[0];
@@ -66,9 +66,9 @@ function ComboCard({ product }) {
         );
     };
 
-    const renderPrice = () => {
-        if (productPage[getRandom].price !== undefined) {
-            const priceParts = productPage[getRandom].price.toString().split('.');
+    const renderPrice = ( product ) => {
+        if (product.price !== undefined) {
+            const priceParts = product.price.toString().split('.');
             const integerPart = priceParts[0];
             const decimalPart = priceParts[1] || '00';
             if (decimalPart.length > 2) {
@@ -99,17 +99,17 @@ function ComboCard({ product }) {
                             <div className='container_product_page_recomendation'>
                                 <div className='box_product_page_combo_card'>
                                     <img className="image_combo_card" src={productPage[getRandom].image} />
-                                    <h1 className="ui header combo_card">{renderModel()}</h1>
-                                    {renderPrice()}
+                                    <h1 className="ui header combo_card">{renderModel(productPage[getRandom])}</h1>
+                                    {renderPrice(productPage[getRandom])}
                                     <div className='combo_card_buy_button'>
                                         <button className="fluid ui button combo_card_button" onClick={() => BuyProduct()}>Comprar</button>
                                     </div>
                                 </div>
                                 <FaPlus color='var(--blue-primary)' fontSize={50} />
                                 <div className='box_product_page_combo_card'>
-                                    <img className="image_combo_card" src={productPage[getRandom].image} />
-                                    <h1 className="ui header combo_card">{renderModel()}</h1>
-                                    {renderPrice()}
+                                    <img className="image_combo_card" src={product.image} />
+                                    <h1 className="ui header combo_card">{renderModel(product)}</h1>
+                                    {renderPrice(product)}
                                     <div className='combo_card_buy_button'>
                                         <button className="fluid ui button combo_card_button" onClick={() => BuyProduct()}>Comprar</button>
                                     </div>
