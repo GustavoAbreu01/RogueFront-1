@@ -83,8 +83,8 @@ function ProductSearchedCarousel() {
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
             {productsSearched.map((product) => (
-            <div className='box_product_searched_carousel'>
-                        <ProductCardSearched key={product.code} product={product} />
+            <div className='box_product_searched_carousel' key={product.code}>
+                        <ProductCardSearched product={product} />
                     </div>
                 ))}
             </Slider>
@@ -95,8 +95,8 @@ function ProductSearchedCarousel() {
         <div className='container_product_searched_carousel_tablet' >
             <Slider {...settings}>
             {productsSearched.map((product) => (
-            <div className='box_product_searched_carousel'>
-                        <ProductCardSearched key={product.code} product={product} />
+            <div className='box_product_searched_carousel' key={product.code}>
+                        <ProductCardSearched product={product} />
                     </div>
                 ))}
             </Slider>
@@ -107,8 +107,8 @@ function ProductSearchedCarousel() {
         <div className='container_product_searched_carousel_mobile' >
             <Slider {...settings}>
             {productsSearched.map((product) => (
-            <div className='box_product_searched_carousel'>
-                        <ProductCardSearched key={product.id} product={product} />
+            <div className='box_product_searched_carousel' key={product.code}>
+                        <ProductCardSearched  product={product} />
                     </div>
                 ))}
             </Slider>

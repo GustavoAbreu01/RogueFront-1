@@ -84,8 +84,8 @@ function ProductHighlightCarousel() {
         < div className='container_product_hightlight_carousel' >
             <Slider {...settings}>
                 {productsHightlight.map((product) => (
-                    <div className='box_product_hightlight_carousel'>
-                        <ProductCardHighlight key={product.code} product={product} />
+                    <div className='box_product_hightlight_carousel' key={product.code}>
+                        <ProductCardHighlight product={product} />
                     </div>
                 ))}
             </Slider>
@@ -96,8 +96,8 @@ function ProductHighlightCarousel() {
         < div className='container_product_hightlight_carousel_tablet' >
             <Slider {...settings}>
             {productsHightlight.map((product) => (
-                    <div className='box_product_hightlight_carousel'>
-                        <ProductCardHighlight key={product.code} product={product} />
+                    <div className='box_product_hightlight_carousel' key={product.code}>
+                        <ProductCardHighlight product={product} />
                     </div>
                 ))}
             </Slider>
@@ -108,8 +108,8 @@ function ProductHighlightCarousel() {
         < div className='container_product_hightlight_carousel_mobile' >
             <Slider {...settings}>
             {productsHightlight.map((product) => (
-                    <div className='box_product_hightlight_carousel'>
-                        <ProductCardHighlight key={product.code} product={product} />
+                    <div className='box_product_hightlight_carousel' key={product.code}>
+                        <ProductCardHighlight product={product} />
                     </div>
                 ))}
             </Slider>

@@ -81,8 +81,8 @@ function ProductCarouselSmall() {
         <div className='carousel_product_card_smaller_carousel' >
             <Slider {...settings}>
                 {productsSmall.map((product) => (
-                    <div className='box_product_card_smaller_carousel'>
-                        <ProductCardSmaller key={product.code} product={product} />
+                    <div className='box_product_card_smaller_carousel' key={product.code}>
+                        <ProductCardSmaller product={product} />
                     </div>
                 ))}
             </Slider>

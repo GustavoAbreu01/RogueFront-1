@@ -79,8 +79,8 @@ function ProductAccessedCarousel() {
         <div className='container_product_accessed_carousel'>
             <Slider {...settings}>
                 {productsAcceessed.map((product) => (
-                    <div className='box_product_accessed_carousel'>
-                        <ProductCardAccessed key={product.code} product={product} />
+                    <div className='box_product_accessed_carousel' key={product.code}>
+                        <ProductCardAccessed product={product} />
                     </div>
                 ))}
             </Slider>
@@ -91,8 +91,8 @@ function ProductAccessedCarousel() {
         <div className='container_product_accessed_carousel_tablet' >
             <Slider {...settings}>
                 {productsAcceessed.map((product) => (
-                    <div className='box_product_accessed_carousel'>
-                        <ProductCardAccessed key={product.code} product={product} />
+                    <div className='box_product_accessed_carousel' key={product.code}>
+                        <ProductCardAccessed product={product} />
                     </div>
                 ))}
             </Slider>
@@ -103,8 +103,8 @@ function ProductAccessedCarousel() {
         <div className='container_product_accessed_carousel_mobile' >
             <Slider {...settings}>
             {productsAcceessed.map((product) => (
-                    <div className='box_product_accessed_carousel'>
-                        <ProductCardAccessed key={product.code} product={product} />
+                    <div className='box_product_accessed_carousel' key={product.code}>
+                        <ProductCardAccessed product={product} />
                     </div>
                 ))}
             </Slider>

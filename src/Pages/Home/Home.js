@@ -51,6 +51,7 @@ import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
+import Cookies from 'js-cookie'
 
 
 function Home() {
@@ -146,8 +147,8 @@ function Home() {
   localStorage.setItem('productsCompared', JSON.stringify(products));
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false

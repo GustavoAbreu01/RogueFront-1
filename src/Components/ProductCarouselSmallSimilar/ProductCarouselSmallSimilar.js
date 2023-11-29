@@ -95,8 +95,8 @@ function ProductCarouselSmallSimilar() {
         <div className='product_similar_carousel' >
             <Slider {...settings}>
             {products.map((product) => (
-                      <div className='box_product_similar_carousel'>
-                        <ProductCardSmaller key={product.code} product={product} />
+                      <div className='box_product_similar_carousel' key={product.code}>
+                        <ProductCardSmaller product={product} />
                     </div>
                 ))}
             </Slider>
@@ -106,8 +106,8 @@ function ProductCarouselSmallSimilar() {
         <div className='product_similar_carousel_mobile' >
             <Slider {...settings}>
             {products.map((product) => (
-                      <div className='box_product_similar_carousel'>
-                        <ProductCardSmaller key={product.code} product={product} />
+                      <div className='box_product_similar_carousel' key={product.code}>
+                        <ProductCardSmaller product={product} />
                     </div>
                 ))}
             </Slider>

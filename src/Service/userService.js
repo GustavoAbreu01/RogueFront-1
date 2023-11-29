@@ -10,38 +10,28 @@ export const UserService = {
     });
   },
 
-  findAll: function () {
-    return new Promise((resolve, reject) => {
-      axios.get(url)
-        .then((response) => {
-          resolve(response.data);
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
-  },
-
-  findOne: function (id) {
-    axios.get(url + '/' + id).then((response) => {
-      return response.data;
-    });
-  },
-  
-  login: async function (email, password) {
-    const apiUrl = `http://localhost:8082/user/login?email=${email}&password=${password}`;
+  findOne: async (id) => {
     try {
-      const response = await axios.get(apiUrl);
+      const response = await axios.get('http://localhost:8082/user/' + id);
       return response.data;
     } catch (error) {
       throw error;
     }
-},
+  },
 
-  delete: function(id){
-    axios.delete(url + '/'+ id).then((response) => {
-        return response.data;
-      });
-}
+  login: async (login) => {
+    try {
+      const response = await axios.post("http://localhost:8082/login", login, { withCredentials: true });
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  delete: function (id) {
+    axios.delete(url + '/' + id).then((response) => {
+      return response.data;
+    });
+  }
 
 }

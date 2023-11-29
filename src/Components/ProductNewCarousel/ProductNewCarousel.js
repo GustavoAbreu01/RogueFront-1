@@ -83,8 +83,8 @@ function ProductNewCarousel() {
         <div className='container_product_new_carousel' >
             <Slider {...settings}>
             {productsNew.map((product) => (
-                    <div className='box_product_new_carousel'>
-                        <ProductCardNew key={product.code} product={product} />
+                    <div className='box_product_new_carousel' key={product.code}>
+                        <ProductCardNew product={product} />
                     </div>
                 ))}
             </Slider>
@@ -95,8 +95,8 @@ function ProductNewCarousel() {
         <div className='carouselProduct_tablet' >
             <Slider {...settings}>
             {productsNew.map((product) => (
-                    <div className='box_product_new_carousel'>
-                        <ProductCardNew key={product.code} product={product} />
+                    <div className='box_product_new_carousel' key={product.code}>
+                        <ProductCardNew product={product} />
                     </div>
                 ))}
             </Slider>
@@ -107,8 +107,8 @@ function ProductNewCarousel() {
         <div className='carouselProduct_mobile' >
             <Slider {...settings}>
             {productsNew.map((product) => (
-                    <div className='box_product_new_carousel'>
-                        <ProductCardNew key={product.code} product={product} />
+                    <div className='box_product_new_carousel' key={product.code}>
+                        <ProductCardNew product={product} />
                     </div>
                 ))}
             </Slider>

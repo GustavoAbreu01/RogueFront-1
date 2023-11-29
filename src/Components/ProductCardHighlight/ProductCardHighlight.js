@@ -109,21 +109,21 @@ function ProductCardHighlight({ product }) {
           <div className='box_product_card_hightlight_image'>
             <img src={product.image} alt='' className='product_card_hightlight_image' height={200} width={200}></img>
           </div>
-          <div className='box_product_card_hightlight_info'>
-            <div className='product_card_hightlight_info_text'>
-              <h3 title={product.motors.model} className='product_card_hightlight_name'>{product.motors.model}</h3>
-              <p className='product_card_hightlight_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
-            </div>
+        </Link>
+        <div className='box_product_card_hightlight_info'>
+          <div className='product_card_hightlight_info_text'>
+            <h3 title={product.motors.model} className='product_card_hightlight_name'>{product.motors.model}</h3>
+            <p className='product_card_hightlight_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
-          <div className='box_product_card_hightlight_info_price'>
-            <h3 className='product_card_hightlight_price'>R$ {product.price}</h3>
-            <p className='product_card_hightlight_price_option'>Á vista no pix</p>
+        </div>
+        <div className='box_product_card_hightlight_info_price'>
+          <h3 className='product_card_hightlight_price'>R$ {product.price}</h3>
+          <p className='product_card_hightlight_price_option'>Á vista no pix</p>
+        </div>
+        <Link to={'/cart'}>
+          <div className='product_card_hightlight_buy_button'>
+            <button className="fluid ui button product_card_hightlight_button" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
-          <Link to='/cart'>
-            <div className='product_card_hightlight_buy_button'>
-              <button className="fluid ui button product_card_hightlight_button" onClick={() => BuyProduct(product)}>Comprar</button>
-            </div>
-          </Link>
         </Link>
       </div>
     </div>
@@ -149,21 +149,21 @@ function ProductCardHighlight({ product }) {
           <div className='box_product_card_hightlight_image'>
             <img src={product.image} alt='' className='product_card_hightlight_image' height={200} width={200}></img>
           </div>
-          <div className='box_product_card_hightlight_info'>
-            <div className='product_card_hightlight_info_text'>
-              <h3 title={product.motors.model} className='product_card_hightlight_name'>{product.motors.model}</h3>
-              <p className='product_card_hightlight_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
-            </div>
+        </Link>
+        <div className='box_product_card_hightlight_info'>
+          <div className='product_card_hightlight_info_text'>
+            <h3 title={product.motors.model} className='product_card_hightlight_name'>{product.motors.model}</h3>
+            <p className='product_card_hightlight_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
-          <div className='box_product_card_hightlight_info_price'>
-            <h3 className='product_card_hightlight_price'>R$ {product.price}</h3>
-            <p className='product_card_hightlight_price_option'>Á vista no pix</p>
+        </div>
+        <div className='box_product_card_hightlight_info_price'>
+          <h3 className='product_card_hightlight_price'>R$ {product.price}</h3>
+          <p className='product_card_hightlight_price_option'>Á vista no pix</p>
+        </div>
+        <Link to={'/cart'}>
+          <div className='product_card_hightlight_buy_button'>
+            <button className="fluid ui button product_card_hightlight_button" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
-          <Link to='/cart'>
-            <div className='product_card_hightlight_buy_button'>
-              <button className="fluid ui button product_card_hightlight_button" onClick={() => BuyProduct(product)}>Comprar</button>
-            </div>
-          </Link>
         </Link>
       </div>
     </div>
@@ -189,20 +189,20 @@ function ProductCardHighlight({ product }) {
           <div className='box_product_card_hightlight_image'>
             <img src={product.image} alt='' className='product_card_hightlight_image' height={150} width={150}></img>
           </div>
-          <div className='box_product_card_hightlight_info'>
-            <div className='product_card_hightlight_info_text_mobile'>
-              <h3 title={product.motors.model} className='product_card_hightlight_name_mobile'>R$ {product.motors.model}</h3>
-            </div>
+        </Link>
+        <div className='box_product_card_hightlight_info'>
+          <div className='product_card_hightlight_info_text_mobile'>
+            <h3 title={product.motors.model} className='product_card_hightlight_name_mobile'>R$ {product.motors.model}</h3>
           </div>
-          <div className='box_product_card_hightlight_info_price'>
-            <h3 className='product_card_hightlight_price_mobile'>R$ {product.price}</h3>
-            <p className='product_card_hightlight_price_option'>Á vista no pix</p>
+        </div>
+        <div className='box_product_card_hightlight_info_price'>
+          <h3 className='product_card_hightlight_price_mobile'>R$ {product.price}</h3>
+          <p className='product_card_hightlight_price_option'>Á vista no pix</p>
+        </div>
+        <Link to={'/cart'}>
+          <div className='product_card_hightlight_buy_button_mobile'>
+            <button className="fluid ui button product_card_hightlight_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
           </div>
-          <Link to='/cart'>
-            <div className='product_card_hightlight_buy_button_mobile'>
-              <button className="fluid ui button product_card_hightlight_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
-            </div>
-          </Link>
         </Link>
       </div>
     </div>
