@@ -38,6 +38,7 @@ function Quiz() {
 
 
   const handleNextQuestion = () => {
+    
     if (currentQuestionIndex < Questions.perguntas_respostas.length - 1) {
       const respostaAtual = currentQuestion.campo_digitacao ? resposta : getOpcaoSelecionada();
       if (currentQuestion.pergunta === "Qual o tipo do acoplamento?" && resposta === "Acoplamento por cardã") {
@@ -63,8 +64,9 @@ function Quiz() {
 
 
   const handlePreviousQuestion = () => {
-    if (currentQuestionIndex < Questions.perguntas_respostas.length - 1) {
+    if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setCampoCardaAberto(false);
     } else {
       console.log('Quiz concluído!');
     }
@@ -156,6 +158,8 @@ function Quiz() {
             <div className="ui large header quiz">{currentQuestion.pergunta}</div>
             {currentQuestion.campo_digitacao ? (
               <input
+                className='input_quiz'
+                style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }}
                 type="text"
                 placeholder="Digite sua resposta"
                 value={resposta}
@@ -164,7 +168,7 @@ function Quiz() {
             ) : (
               <ul>
                 {currentQuestion.opcoes_resposta.map((opcao, index) => (
-                  <div key={index}>
+                  <div className='radio_quiz' key={index}>
                     <input
                       type="radio"
                       id={`opcao-${index}`}
@@ -173,14 +177,12 @@ function Quiz() {
                       checked={resposta === opcao}
                       onChange={() => {
                         setResposta(opcao);
-                        // Se a opção selecionada for "Acoplamento por cardã", exibe o campo de texto
                         if (opcao === "Acoplamento por cardã") {
                           setCampoCardaAberto(true);
                         } else {
                           setCampoCardaAberto(false);
                         }
                       }}
-
                     />
                     <label htmlFor={`opcao-${index}`}>{opcao}</label>
                   </div>
@@ -189,6 +191,8 @@ function Quiz() {
             )}
             {campoCardaAberto && (
               <input
+                className='input_quiz'
+                style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }}
                 type="text"
                 placeholder="Digite o número necessário"
                 value={numeroCarda}
@@ -197,7 +201,7 @@ function Quiz() {
             )}
             <div className='div_buttons_quiz'>
               <button className="ui big button back quiz_btn_options" onClick={handlePreviousQuestion}>Voltar</button>
-              <button className="ui big button next quiz_btn_options" onClick={handleNextQuestion}>Próximo</button>
+              <button className="ui big button next quiz_btn_options"  onClick={handleNextQuestion}>Próximo</button>
             </div>
           </>
         ) : (
