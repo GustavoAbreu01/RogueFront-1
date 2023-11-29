@@ -39,7 +39,7 @@ function Quiz() {
   const [question, setQuestion] = useState(0);
 
   const verifyQuestion = () => {
-    if (progresso > 5) {
+    if (progresso > 4) {
       const newQuestionNumber = question + 1
       setQuestion(newQuestionNumber)
     }
@@ -66,9 +66,8 @@ function Quiz() {
 
     setProgresso(prevProgresso => prevProgresso + 1);
     verifyQuestion()
-    if (progresso === 12) {
+    if (progresso === 13) {
       console.log("fim");
-
     }
   }
 
@@ -1195,8 +1194,248 @@ function Quiz() {
             </div>
           </div>
         )}
+        {Question11() && (
+          <div>
+            <div className="ui large header">Qual a voltagem necessária para o seu produto?</div>
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-40" />
+              <label for="terms-checkbox-40" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">12V</span>
+              </label>
+            </div>
+            <br />
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-41" />
+              <label for="terms-checkbox-41" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">20V</span>
+              </label>
+            </div>
+            <br />
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-42" />
+              <label for="terms-checkbox-42" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">40V</span>
+              </label>
+            </div>
+            <br />
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-43" />
+              <label for="terms-checkbox-43" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">80V</span>
+              </label>
+            </div>
+          </div>
+        )}
+        {Question12() && (
+          <div>
+            <div className="ui large header">Qual a voltagem necessária para o seu produto?</div>
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-40" />
+              <label for="terms-checkbox-40" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">12V</span>
+              </label>
+            </div>
+            <br />
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-41" />
+              <label for="terms-checkbox-41" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">20V</span>
+              </label>
+            </div>
+            <br />
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-42" />
+              <label for="terms-checkbox-42" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">40V</span>
+              </label>
+            </div>
+            <br />
+            <div class="checkbox-wrapper-37">
+              <input type="checkbox" name="checkbox" id="terms-checkbox-43" />
+              <label for="terms-checkbox-43" class="terms-label">
+                <svg
+                  class="checkbox-svg"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask id="path-1-inside-1_476_5-37" fill="white">
+                    <rect width="200" height="200" />
+                  </mask>
+                  <rect
+                    width="200"
+                    height="200"
+                    class="checkbox-box"
+                    stroke-width="40"
+                    mask="url(#path-1-inside-1_476_5-37)"
+                  />
+                  <path
+                    class="checkbox-tick"
+                    d="M52 111.018L76.9867 136L149 64"
+                    stroke-width="15"
+                  />
+                </svg>
+                <span class="label-text">80V</span>
+              </label>
+            </div>
+          </div>
+        )}
 
-        {progresso === 10 ? (
+        {progresso === 12 ? (
           <div>
             <div className="ui large center aligned header quiz_recomendation">Motor W50</div>
             <img className="ui centered fluid image w50 quiz_recomendation" src={w50} />
