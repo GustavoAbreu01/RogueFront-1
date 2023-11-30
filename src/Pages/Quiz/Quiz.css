@@ -4,6 +4,28 @@
 
 }
 
+.radio_quiz{
+    padding: 0.5rem;
+}
+
+.input_quiz{
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+    height: 3rem;
+    width: 43rem;
+    border-radius: 0.28571429rem;
+    padding: 0.5rem;
+}
+
+.input_quiz_carda{
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+    height: 3rem;
+    width: 43rem;
+    border-radius: 0.28571429rem;
+    padding: 0.5rem;
+}
+
 .ui.raised.very.padded.text.container.segment.quiz {
     margin-top: 5rem;
     padding-top: 5rem;
