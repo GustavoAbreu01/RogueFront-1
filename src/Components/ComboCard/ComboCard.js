@@ -20,6 +20,8 @@ function ComboCard({ product }) {
     const [productPage, setProductPage] = useState([]);
     const getRandom = Math.floor(Math.random() * 10);
 
+    const { code } = useParams();
+
     useEffect(() => {
         searchProduct();
         function handleResize() {
@@ -41,7 +43,7 @@ function ComboCard({ product }) {
         }
     }
 
-    const renderModel = ( product ) => {
+    const renderModel = (product) => {
         if (product.motors.model.length > 17) {
             return product.motors.model.slice(0, 17) + '...';
         } else {
@@ -66,7 +68,7 @@ function ComboCard({ product }) {
         );
     };
 
-    const renderPrice = ( product ) => {
+    const renderPrice = (product) => {
         if (product.price !== undefined) {
             const priceParts = product.price.toString().split('.');
             const integerPart = priceParts[0];
@@ -91,7 +93,7 @@ function ComboCard({ product }) {
 
     return (
         <>
-            <div className='div_combo_card'>
+            <div className='div_combo_card' key={product.code}>
                 {productPage[getRandom] && (
                     <>
                         <div className='div_product_page_recomendation'>
@@ -106,14 +108,16 @@ function ComboCard({ product }) {
                                     </div>
                                 </div>
                                 <FaPlus color='var(--blue-primary)' fontSize={50} />
-                                <div className='box_product_page_combo_card'>
-                                    <img className="image_combo_card" src={productPage[getRandom].image}  />
-                                    <h1 className="ui header combo_card">{renderModel(productPage[getRandom])}</h1>
-                                    {renderPrice(productPage[getRandom])}
-                                    <div className='combo_card_buy_button'>
-                                        <button className="fluid ui button combo_card_button" onClick={() => BuyProduct()}>Comprar</button>
+                                <Link to={`/product/${product.code}`}>
+                                    <div className='box_product_page_combo_card' >
+                                        <img className="image_combo_card" src={productPage[getRandom].image} />
+                                        <h1 className="ui header combo_card">{renderModel(productPage[getRandom])}</h1>
+                                        {renderPrice(productPage[getRandom])}
+                                        <div className='combo_card_buy_button'>
+                                            <button className="fluid ui button combo_card_button" onClick={() => BuyProduct()}>Comprar</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                                 <FaEquals color='var(--blue-primary)' fontSize={40} />
                                 <div className='final_price_produc_page_combo'>
                                     <h1 className='total_combo_product_page'>Total do combo</h1>
