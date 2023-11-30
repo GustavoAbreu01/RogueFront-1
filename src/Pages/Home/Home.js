@@ -160,7 +160,7 @@ function Home() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    getSave();
+    getUser();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -171,7 +171,7 @@ function Home() {
     };
   }, []);
 
-  const getSave = async () => {
+  const getUser= async () => {
     const token = Cookies.get('Cookie');
     if (token) {
       const tokenPayload = token.split('.');

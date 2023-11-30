@@ -21,8 +21,9 @@ import motor from '../../assets/img/motor.png'
 
 //Importando os ícones
 import { FaStar } from 'react-icons/fa'
-import { ProductService } from '../../Service';
+import { ProductService, UserService } from '../../Service';
 import { CartService } from '../../Service/CartService'
+import Cookies from 'js-cookie';
 
 const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -36,11 +37,13 @@ const verify = () => {
 function ProductPage() {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productPage, setProductPage] = useState({});
+    const [user, setUser] = useState({});
     const { code } = useParams();
 
     const product = 0;
 
     useEffect(() => {
+        getUser();
         searchProduct(code);
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
@@ -51,6 +54,25 @@ function ProductPage() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    const getUser= async () => {
+        const token = Cookies.get('Cookie');
+        if (token) {
+          const tokenPayload = token.split('.');
+          const decodedPayload = atob(tokenPayload[1]);
+          const userClaims = JSON.parse(decodedPayload);
+          try {
+            const userPrin = await UserService.findOne(userClaims.sub);
+            if (userPrin) {
+              setUser(userPrin);
+            } else {
+              setUser([]);
+            }
+          } catch (error) {
+            console.error('Erro ao obter usuário:', error);
+          }
+        }
+      };
 
     const searchProduct = async (code) => {
         const productSearched = await ProductService.findOne(code);
@@ -314,14 +336,14 @@ function ProductPage() {
                         <h1>Produtos Semelhantes</h1>
                     </div>
                     <div className='box_product_page_carousel_similar'>
-                        <Carousel />
+                        <Carousel user={user} />
                     </div>
                     <div className='box_product_page_title_highlights'>
                         <FaStar color='var(--white)' size={40} />
                         <h1>Produtos Destaques</h1>
                     </div>
                     <div className='box_product_page_carousel_highlights'>
-                        <Carousel />
+                        <Carousel user={user} />
                     </div>
                     <Footer />
                 </div>
@@ -429,14 +451,14 @@ function ProductPage() {
                 <h1 className='title_product_page_mobile'>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <div className='box_product_page_title_highlights_mobile'>
                 <FaStar color='var(--white)' size={30} />
                 <h1 className='title_product_page_mobile'>Produtos Destaques</h1>
             </div>
             <div className='box_product_page_carousel_highlights'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <Footer />
         </>
@@ -541,14 +563,14 @@ function ProductPage() {
                 <h1 className='title_product_page_tablet'>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <div className='box_product_page_title_highlights_tablet'>
                 <FaStar color='var(--white)' size={30} />
                 <h1 className='title_product_page_tablet'>Produtos Destaques</h1>
             </div>
             <div className='box_product_page_carousel_highlights'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <Footer />
         </>

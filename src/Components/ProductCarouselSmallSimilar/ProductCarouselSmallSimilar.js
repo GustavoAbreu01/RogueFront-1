@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
 import ProductService from '../../Service/ProductService';
 
-function ProductCarouselSmallSimilar() {
+function ProductCarouselSmallSimilar( { user } ) {
 
     const [products, setProducts] = useState([]);
 
@@ -96,7 +96,7 @@ function ProductCarouselSmallSimilar() {
             <Slider {...settings}>
             {products.map((product) => (
                       <div className='box_product_similar_carousel' key={product.code}>
-                        <ProductCardSmaller product={product} />
+                        <ProductCardSmaller user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -107,7 +107,7 @@ function ProductCarouselSmallSimilar() {
             <Slider {...settings}>
             {products.map((product) => (
                       <div className='box_product_similar_carousel' key={product.code}>
-                        <ProductCardSmaller product={product} />
+                        <ProductCardSmaller user={user} product={product} />
                     </div>
                 ))}
             </Slider>
