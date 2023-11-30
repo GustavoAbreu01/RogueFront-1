@@ -180,9 +180,16 @@ function SmallProductCard({ product }) {
 
     }
 
+    const reload = ()=> {
+        setTimeout(() =>{
+            window.location.reload()
+        },1000)
+    }
+
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
+
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -201,7 +208,7 @@ function SmallProductCard({ product }) {
     }
 
     const renderDesktopView = () => (
-        <div className="product_acessed" key={product.code}>
+        <div className="product_acessed" key={product.code} onClick={reload}>
             <div className='container_product_card_smaller'>
                 <div className='container_product_card_smaller_action_icon'>
                     <div className='product_card_small_button_compare'>
