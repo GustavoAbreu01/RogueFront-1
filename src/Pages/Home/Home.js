@@ -280,7 +280,7 @@ function Home() {
             <Link to='/category/alimenticia'>
               <div className='home_optional_category'>
                 <button className='home_optional_category_button'>
-                  <img className='home_optional_category_button_image' src={alimenticia} alt="" />
+                  <img className='home_optional_category_button_image_food' src={alimenticia} alt="" />
                 </button>
                 <h2 className='home_optional_category_title'>Alimentícia</h2>
               </div>

@@ -190,3 +190,13 @@
     gap: 2rem;
     margin-top: 2rem;
 }
+
+.box.step.quiz {
+
+}
+
+.selectedQuestion {
+    font-weight: bolder !important;
+    font-size: 20px !important;
+    color: var(--blue-primary);
+}

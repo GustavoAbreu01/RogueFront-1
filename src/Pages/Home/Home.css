@@ -102,6 +102,11 @@
     height: 4rem;
 }
 
+.home_optional_category_button_image_food {
+    width: 5rem;
+    height: 4rem;
+}
+
 .box_home_category_buttons {
     align-items: center;
     display: flex;
