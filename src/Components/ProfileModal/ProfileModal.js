@@ -26,16 +26,14 @@ export default function ProfileModal() {
     window.location.reload();
   }
 
-  const getUser = () => {
+  const getUser = async () => {
     const token = Cookies.get('Cookie');
     if (token) {
       const tokenPayload = token.split('.');
       const decodedPayload = atob(tokenPayload[1]);
       const userClaims = JSON.parse(decodedPayload);
-      console.log(userClaims.sub);
-      UserService.findOne(userClaims.sub).then((response) => {
-        setUser(response.data);
-      });
+      const user = await UserService.findOne(userClaims.sub);
+      setUser(user);
     }
   }
 
@@ -216,9 +214,6 @@ export default function ProfileModal() {
                 </div>
               </div>
               <div className='profile_footer'>
-                <div className='profile_logo'>
-                  <img src={logoDes} alt='logoWeg' className='logo_weg'></img>
-                </div>
                 <div className='base_footer'>
                   <div className='profile_footer_icons'>
                     <i className="youtube circle icon profile"></i>

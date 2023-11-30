@@ -4,6 +4,8 @@ import './Cart.css';
 
 //importando as frameworks
 import { Link } from 'react-router-dom';
+import ProductService from '../../Service/ProductService'
+import Cookies from 'js-cookie';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -19,9 +21,7 @@ import imgEmptyCart from '../../assets/img/weggnerAcordado.PNG';
 //Importando os icones
 import { FaShoppingCart, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { BsArrowLeftShort } from 'react-icons/bs';
-import { CartService } from '../../Service';
-
-import ProductService from '../../Service/ProductService'
+import { CartService, UserService } from '../../Service';
 
 
 
@@ -29,15 +29,16 @@ function Cart({ product }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
   const [total, setTotal] = useState([]);
+  const [user, setUser] = useState([]);
   const [productsSmaller, setProductsSmaller] = useState([])
 
   const getProductsRev = async () => {
-      const products = await ProductService.findSimilar();
-      if (products) {
-        setProductsSmaller(products);
-      } else {
-        setProductsSmaller([]);
-      }
+    const products = await ProductService.findSimiliar();
+    if (products) {
+      setProductsSmaller(products);
+    } else {
+      setProductsSmaller([]);
+    }
   }
 
 
@@ -55,16 +56,25 @@ function Cart({ product }) {
   }, []);
 
   const getCart = async () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    const products = await CartService.GetCart(cartId);
-    if (products) {
-      setProductsCart(products);
-      setTotal(products.cartProductQuantities);
-    } else {
-      setProductsCart([]);
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      const user = await UserService.findOne(userClaims.sub);
+      setUser(user);
     }
-}
+    console.log(user)
+    if (user.cart) {
+      const products = await CartService.GetCart(user.cart.id);
+      if (products) {
+        setProductsCart(products);
+        setTotal(products.cartProductQuantities);
+      } else {
+        setProductsCart([]);
+      }
+    }
+  }
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -167,9 +177,9 @@ function Cart({ product }) {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-          {productsSmaller.map((product) => (
-            <SmallProductHorizontal key={product.code} product={product}/>
-          ))}
+            {productsSmaller.map((product) => (
+              <SmallProductHorizontal key={product.code} product={product} />
+            ))}
           </div>
         </div>
       </div>

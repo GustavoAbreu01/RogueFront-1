@@ -97,8 +97,8 @@ function SaveCard({ item }) {
                                 <img src={item.image} width="125" height="" />
                             </div>
                             <div className="save_card_product_info">
-                                <h3 className="save_card_product_name">{item.name}</h3>
-                                <h4 className="save_card_product_description">{item.description}</h4>
+                                <h3 className="save_card_product_name">{item.motors.model}</h3>
+                                <h4 className="save_card_product_description">{item.motors.typeDaCarcaca}, {item.motors.protection}</h4>
                                 {renderPrice()}
                             </div>
                         </div>
@@ -132,7 +132,7 @@ function SaveCard({ item }) {
                             <img src={item.image} width="100" height="" />
                         </div>
                         <div className="save_card_product_info_mobile">
-                            <h3 className="save_card_product_name_mobile">{item.name}</h3>
+                            <h3 className="save_card_product_name_mobile">{item.motors.model}</h3>
                             <h2 className="save_card_product_price_mobile">{renderPrice()}</h2>
                         </div>
                     </div>

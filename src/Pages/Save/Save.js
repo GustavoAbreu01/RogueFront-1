@@ -15,12 +15,14 @@ import { Link } from 'react-router-dom'
 
 //Importando os ícones
 import { BsFillBookmarkFill } from 'react-icons/bs'
-import { AiFillStar } from 'react-icons/ai'
 import { BsArrowLeftShort } from 'react-icons/bs'
+import { UserService } from '../../Service';
+import Cookies from 'js-cookie';
 
 
-function Salvos({ product }) {
+function Salvos() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [user, setUser] = useState({});
   const [productsSave, setProductsSave] = useState([]);
 
   useEffect(() => {
@@ -36,15 +38,31 @@ function Salvos({ product }) {
   }, []);
 
   const getSave = async () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const saveId = user.saves.id;
-    const products = await SaveService.getSave(saveId);
-    if (products) {
-      setProductsSave(products[0].products);
-    } else {
-      setProductsSave([]);
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        setUser(userPrin);
+        if (userPrin.saves) {
+          const products = await SaveService.getSave(userPrin.saves.id);
+          console.log(products);
+          if (products) {
+            setProductsSave(products.products);
+          } else {
+            setProductsSave([]);
+          }
+        } else {
+          setProductsSave([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
     }
-  }
+  };
+
   const hasProductsInSave = () => {
     if (productsSave.length === 0) {
       return false;
@@ -54,11 +72,10 @@ function Salvos({ product }) {
   };
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
-      return true
+    if (Cookies.get('Cookie')) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 

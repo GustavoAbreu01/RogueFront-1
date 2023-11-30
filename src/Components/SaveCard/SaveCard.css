@@ -91,7 +91,7 @@ a:link.Save {
 
 .trash.alternate.icon.save_card{
     align-items: center;
-    color: var(--red);
+    color: var(--white);
     font-size: 0.9rem;
     transition: 0.3s;
 }

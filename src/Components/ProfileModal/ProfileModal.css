@@ -134,6 +134,7 @@
     justify-content: center;
     position: fixed;
     bottom: 0;
+    right: 10%;
 }
 
 .profile_logo {
@@ -152,7 +153,6 @@
 .text_profile_footer {
     color: var(--blue-secundary);
     font-size: 13px;
-    margin-top: -rem;
 }
 
 .base_footer {

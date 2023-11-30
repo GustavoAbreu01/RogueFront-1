@@ -74,13 +74,13 @@ function ProductCart({ item }) {
             <div className='product_cart_description'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={item.product.motors.image} width="125" height="" />
+                  <img src={item.products.motors.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
-                  <p className="product_cart_complement" >{item.product.description}</p>
+                  <h2 className="product_cart_item_name">{item.products.motors.model}</h2>
+                  <p className="product_cart_complement" >{item.products.description}</p>
                   {renderPrice()}
                 </Link>
               </div>
@@ -108,13 +108,13 @@ function ProductCart({ item }) {
           <div className="product_cart_card" style={{ color: 'black' }}>
             <div id="imgItens CardCart">
               <Link to="/product">
-                <img src={item.product.motors.image} width="125" height="" />
+                <img src={item.products.motors.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_informations">
               <Link to="/product">
-                <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
-                <p className="product_cart_complement" >{item.product.description}</p>
+                <h2 className="product_cart_item_name">{item.products.motors.model}</h2>
+                <p className="product_cart_complement" >{item.products.description}</p>
                 <h2 id="itemPreco CardCart" className='product_cart_item_price_tablet'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_tablet'>10x Sem juros</sub></h2>
               </Link>
             </div>
@@ -142,12 +142,12 @@ function ProductCart({ item }) {
             <div className='product_card_cart_info_up'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={item.product.motors.image} width="125" height="" />
+                  <img src={item.products.motors.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations_mobile">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name_mobile">{item.product.motors.model}</h2>
+                  <h2 className="product_cart_item_name_mobile">{item.products.motors.model}</h2>
                   <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_mobile'>10x Sem juros</sub></h2>
                 </Link>
               </div>

@@ -5,16 +5,14 @@ const url = 'http://localhost:8082/user'
 export const UserService = {
 
   create: async (user) => {
-    axios.post(url, user).then((response) => {  
+    axios.post(url, user).then((response) => {
       return response.data;
     });
   },
 
   findOne: async (email) => {
     try {
-      console.log(email);
       const response = await axios.get(`http://localhost:8082/user/email?email=${email}`, { withCredentials: true });
-      console.log(response.data);
       return response.data;
     } catch (error) {
       throw error;
