@@ -48,7 +48,6 @@ function Salvos() {
         setUser(userPrin);
         if (userPrin.saves) {
           const products = await SaveService.getSave(userPrin.saves.id);
-          console.log(products);
           if (products) {
             setProductsSave(products.products);
           } else {
@@ -92,7 +91,7 @@ function Salvos() {
           <>
             {productsSave.map((item, index) => (
               <div key={index}>
-                <SaveCard item={item} />
+                <SaveCard user={user} item={item} />
               </div>
             ))}
           </>

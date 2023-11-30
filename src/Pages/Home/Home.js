@@ -52,6 +52,7 @@ import { MdOutlineNewReleases } from 'react-icons/md'
 import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
 import Cookies from 'js-cookie'
+import { UserService } from '../../Service'
 
 
 function Home() {
@@ -156,8 +157,10 @@ function Home() {
   }
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [user, setUser] = useState({});
 
   useEffect(() => {
+    getSave();
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -167,6 +170,25 @@ function Home() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const getSave = async () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        if (userPrin) {
+          setUser(userPrin);
+        } else {
+          setUser([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    }
+  };
 
   const renderDesktopView = () => (
     <div>
@@ -220,7 +242,7 @@ function Home() {
             <h1 className='home_accessed_title' >Produtos mais acessados</h1>
           </div>
           <div className='sliderProductAccessed'>
-            <ProductCarousel />
+            <ProductCarousel user={user} />
           </div>
         </div>
 
@@ -230,7 +252,7 @@ function Home() {
             <h1 className='home_highlights_title_text' >Destaques da semana</h1>
           </div>
           <div className='home_slider_product_highlights'>
-            <ProductHighlightCarousel />
+            <ProductHighlightCarousel user={user} />
           </div>
         </div>
 
@@ -296,7 +318,7 @@ function Home() {
             </div>
           </div>
           <div className='home_slider_product_searched'>
-            <ProductSearchedCarousel />
+            <ProductSearchedCarousel user={user} />
           </div>
         </div>
 
@@ -341,7 +363,7 @@ function Home() {
             <h1 className='home_highlights_title_text' >Novidades</h1>
           </div>
           <div className='home_slider_product_highlights'>
-            <ProductNewCarousel />
+            <ProductNewCarousel user={user} />
           </div>
         </div>
 
@@ -417,7 +439,7 @@ function Home() {
             <h1 className='home_accessed_title' >Produtos mais acessados</h1>
           </div>
           <div className='home_slider_product_accessed_tablet'>
-            <ProductCarousel />
+            <ProductCarousel user={user} />
           </div>
         </div>
 
@@ -427,7 +449,7 @@ function Home() {
             <h1 className='home_highlights_title_text_tablet' >Destaques da semana</h1>
           </div>
           <div className='home_slider_product_highlights'>
-            <ProductHighlightCarousel />
+            <ProductHighlightCarousel user={user} />
           </div>
         </div>
 
@@ -443,7 +465,7 @@ function Home() {
             </div>
           </div>
           <div className='home_slider_product_searched'>
-            <ProductSearchedCarousel />
+            <ProductSearchedCarousel user={user} />
           </div>
         </div>
 
@@ -457,7 +479,7 @@ function Home() {
             <h1 className='home_highlights_title_text_tablet' >Novidades</h1>
           </div>
           <div className='home_slider_product_highlights'>
-            <ProductNewCarousel />
+            <ProductNewCarousel user={user} />
           </div>
         </div>
 
@@ -480,7 +502,7 @@ function Home() {
           <Link to='/category/agronegocio'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-              <img className='home_optional_category_button_image_mobile' src={agro} alt="" width={125} />
+                <img className='home_optional_category_button_image_mobile' src={agro} alt="" width={125} />
               </button>
               <h2 className='home_optional_category_title_mobile'>Agronegócio</h2>
             </div>
@@ -488,7 +510,7 @@ function Home() {
           <Link to='/category/naval'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-              <img className='home_optional_category_button_image_mobile' src={naval} alt="" width={125} />
+                <img className='home_optional_category_button_image_mobile' src={naval} alt="" width={125} />
               </button>
               <h2 className='home_optional_category_title_mobile'>Naval</h2>
             </div>
@@ -496,7 +518,7 @@ function Home() {
           <Link to='/category/mineracao'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-              <img className='home_optional_category_button_image_mobile' src={mineracao} alt="" width={125} />
+                <img className='home_optional_category_button_image_mobile' src={mineracao} alt="" width={125} />
               </button>
               <h2 className='home_optional_category_title_mobile'>Mineração</h2>
             </div>
@@ -504,7 +526,7 @@ function Home() {
           <Link to='/category/edificacao'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-              <img className='home_optional_category_button_image_mobile' src={construcao} alt="" width={125} />
+                <img className='home_optional_category_button_image_mobile' src={construcao} alt="" width={125} />
               </button>
               <h2 className='home_optional_category_title_mobile'>Edificação</h2>
             </div>
@@ -512,7 +534,7 @@ function Home() {
           <Link to='/category/siderurgia'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-              <img className='home_optional_category_button_image_mobile' src={siderurgia} alt="" width={125} />
+                <img className='home_optional_category_button_image_mobile' src={siderurgia} alt="" width={125} />
               </button>
               <h2 className='home_optional_category_title_mobile'>Siderurgia</h2>
             </div>
@@ -520,7 +542,7 @@ function Home() {
           <Link to='/category/alimenticia'>
             <div className='home_optional_category_mobile'>
               <button className='home_optional_category_button_mobile'>
-              <img className='home_optional_category_button_image_mobile' src={alimenticia} alt="" width={125} />
+                <img className='home_optional_category_button_image_mobile' src={alimenticia} alt="" width={125} />
               </button>
               <h2 className='home_optional_category_title_mobile'>Alimentícia</h2>
             </div>
@@ -532,7 +554,7 @@ function Home() {
             <h1 className='home_accessed_title_mobile' >Produtos mais acessados</h1>
           </div>
           <div className='home_slider_product_accessed'>
-            <ProductCarousel />
+            <ProductCarousel user={user} />
           </div>
         </div>
 
@@ -542,7 +564,7 @@ function Home() {
             <h1 className='home_highlights_title_text_mobile' >Destaques da semana</h1>
           </div>
           <div className='home_slider_product_highlights'>
-            <ProductHighlightCarousel />
+            <ProductHighlightCarousel user={user} />
           </div>
         </div>
 
@@ -558,7 +580,7 @@ function Home() {
             </div>
           </div>
           <div className='home_slider_product_searched'>
-            <ProductSearchedCarousel />
+            <ProductSearchedCarousel user={user} />
           </div>
         </div>
 
@@ -572,7 +594,7 @@ function Home() {
             <h1 className='home_highlights_title_text_mobile' >Novidades</h1>
           </div>
           <div className='home_slider_product_highlights'>
-            <ProductNewCarousel />
+            <ProductNewCarousel user={user} />
           </div>
         </div>
 

@@ -10,8 +10,9 @@ import Swal from 'sweetalert2'
 //Importando as imagens
 import { CartService } from '../../Service/CartService'
 import SaveService from '../../Service/SaveService'
+import Cookies from 'js-cookie'
 
-function ProductCardAccessed({ product }) {
+function ProductCardAccessed({ product, user }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -62,10 +63,38 @@ function ProductCardAccessed({ product }) {
     window.location.href = "/cart"
   }
 
-  const AddProductInSave = () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const saveId = user.saves.id;
-    SaveService.AddProductInSave(saveId, product.code);
+  const AddProductInSave = async () => {
+    const cookie = Cookies.get('Cookie');
+    for (let i = 0; i < user.saves.quantity; i++) {
+      if (user.saves.products[i].code === product.code) {
+        Swal.fire({
+          title: 'Produto já está na lista de salvos!',
+          icon: 'error',
+          showConfirmButton: true,
+          confirmButtonText: 'Ir para a lista de salvos',
+          confirmButtonColor: 'var(--blue-primary)',
+          position: 'top-end',
+          timer: 5000,
+          timerProgressBar: true,
+          toast: true,
+          width: 400,
+          showClass: {
+            popup: 'animate__animated animate__backInRight'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__backOutRight'
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/save"
+          }
+        }
+        )
+        return;
+      }
+    }
+
+    await SaveService.AddProductInSave(cookie, user.saves.id, product.code);
     Swal.fire({
       title: 'Produto adicionado a lista de salvos!',
       icon: 'success',

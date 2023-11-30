@@ -12,10 +12,11 @@ import Slider from "react-slick";
 import ProductCardHighlight from '../ProductCardHighlight/ProductCardHighlight';
 import ProductService from '../../Service/ProductService';
 
-function ProductHighlightCarousel() {
+function ProductHighlightCarousel( { user } ) {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsHightlight, setProductsHightlight] = useState([])
+    const userProd = user;
 
     const getProductsRev = async () => {
         const products = await ProductService.findHighlight();
@@ -85,7 +86,7 @@ function ProductHighlightCarousel() {
             <Slider {...settings}>
                 {productsHightlight.map((product) => (
                     <div className='box_product_hightlight_carousel' key={product.code}>
-                        <ProductCardHighlight product={product} />
+                        <ProductCardHighlight user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -97,7 +98,7 @@ function ProductHighlightCarousel() {
             <Slider {...settings}>
             {productsHightlight.map((product) => (
                     <div className='box_product_hightlight_carousel' key={product.code}>
-                        <ProductCardHighlight product={product} />
+                        <ProductCardHighlight user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -109,7 +110,7 @@ function ProductHighlightCarousel() {
             <Slider {...settings}>
             {productsHightlight.map((product) => (
                     <div className='box_product_hightlight_carousel' key={product.code}>
-                        <ProductCardHighlight product={product} />
+                        <ProductCardHighlight user={user} product={product} />
                     </div>
                 ))}
             </Slider>
