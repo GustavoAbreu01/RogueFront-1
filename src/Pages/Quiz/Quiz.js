@@ -25,7 +25,7 @@ function Quiz() {
   const [progresso, setProgresso] = useState(0);
   const [verificacao, setVerificacao] = useState(localStorage.getItem('verificar') === 'sim' || localStorage.getItem('verificar2') === 'sim');
   const Question1 = () => progresso === 0;
-
+  const [respostasAnteriores, setRespostasAnteriores] = useState([]);
   const [respostas, setRespostas] = useState([]);
   const [respostaSelecionada, setRespostaSelecionada] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -41,22 +41,23 @@ function Quiz() {
       if (currentQuestionIndex < Questions.perguntas_respostas.length - 1) {
         const respostaAtual = currentQuestion.campo_digitacao ? resposta : getOpcaoSelecionada();
         if (currentQuestion.pergunta === "Qual o tipo do acoplamento?" && resposta === "Acoplamento por cardã") {
-          setRespostas(prevRespostas => [...prevRespostas, { tipo: respostaAtual, numeroCarda }]);
+          setRespostasAnteriores(prevRespostas => [...prevRespostas, { tipo: respostaAtual, numeroCarda }]);
         } else {
-          setRespostas(prevRespostas => [...prevRespostas, respostaAtual]);
+          setRespostasAnteriores(prevRespostas => [...prevRespostas, respostaAtual]);
         }
-
+  
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setResposta('');
         setCampoCardaAberto(false);
         setNumeroCarda('');
         setRespostaSelecionada(false)
       } else if (currentQuestionIndex === Questions.perguntas_respostas.length - 1) {
-        console.log(respostas);
+        console.log(respostasAnteriores);
         setConcluido(true);
       }
     }
   };
+  
 
   const getOpcaoSelecionada = () => {
     const opcaoSelecionada = document.querySelector('input[name="opcoes_resposta"]:checked');
@@ -68,10 +69,14 @@ function Quiz() {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
       setCampoCardaAberto(false);
+      setResposta(respostasAnteriores[respostasAnteriores.length - 1] || '');
+      setRespostaSelecionada(!!respostasAnteriores[respostasAnteriores.length - 1]);
+      setRespostasAnteriores(prevRespostas => prevRespostas.slice(0, -1)); 
     } else {
       console.log('Quiz concluído!');
     }
   };
+  
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
