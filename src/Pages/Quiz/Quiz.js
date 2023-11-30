@@ -25,6 +25,7 @@ import { FaStar } from 'react-icons/fa';
 function Quiz() {
   const [progresso, setProgresso] = useState(0);
   const [verificacao, setVerificacao] = useState(localStorage.getItem('verificar') === 'sim' || localStorage.getItem('verificar2') === 'sim');
+
   const Question1 = () => progresso === 0;
   const [respostasAnteriores, setRespostasAnteriores] = useState([]);
   const [respostas, setRespostas] = useState([]);
@@ -35,7 +36,17 @@ function Quiz() {
   const [campoCardaAberto, setCampoCardaAberto] = useState(false);
   const [numeroCarda, setNumeroCarda] = useState('');
   const [resposta, setResposta] = useState('');  // Adicionado aqui
+  const [question, setQuestion] = useState(0);
 
+  const verifyQuestion = () => {
+    if (progresso > 4) {
+      const newQuestionNumber = question + 1
+      setQuestion(newQuestionNumber)
+    }
+    console.log(progresso)
+    console.log(question)
+
+  }
 
   const handleNextQuestion = () => {
     if (respostaSelecionada) {
@@ -46,19 +57,21 @@ function Quiz() {
         } else {
           setRespostasAnteriores(prevRespostas => [...prevRespostas, respostaAtual]);
         }
-  
+
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setResposta('');
         setCampoCardaAberto(false);
         setNumeroCarda('');
         setRespostaSelecionada(false)
+        setProgresso(prevProgresso => prevProgresso + 1);
+    verifyQuestion()
       } else if (currentQuestionIndex === Questions.perguntas_respostas.length - 1) {
         console.log(respostasAnteriores);
         setConcluido(true);
       }
     }
   };
-  
+
 
   const getOpcaoSelecionada = () => {
     const opcaoSelecionada = document.querySelector('input[name="opcoes_resposta"]:checked');
@@ -72,12 +85,13 @@ function Quiz() {
       setCampoCardaAberto(false);
       setResposta(respostasAnteriores[respostasAnteriores.length - 1] || '');
       setRespostaSelecionada(!!respostasAnteriores[respostasAnteriores.length - 1]);
-      setRespostasAnteriores(prevRespostas => prevRespostas.slice(0, -1)); 
+      setRespostasAnteriores(prevRespostas => prevRespostas.slice(0, -1));
+      setProgresso(prevProgresso => prevProgresso - 1);
     } else {
       console.log('Quiz concluído!');
     }
   };
-  
+
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
@@ -130,617 +144,105 @@ function Quiz() {
       {!verifyHeader() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className="ui raised very padded text container segment quiz">
         <p className="ui blue ribbon label quiz">Quiz</p>
-        {Question1() && (
-          <div>
-            <div className="ui mini steps quiz">
-              <i className="clipboard list icon quiz"></i>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz_blue title">I</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="title">II</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">III</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">IV</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">V</div>
-                </div>
-              </div>
-            </div>
-            <div className="ui large header quiz">Qual é a linha do produto que você deseja?</div>
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-37" />
-              <label for="terms-checkbox-37" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">Industrial</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-38" />
-              <label for="terms-checkbox-38" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">Residencial</span>
-              </label>
+        <div className="ui mini steps quiz">
+          <i className="clipboard list icon quiz"></i>
+          <div className="box step quiz">
+            <div className="box content quiz">
+              <div className={` quiz title ${progresso == question ? 'selectedQuestion' : ''}`}>{question + 1}</div>
             </div>
           </div>
-        )}
-
-        {Question2() && (
-          <div>
-            <div className="ui mini steps quiz">
-              <i className="clipboard list icon quiz"></i>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">I</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz_blue title ">II</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">III</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">IV</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">V</div>
-                </div>
-              </div>
-            </div>
-            <div className="ui large header">Qual a voltagem necessária para o seu produto?</div>
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-40" />
-              <label for="terms-checkbox-40" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">12V</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-41" />
-              <label for="terms-checkbox-41" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">20V</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-42" />
-              <label for="terms-checkbox-42" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">40V</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-43" />
-              <label for="terms-checkbox-43" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">80V</span>
-              </label>
+          <div className="box step quiz">
+            <div className="box content quiz">
+              <div className={` quiz title ${progresso == question + 1 ? 'selectedQuestion' : ''}`}>{question + 2}</div>
             </div>
           </div>
-        )}
-
-        {Question3() && (
-          <div>
-            <div className="ui mini steps quiz">
-              <i className="clipboard list icon quiz"></i>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">I</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title ">II</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz_blue title">III</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">IV</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">V</div>
-                </div>
-              </div>
-            </div>
-            <div className="ui large header quiz">Quantas células são necessárias?</div>
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-44" />
-              <label for="terms-checkbox-44" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">6</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-45" />
-              <label for="terms-checkbox-45" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">8</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-46" />
-              <label for="terms-checkbox-46" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">10</span>
-              </label>
+          <div className="box step quiz">
+            <div className="box content quiz">
+              <div className={` quiz title ${progresso == question + 2 ? 'selectedQuestion' : ''}`}>{question + 3}</div>
             </div>
           </div>
-        )}
-
-        {Question4() && (
-          <div>
-            <div className="ui mini steps quiz">
-              <i className="clipboard list icon quiz"></i>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">I</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title ">II</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">III</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz_blue title">IV</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">V</div>
-                </div>
-              </div>
-            </div>
-            <div className="ui large header quiz">Qual o grau de proteção necessário?</div>
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-47" />
-              <label for="terms-checkbox-47" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">IP23</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-48" />
-              <label for="terms-checkbox-48" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">IP24(W)</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-49" />
-              <label for="terms-checkbox-49" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">IP55</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-50" />
-              <label for="terms-checkbox-50" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">IP56</span>
-              </label>
+          <div className="box step quiz">
+            <div className="box content quiz">
+              <div className={` quiz title ${progresso == question + 3 ? 'selectedQuestion' : ''}`}>{question + 4}</div>
             </div>
           </div>
-        )}
-
-        {Question5() && (
-          <div>
-            <div className="ui mini steps quiz">
-              <i className="clipboard list icon quiz"></i>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">I</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title ">II</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">III</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz title">IV</div>
-                </div>
-              </div>
-              <div className="box step quiz">
-                <div className="box content quiz">
-                  <div className="quiz_blue title">V</div>
-                </div>
-              </div>
-            </div>
-            <div className="ui large header quiz">Qual a tensão necessária?</div>
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-51" />
-              <label for="terms-checkbox-51" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">220/380 V</span>
-              </label>
-            </div>
-            <br />
-            <div class="checkbox-wrapper-37">
-              <input type="checkbox" name="checkbox" id="terms-checkbox-52" />
-              <label for="terms-checkbox-52" class="terms-label">
-                <svg
-                  class="checkbox-svg"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask id="path-1-inside-1_476_5-37" fill="white">
-                    <rect width="200" height="200" />
-                  </mask>
-                  <rect
-                    width="200"
-                    height="200"
-                    class="checkbox-box"
-                    stroke-width="40"
-                    mask="url(#path-1-inside-1_476_5-37)"
-                  />
-                  <path
-                    class="checkbox-tick"
-                    d="M52 111.018L76.9867 136L149 64"
-                    stroke-width="15"
-                  />
-                </svg>
-                <span class="label-text">220/380/440 V</span>
-              </label>
+          <div className="box step quiz">
+            <div className="box content quiz">
+              <div className={` quiz title ${progresso == question + 4 ? 'selectedQuestion' : ''}`}>{question + 5}</div>
             </div>
           </div>
-        )}
-
-        {progresso === 5 ? (
-          <div>
-            <div className="ui large center aligned header quiz_recomendation">Motor W50</div>
-            <img className="ui centered fluid image w50 quiz_recomendation" src={w50} />
-            <p className="description">Os motores W50 são projetados para aplicações industriais e garantem excelente performance e confiabilidade nas mais severas aplicações.</p>
-            <Link to='/product'>
-              <button className="ui huge fluid button details quiz_recomendation">Mais detalhes</button>
-            </Link>
+          <div className="box step quiz">
+            <div className="box content quiz">
+              <div className={` quiz title ${progresso == question + 5? 'selectedQuestion' : ''}`}>{question + 6}</div>
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      {!concluido ? (
+        <>
+          <div className="ui large header quiz">{currentQuestion.pergunta}</div>
+          {currentQuestion.campo_digitacao ? (
+            <input
+              className='input_quiz'
+              style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }}
+              type="text"
+              placeholder="Digite sua resposta"
+              value={resposta}
+              onChange={(e) => {
+                setResposta(e.target.value);
+                setRespostaSelecionada(!!e.target.value);
+              }}
+            />
+          ) : (
+            <ul>
+              {currentQuestion.opcoes_resposta.map((opcao, index) => (
+                <div className='radio_quiz' key={index}>
+                  <input
+                    type="radio"
+                    id={`opcao-${index}`}
+                    name="opcoes_resposta"
+                    value={opcao}
+                    checked={resposta === opcao}
+                    onChange={() => {
+                      setRespostaSelecionada(true);
+                      setResposta(opcao);
+                      if (opcao === "Acoplamento por cardã") {
+                        setCampoCardaAberto(true);
+                      } else {
+                        setCampoCardaAberto(false);
+                      }
+                    }}
+                  />
+                  <label htmlFor={`opcao-${index}`}>{opcao}</label>
+                </div>
+              ))}
+            </ul>
+          )}
+          {campoCardaAberto && (
+            <input
+              className='input_quiz'
+              style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }}
+              type="text"
+              placeholder="Digite o número necessário"
+              value={numeroCarda}
+              onChange={(e) => setNumeroCarda(e.target.value)}
+            />
+          )}
+          <div className='div_buttons_quiz'>
+            <button className="ui big button back quiz_btn_options" onClick={handlePreviousQuestion}>Voltar</button>
+            <button className="ui big button next quiz_btn_options" onClick={handleNextQuestion}>Próximo</button>
+          </div>
+        </>
+      ) : (
+        <div>
+          <div className="ui large center aligned header quiz_recomendation">Motor W50</div>
+          <img className="ui centered fluid image w50 quiz_recomendation" src={w50} />
+          <p className="description">Os motores W50 são projetados para aplicações industriais e garantem excelente performance e confiabilidade nas mais severas aplicações.</p>
+          <Link to='/product'>
+            <button className="ui huge fluid button details quiz_recomendation">Mais detalhes</button>
+          </Link>
+        </div>
+      )}
+    </div>
       <div className='box_quiz_title_similar'>
         <i className="magic icon" color='var(--white)'></i>
         <h1 className='quiz_title_similar' >Produtos Semelhantes</h1>
