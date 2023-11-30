@@ -87,13 +87,20 @@ function ComboCard({ product }) {
         }
     };
 
-    const BuyProduct = () => {
-
+    const Reload = () => {
+        setTimeout(() => {
+            window.location.reload()
+        },1000)
     }
+
+    const BuyProduct = () => {
+    }
+
+    
 
     return (
         <>
-            <div className='div_combo_card' key={product.code}>
+            <div className='div_combo_card'>
                 {productPage[getRandom] && (
                     <>
                         <div className='div_product_page_recomendation'>
@@ -108,8 +115,8 @@ function ComboCard({ product }) {
                                     </div>
                                 </div>
                                 <FaPlus color='var(--blue-primary)' fontSize={50} />
-                                <Link to={`/product/${product.code}`}>
-                                    <div className='box_product_page_combo_card' >
+                                <Link to={`/product/${productPage[getRandom].code}`}>
+                                    <div className='box_product_page_combo_card' onClick={Reload}>
                                         <img className="image_combo_card" src={productPage[getRandom].image} />
                                         <h1 className="ui header combo_card">{renderModel(productPage[getRandom])}</h1>
                                         {renderPrice(productPage[getRandom])}
