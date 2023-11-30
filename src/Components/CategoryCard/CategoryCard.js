@@ -15,12 +15,41 @@ import Cookies from 'js-cookie';
 
 function CategoryCard({ product, user }) {
 
-    const AddProductInCart = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
-        swal.fire({
-            title: 'Produto adicionado a carrinho!',
+    const AddProductInCart = async () => {
+        const cookie = Cookies.get('Cookie');
+        for (let i = 0; i < user.cart.size; i++) {
+            console.log(user.cart.products[i].product.code)
+            if (user.cart.products[i].product.code === product.code) {
+                Swal.fire({
+                    title: 'Produto já está no seu carrinho!',
+                    icon: 'error',
+                    showConfirmButton: true,
+                    confirmButtonText: 'Ir para o carrinho',
+                    confirmButtonColor: 'var(--blue-primary)',
+                    position: 'top-end',
+                    timer: 5000,
+                    timerProgressBar: true,
+                    toast: true,
+                    width: 400,
+                    showClass: {
+                        popup: 'animate__animated animate__backInRight'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__backOutRight'
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "/cart"
+                    }
+                }
+                )
+                return;
+            }
+        }
+
+        await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
+        Swal.fire({
+            title: 'Produto adicionado ao carrinho!',
             icon: 'success',
             showConfirmButton: true,
             confirmButtonText: 'Ir para o carrinho',
@@ -44,11 +73,12 @@ function CategoryCard({ product, user }) {
         )
     }
 
-    const BuyProduct = () => {
-        const user = JSON.parse(localStorage.getItem('user')) || [];
-        const cartId = user.cart.id;
-        CartService.AddProductInCart(cartId, product.code);
-        window.location.href = "/cart"
+    const BuyProduct = async () => {
+        const cookie = Cookies.get('Cookie');
+        await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
+        setTimeout(() => {
+            window.location.href = "/cart"
+        }, 200);
     }
 
     const AddProductInSave = async () => {
@@ -277,11 +307,9 @@ function CategoryCard({ product, user }) {
                     <i className="exchange alternate icon category_card"></i>
                 </button>
             </div>
-            <Link to="/cart">
-                <div className='category_card_buy_button'>
-                    <button className="ui fluid blue button category_card" onClick={() => BuyProduct(product)}>Comprar</button>
-                </div>
-            </Link>
+            <div className='category_card_buy_button'>
+                <button className="ui fluid blue button category_card" onClick={() => BuyProduct(product)}>Comprar</button>
+            </div>
         </div>
     )
 
@@ -311,11 +339,9 @@ function CategoryCard({ product, user }) {
                     <i className="exchange alternate icon category_card"></i>
                 </button>
             </div>
-            <Link to="/cart">
-                <div className='category_card_buy_button'>
-                    <button className="ui fluid blue button category_card" onClick={() => BuyProduct(product)}>Comprar</button>
-                </div>
-            </Link>
+            <div className='category_card_buy_button'>
+                <button className="ui fluid blue button category_card" onClick={() => BuyProduct(product)}>Comprar</button>
+            </div>
         </div>
     )
     const renderMobileView = () => (
@@ -340,11 +366,9 @@ function CategoryCard({ product, user }) {
                     <i className="cart plus icon category_card"></i>
                 </button>
             </div>
-            <Link to="/cart">
-                <div className='category_card_buy_button_mobile'>
-                    <button className="ui fluid blue button category_card_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
-                </div>
-            </Link>
+            <div className='category_card_buy_button_mobile'>
+                <button className="ui fluid blue button category_card_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
+            </div>
         </div>
 
     )

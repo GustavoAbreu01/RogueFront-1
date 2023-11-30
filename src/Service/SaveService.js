@@ -3,8 +3,6 @@ import axios from "axios";
 export const SaveService = {
 
     AddProductInSave: async (cookie, saveId, productCode) => {
-        console.log(saveId, productCode);
-        console.log(cookie);
         const url = "http://localhost:8082/saves/add/" + saveId + "/" + productCode;
         try {
             const response = await axios.put(url, null,

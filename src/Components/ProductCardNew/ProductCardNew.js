@@ -25,19 +25,49 @@ function ProductCardNew({ product, user }) {
     };
   }, []);
 
-  const BuyProduct = () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    CartService.AddProductInCart(cartId, product.code);
-    window.location.href = "/cart"
+  const BuyProduct = async () => {
+    const cookie = Cookies.get('Cookie');
+    await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
+    setTimeout(() => {
+      window.location.href = "/cart"
+    }, 200);
   }
 
-  const AddProductInCart = () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    CartService.AddProductInCart(cartId, product.code);
+  const AddProductInCart = async () => {
+    const cookie = Cookies.get('Cookie');
+    for (let i = 0; i < user.cart.size; i++) {
+      console.log(user.cart.products[i].product.code)
+      if (user.cart.products[i].product.code === product.code) {
+        Swal.fire({
+          title: 'Produto já está no seu carrinho!',
+          icon: 'error',
+          showConfirmButton: true,
+          confirmButtonText: 'Ir para o carrinho',
+          confirmButtonColor: 'var(--blue-primary)',
+          position: 'top-end',
+          timer: 5000,
+          timerProgressBar: true,
+          toast: true,
+          width: 400,
+          showClass: {
+            popup: 'animate__animated animate__backInRight'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__backOutRight'
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/cart"
+          }
+        }
+        )
+        return;
+      }
+    }
+
+    await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
     Swal.fire({
-      title: 'Produto adicionado a carrinho!',
+      title: 'Produto adicionado ao carrinho!',
       icon: 'success',
       showConfirmButton: true,
       confirmButtonText: 'Ir para o carrinho',
@@ -150,11 +180,9 @@ function ProductCardNew({ product, user }) {
           <h3 className='product_card_new_price'>R$ {product.price}</h3>
           <p className='product_card_new_price_option'>Á vista no pix</p>
         </div>
-        <Link to='/cart'>
-          <div className='product_card_new_buy_button'>
-            <button className="fluid ui button product_card_new_button" onClick={() => BuyProduct(product)}>Comprar</button>
-          </div>
-        </Link>
+        <div className='product_card_new_buy_button'>
+          <button className="fluid ui button product_card_new_button" onClick={() => BuyProduct(product)}>Comprar</button>
+        </div>
       </div>
     </div >
   )
@@ -191,11 +219,9 @@ function ProductCardNew({ product, user }) {
           <h3 className='product_card_new_price'>R$ {product.price}</h3>
           <p className='product_card_new_price_option'>Á vista no pix</p>
         </div>
-        <Link to='/cart'>
-          <div className='product_card_new_buy_button'>
-            <button className="fluid ui button product_card_new_button" onClick={() => BuyProduct(product)}>Comprar</button>
-          </div>
-        </Link>
+        <div className='product_card_new_buy_button'>
+          <button className="fluid ui button product_card_new_button" onClick={() => BuyProduct(product)}>Comprar</button>
+        </div>
       </div>
     </div>
   )
@@ -230,11 +256,9 @@ function ProductCardNew({ product, user }) {
           <h3 className='product_card_new_price_mobile'>R$ {product.price}</h3>
           <p className='product_card_new_price_option'>Á vista no pix</p>
         </div>
-        <Link to='/cart'>
-          <div className='product_card_new_buy_button_mobile'>
-            <button className="fluid ui button product_card_new_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
-          </div>
-        </Link>
+        <div className='product_card_new_buy_button_mobile'>
+          <button className="fluid ui button product_card_new_button_mobile" onClick={() => BuyProduct(product)}>Comprar</button>
+        </div>
       </div>
     </div>
   )
