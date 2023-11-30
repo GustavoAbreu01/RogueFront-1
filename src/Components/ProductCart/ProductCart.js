@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { CartService } from '../../Service';
 
 
-function ProductCart({ item }) {
+function ProductCart({ item, user }) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [quantidade, setQuantidade] = React.useState(1);
   const [valor, setValor] = React.useState(1);
@@ -44,26 +44,16 @@ function ProductCart({ item }) {
 };
 
   function aumentarQuantidade() {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    CartService.AddProductInCart(cartId, item.product.code, item.quantity + 1);
-    window.location.reload();
+
   }
 
   function diminuirQuantidade() {
-    if (item.quantity > 1) {
-      const user = JSON.parse(localStorage.getItem('user')) || [];
-      const cartId = user.cart.id;
-      CartService.AddProductInCart(cartId, item.product.code, item.quantity - 1);
-      window.location.reload();
-    }
+
   }
 
-  const deleteItens = (item) => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    CartService.DeleteProductInCart(cartId, item.product.code);
-    window.location.reload();
+  const deleteItens = async (item) => {
+    console.log(item.product.code);
+    await CartService.MinunProductInCart(user.cart.id, item.product.code);
   };
 
   const renderDesktopView = () => (
@@ -74,13 +64,16 @@ function ProductCart({ item }) {
             <div className='product_cart_description'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={item.products.motors.image} width="125" height="" />
+                  <img src={item.product.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name">{item.products.motors.model}</h2>
-                  <p className="product_cart_complement" >{item.products.description}</p>
+                  <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
+                  <p className="product_cart_complement" >{item.product.motors.typeDaCarcaca} -
+                  {" " + item.product.motors.codeDaCarcaca}
+                  {" " + item.product.motors.protection}
+                  {" " + item.product.motors.regime}</p>
                   {renderPrice()}
                 </Link>
               </div>
@@ -108,13 +101,16 @@ function ProductCart({ item }) {
           <div className="product_cart_card" style={{ color: 'black' }}>
             <div id="imgItens CardCart">
               <Link to="/product">
-                <img src={item.products.motors.image} width="125" height="" />
+                <img src={item.product.image} width="125" height="" />
               </Link>
             </div>
             <div className="product_cart_informations">
               <Link to="/product">
-                <h2 className="product_cart_item_name">{item.products.motors.model}</h2>
-                <p className="product_cart_complement" >{item.products.description}</p>
+                <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
+                <p className="product_cart_complement" >{item.product.motors.typeDaCarcaca} -
+                  {" " + item.product.motors.codeDaCarcaca}
+                  {" " + item.product.motors.protection}
+                  {" " + item.product.motors.regime}</p>
                 <h2 id="itemPreco CardCart" className='product_cart_item_price_tablet'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_tablet'>10x Sem juros</sub></h2>
               </Link>
             </div>
@@ -142,12 +138,12 @@ function ProductCart({ item }) {
             <div className='product_card_cart_info_up'>
               <div id="imgItens CardCart">
                 <Link to="/product">
-                  <img src={item.products.motors.image} width="125" height="" />
+                  <img src={item.product.image} width="125" height="" />
                 </Link>
               </div>
               <div className="product_cart_informations_mobile">
                 <Link to="/product">
-                  <h2 className="product_cart_item_name_mobile">{item.products.motors.model}</h2>
+                  <h2 className="product_cart_item_name_mobile">{item.product.motors.model}</h2>
                   <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_mobile'>10x Sem juros</sub></h2>
                 </Link>
               </div>

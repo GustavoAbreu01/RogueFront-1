@@ -25,10 +25,9 @@ import { CartService, UserService } from '../../Service';
 
 
 
-function Cart({ product }) {
+function Cart() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
-  const [total, setTotal] = useState([]);
   const [user, setUser] = useState([]);
   const [productsSmaller, setProductsSmaller] = useState([])
 
@@ -40,7 +39,6 @@ function Cart({ product }) {
       setProductsSmaller([]);
     }
   }
-
 
   useEffect(() => {
     getProductsRev();
@@ -61,32 +59,35 @@ function Cart({ product }) {
       const tokenPayload = token.split('.');
       const decodedPayload = atob(tokenPayload[1]);
       const userClaims = JSON.parse(decodedPayload);
-      const user = await UserService.findOne(userClaims.sub);
-      setUser(user);
-    }
-    console.log(user)
-    if (user.cart) {
-      const products = await CartService.GetCart(user.cart.id);
-      if (products) {
-        setProductsCart(products);
-        setTotal(products.cartProductQuantities);
-      } else {
-        setProductsCart([]);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        setUser(userPrin);
+        if (userPrin.cart) {
+          const products = await CartService.GetCart(userPrin.cart.id);
+          if (products) {
+            setProductsCart(products.products);
+          } else {
+            setProductsCart([]);
+          }
+        } else {
+          setProductsCart([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
       }
     }
-  }
+  };
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
-      return true
+    if (Cookies.get('Cookie')) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
   const hasProductsInCart = () => {
-    if (productsCart.size === 0) {
+    if (productsCart.length === 0) {
       return false;
     } else {
       return true;
@@ -131,9 +132,9 @@ function Cart({ product }) {
             </div>
             {hasProductsInCart() ? (
               <>
-                {total.map((item, index) => (
+                {productsCart.map((item, index) => (
                   <div key={index}>
-                    <ProductCart item={item} />
+                    <ProductCart user={user} item={item} />
                   </div>
                 ))}
               </>

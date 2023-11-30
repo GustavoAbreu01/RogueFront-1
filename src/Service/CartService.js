@@ -6,7 +6,7 @@ export const CartService = {
     AddProductInCart: async function (cartId, productCode, quantity) {
         const url = `http://localhost:8082/cart/add/${cartId}/${productCode}?quantity=${quantity}`;
         try {
-            const response = await axios.put(url);
+            const response = await axios.put(url, null, { withCredentials: true });
             console.log(response.data);
             return response.data;
         } catch (error) {
@@ -17,17 +17,27 @@ export const CartService = {
     GetCart: async function (cartId) {
         const url = `http://localhost:8082/cart/${cartId}`;
         try {
-            const response = await axios.get(url);
+            const response = await axios.get(url, { withCredentials: true });
             return response.data;
         } catch (error) {
             console.error(error);
         }
     },
 
-    DeleteProductInCart: async function (cartId, productCode) {
-        const url = `http://localhost:8082/cart/remove/${cartId}/${productCode}`;
+    DeleteProductInCart: async (cartId, productCode) => {
+        const url = "http://localhost:8082/cart/remove/all/"+ cartId;
         try {
-            const response = await axios.delete(url);
+            const response = await axios.delete(url, { withCredentials: true });
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    MinunProductInCart: async (cartId, productCode) => {
+        const url = "http://localhost:8082/cart/remove/"+ cartId + "/" + productCode;
+        try {
+            const response = await axios.put(url, null, { withCredentials: true });
             return response.data;
         } catch (error) {
             console.error(error);

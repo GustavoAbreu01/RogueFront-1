@@ -10,12 +10,6 @@ import { useEffect } from 'react'
 
 function SmallProductHorizontal({ product }) {
 
-
-    useEffect(() => {
-        console.log(product.code)
-    });
-
-
     return (
         <Link to={`/product/${product.code}`}>
             <div className='container_small_product_horizontal' key={product.code}>

@@ -81,7 +81,7 @@ export const ProductService = {
 
     findSimiliar: async () => {
         try {
-            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 4 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
