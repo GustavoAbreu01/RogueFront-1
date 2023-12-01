@@ -119,9 +119,6 @@ function Register() {
         } else {
             event.preventDefault();
             UserService.create(user);
-
-            localStorage.setItem('user', JSON.stringify(user));
-            localStorage.setItem("verifyLogin", 'yes');
             swal.fire({
                 title: 'Cadastro realizado com sucesso!',
                 text: 'Você será redirecionado para a página de login',

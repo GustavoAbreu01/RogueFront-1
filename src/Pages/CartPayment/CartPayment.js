@@ -25,6 +25,7 @@ import CardNumber from '../../assets/img/CardNumber.png';
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
 import { CartService, PaymentService, ProductService, UserService } from '../../Service';
 import Cookies from 'js-cookie';
+import Swal from 'sweetalert2';
 
 
 function CartPayment() {
@@ -79,7 +80,9 @@ function CartPayment() {
     "validity": "",
     "number": "",
     "cvv": "",
-    "user": ""
+    "user": [{
+      "id": 0
+    }]
   });
 
   const [validity, setValidity] = useState({
@@ -106,10 +109,37 @@ function CartPayment() {
 
   const handlePayment = async (event) => {
     event.preventDefault();
-    payment.user = user.id;
-    payment.validity =  "20" + validity.year + "-" + validity.month + "-01";
-    console.log(payment);
-    PaymentService.create(payment);
+    payment.user[0].id = user.id;
+    if (validity.month < 10) {
+      payment.validity = "20" + validity.year + "-0" + validity.month + "-01";
+    } else {
+      payment.validity = "20" + validity.year + "-" + validity.month + "-01";
+    }
+    if (payment.name === "" || payment.number === "" || payment.cvv === "" || payment.validity === "") {
+      Swal.fire({
+        title: 'Preencha todos os campos!',
+        icon: false,
+        showConfirmButton: false,
+        position: 'top-end',
+        icon: 'error',
+        timer: 3000,
+        timerProgressBar: true,
+        background: 'var(--red)',
+        color: 'var(--white)',
+        toast: true,
+        width: 400,
+        showClass: {
+          popup: 'animate__animated animate__backInRight'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__backOutRight'
+        },
+      })
+    } else {  
+      await PaymentService.create(payment);
+      window.location.href = '/cart/transport';
+    }
+
   };
 
   const options = [
@@ -244,7 +274,6 @@ function CartPayment() {
                   <div className="ten wide field">
                     <label>CPF do titular</label>
                     <input id='NumberCard' type="text" name="cpf" maxlength="14" placeholder="000.000.000-00"
-                      onChange={updatePayment}
                       onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
                     />

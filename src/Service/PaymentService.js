@@ -4,10 +4,14 @@ const url = 'http://localhost:8082/creditCard'
 
 export const PaymentService = {
 
-  create: function (payment) {
-    axios.post(url, payment).then((response) => {
+  create: async (payment) => {
+    try {
+      const response = await axios.post(url, payment, { withCredentials: true });
       return response.data;
-    });
+    } catch (error) {
+      console.error("Erro ao criar pagamento:", error);
+      throw error;
+    }
   },
 
 
