@@ -31,7 +31,7 @@ function ProductSearchedCarousel({ user }) {
         slidesToShow: 5,
         swipeToSlide: true,
         autoplay: true,
-        speed: 1500,
+        speed: 4000,
         responsive: [
             {
                 breakpoint: 1624,

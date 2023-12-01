@@ -27,6 +27,8 @@ function ProductCarouselSmall() {
         infinite: true,
         slidesToShow: 7,
         swipeToSlide: true,
+        autoplay: true,
+        speed: 3000,
         responsive: [
             {
                 breakpoint: 1824,

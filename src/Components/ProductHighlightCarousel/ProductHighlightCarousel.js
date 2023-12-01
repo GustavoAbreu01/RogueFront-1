@@ -34,7 +34,7 @@ function ProductHighlightCarousel( { user } ) {
         slidesToShow: 5,
         swipeToSlide: true,
         autoplay: true,
-        speed: 1200,
+        speed: 2000,
         responsive: [
             {
                 breakpoint: 1624,

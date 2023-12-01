@@ -29,10 +29,10 @@ function ProductNewCarousel( { user } ) {
     var settings = {
         className: "center",
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 4,
         swipeToSlide: true,
         autoplay: true,
-        speed: 800,
+        speed: 5000,
         responsive: [
             {
                 breakpoint: 1624,
