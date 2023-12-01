@@ -31,6 +31,8 @@ function ProductNewCarousel( { user } ) {
         infinite: true,
         slidesToShow: 5,
         swipeToSlide: true,
+        autoplay: true,
+        speed: 800,
         responsive: [
             {
                 breakpoint: 1624,

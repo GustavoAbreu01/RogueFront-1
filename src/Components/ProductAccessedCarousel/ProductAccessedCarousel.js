@@ -27,6 +27,8 @@ function ProductAccessedCarousel( {user} ) {
         infinite: true,
         slidesToShow: 10,
         swipeToSlide: false,
+        autoplay: true,
+        speed: 1000,
         responsive: [
             {
                 breakpoint: 1624,
