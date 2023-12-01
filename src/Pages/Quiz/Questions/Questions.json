@@ -50,10 +50,10 @@
         {
             "pergunta": "Qual a temperatura ambiente que esse motor vai se encontrar?",
             "opcoes_resposta": [
-                "Até 40oC",
-                "55oC",
-                "Até 20oC",
-                "Até 35oC"
+                "Até 40°C",
+                "55°C",
+                "Até 20°C",
+                "Até 35°C"
             ],
             "campo_digitacao": false
         },

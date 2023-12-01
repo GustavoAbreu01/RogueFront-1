@@ -172,7 +172,10 @@
 .box.step.quiz {
 
 }
+
 .radio_quiz{
+    display: flex;
+    gap: 1rem;
     padding: 0.5rem;
 }
 .input_quiz{

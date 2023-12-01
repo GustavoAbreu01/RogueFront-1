@@ -28,9 +28,11 @@ function ProductCategory() {
   const [paginationIntruct, setPaginationIntruct] = useState(20);
   const [isGrid, setIsGrid] = useState(true);
   const [showNextButton, setShowNextButton] = useState(true);
+  const [showPreviousButton, setShowPreviousButton] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [user, setUser] = useState({});
   const { category } = useParams();
+
 
   const verify = () => {
     const Registered = localStorage.getItem('verifyLogin');
@@ -46,20 +48,31 @@ function ProductCategory() {
   };
 
   const handlePrevPage = () => {
+
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
+      setShowPreviousButton(true);
+    }  if (currentPage == 1){
+      setShowPreviousButton(false);
     }
   };
 
+
   const handleNextPage = async () => {
+    if (currentPage == 1){
+      setShowPreviousButton(false);
+    }
     try {
+      setShowNextButton(false);
       const totalProducts = await ProductService.findAll();
-      const remainingProducts = totalProducts.length - productsCategory.length;
-      console.log(productsCategory.length);
+      const remainingProducts = totalProducts.length - (currentPage + 1) * paginationIntruct;
       if (remainingProducts > 0) {
         setCurrentPage(currentPage + 1);
+        setShowPreviousButton(true);
       } else {
+       
         setShowNextButton(false);
+        console.warn('No remaining products.');
       }
     } catch (error) {
       console.error("Erro ao obter total de produtos:", error);
@@ -211,17 +224,18 @@ function ProductCategory() {
         </div>
         <div className='box_pagination_buttons'>
           <button
-            className='pagination_button'
+            className={`pagination_button ${showPreviousButton ? 'able' : 'disable'}`}
             onClick={handlePrevPage}
             disabled={currentPage === 0}
           >
             Anterior
           </button>
-          {showNextButton && (
-            <button className='pagination_button' onClick={handleNextPage}>
-              Próximo
-            </button>
-          )}
+
+
+          <button className={`pagination_button ${showNextButton ? 'able' : 'disable'}`} onClick={handleNextPage}>
+            Próximo
+          </button>
+
         </div>
         <Footer />
       </div>
