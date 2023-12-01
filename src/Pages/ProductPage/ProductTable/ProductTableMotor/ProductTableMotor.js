@@ -14,14 +14,13 @@ function ProductTableMotor({ product }) {
                 <div>
                     <table className="ui small definition table product_page">
                         <tbody>
-                            {Object.entries(product).slice(0, itemsToShow).map(([property, value]) => (
+                            {Object.entries(product.motors).slice(0, itemsToShow).map(([property, value]) => (
                                 <tr key={property}>
                                     <td>{property}</td>
                                     <td>
                                         {typeof value === 'object' && value !== null ? (
                                             <span>
                                                 {value.code}
-                                                {value.motors.image}
                                                 {value.assessment}
                                                 {value.totalAssessment}
                                             </span>
