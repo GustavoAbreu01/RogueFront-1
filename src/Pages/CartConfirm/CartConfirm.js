@@ -15,30 +15,21 @@ import { Link } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
-import { CartService, ProductService } from '../../Service';
+import { CartService, ProductService, UserService } from '../../Service';
+import Cookies from 'js-cookie';
+import ProductCart from '../../Components/ProductCart/ProductCart';
 
 function CartConfirm() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const user = JSON.parse(localStorage.getItem('user')) || [];
   const [productsCart, setProductsCart] = useState([]);
-  const [total, setTotal] = useState([]);
-
-  const getCart = async () => {
-    const cartId = user.cart.id;
-    const products = await CartService.GetCart(cartId);
-    if (products) {
-      setProductsCart(products);
-      setTotal(products.cartProductQuantities);
-    } else {
-      setProductsCart([]);
-    }
-  }
+  const [user, setUser] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const [productsSmaller, setProductsSmaller] = useState([])
 
   const getProductsRev = async () => {
-    const products = await ProductService.findSimilar();
+    const products = await ProductService.findSimiliarCart();
     if (products) {
       setProductsSmaller(products);
     } else {
@@ -47,8 +38,8 @@ function CartConfirm() {
   }
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false
@@ -67,6 +58,35 @@ function CartConfirm() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const getCart = async () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      try {
+        const tokenPayload = token.split('.');
+        const decodedPayload = atob(tokenPayload[1]);
+        const userClaims = JSON.parse(decodedPayload);
+        const userPrin = await UserService.findOne(userClaims.sub);
+        console.log(userPrin);
+        setUser(userPrin);
+        if (userPrin.cart) {
+          const products = await CartService.GetCart(userPrin.cart.id);
+          if (products && products.products) {
+            setCart(products);
+            setProductsCart(products.products);
+          } else {
+            setCart([]);
+            setProductsCart([]);
+          }
+        } else {
+          setCart([]);
+          setProductsCart([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    }
+  };
 
   const renderDesktopView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
@@ -106,12 +126,12 @@ function CartConfirm() {
               <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>
             <>
-                {total.map((item, index) => (
-                  <div key={index}>
-                    <ProductCartConfirm item={item} />
-                  </div>
-                ))}
-              </>
+              {productsCart.map((item, index) => (
+                <div key={index}>
+                  <ProductCartConfirm user={user} item={item} />
+                </div>
+              ))}
+            </>
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>
@@ -125,26 +145,26 @@ function CartConfirm() {
                     </div>
                     <div className="field">
                       <label>Endereço:</label>
-                      <p>{user.address[0].rua}, {user.address[0].bairro}, {user.address[0].cidade}</p>
+                      <p></p>
                     </div>
                     <div className="field">
                       <label>Complemento:</label>
-                      <p>{user.address[0].complemento}</p>
+                      <p></p>
                     </div>
                   </div>
                 </div>
                 <div className="three fields">
                   <div className="field">
                     <label>Estado:</label>
-                    <p>{user.address[0].estado}</p>
+                    <p></p>
                   </div>
                   <div className="field">
                     <label>País:</label>
-                    <p>{user.address[0].pais}</p>
+                    <p></p>
                   </div>
                   <div className="field">
                     <label>CEP</label>
-                    <p>{user.address[0].cep}</p>
+                    <p></p>
                   </div>
                 </div>
               </form>
@@ -157,13 +177,13 @@ function CartConfirm() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${cart.totalPrice}</h5>
             </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
+              <h5 className='total_text_buy_product'>Total R${cart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
               <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/finish'>Finalizar Pedido</Link></button>
@@ -171,9 +191,9 @@ function CartConfirm() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-          {productsSmaller.map((product) => (
-            <SmallProductHorizontal key={product.code} product={product}/>
-          ))}
+            {productsSmaller.map((product) => (
+              <SmallProductHorizontal key={product.code} product={product} />
+            ))}
           </div>
         </div>
       </div>
@@ -219,8 +239,6 @@ function CartConfirm() {
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>
-            <ProductCartConfirm />
-            <ProductCartConfirm />
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>
@@ -311,8 +329,6 @@ function CartConfirm() {
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Confirmar Pedido</h5>
             </div>
-            <ProductCartConfirm />
-            <ProductCartConfirm />
             <div className='cart_confirm_title'>
               <h5 className='cart_confirm_title_text'>Endereço de Entrega</h5>
             </div>

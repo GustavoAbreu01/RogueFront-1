@@ -15,44 +15,72 @@ import { Link, useNavigate } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
-import { AddressService, CartService } from '../../Service';
+import { AddressService, CartService, UserService } from '../../Service';
+import Cookies from 'js-cookie';
 
 function CartTransport() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
   const [cep, setCep] = useState('');
-  const userPresent = JSON.parse(localStorage.getItem('user')) || []
   const [addressInfo, setAddressInfo] = useState(false);
   const [endereco, setEndereco] = useState({});
+  const [user, setUser] = useState({});
+  const [cart, setCart] = useState([]);
   const [total, setTotal] = useState([]);
   const navigate = useNavigate();
 
-  const buscarEndereco = () => {
-    if (cep.length === 8) {
-      axios.get(`https://viacep.com.br/ws/${cep}/json/`)
-        .then((response) => {
-          setEndereco(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        }
-        );
-      console.log(endereco)
+  const buscarEndereco = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.get(`https://viacep.com.br/ws/${address.cep}/json/`);
+      setEndereco((prevEndereco) => ({
+        ...prevEndereco,
+        ...response.data,
+      }));
+      console.log(response.data);
+      setAddressInfo(true);
+      setAddress({
+        ...address,
+        uf: response.data.uf,
+        estado: response.data.uf,
+        cidade: response.data.localidade,
+        bairro: response.data.bairro,
+        rua: response.data.logradouro,
+        pais: response.data.pais,
+      });
+    } catch (error) {
+      console.error(error);
     }
   };
 
   const getCart = async () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    const products = await CartService.GetCart(cartId);
-    if (products) {
-      setProductsCart(products);
-      setTotal(products.cartProductQuantities);
-    } else {
-      setProductsCart([]);
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        setUser(userPrin);
+        if (userPrin.cart) {
+          const products = await CartService.GetCart(userPrin.cart.id);
+          if (products) {
+            setCart(products);
+            setProductsCart(userPrin.cart);
+          } else {
+            setCart([]);
+            setProductsCart([]);
+          }
+        } else {
+          setCart([]);
+          setProductsCart([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
     }
-  }
+  };
 
   const handleChangeCep = (event) => {
     const novoCep = event.target.value;
@@ -63,7 +91,6 @@ function CartTransport() {
 
   useEffect(() => {
     getCart();
-    console.log(userPresent)
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -85,6 +112,7 @@ function CartTransport() {
 
   const updateAddress = (event) => {
     setAddress({ ...address, [event.target.name]: event.target.value });
+    console.log(address);
   };
 
 
@@ -101,24 +129,9 @@ function CartTransport() {
   });
 
   const handleTransport = async (event) => {
-    const rua = userPresent.address[0].rua;
-    const numero = userPresent.address[0].numero;
-    const complemento = userPresent.address[0].complemento;
-    const bairro = userPresent.address[0].bairro;
-    const cidade = userPresent.address[0].cidade;
-    const estado = userPresent.address[0].estado;
-    const pais = userPresent.address[0].pais;
-    const uf = userPresent.address[0].uf;
-    const cep = 89256690;
-    const userAddress = { rua, numero, complemento, bairro, cidade, estado, pais, uf, cep };
-    console.log(userAddress);
     event.preventDefault();
-    if (userAddress.rua !== "" && userAddress.numero !== "" && userAddress.bairro !== "" && userAddress.cidade !== "" && userAddress.estado !== "" && userAddress.pais !== "" && userAddress.uf !== "" && userAddress.cep !== "") {
-      AddressService.create(userAddress);
-      navigate("/cart/Confirm");
-    } else {
-      alert("Alguma informação está incorreta.");
-    }
+    await AddressService.create(address);
+    navigate('/cart/confirm');
   };
 
   const renderDesktopView = () => (
@@ -163,34 +176,34 @@ function CartTransport() {
                   <label>Nome</label>
                   <div className="two fields">
                     <div className="field">
-                      <input onChange={updateAddress} value={userPresent.name}  name="name" type="text" placeholder="Primiero Nome" />
+                      <input name="name" type="text" placeholder="Primiero Nome" />
                     </div>
                     <div className="field">
                       {!addressInfo ?
-                        <input type="text" name='rua' onChange={updateAddress} placeholder="Rua, Bairro, Número" value={userPresent.address[0].cidade + ", " + userPresent.address[0].bairro + ", " + userPresent.address[0].rua} />
+                        <input type="text" name='rua' onChange={updateAddress} placeholder="Rua, Bairro, Número" value={address.bairro} />
                         :
-                        <input type="text" name='rua' onChange={updateAddress} placeholder="Rua, Bairro, Número" value={userPresent.address[0].cidade + ", " + userPresent.address[0].bairro + ", " + userPresent.address[0].rua} />
+                        <input type="text" name='rua' onChange={updateAddress} placeholder="Rua, Bairro, Número" value={address.bairro + ", " + address.rua + ", " + address.numero} />
                       }
-
                     </div>
                   </div>
                 </div>
                 <div className="field">
                   <label>Endereço de Entrega</label>
                   <div className="fields">
-                    <div className="twelve wide field">
-                      <input type="text" name="complemento" value={userPresent.address[0].complemento} onChange={updateAddress} placeholder="Complemento" />
+                    <div className="ten wide field">
+                      <input type="text" name="complemento" value={address.complemento} onChange={updateAddress} placeholder="Complemento" />
                     </div>
-                    <div className="four wide field">
-                      <input type="text" name="shipping[address-2]" value={userPresent.address[0].cep} placeholder="CEP" onBlur={(event) => handleChangeCep(event)} />
+                    <div className="five wide field">
+                      <input maxLength={8} type="text" name="cep" value={address.cep} placeholder="CEP" onChange={updateAddress} />
                     </div>
+                    <button className="ui button" onClick={buscarEndereco}>Buscar</button>
                   </div>
                 </div>
                 <div className="two fields">
                   <div className="field">
                     <label>Estado</label>
-                    <select name="estado" onChange={updateAddress} className="ui fluid dropdown" value={userPresent.address[0].uf}>
-                      <option value="">Exterior</option>
+                    <select name="estado" onChange={updateAddress} className="ui fluid dropdown" value={address.estado}>
+                      <option value="Ex">Exterior</option>
                       <option value="AC">Acre</option>
                       <option value="AL">Alagoas</option>
                       <option value="AP">Amapá</option>
@@ -223,7 +236,7 @@ function CartTransport() {
                   </div>
                   <div className="field">
                     <label>País</label>
-                    <select name="pais" onChange={updateAddress} value="US" className="ui fluid dropdown">
+                    <select name="pais" onChange={updateAddress} value={address.pais} className="ui fluid dropdown">
                       <option value="">País</option>
                       <option value="ZA">África do Sul</option>
                       <option value="DE">Alemanha</option>

@@ -60,7 +60,7 @@ function CartPayment() {
           const products = await CartService.GetCart(userPrin.cart.id);
           if (products) {
             setCart(products);
-            setProductsCart(products.products);
+            setProductsCart(userPrin.cart);
           } else {
             setCart([]);
             setProductsCart([]);
@@ -523,7 +523,7 @@ function CartPayment() {
               <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Taxa R$0.00</h5>
+              <h5 className='info_total_buy_subtitle'>Frete R$0.00</h5>
             </div>
             <div>
               <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
