@@ -53,9 +53,9 @@ function ProductCategory() {
 
   const handleNextPage = async () => {
     try {
-      const totalProducts = await ProductService.getTotalProducts(category);
-      const remainingProducts = totalProducts - (currentPage + 1) * paginationIntruct;
-
+      const totalProducts = await ProductService.findAll();
+      const remainingProducts = totalProducts.length - productsCategory.length;
+      console.log(productsCategory.length);
       if (remainingProducts > 0) {
         setCurrentPage(currentPage + 1);
       } else {

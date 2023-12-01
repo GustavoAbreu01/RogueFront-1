@@ -96,8 +96,8 @@ function CartPayment() {
   };
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false
@@ -243,7 +243,7 @@ function CartPayment() {
                   </div>
                   <div className="ten wide field">
                     <label>CPF do titular</label>
-                    <input id='NumberCard' type="text" name="card[number]" maxlength="14" placeholder="000.000.000-00"
+                    <input id='NumberCard' type="text" name="cpf" maxlength="14" placeholder="000.000.000-00"
                       onChange={updatePayment}
                       onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
