@@ -11,6 +11,16 @@
     padding: 1rem;
 }
 
+.disable{
+    background-color: var(--grey-quaternary);
+    
+}
+
+
+.able{
+    background-color: var(--blue-primary);
+}
+
 .pagination_category {
     border: none;
     display: flex;
@@ -217,7 +227,7 @@
 }
 
 .pagination_button {
-    background-color: var(--blue-primary);
+  
     color: #fff;
     border: none;
     padding: 1rem;
@@ -230,7 +240,7 @@
     transition: 0.5s;
 }
 
-.pagination_button:hover {
+.able:hover {
     background-color: var(--blue-tertiary);
     transition: 0.5s;
 }
