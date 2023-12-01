@@ -90,7 +90,7 @@ function ProductPage() {
                 Swal.fire({
                     title: 'Produto já está no seu carrinho!',
                     icon: 'error',
-                    showConfirmButton: true,
+                    showConfirmButton: true,    
                     confirmButtonText: 'Ir para o carrinho',
                     confirmButtonColor: 'var(--blue-primary)',
                     position: 'top-end',

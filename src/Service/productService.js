@@ -45,7 +45,7 @@ export const ProductService = {
 
     findAccessed: async () => {
         try {
-            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 20 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -54,7 +54,7 @@ export const ProductService = {
 
     findHighlight: async () => {
         try {
-            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 20 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -63,7 +63,7 @@ export const ProductService = {
 
     findNew: async () => {
         try {
-            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 20 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -72,7 +72,16 @@ export const ProductService = {
 
     findSearched: async () => {
         try {
-            const response = await axios.get(url + "/completo?size=" + 10 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 20 + "&page=" + 0);
+            return response.data.content;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    findSimiliarCart: async () => {
+        try {
+            const response = await axios.get(url + "/completo?size=" + 4 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);
@@ -81,7 +90,7 @@ export const ProductService = {
 
     findSimiliar: async () => {
         try {
-            const response = await axios.get(url + "/completo?size=" + 4 + "&page=" + 0);
+            const response = await axios.get(url + "/completo?size=" + 20 + "&page=" + 0);
             return response.data.content;
         } catch (error) {
             console.error(error);

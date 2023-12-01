@@ -28,11 +28,12 @@ import { CartService, UserService } from '../../Service';
 function Cart() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
+  const [cart, setCart] = useState([]);
   const [user, setUser] = useState([]);
   const [productsSmaller, setProductsSmaller] = useState([])
 
   const getProductsRev = async () => {
-    const products = await ProductService.findSimiliar();
+    const products = await ProductService.findSimiliarCart();
     if (products) {
       setProductsSmaller(products);
     } else {
@@ -65,11 +66,14 @@ function Cart() {
         if (userPrin.cart) {
           const products = await CartService.GetCart(userPrin.cart.id);
           if (products) {
+            setCart(products);
             setProductsCart(products.products);
           } else {
+            setCart([]);
             setProductsCart([]);
           }
         } else {
+          setCart([]);
           setProductsCart([]);
         }
       } catch (error) {
@@ -156,13 +160,13 @@ function Cart() {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${cart.totalPrice}</h5>
             </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
+              <h5 className='total_text_buy_product'>Total R${cart.totalPrice}</h5>
             </div>
             <div className='button_total_cart'>
               {!verify() ? (
