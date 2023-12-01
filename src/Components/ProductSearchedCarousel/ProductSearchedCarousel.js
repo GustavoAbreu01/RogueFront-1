@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
 import ProductService from '../../Service/ProductService';
 
-function ProductSearchedCarousel( { user } ) {
+function ProductSearchedCarousel({ user }) {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsSearched, setProductsSearched] = useState([])
@@ -84,8 +84,8 @@ function ProductSearchedCarousel( { user } ) {
     const renderDesktopView = () => (
         <div className='container_product_searched_carousel' >
             <Slider {...settings}>
-            {productsSearched.map((product) => (
-            <div className='box_product_searched_carousel' key={product.code}>
+                {productsSearched.map((product) => (
+                    <div className='box_product_searched_carousel' key={product.code}>
                         <ProductCardSearched user={user} product={product} />
                     </div>
                 ))}
@@ -96,8 +96,8 @@ function ProductSearchedCarousel( { user } ) {
     const renderTabletView = () => (
         <div className='container_product_searched_carousel_tablet' >
             <Slider {...settings}>
-            {productsSearched.map((product) => (
-            <div className='box_product_searched_carousel' key={product.code}>
+                {productsSearched.map((product) => (
+                    <div className='box_product_searched_carousel' key={product.code}>
                         <ProductCardSearched user={user} product={product} />
                     </div>
                 ))}
@@ -108,8 +108,8 @@ function ProductSearchedCarousel( { user } ) {
     const renderMobileView = () => (
         <div className='container_product_searched_carousel_mobile' >
             <Slider {...settings}>
-            {productsSearched.map((product) => (
-            <div className='box_product_searched_carousel' key={product.code}>
+                {productsSearched.map((product) => (
+                    <div className='box_product_searched_carousel' key={product.code}>
                         <ProductCardSearched user={user} product={product} />
                     </div>
                 ))}
