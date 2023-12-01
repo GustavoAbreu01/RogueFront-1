@@ -10,22 +10,24 @@ import { useEffect } from 'react'
 
 function SmallProductHorizontal({ product }) {
 
-
-    useEffect(() => {
-        console.log(product.code)
-    });
-
+    const renderModel = () => {
+        if (product.motors.model.length > 10) {
+            return product.motors.model.substring(0, 6) + '...';
+        } else {
+            return product.motors.model;
+        }
+    }
 
     return (
         <Link to={`/product/${product.code}`}>
-            <div className='container_small_product_horizontal' key={product.code}>
+            <div title={product.motors.model} className='container_small_product_horizontal' key={product.code}>
                 <div className='horizontal_small_product_image'>
-                    <img src={motor} alt='' className='horizontal_small_product_image_tag' height={90} width={90}></img>
+                    <img src={product.image} alt='' className='horizontal_small_product_image_tag' height={90} width={90}></img>
                 </div>
                 <div className='small_product_horizontal_item_informations'>
 
                     <div className='small_product_horizontal_item_title'>
-                        <h5 title={product.name}>{product.name}</h5>
+                        <h5>{renderModel()}</h5>
                     </div>
                     <div className='small_product_horizontal_item_price'>
                         <p className='small_product_horizontal_item_price_tag'>R$ {product.price}</p>

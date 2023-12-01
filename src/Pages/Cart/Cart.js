@@ -25,22 +25,21 @@ import { CartService, UserService } from '../../Service';
 
 
 
-function Cart({ product }) {
+function Cart() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
-  const [total, setTotal] = useState([]);
+  const [cart, setCart] = useState([]);
   const [user, setUser] = useState([]);
   const [productsSmaller, setProductsSmaller] = useState([])
 
   const getProductsRev = async () => {
-    const products = await ProductService.findSimiliar();
+    const products = await ProductService.findSimiliarCart();
     if (products) {
       setProductsSmaller(products);
     } else {
       setProductsSmaller([]);
     }
   }
-
 
   useEffect(() => {
     getProductsRev();
@@ -61,32 +60,38 @@ function Cart({ product }) {
       const tokenPayload = token.split('.');
       const decodedPayload = atob(tokenPayload[1]);
       const userClaims = JSON.parse(decodedPayload);
-      const user = await UserService.findOne(userClaims.sub);
-      setUser(user);
-    }
-    console.log(user)
-    if (user.cart) {
-      const products = await CartService.GetCart(user.cart.id);
-      if (products) {
-        setProductsCart(products);
-        setTotal(products.cartProductQuantities);
-      } else {
-        setProductsCart([]);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        setUser(userPrin);
+        if (userPrin.cart) {
+          const products = await CartService.GetCart(userPrin.cart.id);
+          if (products) {
+            setCart(products);
+            setProductsCart(products.products);
+          } else {
+            setCart([]);
+            setProductsCart([]);
+          }
+        } else {
+          setCart([]);
+          setProductsCart([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
       }
     }
-  }
+  };
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
-      return true
+    if (Cookies.get('Cookie')) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
   const hasProductsInCart = () => {
-    if (productsCart.size === 0) {
+    if (productsCart.length === 0) {
       return false;
     } else {
       return true;
@@ -131,9 +136,9 @@ function Cart({ product }) {
             </div>
             {hasProductsInCart() ? (
               <>
-                {total.map((item, index) => (
+                {productsCart.map((item, index) => (
                   <div key={index}>
-                    <ProductCart item={item} />
+                    <ProductCart user={user} item={item} />
                   </div>
                 ))}
               </>
@@ -155,13 +160,13 @@ function Cart({ product }) {
               <h5 className='info_total_buy_title'>Resumo do Pedido</h5>
             </div>
             <div>
-              <h5 className='info_total_buy_subtitle'>Subtotal R${productsCart.totalPrice}</h5>
+              <h5 className='info_total_buy_subtitle'>Subtotal R${cart.totalPrice}</h5>
             </div>
             <div>
               <h5 className='info_total_buy_subtitle'>Frete Grátis</h5>
             </div>
             <div>
-              <h5 className='total_text_buy_product'>Total R${productsCart.totalPrice}</h5>
+              <h5 className='total_text_buy_product'>Total R${cart.totalPrice}</h5>
             </div>
             <div className='button_total_cart'>
               {!verify() ? (

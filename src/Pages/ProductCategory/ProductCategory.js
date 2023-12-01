@@ -18,7 +18,8 @@ import Footer from '../../Components/Footer/Footer'
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl, FaLongArrowAltRight, FaLongArrowAltLeft } from 'react-icons/fa'
-import { ProductService } from '../../Service';
+import { ProductService, UserService } from '../../Service';
+import Cookies from 'js-cookie';
 
 
 function ProductCategory() {
@@ -28,6 +29,7 @@ function ProductCategory() {
   const [isGrid, setIsGrid] = useState(true);
   const [showNextButton, setShowNextButton] = useState(true);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [user, setUser] = useState({});
   const { category } = useParams();
 
   const verify = () => {
@@ -80,7 +82,27 @@ function ProductCategory() {
     setIsGrid((prevIsGrid) => !prevIsGrid);
   };
 
+  const getUser = async () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        if (userPrin) {
+          setUser(userPrin);
+        } else {
+          setUser([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    }
+  };
+
   useEffect(() => {
+    getUser();
     getProductsCategory();
     setShowNextButton(true);
     function handleResize() {
@@ -170,7 +192,7 @@ function ProductCategory() {
               <div className="box_category_bar">
                 {productsCategory.map((product) => (
                   <div className="category_itens" key={product.code}>
-                    <CategoryCard product={product} />
+                    <CategoryCard user={user} product={product} />
                   </div>
                 ))}
               </div>
@@ -180,7 +202,7 @@ function ProductCategory() {
               <div className="box_search_bar">
                 {productsCategory.map((product) => (
                   <div className="searchItens" key={product.code}>
-                    <SmallProductCard product={product} />
+                    <SmallProductCard user={user} product={product} />
                   </div>
                 ))}
               </div>

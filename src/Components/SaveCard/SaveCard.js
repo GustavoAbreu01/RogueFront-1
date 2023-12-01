@@ -8,12 +8,12 @@ import Swal from 'sweetalert2';
 
 //importando as services
 import { CartService } from '../../Service/CartService'
+import { SaveService, UserService } from '../../Service';
 
-function SaveCard({ item }) {
+function SaveCard({ item, user }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
-        console.log(item)
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
         }
@@ -52,14 +52,9 @@ function SaveCard({ item }) {
         }
         )
     }
-    
-    const deleteItens = (item) => {
-        const savedProducts = JSON.parse(localStorage.getItem('savedProducts'));
-        const index = savedProducts.findIndex(item => item.id === item.id);
-        if (index !== -1) {
-            savedProducts.splice(index, 1);
-            localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
-        }
+
+    const deleteItens = async (item) => {
+        await SaveService.removeFromSaves(user.saves.id, item.code);
         window.location.reload();
     };
 
@@ -74,7 +69,7 @@ function SaveCard({ item }) {
         if (item.price !== undefined) {
             const priceParts = item.price.toString().split('.');
             const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00'; 
+            const decimalPart = priceParts[1] || '00';
             return (
                 <h1 className="save_card_product_price">
                     R$ {integerPart}
@@ -83,7 +78,7 @@ function SaveCard({ item }) {
                 </h1>
             );
         } else {
-            return null; 
+            return null;
         }
     };
 
@@ -91,7 +86,7 @@ function SaveCard({ item }) {
         <>
             <div className="save_products" >
                 <div className="ui segment itens save_card" id="itemCategory">
-                    <Link to="/product">
+                    <Link to={`/product/${item.code}`}>
                         <div className="box_save_card_product_info" style={{ color: 'black' }}>
                             <div className="save_card_image">
                                 <img src={item.image} width="125" height="" />

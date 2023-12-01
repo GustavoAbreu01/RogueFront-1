@@ -21,26 +21,20 @@ import motor from '../../assets/img/motor.png'
 
 //Importando os ícones
 import { FaStar } from 'react-icons/fa'
-import { ProductService } from '../../Service';
+import { ProductService, UserService } from '../../Service';
 import { CartService } from '../../Service/CartService'
-
-const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
-        return true
-    } else {
-        return false
-    }
-}
+import Cookies from 'js-cookie';
 
 function ProductPage() {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productPage, setProductPage] = useState({});
+    const [user, setUser] = useState({});
     const { code } = useParams();
 
     const product = 0;
 
     useEffect(() => {
+        getUser();
         searchProduct(code);
         function handleResize() {
             setScreenSize({ width: window.innerWidth, height: window.innerHeight });
@@ -52,6 +46,34 @@ function ProductPage() {
         };
     }, []);
 
+    const verify = () => {
+        const Registered = Cookies.get('Cookie')
+        if (Registered) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    const getUser = async () => {
+        const token = Cookies.get('Cookie');
+        if (token) {
+            const tokenPayload = token.split('.');
+            const decodedPayload = atob(tokenPayload[1]);
+            const userClaims = JSON.parse(decodedPayload);
+            try {
+                const userPrin = await UserService.findOne(userClaims.sub);
+                if (userPrin) {
+                    setUser(userPrin);
+                } else {
+                    setUser([]);
+                }
+            } catch (error) {
+                console.error('Erro ao obter usuário:', error);
+            }
+        }
+    };
+
     const searchProduct = async (code) => {
         const productSearched = await ProductService.findOne(code);
         if (productSearched) {
@@ -61,12 +83,40 @@ function ProductPage() {
         }
     }
 
-    const AddProductInCart = () => {
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
-        productsInCart.push(product);
-        localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    const AddProductInCart = async () => {
+        const cookie = Cookies.get('Cookie');
+        for (let i = 0; i < user.cart.size; i++) {
+            if (user.cart.products[i].product.code === productPage.code) {
+                Swal.fire({
+                    title: 'Produto já está no seu carrinho!',
+                    icon: 'error',
+                    showConfirmButton: true,    
+                    confirmButtonText: 'Ir para o carrinho',
+                    confirmButtonColor: 'var(--blue-primary)',
+                    position: 'top-end',
+                    timer: 5000,
+                    timerProgressBar: true,
+                    toast: true,
+                    width: 400,
+                    showClass: {
+                        popup: 'animate__animated animate__backInRight'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__backOutRight'
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "/cart"
+                    }
+                }
+                )
+                return;
+            }
+        }
+
+        await CartService.AddProductInCart(cookie, user.saves.id, productPage.code, 1);
         Swal.fire({
-            title: 'Produto adicionado a carrinho!',
+            title: 'Produto adicionado ao carrinho!',
             icon: 'success',
             showConfirmButton: true,
             confirmButtonText: 'Ir para o carrinho',
@@ -145,11 +195,12 @@ function ProductPage() {
 
     }
 
-    const BuyProduct = () => {
-        const user = JSON.parse(localStorage.getItem('user')) || [];
-        const cartId = user.cart.id;
-        CartService.AddProductInCart(cartId, product.code);
-        window.location.href = "/cart"
+    const BuyProduct = async () => {
+        const cookie = Cookies.get('Cookie');
+        await CartService.AddProductInCart(cookie, user.saves.id, productPage.code, 1);
+        setTimeout(() => {
+            window.location.href = "/cart"
+        }, 200);
     }
 
     const AddProductInCompareTablet = () => {
@@ -270,11 +321,9 @@ function ProductPage() {
                                     </p>
                                 </div>
                                 <div className='buttons_product_page'>
-                                    <Link to={"/cart"}>
-                                        <button className="ui fluid button sell_product_page" onClick={BuyProduct}>
-                                            Comprar Agora
-                                        </button>
-                                    </Link>
+                                    <button className="ui fluid button sell_product_page" onClick={BuyProduct}>
+                                        Comprar Agora
+                                    </button>
                                     <div className='buttons_product_page_opc_add'>
                                         <div>
                                             <button onClick={() => AddProductInCart(product)} className="ui fluid button cart_product_page">
@@ -314,14 +363,14 @@ function ProductPage() {
                         <h1>Produtos Semelhantes</h1>
                     </div>
                     <div className='box_product_page_carousel_similar'>
-                        <Carousel />
+                        <Carousel user={user} />
                     </div>
                     <div className='box_product_page_title_highlights'>
                         <FaStar color='var(--white)' size={40} />
                         <h1>Produtos Destaques</h1>
                     </div>
                     <div className='box_product_page_carousel_highlights'>
-                        <Carousel />
+                        <Carousel user={user} />
                     </div>
                     <Footer />
                 </div>
@@ -354,11 +403,9 @@ function ProductPage() {
                             </div>
                         </div>
                         <div className='buttons_product_page_mobile'>
-                            <Link to={"/cart"}>
-                                <button className="ui fluid button sell_product_page_mobile" onClick={BuyProduct}>
-                                    Comprar Agora
-                                </button>
-                            </Link>
+                            <button className="ui fluid button sell_product_page_mobile" onClick={BuyProduct}>
+                                Comprar Agora
+                            </button>
                             <div className='buttons_product_page_opc_add_mobile'>
                                 <div className='div_button_product_page_mobile'>
                                     <button className="ui fluid button cart_product_page_mobile">
@@ -429,14 +476,14 @@ function ProductPage() {
                 <h1 className='title_product_page_mobile'>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <div className='box_product_page_title_highlights_mobile'>
                 <FaStar color='var(--white)' size={30} />
                 <h1 className='title_product_page_mobile'>Produtos Destaques</h1>
             </div>
             <div className='box_product_page_carousel_highlights'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <Footer />
         </>
@@ -466,11 +513,9 @@ function ProductPage() {
                             </div>
                         </div>
                         <div className='buttons_product_page_mobile'>
-                            <Link to={"/cart"}>
-                                <button className="ui fluid button sell_product_page_tablet" onClick={BuyProduct}>
-                                    Comprar Agora
-                                </button>
-                            </Link>
+                            <button className="ui fluid button sell_product_page_tablet" onClick={BuyProduct}>
+                                Comprar Agora
+                            </button>
                             <div className='buttons_product_page_opc_add_tablet'>
                                 <div className='div_button_product_page_tablet'>
                                     <button className="ui fluid button cart_product_page_tablet">
@@ -541,14 +586,14 @@ function ProductPage() {
                 <h1 className='title_product_page_tablet'>Produtos Semelhantes</h1>
             </div>
             <div className='box_product_page_carousel_similar'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <div className='box_product_page_title_highlights_tablet'>
                 <FaStar color='var(--white)' size={30} />
                 <h1 className='title_product_page_tablet'>Produtos Destaques</h1>
             </div>
             <div className='box_product_page_carousel_highlights'>
-                <Carousel />
+                <Carousel user={user} />
             </div>
             <Footer />
         </>

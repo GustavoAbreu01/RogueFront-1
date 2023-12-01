@@ -8,7 +8,7 @@ import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
 import ProductService from '../../Service/ProductService';
 
 
-function ProductAccessedCarousel() {
+function ProductAccessedCarousel( {user} ) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsAcceessed, setProductsAcceessed] = useState([])
 
@@ -80,7 +80,7 @@ function ProductAccessedCarousel() {
             <Slider {...settings}>
                 {productsAcceessed.map((product) => (
                     <div className='box_product_accessed_carousel' key={product.code}>
-                        <ProductCardAccessed product={product} />
+                        <ProductCardAccessed user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -92,7 +92,7 @@ function ProductAccessedCarousel() {
             <Slider {...settings}>
                 {productsAcceessed.map((product) => (
                     <div className='box_product_accessed_carousel' key={product.code}>
-                        <ProductCardAccessed product={product} />
+                        <ProductCardAccessed user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -104,7 +104,7 @@ function ProductAccessedCarousel() {
             <Slider {...settings}>
             {productsAcceessed.map((product) => (
                     <div className='box_product_accessed_carousel' key={product.code}>
-                        <ProductCardAccessed product={product} />
+                        <ProductCardAccessed user={user} product={product} />
                     </div>
                 ))}
             </Slider>

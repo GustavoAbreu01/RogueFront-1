@@ -23,7 +23,8 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
-import { CartService, PaymentService, ProductService } from '../../Service';
+import { CartService, PaymentService, ProductService, UserService } from '../../Service';
+import Cookies from 'js-cookie';
 
 
 function CartPayment() {
@@ -32,6 +33,8 @@ function CartPayment() {
   const [focusedInput, setFocusedInput] = useState(null);
   const [productsCart, setProductsCart] = useState([]);
   const userPresent = JSON.parse(localStorage.getItem('user')) || []
+  const [user, setUser] = useState(userPresent);
+  const [cart, setCart] = useState([]);
   const [total, setTotal] = useState([]);
   const navigate = useNavigate();
 
@@ -44,27 +47,52 @@ function CartPayment() {
   };
 
   const getCart = async () => {
-    const user = JSON.parse(localStorage.getItem('user')) || [];
-    const cartId = user.cart.id;
-    const products = await CartService.GetCart(cartId);
-    if (products) {
-      setProductsCart(products);
-      setTotal(products.cartProductQuantities);
-    } else {
-      setProductsCart([]);
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        setUser(userPrin);
+        if (userPrin.cart) {
+          const products = await CartService.GetCart(userPrin.cart.id);
+          if (products) {
+            setCart(products);
+            setProductsCart(products.products);
+          } else {
+            setCart([]);
+            setProductsCart([]);
+          }
+        } else {
+          setCart([]);
+          setProductsCart([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
     }
-  }
+  };
 
   const [payment, setPayment] = useState({
-    "name": "Soundeeper",
-    "validity": "2004-08-02",
-    "number": "9999888877776666",
-    "cvv": 321,
-    "userCount": userPresent.id
+    "name": "",
+    "validity": "",
+    "number": "",
+    "cvv": "",
+    "user": ""
+  });
+
+  const [validity, setValidity] = useState({
+    "month": "",
+    "year": ""
   });
 
   const updatePayment = (event) => {
     setPayment({ ...payment, [event.target.name]: event.target.value });
+  };
+
+  const updateValidity = (event) => {
+    setValidity({ ...validity, [event.target.name]: event.target.value });
   };
 
   const verify = () => {
@@ -78,12 +106,10 @@ function CartPayment() {
 
   const handlePayment = async (event) => {
     event.preventDefault();
-    if (payment.name !== "" && payment.validity !== "" && payment.number !== "" && payment.cvv !== "" && payment.userCount !== "") {
-      PaymentService.create(payment);
-      navigate("/cart/transport");
-    } else {
-      alert("Alguma informação está incorreta.");
-    }
+    payment.user = user.id;
+    payment.validity =  "20" + validity.year + "-" + validity.month + "-01";
+    console.log(payment);
+    PaymentService.create(payment);
   };
 
   const options = [
@@ -96,7 +122,7 @@ function CartPayment() {
   const [productsSmaller, setProductsSmaller] = useState([])
 
   const getProductsRev = async () => {
-    const products = await ProductService.findSimilar();
+    const products = await ProductService.findSimiliarCart();
     if (products) {
       setProductsSmaller(products);
     } else {
@@ -163,7 +189,7 @@ function CartPayment() {
                     <img src={CardNumber} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === '3' && (
-                    <img data-aos="flip-left" src={CardCVV} className='cart_payment_card_Instrution' />
+                    <img src={CardCVV} className='cart_payment_card_Instrution' />
                   )}
                   {focusedInput === '4' && (
                     <img src={CardDate} className='cart_payment_card_Instrution' />
@@ -182,7 +208,6 @@ function CartPayment() {
                         className='dropDownCard'
                         fluid
                         selection
-                        onChange={updatePayment}
                         options={options}
                       />
                     </div>
@@ -228,8 +253,8 @@ function CartPayment() {
                     <label>Validade</label>
                     <div className="fields">
                       <div className="ten wide field">
-                        <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
-                          onChange={updatePayment}
+                        <select id='DateCard' className="ui fluid search dropdown" name="month"
+                          onChange={updateValidity}
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -249,8 +274,8 @@ function CartPayment() {
                         </select>
                       </div>
                       <div className="field">
-                        <select id='DateCard' className="ui fluid search dropdown" name="card[expire-month]"
-                          onChange={updatePayment}
+                        <select id='DateCard' className="ui fluid search dropdown" name="year"
+                          onChange={updateValidity}
                           onFocus={() => handleInputFocus('4')}
                           onBlur={handleInputBlur}
                         >
@@ -296,14 +321,14 @@ function CartPayment() {
             </div>
           </div>
           <div className='box_cart_info_recommend'>
-          {productsSmaller.map((product) => (
-            <SmallProductHorizontal key={product.code} product={product}/>
-          ))}
+            {productsSmaller.map((product) => (
+              <SmallProductHorizontal key={product.code} product={product} />
+            ))}
           </div>
         </div>
       </div>
       <div className='box_cart_payment_title_similar'>
-        <i class="magic icon" color='var(--white)'></i>
+        <i className="magic icon" color='var(--white)'></i>
         <h1>Produtos Semelhantes</h1>
       </div>
       <ProductCarouselSmallSimilar />

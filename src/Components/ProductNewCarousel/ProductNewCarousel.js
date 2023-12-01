@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ProductCardNew from '../ProductCardNew/ProductCardNew';
 import ProductService from '../../Service/ProductService';
 
-function ProductNewCarousel() {
+function ProductNewCarousel( { user } ) {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsNew, setProductsNew] = useState([])
@@ -84,7 +84,7 @@ function ProductNewCarousel() {
             <Slider {...settings}>
             {productsNew.map((product) => (
                     <div className='box_product_new_carousel' key={product.code}>
-                        <ProductCardNew product={product} />
+                        <ProductCardNew user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -96,7 +96,7 @@ function ProductNewCarousel() {
             <Slider {...settings}>
             {productsNew.map((product) => (
                     <div className='box_product_new_carousel' key={product.code}>
-                        <ProductCardNew product={product} />
+                        <ProductCardNew user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -108,7 +108,7 @@ function ProductNewCarousel() {
             <Slider {...settings}>
             {productsNew.map((product) => (
                     <div className='box_product_new_carousel' key={product.code}>
-                        <ProductCardNew product={product} />
+                        <ProductCardNew user={user} product={product} />
                     </div>
                 ))}
             </Slider>

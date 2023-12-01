@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
 import ProductService from '../../Service/ProductService';
 
-function ProductSearchedCarousel() {
+function ProductSearchedCarousel( { user } ) {
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
     const [productsSearched, setProductsSearched] = useState([])
@@ -84,7 +84,7 @@ function ProductSearchedCarousel() {
             <Slider {...settings}>
             {productsSearched.map((product) => (
             <div className='box_product_searched_carousel' key={product.code}>
-                        <ProductCardSearched product={product} />
+                        <ProductCardSearched user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -96,7 +96,7 @@ function ProductSearchedCarousel() {
             <Slider {...settings}>
             {productsSearched.map((product) => (
             <div className='box_product_searched_carousel' key={product.code}>
-                        <ProductCardSearched product={product} />
+                        <ProductCardSearched user={user} product={product} />
                     </div>
                 ))}
             </Slider>
@@ -108,7 +108,7 @@ function ProductSearchedCarousel() {
             <Slider {...settings}>
             {productsSearched.map((product) => (
             <div className='box_product_searched_carousel' key={product.code}>
-                        <ProductCardSearched  product={product} />
+                        <ProductCardSearched user={user} product={product} />
                     </div>
                 ))}
             </Slider>
