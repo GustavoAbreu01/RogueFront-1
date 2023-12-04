@@ -152,14 +152,7 @@ function Register() {
         }
     }
 
-    const formatCPF = (value) => {
-        // Remove non-numeric characters
-        const numericValue = value.replace(/\D/g, '');
     
-        // Format CPF with dots and dash
-        return numericValue.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
-      };
-
     const renderDesktopView = () => (
         <>
             <div className='container_register_image'>
