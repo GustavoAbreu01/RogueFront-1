@@ -25,129 +25,208 @@ function ProductCardNew({ product, user }) {
     };
   }, []);
 
-  const BuyProduct = async () => {
-    const cookie = Cookies.get('Cookie');
-    await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
-    setTimeout(() => {
-      window.location.href = "/cart"
-    }, 200);
-  }
-
   const AddProductInCart = async () => {
     const cookie = Cookies.get('Cookie');
-    for (let i = 0; i < user.cart.size; i++) {
-      console.log(user.cart.products[i].product.code)
-      if (user.cart.products[i].product.code === product.code) {
-        Swal.fire({
-          title: 'Produto já está no seu carrinho!',
-          icon: 'error',
-          showConfirmButton: true,
-          confirmButtonText: 'Ir para o carrinho',
-          confirmButtonColor: 'var(--blue-primary)',
-          position: 'top-end',
-          timer: 5000,
-          timerProgressBar: true,
-          toast: true,
-          width: 400,
-          showClass: {
-            popup: 'animate__animated animate__backInRight'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__backOutRight'
-          },
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/cart"
+    if (cookie) {
+      for (let i = 0; i < user.cart.size; i++) {
+        if (user.cart.products[i].product.code === product.code) {
+          Swal.fire({
+            title: 'Produto já está no seu carrinho!',
+            icon: 'error',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para o carrinho',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+              popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__backOutRight'
+            },
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/cart"
+            }
           }
+          )
+          return;
         }
-        )
-        return;
       }
+
+      await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
+      Swal.fire({
+        title: 'Produto adicionado ao carrinho!',
+        icon: 'success',
+        showConfirmButton: true,
+        confirmButtonText: 'Ir para o carrinho',
+        confirmButtonColor: 'var(--blue-primary)',
+        position: 'top-end',
+        timer: 5000,
+        timerProgressBar: true,
+        toast: true,
+        width: 400,
+        showClass: {
+          popup: 'animate__animated animate__backInRight'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__backOutRight'
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/cart"
+        }
+      }
+      )
+    } else {
+      Swal.fire({
+        title: 'Para adicionar o produto ao carrinho é necessário fazer o login',
+        icon: 'error',
+        showConfirmButton: true,
+        confirmButtonText: 'Ir para o Login',
+        position: 'top-end',
+        timer: 5000,
+        timerProgressBar: true,
+        background: 'var(--red)',
+        toast: true,
+        width: 400,
+        color: 'var(--white)',
+        confirmButtonColor: 'var(--dark-red)',
+        showClass: {
+          popup: 'animate__animated animate__backInRight'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__backOutRight'
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login"
+        }
+      }
+      )
     }
 
-    await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
-    Swal.fire({
-      title: 'Produto adicionado ao carrinho!',
-      icon: 'success',
-      showConfirmButton: true,
-      confirmButtonText: 'Ir para o carrinho',
-      confirmButtonColor: 'var(--blue-primary)',
-      position: 'top-end',
-      timer: 5000,
-      timerProgressBar: true,
-      toast: true,
-      width: 400,
-      showClass: {
-        popup: 'animate__animated animate__backInRight'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__backOutRight'
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
+  }
+
+  const BuyProduct = async () => {
+    const cookie = Cookies.get('Cookie');
+    if (cookie) {
+      await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
+      setTimeout(() => {
         window.location.href = "/cart"
-      }
-    }
-    )
+      }, 200);
+    } else {
+      Swal.fire({
+          title: 'Redirecionando para tela de login',
+          icon: 'error',
+          showConfirmButton: false,
+          position: 'top-end',
+          timer: 2000,
+          timerProgressBar: true,
+          background: 'var(--red)',
+          toast: true,
+          width: 400,
+          color: 'var(--white)',
+          showClass: {
+              popup: 'animate__animated animate__backInRight'
+          },
+          hideClass: {
+              popup: 'animate__animated animate__backOutRight'
+          },
+      })
+      setTimeout(() => {
+          window.location.href = "/login"
+      }, 2000);
+  }
   }
 
   const AddProductInSave = async () => {
     const cookie = Cookies.get('Cookie');
-    for (let i = 0; i < user.saves.quantity; i++) {
-      if (user.saves.products[i].code === product.code) {
-        Swal.fire({
-          title: 'Produto já está na lista de salvos!',
-          icon: 'error',
-          showConfirmButton: true,
-          confirmButtonText: 'Ir para a lista de salvos',
-          confirmButtonColor: 'var(--blue-primary)',
-          position: 'top-end',
-          timer: 5000,
-          timerProgressBar: true,
-          toast: true,
-          width: 400,
-          showClass: {
-            popup: 'animate__animated animate__backInRight'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__backOutRight'
-          },
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/save"
+    if (cookie) {
+      for (let i = 0; i < user.saves.quantity; i++) {
+        if (user.saves.products[i].code === product.code) {
+          Swal.fire({
+            title: 'Produto já está na lista de salvos!',
+            icon: 'error',
+            showConfirmButton: true,
+            confirmButtonText: 'Ir para a lista de salvos',
+            confirmButtonColor: 'var(--blue-primary)',
+            position: 'top-end',
+            timer: 5000,
+            timerProgressBar: true,
+            toast: true,
+            width: 400,
+            showClass: {
+              popup: 'animate__animated animate__backInRight'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__backOutRight'
+            },
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/save"
+            }
           }
+          )
+          return;
         }
-        )
-        return;
       }
-    }
 
-    await SaveService.AddProductInSave(cookie, user.saves.id, product.code);
-    Swal.fire({
-      title: 'Produto adicionado a lista de salvos!',
-      icon: 'success',
-      showConfirmButton: true,
-      confirmButtonText: 'Ir para a lista de salvos',
-      confirmButtonColor: 'var(--blue-primary)',
-      position: 'top-end',
-      timer: 5000,
-      timerProgressBar: true,
-      toast: true,
-      width: 400,
-      showClass: {
-        popup: 'animate__animated animate__backInRight'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__backOutRight'
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/save"
+      await SaveService.AddProductInSave(cookie, user.saves.id, product.code);
+      Swal.fire({
+        title: 'Produto adicionado a lista de salvos!',
+        icon: 'success',
+        showConfirmButton: true,
+        confirmButtonText: 'Ir para a lista de salvos',
+        confirmButtonColor: 'var(--blue-primary)',
+        position: 'top-end',
+        timer: 5000,
+        timerProgressBar: true,
+        toast: true,
+        width: 400,
+        showClass: {
+          popup: 'animate__animated animate__backInRight'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__backOutRight'
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/save"
+        }
       }
+      )
+    } else {
+      Swal.fire({
+        title: 'Para adicionar o produto ao salvos é necessário fazer o login',
+        icon: 'error',
+        showConfirmButton: true,
+        confirmButtonText: 'Ir para o Login',
+        position: 'top-end',
+        timer: 5000,
+        timerProgressBar: true,
+        background: 'var(--red)',
+        toast: true,
+        width: 400,
+        color: 'var(--white)',
+        confirmButtonColor: 'var(--dark-red)',
+        showClass: {
+          popup: 'animate__animated animate__backInRight'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__backOutRight'
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login"
+        }
+      }
+      )
     }
-    )
   }
-
   const renderDesktopView = () => (
     <div className="product_new" key={product.code}>
       <div className='container_product_card_new'>
