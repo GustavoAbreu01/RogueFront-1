@@ -123,7 +123,7 @@ function Login() {
                         </div>
                         <div className="field">
                             <label>Senha</label>
-                            <input name="password" value={login.password} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
+                            <input name="password" value={login.password} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="password" placeholder="12312312334" />
                         </div>
                         <div className='box'>
                             <button className="ui big fluid button login" onClick={logIn}>Login</button>

@@ -97,6 +97,7 @@ function CartPayment() {
   const updateValidity = (event) => {
     setValidity({ ...validity, [event.target.name]: event.target.value });
   };
+  
 
   const verify = () => {
     const Registered = Cookies.get('Cookie')
