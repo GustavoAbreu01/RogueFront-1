@@ -47,8 +47,26 @@ function Register() {
     });
 
     const updateRegisterInformation = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value });
-    }
+        const inputValue = event.target.value;
+      
+        // Remove non-numeric characters
+        const numericValue = inputValue.replace(/\D/g, '');
+      
+        // Limit the input to 11 characters
+        const limitedValue = numericValue.substring(0, 11);
+      
+        // Format CPF with dots and dash
+        let formattedValue = limitedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (_, p1, p2, p3, p4) => {
+          return p4 ? `${p1}.${p2}.${p3}-${p4}` : p3 ? `${p1}.${p2}.${p3}` : p2 ? `${p1}.${p2}` : p1;
+        });
+      
+        // Update the state only if the input consists of numeric characters or is an empty string
+        if (/^\d*$/.test(limitedValue) || limitedValue === '') {
+          setUser({ ...user, cpf: formattedValue });
+        }
+      };
+      
+      
 
     const updateConfirmInformation = (event) => {
         setPasswordConfirm(event.target.value);
@@ -142,6 +160,14 @@ function Register() {
             )
         }
     }
+
+    const formatCPF = (value) => {
+        // Remove non-numeric characters
+        const numericValue = value.replace(/\D/g, '');
+    
+        // Format CPF with dots and dash
+        return numericValue.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+      };
 
     const renderDesktopView = () => (
         <>
