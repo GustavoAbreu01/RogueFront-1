@@ -8,6 +8,7 @@ import { UserService } from '../../Service';
 
 //importando as frameworks
 import { useNavigate, Link } from "react-router-dom";
+import swal from 'sweetalert2';
 
 //Importando as imagens
 import logo from "../../assets/img/logoWEG.png"
@@ -28,16 +29,69 @@ function Login() {
 
     const navigate = useNavigate();
 
-    const handleLogin = async (event) => {
+    // const handleLogin = async (event) => {
+    //     event.preventDefault();
+    //     try {
+    //         const response = await UserService.login(login);
+    //         navigate('/');
+    //     } catch (error) {
+    //         alert("Erro ao fazer login. Verifique suas credenciais.");
+    //         console.log(error);
+    //     }
+    // };
+
+    async function logIn(event) {
         event.preventDefault();
-        try {
-            const response = await UserService.login(login);
-            navigate('/');
-        } catch (error) {
-            alert("Erro ao fazer login. Verifique suas credenciais.");
-            console.log(error);
+    
+        if (login.username === '' || login.password === '') {
+            swal.fire({
+                title: 'Preencha todos os campos!',
+                icon: 'error',
+                showConfirmButton: false,
+                position: 'top-end',
+                timer: 3000,
+                timerProgressBar: true,
+                background: 'var(--red)',
+                color: 'var(--white)',
+                toast: true,
+                width: 400,
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            });
+        } else {
+            try {
+                const response = await UserService.login(login);
+                navigate('/');
+            } catch (error) {
+                swal.fire({
+                    title: 'Erro ao fazer login',
+                    text: 'Verifique suas credenciais e tente novamente.',
+                    icon: 'error',
+                    showConfirmButton: false,
+                    position: 'top-end',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    background: 'var(--red)',
+                    color: 'var(--white)',
+                    toast: true,
+                    width: 400,
+                    showClass: {
+                        popup: 'animate__animated animate__backInRight'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__backOutRight'
+                    },
+                }).then(() => {
+                    console.error(error);
+                });
+            }
         }
-    };
+    }
+    
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
    
@@ -72,7 +126,7 @@ function Login() {
                             <input name="password" value={login.password} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                         </div>
                         <div className='box'>
-                            <button className="ui big fluid button login" onClick={handleLogin}>Login</button>
+                            <button className="ui big fluid button login" onClick={logIn}>Login</button>
                         </div>
                         <div className='login_finish_text'>
                             <BsArrowLeftShort size={15} />
@@ -105,7 +159,7 @@ function Login() {
                         <input value={login.passwordLogin} onChange={updateUser} style={{ backgroundColor: 'var(--grey-secondary)', borderLeftColor: 'var(--blue-primary)', borderLeftWidth: '4px' }} type="text" placeholder="12312312334" />
                     </div>
                     <div className='box'>
-                        <button className="ui big fluid button login" onClick={() => handleLogin()}>Login</button>
+                        <button className="ui big fluid button login" onClick={() => logIn()}>Login</button>
                     </div>
                     <div className='login_finish_text'>
                         <BsArrowLeftShort size={15} />
