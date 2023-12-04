@@ -35,8 +35,8 @@ function ProductCategory() {
 
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false

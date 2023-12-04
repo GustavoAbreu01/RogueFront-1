@@ -23,6 +23,7 @@ import magnifyingGlass from "../../assets/img/Search.png"
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
+import Cookies from 'js-cookie';
 
 
 function Search() {
@@ -31,9 +32,10 @@ function Search() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const searchTerm = queryParams.get('query') || '';
+
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false

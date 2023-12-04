@@ -11,12 +11,13 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 
 //Importando os ícones
 import { BsFillBookmarkFill } from 'react-icons/bs'
+import Cookies from 'js-cookie'
 
 function ProfilePage() {
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false

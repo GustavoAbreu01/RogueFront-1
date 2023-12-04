@@ -16,17 +16,18 @@ import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
 //Importando os ícones
 import { IoIosArrowBack } from 'react-icons/io'
 import { VscSend } from 'react-icons/vsc'
+import Cookies from 'js-cookie'
 
 function ChatWegner() {
 
     const verify = () => {
-        const Registered = localStorage.getItem('verifyLogin');
-        if (Registered === "yes") {
-            return true
+        const Registered = Cookies.get('Cookie')
+        if (Registered) {
+          return true
         } else {
-            return false
+          return false
         }
-    }
+      }
 
     return (
         <>{!verify() ? <Header /> : <HeaderLogin />}

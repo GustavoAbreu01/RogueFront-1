@@ -13,6 +13,14 @@ import { SaveService } from '../../Service'
 
 function SmallProductCard({ product, user }) {
 
+    const renderModel = () => {
+        if (product.motors.model.length > 25) {
+            return product.motors.model.substring(0, 25) + '...';
+        } else {
+            return product.motors.model;
+        }
+    }
+
     const AddProductInCart = async () => {
         const cookie = Cookies.get('Cookie');
         for (let i = 0; i < user.cart.size; i++) {
@@ -240,10 +248,10 @@ function SmallProductCard({ product, user }) {
 
     }
 
-    const reload = ()=> {
-        setTimeout(() =>{
+    const reload = () => {
+        setTimeout(() => {
             window.location.reload()
-        },1000)
+        }, 1000)
     }
 
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -291,7 +299,7 @@ function SmallProductCard({ product, user }) {
                 </Link>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>{product.motors.model}</h3>
+                        <h3 className='product_card_smaller_title'>{renderModel()}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>
@@ -327,7 +335,7 @@ function SmallProductCard({ product, user }) {
                 </Link>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 className='product_card_smaller_title'>{product.motors.model}</h3>
+                        <h3 className='product_card_smaller_title'>{renderModel()}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>

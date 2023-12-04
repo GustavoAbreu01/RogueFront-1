@@ -18,14 +18,15 @@ import BannerAnnouncementThree from '../../assets/img/BannerAnnun3.jpg'
 //Importando os icones
 import { BsArrowLeftShort } from 'react-icons/bs';
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
+import Cookies from 'js-cookie';
 
 function CartFinish() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   const verify = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === "yes") {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
       return true
     } else {
       return false
