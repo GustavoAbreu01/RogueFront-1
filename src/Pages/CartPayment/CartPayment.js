@@ -91,8 +91,24 @@ function CartPayment() {
   });
 
   const updatePayment = (event) => {
-    setPayment({ ...payment, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+
+    // Remove qualquer caractere não numérico do valor atual
+    const numericValue = value.replace(/\D/g, '');
+
+    // Adiciona espaços a cada 4 dígitos
+    const spacedValue = numericValue.replace(/(\d{4})/g, '$1 ').trim();
+
+    // Atualiza o estado
+    setPayment({ ...payment, [name]: spacedValue });
   };
+
+  const updateName = (event) => {
+    const { value } = event.target;
+    // Atualiza o estado apenas com o valor do nome
+    setPayment({ ...payment, name: value });
+  };
+
 
   const updateValidity = (event) => {
     setValidity({ ...validity, [event.target.name]: event.target.value });
@@ -106,6 +122,22 @@ function CartPayment() {
       return false
     }
   }
+  // ...
+
+  const updateRegisterInformation = (event) => {
+    const inputValue = event.target.value;
+    const numericValue = inputValue.replace(/\D/g, '');
+    const limitedValue = numericValue.substring(0, 11);
+    let formattedValue = limitedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (_, p1, p2, p3, p4) => {
+      return p4 ? `${p1}.${p2}.${p3}-${p4}` : p3 ? `${p1}.${p2}.${p3}` : p2 ? `${p1}.${p2}` : p1;
+    });
+
+    setUser((prevUser) => ({
+      ...prevUser,
+      cpf: formattedValue,
+    }));
+  };
+
 
   const handlePayment = async (event) => {
     event.preventDefault();
@@ -135,7 +167,7 @@ function CartPayment() {
           popup: 'animate__animated animate__backOutRight'
         },
       })
-    } else {  
+    } else {
       await PaymentService.create(payment);
       window.location.href = '/cart/transport';
     }
@@ -243,16 +275,26 @@ function CartPayment() {
                     </div>
                     <div className="sixteen wide field">
                       <label>Nome do Titular</label>
-                      <input id='NameCard' type="text" name="name" maxlength="16" placeholder="Nome Completo"
+                      <input
+                        id='NameCard'
+                        type="text"
+                        name="name"
+                        maxLength="16"
+                        placeholder="Nome Completo"
                         value={payment.name}
-                        onChange={updatePayment}
+                        onChange={updateName}
                         onFocus={() => handleInputFocus('1')}
                         onBlur={handleInputBlur}
                       />
                     </div>
                     <div className="sixteen wide field">
                       <label>Número do cartão</label>
-                      <input id='NumberCard' type="text" name="number" maxlength="16" placeholder="0000 0000 0000 0000"
+                      <input
+                        id='NumberCard'
+                        type="text"
+                        name="number"
+                        maxLength="19"  // Aumente o maxLength para acomodar os espaços
+                        placeholder="0000 0000 0000 0000"
                         value={payment.number}
                         onChange={updatePayment}
                         onFocus={() => handleInputFocus('2')}
@@ -273,10 +315,18 @@ function CartPayment() {
                   </div>
                   <div className="ten wide field">
                     <label>CPF do titular</label>
-                    <input id='NumberCard' type="text" name="cpf" maxlength="14" placeholder="000.000.000-00"
+                    <input
+                      id='NumberCard'
+                      type="text"
+                      name="cpf"
+                      maxLength="14"
+                      placeholder="000.000.000-00"
+                      value={user.cpf}  // Change this line to use user.cpf
                       onFocus={() => handleInputFocus(null)}
                       onBlur={handleInputBlur}
+                      onChange={updateRegisterInformation}
                     />
+
                   </div>
                   <div className="six wide field">
                     <label>Validade</label>
@@ -438,6 +488,8 @@ function CartPayment() {
                       <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
                         onFocus={() => handleInputFocus('1')}
                         onBlur={handleInputBlur}
+                        value={payment.name}
+                        onChange={updateName}
                       />
                     </div>
                   </div>
@@ -582,6 +634,8 @@ function CartPayment() {
                       <input id='NameCard' type="text" name="card[number]" maxlength="16" placeholder="Nome Completo"
                         onFocus={() => handleInputFocus('1')}
                         onBlur={handleInputBlur}
+                        value={payment.name}
+                        onChange={updateName}
                       />
                     </div>
                     <div className="sixteen wide field">

@@ -47,8 +47,17 @@ function Register() {
     });
 
     const updateRegisterInformation = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value });
-    }
+        const inputValue = event.target.value;
+        const numericValue = inputValue.replace(/\D/g, '');
+        const limitedValue = numericValue.substring(0, 11);
+        let formattedValue = limitedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (_, p1, p2, p3, p4) => {
+          return p4 ? `${p1}.${p2}.${p3}-${p4}` : p3 ? `${p1}.${p2}.${p3}` : p2 ? `${p1}.${p2}` : p1;
+        });
+        if (/^\d*$/.test(limitedValue) || limitedValue === '') {
+          setUser({ ...user, cpf: formattedValue });
+        }
+      };
+      
 
     const updateConfirmInformation = (event) => {
         setPasswordConfirm(event.target.value);
@@ -143,6 +152,7 @@ function Register() {
         }
     }
 
+    
     const renderDesktopView = () => (
         <>
             <div className='container_register_image'>
