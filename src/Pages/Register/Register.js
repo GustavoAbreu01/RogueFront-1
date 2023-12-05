@@ -47,16 +47,27 @@ function Register() {
     });
 
     const updateRegisterInformation = (event) => {
-        const inputValue = event.target.value;
-        const numericValue = inputValue.replace(/\D/g, '');
-        const limitedValue = numericValue.substring(0, 11);
-        let formattedValue = limitedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (_, p1, p2, p3, p4) => {
-          return p4 ? `${p1}.${p2}.${p3}-${p4}` : p3 ? `${p1}.${p2}.${p3}` : p2 ? `${p1}.${p2}` : p1;
-        });
-        if (/^\d*$/.test(limitedValue) || limitedValue === '') {
-          setUser({ ...user, cpf: formattedValue });
+        const { name, value } = event.target;
+    
+        if (name === 'cpf') {
+            const numericValue = value.replace(/\D/g, '');
+            const limitedValue = numericValue.substring(0, 11);
+            const formattedValue = limitedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (_, p1, p2, p3, p4) => {
+                return p4 ? `${p1}.${p2}.${p3}-${p4}` : p3 ? `${p1}.${p2}.${p3}` : p2 ? `${p1}.${p2}` : p1;
+            });
+    
+            setUser((prevUser) => ({
+                ...prevUser,
+                cpf: formattedValue,
+            }));
+        } else {
+            setUser((prevUser) => ({
+                ...prevUser,
+                [name]: value,
+            }));
         }
-      };
+    };
+    
       
 
     const updateConfirmInformation = (event) => {
