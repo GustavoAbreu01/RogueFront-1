@@ -127,6 +127,7 @@ function Register() {
                 timer: 3000,
                 timerProgressBar: true,
                 background: 'var(--red)',
+                color: 'var(--white)',
                 toast: true,
                 width: 400,
                 showClass: {
