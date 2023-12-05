@@ -11,11 +11,7 @@ import motors from "../../assets/img/motores.png"
 
 function RatedProducts() {
 
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {

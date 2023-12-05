@@ -24,7 +24,6 @@ import mineracao from "../../assets/img/mineracao.png"
 import construcao from "../../assets/img/CONSTRUCAO.png"
 import siderurgia from "../../assets/img/metalurgica.png"
 import alimenticia from "../../assets/img/ALIMENTAÇÃO.png"
-import iconMotor from "../../assets/img/iconeMotor.png"
 import Qualidade from "../../assets/img/MOTORES-03.png"
 import Compatibilidade from "../../assets/img/COMPATIBILIDADE-03.png"
 import Sustentabilidade from "../../assets/img/ENERGIA_SOLAR-03.png"
@@ -43,13 +42,9 @@ import motor from "../../assets/img/motor.png"
 
 //Importando os icones
 import { BiLineChart } from 'react-icons/bi'
-import { MdOutlineSecurity } from 'react-icons/md'
-import { BsPaintBucket } from 'react-icons/bs'
 import { CgSearchFound } from 'react-icons/cg'
-import { CgSmartphoneChip } from 'react-icons/cg'
 import { LiaCertificateSolid } from 'react-icons/lia'
 import { MdOutlineNewReleases } from 'react-icons/md'
-import { TfiPanel } from 'react-icons/tfi'
 import { FaStar } from 'react-icons/fa'
 import Cookies from 'js-cookie'
 import { UserService } from '../../Service'

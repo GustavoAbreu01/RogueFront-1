@@ -27,7 +27,6 @@ function CartTransport() {
   const [endereco, setEndereco] = useState({});
   const [user, setUser] = useState({});
   const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState([]);
   const navigate = useNavigate();
 
   const buscarEndereco = async (event) => {

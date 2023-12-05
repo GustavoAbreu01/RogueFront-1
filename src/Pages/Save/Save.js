@@ -8,7 +8,6 @@ import Footer from '../../Components/Footer/Footer';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
-import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 import weggner from '../../assets/img/weggnerSemiAcord.png';
 import SaveService from '../../Service/SaveService'
 import { Link } from 'react-router-dom'

@@ -17,7 +17,6 @@ import { Link } from 'react-router-dom';
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { CartService, ProductService, UserService } from '../../Service';
 import Cookies from 'js-cookie';
-import ProductCart from '../../Components/ProductCart/ProductCart';
 
 function CartConfirm() {
 

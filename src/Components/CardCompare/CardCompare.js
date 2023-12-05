@@ -63,14 +63,6 @@ function CardCompare({ item }, product) {
         )
     }
 
-    function verify() {
-        if (productsInCompare.length === 3) {
-            return true
-        } else {
-            return false
-        }
-    }
-
     function verifyTablet() {
         if (productsInCompare.length === 2) {
             return true

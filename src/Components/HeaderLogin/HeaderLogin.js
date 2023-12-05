@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import './HeaderLogin.css'
 
-//Importando a Service
-import { UserService } from '../../Service'
 
 //importando as frameworks
 import { Link } from 'react-router-dom'

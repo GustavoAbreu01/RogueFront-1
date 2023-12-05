@@ -13,7 +13,6 @@ import { FaPlus, FaCartArrowDown, FaEquals } from 'react-icons/fa'
 
 //Importando as Services
 import { ProductService } from '../../Service/ProductService';
-import { CartService } from '../../Service/CartService'
 
 function ComboCard({ product }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });

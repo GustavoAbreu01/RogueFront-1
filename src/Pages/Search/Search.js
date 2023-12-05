@@ -14,11 +14,9 @@ import FilterSearched from '../../Components/Filter/CategoryFilters/FilterSearch
 import ProductService from '../../Service/ProductService'
 
 //importando as frameworks
-import { Divider, Dropdown } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
 
-//Importando as imagens
-import magnifyingGlass from "../../assets/img/Search.png"
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'

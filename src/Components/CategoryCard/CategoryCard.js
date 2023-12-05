@@ -5,7 +5,6 @@ import 'animate.css';
 
 //importando as frameworks
 import { Link } from "react-router-dom";
-import swal from 'sweetalert2';
 
 //importando as Services
 import { CartService } from '../../Service/CartService'

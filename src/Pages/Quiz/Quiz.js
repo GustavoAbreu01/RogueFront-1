@@ -28,7 +28,6 @@ function Quiz() {
 
   const Question1 = () => progresso === 0;
   const [respostasAnteriores, setRespostasAnteriores] = useState([]);
-  const [respostas, setRespostas] = useState([]);
   const [respostaSelecionada, setRespostaSelecionada] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = Questions ? Questions.perguntas_respostas[currentQuestionIndex] : null;
@@ -123,12 +122,6 @@ function Quiz() {
     }
   }
 
-  const verify = () => {
-    console.log(localStorage.getItem('verificar'))
-    if (localStorage.getItem('verificar') === "sim" || localStorage.getItem('verificar2') === "sim") {
-      setVerificacao(true);
-    }
-  }
 
   const verifyHeader = () => {
     const Registered = localStorage.getItem('verifyLogin');

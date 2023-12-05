@@ -36,7 +36,6 @@ function CartPayment() {
   const userPresent = JSON.parse(localStorage.getItem('user')) || []
   const [user, setUser] = useState(userPresent);
   const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState([]);
   const navigate = useNavigate();
 
   const handleInputFocus = (inputId) => {
