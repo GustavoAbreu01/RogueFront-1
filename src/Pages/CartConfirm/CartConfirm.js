@@ -67,8 +67,12 @@ function CartConfirm() {
         const decodedPayload = atob(tokenPayload[1]);
         const userClaims = JSON.parse(decodedPayload);
         const userPrin = await UserService.findOne(userClaims.sub);
-        console.log(userPrin);
-        setUser(userPrin);
+        if (userPrin) {
+          setUser(userPrin);
+          console.log(user.address[0].id);
+        } else {
+          setUser([]);
+        }
         if (userPrin.cart) {
           const products = await CartService.GetCart(userPrin.cart.id);
           if (products && products.products) {
@@ -144,7 +148,7 @@ function CartConfirm() {
                       <p>{user.name}</p>
                     </div>
                     <div className="field">
-                      <label>Endereço:</label>
+                      <label>Endereço: {user.id}</label>
                       <p></p>
                     </div>
                     <div className="field">

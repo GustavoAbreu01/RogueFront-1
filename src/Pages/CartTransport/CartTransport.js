@@ -130,8 +130,33 @@ function CartTransport() {
 
   const handleTransport = async (event) => {
     event.preventDefault();
-    await AddressService.create(address);
-    navigate('/cart/confirm');
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        if (userPrin) {
+          setUser(userPrin);
+        } else {
+          setUser([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    } else {
+      navigate('/login');
+    }
+    
+    const addressCreated = await AddressService.create(address);
+    if (addressCreated && user) {
+      user.address = [addressCreated];
+      await AddressService.update(user, token);
+      navigate('/cart/confirm');
+    } else {
+      console.log('Erro ao criar endereço');
+    }
   };
 
   const renderDesktopView = () => (
