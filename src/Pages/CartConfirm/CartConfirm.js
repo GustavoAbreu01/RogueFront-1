@@ -89,6 +89,42 @@ function CartConfirm() {
     }
   };
 
+  const createOrder = async () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      try {
+        const tokenPayload = token.split('.');
+        const decodedPayload = atob(tokenPayload[1]);
+        const userClaims = JSON.parse(decodedPayload);
+        const userPrin = await UserService.findOne(userClaims.sub);
+        if (userPrin.cart) {
+          const products = await CartService.GetCart(userPrin.cart.id);
+          if (products && products.products) {
+            const order = {
+              user: userPrin,
+              cart: products,
+              address: userPrin.address[0],
+              status: 'Aguardando Pagamento'
+            }
+            const orderCreated = await CartService.createOrder(order);
+            if (orderCreated) {
+              window.location.href = '/cart/finish';
+            }
+          } else {
+            setCart([]);
+            setUser([]);
+            setProductsCart([]);
+          }
+        } else {
+          setCart([]);
+          setProductsCart([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    }
+  }
+
   const getAddres = async () => {
     const token = Cookies.get('Cookie');
     if (token) {
@@ -208,7 +244,7 @@ function CartConfirm() {
               <h5 className='total_text_buy_product'>Total R${cart.totalPrice}</h5>
             </div>
             <div className='button_total_Cart'>
-              <button className="fluid ui button final"><Link className='font_decoration_none_white' to='/cart/finish'>Finalizar Pedido</Link></button>
+              <button onClick={createOrder} className="fluid ui button final"><Link className='font_decoration_none_white'>Finalizar Pedido</Link></button>
               <button className="fluid ui button blue basic cont"><Link className='font_decoration_none_blue' to={"/"}>Continuar Comprando</Link></button>
             </div>
           </div>

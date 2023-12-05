@@ -168,6 +168,7 @@ function CartPayment() {
         },
       })
     } else {
+      payment.number = payment.number.replace(/\s/g, '');
       await PaymentService.create(payment);
       window.location.href = '/cart/transport';
     }

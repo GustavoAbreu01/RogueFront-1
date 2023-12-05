@@ -48,14 +48,14 @@ function Register() {
 
     const updateRegisterInformation = (event) => {
         const { name, value } = event.target;
-    
+
         if (name === 'cpf') {
             const numericValue = value.replace(/\D/g, '');
             const limitedValue = numericValue.substring(0, 11);
             const formattedValue = limitedValue.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, (_, p1, p2, p3, p4) => {
                 return p4 ? `${p1}.${p2}.${p3}-${p4}` : p3 ? `${p1}.${p2}.${p3}` : p2 ? `${p1}.${p2}` : p1;
             });
-    
+
             setUser((prevUser) => ({
                 ...prevUser,
                 cpf: formattedValue,
@@ -67,8 +67,8 @@ function Register() {
             }));
         }
     };
-    
-      
+
+
 
     const updateConfirmInformation = (event) => {
         setPasswordConfirm(event.target.value);
@@ -138,6 +138,7 @@ function Register() {
             })
         } else {
             event.preventDefault();
+            user.cpf = user.cpf.replace(/\D/g, '');
             UserService.create(user);
             swal.fire({
                 title: 'Cadastro realizado com sucesso!',
@@ -163,7 +164,7 @@ function Register() {
         }
     }
 
-    
+
     const renderDesktopView = () => (
         <>
             <div className='container_register_image'>
