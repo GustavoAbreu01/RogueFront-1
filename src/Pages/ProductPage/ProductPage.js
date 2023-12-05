@@ -23,6 +23,7 @@ import motor from '../../assets/img/motor.png'
 import { FaStar } from 'react-icons/fa'
 import { ProductService, UserService } from '../../Service';
 import { CartService } from '../../Service/CartService'
+import { SaveService } from '../../Service'
 import Cookies from 'js-cookie';
 
 function ProductPage() {
@@ -85,72 +86,42 @@ function ProductPage() {
 
     const AddProductInCart = async () => {
         const cookie = Cookies.get('Cookie');
-        for (let i = 0; i < user.cart.size; i++) {
-            if (user.cart.products[i].product.code === productPage.code) {
-                Swal.fire({
-                    title: 'Produto já está no seu carrinho!',
-                    icon: 'error',
-                    showConfirmButton: true,    
-                    confirmButtonText: 'Ir para o carrinho',
-                    confirmButtonColor: 'var(--blue-primary)',
-                    position: 'top-end',
-                    timer: 5000,
-                    timerProgressBar: true,
-                    toast: true,
-                    width: 400,
-                    showClass: {
-                        popup: 'animate__animated animate__backInRight'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__backOutRight'
-                    },
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = "/cart"
+        if (cookie) {
+            for (let i = 0; i < user.cart.size; i++) {
+                if (user.cart.products[i].product.code === product.code) {
+                    Swal.fire({
+                        title: 'Produto já está no seu carrinho!',
+                        icon: 'error',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Ir para o carrinho',
+                        confirmButtonColor: 'var(--blue-primary)',
+                        position: 'top-end',
+                        timer: 5000,
+                        timerProgressBar: true,
+                        toast: true,
+                        width: 400,
+                        showClass: {
+                            popup: 'animate__animated animate__backInRight'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__backOutRight'
+                        },
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/cart"
+                        }
                     }
+                    )
+                    return;
                 }
-                )
-                return;
             }
-        }
 
-        await CartService.AddProductInCart(cookie, user.saves.id, productPage.code, 1);
-        Swal.fire({
-            title: 'Produto adicionado ao carrinho!',
-            icon: 'success',
-            showConfirmButton: true,
-            confirmButtonText: 'Ir para o carrinho',
-            confirmButtonColor: 'var(--blue-primary)',
-            position: 'top-end',
-            timer: 5000,
-            timerProgressBar: true,
-            toast: true,
-            width: 400,
-            showClass: {
-                popup: 'animate__animated animate__backInRight'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__backOutRight'
-            },
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "/cart"
-            }
-        }
-        )
-    }
-
-    const AddProductInCompare = () => {
-        const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-        if (productsInCompare.length <= 2) {
-            productsInCompare.push(product);
-            localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
-
+            await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
             Swal.fire({
-                title: 'Produto adicionado a comparação!',
+                title: 'Produto adicionado ao carrinho!',
                 icon: 'success',
                 showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
+                confirmButtonText: 'Ir para o carrinho',
                 confirmButtonColor: 'var(--blue-primary)',
                 position: 'top-end',
                 timer: 5000,
@@ -165,21 +136,24 @@ function ProductPage() {
                 },
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "/compare";
+                    window.location.href = "/cart"
                 }
-            });
+            }
+            )
         } else {
             Swal.fire({
-                title: 'Produto não pode ser adicionado no carrinho',
-                icon: 'warning',
+                title: 'Para adicionar o produto ao carrinho é necessário fazer o login',
+                icon: 'error',
                 showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
-                confirmButtonColor: 'var(--blue-primary)',
+                confirmButtonText: 'Ir para o Login',
                 position: 'top-end',
                 timer: 5000,
                 timerProgressBar: true,
+                background: 'var(--red)',
                 toast: true,
                 width: 400,
+                color: 'var(--white)',
+                confirmButtonColor: 'var(--dark-red)',
                 showClass: {
                     popup: 'animate__animated animate__backInRight'
                 },
@@ -188,55 +162,84 @@ function ProductPage() {
                 },
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "/compare";
+                    window.location.href = "/login"
                 }
-            });
+            }
+            )
         }
 
     }
 
     const BuyProduct = async () => {
         const cookie = Cookies.get('Cookie');
-        await CartService.AddProductInCart(cookie, user.saves.id, productPage.code, 1);
-        setTimeout(() => {
-            window.location.href = "/cart"
-        }, 200);
-    }
-
-    const AddProductInCompareTablet = () => {
-        const productsInCompare = JSON.parse(localStorage.getItem('productsInCompare')) || [];
-        if (productsInCompare.length <= 1) {
-            productsInCompare.push(product);
-            localStorage.setItem('productsInCompare', JSON.stringify(productsInCompare));
-
-            Swal.fire({
-                title: 'Produto adicionado a comparação!',
-                icon: 'success',
-                showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
-                confirmButtonColor: 'var(--blue-primary)',
-                position: 'top-end',
-                timer: 5000,
-                timerProgressBar: true,
-                toast: true,
-                width: 400,
-                showClass: {
-                    popup: 'animate__animated animate__backInRight'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__backOutRight'
-                },
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/compare";
-                }
-            });
+        if (cookie) {
+            await CartService.AddProductInCart(cookie, user.saves.id, product.code, 1);
+            setTimeout(() => {
+                window.location.href = "/cart"
+            }, 200);
         } else {
             Swal.fire({
-                title: 'Produto não pode ser adicionado no carrinho',
-                icon: 'warning',
+                title: 'Redirecionando para tela de login',
+                icon: 'error',
+                showConfirmButton: false,
+                position: 'top-end',
+                timer: 2000,
+                timerProgressBar: true,
+                background: 'var(--red)',
+                toast: true,
+                width: 400,
+                color: 'var(--white)',
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            })
+            setTimeout(() => {
+                window.location.href = "/login"
+            }, 2000);
+        }
+    }
+
+    const AddProductInSave = async () => {
+        const cookie = Cookies.get('Cookie');
+        if (cookie) {
+            for (let i = 0; i < user.saves.quantity; i++) {
+                if (user.saves.products[i].code === product.code) {
+                    Swal.fire({
+                        title: 'Produto já está na lista de salvos!',
+                        icon: 'error',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Ir para a lista de salvos',
+                        confirmButtonColor: 'var(--blue-primary)',
+                        position: 'top-end',
+                        timer: 5000,
+                        timerProgressBar: true,
+                        toast: true,
+                        width: 400,
+                        showClass: {
+                            popup: 'animate__animated animate__backInRight'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__backOutRight'
+                        },
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/save"
+                        }
+                    }
+                    )
+                    return;
+                }
+            }
+
+            await SaveService.AddProductInSave(cookie, user.saves.id, product.code);
+            Swal.fire({
+                title: 'Produto adicionado a lista de salvos!',
+                icon: 'success',
                 showConfirmButton: true,
-                confirmButtonText: 'Ir para a tela comparação',
+                confirmButtonText: 'Ir para a lista de salvos',
                 confirmButtonColor: 'var(--blue-primary)',
                 position: 'top-end',
                 timer: 5000,
@@ -251,11 +254,37 @@ function ProductPage() {
                 },
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "/compare";
+                    window.location.href = "/save"
                 }
-            });
+            }
+            )
+        } else {
+            Swal.fire({
+                title: 'Para adicionar o produto ao salvos é necessário fazer o login',
+                icon: 'error',
+                showConfirmButton: true,
+                confirmButtonText: 'Ir para o Login',
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                background: 'var(--red)',
+                toast: true,
+                width: 400,
+                color: 'var(--white)',
+                confirmButtonColor: 'var(--dark-red)',
+                showClass: {
+                    popup: 'animate__animated animate__backInRight'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/login"
+                }
+            }
+            )
         }
-
     }
 
     const renderPrice = () => {
@@ -268,26 +297,6 @@ function ProductPage() {
                     R$ {integerPart}
                     <sup> .{decimalPart}</sup>
                     <sub className='subtext_productPage'>10x sem juros</sub>
-                </h1>
-            );
-        } else {
-            return null;
-        }
-    };
-
-
-    const renderPrice2 = () => {
-        if (productPage.price !== undefined) {
-            const priceParts = productPage.price.toString().split('.');
-            const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00';
-            return (
-                <h1 className="total_price_page_product">
-                    <div className='price_combo_product_page'>
-                        R$ {integerPart}
-                        <sup> .{decimalPart}</sup>
-                    </div>
-                    <sub className='subtext_productPage_combo'>10x sem juros</sub>
                 </h1>
             );
         } else {
@@ -331,8 +340,8 @@ function ProductPage() {
                                             </button>
                                         </div>
                                         <div>
-                                            <button onClick={() => AddProductInCompare(product)} className="ui fluid icon button cart_product_compare">
-                                                <i className="exchange icon"></i>
+                                            <button className="ui fluid icon button cart_product_compare" onClick={() => AddProductInSave(product)}>
+                                                <i className="bookmark icon Category category_card"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -523,7 +532,7 @@ function ProductPage() {
                                     </button>
                                 </div>
                                 <div>
-                                    <button onClick={() => AddProductInCompareTablet(product)} className="ui fluid icon button product_page_compare_mobile">
+                                    <button className="ui fluid icon button product_page_compare_mobile">
                                         <i className="exchange icon"></i>
                                     </button>
                                 </div>
