@@ -17,12 +17,12 @@ import { Link } from 'react-router-dom';
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { CartService, ProductService, UserService } from '../../Service';
 import Cookies from 'js-cookie';
-import ProductCart from '../../Components/ProductCart/ProductCart';
 
 function CartConfirm() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [productsCart, setProductsCart] = useState([]);
+  const [address, setAddress] = useState([]);
   const [user, setUser] = useState([]);
   const [cart, setCart] = useState([]);
 
@@ -67,19 +67,16 @@ function CartConfirm() {
         const decodedPayload = atob(tokenPayload[1]);
         const userClaims = JSON.parse(decodedPayload);
         const userPrin = await UserService.findOne(userClaims.sub);
-        if (userPrin) {
-          setUser(userPrin);
-          console.log(user.address[0].id);
-        } else {
-          setUser([]);
-        }
         if (userPrin.cart) {
           const products = await CartService.GetCart(userPrin.cart.id);
           if (products && products.products) {
             setCart(products);
+            setProductsCart(userPrin.address);
             setProductsCart(products.products);
+            getAddres();
           } else {
             setCart([]);
+            setUser([]);
             setProductsCart([]);
           }
         } else {
@@ -91,6 +88,27 @@ function CartConfirm() {
       }
     }
   };
+
+  const getAddres = async () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      try {
+        const tokenPayload = token.split('.');
+        const decodedPayload = atob(tokenPayload[1]);
+        const userClaims = JSON.parse(decodedPayload);
+        const userPrin = await UserService.findOne(userClaims.sub);
+        if (userPrin.address) {
+          setUser(userPrin);
+          setAddress(userPrin.address[0]);
+        } else {
+          setUser([]);
+          setAddress([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    }
+  }
 
   const renderDesktopView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
@@ -148,27 +166,27 @@ function CartConfirm() {
                       <p>{user.name}</p>
                     </div>
                     <div className="field">
-                      <label>Endereço: {user.id}</label>
-                      <p></p>
+                      <label>Endereço: </label>
+                      <p>{address.bairro}, {address.rua}, {address.numero}</p>
                     </div>
                     <div className="field">
-                      <label>Complemento:</label>
-                      <p></p>
+                      <label>Complemento: </label>
+                      <p>{address.complemento}</p>
                     </div>
                   </div>
                 </div>
                 <div className="three fields">
                   <div className="field">
                     <label>Estado:</label>
-                    <p></p>
+                    <p>{address.estado}</p>
                   </div>
                   <div className="field">
                     <label>País:</label>
-                    <p></p>
+                    <p>{address.pais}</p>
                   </div>
                   <div className="field">
                     <label>CEP</label>
-                    <p></p>
+                    <p>{address.cep}</p>
                   </div>
                 </div>
               </form>
