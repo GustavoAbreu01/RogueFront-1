@@ -44,6 +44,8 @@ function Cart() {
   useEffect(() => {
     getProductsRev();
     getCart();
+
+    
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -55,6 +57,9 @@ function Cart() {
   }, []);
 
   const getCart = async () => {
+
+    
+
     const token = Cookies.get('Cookie');
     if (token) {
       const tokenPayload = token.split('.');
@@ -80,6 +85,7 @@ function Cart() {
         console.error('Erro ao obter usuário:', error);
       }
     }
+    console.log(cart)
   };
 
   const verify = () => {

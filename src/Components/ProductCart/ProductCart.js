@@ -44,17 +44,17 @@ function ProductCart({ item, user }) {
     }
   };
 
+
+
   function aumentarQuantidade() {
-    setQuantidade(quantidade + 1);
-    setValor(valor + 1);
-    setSubValor(subValor + 99);
+    const newQuantity = quantidade + 1;
+    updateQuantity(newQuantity);
   }
 
   function diminuirQuantidade() {
     if (quantidade > 1) {
-      setQuantidade(quantidade - 1);
-      setValor(valor - 1);
-      setSubValor(subValor - 99);
+      const newQuantity = quantidade - 1;
+      updateQuantity(newQuantity);
     }
   }
 
@@ -62,6 +62,13 @@ function ProductCart({ item, user }) {
     console.log(item.product.code);
     await CartService.MinunProductInCart(user.cart.id, item.product.code);
     window.location.reload();
+  };
+
+
+  const updateQuantity = async (newQuantity) => {
+    setQuantidade(newQuantity); 
+    await CartService.AddProductInCart(user.token, user.cart.id, item.product.code, newQuantity !== undefined ? newQuantity : 1);    
+    window.location.reload()
   };
 
   const renderDesktopView = () => (
