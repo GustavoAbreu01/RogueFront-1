@@ -8,6 +8,32 @@ function ProductTableMotor({ product }) {
         setItemsToShow(itemsToShow + 5);
     };
 
+    const renderProperty = (property) => {
+        console.log(property)
+        switch (property) {
+            case 'code':
+                return 'Código';
+            case 'standard':
+                return 'Padrão';
+            case 'frequency':
+                return 'Frequência';
+            case 'nominalTension':
+                return 'Tensão Nominal';
+            case 'poles':
+                return 'Pólos';
+            case 'powerHP':
+                return 'Potência (HP)';
+            case 'codeDaCarcaca':
+                return 'Código da Carcaça';
+            case 'typeDaCarcaca':
+                return 'Tipo da Carcaça';
+            case 'ipIn':
+                return 'IP (In)';
+            case 'conjugateFromStart':
+                return 'Conjugado de Partida';
+        }
+    }
+
     return (
         <>
             {product &&
@@ -16,9 +42,9 @@ function ProductTableMotor({ product }) {
                         <tbody>
                             {Object.entries(product.motors).slice(0, itemsToShow).map(([property, value]) => (
                                 <tr key={property}>
-                                    <td>{property}</td>
+                                    <td>{renderProperty(property)}</td>
                                     <td>
-                                        {typeof value === 'object' && value !== null ? (
+                                        {typeof value === '' && value !== null ? (
                                             <span>
                                                 {value.code}
                                                 {value.assessment}
