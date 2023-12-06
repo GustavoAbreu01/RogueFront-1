@@ -15,18 +15,29 @@ import { Link } from 'react-router-dom';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
-import { CartService, ProductService, UserService } from '../../Service';
+import { CartService, OrderService, ProductService, UserService } from '../../Service';
 import Cookies from 'js-cookie';
 
 function CartConfirm() {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [productsSmaller, setProductsSmaller] = useState([])
   const [productsCart, setProductsCart] = useState([]);
   const [address, setAddress] = useState([]);
   const [user, setUser] = useState([]);
   const [cart, setCart] = useState([]);
+  const date = new Date();
 
-  const [productsSmaller, setProductsSmaller] = useState([])
+  const order = {
+    "address": {
+      "id": 0
+    },
+    "user": {
+      "id": 0
+    },
+    "status": "Aguardando Pagamento",
+    "date": null,
+  }
 
   const getProductsRev = async () => {
     const products = await ProductService.findSimiliarCart();
@@ -90,39 +101,15 @@ function CartConfirm() {
   };
 
   const createOrder = async () => {
-    const token = Cookies.get('Cookie');
-    if (token) {
-      try {
-        const tokenPayload = token.split('.');
-        const decodedPayload = atob(tokenPayload[1]);
-        const userClaims = JSON.parse(decodedPayload);
-        const userPrin = await UserService.findOne(userClaims.sub);
-        if (userPrin.cart) {
-          const products = await CartService.GetCart(userPrin.cart.id);
-          if (products && products.products) {
-            const order = {
-              user: userPrin,
-              cart: products,
-              address: userPrin.address[0],
-              status: 'Aguardando Pagamento'
-            }
-            const orderCreated = await CartService.createOrder(order);
-            if (orderCreated) {
-              window.location.href = '/cart/finish';
-            }
-          } else {
-            setCart([]);
-            setUser([]);
-            setProductsCart([]);
-          }
-        } else {
-          setCart([]);
-          setProductsCart([]);
-        }
-      } catch (error) {
-        console.error('Erro ao obter usuário:', error);
-      }
+    order.user.id = user.id;
+    order.address.id = address.id;
+    if (date.getDate() < 10) {
+      order.date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-0' + date.getDate();
+    } else {
+      order.date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
     }
+    const cookie = Cookies.get('Cookie');
+    OrderService.create(order, cart.id, cookie);
   }
 
   const getAddres = async () => {

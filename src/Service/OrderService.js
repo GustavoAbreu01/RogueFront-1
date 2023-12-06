@@ -1,15 +1,19 @@
 import axios from "axios";
 
-const url = 'http://localhost:8082/order';
-
 export const OrderService = {
-    
-  create: async (address) => {
+
+  create: async (order, id, cookie) => {
     try {
-      const response = await axios.post(url, address, { withCredentials: true });
+      const response = await axios.post(`http://localhost:8082/order/` + id, order, {
+        headers: {
+          'Authorization': `Bearer ${cookie}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        withCredentials: true
+      });
       return response.data;
     } catch (error) {
-      console.error("Erro ao criar endereço:", error);
       throw error;
     }
   }
