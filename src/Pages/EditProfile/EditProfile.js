@@ -125,8 +125,14 @@ function EditProfile() {
   };
 
   const renderCpf = (cpf) => {
-    const cpfFormat = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-    return cpfFormat;
+    if (typeof cpf === 'string') {
+      const cpf1 = cpf.substring(0, 3);
+      const cpf2 = cpf.substring(3, 6);
+      const cpf3 = cpf.substring(6, 9);
+      const cpf4 = cpf.substring(9, 11);
+      return `${cpf1}.${cpf2}.${cpf3}-${cpf4}`;
+    }
+    return '';
   };
 
   const renderDesktopView = () => (
@@ -142,7 +148,7 @@ function EditProfile() {
                   <div className="settings_bar_edit_profile">
                     <CgProfile className="edit_profile" />
                     <h4>{user.name}</h4>
-                    <p>{renderCpf(user.cpf)}</p>
+                    <p>{renderCpf(String(user.cpf))}</p>
                   </div>
                   <div className="ui vertical menu edit">
                     <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
@@ -173,7 +179,7 @@ function EditProfile() {
                 <h2 className="edit_section_title_profile">Informações Pessoais</h2>
                 <form className="ui form edit">
                   <div className="field">
-                    <div className="two fields">
+                    <div className="field">
                       <div className={editMode ? "field" : "field disabled"}>
                         <label>Nome</label>
                         <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[first-name]" placeholder={user.name} />
@@ -188,7 +194,7 @@ function EditProfile() {
                       </div>
                       <div className={editMode ? "four wide field" : "four wide field disabled"}>
                         <label>CPF/CNPJ</label>
-                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder={user.cpf} />
+                        <input style={{ border: editMode ? '1px solid #000' : 'none' }} type="text" name="shipping[address-2]" placeholder={renderCpf(String(user.cpf))} />
                       </div>
                     </div>
                   </div>

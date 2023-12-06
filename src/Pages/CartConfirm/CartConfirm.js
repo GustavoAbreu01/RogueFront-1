@@ -109,6 +109,7 @@ function CartConfirm() {
       order.date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
     }
     const cookie = Cookies.get('Cookie');
+    console.log(order);
     OrderService.create(order, cart.id, cookie);
   }
 
