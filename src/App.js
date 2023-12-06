@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from './Pages/NotFound/NotFound';
 import Compare from './Pages/Compare/Compare';

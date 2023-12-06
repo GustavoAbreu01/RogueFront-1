@@ -16,6 +16,22 @@ export const OrderService = {
     } catch (error) {
       throw error;
     }
+  },
+
+  getAll: async (cookie) => {
+    try {
+      const response = await axios.get(`http://localhost:8082/order`, {
+        headers: {
+          'Authorization': `Bearer ${cookie}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        withCredentials: true
+      });
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
 
 };

@@ -124,6 +124,20 @@
     overflow-y: scroll;
 }
 
+.messages_container_profile::-webkit-scrollbar {
+    width: 20px;
+}
+
+.messages_container_profile::-webkit-scrollbar-track {
+    background: var(--blue-primary);
+}
+
+.messages_container_profile::-webkit-scrollbar-thumb {
+    background-color: 1px solid var(--blue-primary);
+    border-radius: 10px;
+    border: 1px solid var(--blue-primary);
+}
+
 .rating_container_profile {
     max-height: 27rem;
     width: 100%;

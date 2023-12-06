@@ -112,6 +112,8 @@ function CartConfirm() {
     }
     const cookie = Cookies.get('Cookie');
     OrderService.create(order, cart.id, cookie);
+    CartService.DeleteProductInCart(cart.id);
+    window.location.href = '/cart/finish';
   }
 
   const getAddres = async () => {

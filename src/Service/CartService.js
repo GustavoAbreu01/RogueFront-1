@@ -31,7 +31,7 @@ export const CartService = {
         }
     },
 
-    DeleteProductInCart: async (cartId, productCode) => {
+    DeleteProductInCart: async (cartId) => {
         const url = "http://localhost:8082/cart/remove/all/" + cartId;
         try {
             const response = await axios.delete(url, { withCredentials: true });

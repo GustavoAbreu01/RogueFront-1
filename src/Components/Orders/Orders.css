@@ -11,6 +11,7 @@
 
 .order_product_subtext {
     font-size: 1rem;
+    padding-left: 1rem;
     color: var(--grey-primary);
 }
 

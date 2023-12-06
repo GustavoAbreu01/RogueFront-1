@@ -9,7 +9,7 @@ import { FaAngleDown } from 'react-icons/fa'
 import motors from "../../assets/img/motores.png"
 
 
-function Orders() {
+function Orders({ order }) {
   const [isOpen, setIsOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem('user')) || [];
 
@@ -20,7 +20,7 @@ function Orders() {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    console.log(user.cart)
+    console.log(order)
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -31,18 +31,26 @@ function Orders() {
     };
   }, []);
 
+  const calculateProducts = () => {
+    let total = 0;
+    order.products.forEach(product => {
+      total += product.product.price;
+    });
+    return total;
+  };
+
 
   const renderDesktopView = () => (
     <>
       <div className="container_product_order">
         <div className={`item_order_content ${isOpen ? 'open' : ''}`} onClick={toggleDropdown}>
           <div id="imgItens order">
-            <img src={motors} width="125" height="" />
+            <img src={order.products[0].product.image} width="125" height="" />
           </div>
           <div className="order_item_info">
             <h2 className="order_product_name">Pedido 25/08/2023</h2>
             <h2 id="itemPreco order" className="order_product_price">
-              Total: R$ {user.cart.totalPrice}<sup></sup>
+              Total: R$ {calculateProducts()}<sup></sup>
               <sub className="order_product_subtext">parcelado em 8x</sub>
             </h2>
             <p className="order_product_complement">
@@ -62,50 +70,50 @@ function Orders() {
                 <form className="ui form confirm order">
                   <div className="field order">
                     <div className="three fields order">
-                      <div className="field order">
-                        <label>Produtos</label>
-                        <p>{user.cart.product}</p>
-                        <p>Motor W12</p>
-                      </div>
-                      <div className="field order">
-                        <br />
-                        <p>x3</p>
-                        <p>x1</p>
-                      </div>
-                      <div className="field order">
-                        <br />
-                        <p>R$ 2.333,33</p>
-                        <p>R$ 1.333,33</p>
-                      </div>
+                      {order.products.map(product => (
+                        <>
+                          <div className="field order">
+                            <label>Nome dos Produtos</label>
+                            <p>{product.product.model}</p>
+                          </div><div className="field order">
+                            <label>Valor dos Produtos</label>
+                            <p>R$ {product.product.price}</p>
+                          </div>
+                          <div className="field order">
+                            <label>Quantidade dos Produtos</label>
+                            <p>x{product.quantity}</p>
+                          </div>
+                        </>
+                      ))}
                     </div>
                     <div className="three fields order">
 
                       <div className="field order">
                         <label>Nome do Responsável</label>
-                        <p>{user.name}</p>
+                        <p>{order.user.name}</p>
                       </div>
                       <div className="field order">
                         <label>Endereço:</label>
-                        <p>{user.address[0].rua}, {user.address[0].bairro}, {user.address[0].cidade}</p>
+                        <p>{order.address.bairro}, {order.address.rua}, {order.address.numero}</p>
                       </div>
                       <div className="field order">
                         <label>Complemento:</label>
-                        <p>{user.address[0].complemento}</p>
+                        <p>{order.address.complemento}</p>
                       </div>
                     </div>
                   </div>
                   <div className="three fields order">
                     <div className="field order">
                       <label>Estado:</label>
-                      <p>{user.address[0].estado}</p>
+                      <p>{order.address.estado}</p>
                     </div>
                     <div className="field order">
                       <label>País:</label>
-                      <p>{user.address[0].pais}</p>
+                      <p>{order.address.pais}</p>
                     </div>
                     <div className="field order">
                       <label>CEP</label>
-                      <p>{user.address[0].cep}</p>
+                      <p>{order.address.cep}</p>
                     </div>
                   </div>
                 </form>
@@ -188,7 +196,7 @@ function Orders() {
                         </td>
                       </tr>
                     </table>
-                    <br/>
+                    <br />
                     <div className="three fields order_mobile">
 
                       <div className="field order">
@@ -225,22 +233,22 @@ function Orders() {
                 <div className="ui tiny steps order_mobile">
                   <div className="step order_mobile">
                     <div className="content">
-                    <i className="boxes icon"></i>
+                      <i className="boxes icon"></i>
                     </div>
                   </div>
                   <div className="disabled step order_mobile">
                     <div className="content">
-                    <i className="dolly flatbed icon"></i>
+                      <i className="dolly flatbed icon"></i>
                     </div>
                   </div>
                   <div className="disabled step order_mobile">
                     <div className="content">
-                    <i className="shipping fast icon"></i>
+                      <i className="shipping fast icon"></i>
                     </div>
                   </div>
                   <div className="disabled step order_mobile">
                     <div className="content">
-                    <i className="clipboard check icon"></i>
+                      <i className="clipboard check icon"></i>
                     </div>
                   </div>
                 </div>
