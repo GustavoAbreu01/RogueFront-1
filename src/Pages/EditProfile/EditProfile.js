@@ -22,21 +22,57 @@ import { AiOutlineBell } from 'react-icons/ai';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { AiOutlineStar } from 'react-icons/ai';
 import { RxAccessibility } from 'react-icons/rx';
+import Cookies from 'js-cookie';
+import { UserService } from '../../Service';
 
 
 function EditProfile() {
 
+  const [showComponent, setShowComponent] = useState(false);
   const [activeSection, setActiveSection] = useState(1);
   const [editMode, setEditMode] = useState(false);
-  const [showComponent, setShowComponent] = useState(false);
-  const user = JSON.parse(localStorage.getItem('user')) || [];
+  const [user, setUser] = useState({});
+
+  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
+  const [selectedSize, setSelectedSize] = useState('');
 
   useEffect(() => {
+    getUser();
     const storedValue = localStorage.getItem('showComponent');
     if (storedValue) {
       setShowComponent(storedValue === 'true');
     }
   }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const getUser = async () => {
+    const token = Cookies.get('Cookie');
+    if (token) {
+      const tokenPayload = token.split('.');
+      const decodedPayload = atob(tokenPayload[1]);
+      const userClaims = JSON.parse(decodedPayload);
+      try {
+        const userPrin = await UserService.findOne(userClaims.sub);
+        if (userPrin) {
+          setUser(userPrin);
+        } else {
+          setUser([]);
+        }
+      } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+      }
+    }
+  };
 
   const handleCheckboxChange = (event) => {
     const newValue = event.target.checked;
@@ -59,33 +95,19 @@ function EditProfile() {
     event.preventDefault();
     setEditMode(false);
   };
-  const verifyHeader = () => {
-    const Registered = localStorage.getItem('verifyLogin');
-    if (Registered === 'yes') {
-      return true;
+
+  const verify = () => {
+    const Registered = Cookies.get('Cookie')
+    if (Registered) {
+      return true
     } else {
-      return false;
+      return false
     }
-  };
+  }
 
   const changeSection = (section) => {
     setActiveSection(section);
   };
-
-  const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    function handleResize() {
-      setScreenSize({ width: window.innerWidth, height: window.innerHeight });
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const [selectedSize, setSelectedSize] = useState('');
 
   const handleSizeChange = (event) => {
     setSelectedSize(event.target.value);
@@ -102,11 +124,14 @@ function EditProfile() {
       document.body.style.fontSize = "18px";
   };
 
-
+  const renderCpf = (cpf) => {
+    const cpfFormat = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    return cpfFormat;
+  };
 
   const renderDesktopView = () => (
     <>
-      {!verifyHeader() ? <Header /> : <HeaderLogin />}
+      {!verify() ? <Header /> : <HeaderLogin />}
       <WeggnerModal />
       <div className="container_edit_profile">
         <div className="ui grid edit">
@@ -117,7 +142,7 @@ function EditProfile() {
                   <div className="settings_bar_edit_profile">
                     <CgProfile className="edit_profile" />
                     <h4>{user.name}</h4>
-                    <p>{user.cpf}0</p>
+                    <p>{renderCpf(user.cpf)}</p>
                   </div>
                   <div className="ui vertical menu edit">
                     <div onClick={() => changeSection(1)} id="profileBoxContainer" className={`item ${activeSection === 1 ? 'active' : ''}`}>
@@ -375,9 +400,9 @@ function EditProfile() {
                       </div>
                       <div className="acessebility_profile_switcher">
                         <div className="checkbox-wrapper-6">
-                          <input className="tgl tgl-light" id="cb1-1" type="checkbox" 
-                          onChange={handleCheckboxChange}
-                          checked={showComponent}/>
+                          <input className="tgl tgl-light" id="cb1-1" type="checkbox"
+                            onChange={handleCheckboxChange}
+                            checked={showComponent} />
                           <label className="tgl-btn" for="cb1-1" />
                         </div>
                       </div>
@@ -417,7 +442,7 @@ function EditProfile() {
   )
   const renderMobileView = () => (
     <>
-      {!verifyHeader() ? <Header /> : <HeaderLogin />}
+      {!verify() ? <Header /> : <HeaderLogin />}
       <WeggnerModal />
       <div className="container_edit_profile_mobile">
         <div className="box_settings_bar_edit_mobile">
@@ -730,8 +755,8 @@ function EditProfile() {
                     <div className="acessebility_profile_switcher">
                       <div className="checkbox-wrapper-6">
                         <input className="tgl tgl-light" id="cb1-1" type="checkbox"
-                        onChange={handleCheckboxChange}
-                        checked={showComponent} />
+                          onChange={handleCheckboxChange}
+                          checked={showComponent} />
                         <label className="tgl-btn" for="cb1-1" />
                       </div>
                     </div>
@@ -771,7 +796,7 @@ function EditProfile() {
   )
   const renderTabletView = () => (
     <>
-      {!verifyHeader() ? <Header /> : <HeaderLogin />}
+      {!verify() ? <Header /> : <HeaderLogin />}
       <WeggnerModal />
       <div className="container_edit_profile_mobile">
         <div className="box_settings_bar_edit_mobile">

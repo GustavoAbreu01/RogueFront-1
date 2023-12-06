@@ -14,10 +14,10 @@ import { SaveService } from '../../Service'
 function SmallProductCard({ product, user }) {
 
     const renderModel = () => {
-        if (product.motors.model.length > 25) {
-            return product.motors.model.substring(0, 25) + '...';
+        if (product.model.length > 25) {
+            return product.model.substring(0, 25) + '...';
         } else {
-            return product.motors.model;
+            return product.model;
         }
     }
 
@@ -366,7 +366,7 @@ function SmallProductCard({ product, user }) {
                 </Link>
                 <div >
                     <div className='box_product_card_smaller_title'>
-                        <h3 title={product.motors.model} className='product_card_smaller_title'>{product.motors.model}</h3>
+                        <h3 title={product.model} className='product_card_smaller_title'>{product.model}</h3>
                     </div>
                 </div>
                 <div className='box_product_card_smaller_price'>

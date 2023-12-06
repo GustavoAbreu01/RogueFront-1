@@ -152,6 +152,7 @@ function CartTransport() {
     const addressCreated = await AddressService.create(address);
     if (addressCreated && user) {
       user.address = [addressCreated];
+      delete user.password;
       await AddressService.update(user, token);
       navigate('/cart/confirm');
     } else {
