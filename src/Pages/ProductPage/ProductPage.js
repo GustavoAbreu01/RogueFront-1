@@ -275,26 +275,6 @@ function ProductPage() {
         }
     };
 
-
-    const renderPrice2 = () => {
-        if (productPage.price !== undefined) {
-            const priceParts = productPage.price.toString().split('.');
-            const integerPart = priceParts[0];
-            const decimalPart = priceParts[1] || '00';
-            return (
-                <h1 className="total_price_page_product">
-                    <div className='price_combo_product_page'>
-                        R$ {integerPart}
-                        <sup> .{decimalPart}</sup>
-                    </div>
-                    <sub className='subtext_productPage_combo'>10x sem juros</sub>
-                </h1>
-            );
-        } else {
-            return null;
-        }
-    };
-
     const renderDesktopView = () => (
         <>
             {productPage.motors &&
@@ -309,7 +289,7 @@ function ProductPage() {
                                 <img className="image_product" src={productPage.image} />
                             </div>
                             <div className="content product_page">
-                                <h1 className="ui header product_page"> {productPage.motors.model}</h1>
+                                <h1 className="ui header product_page"> {productPage.model}</h1>
                                 <br />
                                 <Rating className="ui rating product_page" maxRating={5} style={{ marginTop: '1rem' }} />
                                 {renderPrice()}

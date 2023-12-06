@@ -257,7 +257,7 @@ function CategoryCard({ product, user }) {
                         <img src={product.image} width="125" height="" />
                     </div>
                     <div className="category_card_product_info">
-                        <h3 className="category_card_product_name">{product.motors.model}</h3>
+                        <h3 className="category_card_product_name">{product.model}</h3>
                         <h4 className="category_card_product_description">{product.motors.typeDaCarcaca}, {product.motors.protection}</h4>
                         {renderPrice()}
                     </div>
@@ -289,7 +289,7 @@ function CategoryCard({ product, user }) {
                         <img src={product.image} width="125" height="" />
                     </div>
                     <div className="category_card_product_info">
-                        <h3 className="category_card_product_name">{product.motors.model}</h3>
+                        <h3 className="category_card_product_name">{product.model}</h3>
                         <h4 className="category_card_product_description">{product.motors.typeDaCarcaca}, {product.motors.protection}</h4>
                         <h2 className="category_card_product_price">{renderPrice()}<sub className='category_card_product_subtext'>10x Sem juros</sub></h2>
                     </div>
@@ -320,7 +320,7 @@ function CategoryCard({ product, user }) {
                         <img src={product.image} width="100" height="" />
                     </div>
                     <div className="category_card_product_info_mobile">
-                        <h3 className="category_card_product_name_mobile">{product.motors.name}</h3>
+                        <h3 className="category_card_product_name_mobile">{product.model}</h3>
                         <h2 className="category_card_product_price_mobile">{renderPrice()}</h2>
                     </div>
                 </div>

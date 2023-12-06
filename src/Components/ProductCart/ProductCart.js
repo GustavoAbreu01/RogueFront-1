@@ -77,7 +77,7 @@ function ProductCart({ item, user }) {
               </div>
               <div className="product_cart_informations">
                 <Link to={`/product/${item.product.code}`}>
-                  <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
+                  <h2 className="product_cart_item_name">{item.product.model}</h2>
                   <p className="product_cart_complement" >{item.product.motors.typeDaCarcaca} -
                     {" " + item.product.motors.codeDaCarcaca}
                     {" " + item.product.motors.protection}
@@ -114,7 +114,7 @@ function ProductCart({ item, user }) {
             </div>
             <div className="product_cart_informations">
               <Link to={`/product/${item.product.code}`}>
-                <h2 className="product_cart_item_name">{item.product.motors.model}</h2>
+                <h2 className="product_cart_item_name">{item.product.model}</h2>
                 <p className="product_cart_complement" >{item.product.motors.typeDaCarcaca} -
                   {" " + item.product.motors.codeDaCarcaca}
                   {" " + item.product.motors.protection}
@@ -151,7 +151,7 @@ function ProductCart({ item, user }) {
               </div>
               <div className="product_cart_informations_mobile">
                 <Link to={`/product/${item.product.code}`}>
-                  <h2 className="product_cart_item_name_mobile">{item.product.motors.model}</h2>
+                  <h2 className="product_cart_item_name_mobile">{item.product.model}</h2>
                   <h2 id="itemPreco CardCart" className='product_cart_item_price'>R${valor}<sup>{subValor}</sup><sub className='product_cart_subtext_mobile'>10x Sem juros</sub></h2>
                 </Link>
               </div>

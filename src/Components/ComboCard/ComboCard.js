@@ -44,10 +44,10 @@ function ComboCard({ product }) {
     }
 
     const renderModel = (product) => {
-        if (product.motors.model.length > 17) {
-            return product.motors.model.slice(0, 17) + '...';
+        if (product.model.length > 17) {
+            return product.model.slice(0, 17) + '...';
         } else {
-            return product.motors.model;
+            return product.model;
         }
     }
 

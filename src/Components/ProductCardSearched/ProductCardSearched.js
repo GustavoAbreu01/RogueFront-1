@@ -234,7 +234,7 @@ function ProductCardSearched({ product, user }) {
         </Link>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 title={product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
+            <h3 title={product.model} className='product_card_searched_name'>{product.model}</h3>
             <p className='product_card_searched_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
         </div>
@@ -272,7 +272,7 @@ function ProductCardSearched({ product, user }) {
         </Link>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text'>
-            <h3 title={product.motors.model} className='product_card_searched_name'>{product.motors.model}</h3>
+            <h3 title={product.model} className='product_card_searched_name'>{product.model}</h3>
             <p className='product_card_searched_description'>{product.motors.typeDaCarcaca}, {product.motors.protection}</p>
           </div>
         </div>
@@ -310,7 +310,7 @@ function ProductCardSearched({ product, user }) {
         </Link>
         <div className='box_product_card_searched_info'>
           <div className='product_card_searched_info_text_mobile'>
-            <h3 title={product.motors.model} className='product_card_searched_name_mobile'>{product.motors.model}</h3>
+            <h3 title={product.model} className='product_card_searched_name_mobile'>{product.model}</h3>
           </div>
         </div>
         <div className='box_product_card_searched_info_price'>

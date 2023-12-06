@@ -54,7 +54,7 @@ function ProductCartConfirm({ item }) {
             </div>
             <div className="product_cart_confirm_item_info">
               <Link to={`/product/${item.product.code}`}>
-                <h2 className="product_cart_confirm_product_name">{item.product.motors.model}</h2>
+                <h2 className="product_cart_confirm_product_name">{item.product.model}</h2>
                 <p className="product_cart_confirm_product_description">{item.product.motors.typeDaCarcaca} -
                   {" " + item.product.motors.codeDaCarcaca}
                   {" " + item.product.motors.protection}
@@ -85,7 +85,7 @@ function ProductCartConfirm({ item }) {
             </div>
             <div className="product_cart_confirm_item_info">
               <Link to={`/product/${item.product.code}`}>
-                <h2 className="product_cart_confirm_product_name">{item.product.motors.model}</h2>
+                <h2 className="product_cart_confirm_product_name">{item.product.model}</h2>
                 <p className="product_cart_confirm_product_description">{item.product.motors.typeDaCarcaca} -
                   {" " + item.product.motors.codeDaCarcaca}
                   {" " + item.product.motors.protection}
@@ -116,7 +116,7 @@ function ProductCartConfirm({ item }) {
             </div>
             <div className="product_cart_confirm_item_info_mobile">
               <Link to="/product">
-                <h2 className="product_cart_confirm_product_name_mobile">{item.product.motors.model}</h2>
+                <h2 className="product_cart_confirm_product_name_mobile">{item.product.model}</h2>
                 <h2 id="itemPreco CardCart" className='product_cart_confirm_product_price_mobile'>R${ }<sup>{subValor}</sup><sub className='product_cart_confirm_product_subtext_mobile'>10x Sem juros</sub></h2>
               </Link>
               <div className='product_cart_confirm_quantity_mobile'>
