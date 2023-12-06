@@ -31,6 +31,7 @@ function Cart() {
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState([]);
   const [productsSmaller, setProductsSmaller] = useState([])
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const getProductsRev = async () => {
     const products = await ProductService.findSimiliarCart();
@@ -45,7 +46,7 @@ function Cart() {
     getProductsRev();
     getCart();
 
-    
+
     function handleResize() {
       setScreenSize({ width: window.innerWidth, height: window.innerHeight });
     }
@@ -104,6 +105,20 @@ function Cart() {
     }
   };
 
+
+
+  const updatePrice = async () => {
+    try {
+      const updatedCart = await CartService.GetCart(user.cart.id);
+      if (updatedCart) {
+        setTotalPrice(updatedCart.totalPrice);
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar o preço:', error);
+    }
+  };
+
+
   const renderDesktopView = () => (
     <>{!verify() ? <Header /> : <HeaderLogin />}<WeggnerModal />
       <div className='container_progress_cart'>
@@ -144,7 +159,7 @@ function Cart() {
               <>
                 {productsCart.map((item, index) => (
                   <div key={index}>
-                    <ProductCart user={user} item={item} />
+                    <ProductCart user={user} item={item} updatePriceCallback={updatePrice}/>
                   </div>
                 ))}
               </>

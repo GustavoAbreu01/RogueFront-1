@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { CartService } from '../../Service';
 
 
-function ProductCart({ item, user }) {
+function ProductCart({ item, user ,updatePriceCallback}) {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
   const [quantidade, setQuantidade] = useState(1);
   const [valor, setValor] = useState(1);
@@ -46,6 +46,13 @@ function ProductCart({ item, user }) {
 
 
 
+  const updateQuantity = async (newQuantity) => {
+    setQuantidade(newQuantity); 
+    await CartService.AddProductInCart(user.token, user.cart.id, item.product.code, newQuantity !== undefined ? newQuantity : 1);    
+    // Atualizar preço no componente Cart através da função de callback
+    updatePriceCallback();
+  };
+
   function aumentarQuantidade() {
     const newQuantity = quantidade + 1;
     updateQuantity(newQuantity);
@@ -58,18 +65,12 @@ function ProductCart({ item, user }) {
     }
   }
 
-  const deleteItens = async (item) => {
-    console.log(item.product.code);
+  const deleteItens = async () => {
     await CartService.MinunProductInCart(user.cart.id, item.product.code);
-    window.location.reload();
+    // Atualizar preço no componente Cart através da função de callback
+    updatePriceCallback();
   };
 
-
-  const updateQuantity = async (newQuantity) => {
-    setQuantidade(newQuantity); 
-    await CartService.AddProductInCart(user.token, user.cart.id, item.product.code, newQuantity !== undefined ? newQuantity : 1);    
-    window.location.reload()
-  };
 
   const renderDesktopView = () => (
     <>
