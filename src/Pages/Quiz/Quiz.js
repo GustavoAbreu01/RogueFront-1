@@ -123,13 +123,6 @@ function Quiz() {
     }
   }
 
-  const verify = () => {
-    console.log(localStorage.getItem('verificar'))
-    if (localStorage.getItem('verificar') === "sim" || localStorage.getItem('verificar2') === "sim") {
-      setVerificacao(true);
-    }
-  }
-
   const verifyHeader = () => {
     const Registered = localStorage.getItem('verifyLogin');
     if (Registered === "yes") {

@@ -14,7 +14,7 @@ function ProductCarouselSmall() {
     const [productsSmall, setProductsSmall] = useState([])
 
     const getProductsRev = async () => {
-        const products = await ProductService.findAll();
+        const products = await ProductService.findSimiliar();
         if (products) {
             setProductsSmall(products);
         } else {
