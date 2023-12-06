@@ -12,11 +12,14 @@ import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSi
 
 //importando as frameworks
 import { Link, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 //Importando os icones
-import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
+import { FaCheck, FaTruck, FaInfo } from 'react-icons/fa';
+
+//Importando services
 import { AddressService, CartService, UserService } from '../../Service';
-import Cookies from 'js-cookie';
+
 
 function CartTransport() {
 
@@ -27,7 +30,6 @@ function CartTransport() {
   const [endereco, setEndereco] = useState({});
   const [user, setUser] = useState({});
   const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState([]);
   const navigate = useNavigate();
 
   const buscarEndereco = async (event) => {

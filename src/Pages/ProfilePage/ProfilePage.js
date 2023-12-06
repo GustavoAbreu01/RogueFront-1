@@ -11,6 +11,8 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 
 //Importando os ícones
 import { BsFillBookmarkFill } from 'react-icons/bs'
+
+//Importando frameworks
 import Cookies from 'js-cookie'
 
 function ProfilePage() {

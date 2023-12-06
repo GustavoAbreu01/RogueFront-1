@@ -2,22 +2,26 @@
 import React, { useEffect, useState } from 'react'
 import './Save.css';
 
-
+//Importando componentes
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import SaveCard from '../../Components/SaveCard/SaveCard';
-import RecommendedSave from '../../Components/RecomandedProductsSave/RecommendedSave';
 import weggner from '../../assets/img/weggnerSemiAcord.png';
-import SaveService from '../../Service/SaveService'
+
+
+//Importando frameworks
+import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom'
 
 //Importando os ícones
 import { BsFillBookmarkFill } from 'react-icons/bs'
 import { BsArrowLeftShort } from 'react-icons/bs'
+
+//Importando service
+import SaveService from '../../Service/SaveService'
 import { UserService } from '../../Service';
-import Cookies from 'js-cookie';
 
 
 function Salvos() {

@@ -4,6 +4,7 @@ import './ChatWegner.css'
 
 //importando as frameworks
 import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 //Importando os componentes
 import Header from '../../Components/Header/Header'
@@ -16,7 +17,7 @@ import wegnerAcordado from '../../assets/img/weggnerAcordado.PNG'
 //Importando os ícones
 import { IoIosArrowBack } from 'react-icons/io'
 import { VscSend } from 'react-icons/vsc'
-import Cookies from 'js-cookie'
+
 
 function ChatWegner() {
 

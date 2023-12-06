@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 //importando as services
 import { CartService } from '../../Service/CartService'
-import { SaveService, UserService } from '../../Service';
+import { SaveService } from '../../Service';
 
 function SaveCard({ item, user }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });

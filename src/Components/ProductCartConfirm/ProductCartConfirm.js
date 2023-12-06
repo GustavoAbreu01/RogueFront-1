@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 
 function ProductCartConfirm({ item }) {
 
-  const [quantidade, setQuantidade] = React.useState(1);
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
-  const [valor, setValor] = React.useState(1);
   const [subValor, setSubValor] = React.useState(99);
 
 

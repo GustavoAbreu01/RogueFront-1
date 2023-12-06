@@ -10,7 +10,6 @@ import { BiMenu } from 'react-icons/bi';
 import { BsArrowBarLeft } from 'react-icons/bs';
 
 //import de imagens
-
 import agro from "../../assets/img/icone-rural.png"
 import naval from "../../assets/img/NAVAL.png"
 import mineracao from "../../assets/img/mineracao.png"

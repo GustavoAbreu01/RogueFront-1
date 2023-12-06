@@ -5,11 +5,10 @@ import 'animate.css';
 
 //importando as frameworks
 import { Link } from "react-router-dom";
-import swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 //importando as Services
 import { CartService } from '../../Service/CartService'
-import Swal from 'sweetalert2';
 import { SaveService } from '../../Service';
 import Cookies from 'js-cookie';
 

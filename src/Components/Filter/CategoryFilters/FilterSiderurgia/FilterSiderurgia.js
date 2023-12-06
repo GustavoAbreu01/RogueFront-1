@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import '../../FilterSearch.css'
 
 //importando as frameworks
-import { Divider, Dropdown } from 'semantic-ui-react';
+import { Divider } from 'semantic-ui-react';
 
 //Importando icones
 import icon from "../../../../assets/img/metalurgica.png"

@@ -1,9 +1,9 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
 import './BannerCarousell.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 //importando as frameworks
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 //Importando as imagens

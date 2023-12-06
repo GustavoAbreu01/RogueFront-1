@@ -1,13 +1,12 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-
 import './ProductCardAccessed.css'
 
 //importando as frameworks
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-//Importando as imagens
+//Importando Services
 import { CartService } from '../../Service/CartService'
 import SaveService from '../../Service/SaveService'
 import Cookies from 'js-cookie'

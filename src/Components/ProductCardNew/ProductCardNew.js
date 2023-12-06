@@ -10,6 +10,8 @@ import Swal from 'sweetalert2'
 import { CartService } from '../../Service/CartService'
 import { SaveService } from '../../Service'
 import Cookies from 'js-cookie'
+
+
 function ProductCardNew({ product, user }) {
 
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });

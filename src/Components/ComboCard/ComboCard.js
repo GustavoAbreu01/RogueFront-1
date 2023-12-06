@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from 'react'
-
 //Importando o React e o CSS
+import React, { useState, useEffect } from 'react'
 import './ComboCard.css'
 
 //importando as frameworks
 import { Link, useParams } from 'react-router-dom'
-
-//Importando os componentes
 
 //Importando as icones
 import { FaPlus, FaCartArrowDown, FaEquals } from 'react-icons/fa'
 
 //Importando as Services
 import { ProductService } from '../../Service/ProductService';
-import { CartService } from '../../Service/CartService'
 
 function ComboCard({ product }) {
     const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });

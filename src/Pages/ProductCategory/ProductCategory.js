@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './ProductCategory.css'
 
 //importando as frameworks
-import { Divider, Dropdown, Select } from 'semantic-ui-react';
+import Cookies from 'js-cookie';
 import { Link, useParams } from 'react-router-dom';
 
 //Importando os componentes
@@ -17,9 +17,11 @@ import Footer from '../../Components/Footer/Footer'
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
-import { FaListUl, FaLongArrowAltRight, FaLongArrowAltLeft } from 'react-icons/fa'
+import { FaListUl } from 'react-icons/fa'
+
+//Importando service
 import { ProductService, UserService } from '../../Service';
-import Cookies from 'js-cookie';
+
 
 
 function ProductCategory() {

@@ -5,6 +5,8 @@ import './CartPayment.css';
 //importando as frameworks
 import { Dropdown } from 'semantic-ui-react';
 import { Link, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import Swal from 'sweetalert2';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -23,9 +25,10 @@ import CardNumber from '../../assets/img/CardNumber.png';
 
 //Importando os icones
 import { FaCheck, FaCreditCard, FaTruck, FaInfo, FaStar } from 'react-icons/fa';
+
+//Importando services
 import { CartService, PaymentService, ProductService, UserService } from '../../Service';
-import Cookies from 'js-cookie';
-import Swal from 'sweetalert2';
+
 
 
 function CartPayment() {

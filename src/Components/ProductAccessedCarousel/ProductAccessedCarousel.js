@@ -1,10 +1,14 @@
 //Importando o React e o CSS
 import './ProductAccessedCarousel.css';
 import React, { useState, useEffect } from 'react';
+
+//Importanto frameworks
 import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardAccessed from '../ProductCardAccessed/ProductCardAccessed';
+
+//Importando Service
 import ProductService from '../../Service/ProductService';
 
 

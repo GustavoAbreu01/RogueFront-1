@@ -7,6 +7,8 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardSearched from '../ProductCardSearched/ProductCardSearched';
+
+//importando services
 import ProductService from '../../Service/ProductService';
 
 function ProductSearchedCarousel({ user }) {

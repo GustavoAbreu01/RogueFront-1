@@ -7,6 +7,8 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardSmaller from '../ProductCardSmaller/ProductCardSmaller';
+
+//Importando services
 import ProductService from '../../Service/ProductService';
 
 function ProductCarouselSmallSimilar( { user } ) {

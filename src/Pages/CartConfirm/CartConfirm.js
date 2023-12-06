@@ -14,7 +14,9 @@ import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import { Link } from 'react-router-dom';
 
 //Importando os icones
-import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
+import { FaCheck, FaInfo } from 'react-icons/fa';
+
+//Importando services
 import { CartService, OrderService, ProductService, UserService } from '../../Service';
 import Cookies from 'js-cookie';
 

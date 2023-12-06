@@ -11,6 +11,8 @@ import logoDes from "../../assets/img/LogoWegDesing.png"
 //Importando os ícones
 import { CgProfile } from 'react-icons/cg'
 import { BsArrowBarRight } from 'react-icons/bs'
+
+//Importando services
 import Cookies from 'js-cookie'
 import { UserService } from '../../Service'
 

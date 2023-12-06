@@ -5,7 +5,7 @@ import './ProductCart.css'
 //importando as frameworks
 import { Link } from "react-router-dom";
 
-//Importando as imagens
+//Importando services
 import { CartService } from '../../Service';
 
 

@@ -6,7 +6,7 @@ import "./CardCompare.css"
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
 
-//Importando os ícones
+//Importando os ícones e Imagens
 import motor from '../../assets/img/motor.png'
 import { FaPowerOff } from 'react-icons/fa'
 import { GoAlertFill } from 'react-icons/go'

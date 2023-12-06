@@ -1,4 +1,6 @@
 import React from 'react'
+
+//Importando componentes
 import ProductTableSecurity from './ProductTableSecurity/ProductTableSecurity';
 import ProductTableInk from './ProductTableInk/ProductTableInk';
 import ProductTableMotor from './ProductTableMotor/ProductTableMotor';

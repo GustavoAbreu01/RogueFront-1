@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 import './SearchModal.css';
 
 
-//icons
+//Importando icons
 import { BiRightArrowAlt } from 'react-icons/bi';
+
+//Importando services
 import { ProductService } from '../../Service';
 
 function SearchBar() {

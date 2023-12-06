@@ -1,6 +1,5 @@
 //Importando o React e o CSS
 import React, { useEffect, useState } from 'react'
-import Cookies from 'js-cookie';
 import "./Login.css"
 
 //Importando a Service
@@ -28,17 +27,6 @@ function Login() {
     };
 
     const navigate = useNavigate();
-
-    // const handleLogin = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //         const response = await UserService.login(login);
-    //         navigate('/');
-    //     } catch (error) {
-    //         alert("Erro ao fazer login. Verifique suas credenciais.");
-    //         console.log(error);
-    //     }
-    // };
 
     async function logIn(event) {
         event.preventDefault();

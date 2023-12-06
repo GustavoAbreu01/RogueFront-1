@@ -1,3 +1,4 @@
+//Importanto React
 import React from 'react'
 
 //componentes

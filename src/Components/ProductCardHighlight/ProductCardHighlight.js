@@ -2,6 +2,7 @@
 import './ProductCardHighlight.css'
 import React, { useEffect, useState } from 'react'
 
+//Importando frameworks
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 

@@ -2,10 +2,8 @@
 import React from 'react'
 import './SmallProductHorizontal.css'
 
-//Importando as imagens
-import motor from '../../assets/img/motor.png'
+//Importando frameworks
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
 
 
 function SmallProductHorizontal({ product }) {

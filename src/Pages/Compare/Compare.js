@@ -9,7 +9,6 @@ import Footer from '../../Components/Footer/Footer'
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin'
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal'
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar'
-import NotFound from '../NotFound/NotFound';
 
 //Importando as Frameworks
 import { Link } from 'react-router-dom'

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './EditProfile.css';
 
 //importando as frameworks
-import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 //Importando os componentes
 import ProductCarouselSmallSimilar from '../../Components/ProductCarouselSmallSimilar/ProductCarouselSmallSimilar';
@@ -22,7 +22,9 @@ import { AiOutlineBell } from 'react-icons/ai';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { AiOutlineStar } from 'react-icons/ai';
 import { RxAccessibility } from 'react-icons/rx';
-import Cookies from 'js-cookie';
+
+
+//Importando services
 import { UserService } from '../../Service';
 
 

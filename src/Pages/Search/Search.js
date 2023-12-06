@@ -11,19 +11,18 @@ import SmallProductCard from '../../Components/ProductCardSmaller/ProductCardSma
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
 import WeggnerModal from '../../Components/WeggnerModal/WeggnerModal';
 import FilterSearched from '../../Components/Filter/CategoryFilters/FilterSearched/FilterSearched'
+
+//Importando services
 import ProductService from '../../Service/ProductService'
 
 //importando as frameworks
-import { Divider, Dropdown } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom'
-
-//Importando as imagens
-import magnifyingGlass from "../../assets/img/Search.png"
+import Cookies from 'js-cookie';
 
 //Importando os icones
 import { BsGridFill } from 'react-icons/bs'
 import { FaListUl } from 'react-icons/fa'
-import Cookies from 'js-cookie';
 
 
 function Search() {

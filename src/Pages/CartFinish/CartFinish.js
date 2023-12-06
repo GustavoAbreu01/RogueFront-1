@@ -4,6 +4,7 @@ import './CartFinish.css';
 
 //importando as frameworks
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 //Importando os componentes
 import HeaderLogin from '../../Components/HeaderLogin/HeaderLogin';
@@ -17,8 +18,9 @@ import BannerAnnouncementThree from '../../assets/img/BannerAnnun3.jpg'
 
 //Importando os icones
 import { BsArrowLeftShort } from 'react-icons/bs';
-import { FaCheck, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
-import Cookies from 'js-cookie';
+import { FaCheck } from 'react-icons/fa';
+
+
 
 function CartFinish() {
 

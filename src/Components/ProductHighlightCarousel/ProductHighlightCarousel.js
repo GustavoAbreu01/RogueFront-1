@@ -10,6 +10,8 @@ import Slider from "react-slick";
 
 //Importando os componentes
 import ProductCardHighlight from '../ProductCardHighlight/ProductCardHighlight';
+
+//Importando services
 import ProductService from '../../Service/ProductService';
 
 function ProductHighlightCarousel( { user } ) {

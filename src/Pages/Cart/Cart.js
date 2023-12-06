@@ -21,6 +21,8 @@ import imgEmptyCart from '../../assets/img/weggnerAcordado.PNG';
 //Importando os icones
 import { FaShoppingCart, FaCreditCard, FaTruck, FaInfo } from 'react-icons/fa';
 import { BsArrowLeftShort } from 'react-icons/bs';
+
+//Importando Services
 import { CartService, UserService } from '../../Service';
 
 
